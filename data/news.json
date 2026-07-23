@@ -1,15 +1,17 @@
 {
-  "updatedAt": "2026-07-23T13:49:15.757Z",
+  "updatedAt": "2026-07-23T19:10:03.096Z",
   "count": 140,
   "sources": [
+    "98.4 Capital FM Kenya",
     "Afm.nl",
     "Beinsure",
+    "Business Daily",
     "Business Insider Africa",
     "Business Wire",
     "Canadian Underwriter",
-    "Capitalfm.co.ke",
     "Captive Insurance Times",
     "Centurion Jewelry Show",
+    "Citizen Digital",
     "Digital Insurance",
     "Digital News Asia",
     "EIN Presswire",
@@ -21,9 +23,11 @@
     "Insurance Asia",
     "Insurance Business",
     "Insurance Edge",
+    "Insurance Journal",
     "Insurance Nerds",
     "Insurance Times",
     "IntelliNews",
+    "Intelligent Insurer",
     "Life Insurance International",
     "Market Data Forecast",
     "Mexico Business News",
@@ -32,11 +36,12 @@
     "PRWeb",
     "Pluang",
     "Program Business",
-    "Pulse 2.0",
     "Quiver Quantitative",
     "Reinsurance News",
+    "SNS Insider",
     "Stock Titan",
     "TechAfrica News",
+    "Telecompaper",
     "Texas Department of Insurance (.gov)",
     "The Fast Mode",
     "The Malaysian Reserve",
@@ -45,7 +50,6 @@
     "TradingView",
     "WV News",
     "Yahoo Finance",
-    "Yahoo Finance Singapore",
     "Zawya",
     "citybiz",
     "finews.asia",
@@ -60,7 +64,7 @@
   "taxonomy": [
     {
       "name": "Funding",
-      "count": 16
+      "count": 17
     },
     {
       "name": "M&A",
@@ -68,15 +72,15 @@
     },
     {
       "name": "Partnerships",
-      "count": 22
+      "count": 24
     },
     {
       "name": "Product & Launches",
-      "count": 22
+      "count": 20
     },
     {
       "name": "AI & Automation",
-      "count": 27
+      "count": 24
     },
     {
       "name": "Embedded",
@@ -88,11 +92,11 @@
     },
     {
       "name": "Claims & Underwriting",
-      "count": 8
+      "count": 7
     },
     {
       "name": "Health & Life",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Auto & Mobility",
@@ -100,7 +104,7 @@
     },
     {
       "name": "Property & Cat",
-      "count": 5
+      "count": 3
     },
     {
       "name": "Regulation",
@@ -112,10 +116,147 @@
     },
     {
       "name": "Industry",
-      "count": 45
+      "count": 47
     }
   ],
   "articles": [
+    {
+      "title": "Insurtech Klaimee secures $5.5 mn to certify autonomous AI agents",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBxVG5FVXlHYWN3ZC1ZQ0prenJwRWxaWERyUFJ4YnVWVFBRV1RmWXdGWFZ1SXhXZlhYaWwxS0hHNlFLSkp0UWJ5Z1h6ZUZHM0ZFa1JBdjlObi1mRUtrbzZvd2NVZ3hJWUkzcmc?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "AI & Automation",
+        "Auto & Mobility"
+      ],
+      "publishedAt": "2026-07-23T18:18:41.000Z",
+      "timestamp": 1784830721000,
+      "cluster": 2,
+      "score": 3.912
+    },
+    {
+      "title": "Cytora adds InformData people data to insurance workflows",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1kODF2RThkLUtBSUpzUGxzOTZtcl9NcnRXNHVIR3AwTzVCa3dBNFpxTTJYS0dLOWtiV0F0WXp3OWE5c3V4amo3bGI0N0NFSWx0WUhtRUx6NjBTb0dFclFWalNGdkxKYkloTnVuSFB3?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-07-23T17:58:41.000Z",
+      "timestamp": 1784829521000,
+      "cluster": 1,
+      "score": 3.379
+    },
+    {
+      "title": "Tech Update: Gallagher Enhances Digital Insurance Platform for Aviation Clients",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9DYkNYczAxU3RjbEZXbE4xcU4tVFpObUl3UXJqTWJFN01RQk1QazdIa3Q5enFhQkp3WkFkOVRpMVFpWXlXLWxuTFJJRE5jcGJwLTBTUU5aOFpfWlVMZVhaZHNXak9oeG03WGpTcElWS0RQcVNjQnh0TzhnVWUtQQ?oc=5",
+      "source": "Insurance Journal",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-07-23T16:30:00.000Z",
+      "timestamp": 1784824200000,
+      "cluster": 1,
+      "score": 3.237
+    },
+    {
+      "title": "Jubilee partners with global firm Boltech to expand health insurance reach",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPX0Z6dUdEUmlDU0RVZ2w2TnVGX01ZR1FYM09iTnBaaG1uQzJZSzE3MFc2MmthcnpmOVJWNUUxQ1IwZHlNdXlISHo2c3JKdEE1c2g0cGFIOFhVbmlRalVfMmZIVjJRQ2xiVkFKZjdxNlY5bXd2ejktRm5kdzVneHJ2QmJZd0EtaFJfVzZSRGhRcWtMRTVUWEFmR0xwS1FtTXJLd19wX3AyRVhISDF4b2djT0pFdlE?oc=5",
+      "source": "Citizen Digital",
+      "summary": "",
+      "tags": [
+        "Partnerships",
+        "Health & Life"
+      ],
+      "publishedAt": "2026-07-23T15:59:06.000Z",
+      "timestamp": 1784822346000,
+      "cluster": 1,
+      "score": 2.39
+    },
+    {
+      "title": "Insurtech Coverwatch raised $4.5 mn in pre-seed to build AI insurance broker",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1QWXU4aWdCa09HUzRDT2xUd0l1TGxUVWh5TnppbjlyUDRtZ09NX3ZTc0NtLTRvZ1R0NFlUTkh6TWhGTW00NjUzblBFNzdrcmVLcnFZZlBFXzZRR1o1SDJTNHpYX3NTeWU2QkxqeEdob0JoYm1WbHZPZ0Z3?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-07-23T14:43:35.000Z",
+      "timestamp": 1784817815000,
+      "cluster": 1,
+      "score": 3.078
+    },
+    {
+      "title": "Why insurers can't separate disaster prep from business continuity",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbFNnWTdjRUVlSGpsUFBSNGtCYjhpUGNhb3hRM3ZsZVgxc2NUVzlFaTFZaTdwYm4wUjFDOFVCUVpIcnJSc0d6aHBkRlRQaF9WWEZUcWVUbUVhUkxiX2MwR2ZVclJxXzhqbFNPVFhUUHQwUWFkX3BYa0c0cENfOEh6QWFNdXBxWTE3a1JtV2hIemRBVVViVURIYVhNN1Y?oc=5",
+      "source": "Digital Insurance",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-07-23T14:33:00.000Z",
+      "timestamp": 1784817180000,
+      "cluster": 1,
+      "score": 3.062
+    },
+    {
+      "title": "Jubilee taps embedded insurance to widen health cover access",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOdS1MeC1MRG16bjdnanE0QkJTay1DaEdQRTdrLXdpM05JbmlLdDZkUlBWWHNxaG93S2J1OVdmMndKSTlMMWt2dzFuNTdaVmNLS2VPYU5PY3ZtUllhSHZQeUM1THBfRzRaeWE4MHRfYUxjbVBUT3pBUzBtMk9jWFh1STZGb2tZR1Q5QlhLaWc0U0lyWUMxSUFEeWtLMlU5TzhoTkt3Xy1STXZFd29qWElCNDEyc21qQTdGUGU2WA?oc=5",
+      "source": "Business Daily",
+      "summary": "",
+      "tags": [
+        "Partnerships",
+        "Embedded"
+      ],
+      "publishedAt": "2026-07-23T14:30:00.000Z",
+      "timestamp": 1784817000000,
+      "cluster": 1,
+      "score": 2.058
+    },
+    {
+      "title": "Orange Money Jordan and MEICO partner to offer insurance",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQldqM25kNWY0MFA1LUR2cFZGODBSSm5xNkZMandkRjVMZXNUWV9lblZIbksyWWVrdVkxR1pSclljbjJjZmxUU1JUZUl2Z2h1RGxBbWRad0FMQTRnOGNkY1ZlRlBNM3dQbmtBN1lCQ0RoeVd1SThkWGlMTXh5VUhtdEh1cmpUOFdEYUhjeklsbmFaUXpOQ05USXZ1M1h1ZGJS?oc=5",
+      "source": "Telecompaper",
+      "summary": "",
+      "tags": [
+        "Partnerships"
+      ],
+      "publishedAt": "2026-07-23T14:07:47.000Z",
+      "timestamp": 1784815667000,
+      "cluster": 2,
+      "score": 2.727
+    },
+    {
+      "title": "Why AI spend is increasing but full integration lags: Federato",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNUWZQVFRLc2Q5RS1xb2pYT25UUGVKRzUyZDN0X3RoVDNMODRFQ2l4SW8tMU5QM1RCa0NnZWVET2stdmFrOElVRHdTWFl3TkNMMFBHWFFyQ2p1RS1MelV6TFo4MG4wdUlMcmhpRENPS3RFYlhReDlVVTJwSFMwTVlXbm9NbnVad1ZNanROSndjXy13WTA?oc=5",
+      "source": "Digital Insurance",
+      "summary": "",
+      "tags": [
+        "Partnerships",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-07-23T14:02:00.000Z",
+      "timestamp": 1784815320000,
+      "cluster": 1,
+      "score": 3.019
+    },
+    {
+      "title": "Cyber insurtech BOXX adds AI deepfake cover to Cyberboxx Business",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1rbHVybFVwVTZZbXFnUkRXUlVVVGJDT25BNTlITlRZLW1zUV9wOEc2X3VUSndGeWgxc08yeGhhLUZrMlJLRW51aXFjdVZKbzQzRHN0OC1MOEJkckNUREgxcENXTUUtZFFSemRIdmk1V0dWbzd2dnc?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "AI & Automation",
+        "Cyber"
+      ],
+      "publishedAt": "2026-07-23T13:07:57.000Z",
+      "timestamp": 1784812077000,
+      "cluster": 1,
+      "score": 2.944
+    },
     {
       "title": "Latin America insurtech start-ups swell as $90mn funding rebounds",
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOc3NEYndqcF9JRGxRUno1MWdSbXhfWjZFYktYalNqV21SQjVuUEtNdjNoaGtrbFdlYjZMNlZ4VFFlTHBobWU0LU52LW43M19BMTdRTUlIbHMtdDFHMlRUVHd4VEZGa2dJQU5BcmlVY09uUUt5NFJpSUpzYWktbXFTQzZHb1lPMkx1V3JkeVkwUlhyZnNIbktYeHV3X0lyOUR1RWRMaFZNZmFjSkxQSWlmcFBQWDh2QQ?oc=5",
@@ -127,26 +268,12 @@
       "publishedAt": "2026-07-23T12:56:13.000Z",
       "timestamp": 1784811373000,
       "cluster": 1,
-      "score": 2.41
-    },
-    {
-      "title": "Cyber insurtech BOXX adds AI deepfake cover to Cyberboxx Business",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1rbHVybFVwVTZZbXFnUkRXUlVVVGJDT25BNTlITlRZLW1zUV9wOEc2X3VUSndGeWgxc08yeGhhLUZrMlJLRW51aXFjdVZKbzQzRHN0OC1MOEJkckNUREgxcENXTUUtZFFSemRIdmk1V0dWbzd2dnc?oc=5",
-      "source": "Beinsure",
-      "summary": "",
-      "tags": [
-        "AI & Automation",
-        "Cyber"
-      ],
-      "publishedAt": "2026-07-23T12:43:20.000Z",
-      "timestamp": 1784810600000,
-      "cluster": 1,
-      "score": 3.388
+      "score": 1.928
     },
     {
       "title": "Jubilee, Boltech partner to expand health insurance through embedded products",
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUkpBQjc4QWR3NU1xZF92bzE3aUEzRHJuRndJZEhzVFNMYU4yWFExRkhmT0tFeW5pbWJwTjc4SGFqVHl4Wldpb2NmRlNsWEhrUVhSM3ZjblJFSi1nSzRraUVDb01hcDROZHlsR1EwTGU3cmlFZzRkc1pheWt6MGZmNWZzSlVTTjZxRGpKUjk3ZHk1LWh4VHFfVm9lblI0V1FMYVg4eA?oc=5",
-      "source": "Capitalfm.co.ke",
+      "source": "98.4 Capital FM Kenya",
       "summary": "",
       "tags": [
         "Partnerships",
@@ -155,7 +282,7 @@
       "publishedAt": "2026-07-23T11:54:31.000Z",
       "timestamp": 1784807671000,
       "cluster": 1,
-      "score": 2.509
+      "score": 2.048
     },
     {
       "title": "Britam Uganda and Airtel Money Partner to Expand Mobile Insurance Access",
@@ -167,8 +294,8 @@
       ],
       "publishedAt": "2026-07-23T11:38:24.000Z",
       "timestamp": 1784806704000,
-      "cluster": 1,
-      "score": 2.483
+      "cluster": 2,
+      "score": 2.527
     },
     {
       "title": "Genki buys insurtech Wave Claims to add AI claims software",
@@ -183,7 +310,7 @@
       "publishedAt": "2026-07-23T11:13:20.000Z",
       "timestamp": 1784805200000,
       "cluster": 2,
-      "score": 3.743
+      "score": 3.295
     },
     {
       "title": "Root Expands to New Jersey: Behavior-Based Car Insurance Now Reaches 80% of U.S. Population",
@@ -197,7 +324,7 @@
       "publishedAt": "2026-07-23T10:10:18.000Z",
       "timestamp": 1784801418000,
       "cluster": 2,
-      "score": 2.647
+      "score": 2.219
     },
     {
       "title": "Qatar Insurance Company Wins Initiative of the Year at Insurance Asia Awards for Digital Ecosystem",
@@ -210,7 +337,20 @@
       "publishedAt": "2026-07-23T10:10:16.000Z",
       "timestamp": 1784801416000,
       "cluster": 2,
-      "score": 2.647
+      "score": 2.218
+    },
+    {
+      "title": "Insurtech leader jumps ship to lead Scor nat cat risks",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQY1RKSV9VcEZOeTlBdWozRGw5RTRjZC1rT2Z5OVhRdUlZX3owVko4YmEzQWs0UFdXQTluNi02bzVtN3pnbUFtaVpmZzVoQ0ptRVQtVjVpOWctWU1MYmNCQ0s3UEZVVEZXREZJbDVqb00tVEJxTGRpSUlZcGc3NHpKSTJUSFVVQy1hXzJwWnJlcVhRWXM?oc=5",
+      "source": "Intelligent Insurer",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-07-23T10:01:46.000Z",
+      "timestamp": 1784800906000,
+      "cluster": 1,
+      "score": 1.708
     },
     {
       "title": "How insurers are using AI to combat customer churn",
@@ -223,7 +363,7 @@
       "publishedAt": "2026-07-23T10:00:00.000Z",
       "timestamp": 1784800800000,
       "cluster": 1,
-      "score": 3.132
+      "score": 2.706
     },
     {
       "title": "QIC’s digital ecosystem named initiative of the year in Qatar at the Insurance Asia Awards",
@@ -236,7 +376,7 @@
       "publishedAt": "2026-07-23T06:07:00.000Z",
       "timestamp": 1784786820000,
       "cluster": 2,
-      "score": 1.114
+      "score": 0.751
     },
     {
       "title": "AI insurtech startup NeuralKart raises seed funding led by Inflection Point Ventures",
@@ -250,7 +390,7 @@
       "publishedAt": "2026-07-23T06:02:27.000Z",
       "timestamp": 1784786547000,
       "cluster": 1,
-      "score": 2.008
+      "score": 1.647
     },
     {
       "title": "NeuralKart raises $243K seed to scale AI‑driven Insurtech",
@@ -264,7 +404,7 @@
       "publishedAt": "2026-07-23T05:31:40.000Z",
       "timestamp": 1784784700000,
       "cluster": 1,
-      "score": 2.57
+      "score": 2.216
     },
     {
       "title": "What's the next chapter for insurtech?",
@@ -277,11 +417,11 @@
       "publishedAt": "2026-07-22T19:14:16.000Z",
       "timestamp": 1784747656000,
       "cluster": 1,
-      "score": 2.153
+      "score": 1.922
     },
     {
-      "title": "LatAm Insurtech Sector Attracts US$90 Million in IH26 Investment",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPLVNQMlVsczBlVDMtZjNmdHF3eE44VGZYNnBJZ21XeVQxMzZKWjc0MG0tV2xRN3dYQWZBd2ZaeWRsQWhkRDhkYWNwU19wNDVpa2k1LURWMlpmeVhUT2VPbTFiMUtfVms1ZkQ2UWdwOU1Jc2J1aldqalZOcEFrTWRvWUxZTmVNdkxRdVptaEQwbFc0d25XQ1JCVlY4dFZqcmg0c19R?oc=5",
+      "title": "LatAm Insurtech Sector Attracts US$90 Million in 1H26 Investment",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYzFnazNicTZscHpLTEFHZFVQdFV3eW1PbWI5bmhGM2FMd3c3UndQOXRja09idHhtYmFSaWxjWTR3OE9sT0MxTXozOHhNalRIQVQzeWxxTGpZd1ZoaEhOX2IyU0k3dEkyNWt3NFVvTWVyMDdwTHJyUnpvdG9YOTJfTzVTRFZzQ3FtN1Y1aE1aeEpzYTBCSERKcktYNUlyQ1oyQ0Nj?oc=5",
       "source": "Mexico Business News",
       "summary": "",
       "tags": [
@@ -290,7 +430,7 @@
       "publishedAt": "2026-07-22T18:21:57.000Z",
       "timestamp": 1784744517000,
       "cluster": 1,
-      "score": 1.711
+      "score": 1.489
     },
     {
       "title": "Valliani Jewelers Partners with Mulberry’s Insurance Technology Platform",
@@ -303,7 +443,7 @@
       "publishedAt": "2026-07-22T16:51:35.000Z",
       "timestamp": 1784739095000,
       "cluster": 1,
-      "score": 0.044
+      "score": -0.165
     },
     {
       "title": "Disrupting Mexican Healthcare Through Tech-Driven InsurTech",
@@ -316,7 +456,7 @@
       "publishedAt": "2026-07-22T16:16:53.000Z",
       "timestamp": 1784737013000,
       "cluster": 1,
-      "score": 1.019
+      "score": 0.815
     },
     {
       "title": "Klaimee lands $5.5m to insure autonomous AI agents",
@@ -330,8 +470,8 @@
       ],
       "publishedAt": "2026-07-22T16:00:03.000Z",
       "timestamp": 1784736003000,
-      "cluster": 1,
-      "score": 2.607
+      "cluster": 2,
+      "score": 2.906
     },
     {
       "title": "Lemonade brings renters insurance to Nebraska",
@@ -344,7 +484,7 @@
       "publishedAt": "2026-07-22T15:31:32.000Z",
       "timestamp": 1784734292000,
       "cluster": 2,
-      "score": 2.487
+      "score": 2.29
     },
     {
       "title": "Arma Karma Launches New Wedding Insurance Product -",
@@ -357,7 +497,7 @@
       "publishedAt": "2026-07-22T15:26:06.000Z",
       "timestamp": 1784733966000,
       "cluster": 1,
-      "score": 2.184
+      "score": 1.987
     },
     {
       "title": "Launching an insurtech? How to build a tech stack that scales",
@@ -370,7 +510,7 @@
       "publishedAt": "2026-07-22T14:37:00.000Z",
       "timestamp": 1784731020000,
       "cluster": 1,
-      "score": 2.151
+      "score": 1.961
     },
     {
       "title": "Orange Money and MEICO Partner to Digitise Insurance Services in Jordan",
@@ -382,8 +522,8 @@
       ],
       "publishedAt": "2026-07-22T14:32:44.000Z",
       "timestamp": 1784730764000,
-      "cluster": 3,
-      "score": 2.148
+      "cluster": 4,
+      "score": 2.459
     },
     {
       "title": "Airtel Money Uganda and Britam Partner to Expand Digital Insurance and Financial Services",
@@ -395,8 +535,8 @@
       ],
       "publishedAt": "2026-07-22T13:57:43.000Z",
       "timestamp": 1784728663000,
-      "cluster": 1,
-      "score": 1.125
+      "cluster": 2,
+      "score": 1.44
     },
     {
       "title": "BrokerLink: Changing the engine while the car is moving",
@@ -409,7 +549,7 @@
       "publishedAt": "2026-07-22T13:30:21.000Z",
       "timestamp": 1784727021000,
       "cluster": 1,
-      "score": 1.908
+      "score": 1.726
     },
     {
       "title": "Root Launches Behavior-Based Car Insurance in New Jersey, Expanding Footprint to 37 States",
@@ -423,7 +563,7 @@
       "publishedAt": "2026-07-22T13:14:16.000Z",
       "timestamp": 1784726056000,
       "cluster": 2,
-      "score": 0.398
+      "score": 0.218
     },
     {
       "title": "Orange Money & MEICO to develop InsurTech services",
@@ -436,7 +576,7 @@
       "publishedAt": "2026-07-22T12:51:46.000Z",
       "timestamp": 1784724706000,
       "cluster": 3,
-      "score": 1.884
+      "score": 1.707
     },
     {
       "title": "Orange Money & MEICO sign MoU to develop innovative InsurTech services",
@@ -449,7 +589,7 @@
       "publishedAt": "2026-07-22T11:51:00.000Z",
       "timestamp": 1784721060000,
       "cluster": 3,
-      "score": 0.647
+      "score": 0.478
     },
     {
       "title": "MoneySuperMarket Launches SuperSaveClub Insurance -",
@@ -462,7 +602,7 @@
       "publishedAt": "2026-07-22T11:11:05.000Z",
       "timestamp": 1784718665000,
       "cluster": 1,
-      "score": 2.024
+      "score": 1.859
     },
     {
       "title": "MoneySuperMarket to launch new digital motor broker",
@@ -475,7 +615,20 @@
       "publishedAt": "2026-07-22T08:18:31.000Z",
       "timestamp": 1784708311000,
       "cluster": 1,
-      "score": 1.931
+      "score": 1.785
+    },
+    {
+      "title": "Airtel Money Uganda and Britam expand digital insurance and financial services",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQWFZPazFwWmtobW5pemtMUW1ZY09NVmIzREtHRjhmcFk1bjczTllZaU50NzJoOUlpN0dWdGN5VEktYjliWFFmdDlULThOQ3BiZ0huTjE2Wlk4Y0F6Q2RXQ3g0OUxFQmJ4TFJzOFdYU2s4Q0VVYXJqbHI1RllTRTRkQ2tmeW9yaHRBNk00M2F4MzNtM3czVjJYUW14bDM1d0FrZk5ZX1phUUdFeVI0LS1qdzIxT21ITXRNZGxYb3Fn?oc=5",
+      "source": "Telecompaper",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-07-22T07:00:00.000Z",
+      "timestamp": 1784703600000,
+      "cluster": 2,
+      "score": 1.054
     },
     {
       "title": "Inside Etiqa Insurance Pte Ltd (Etiqa) and Singapore Telecommunications Ltd (Singtel)’s win at the Insurance Asia Awards 2026",
@@ -488,7 +641,7 @@
       "publishedAt": "2026-07-22T02:48:07.000Z",
       "timestamp": 1784688487000,
       "cluster": 1,
-      "score": 1.581
+      "score": 1.465
     },
     {
       "title": "Willis Towers Watson (WTW) Launches New Pension Tools And Expands Digital Insurance Reach",
@@ -501,7 +654,7 @@
       "publishedAt": "2026-07-22T02:11:00.000Z",
       "timestamp": 1784686260000,
       "cluster": 1,
-      "score": -0.434
+      "score": -0.547
     },
     {
       "title": "Insurtech Qumis launches AI agents for P&C insurance coverage analysis",
@@ -516,7 +669,7 @@
       "publishedAt": "2026-07-21T18:17:50.000Z",
       "timestamp": 1784657870000,
       "cluster": 1,
-      "score": 1.608
+      "score": 1.526
     },
     {
       "title": "Genki acquires InsurTech Wave Claims and Claim OS",
@@ -530,7 +683,7 @@
       "publishedAt": "2026-07-21T17:35:04.000Z",
       "timestamp": 1784655304000,
       "cluster": 3,
-      "score": 2.896
+      "score": 2.817
     },
     {
       "title": "Insurtech Lemonade brings renters insurance to Nebraska",
@@ -543,7 +696,7 @@
       "publishedAt": "2026-07-21T17:32:43.000Z",
       "timestamp": 1784655163000,
       "cluster": 2,
-      "score": 1.895
+      "score": 1.816
     },
     {
       "title": "Loadsure and CrossCountry Freight Solutions (CCFS) Partner to Deliver High-Velocity Embedded Insurance to the LTL Market",
@@ -557,23 +710,7 @@
       "publishedAt": "2026-07-21T16:27:00.000Z",
       "timestamp": 1784651220000,
       "cluster": 1,
-      "score": -0.622
-    },
-    {
-      "title": "Carpe launches AI claims suite for P&C insurers",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5SeW14REZSbTFSTDkybmMwVU5GVG9iWnR6VjYySmVRS2QyQTNTdXhJdHFaYmdFQjV5cGpyeG9HeWRzd0VhZW8xMk4xblkxQTR3eTJsX1lCakowcm1NNFlJT1VyaFAwZlFIQjN6enpHc0VzMVVUd2dVdERfNU9mdw?oc=5",
-      "source": "Beinsure",
-      "summary": "",
-      "tags": [
-        "Product & Launches",
-        "AI & Automation",
-        "Claims & Underwriting",
-        "Property & Cat"
-      ],
-      "publishedAt": "2026-07-21T15:02:04.000Z",
-      "timestamp": 1784646124000,
-      "cluster": 1,
-      "score": 1.556
+      "score": -0.698
     },
     {
       "title": "Why carriers must weigh AI's value before it gets unsustainable",
@@ -586,7 +723,7 @@
       "publishedAt": "2026-07-21T14:54:00.000Z",
       "timestamp": 1784645640000,
       "cluster": 1,
-      "score": 1.354
+      "score": 1.283
     },
     {
       "title": "CSIO Welcomes Seven New Members to Help Advance Industry Standards and Connectivity",
@@ -599,7 +736,7 @@
       "publishedAt": "2026-07-21T14:00:47.000Z",
       "timestamp": 1784642447000,
       "cluster": 1,
-      "score": 1.341
+      "score": 1.273
     },
     {
       "title": "iGMS and Safely Partner to Bring Embedded Insurance and Improved Risk Management to Short-Term Rental Hosts",
@@ -613,7 +750,7 @@
       "publishedAt": "2026-07-21T13:00:00.000Z",
       "timestamp": 1784638800000,
       "cluster": 1,
-      "score": -0.673
+      "score": -0.738
     },
     {
       "title": "PolicyStreet CEO: Profitability proves our full-stack insurtech model",
@@ -626,7 +763,7 @@
       "publishedAt": "2026-07-21T12:50:32.000Z",
       "timestamp": 1784638232000,
       "cluster": 2,
-      "score": 1.825
+      "score": 1.76
     },
     {
       "title": "Exclusive: Insurtech Qumis launches AI agents to bridge tech gap between smaller and larger insurance firms",
@@ -640,7 +777,7 @@
       "publishedAt": "2026-07-21T12:49:42.000Z",
       "timestamp": 1784638182000,
       "cluster": 1,
-      "score": 1.525
+      "score": 1.46
     },
     {
       "title": "How Travelers measures ROI for its in-house LLM",
@@ -653,7 +790,7 @@
       "publishedAt": "2026-07-21T10:00:00.000Z",
       "timestamp": 1784628000000,
       "cluster": 1,
-      "score": 1.289
+      "score": 1.231
     },
     {
       "title": "PolicyStreet CEO: Profitability proves our full-stack insurtech model can scale",
@@ -666,7 +803,7 @@
       "publishedAt": "2026-07-21T07:30:33.000Z",
       "timestamp": 1784619033000,
       "cluster": 2,
-      "score": 0.76
+      "score": 0.708
     },
     {
       "title": "Techcombank Expands Financial Ecosystem With Insurance Push",
@@ -679,7 +816,20 @@
       "publishedAt": "2026-07-21T06:57:00.000Z",
       "timestamp": 1784617020000,
       "cluster": 1,
-      "score": 0.254
+      "score": 0.203
+    },
+    {
+      "title": "Blockchain in Insurance Market Size To Exceed $194.0 Billion By 2035",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPeHVQdFo2Nk8tcGs5by0xX05nS2NFU2FRM3I1dmo3ZnY5dFhEWHZGdU5ZdnBEU2x5V3pwOFBIQmltcnBOVWFOY3lzZFlRVmdPaVZORGY2NmVyUDBraG16TEoxczBhUlhQRUZqS2Q5Z3AyemlPdTBPcGRJQkpCOFJSSWkwclA?oc=5",
+      "source": "SNS Insider",
+      "summary": "",
+      "tags": [
+        "Funding"
+      ],
+      "publishedAt": "2026-07-21T06:15:24.000Z",
+      "timestamp": 1784614524000,
+      "cluster": 1,
+      "score": 0.798
     },
     {
       "title": "Zurich expands digital insurance distribution through Shopee, ShopeePay",
@@ -692,7 +842,7 @@
       "publishedAt": "2026-07-21T03:18:21.000Z",
       "timestamp": 1784603901000,
       "cluster": 1,
-      "score": 0.218
+      "score": 0.175
     },
     {
       "title": "Why managing process change is more important than new technology",
@@ -705,7 +855,7 @@
       "publishedAt": "2026-07-20T20:53:02.000Z",
       "timestamp": 1784580782000,
       "cluster": 1,
-      "score": 1.167
+      "score": 1.134
     },
     {
       "title": "Who's using what in P&C insurance: July 20, 2026",
@@ -718,7 +868,7 @@
       "publishedAt": "2026-07-20T12:54:17.000Z",
       "timestamp": 1784552057000,
       "cluster": 1,
-      "score": 1.12
+      "score": 1.096
     },
     {
       "title": "United Fidelity Insurance : Fidelity United Partners with SlashData to Strengthen Digital Insurance Services",
@@ -731,7 +881,7 @@
       "publishedAt": "2026-07-20T12:17:05.000Z",
       "timestamp": 1784549825000,
       "cluster": 1,
-      "score": -0.883
+      "score": -0.907
     },
     {
       "title": "Why neural networks and embeddings improve insurance models",
@@ -744,7 +894,7 @@
       "publishedAt": "2026-07-20T10:00:00.000Z",
       "timestamp": 1784541600000,
       "cluster": 1,
-      "score": 1.106
+      "score": 1.085
     },
     {
       "title": "JazzWorld Acquires TPL Insurance to Expand Digital Insurance Access Across Pakistan",
@@ -757,7 +907,7 @@
       "publishedAt": "2026-07-20T02:21:33.000Z",
       "timestamp": 1784514093000,
       "cluster": 3,
-      "score": 1.577
+      "score": 1.562
     },
     {
       "title": "Genki Acquires AI Insurtech Startup Wave Claims and Claim OS",
@@ -772,7 +922,7 @@
       "publishedAt": "2026-07-19T16:39:00.000Z",
       "timestamp": 1784479140000,
       "cluster": 2,
-      "score": -0.148
+      "score": -0.159
     },
     {
       "title": "Oman Air embeds travel insurance through Takaful Oman partnership",
@@ -785,7 +935,7 @@
       "publishedAt": "2026-07-19T07:07:42.000Z",
       "timestamp": 1784444862000,
       "cluster": 1,
-      "score": 0.235
+      "score": 0.228
     },
     {
       "title": "How Earnings Momentum and Underinsured Luxury Collections Could Shape Chubb’s (CB) Digital Insurance Strategy",
@@ -798,7 +948,7 @@
       "publishedAt": "2026-07-18T23:24:02.000Z",
       "timestamp": 1784417042000,
       "cluster": 1,
-      "score": -1.175
+      "score": -1.18
     },
     {
       "title": "Travelers: How AI improved claims, underwriting efficiency in Q2",
@@ -812,7 +962,7 @@
       "publishedAt": "2026-07-17T20:05:00.000Z",
       "timestamp": 1784318700000,
       "cluster": 1,
-      "score": 1.008
+      "score": 1.006
     },
     {
       "title": "Five years bold: Heirs Insurance Group hits anniversary milestone with rapid growth and Financial Times recognition",
@@ -825,7 +975,7 @@
       "publishedAt": "2026-07-17T14:00:00.000Z",
       "timestamp": 1784296800000,
       "cluster": 1,
-      "score": 0.006
+      "score": 0.005
     },
     {
       "title": "Why California's telematics bill leaves insurers guessing on AI",
@@ -839,7 +989,7 @@
       "publishedAt": "2026-07-17T10:00:00.000Z",
       "timestamp": 1784282400000,
       "cluster": 1,
-      "score": 1.005
+      "score": 1.004
     },
     {
       "title": "Guillaume Bonnissent’s Insurance Technology Diary: SurvAIval techniques",
@@ -852,7 +1002,7 @@
       "publishedAt": "2026-07-17T07:59:54.000Z",
       "timestamp": 1784275194000,
       "cluster": 1,
-      "score": 1.005
+      "score": 1.004
     },
     {
       "title": "Latin America Insurance Market Size & Growth Report, 2034",
@@ -865,7 +1015,7 @@
       "publishedAt": "2026-07-17T07:00:00.000Z",
       "timestamp": 1784271600000,
       "cluster": 1,
-      "score": -1.195
+      "score": -1.196
     },
     {
       "title": "Cover Genius $100M Raise Signals Embedded Insurance Has Outgrown Venture Capital",
@@ -879,7 +1029,7 @@
       "publishedAt": "2026-07-17T00:28:38.000Z",
       "timestamp": 1784248118000,
       "cluster": 1,
-      "score": 1.804
+      "score": 1.803
     },
     {
       "title": "EFGH bets on embedded microinsurance beyond Singapore's wealthy",
@@ -892,7 +1042,7 @@
       "publishedAt": "2026-07-16T21:00:00.000Z",
       "timestamp": 1784235600000,
       "cluster": 1,
-      "score": 1.003
+      "score": 1.002
     },
     {
       "title": "Where UnitedHealth says its AI investments are paying off",
@@ -905,7 +1055,7 @@
       "publishedAt": "2026-07-16T20:15:00.000Z",
       "timestamp": 1784232900000,
       "cluster": 1,
-      "score": 1.003
+      "score": 1.002
     },
     {
       "title": "How insurance data is evolving from raw reports to embeddings",
@@ -914,6 +1064,19 @@
       "summary": "",
       "tags": [
         "Industry"
+      ],
+      "publishedAt": "2026-07-16T14:00:00.000Z",
+      "timestamp": 1784210400000,
+      "cluster": 1,
+      "score": 1.002
+    },
+    {
+      "title": "Why AI changes the rules of corporate liability",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVUtCYjh6TFBtY1BCYVd3dk5Vam5lV0dKcENxcGN1aXdRZldUbEZCY1NBWXpQM2I0dm5qeTBIRTVjQi1BemFQZnZUbW53X05tQW1OUmRBQS1qXzBFUnp6X3Bvd0VQcEZ1M25wWXQwenp1UGJWWGtPTmhXSmV2aDdHSDRBT1o?oc=5",
+      "source": "Digital Insurance",
+      "summary": "",
+      "tags": [
+        "AI & Automation"
       ],
       "publishedAt": "2026-07-16T14:00:00.000Z",
       "timestamp": 1784210400000,
@@ -959,7 +1122,7 @@
       "publishedAt": "2026-07-16T07:17:00.000Z",
       "timestamp": 1784186220000,
       "cluster": 1,
-      "score": -1.198
+      "score": -1.199
     },
     {
       "title": "U.S Commercial Insurance Market Size, Share & Growth, 2034",
@@ -972,7 +1135,7 @@
       "publishedAt": "2026-07-16T07:00:00.000Z",
       "timestamp": 1784185200000,
       "cluster": 2,
-      "score": -0.698
+      "score": -0.699
     },
     {
       "title": "ACORD Solutions Group refreshes board",
@@ -985,7 +1148,7 @@
       "publishedAt": "2026-07-16T04:25:20.000Z",
       "timestamp": 1784175920000,
       "cluster": 1,
-      "score": 1.002
+      "score": 1.001
     },
     {
       "title": "APAC insurtech funding halved to $4.1b",
@@ -1432,14 +1595,14 @@
     },
     {
       "title": "Embedded luxury: Carmakers' insurer partnerships reshape motor distribution",
-      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNZ0RHNlNuWW0zbE44UktieHdfa0U4MHJudVpSeVNjWmZfaElDdmI3S284LWgyVGFiaEVGRFg3T0tqSDFtQVJQVk04aDVmSllMci1wSjRCMjlLanQ2UkNjYjhRQVhaQ2pkSnpvNTVyaGdTYXkwYlU3T3ptRFRUamUwV2NYejc2U0JWSDEzSnBMeHRKZm12bjBGZ0RHRmJwLTBJVEJyVFRLTmY1ckxXUDR3S2NCQ1FwYVpRdjlZcDNNX2pOQ0FsOHNVdE1YajlqNWlUdWVGYTdOeFc?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPRkMwQ2J2cEsxR29OTnlYSVROeUxqNFZIQ2JuT1BkX01XLUVIb3NtU3N3bDJQWGQ0VUtldFExMkJ0ckFWODdHUXRsRjBmZU9mZVRFeFBfRy1IRzZtekNrem9Zd2lMd1ZvOGpVZ2RSc0NIekZtbDF5MV9seW1BLXRlTlhUd0FubkdjVGJXVXY0R0p2QXF0YVVTNDBLc1MyR1BkSmM0Wk4zcHVfeWl1ZlhYSHR6V3hXLV82WkFaRV9UNUdvaFNUeHhYM2xZWTQ1a05sNy1nYjRzbXU?oc=5",
       "source": "Insurance Business",
       "summary": "",
       "tags": [
         "Partnerships"
       ],
-      "publishedAt": "2026-07-09T15:36:23.000Z",
-      "timestamp": 1783611383000,
+      "publishedAt": "2026-07-09T15:35:44.000Z",
+      "timestamp": 1783611344000,
       "cluster": 1,
       "score": 1.2
     },
@@ -1509,20 +1672,6 @@
       "score": 1
     },
     {
-      "title": "Root and Jerry Partner to Deliver Fully Embedded, End-to-End Car Insurance Experience",
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPekZDX2xJelBuVGhENTJQbWdIdlB6dlJZcVpyNVo3NDZMSlVINXlaNi1MRWphazRCbEk0OE5nSzlWMmxaV2pOMmMxc01jYTdmU2YtUS1faVRlWFR2eFNxRE5wT2VkcC1vb1J6QlNuRjctcGhESVNCSXlIQTdtX0d0cVoxV2NibTVDaEw4Mjd2VmxQbFp2Q3ZvTENBV2l4dGlGNU5qQXFOQzRwX05fRjFEbktrY3RRU1VZV3JRNUkwQ2c0cUttTDRyMFpxLUhrUnExX2lNTk0waDBEYm14SGo2MGVEU2JZRV9YaWp0TWlDWkgxUQ?oc=5",
-      "source": "GlobeNewswire",
-      "summary": "",
-      "tags": [
-        "Partnerships",
-        "Auto & Mobility"
-      ],
-      "publishedAt": "2026-07-08T13:00:00.000Z",
-      "timestamp": 1783515600000,
-      "cluster": 1,
-      "score": -1
-    },
-    {
       "title": "TDI’s new Chief Prosecutor Patrick Cryer aims to strengthen fraud enforcement across Texas",
       "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPaERDbksySTEyNUFSYnA5Z21Tc0NWUGtWQnNsZ29EU0xOUm1JLVlfMkVFZUVCNFV0S2wxSHN1V2VyZHBEN19abzBoLXQwN2dXeURVZ2JKenhUVFJoZXVvMGhnZWhwby12WnZqdzFGNFZFcmtHdk1yVzdVaGNMcl9oVE1EVDZJZ3hqWHgyeQ?oc=5",
       "source": "Texas Department of Insurance (.gov)",
@@ -1555,6 +1704,20 @@
       "summary": "",
       "tags": [
         "Product & Launches"
+      ],
+      "publishedAt": "2026-07-08T07:00:00.000Z",
+      "timestamp": 1783494000000,
+      "cluster": 1,
+      "score": -1
+    },
+    {
+      "title": "Root and Jerry Partner to Deliver Fully Embedded, End-to-End Car Insurance Experience",
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPekZDX2xJelBuVGhENTJQbWdIdlB6dlJZcVpyNVo3NDZMSlVINXlaNi1MRWphazRCbEk0OE5nSzlWMmxaV2pOMmMxc01jYTdmU2YtUS1faVRlWFR2eFNxRE5wT2VkcC1vb1J6QlNuRjctcGhESVNCSXlIQTdtX0d0cVoxV2NibTVDaEw4Mjd2VmxQbFp2Q3ZvTENBV2l4dGlGNU5qQXFOQzRwX05fRjFEbktrY3RRU1VZV3JRNUkwQ2c0cUttTDRyMFpxLUhrUnExX2lNTk0waDBEYm14SGo2MGVEU2JZRV9YaWp0TWlDWkgxUQ?oc=5",
+      "source": "GlobeNewswire",
+      "summary": "",
+      "tags": [
+        "Partnerships",
+        "Auto & Mobility"
       ],
       "publishedAt": "2026-07-08T07:00:00.000Z",
       "timestamp": 1783494000000,
@@ -1826,167 +1989,6 @@
       "timestamp": 1782485280000,
       "cluster": 1,
       "score": 1.2
-    },
-    {
-      "title": "French insurtech Alan raises €480 million to challenge Canada's group benefits incumbents",
-      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPUU1xdEhnM1M0RE83bUtiVHM1NzFwd0FBWFNwODBObE5zTm1menZfV2UtT2dtMFF6dWdHUC1CUlRBRGtrRHFPazQ3MjQ3a2l6V3pPcUVRelBlQmpQMGUyN181NFl1eWw0ZXh2NkkzMkw1N2VWVkZxZmRRVk9nRU4tY3NQRng1bVV2Zy1rUEF1Y044LTlXOTdBeGFPdHdlMjJ4LXRvZVhsU3hqQXV2TThPMjFnRFNyN2VXanJ4TktyZU83V1VlZzNsUTlpZTNnLU1lekVXOC1Vd3ZBLV9OSE15QmhDZFo0ZTl4ajN6TXc5bw?oc=5",
-      "source": "Insurance Business",
-      "summary": "",
-      "tags": [
-        "Funding"
-      ],
-      "publishedAt": "2026-06-26T07:00:00.000Z",
-      "timestamp": 1782457200000,
-      "cluster": 1,
-      "score": 1.2
-    },
-    {
-      "title": "Heathos: Interview With CEO Todd Baxter About The Unified Insurance Technology Company",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBwZE5sUk16V2M5SjgzSHJfSlJWUGd0bHdEZm9aR1BRZGVsRU5rcmRYTVRYM3VYMHV2WXNjZGZ0Z0d3aEszcGxpTW5mY3RoVHhadmJhMERWODBjSXg3aHI1bV8tTmtaVW9H0gFuQVVfeXFMTl9JeFFiT1AySnNabExvc04wUEYxcU9sM0txbEQxcGhhNE5CLWhaYnVHYXhjVklKalNJX0ZDYnJwcExFSlFYWnhkbnVvcTBDeXgtaGhsWWwwMFZ6eTFGdHZMOG9zbjExSmxmNjNlSUE?oc=5",
-      "source": "Pulse 2.0",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-06-26T07:00:00.000Z",
-      "timestamp": 1782457200000,
-      "cluster": 1,
-      "score": 0
-    },
-    {
-      "title": "AI governance in commercial insurance: why now matters",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPZE5KVDYtRk5rNWN3bjNVYmhZdGZHbmdpTEM1OG5ENEZHNkJQell3SjAwWlZhb2lIMUsyd2c1VGxYaDBKTDlGTzlsMWJlOFNjeU9hQlM0dU1MODBISEl0bzNBVFpQTjBXMVBuNVFIcjNpWktWUDVtSS1VczBoSTZRbm9SN1lJc1JlcEl4WW5DdkpJUQ?oc=5",
-      "source": "FinTech Global",
-      "summary": "",
-      "tags": [
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-06-26T07:00:00.000Z",
-      "timestamp": 1782457200000,
-      "cluster": 1,
-      "score": 1
-    },
-    {
-      "title": "2025 Global InsurTech Funding Report: The Role of AI in Insurance",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5TakNUdzRaQ0huckJSa3pJUEpoZjF4S1lMMk5MU2ZKVXBYeG14QWRVNHdHcnJyRi1qSGVYX09xZVpROVMxeTJGNU16ZFBMOFo4OUgzN1UwRnVya0hEcWtob3ZtTnBTelk0?oc=5",
-      "source": "Beinsure",
-      "summary": "",
-      "tags": [
-        "Funding",
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-06-26T07:00:00.000Z",
-      "timestamp": 1782457200000,
-      "cluster": 1,
-      "score": 1
-    },
-    {
-      "title": "Guillaume Bonnissent’s Insurance Technology Diary: The more things change…",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQY1p3Z3RtZDhTc1k0RUhMY1I2WnVMWEIxZHl0enJ4bFZKTnRhb2I5LTNaT2hPdUtuczg4ZjRWOWZUaXJ1Z240Q1o4TktBcTlIeHJGUV8tdUNnRUVxdFlHbDg4YjdFbVl5ZW1WYllYblFzWFBhT0NKVHRZc3RzQmJlRlF2NlZtS1NiM05HVGZPU2p2Y3pnZEVrQUZwWHVQTWNPVGRabEU5emk3dkowRUVBcWYwYnczUnhrSXNycy1B?oc=5",
-      "source": "theinsurer.com",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-06-25T07:00:00.000Z",
-      "timestamp": 1782370800000,
-      "cluster": 1,
-      "score": 1
-    },
-    {
-      "title": "Built in-house, built to last: Inside the tech strategy of a non-standard fleet MGA",
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPY3l0UXpnSGc5UVR1c01rVy0zV1JremllR3MxdWNzT0hiNVB4dGxuREQyUnAzOGkzTk0tZ2lVR2JGZ1BVVk1UZHVZR2pZbWc5cnF6WWNTN2JhaUJZT2xjTDYzcUYwNUNYWERqRG9ZNzBzZlBoV2E3VVZhUzVkd3N6ZnJZSWlLblBTWFRXYTVBOTFoM2xvN1VHVUNDeENYSWh1aGZfM3VWcW4yaExuMDFzVGh2dnVnM0xhOVludENQM2hQQVNXSEVTNlYxRXRDU2lWNGp6RDVKb1J0N1l3QmpHRw?oc=5",
-      "source": "Insurance Business",
-      "summary": "",
-      "tags": [
-        "Auto & Mobility"
-      ],
-      "publishedAt": "2026-06-25T07:00:00.000Z",
-      "timestamp": 1782370800000,
-      "cluster": 1,
-      "score": 1
-    },
-    {
-      "title": "Majesco report maps AI strategy for frontier insurers",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVjlwLTRmRjVSLWYydDhJZzFnRk5VS1ZTbG8zN0J0RVRxSEp1VlF6WHFiRzRzOVZZREJaNUlCVG8yNG1HR2I0WmJEWTZjay1hZlVqUF8zc01nSlFxZ1JKVlk5eHhGSndFYkd3dkVnTERjU0VVOVVxcl9qQkN4RkhabGR3VFU3a3hwRGZJeFdKUEZmQQ?oc=5",
-      "source": "FinTech Global",
-      "summary": "",
-      "tags": [
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-06-25T07:00:00.000Z",
-      "timestamp": 1782370800000,
-      "cluster": 1,
-      "score": 1
-    },
-    {
-      "title": "Axonex and YAS Collaborate with a Global Insurance Group to Develop Embedded Insurance for Robots Innovative InsurTech Solution Drives AI and Robotics Adoption Across Hong Kong and Southeast Asia",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPRmh2UlJVQ3BINXg1RHFGSENtZXdRaHJDZExubXJxRGs0UjNrdGtlSWlaa01rbzJyblhoaXFxcjNlcDFmTVFTWjF0VW5VMDN4RThQbXhtY1NaWHNsLUNLRElrZ0ZLbFREUE9mRXkyOEF1M3BDYThzaHota1hzX3hXMjNWeXZFbjJ3QWs5d0U5LTd6QQ?oc=5",
-      "source": "Yahoo Finance Singapore",
-      "summary": "",
-      "tags": [
-        "Partnerships",
-        "AI & Automation",
-        "Embedded"
-      ],
-      "publishedAt": "2026-06-25T07:00:00.000Z",
-      "timestamp": 1782370800000,
-      "cluster": 1,
-      "score": -1.2
-    },
-    {
-      "title": "Mint Incorporation Limited’s Axonex and YAS Launch Collaboration to Develop Embedded Micro-Insurance for Commercial Robots | MIMI Stock News",
-      "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOemF2bUNIZmRielpOemtWY3ZWaDYtV2xGaU5BckhjdHB3YWY3VjY2YzdCaUE5MTJwaWJlSi1tWHgwVnJtWFlQUTZlUGRhcExHT2ZVbjNvOVhfX3RiTlU1SU5nSGtjYUJHaDd1QTZ1QWxVMFQzNTdnS1djdmJSdFJPMVVRYkx1OVNWWVdJYXJQZG54TnB4NmdHN3YybjY5MFNPMDFRNHBVbkZyRVhZX1FkTUZ5Ul9qaTd5bnhGc0dxTjVacDBVSFVfMjZDMUN3MGE2WWhDRi1CWHh2aUMtZFVGV1h4Mi1RUzMzblJnYTZvTzh5aDNmQlE?oc=5",
-      "source": "Quiver Quantitative",
-      "summary": "",
-      "tags": [
-        "Partnerships",
-        "Product & Launches"
-      ],
-      "publishedAt": "2026-06-25T07:00:00.000Z",
-      "timestamp": 1782370800000,
-      "cluster": 1,
-      "score": -1
-    },
-    {
-      "title": "Hong Kong robotics deal aims to remove an insurance hurdle",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNWk1JbHRJYWQ5NnpJdERpaG5MOEdvcmtJcHRnQlhYVU5KWUdhOERqNEpJYTVCVmp4TXQwYmxlRmVXUkdhZnhCbU9XZVRnVVJ3eWhyMUFaXy1YNFRmM3BCV19aVjdaYWF0ZTlpWU5YNVM0Q0Rma0xYOGxHYlVWcDRadGMzX2phd0dpLXo1a3FybU13V3VJdHZlaHFOcS1pcXV4cWwyYjhJaFFkTjdFMTFBWnY4UXpYSVpVYWpHTDZWbw?oc=5",
-      "source": "Stock Titan",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-06-25T07:00:00.000Z",
-      "timestamp": 1782370800000,
-      "cluster": 1,
-      "score": -1.2
-    },
-    {
-      "title": "How insurers should deploy AI without the pitfalls: WTW",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOV2o2dzEteGpLbWpucGcxekU3UldYOHV3QWlJUC1RVGJSU2o0clA0Z3M4eXdLX1QwZ2p1M19ibWdqQzZLY2pDM0V6WERETmtyYXRmX0wzZ2VudjlZQl9VdlNmMDhJSG5wVGYyQlBIcGs2VWlOTXIzWDZCdnFsczNyOGJ6OHBaZmoxT1E?oc=5",
-      "source": "Digital Insurance",
-      "summary": "",
-      "tags": [
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-06-24T07:00:00.000Z",
-      "timestamp": 1782284400000,
-      "cluster": 1,
-      "score": 1
-    },
-    {
-      "title": "AI could help insurers navigate even a calm hurricane season",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOM2dWVXU1VkRrZlFSZk92ZEFLd084MFFHMnBZNUxfaVZtcVJZMm5qa21pODBlSUhaQkhqV2VUR0EtaTduSmctNG5lTVZ5MEFsbVBKMF9SMG5Wb24tbFBOdzZNZ1NMUWNGTnBwMkU4ZUlwdlExaExrRWlQdHlUWnNod050eTJ1amhjU2M5dGJBdGRzdw?oc=5",
-      "source": "Digital Insurance",
-      "summary": "",
-      "tags": [
-        "AI & Automation",
-        "Property & Cat"
-      ],
-      "publishedAt": "2026-06-24T07:00:00.000Z",
-      "timestamp": 1782284400000,
-      "cluster": 1,
-      "score": 1
     }
   ]
 }
