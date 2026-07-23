@@ -53,6 +53,71 @@ function tagArticle(text) {
   return tags.length ? tags : [FALLBACK_TAG];
 }
 
+// ---- Prominence scoring ------------------------------------------------
+// Source tiers: reputable outlets get a lift; press-wire / market-research
+// republishers get a penalty so they don't win the lead slot on recency.
+const REPUTABLE = new Set([
+  "Reuters", "Bloomberg", "Financial Times", "CNBC", "Forbes", "TechCrunch", "The Verge",
+  "Insurance Journal", "Finextra", "Insurance Business", "Reinsurance News", "Artemis",
+  "Coverager", "FinTech Global", "Digital Insurance", "Insurance Times", "Canadian Underwriter",
+  "Life Insurance International", "Insurance Asia", "Beinsure", "The Insurer", "theinsurer.com",
+  "Insurance Edge", "Insurance Nerds", "Program Business", "Carrier Management", "Reinsurance News",
+]);
+const LOW_SIGNAL = new Set([
+  "EIN Presswire", "PR Newswire", "Business Wire", "GlobeNewswire", "Globe Newswire", "PRWeb",
+  "Yahoo Finance", "Yahoo Finance Singapore", "MSN", "Stock Titan", "Quiver Quantitative",
+  "Market Data Forecast", "Fortune Business Insights", "simplywall.st", "TradingView", "Moomoo",
+  "Pluang", "marketscreener.com", "Zawya", "EIN News", "Centurion Jewelry Show",
+]);
+
+const STOP = new Set(
+  "the a an and or for to of in on at with from by is are as it its their new this that has have will its than into over amid insurtech insurance tech technology company companies firm firms report reports says announce announces announced launch launches".split(/\s+/)
+);
+function keywordSet(title) {
+  return new Set(
+    title.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/)
+      .filter((w) => w.length > 3 && !STOP.has(w))
+  );
+}
+
+// Score components (additive): recency (decay), corroboration (distinct
+// outlets covering the same story), source tier, and event signal words.
+function scoreArticles(articles) {
+  const now = Date.now();
+  const kw = articles.map((a) => keywordSet(a.title));
+
+  articles.forEach((a, i) => {
+    // Corroboration — how many distinct sources cover a near-identical story
+    const outlets = new Set([a.source]);
+    for (let j = 0; j < articles.length; j++) {
+      if (j === i) continue;
+      let inter = 0;
+      for (const w of kw[i]) if (kw[j].has(w)) inter++;
+      const union = kw[i].size + kw[j].size - inter;
+      if (inter >= 2 && union > 0 && inter / union >= 0.4) outlets.add(articles[j].source);
+    }
+    const cluster = outlets.size;
+
+    const ageH = (now - a.timestamp) / 3.6e6;
+    const recency = Math.exp(-ageH / 24);          // 1 now → ~0.37 at 24h
+    const corrob = Math.min(cluster - 1, 3) / 3;   // 0 unique → 1 at 4+ outlets
+
+    let src = 0;
+    if (REPUTABLE.has(a.source)) src = 1;
+    else if (LOW_SIGNAL.has(a.source)) src = -1.2;
+
+    const t = a.title;
+    let signal = 0;
+    if (/\$\s?\d+(\.\d+)?\s?(k|m|bn|million|billion)\b/i.test(t) || /series\s+[b-e]\b/i.test(t)) signal += 0.6;
+    if (/acqui|merger|buyout|takeover/i.test(t)) signal += 0.5;
+    if (/launch|unveil|partner|raises?\b/i.test(t)) signal += 0.2;
+    signal = Math.min(signal, 1);
+
+    a.cluster = cluster;
+    a.score = +(2.5 * recency + 1.5 * corrob + src + signal).toFixed(3);
+  });
+}
+
 const MAX_ITEMS = 140;
 const MAX_AGE_DAYS = 45;
 const UA = "Mozilla/5.0 (compatible; InsurtechAggregator/1.0)";
@@ -191,7 +256,11 @@ async function fetchFeed(feed) {
   const deduped = [];
   for (const a of all) {
     const keyLink = a.link.split("?")[0].toLowerCase();
-    const keyTitle = a.title.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    // Loose key collapses common look-alike glyphs (i/l→1, o→0) so OCR-style
+    // near-duplicates like "IH26" vs "1H26" merge into one.
+    const keyTitle = a.title.toLowerCase()
+      .replace(/[il]/g, "1").replace(/o/g, "0")
+      .replace(/[^a-z0-9]+/g, "").trim();
     if (seen.has(keyLink) || seen.has(keyTitle)) continue;
     seen.add(keyLink);
     seen.add(keyTitle);
@@ -200,6 +269,9 @@ async function fetchFeed(feed) {
 
   deduped.sort((a, b) => b.timestamp - a.timestamp);
   const articles = deduped.slice(0, MAX_ITEMS);
+
+  // Prominence score (used by the UI to choose the lead story)
+  scoreArticles(articles);
 
   // Taxonomy counts, in canonical order, only for tags actually present.
   const counts = {};

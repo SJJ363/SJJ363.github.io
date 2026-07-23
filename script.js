@@ -25,12 +25,27 @@ function el(tag, cls, text) {
   return n;
 }
 
+// Deterministic hue per source, for a subtle color dot (no network needed)
+function hue(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return h % 360;
+}
+
+function sourceEl(a) {
+  const src = el("span", "src");
+  const dot = el("span", "src-dot");
+  dot.style.setProperty("--h", hue(a.source));
+  src.append(dot, document.createTextNode(a.source));
+  return src;
+}
+
 function metaEl(a, inline) {
   const m = el("div", "meta");
-  const src = el("span", "src", a.source);
   const time = el("span", "time", timeAgo(a.publishedAt));
-  if (inline) m.append(src, document.createTextNode("  ·  "), time);
-  else m.append(src, time);
+  if (inline) m.append(sourceEl(a), document.createTextNode("  ·  "), time);
+  else m.append(sourceEl(a), time);
+  if (a.cluster > 1) m.append(el("span", "outlets", `${a.cluster} outlets`));
   return m;
 }
 
@@ -40,11 +55,21 @@ function tagsEl(tags, max) {
   return wrap;
 }
 
+function headingEl(tag, title) {
+  const h = el(tag, null);
+  h.append(document.createTextNode(title));
+  h.append(el("span", "go", "↗"));
+  return h;
+}
+
 function leadCard(a) {
   const card = el("a", "lead-card");
   card.href = a.link; card.target = "_blank"; card.rel = "noopener noreferrer";
-  card.append(el("span", "lead-badge", "Lead story"));
-  card.append(el("h2", null, a.title));
+  const badge = el("div", "lead-badge-row");
+  badge.append(el("span", "lead-badge", "Lead story"));
+  if (a.cluster > 1) badge.append(el("span", "lead-note", `Covered by ${a.cluster} outlets`));
+  card.append(badge);
+  card.append(headingEl("h2", a.title));
   if (a.summary) card.append(el("p", "summary", a.summary));
   card.append(metaEl(a, true));
   if (a.tags && a.tags.length) card.append(tagsEl(a.tags, 4));
@@ -55,7 +80,7 @@ function storyRow(a) {
   const li = el("li");
   const link = el("a", "story");
   link.href = a.link; link.target = "_blank"; link.rel = "noopener noreferrer";
-  link.append(el("h3", null, a.title));
+  link.append(headingEl("h3", a.title));
   if (a.tags && a.tags.length) link.append(tagsEl(a.tags, 3));
   link.append(metaEl(a, false));
   if (a.summary) link.append(el("p", "summary", a.summary));
@@ -76,6 +101,14 @@ const countEl = document.getElementById("resultCount");
 const loadingEl = document.getElementById("loading");
 
 /* --- Rendering --- */
+// Lead = highest prominence score in the currently-shown list.
+// (List stays recency-ordered for the wire below.)
+function pickLead(list) {
+  let best = list[0];
+  for (const a of list) if ((a.score || 0) > (best.score || 0)) best = a;
+  return best;
+}
+
 function render(list) {
   leadEl.innerHTML = "";
   feedEl.innerHTML = "";
@@ -83,11 +116,11 @@ function render(list) {
   countEl.textContent = `${list.length} shown`;
   if (list.length === 0) return;
 
-  const [lead, ...rest] = list;
+  const lead = pickLead(list);
   leadEl.append(leadCard(lead));
 
   const frag = document.createDocumentFragment();
-  rest.forEach((a) => frag.append(storyRow(a)));
+  list.filter((a) => a !== lead).forEach((a) => frag.append(storyRow(a)));
   feedEl.append(frag);
 }
 
