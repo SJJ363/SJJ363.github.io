@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0b0e%22/><rect x=%2224%22 y=%2230%22 width=%2252%22 height=%228%22 rx=%224%22 fill=%22%236b8afd%22/><rect x=%2224%22 y=%2248%22 width=%2252%22 height=%226%22 rx=%223%22 fill=%22%23555b6b%22/><rect x=%2224%22 y=%2262%22 width=%2236%22 height=%226%22 rx=%223%22 fill=%22%23555b6b%22/></svg>" />
 </head>
 <body>
@@ -46,11 +46,11 @@
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
         <input id="search" type="search" placeholder="Search headlines…" autocomplete="off" spellcheck="false" />
       </div>
-      <select id="sourceFilter" aria-label="Filter by source">
-        <option value="">All sources</option>
-      </select>
       <span class="result-count" id="resultCount"></span>
     </div>
+
+    <!-- Taxonomy filter (multi-select) -->
+    <div class="filter-bar" id="filterBar" role="group" aria-label="Filter by topic"></div>
 
     <!-- Lead story -->
     <section class="lead" id="lead" aria-label="Lead story"></section>
@@ -70,6 +70,6 @@
     <p class="foot-meta">Auto-refreshed via GitHub Actions · © <span id="year"></span></p>
   </footer>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>

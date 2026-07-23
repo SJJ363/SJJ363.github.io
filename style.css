@@ -140,21 +140,34 @@ main {
 }
 #search::placeholder { color: var(--faint); }
 
-#sourceFilter {
-  appearance: none; -webkit-appearance: none;
-  padding: 9px 34px 9px 14px;
-  background: var(--panel)
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23838a9b' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E")
-    no-repeat right 13px center;
-  border: 1px solid var(--line); border-radius: 8px;
-  color: var(--text); font-family: var(--sans); font-size: 0.9rem; cursor: pointer;
-  max-width: 210px;
-}
-#sourceFilter:hover { border-color: var(--accent); }
 .result-count {
   font-family: var(--mono); font-size: 0.74rem; color: var(--faint);
   margin-left: auto; white-space: nowrap;
 }
+
+/* ---- Taxonomy filter chips ---- */
+.filter-bar {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 14px 0 2px;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--mono); font-size: 0.75rem; line-height: 1;
+  color: var(--muted);
+  background: var(--panel);
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 7px 13px; cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.chip:hover { color: var(--text); border-color: var(--accent); }
+.chip.active {
+  color: #08090d; background: var(--accent);
+  border-color: var(--accent); font-weight: 600;
+}
+.chip .cnt { color: var(--faint); }
+.chip:hover .cnt { color: var(--muted); }
+.chip.active .cnt { color: rgba(8, 9, 13, 0.6); }
+.chip-all { font-weight: 600; }
 
 /* ============================================================
    Lead story
@@ -232,6 +245,18 @@ main {
 }
 .story .meta .src { display: block; color: var(--muted); }
 .story .meta .time { color: var(--faint); }
+
+/* ---- Article tag pills ---- */
+.tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.story .tags { grid-column: 1; margin-top: 8px; }
+.lead-card .tags { margin-top: 14px; }
+.tag-pill {
+  font-family: var(--mono); font-size: 0.63rem; line-height: 1.4;
+  color: var(--accent-dim);
+  background: rgba(107, 138, 253, 0.08);
+  border: 1px solid rgba(107, 138, 253, 0.22);
+  border-radius: 5px; padding: 2px 7px; white-space: nowrap;
+}
 
 /* ============================================================
    States
