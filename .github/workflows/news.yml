@@ -1,0 +1,42 @@
+name: Refresh insurtech news
+
+on:
+  schedule:
+    # A few times a day — every 6 hours (UTC). GitHub may delay runs under load.
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {}   # allows manual "Run workflow" from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-news
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch latest news
+        run: node scripts/fetch-news.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/news.json)" ]; then
+            git add data/news.json
+            git commit -m "chore: refresh insurtech news ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git push
+            echo "News updated and pushed."
+          else
+            echo "No changes to publish."
+          fi
