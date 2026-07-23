@@ -3,77 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Website</title>
-  <meta name="description" content="A personal website built from scratch." />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Designer & developer crafting beautiful, considered things for the web." />
+  <meta name="theme-color" content="#07080b" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2244%22 fill=%22none%22 stroke=%22%23a6b4ff%22 stroke-width=%228%22/></svg>" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <a class="brand" href="#top">Your Name</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">◐</button>
-      </div>
+  <!-- Atmospheric layers -->
+  <div class="aura" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a class="mark" href="#top" aria-label="Home">
+      <span class="mark-dot"></span> Your Name
+    </a>
+    <nav class="nav-links">
+      <a href="#work"><span class="idx">01</span> Work</a>
+      <a href="#about"><span class="idx">02</span> About</a>
+      <a href="#contact"><span class="idx">03</span> Contact</a>
     </nav>
+    <a class="nav-cta" href="#contact">Let's talk</a>
   </header>
 
   <main id="top">
+    <!-- Hero -->
     <section class="hero">
-      <p class="eyebrow">Hello, I'm</p>
-      <h1>Your Name</h1>
-      <p class="tagline">A short line about who you are and what you do.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Get in touch</a>
-        <a class="btn btn-ghost" href="#work">See my work</a>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>
-        Write a couple of sentences about yourself here. What you care about,
-        what you're working on, and what you'd like visitors to know.
+      <p class="eyebrow reveal">Portfolio<span class="dotsep">·</span>Est. 2026</p>
+      <h1 class="hero-title">
+        <span class="reveal" style="--d:.05s">Crafting</span>
+        <span class="reveal serif-accent" style="--d:.12s">beautiful</span>
+        <span class="reveal" style="--d:.19s">things</span>
+        <span class="reveal" style="--d:.26s">for the web.</span>
+      </h1>
+      <p class="hero-sub reveal" style="--d:.34s">
+        I'm a designer &amp; developer obsessed with the details —
+        motion, typography, and the feeling a product leaves behind.
       </p>
+      <div class="hero-actions reveal" style="--d:.42s">
+        <a class="btn btn-primary" href="#work">
+          <span>View selected work</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+
+      <ul class="meta reveal" style="--d:.5s">
+        <li><span class="pulse"></span> Available for work</li>
+        <li>Based on Earth</li>
+        <li>© 2026</li>
+      </ul>
+
+      <a class="scroll-hint" href="#work" aria-label="Scroll down">
+        <span>Scroll</span>
+        <span class="scroll-line"></span>
+      </a>
     </section>
 
+    <!-- Work -->
     <section id="work" class="section">
-      <h2>Work</h2>
+      <div class="section-head reveal">
+        <span class="section-idx">01</span>
+        <h2>Selected work</h2>
+        <p class="section-note">A few things I'm proud of.</p>
+      </div>
+
       <div class="cards">
-        <article class="card">
+        <article class="card reveal">
+          <div class="card-glow"></div>
+          <span class="card-num">01</span>
           <h3>Project One</h3>
-          <p>A short description of something you've made or are proud of.</p>
-          <a href="#" class="card-link">Learn more →</a>
+          <p>A short line about what it is and why it mattered. Swap this for your own story.</p>
+          <ul class="tags"><li>Design</li><li>Frontend</li><li>2026</li></ul>
+          <a class="card-link" href="#" aria-label="View Project One">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
         </article>
-        <article class="card">
+
+        <article class="card reveal" style="--d:.08s">
+          <div class="card-glow"></div>
+          <span class="card-num">02</span>
           <h3>Project Two</h3>
-          <p>A short description of something you've made or are proud of.</p>
-          <a href="#" class="card-link">Learn more →</a>
+          <p>A short line about what it is and why it mattered. Swap this for your own story.</p>
+          <ul class="tags"><li>Branding</li><li>Motion</li><li>2025</li></ul>
+          <a class="card-link" href="#" aria-label="View Project Two">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
         </article>
-        <article class="card">
+
+        <article class="card reveal" style="--d:.16s">
+          <div class="card-glow"></div>
+          <span class="card-num">03</span>
           <h3>Project Three</h3>
-          <p>A short description of something you've made or are proud of.</p>
-          <a href="#" class="card-link">Learn more →</a>
+          <p>A short line about what it is and why it mattered. Swap this for your own story.</p>
+          <ul class="tags"><li>Product</li><li>Full-stack</li><li>2025</li></ul>
+          <a class="card-link" href="#" aria-label="View Project Three">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>The best way to reach me is:</p>
-      <ul class="links">
-        <li><a href="mailto:you@example.com">you@example.com</a></li>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="section-head reveal">
+        <span class="section-idx">02</span>
+        <h2>About</h2>
+      </div>
+      <p class="statement reveal">
+        I believe the best work lives in the <em>details</em> — the timing of a
+        transition, the weight of a word, the space between things. I care about
+        craft, and about making experiences that feel <em>alive</em>.
+      </p>
+      <div class="about-grid reveal" style="--d:.1s">
+        <div>
+          <h4>What I do</h4>
+          <p>Design, front-end engineering, and the fuzzy space in between where the good stuff happens.</p>
+        </div>
+        <div>
+          <h4>How I work</h4>
+          <p>Slowly, then all at once. I sweat the details and ship things I'd be proud to sign.</p>
+        </div>
+        <div>
+          <h4>Tools</h4>
+          <p>Figma, a code editor, and a stubborn eye for what feels right.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <span class="section-idx reveal">03</span>
+      <h2 class="contact-title reveal">
+        Let's make something <span class="serif-accent">unforgettable</span>.
+      </h2>
+      <a class="contact-email reveal" style="--d:.1s" href="mailto:you@example.com">you@example.com</a>
+      <ul class="socials reveal" style="--d:.18s">
         <li><a href="#">GitHub</a></li>
+        <li><a href="#">Twitter / X</a></li>
         <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Instagram</a></li>
       </ul>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Your Name. Built from scratch.</p>
+    <span class="foot-name">Your Name</span>
+    <span class="foot-meta">Designed &amp; built with care · © <span id="year"></span></span>
   </footer>
 
   <script src="script.js"></script>
