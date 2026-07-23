@@ -1,45 +1,8 @@
 /* ============================================================
-   Insurtech Daily — feed loading + interactions
+   Insurtech Daily — feed loading + filtering
    ============================================================ */
 
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 document.getElementById("year").textContent = new Date().getFullYear();
-
-/* --- Cursor spotlight --- */
-if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
-  const root = document.documentElement;
-  let tx = 50, ty = 15, raf = null;
-  window.addEventListener("mousemove", (e) => {
-    tx = (e.clientX / window.innerWidth) * 100;
-    ty = (e.clientY / window.innerHeight) * 100;
-    if (!raf) raf = requestAnimationFrame(() => {
-      root.style.setProperty("--mx", tx + "%");
-      root.style.setProperty("--my", ty + "%");
-      raf = null;
-    });
-  });
-}
-
-/* --- Nav solidify on scroll --- */
-const nav = document.getElementById("nav");
-const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 24);
-onScroll();
-window.addEventListener("scroll", onScroll, { passive: true });
-
-/* --- Reveal observer (for dynamically added cards) --- */
-const io = !reduceMotion && "IntersectionObserver" in window
-  ? new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" })
-  : null;
-
-function observe(el) {
-  if (io) io.observe(el);
-  else el.classList.add("in");
-}
 
 /* --- Helpers --- */
 function timeAgo(iso) {
@@ -62,35 +25,38 @@ function el(tag, cls, text) {
   return n;
 }
 
-const ARROW = '<svg class="card-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>';
-
-function foot(article) {
-  const f = el("div", "card-foot");
-  const src = el("span", "src", article.source);
-  const sep = el("span", "sep", "·");
-  const time = el("span", "time", timeAgo(article.publishedAt));
-  f.append(src, sep, time);
-  f.insertAdjacentHTML("beforeend", ARROW);
-  return f;
+function meta(a, block) {
+  const m = el("div", "meta");
+  const src = el("span", "src", a.source);
+  const time = el("span", "time", timeAgo(a.publishedAt));
+  if (block) {
+    // lead: inline "Source · time"
+    m.append(src, document.createTextNode("  ·  "), time);
+  } else {
+    m.append(src, time);
+  }
+  return m;
 }
 
 function leadCard(a) {
-  const card = el("a", "lead-card reveal");
+  const card = el("a", "lead-card");
   card.href = a.link; card.target = "_blank"; card.rel = "noopener noreferrer";
   card.append(el("span", "lead-badge", "Lead story"));
   card.append(el("h2", null, a.title));
-  if (a.summary) card.append(el("p", "card-summary", a.summary));
-  card.append(foot(a));
+  if (a.summary) card.append(el("p", "summary", a.summary));
+  card.append(meta(a, true));
   return card;
 }
 
-function storyCard(a) {
-  const card = el("a", "story reveal");
-  card.href = a.link; card.target = "_blank"; card.rel = "noopener noreferrer";
-  card.append(el("h3", null, a.title));
-  if (a.summary) card.append(el("p", "card-summary", a.summary));
-  card.append(foot(a));
-  return card;
+function storyRow(a) {
+  const li = el("li");
+  const link = el("a", "story");
+  link.href = a.link; link.target = "_blank"; link.rel = "noopener noreferrer";
+  link.append(el("h3", null, a.title));
+  link.append(meta(a, false));
+  if (a.summary) link.append(el("p", "summary", a.summary));
+  li.append(link);
+  return li;
 }
 
 /* --- State + rendering --- */
@@ -106,23 +72,15 @@ function render(list) {
   leadEl.innerHTML = "";
   feedEl.innerHTML = "";
   emptyEl.hidden = list.length > 0;
-
-  if (list.length === 0) { countEl.textContent = "0 shown"; return; }
+  countEl.textContent = `${list.length} shown`;
+  if (list.length === 0) return;
 
   const [lead, ...rest] = list;
-  const lc = leadCard(lead);
-  leadEl.append(lc);
-  observe(lc);
+  leadEl.append(leadCard(lead));
 
   const frag = document.createDocumentFragment();
-  rest.forEach((a) => {
-    const c = storyCard(a);
-    frag.append(c);
-  });
+  rest.forEach((a) => frag.append(storyRow(a)));
   feedEl.append(frag);
-  feedEl.querySelectorAll(".story").forEach(observe);
-
-  countEl.textContent = `${list.length} shown`;
 }
 
 function applyFilters() {
@@ -146,14 +104,12 @@ fetch("data/news.json", { cache: "no-cache" })
     ALL = data.articles || [];
     document.getElementById("loading").remove();
 
-    // Stats
     document.getElementById("statCount").textContent = ALL.length;
     document.getElementById("statSources").textContent = (data.sources || []).length;
     const upd = timeAgo(data.updatedAt);
     document.getElementById("statUpdated").textContent = upd;
-    document.getElementById("navUpdated").textContent = "updated " + upd;
+    document.getElementById("navUpdated").textContent = upd;
 
-    // Source dropdown
     (data.sources || []).forEach((s) => {
       const o = el("option", null, s);
       o.value = s;

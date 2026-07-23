@@ -3,63 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Insurtech Daily — the insurtech news wire</title>
-  <meta name="description" content="Funding, launches, partnerships and platform moves across insurtech — aggregated from hundreds of outlets and refreshed throughout the day." />
-  <meta name="theme-color" content="#07080b" />
+  <title>Insurtech Daily — insurtech news, aggregated</title>
+  <meta name="description" content="Insurtech funding, launches, partnerships and platform moves — aggregated from hundreds of outlets and refreshed through the day." />
+  <meta name="theme-color" content="#0a0b0e" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2244%22 fill=%22none%22 stroke=%22%23a6b4ff%22 stroke-width=%228%22/></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0b0e%22/><rect x=%2224%22 y=%2230%22 width=%2252%22 height=%228%22 rx=%224%22 fill=%22%236b8afd%22/><rect x=%2224%22 y=%2248%22 width=%2252%22 height=%226%22 rx=%223%22 fill=%22%23555b6b%22/><rect x=%2224%22 y=%2262%22 width=%2236%22 height=%226%22 rx=%223%22 fill=%22%23555b6b%22/></svg>" />
 </head>
 <body>
-  <!-- Atmospheric layers -->
-  <div class="aura" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-  </div>
-  <div class="spotlight" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-
-  <!-- Navigation -->
-  <header class="nav" id="nav">
-    <a class="mark" href="#top" aria-label="Insurtech Daily home">
-      <span class="mark-dot"></span> Insurtech&nbsp;Daily
+  <!-- Top bar -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#top" aria-label="Insurtech Daily home">
+      <span class="brand-tick"></span>
+      <span class="brand-name">Insurtech&nbsp;Daily</span>
     </a>
-    <div class="nav-status" id="navStatus">
-      <span class="live"><span class="pulse"></span> Live</span>
-      <span class="dot-sep">·</span>
-      <span id="navUpdated">loading…</span>
+    <div class="status">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span class="status-text">Updated&nbsp;<span id="navUpdated">…</span></span>
     </div>
   </header>
 
   <main id="top">
-    <!-- Masthead -->
-    <section class="masthead">
-      <p class="eyebrow">Insurtech intelligence<span class="dotsep">·</span>Refreshed daily</p>
-      <h1 class="masthead-title">
-        Today in <span class="serif-accent">insurtech</span>.
-      </h1>
-      <p class="lede">
-        Funding rounds, product launches, partnerships and platform moves —
-        aggregated from hundreds of outlets and kept fresh throughout the day.
+    <!-- Compact intro -->
+    <div class="intro">
+      <p class="tagline">
+        Insurtech funding, launches and partnerships — aggregated from hundreds of outlets, refreshed through the day.
       </p>
-      <div class="statline" id="statline">
-        <span id="statCount">—</span> stories
-        <span class="dot-sep">·</span>
-        <span id="statSources">—</span> sources
-        <span class="dot-sep">·</span>
-        updated <span id="statUpdated">—</span>
-      </div>
-    </section>
+      <p class="statline">
+        <b id="statCount">—</b> stories <span class="sep">·</span>
+        <b id="statSources">—</b> sources <span class="sep">·</span>
+        updated <b id="statUpdated">—</b>
+      </p>
+    </div>
 
-    <!-- Controls -->
+    <!-- Toolbar -->
     <div class="controls" id="controls">
       <div class="search-wrap">
-        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
         <input id="search" type="search" placeholder="Search headlines…" autocomplete="off" spellcheck="false" />
       </div>
       <select id="sourceFilter" aria-label="Filter by source">
@@ -68,20 +52,22 @@
       <span class="result-count" id="resultCount"></span>
     </div>
 
-    <!-- Feed -->
+    <!-- Lead story -->
     <section class="lead" id="lead" aria-label="Lead story"></section>
-    <section class="feed" id="feed" aria-label="Latest stories"></section>
+
+    <!-- Headline wire -->
+    <ol class="feed" id="feed" aria-label="Latest stories"></ol>
 
     <p class="empty" id="empty" hidden>No stories match your search.</p>
     <p class="loading" id="loading">Loading the latest insurtech news…</p>
   </main>
 
   <footer class="site-footer">
-    <div>
-      <span class="foot-name">Insurtech Daily</span>
-      <p class="foot-desc">An automated aggregator of publicly available insurtech headlines. Not affiliated with any outlet — all stories link to their original source.</p>
-    </div>
-    <span class="foot-meta">Auto-refreshed via GitHub Actions · © <span id="year"></span></span>
+    <p class="foot-desc">
+      <b>Insurtech Daily</b> is an automated aggregator of publicly available insurtech headlines.
+      Not affiliated with any outlet — every story links to its original source.
+    </p>
+    <p class="foot-meta">Auto-refreshed via GitHub Actions · © <span id="year"></span></p>
   </footer>
 
   <script src="script.js"></script>
