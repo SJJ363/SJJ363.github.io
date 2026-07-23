@@ -97,30 +97,54 @@ function applyFilters() {
 searchEl.addEventListener("input", applyFilters);
 sourceEl.addEventListener("change", applyFilters);
 
-/* --- Load feed --- */
-fetch("data/news.json", { cache: "no-cache" })
-  .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-  .then((data) => {
-    ALL = data.articles || [];
-    document.getElementById("loading").remove();
+/* --- Load feed (with timeout + retry so it never hangs) --- */
+const loadingEl = document.getElementById("loading");
 
-    document.getElementById("statCount").textContent = ALL.length;
-    document.getElementById("statSources").textContent = (data.sources || []).length;
-    const upd = timeAgo(data.updatedAt);
-    document.getElementById("statUpdated").textContent = upd;
-    document.getElementById("navUpdated").textContent = upd;
+function showError(msg) {
+  document.getElementById("navUpdated").textContent = "offline";
+  if (!loadingEl) return;
+  loadingEl.hidden = false;
+  loadingEl.textContent = msg + " ";
+  const btn = el("button", "retry-btn", "Retry");
+  btn.type = "button";
+  btn.addEventListener("click", loadFeed);
+  loadingEl.append(btn);
+}
 
-    (data.sources || []).forEach((s) => {
-      const o = el("option", null, s);
-      o.value = s;
-      sourceEl.append(o);
-    });
+function loadFeed() {
+  if (loadingEl) { loadingEl.hidden = false; loadingEl.textContent = "Loading the latest insurtech news…"; }
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 15000);
 
-    render(ALL);
-  })
-  .catch((err) => {
-    const l = document.getElementById("loading");
-    if (l) l.textContent = "Couldn't load the feed. Please try again shortly.";
-    document.getElementById("navUpdated").textContent = "offline";
-    console.error(err);
-  });
+  // cache-busting query defeats any stale cached copy
+  fetch("data/news.json?ts=" + Date.now(), { cache: "no-store", signal: ctrl.signal })
+    .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then((data) => {
+      ALL = data.articles || [];
+      if (loadingEl) loadingEl.hidden = true;
+
+      document.getElementById("statCount").textContent = ALL.length;
+      document.getElementById("statSources").textContent = (data.sources || []).length;
+      const upd = timeAgo(data.updatedAt);
+      document.getElementById("statUpdated").textContent = upd;
+      document.getElementById("navUpdated").textContent = upd;
+
+      sourceEl.length = 1; // keep "All sources", drop any previous options
+      (data.sources || []).forEach((s) => {
+        const o = el("option", null, s);
+        o.value = s;
+        sourceEl.append(o);
+      });
+
+      render(ALL);
+    })
+    .catch((err) => {
+      console.error(err);
+      showError(err.name === "AbortError"
+        ? "Loading timed out."
+        : "Couldn't load the feed.");
+    })
+    .finally(() => clearTimeout(timer));
+}
+
+loadFeed();

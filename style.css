@@ -241,6 +241,15 @@ main {
   text-align: center; color: var(--muted);
   font-family: var(--mono); font-size: 0.86rem; padding: 48px 0;
 }
+.retry-btn {
+  margin-left: 8px;
+  font-family: var(--mono); font-size: 0.82rem;
+  color: var(--accent); background: none;
+  border: 1px solid var(--line); border-radius: 6px;
+  padding: 5px 12px; cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.retry-btn:hover { border-color: var(--accent); background: rgba(107, 138, 253, 0.08); }
 
 /* ============================================================
    Footer
