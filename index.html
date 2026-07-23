@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Website</title>
+  <meta name="description" content="A personal website built from scratch." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#top">Your Name</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">◐</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Hello, I'm</p>
+      <h1>Your Name</h1>
+      <p class="tagline">A short line about who you are and what you do.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Get in touch</a>
+        <a class="btn btn-ghost" href="#work">See my work</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>
+        Write a couple of sentences about yourself here. What you care about,
+        what you're working on, and what you'd like visitors to know.
+      </p>
+    </section>
+
+    <section id="work" class="section">
+      <h2>Work</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Project One</h3>
+          <p>A short description of something you've made or are proud of.</p>
+          <a href="#" class="card-link">Learn more →</a>
+        </article>
+        <article class="card">
+          <h3>Project Two</h3>
+          <p>A short description of something you've made or are proud of.</p>
+          <a href="#" class="card-link">Learn more →</a>
+        </article>
+        <article class="card">
+          <h3>Project Three</h3>
+          <p>A short description of something you've made or are proud of.</p>
+          <a href="#" class="card-link">Learn more →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>The best way to reach me is:</p>
+      <ul class="links">
+        <li><a href="mailto:you@example.com">you@example.com</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Your Name. Built from scratch.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
