@@ -31,12 +31,15 @@ function sourceEl(a) {
   return src;
 }
 
-function metaEl(a, inline) {
+function metaEl(a) {
   const m = el("div", "meta");
-  const time = el("span", "time", timeAgo(a.publishedAt));
-  if (inline) m.append(sourceEl(a), document.createTextNode("  ·  "), time);
-  else m.append(sourceEl(a), time);
-  if (a.cluster > 1) m.append(el("span", "outlets", `${a.cluster} outlets`));
+  m.append(sourceEl(a));
+  m.append(el("span", "dot", " · "));
+  m.append(el("span", "time", timeAgo(a.publishedAt)));
+  if (a.cluster > 1) {
+    m.append(el("span", "dot", " · "));
+    m.append(el("span", "outlets", `${a.cluster} outlets`));
+  }
   return m;
 }
 
@@ -59,11 +62,10 @@ function leadCard(a) {
   card.href = a.link; card.target = "_blank"; card.rel = "noopener noreferrer";
   const badge = el("div", "lead-badge-row");
   badge.append(el("span", "lead-badge", "Lead story"));
-  if (a.cluster > 1) badge.append(el("span", "lead-note", `Covered by ${a.cluster} outlets`));
   card.append(badge);
+  card.append(metaEl(a));
   card.append(headingEl("h2", a.title));
   if (a.summary) card.append(el("p", "summary", a.summary));
-  card.append(metaEl(a, true));
   if (a.tags && a.tags.length) card.append(tagsEl(a.tags, 4));
   return card;
 }
@@ -72,10 +74,10 @@ function storyRow(a) {
   const li = el("li");
   const link = el("a", "story");
   link.href = a.link; link.target = "_blank"; link.rel = "noopener noreferrer";
+  link.append(metaEl(a));
   link.append(headingEl("h3", a.title));
-  if (a.tags && a.tags.length) link.append(tagsEl(a.tags, 3));
-  link.append(metaEl(a, false));
   if (a.summary) link.append(el("p", "summary", a.summary));
+  if (a.tags && a.tags.length) link.append(tagsEl(a.tags, 3));
   li.append(link);
   return li;
 }
@@ -191,9 +193,11 @@ function renderBrief(brief) {
 }
 
 /* Expand / collapse */
+const briefCueLabel = document.getElementById("briefCueLabel");
 function setBriefOpen(open) {
   briefEl.dataset.open = open ? "true" : "false";
   briefToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  if (briefCueLabel) briefCueLabel.textContent = open ? "Hide" : "Read the brief";
 }
 if (briefToggle) {
   briefToggle.addEventListener("click", (e) => {

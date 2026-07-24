@@ -92,15 +92,19 @@ main {
   padding: 0 var(--gutter) 56px;
 }
 
-.intro { padding: 40px 0 22px; }
+.intro { padding: 46px 0 24px; }
 .tagline {
-  margin: 0; max-width: 20ch;
-  font-family: var(--serif); font-weight: 400;
-  font-size: clamp(1.9rem, 4.4vw, 2.9rem); line-height: 1.12;
-  letter-spacing: -0.015em; color: var(--ink);
+  margin: 0;
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(2.3rem, 5.2vw, 3.4rem); line-height: 1.04;
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.dek {
+  margin: 15px 0 0; max-width: 52ch;
+  font-size: 1.02rem; line-height: 1.45; color: var(--ink-2);
 }
 .statline {
-  margin: 18px 0 0;
+  margin: 20px 0 0;
   font-size: 0.74rem; font-weight: 500; color: var(--ink-3);
   text-transform: uppercase; letter-spacing: 0.09em;
 }
@@ -112,10 +116,11 @@ main {
    ============================================================ */
 
 .brief {
-  margin: 6px 0 30px;
-  border-top: 2px solid var(--ink);
-  border-bottom: 1px solid var(--rule);
-  background: none;
+  margin: 10px 0 36px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+  background: var(--paper-2);
 }
 
 .brief-head {
@@ -124,10 +129,21 @@ main {
   grid-template-columns: auto 1fr auto;
   align-items: baseline;
   gap: 16px;
-  padding: 13px 2px;
+  padding: 15px 18px;
   background: none; border: 0; cursor: pointer;
   color: inherit; font: inherit; text-align: left;
+  transition: background 0.15s ease;
 }
+.brief-head:hover { background: rgba(154, 43, 30, 0.05); }
+
+/* explicit "expandable" affordance */
+.brief-cue {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent);
+}
+.brief-cue-label { display: none; }
+@media (min-width: 720px) { .brief-cue-label { display: inline; } }
 
 .brief-kicker {
   display: inline-flex; align-items: baseline; gap: 8px;
@@ -167,8 +183,8 @@ main {
 .brief-listen.playing .ic-play { display: none; }
 .brief-listen.playing .ic-stop { display: inline; }
 
-.brief-chevron { display: inline-flex; color: var(--ink-3); transition: transform 0.25s ease, color 0.15s ease; }
-.brief-head:hover .brief-chevron { color: var(--ink); }
+.brief-chevron { display: inline-flex; color: inherit; transition: transform 0.25s ease; }
+.brief-head:hover .brief-cue { color: var(--accent-deep); }
 .brief[data-open="true"] .brief-chevron { transform: rotate(180deg); }
 .brief[data-open="true"] .brief-headline { white-space: normal; overflow: visible; }
 
@@ -178,9 +194,9 @@ main {
 .brief-body-inner {
   min-height: 0; overflow: hidden;
   opacity: 0; transition: opacity 0.22s ease, padding 0.3s ease;
-  padding: 0 2px;
+  padding: 0 18px;
 }
-.brief[data-open="true"] .brief-body-inner { opacity: 1; padding: 4px 2px 22px; }
+.brief[data-open="true"] .brief-body-inner { opacity: 1; padding: 4px 18px 22px; }
 
 .brief-block + .brief-block { margin-top: 18px; }
 .brief-label {
@@ -279,58 +295,41 @@ main {
   margin: 14px 0 0; max-width: 60ch;
   font-family: var(--serif); color: var(--ink-2); font-size: 1.14rem; line-height: 1.55;
 }
-.lead-card .meta {
-  margin-top: 16px;
-  font-size: 0.75rem; font-weight: 500; color: var(--ink-3);
-  text-transform: uppercase; letter-spacing: 0.05em;
+.lead-card .meta { margin-bottom: 12px; }
+
+/* ---- Shared meta line (source · time · outlets) ---- */
+.meta {
+  font-size: 0.71rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--ink-3); line-height: 1.4;
 }
-.lead-card .meta .outlets { margin-left: 10px; }
+.meta .src { color: var(--ink-2); }
+.meta .time { color: var(--ink-3); }
+.meta .dot { color: var(--ink-4); margin: 0 2px; }
+.meta .outlets { color: var(--accent); }
 
 /* ============================================================
-   Headline wire (dense rows)
+   Headline wire
    ============================================================ */
 
-.feed { list-style: none; margin: 10px 0 0; padding: 0; counter-reset: idx; }
-.feed > li { counter-increment: idx; }
+.feed { list-style: none; margin: 14px 0 0; padding: 0; }
 .story {
-  position: relative;
-  display: grid;
-  grid-template-columns: 30px 1fr auto;
-  align-items: baseline;
-  column-gap: 20px; row-gap: 7px;
-  padding: 18px 0;
-  border-top: 1px solid var(--rule-soft);
-  transition: none;
+  display: block;
+  padding: 21px 0;
+  border-top: 1px solid var(--rule);
 }
-.story::before {
-  content: counter(idx, decimal-leading-zero);
-  grid-column: 1; grid-row: 1;
-  font-family: var(--sans); font-size: 0.74rem; font-weight: 600; color: var(--ink-4);
-  padding-top: 0.35em; font-feature-settings: "tnum" 1;
-}
+.story .meta { margin-bottom: 9px; }
 .story:hover h3 { color: var(--accent-deep); }
 .story h3 {
-  grid-column: 2; grid-row: 1;
-  margin: 0;
-  font-family: var(--serif); font-size: 1.24rem; font-weight: 500; line-height: 1.28;
+  margin: 0; max-width: 58ch;
+  font-family: var(--serif); font-size: 1.32rem; font-weight: 500; line-height: 1.26;
   letter-spacing: -0.005em; color: var(--ink);
   transition: color 0.15s ease;
 }
 .story .summary {
-  grid-column: 2;
-  margin: 5px 0 0;
-  color: var(--ink-3); font-size: 0.95rem; line-height: 1.5;
+  margin: 8px 0 0; max-width: 62ch;
+  color: var(--ink-3); font-size: 0.96rem; line-height: 1.5;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-.story .meta {
-  grid-column: 3; grid-row: 1;
-  text-align: right; white-space: nowrap;
-  font-size: 0.72rem; font-weight: 500; color: var(--ink-3);
-  text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.6;
-}
-.story .meta .src { display: block; color: var(--ink-2); }
-.story .meta .time { color: var(--ink-4); }
-.story .meta .outlets { display: block; margin-top: 2px; color: var(--accent); }
 
 /* ---- Category tags ---- */
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -389,16 +388,7 @@ main {
 }
 
 @media (max-width: 620px) {
-  .story { grid-template-columns: 1fr; row-gap: 5px; }
-  .story::before { display: none; }
-  .story h3, .story .tags, .story .summary, .story .meta { grid-column: 1; }
-  .story .meta { grid-row: auto; text-align: left; margin-top: 8px; }
-  .story .meta .src { display: inline; }
-  .story .meta .src::after { content: "  ·  "; color: var(--ink-4); }
-  .story .meta .time { display: inline; }
-  .story .meta .outlets { display: inline; margin-left: 8px; }
   .result-count { display: none; }
-  .tagline { max-width: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
