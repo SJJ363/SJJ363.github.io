@@ -12,6 +12,8 @@
    outlets are chasing, and stitches those signals into prose.
    ============================================================ */
 
+const { fundingStats } = require("./funding");
+
 /* ---- grammar helpers ---- */
 function oxford(list) {
   const a = list.filter(Boolean);
@@ -22,18 +24,6 @@ function oxford(list) {
 }
 const plural = (n, one, many) => (n === 1 ? one : many);
 const cap = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
-
-// Money mentioned in a headline → a number in millions (best-effort).
-function amountM(text) {
-  const m = text.match(/\$\s?([\d,.]+)\s?(k|m|mn|bn|b|million|billion|thousand)?/i);
-  if (!m) return 0;
-  const n = parseFloat(m[1].replace(/,/g, ""));
-  if (!isFinite(n)) return 0;
-  const u = (m[2] || "").toLowerCase();
-  if (u === "bn" || u === "b" || u === "billion") return n * 1000;
-  if (u === "k" || u === "thousand") return n / 1000;
-  return n; // m / mn / million / bare
-}
 
 function money(millions) {
   if (millions >= 1000) {
@@ -195,10 +185,8 @@ function buildBriefing(articles, taxonomy) {
 
   const counts = Object.fromEntries((taxonomy || []).map((t) => [t.name, t.count]));
 
-  // Money in play — sum best-effort amounts from funding-tagged headlines.
-  const fundingArticles = articles.filter((a) => (a.tags || []).includes("Funding"));
-  let fundTotal = 0;
-  fundingArticles.forEach((a) => { fundTotal += amountM(a.title); });
+  // Money in play — disclosed rounds only (no forecasts/aggregates/dupes).
+  const funding = fundingStats(articles);
 
   // The story the most outlets are chasing (corroboration = signal).
   const mostCovered = articles
@@ -225,9 +213,9 @@ function buildBriefing(articles, taxonomy) {
     whatParts.push(`Close behind, the wire is thick with ${restFrag}.`);
   }
 
-  if (fundTotal >= 5 && fundingArticles.length >= 2) {
+  if (funding.total >= 5 && funding.count >= 2) {
     whatParts.push(
-      `By our count that's at least ${money(fundTotal)} in disclosed funding changing hands across ${fundingArticles.length} deals.`
+      `By our count that's at least ${money(funding.total)} in disclosed funding changing hands across ${funding.count} ${plural(funding.count, "deal", "deals")}.`
     );
   }
 
@@ -256,7 +244,7 @@ function buildBriefing(articles, taxonomy) {
   );
   const whyItMatters = whyParts.join(" ");
 
-  const headline = makeHeadline(lead.name, counts, fundTotal);
+  const headline = makeHeadline(lead.name, counts, funding.total);
   const teaser = `${cap(THEME[lead.name].word)}${rest.length ? `, ${THEME[rest[0].name].word}` : ""} and what it sets in motion.`;
 
   // A single flat string for the text-to-speech reader.

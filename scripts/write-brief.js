@@ -18,20 +18,11 @@
 const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
+const { fundingStats } = require("./funding");
 
 const FILE = path.join(__dirname, "..", "data", "news.json");
 
-/* ---- small helpers (mirrors build-brief.js) ---- */
-function amountM(text) {
-  const m = text.match(/\$\s?([\d,.]+)\s?(k|m|mn|bn|b|million|billion|thousand)?/i);
-  if (!m) return 0;
-  const n = parseFloat(m[1].replace(/,/g, ""));
-  if (!isFinite(n)) return 0;
-  const u = (m[2] || "").toLowerCase();
-  if (u === "bn" || u === "b" || u === "billion") return n * 1000;
-  if (u === "k" || u === "thousand") return n / 1000;
-  return n;
-}
+/* ---- small helpers ---- */
 function money(mm) {
   if (mm >= 1000) { const b = mm / 1000; return `$${b >= 10 ? Math.round(b) : b.toFixed(1)} billion`; }
   return `$${Math.round(mm)} million`;
@@ -49,9 +40,7 @@ function buildDigest(data) {
     .slice()
     .sort((a, b) => b.count - a.count);
 
-  const funding = articles.filter((a) => (a.tags || []).includes("Funding"));
-  let fundTotal = 0;
-  funding.forEach((a) => { fundTotal += amountM(a.title); });
+  const funding = fundingStats(articles);
 
   const byCluster = articles
     .slice()
@@ -69,8 +58,8 @@ function buildDigest(data) {
   lines.push("DOMINANT THEMES (by number of stories):");
   themes.slice(0, 8).forEach((t) => lines.push(`- ${t.name}: ${t.count}`));
   lines.push("");
-  if (funding.length) {
-    lines.push(`MONEY IN PLAY: ~${money(fundTotal)} in disclosed funding across ${funding.length} stories.`);
+  if (funding.count) {
+    lines.push(`MONEY IN PLAY: ~${money(funding.total)} in disclosed funding across ${funding.count} disclosed rounds.`);
     lines.push("");
   }
   if (mostCovered.length) {
