@@ -28,6 +28,21 @@ jobs:
       - name: Fetch latest news
         run: node scripts/fetch-news.js
 
+      # Optional upgrade: let Claude rewrite the brief, authenticated by a
+      # Claude subscription via CLAUDE_CODE_OAUTH_TOKEN (no metered API key).
+      # Fail-safe — if the secret is missing or the call fails, the build
+      # keeps the deterministic brief written by fetch-news.js.
+      - name: Enhance brief with Claude
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "No CLAUDE_CODE_OAUTH_TOKEN secret set — keeping deterministic brief."
+            exit 0
+          fi
+          npm install -g @anthropic-ai/claude-code
+          node scripts/write-brief.js || echo "Brief enhancer failed — keeping deterministic brief."
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
