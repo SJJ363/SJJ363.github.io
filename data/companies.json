@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-24T14:50:36.418Z",
-  "count": 111,
+  "updatedAt": "2026-07-24T14:58:47.671Z",
+  "count": 107,
   "companies": [
     {
       "slug": "cotality",
@@ -1624,12 +1624,7 @@
         {
           "slug": "wave-claims",
           "name": "Wave Claims",
-          "count": 2
-        },
-        {
-          "slug": "wave",
-          "name": "Wave",
-          "count": 1
+          "count": 3
         }
       ],
       "articles": [
@@ -1644,7 +1639,7 @@
             "Claims & Underwriting"
           ],
           "co": [
-            "wave"
+            "wave-claims"
           ]
         },
         {
@@ -1677,33 +1672,35 @@
       ]
     },
     {
-      "slug": "wave",
-      "name": "Wave",
-      "count": 1,
-      "firstSeen": "2026-07-23T11:13:20.000Z",
+      "slug": "wave-claims",
+      "name": "Wave Claims",
+      "count": 3,
+      "firstSeen": "2026-07-19T16:39:00.000Z",
       "lastSeen": "2026-07-23T11:13:20.000Z",
       "topics": [
         {
           "name": "M&A",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
+          "count": 3
         },
         {
           "name": "Claims & Underwriting",
-          "count": 1
+          "count": 3
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
         }
       ],
       "sources": [
-        "Beinsure"
+        "Beinsure",
+        "FinTech Global",
+        "PRWeb"
       ],
       "related": [
         {
           "slug": "genki",
           "name": "Genki",
-          "count": 1
+          "count": 3
         }
       ],
       "articles": [
@@ -1712,6 +1709,33 @@
           "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1WWmxZS1BSaVJsOU1lNS1jWmNJLWE2dTZUVHJRb3daa2RFOVhqUVM3LUpDbjZlSVg2WGdHWTA3eGRfeGJqc3hra2h5TFJ0Vm1WUzQ5aWMzVTFOVUQ3aWcxN1lUeDd5TzM0bTlN?oc=5",
           "source": "Beinsure",
           "publishedAt": "2026-07-23T11:13:20.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "co": [
+            "genki"
+          ]
+        },
+        {
+          "title": "Genki acquires InsurTech Wave Claims and Claim OS",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOSmxqOFdVMnNKOHhONkpRZnBxZEV5aW9ydHNZWkU2bjg0VlRpaHVnU1VrekxnY3c3YVFKN2xGWXJvQW1FSEYxOURBMUtPb3Z2dS1FTWhjUFNsVW1oQjc4TmVvMHVWY1lQNFFJTmh1SHZvTnMyblI2d1NCUFhERUxCc21YaExpTTVka29LQQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-07-21T17:35:04.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "co": [
+            "genki"
+          ]
+        },
+        {
+          "title": "Genki Acquires AI Insurtech Startup Wave Claims and Claim OS",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOcS1VUGM5c1dkUFo3bUVzMWRqZWJWam94LWJPbE5VWkJkVUhxX0ZRVm9TZC1kR1BkX3lTWVVLV1A4S2pUNTgxVGs0Yk1HY0FGaWVfOGRodVpTQXd5WllUVkdpNWdTVXhCWlMyR09ldUZ4bGJPS3ZnV283Mncwc3VUVWNoLU9SeHB3eTFpZ2JDTzVKUGw1RVRWb1YtVmxsRGdsX0VMN2dhOTh3dw?oc=5",
+          "source": "PRWeb",
+          "publishedAt": "2026-07-19T16:39:00.000Z",
           "tags": [
             "M&A",
             "AI & Automation",
@@ -1846,8 +1870,8 @@
       ],
       "related": [
         {
-          "slug": "mulberry-insurance-technology-platform",
-          "name": "Mulberry Insurance Technology Platform",
+          "slug": "mulberry",
+          "name": "Mulberry",
           "count": 1
         }
       ],
@@ -1861,14 +1885,14 @@
             "Partnerships"
           ],
           "co": [
-            "mulberry-insurance-technology-platform"
+            "mulberry"
           ]
         }
       ]
     },
     {
-      "slug": "mulberry-insurance-technology-platform",
-      "name": "Mulberry Insurance Technology Platform",
+      "slug": "mulberry",
+      "name": "Mulberry",
       "count": 1,
       "firstSeen": "2026-07-22T16:51:35.000Z",
       "lastSeen": "2026-07-22T16:51:35.000Z",
@@ -2008,8 +2032,8 @@
       ],
       "related": [
         {
-          "slug": "telecommunications-ltd-singtel",
-          "name": "Telecommunications Ltd Singtel",
+          "slug": "singtel",
+          "name": "Singtel",
           "count": 1
         }
       ],
@@ -2023,14 +2047,14 @@
             "Industry"
           ],
           "co": [
-            "telecommunications-ltd-singtel"
+            "singtel"
           ]
         }
       ]
     },
     {
-      "slug": "telecommunications-ltd-singtel",
-      "name": "Telecommunications Ltd Singtel",
+      "slug": "singtel",
+      "name": "Singtel",
       "count": 1,
       "firstSeen": "2026-07-22T02:48:07.000Z",
       "lastSeen": "2026-07-22T02:48:07.000Z",
@@ -2103,11 +2127,6 @@
           "count": 5
         },
         {
-          "slug": "pension-tools",
-          "name": "Pension Tools",
-          "count": 1
-        },
-        {
           "slug": "kwantsure",
           "name": "KwantSure",
           "count": 1
@@ -2122,9 +2141,7 @@
           "tags": [
             "Product & Launches"
           ],
-          "co": [
-            "pension-tools"
-          ]
+          "co": []
         },
         {
           "title": "Willis, Kayna partner with Kwant on subcontractor insurance",
@@ -2215,43 +2232,6 @@
       ]
     },
     {
-      "slug": "pension-tools",
-      "name": "Pension Tools",
-      "count": 1,
-      "firstSeen": "2026-07-22T02:11:00.000Z",
-      "lastSeen": "2026-07-22T02:11:00.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Yahoo Finance"
-      ],
-      "related": [
-        {
-          "slug": "willis-towers-watson",
-          "name": "Willis Towers Watson",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Willis Towers Watson (WTW) Launches New Pension Tools And Expands Digital Insurance Reach",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVkFFN1FGVlpPT1hrbHZXTmNFbWFDX2NVUUZxUmdKcmY5Y093Y3lWVkRpSk1LMWRsMXoyNkVnMWZLblhjYXV3enpSM2lBbVl3Q1ZtSHpfV0xUM3BZaFpPd3ZDX3M0RU12cjY5MDRuVEdHUE9vR0dINF96R3A5cXNsbUlrZDRfQkdZNkhiSzRnN3pGbXczaWYzaEotT3ZrdGc?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-07-22T02:11:00.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "co": [
-            "willis-towers-watson"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "qumis",
       "name": "Qumis",
       "count": 2,
@@ -2299,67 +2279,6 @@
             "AI & Automation"
           ],
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "wave-claims",
-      "name": "Wave Claims",
-      "count": 2,
-      "firstSeen": "2026-07-19T16:39:00.000Z",
-      "lastSeen": "2026-07-21T17:35:04.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 2
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 2
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "FinTech Global",
-        "PRWeb"
-      ],
-      "related": [
-        {
-          "slug": "genki",
-          "name": "Genki",
-          "count": 2
-        }
-      ],
-      "articles": [
-        {
-          "title": "Genki acquires InsurTech Wave Claims and Claim OS",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOSmxqOFdVMnNKOHhONkpRZnBxZEV5aW9ydHNZWkU2bjg0VlRpaHVnU1VrekxnY3c3YVFKN2xGWXJvQW1FSEYxOURBMUtPb3Z2dS1FTWhjUFNsVW1oQjc4TmVvMHVWY1lQNFFJTmh1SHZvTnMyblI2d1NCUFhERUxCc21YaExpTTVka29LQQ?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-07-21T17:35:04.000Z",
-          "tags": [
-            "M&A",
-            "Claims & Underwriting"
-          ],
-          "co": [
-            "genki"
-          ]
-        },
-        {
-          "title": "Genki Acquires AI Insurtech Startup Wave Claims and Claim OS",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOcS1VUGM5c1dkUFo3bUVzMWRqZWJWam94LWJPbE5VWkJkVUhxX0ZRVm9TZC1kR1BkX3lTWVVLV1A4S2pUNTgxVGs0Yk1HY0FGaWVfOGRodVpTQXd5WllUVkdpNWdTVXhCWlMyR09ldUZ4bGJPS3ZnV283Mncwc3VUVWNoLU9SeHB3eTFpZ2JDTzVKUGw1RVRWb1YtVmxsRGdsX0VMN2dhOTh3dw?oc=5",
-          "source": "PRWeb",
-          "publishedAt": "2026-07-19T16:39:00.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "co": [
-            "genki"
-          ]
         }
       ]
     },
@@ -3161,30 +3080,6 @@
           "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNNmpHeDM5b0p4SWV0YU1HZm9GUU54WDdsMEREYUpJWUprOC1RTjR5d0xBeW5md0R4eExhSGdfaHJPaXEweF9YMy00dGpCNTA1blhFSXR2U1drVzdzZ3dlLXAxblhKSEp0YXZhT0tPd1hidDR2ZUR1YTNZQUI1Tmd2ck96ak5Ta2VyRC1JaTYtc1kwUXlDbTVhMzhkc3k0SXpJcU01Z19PZHduS2dWT1FxSXg4MzJ2U29NMllHeWRLS05kWllid19qQW13Y3ZSRHJQV3ItYU5QZUY?oc=5",
           "source": "Business Insider Africa",
           "publishedAt": "2026-07-17T14:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "survaival",
-      "name": "SurvAIval",
-      "count": 1,
-      "firstSeen": "2026-07-17T07:59:54.000Z",
-      "lastSeen": "2026-07-17T07:59:54.000Z",
-      "topics": [],
-      "sources": [
-        "theinsurer.com"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Guillaume Bonnissent’s Insurance Technology Diary: SurvAIval techniques",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWlQzMXpuQlBKLUtLRXVnX3VtNm5Ea0doOU1zbkdhTERwM1ZTZkRDdXVpOWl1ZXFldVNRZjlYcUk3aUpGTWw0UklVam1hdzJ1OF9TbGhlRW9iWUtCOWJmOFBKZDNESENpLVJQR1NJU2VIRXFGc2VUNmVYWU5mamM3YVlkMUpzczVnc24wek5lUW04dTJvclFHRGRSQ3ZHSWdPZGtCTWQzY0FyYjR6YnBjeHYxcFVhZGtXcTJv?oc=5",
-          "source": "theinsurer.com",
-          "publishedAt": "2026-07-17T07:59:54.000Z",
           "tags": [
             "Industry"
           ],
@@ -4404,13 +4299,7 @@
         "TradingView",
         "Pluang"
       ],
-      "related": [
-        {
-          "slug": "tianfu-citizen-cloud-platform",
-          "name": "Tianfu Citizen Cloud Platform",
-          "count": 1
-        }
-      ],
+      "related": [],
       "articles": [
         {
           "title": "Zhibao Technology Inc. Announces Cooperation with Tianfu Citizen's Cloud Platform, Providing Embedded Insurance Solutions to Over 20 Million New End Users",
@@ -4420,9 +4309,7 @@
           "tags": [
             "Embedded"
           ],
-          "co": [
-            "tianfu-citizen-cloud-platform"
-          ]
+          "co": []
         },
         {
           "title": "Zhibao launches digital insurance on Chengdu's ...",
@@ -4433,43 +4320,6 @@
             "Product & Launches"
           ],
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "tianfu-citizen-cloud-platform",
-      "name": "Tianfu Citizen Cloud Platform",
-      "count": 1,
-      "firstSeen": "2026-07-08T07:00:00.000Z",
-      "lastSeen": "2026-07-08T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "Embedded",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "TradingView"
-      ],
-      "related": [
-        {
-          "slug": "zhibao",
-          "name": "Zhibao",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Zhibao Technology Inc. Announces Cooperation with Tianfu Citizen's Cloud Platform, Providing Embedded Insurance Solutions to Over 20 Million New End Users",
-          "link": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxQZExIdi1XcjVWYlByVmZsR01FNzMxUUwtZFd6R2duOEFOdlJhVXdJMVpxWElHaV9XcjBRQWd0WTBXcktFV3FLMG5nVzZSdWF1cnE5NkNjbnZJSDBkd1UtYlJJSVJuYVc2QTlpU3J1Rmp5SUdBX1J6Y0RTdHdRa2liV3NDR3BPVkxKYTVvZHlCN3JYUjVNYVhjdlFNYl84UE8tTHpPTXVMeWRKcXE3M0tIbzZMY1pfZm44dEVDVUo3a0steE5DWVhSUXJha2NMY09tOFBLY0FNNHdYcnhQSnRiS0cwWlZWcDQzWTRGUTdTSG10OENLUmpHSk9RTDN5d2dyeGRqLTNXcndmeGJ2Nl9GUUNVR0hRYlJnY2RvWnNTNTE1ZkpPQ3U2a2lhc0JjWjdiTXRwS1BGSElQNE0?oc=5",
-          "source": "TradingView",
-          "publishedAt": "2026-07-08T07:00:00.000Z",
-          "tags": [
-            "Embedded"
-          ],
-          "co": [
-            "zhibao"
-          ]
         }
       ]
     },

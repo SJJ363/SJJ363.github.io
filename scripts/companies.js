@@ -118,7 +118,18 @@ const CANON_LIST = {
   "Berkshire Hathaway": ["Berkshire"],
   "Ping An": ["Ping An Insurance"],
   "UnitedHealth": ["UnitedHealth Group", "UnitedHealthcare"],
+  // Curated fixes for stubborn long-tail cases Claude keeps garbling.
+  "Mulberry": ["Mulberry Insurance Technology Platform"],
+  "Singtel": ["Telecommunications Ltd Singtel", "Singapore Telecommunications", "Singapore Telecommunications Ltd"],
+  "Wave Claims": ["Wave"],
+  "Insurance House": ["House"],
 };
+
+// Non-companies Claude occasionally emits (products / techniques / generic
+// terms). Dropped on every rebuild, so no re-extraction is needed to clean.
+const JUNK = new Set([
+  "survaival", "ipmi", "pension-tools", "tianfu-citizen-cloud-platform", "form-maker", "formmaker",
+]);
 const CANON = new Map();
 for (const [canonical, aliases] of Object.entries(CANON_LIST)) {
   CANON.set(slugify(canonical), canonical);
@@ -284,7 +295,7 @@ function sanitizeNames(arr, exclude) {
     if (typeof n !== "string") continue;
     n = canonicalName(n.replace(/\s+/g, " ").trim());
     const slug = slugify(n);
-    if (!n || n.length > 60 || !slug || exclude.has(slug) || seen.has(slug)) continue;
+    if (!n || n.length > 60 || !slug || JUNK.has(slug) || exclude.has(slug) || seen.has(slug)) continue;
     // Drop anything that is entirely generic / function / geographic words.
     const toks = n.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter(Boolean);
     if (!toks.length || toks.every((t) => DENY.has(t) || BREAK.has(t))) continue;
@@ -400,7 +411,7 @@ function main() {
   for (const [link, ex] of Object.entries(store.extracted)) {
     const meta = store.seen[link];
     if (!meta || !ex.names || !ex.names.length) continue;
-    const names = [...new Set(ex.names.map(canonicalName))];
+    const names = [...new Set(ex.names.map(canonicalName))].filter((n) => !JUNK.has(slugify(n)));
     const slugs = names.map(slugify);
     names.forEach((name, i) => {
       const slug = slugs[i]; if (!slug) return;
