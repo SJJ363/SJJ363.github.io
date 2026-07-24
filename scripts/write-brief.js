@@ -107,7 +107,9 @@ Rules:
 
 /* ---- call the Claude CLI in headless print mode ---- */
 function callClaude(prompt) {
-  const args = ["-p", "--output-format", "json"];
+  // Plain text output: stdout is simply the model's reply. Simpler and more
+  // robust than the JSON envelope, which a startup banner line can corrupt.
+  const args = ["-p"];
   if (process.env.CLAUDE_MODEL) args.push("--model", process.env.CLAUDE_MODEL);
 
   const res = spawnSync("claude", args, {
@@ -118,30 +120,26 @@ function callClaude(prompt) {
   });
 
   if (res.error) { console.warn(`  ✗ claude CLI not runnable: ${res.error.message}`); return null; }
-  if (res.status !== 0) {
-    console.warn(`  ✗ claude exited ${res.status}: ${clean(res.stderr).slice(0, 300)}`);
-    return null;
-  }
 
-  // --output-format json wraps the reply in an envelope with a `result` field.
-  let text = res.stdout;
-  try {
-    const env = JSON.parse(res.stdout);
-    if (env && typeof env.result === "string") text = env.result;
-    if (env && env.is_error) { console.warn("  ✗ claude reported an error result"); return null; }
-  } catch { /* not an envelope — treat stdout as raw text */ }
-  return text;
+  const out = res.stdout || "";
+  const err = clean(res.stderr || "");
+  console.log(`  claude exit=${res.status} stdout=${out.length}b${err ? ` stderr=${JSON.stringify(err.slice(0, 400))}` : ""}`);
+  if (res.status !== 0) { console.warn("  ✗ claude exited non-zero"); return null; }
+  return out;
 }
 
 /* ---- pull the JSON object out of the model's reply ---- */
 function extractBrief(text) {
   if (!text) return null;
-  let s = text.trim().replace(/^```(?:json)?/i, "").replace(/```$/i, "").trim();
+  // Drop any code fences anywhere, then take the outermost {...}.
+  let s = text.replace(/```(?:json)?/gi, "").trim();
   const start = s.indexOf("{");
   const end = s.lastIndexOf("}");
   if (start === -1 || end === -1 || end <= start) return null;
+  // Tolerate trailing commas before } or ] (a common model slip).
+  const jsonStr = s.slice(start, end + 1).replace(/,(\s*[}\]])/g, "$1");
   let obj;
-  try { obj = JSON.parse(s.slice(start, end + 1)); } catch { return null; }
+  try { obj = JSON.parse(jsonStr); } catch { return null; }
 
   const req = ["headline", "teaser", "whatsHappening", "whyItMatters"];
   for (const k of req) if (typeof obj[k] !== "string" || !obj[k].trim()) return null;
@@ -174,7 +172,11 @@ function main() {
     console.log("Asking Claude to write the brief…");
     const reply = callClaude(buildPrompt(buildDigest(data)));
     const brief = extractBrief(reply);
-    if (!brief) { console.log("Claude brief unavailable — keeping deterministic brief."); return; }
+    if (!brief) {
+      console.log("Claude brief unavailable — keeping deterministic brief.");
+      if (reply) console.log(`  raw reply (first 800 chars): ${JSON.stringify(reply.slice(0, 800))}`);
+      return;
+    }
 
     data.briefing = brief; // existing key keeps its position (before `articles`)
     fs.writeFileSync(FILE, JSON.stringify(data, null, 2));
