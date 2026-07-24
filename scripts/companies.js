@@ -244,6 +244,8 @@ function extractCompanies(title, exclude) {
    Claude extraction (batched) — the primary extractor
    ============================================================ */
 const CHUNK = 45;
+// Bump when the extraction prompt changes so cached Claude results re-extract.
+const PROMPT_VERSION = 2;
 
 function buildExtractPrompt(items, known) {
   const lines = items.map((it) => `${it.id}: ${JSON.stringify(it.title)}`).join("\n");
@@ -254,13 +256,15 @@ For each headline, list the real companies that are ACTORS in the story — insu
 
 Do NOT include:
 - the news outlet or publisher reporting the story
-- generic terms ("insurtech", "the market", "AI", a country or region)
-- products, platforms or funds — name the company behind them instead
+- generic or industry terms, even when capitalised ("insurtech", "the market", "AI", "iPMI", "MGA", a country or region)
+- a product, platform, service, fund, tool, award, methodology or column — name the COMPANY behind it instead (e.g. a "FormMaker" tool or a "Pension Tools" launch → the company that makes it, not the tool)
 - government bodies unless a specific named organisation is acting as a party
+
+Write each company under its full, real name as commonly written — never a truncation or a description turned into a name. For example: "Insurance House" (not "House"); "Singtel" (not "Telecommunications Ltd Singtel"); "Mulberry" (not "Mulberry Insurance Technology Platform"); "Wave Claims" (not "Wave").
 
 Consolidate every reference to the same entity under ONE canonical name:
 - use the full, commonly-used corporate name (e.g. "Willis Towers Watson", never "Willis" or "WTW")
-- fold abbreviations, subsidiaries and stylised forms into the parent company
+- fold abbreviations, subsidiaries and stylised forms into the parent company (e.g. "Zhibao Technology Inc." and "Zhibao" are the same company — pick one)
 - if the entity already appears in KNOWN COMPANIES, reuse that exact spelling.
 
 KNOWN COMPANIES (reuse these exact names when the same entity appears):
@@ -303,6 +307,31 @@ function extractWithClaude(need, known, exclude) {
   return anyOK ? byLink : null;
 }
 
+// Fold "<Name> Technology/Group/Solutions/…" into the bare "<Name>" record
+// when both exist (Claude occasionally emits a fuller and a shorter form of
+// the same entity). Returns a map of merged-away slug -> canonical slug.
+function mergePrefixes(byslug) {
+  const mergeMap = {};
+  for (const s of Object.keys(byslug)) {
+    if (!byslug[s]) continue;
+    const parts = s.split("-");
+    for (let cut = parts.length - 1; cut >= 1; cut--) {
+      const root = parts.slice(0, cut).join("-");
+      const rest = parts.slice(cut);
+      if (byslug[root] && root !== s && rest.every((t) => COMPANY_TYPE.has(t))) {
+        const from = byslug[s], into = byslug[root];
+        for (const ar of from.articles) {
+          if (!into.links.has(ar.link)) { into.links.add(ar.link); into.articles.push(ar); }
+        }
+        mergeMap[s] = root;
+        delete byslug[s];
+        break;
+      }
+    }
+  }
+  return mergeMap;
+}
+
 /* ============================================================ */
 function loadJSON(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, "utf8")); } catch { return fallback; }
@@ -330,20 +359,32 @@ function main() {
   // Extract the uncached — and re-extract heuristic-cached ones once Claude is
   // available, so an earlier deterministic base upgrades to Claude quality.
   const claudeOn = claudeAvailable();
-  const need = news.articles.filter((a) => {
+  const isStale = (e) => !e || e.by !== "claude" || e.pv !== PROMPT_VERSION;
+  const curLinks = new Set(news.articles.map((a) => a.link));
+  const need = [];
+  for (const a of news.articles) {
     const e = store.extracted[a.link];
-    return !e || (claudeOn && e.by !== "claude");
-  });
-  console.log(`Extraction: ${need.length}/${news.articles.length} need parsing (claude ${claudeOn ? "on" : "off"}).`);
+    if (!e || (claudeOn && isStale(e))) need.push({ title: a.title, link: a.link, source: a.source });
+  }
+  // Also heal any historical article still stale once Claude is on, so the
+  // whole index converges to current Claude quality.
+  if (claudeOn) {
+    for (const [link, e] of Object.entries(store.extracted)) {
+      if (curLinks.has(link) || !isStale(e)) continue;
+      const m = store.seen[link];
+      if (m) need.push({ title: m.title, link, source: m.source });
+    }
+  }
+  console.log(`Extraction: ${need.length} article(s) need parsing (claude ${claudeOn ? "on" : "off"}).`);
 
   let claudeRes = null;
   if (need.length && claudeOn) claudeRes = extractWithClaude(need, knownNames, exclude);
 
   for (const a of need) {
     let names = claudeRes && claudeRes[a.link];
-    let by = "claude";
-    if (!names) { names = extractCompanies(a.title, new Set([...exclude, slugify(a.source)])).map(canonicalName); by = "heuristic"; }
-    store.extracted[a.link] = { names, by };
+    const entry = { names, by: "claude", pv: PROMPT_VERSION };
+    if (!names) { entry.names = extractCompanies(a.title, new Set([...exclude, slugify(a.source)])).map(canonicalName); entry.by = "heuristic"; delete entry.pv; }
+    store.extracted[a.link] = entry;
   }
 
   // Attach companies to current articles (home-page badges).
@@ -372,13 +413,18 @@ function main() {
     });
   }
 
+  const mergeMap = mergePrefixes(byslug);
+
   const companies = Object.values(byslug).map((c) => {
     const articles = c.articles.slice().sort((x, y) => new Date(y.publishedAt) - new Date(x.publishedAt));
     const topicCount = {}, sourceSet = new Set(), relCount = {};
     for (const ar of articles) {
       (ar.tags || []).filter((t) => t !== "Industry").forEach((t) => (topicCount[t] = (topicCount[t] || 0) + 1));
       sourceSet.add(ar.source);
-      (ar.co || []).forEach((s2) => (relCount[s2] = (relCount[s2] || 0) + 1));
+      (ar.co || []).forEach((s2) => {
+        const cs = mergeMap[s2] || s2;
+        if (cs !== c.slug) relCount[cs] = (relCount[cs] || 0) + 1;
+      });
     }
     const topics = Object.entries(topicCount).sort((a, b) => b[1] - a[1]).slice(0, 6).map(([name, count]) => ({ name, count }));
     const related = Object.entries(relCount).sort((a, b) => b[1] - a[1]).slice(0, 8)
