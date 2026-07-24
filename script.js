@@ -25,18 +25,9 @@ function el(tag, cls, text) {
   return n;
 }
 
-// Deterministic hue per source, for a subtle color dot (no network needed)
-function hue(s) {
-  let h = 0;
-  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-  return h % 360;
-}
-
 function sourceEl(a) {
   const src = el("span", "src");
-  const dot = el("span", "src-dot");
-  dot.style.setProperty("--h", hue(a.source));
-  src.append(dot, document.createTextNode(a.source));
+  src.append(document.createTextNode(a.source));
   return src;
 }
 
@@ -51,14 +42,15 @@ function metaEl(a, inline) {
 
 function tagsEl(tags, max) {
   const wrap = el("div", "tags");
-  tags.slice(0, max).forEach((t) => wrap.append(el("span", "tag-pill", t)));
+  // "Industry" is the generic catch-all — informative as a filter, but noise
+  // repeated down the wire, so leave it off the row tags.
+  tags.filter((t) => t !== "Industry").slice(0, max).forEach((t) => wrap.append(el("span", "tag-pill", t)));
   return wrap;
 }
 
 function headingEl(tag, title) {
   const h = el(tag, null);
   h.append(document.createTextNode(title));
-  h.append(el("span", "go", "↗"));
   return h;
 }
 
