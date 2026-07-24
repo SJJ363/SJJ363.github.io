@@ -128,22 +128,39 @@ function callClaude(prompt) {
   return out;
 }
 
+// Find the first complete, brace-balanced {...} object, respecting string
+// literals — robust to any prose the model tacks on before or after the JSON.
+function sliceJson(s) {
+  const start = s.indexOf("{");
+  if (start === -1) return null;
+  let depth = 0, inStr = false, esc = false;
+  for (let i = start; i < s.length; i++) {
+    const c = s[i];
+    if (inStr) {
+      if (esc) esc = false;
+      else if (c === "\\") esc = true;
+      else if (c === '"') inStr = false;
+    } else if (c === '"') inStr = true;
+    else if (c === "{") depth++;
+    else if (c === "}" && --depth === 0) return s.slice(start, i + 1);
+  }
+  return null;
+}
+
 /* ---- pull the JSON object out of the model's reply ---- */
 function extractBrief(text) {
   if (!text) return null;
-  // Drop any code fences anywhere, then take the outermost {...}.
-  let s = text.replace(/```(?:json)?/gi, "").trim();
-  const start = s.indexOf("{");
-  const end = s.lastIndexOf("}");
-  if (start === -1 || end === -1 || end <= start) return null;
+  const raw = sliceJson(text.replace(/```(?:json)?/gi, ""));
+  if (!raw) { console.warn("  no JSON object found in reply"); return null; }
   // Tolerate trailing commas before } or ] (a common model slip).
-  const jsonStr = s.slice(start, end + 1).replace(/,(\s*[}\]])/g, "$1");
+  const jsonStr = raw.replace(/,(\s*[}\]])/g, "$1");
   let obj;
-  try { obj = JSON.parse(jsonStr); } catch { return null; }
+  try { obj = JSON.parse(jsonStr); } catch (e) { console.warn(`  JSON parse failed: ${e.message}`); return null; }
 
   const req = ["headline", "teaser", "whatsHappening", "whyItMatters"];
-  for (const k of req) if (typeof obj[k] !== "string" || !obj[k].trim()) return null;
-  if (clean(obj.whatsHappening).length < 80 || clean(obj.whyItMatters).length < 80) return null;
+  for (const k of req) if (typeof obj[k] !== "string" || !obj[k].trim()) { console.warn(`  field missing/empty: ${k}`); return null; }
+  if (clean(obj.whatsHappening).length < 80) { console.warn("  whatsHappening too short"); return null; }
+  if (clean(obj.whyItMatters).length < 80) { console.warn("  whyItMatters too short"); return null; }
 
   const headline = clean(obj.headline).replace(/[.]+$/, "");
   const whatsHappening = clean(obj.whatsHappening);
