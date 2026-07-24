@@ -16,9 +16,11 @@
 
 const fs = require("fs");
 const path = require("path");
+const { claudeAvailable, callClaude, parseJsonObject } = require("./claude");
 
 const NEWS = path.join(__dirname, "..", "data", "news.json");
-const DB = path.join(__dirname, "..", "data", "companies.json");
+const DB = path.join(__dirname, "..", "data", "companies.json");        // client-facing (derived)
+const STORE = path.join(__dirname, "..", "data", "companies-store.json"); // build-only facts
 
 /* ---- Known companies (canonical display names) ----
    A bonus layer for precision/recall on well-known names and the
@@ -100,6 +102,36 @@ function slugify(name) {
 }
 
 const KNOWN = new Map(KNOWN_LIST.map((n) => [slugify(n), n]));
+
+/* ---- Canonical aliases ----
+   Fold abbreviations / subsidiaries / short forms onto one canonical name,
+   so "Willis" and "WTW" never spawn a page separate from "Willis Towers
+   Watson". Claude is also told to consolidate; this is the safety net that
+   also covers the heuristic fallback. Keyed by slug -> canonical name. */
+const CANON_LIST = {
+  "Willis Towers Watson": ["Willis", "WTW", "Willis Towers Watson US", "Willis Towers Watson US LLC", "Towers Watson"],
+  "Marsh McLennan": ["MMC", "Marsh & McLennan", "Marsh and McLennan"],
+  "Aon": ["Aon plc"],
+  "Gallagher": ["Arthur J. Gallagher", "AJG"],
+  "Munich Re": ["Munich Reinsurance", "Munich Re Group"],
+  "Swiss Re": ["Swiss Reinsurance", "Swiss Re Corporate Solutions"],
+  "Berkshire Hathaway": ["Berkshire"],
+  "Ping An": ["Ping An Insurance"],
+  "UnitedHealth": ["UnitedHealth Group", "UnitedHealthcare"],
+};
+const CANON = new Map();
+for (const [canonical, aliases] of Object.entries(CANON_LIST)) {
+  CANON.set(slugify(canonical), canonical);
+  for (const a of aliases) CANON.set(slugify(a), canonical);
+}
+
+// Resolve any surface form to its canonical display name.
+function canonicalName(name) {
+  const s = slugify(name);
+  if (CANON.has(s)) return CANON.get(s);
+  if (KNOWN.has(s)) return KNOWN.get(s);
+  return name;
+}
 
 function looksNamey(tok) {
   const c = stripEdgePunct(tok);
@@ -208,54 +240,139 @@ function extractCompanies(title, exclude) {
   return [...found.values()];
 }
 
+/* ============================================================
+   Claude extraction (batched) — the primary extractor
+   ============================================================ */
+const CHUNK = 45;
+
+function buildExtractPrompt(items, known) {
+  const lines = items.map((it) => `${it.id}: ${JSON.stringify(it.title)}`).join("\n");
+  const knownStr = known.length ? known.slice(0, 250).join(", ") : "none yet";
+  return `You identify the companies involved in insurance / insurtech news headlines.
+
+For each headline, list the real companies that are ACTORS in the story — insurers, insurtechs, brokers, reinsurers, MGAs, technology vendors, and any named investors, acquirers or partners.
+
+Do NOT include:
+- the news outlet or publisher reporting the story
+- generic terms ("insurtech", "the market", "AI", a country or region)
+- products, platforms or funds — name the company behind them instead
+- government bodies unless a specific named organisation is acting as a party
+
+Consolidate every reference to the same entity under ONE canonical name:
+- use the full, commonly-used corporate name (e.g. "Willis Towers Watson", never "Willis" or "WTW")
+- fold abbreviations, subsidiaries and stylised forms into the parent company
+- if the entity already appears in KNOWN COMPANIES, reuse that exact spelling.
+
+KNOWN COMPANIES (reuse these exact names when the same entity appears):
+${knownStr}
+
+HEADLINES:
+${lines}
+
+Respond with ONLY a JSON object mapping each id to an array of canonical company names (use [] when none apply). No commentary. Example:
+{"a1": ["Willis Towers Watson", "Kayna", "Kwant"], "a2": []}`;
+}
+
+function sanitizeNames(arr, exclude) {
+  if (!Array.isArray(arr)) return [];
+  const out = [], seen = new Set();
+  for (let n of arr) {
+    if (typeof n !== "string") continue;
+    n = canonicalName(n.replace(/\s+/g, " ").trim());
+    const slug = slugify(n);
+    if (!n || n.length > 60 || !slug || exclude.has(slug) || seen.has(slug)) continue;
+    // Drop anything that is entirely generic / function / geographic words.
+    const toks = n.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter(Boolean);
+    if (!toks.length || toks.every((t) => DENY.has(t) || BREAK.has(t))) continue;
+    seen.add(slug); out.push(n);
+  }
+  return out;
+}
+
+// Returns { link: [names] } for chunks Claude handled, or null if all failed.
+function extractWithClaude(need, known, exclude) {
+  const byLink = {};
+  let anyOK = false;
+  for (let i = 0; i < need.length; i += CHUNK) {
+    const chunk = need.slice(i, i + CHUNK).map((a, k) => ({ id: `a${i + k}`, title: a.title, link: a.link }));
+    const parsed = parseJsonObject(callClaude(buildExtractPrompt(chunk, known)));
+    if (!parsed) { console.warn(`  ✗ extraction chunk @${i} unparseable — will fall back`); continue; }
+    anyOK = true;
+    for (const it of chunk) if (it.id in parsed) byLink[it.link] = sanitizeNames(parsed[it.id], exclude);
+  }
+  return anyOK ? byLink : null;
+}
+
 /* ============================================================ */
 function loadJSON(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, "utf8")); } catch { return fallback; }
 }
 
-(function main() {
+function main() {
   const news = loadJSON(NEWS, null);
   if (!news || !Array.isArray(news.articles)) { console.error("No news.json to process."); process.exit(0); }
 
-  const db = loadJSON(DB, {});
-  db.extracted = db.extracted || {};          // link -> [names]  (cache)
-  const store = {};                            // slug -> company record (rebuilt from history)
-  // Seed store from existing companies.json history.
-  for (const c of (db.companies || [])) store[c.slug] = { slug: c.slug, name: c.name, articles: c.articles || [] };
+  // Persistent facts (build-only): article metadata + extraction, by link.
+  const store = loadJSON(STORE, {});
+  store.seen = store.seen || {};
+  store.extracted = store.extracted || {};
+  // Previous canonical names — fed to Claude so it reuses them.
+  const knownNames = (loadJSON(DB, {}).companies || []).map((c) => c.name);
 
-  // Outlets are not companies-in-the-story — exclude source + publisher names.
+  // Outlets are never the actor company.
   const exclude = new Set();
   for (const s of (news.sources || [])) exclude.add(slugify(s));
-  exclude.add(slugify(news.source || ""));
-
-  const freshExtracted = {};
-  let mentions = 0;
 
   for (const a of news.articles) {
-    let names = db.extracted[a.link];
-    if (!names) names = extractCompanies(a.title, new Set([...exclude, slugify(a.source)]));
-    freshExtracted[a.link] = names;
+    store.seen[a.link] = { title: a.title, source: a.source, publishedAt: a.publishedAt, tags: a.tags || [] };
+  }
 
+  // Extract the uncached — and re-extract heuristic-cached ones once Claude is
+  // available, so an earlier deterministic base upgrades to Claude quality.
+  const claudeOn = claudeAvailable();
+  const need = news.articles.filter((a) => {
+    const e = store.extracted[a.link];
+    return !e || (claudeOn && e.by !== "claude");
+  });
+  console.log(`Extraction: ${need.length}/${news.articles.length} need parsing (claude ${claudeOn ? "on" : "off"}).`);
+
+  let claudeRes = null;
+  if (need.length && claudeOn) claudeRes = extractWithClaude(need, knownNames, exclude);
+
+  for (const a of need) {
+    let names = claudeRes && claudeRes[a.link];
+    let by = "claude";
+    if (!names) { names = extractCompanies(a.title, new Set([...exclude, slugify(a.source)])).map(canonicalName); by = "heuristic"; }
+    store.extracted[a.link] = { names, by };
+  }
+
+  // Attach companies to current articles (home-page badges).
+  for (const a of news.articles) {
+    const names = (store.extracted[a.link] && store.extracted[a.link].names) || [];
+    a.companies = names.map((n) => ({ name: n, slug: slugify(n) }));
+  }
+
+  // Rebuild every company from the full fact store (history across batches).
+  // Because this derives purely from `extracted`, re-extraction cleanly drops
+  // any company that no longer has a mention (junk self-heals).
+  const byslug = {};
+  for (const [link, ex] of Object.entries(store.extracted)) {
+    const meta = store.seen[link];
+    if (!meta || !ex.names || !ex.names.length) continue;
+    const names = [...new Set(ex.names.map(canonicalName))];
     const slugs = names.map(slugify);
-    a.companies = names.map((n, i) => ({ name: n, slug: slugs[i] }));
-    mentions += names.length;
-
     names.forEach((name, i) => {
-      const slug = slugs[i];
-      const co = slugs.filter((s2, k) => k !== i);
-      const rec = store[slug] || (store[slug] = { slug, name, articles: [] });
+      const slug = slugs[i]; if (!slug) return;
+      const rec = byslug[slug] || (byslug[slug] = { slug, name, links: new Set(), articles: [] });
       if (KNOWN.has(slug)) rec.name = KNOWN.get(slug);
-      if (!rec.articles.some((ar) => ar.link === a.link)) {
-        rec.articles.push({
-          title: a.title, link: a.link, source: a.source,
-          publishedAt: a.publishedAt, tags: a.tags || [], co,
-        });
+      if (!rec.links.has(link)) {
+        rec.links.add(link);
+        rec.articles.push({ title: meta.title, link, source: meta.source, publishedAt: meta.publishedAt, tags: meta.tags || [], co: slugs.filter((s2, k) => k !== i) });
       }
     });
   }
 
-  // Build the client-facing, aggregated company list.
-  const companies = Object.values(store).map((c) => {
+  const companies = Object.values(byslug).map((c) => {
     const articles = c.articles.slice().sort((x, y) => new Date(y.publishedAt) - new Date(x.publishedAt));
     const topicCount = {}, sourceSet = new Set(), relCount = {};
     for (const ar of articles) {
@@ -265,7 +382,7 @@ function loadJSON(file, fallback) {
     }
     const topics = Object.entries(topicCount).sort((a, b) => b[1] - a[1]).slice(0, 6).map(([name, count]) => ({ name, count }));
     const related = Object.entries(relCount).sort((a, b) => b[1] - a[1]).slice(0, 8)
-      .map(([slug, count]) => ({ slug, name: (store[slug] || {}).name || slug, count }));
+      .map(([slug, count]) => ({ slug, name: (byslug[slug] || {}).name || slug, count }));
     return {
       slug: c.slug, name: c.name, count: articles.length,
       firstSeen: articles.length ? articles[articles.length - 1].publishedAt : null,
@@ -275,10 +392,15 @@ function loadJSON(file, fallback) {
   }).filter((c) => c.count > 0)
     .sort((a, b) => new Date(b.lastSeen) - new Date(a.lastSeen));
 
-  // Prune the extraction cache to the current batch (bounded), keep history.
-  const out = { updatedAt: new Date().toISOString(), count: companies.length, extracted: freshExtracted, companies };
+  const byCount = { claude: 0, heuristic: 0 };
+  for (const e of Object.values(store.extracted)) if (e.by) byCount[e.by] = (byCount[e.by] || 0) + 1;
 
   fs.writeFileSync(NEWS, JSON.stringify(news, null, 2));
-  fs.writeFileSync(DB, JSON.stringify(out, null, 2));
-  console.log(`Companies: ${companies.length} tracked · ${mentions} mentions across ${news.articles.length} articles.`);
-})();
+  fs.writeFileSync(STORE, JSON.stringify({ updatedAt: new Date().toISOString(), seen: store.seen, extracted: store.extracted }, null, 2));
+  fs.writeFileSync(DB, JSON.stringify({ updatedAt: new Date().toISOString(), count: companies.length, companies }, null, 2));
+  console.log(`Companies: ${companies.length} tracked · extraction cache ${byCount.claude} claude / ${byCount.heuristic} heuristic.`);
+}
+
+if (require.main === module) main();
+
+module.exports = { extractCompanies, canonicalName, sanitizeNames, buildExtractPrompt, slugify };
