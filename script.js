@@ -43,42 +43,55 @@ function metaEl(a) {
   return m;
 }
 
-function tagsEl(tags, max) {
-  const wrap = el("div", "tags");
-  // "Industry" is the generic catch-all — informative as a filter, but noise
-  // repeated down the wire, so leave it off the row tags.
-  tags.filter((t) => t !== "Industry").slice(0, max).forEach((t) => wrap.append(el("span", "tag-pill", t)));
-  return wrap;
-}
-
 function headingEl(tag, title) {
   const h = el(tag, null);
   h.append(document.createTextNode(title));
   return h;
 }
 
+// Company badges (links) + taxonomy tag pills, in one row below the card body.
+// Company badges come first and are visually distinct — they navigate.
+function cardTags(a, maxTags) {
+  const badges = (a.companies || []).map((c) => {
+    const b = el("a", "company-badge", c.name);
+    b.href = `company.html?c=${encodeURIComponent(c.slug)}`;
+    return b;
+  });
+  // "Industry" is the generic catch-all — noise repeated down the wire.
+  const tags = (a.tags || []).filter((t) => t !== "Industry").slice(0, maxTags);
+  if (!badges.length && !tags.length) return null;
+  const wrap = el("div", "card-tags");
+  badges.forEach((b) => wrap.append(b));
+  tags.forEach((t) => wrap.append(el("span", "tag-pill", t)));
+  return wrap;
+}
+
 function leadCard(a) {
-  const card = el("a", "lead-card");
-  card.href = a.link; card.target = "_blank"; card.rel = "noopener noreferrer";
+  const card = el("div", "lead-card");
+  const main = el("a", "lead-main");
+  main.href = a.link; main.target = "_blank"; main.rel = "noopener noreferrer";
   const badge = el("div", "lead-badge-row");
   badge.append(el("span", "lead-badge", "Lead story"));
-  card.append(badge);
-  card.append(metaEl(a));
-  card.append(headingEl("h2", a.title));
-  if (a.summary) card.append(el("p", "summary", a.summary));
-  if (a.tags && a.tags.length) card.append(tagsEl(a.tags, 4));
+  main.append(badge);
+  main.append(metaEl(a));
+  main.append(headingEl("h2", a.title));
+  if (a.summary) main.append(el("p", "summary", a.summary));
+  card.append(main);
+  const ct = cardTags(a, 4);
+  if (ct) card.append(ct);
   return card;
 }
 
 function storyRow(a) {
-  const li = el("li");
-  const link = el("a", "story");
-  link.href = a.link; link.target = "_blank"; link.rel = "noopener noreferrer";
-  link.append(metaEl(a));
-  link.append(headingEl("h3", a.title));
-  if (a.summary) link.append(el("p", "summary", a.summary));
-  if (a.tags && a.tags.length) link.append(tagsEl(a.tags, 3));
-  li.append(link);
+  const li = el("li", "story");
+  const main = el("a", "story-main");
+  main.href = a.link; main.target = "_blank"; main.rel = "noopener noreferrer";
+  main.append(metaEl(a));
+  main.append(headingEl("h3", a.title));
+  if (a.summary) main.append(el("p", "summary", a.summary));
+  li.append(main);
+  const ct = cardTags(a, 3);
+  if (ct) li.append(ct);
   return li;
 }
 

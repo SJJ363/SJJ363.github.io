@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company — Insurtech Daily</title>
+  <meta name="description" content="Every story Insurtech Daily has tracked involving this company." />
+  <meta name="theme-color" content="#f7f4ee" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css?v=13" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23f7f4ee%22/><rect x=%2222%22 y=%2226%22 width=%228%22 height=%2250%22 fill=%22%239a2b1e%22/><rect x=%2238%22 y=%2234%22 width=%2240%22 height=%227%22 fill=%22%231c1a15%22/><rect x=%2238%22 y=%2249%22 width=%2240%22 height=%225%22 fill=%22%23837d70%22/><rect x=%2238%22 y=%2260%22 width=%2228%22 height=%225%22 fill=%22%23837d70%22/></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Insurtech Daily home">
+      <span class="brand-tick"></span>
+      <span class="brand-name">Insurtech&nbsp;Daily</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">The Wire</a>
+      <a href="companies.html" class="active">Companies</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <p class="crumb"><a href="companies.html">← All companies</a></p>
+
+    <div class="intro co-head">
+      <p class="co-kicker">Company</p>
+      <h1 class="tagline" id="coName">…</h1>
+      <p class="statline" id="coStats"></p>
+    </div>
+
+    <section class="co-facts" id="coFacts" hidden>
+      <div class="co-fact" id="coTopicsWrap">
+        <h3 class="fact-label">Most-covered themes</h3>
+        <div class="tags" id="coTopics"></div>
+      </div>
+      <div class="co-fact" id="coRelatedWrap">
+        <h3 class="fact-label">Also involved</h3>
+        <div class="badges" id="coRelated"></div>
+      </div>
+      <div class="co-fact" id="coSourcesWrap">
+        <h3 class="fact-label">Reported by</h3>
+        <p class="co-sources" id="coSources"></p>
+      </div>
+    </section>
+
+    <h2 class="section-label" id="coCoverageLabel" hidden>Coverage</h2>
+    <ol class="feed" id="coArticles" aria-label="Coverage"></ol>
+
+    <p class="empty" id="coEmpty" hidden>We don't have a page for that company yet.</p>
+    <p class="loading" id="coLoading">Loading…</p>
+  </main>
+
+  <footer class="site-footer">
+    <p class="foot-desc">
+      <b>Insurtech Daily</b> is an automated aggregator of publicly available insurtech headlines.
+      Every story links to its original source.
+    </p>
+    <p class="foot-meta">Auto-refreshed via GitHub Actions · © <span id="year"></span></p>
+  </footer>
+
+  <script src="company.js?v=13"></script>
+</body>
+</html>

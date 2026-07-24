@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Companies — Insurtech Daily</title>
+  <meta name="description" content="A searchable index of every company tracked across Insurtech Daily's coverage." />
+  <meta name="theme-color" content="#f7f4ee" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css?v=13" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23f7f4ee%22/><rect x=%2222%22 y=%2226%22 width=%228%22 height=%2250%22 fill=%22%239a2b1e%22/><rect x=%2238%22 y=%2234%22 width=%2240%22 height=%227%22 fill=%22%231c1a15%22/><rect x=%2238%22 y=%2249%22 width=%2240%22 height=%225%22 fill=%22%23837d70%22/><rect x=%2238%22 y=%2260%22 width=%2228%22 height=%225%22 fill=%22%23837d70%22/></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Insurtech Daily home">
+      <span class="brand-tick"></span>
+      <span class="brand-name">Insurtech&nbsp;Daily</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">The Wire</a>
+      <a href="companies.html" class="active" aria-current="page">Companies</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="intro">
+      <h1 class="tagline">Companies</h1>
+      <p class="dek">Every company the wire has tracked — newest activity first. Click through for a full history of coverage.</p>
+      <p class="statline"><b id="coCount">—</b> companies tracked</p>
+    </div>
+
+    <div class="controls">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="coSearch" type="search" placeholder="Search companies…" autocomplete="off" spellcheck="false" />
+      </div>
+      <span class="result-count" id="coResult"></span>
+    </div>
+
+    <ul class="co-list" id="coList" aria-label="Tracked companies"></ul>
+    <p class="empty" id="coEmpty" hidden>No companies match your search.</p>
+    <p class="loading" id="coLoading">Loading companies…</p>
+  </main>
+
+  <footer class="site-footer">
+    <p class="foot-desc">
+      <b>Insurtech Daily</b> is an automated aggregator of publicly available insurtech headlines.
+      Company pages are assembled automatically from those stories.
+    </p>
+    <p class="foot-meta">Auto-refreshed via GitHub Actions · © <span id="year"></span></p>
+  </footer>
+
+  <script src="companies-index.js?v=13"></script>
+</body>
+</html>

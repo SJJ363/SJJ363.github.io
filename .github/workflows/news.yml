@@ -28,6 +28,11 @@ jobs:
       - name: Fetch latest news
         run: node scripts/fetch-news.js
 
+      # Extract companies, tag each article, and update the persistent
+      # company index (data/companies.json accumulates across batches).
+      - name: Update company index
+        run: node scripts/companies.js
+
       # Optional upgrade: let Claude rewrite the brief, authenticated by a
       # Claude subscription via CLAUDE_CODE_OAUTH_TOKEN (no metered API key).
       # Fail-safe — if the secret is missing or the call fails, the build
@@ -47,8 +52,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain data/news.json)" ]; then
-            git add data/news.json
+          if [ -n "$(git status --porcelain data/news.json data/companies.json)" ]; then
+            git add data/news.json data/companies.json
             git commit -m "chore: refresh insurtech news ($(date -u +'%Y-%m-%d %H:%M UTC'))"
             git push
             echo "News updated and pushed."
