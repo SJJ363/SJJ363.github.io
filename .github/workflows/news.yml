@@ -60,15 +60,21 @@ jobs:
           fi
           node scripts/write-brief.js || echo "Brief enhancer failed — keeping deterministic brief."
 
+      # Regenerate all SEO artifacts from the refreshed data: static
+      # per-company pages, sitemap.xml, robots.txt, and the structured
+      # data injected into index.html / companies.html.
+      - name: Build SEO (pages, sitemap, structured data)
+        run: node scripts/seo.js
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain data/)" ]; then
-            git add data/news.json data/companies.json data/companies-store.json
+          git add -A data/ company/ sitemap.xml robots.txt index.html companies.html
+          if ! git diff --cached --quiet; then
             git commit -m "chore: refresh insurtech news ($(date -u +'%Y-%m-%d %H:%M UTC'))"
             git push
-            echo "News updated and pushed."
+            echo "News + SEO updated and pushed."
           else
             echo "No changes to publish."
           fi

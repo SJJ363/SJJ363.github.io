@@ -54,7 +54,7 @@ function headingEl(tag, title) {
 function cardTags(a, maxTags) {
   const badges = (a.companies || []).map((c) => {
     const b = el("a", "company-badge", c.name);
-    b.href = `company.html?c=${encodeURIComponent(c.slug)}`;
+    b.href = `/company/${encodeURIComponent(c.slug)}/`;
     return b;
   });
   // "Industry" is the generic catch-all — noise repeated down the wire.
@@ -313,7 +313,10 @@ function loadFeed() {
 
       renderBrief(data.briefing);
       buildChips(data.taxonomy || []);
-      render(ALL);
+
+      // Honour a ?q= deep link (matches the site's SearchAction schema).
+      const q = new URLSearchParams(location.search).get("q");
+      if (q) { searchEl.value = q; applyFilters(); } else render(ALL);
     })
     .catch((err) => {
       console.error(err);

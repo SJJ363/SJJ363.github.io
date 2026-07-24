@@ -29,7 +29,7 @@ const resultEl = document.getElementById("coResult");
 function row(c) {
   const li = el("li", "co-row");
   const a = el("a", "co-link");
-  a.href = `company.html?c=${encodeURIComponent(c.slug)}`;
+  a.href = `/company/${encodeURIComponent(c.slug)}/`;
   a.append(el("span", "co-name", c.name));
   const meta = el("span", "co-meta");
   meta.append(el("span", "co-count", `${c.count} ${c.count === 1 ? "story" : "stories"}`));
