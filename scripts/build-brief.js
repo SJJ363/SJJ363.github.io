@@ -247,15 +247,11 @@ function buildBriefing(articles, taxonomy) {
   const headline = makeHeadline(lead.name, counts, funding.total);
   const teaser = `${cap(THEME[lead.name].word)}${rest.length ? `, ${THEME[rest[0].name].word}` : ""} and what it sets in motion.`;
 
-  // A single flat string for the text-to-speech reader.
-  const spoken = `Here's the brief. ${headline}. ${whatsHappening} Why it matters. ${whyItMatters}`;
-
   return {
     headline,
     teaser,
     whatsHappening,
     whyItMatters,
-    spoken,
     generatedAt: new Date().toISOString(),
   };
 }

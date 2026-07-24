@@ -20,11 +20,13 @@ function el(tag, cls, text) {
 }
 
 let ALL = [];
+let sortMode = "recency"; // recency | stories | alpha — mirrors the default server-rendered order
 const listEl = document.getElementById("coList");
 const emptyEl = document.getElementById("coEmpty");
 const loadingEl = document.getElementById("coLoading");
 const searchEl = document.getElementById("coSearch");
 const resultEl = document.getElementById("coResult");
+const sortBtns = document.querySelectorAll(".sort-btn");
 
 function row(c) {
   const li = el("li", "co-row");
@@ -51,18 +53,40 @@ function render(list) {
   listEl.append(frag);
 }
 
+const time = (c) => (c.lastSeen ? new Date(c.lastSeen).getTime() : 0);
+function sortList(list) {
+  const arr = list.slice();
+  if (sortMode === "alpha") {
+    arr.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
+  } else if (sortMode === "stories") {
+    arr.sort((a, b) => b.count - a.count || time(b) - time(a) || a.name.localeCompare(b.name));
+  } else {
+    arr.sort((a, b) => time(b) - time(a) || a.name.localeCompare(b.name));
+  }
+  return arr;
+}
+
 function applyFilter() {
   const q = searchEl.value.trim().toLowerCase();
-  render(q ? ALL.filter((c) => c.name.toLowerCase().includes(q)) : ALL);
+  const filtered = q ? ALL.filter((c) => c.name.toLowerCase().includes(q)) : ALL;
+  render(sortList(filtered));
 }
+
+sortBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    sortMode = btn.dataset.sort;
+    sortBtns.forEach((b) => b.classList.toggle("active", b === btn));
+    applyFilter();
+  });
+});
 
 fetch("data/companies.json?ts=" + Date.now(), { cache: "no-store" })
   .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
   .then((data) => {
-    ALL = (data.companies || []).slice().sort((a, b) => new Date(b.lastSeen) - new Date(a.lastSeen));
+    ALL = data.companies || [];
     loadingEl.hidden = true;
     document.getElementById("coCount").textContent = ALL.length;
-    render(ALL);
+    applyFilter();
   })
   .catch(() => { loadingEl.textContent = "Couldn't load companies."; });
 

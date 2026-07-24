@@ -694,10 +694,16 @@
 <!-- /SEO:COCOUNT --></b> companies tracked</p>
     </div>
 
-    <div class="controls">
-      <div class="search-wrap">
+    <div class="controls co-controls">
+      <div class="search-wrap co-search-wrap">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
         <input id="coSearch" type="search" placeholder="Search companies…" autocomplete="off" spellcheck="false" />
+      </div>
+      <div class="sort-group" role="group" aria-label="Sort companies">
+        <span class="sort-label">Sort</span>
+        <button type="button" class="sort-btn active" data-sort="recency">Recent</button>
+        <button type="button" class="sort-btn" data-sort="stories">Most stories</button>
+        <button type="button" class="sort-btn" data-sort="alpha">A–Z</button>
       </div>
       <span class="result-count" id="coResult"></span>
     </div>

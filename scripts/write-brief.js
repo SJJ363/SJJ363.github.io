@@ -159,7 +159,6 @@ function extractBrief(text) {
     teaser: clean(obj.teaser),
     whatsHappening,
     whyItMatters,
-    spoken: `Here's the brief. ${headline}. ${whatsHappening} Why it matters. ${whyItMatters}`,
     generatedAt: new Date().toISOString(),
     by: "claude",
   };

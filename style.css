@@ -128,11 +128,13 @@ main {
    ============================================================ */
 
 .brief {
-  margin: 10px 0 36px;
+  margin: 14px 0 40px;
   border: 1px solid var(--rule);
-  border-left: 3px solid var(--accent);
+  border-top: 3px solid var(--ink);
   border-radius: 2px;
-  background: var(--paper-2);
+  /* A faint warm wash over paper — clearly a featured panel, not the
+     recessed grey search field that follows it. */
+  background: linear-gradient(rgba(154, 43, 30, 0.035), rgba(154, 43, 30, 0.035)), var(--paper);
 }
 
 .brief-head {
@@ -140,8 +142,8 @@ main {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: baseline;
-  gap: 16px;
-  padding: 15px 18px;
+  gap: 18px;
+  padding: 18px 22px;
   background: none; border: 0; cursor: pointer;
   color: inherit; font: inherit; text-align: left;
   transition: background 0.15s ease;
@@ -159,15 +161,15 @@ main {
 
 .brief-kicker {
   display: inline-flex; align-items: baseline; gap: 8px;
-  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
   text-transform: uppercase; color: var(--accent); white-space: nowrap;
   align-self: center;
 }
-.brief-spark { width: 6px; height: 6px; background: var(--accent); align-self: center; }
+.brief-spark { width: 7px; height: 7px; background: var(--accent); align-self: center; }
 
 .brief-lede { min-width: 0; display: flex; align-items: baseline; gap: 12px; }
 .brief-headline {
-  font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--ink);
+  font-family: var(--serif); font-size: 1.24rem; font-weight: 600; color: var(--ink);
   letter-spacing: -0.01em; line-height: 1.25;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 0 1 auto;
 }
@@ -178,22 +180,6 @@ main {
 }
 
 .brief-actions { display: inline-flex; align-items: center; gap: 10px; align-self: center; }
-
-.brief-listen {
-  display: inline-flex; align-items: center; gap: 7px;
-  padding: 6px 12px; border-radius: 2px;
-  border: 1px solid var(--rule);
-  background: none; color: var(--ink-2);
-  font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
-  cursor: pointer; white-space: nowrap;
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
-}
-.brief-listen:hover { color: var(--accent); border-color: var(--accent); }
-.brief-listen svg { fill: currentColor; }
-.brief-listen .ic-stop { display: none; }
-.brief-listen.playing { color: var(--accent); border-color: var(--accent); background: rgba(154, 43, 30, 0.06); }
-.brief-listen.playing .ic-play { display: none; }
-.brief-listen.playing .ic-stop { display: inline; }
 
 .brief-chevron { display: inline-flex; color: inherit; transition: transform 0.25s ease; }
 .brief-head:hover .brief-cue { color: var(--accent-deep); }
@@ -206,9 +192,9 @@ main {
 .brief-body-inner {
   min-height: 0; overflow: hidden;
   opacity: 0; transition: opacity 0.22s ease, padding 0.3s ease;
-  padding: 0 18px;
+  padding: 0 22px;
 }
-.brief[data-open="true"] .brief-body-inner { opacity: 1; padding: 4px 18px 22px; }
+.brief[data-open="true"] .brief-body-inner { opacity: 1; padding: 4px 22px 24px; }
 
 .brief-block + .brief-block { margin-top: 18px; }
 .brief-label {
@@ -241,18 +227,42 @@ main {
   background: var(--paper-2);
   border: 1px solid var(--rule);
   border-radius: 2px;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
-.search-wrap svg { color: var(--ink-3); flex: none; }
-#search {
+.search-wrap:focus-within { border-color: var(--accent); background: var(--paper); }
+.search-wrap:focus-within svg { color: var(--accent); }
+.search-wrap svg { color: var(--ink-3); flex: none; transition: color 0.15s ease; }
+#search, #coSearch {
   flex: 1; min-width: 0;
   background: none; border: 0; outline: none;
   color: var(--ink); font-family: var(--sans); font-size: 0.92rem;
 }
-#search::placeholder { color: var(--ink-3); }
+#search::placeholder, #coSearch::placeholder { color: var(--ink-3); }
 .result-count {
   font-size: 0.72rem; font-weight: 500; color: var(--ink-3);
   text-transform: uppercase; letter-spacing: 0.06em;
   margin-left: auto; white-space: nowrap;
+}
+
+/* Companies index — fresher search field + sort segmented control */
+.co-search-wrap { flex: 1 1 240px; padding: 11px 15px; background: var(--paper); }
+.co-search-wrap #coSearch { font-size: 0.96rem; }
+
+.sort-group { display: inline-flex; align-items: center; gap: 7px; flex: none; }
+.sort-label {
+  font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--ink-4); margin-right: 1px;
+}
+.sort-btn {
+  font-family: var(--sans); font-size: 0.76rem; font-weight: 500; line-height: 1;
+  color: var(--ink-2); background: none;
+  border: 1px solid var(--rule); border-radius: 2px;
+  padding: 7px 11px; cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.sort-btn:hover { color: var(--ink); border-color: var(--ink-3); }
+.sort-btn.active {
+  color: var(--paper); background: var(--ink); border-color: var(--ink); font-weight: 600;
 }
 
 .filter-bar {
@@ -471,6 +481,8 @@ main {
   .result-count { display: none; }
   .status { display: none; }
   .co-link { flex-direction: column; gap: 5px; }
+  .sort-group { flex: 1 1 100%; flex-wrap: wrap; }
+  .sort-btn { flex: 1 1 auto; text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
