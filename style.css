@@ -111,6 +111,144 @@ main {
 .statline .sep { color: var(--faint); margin: 0 2px; }
 
 /* ============================================================
+   Editor's brief — collapsible "what's happening / why it matters"
+   ============================================================ */
+
+.brief {
+  margin: 4px 0 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(107, 138, 253, 0.05), rgba(107, 138, 253, 0) 60%),
+    var(--panel);
+  overflow: hidden;
+  position: relative;
+}
+.brief::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(180deg, var(--accent), rgba(107, 138, 253, 0.25));
+}
+
+/* Header row — the whole thing is the toggle */
+.brief-head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px 14px 18px;
+  background: none; border: 0; cursor: pointer;
+  color: inherit; font: inherit; text-align: left;
+}
+.brief-head:hover { background: rgba(255, 255, 255, 0.018); }
+
+.brief-kicker {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--mono); font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent-dim); white-space: nowrap;
+}
+.brief-spark {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(107, 138, 253, 0.5);
+  animation: pulse-accent 3s ease-out infinite;
+}
+@keyframes pulse-accent {
+  0%   { box-shadow: 0 0 0 0 rgba(107, 138, 253, 0.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(107, 138, 253, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(107, 138, 253, 0); }
+}
+
+.brief-lede { min-width: 0; display: flex; align-items: baseline; gap: 10px; }
+.brief-headline {
+  font-size: 0.98rem; font-weight: 600; color: var(--text);
+  letter-spacing: -0.01em; line-height: 1.3;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 0 1 auto;
+}
+/* The teaser rides in the same cell as the headline on wide screens */
+.brief-teaser {
+  display: none;
+  color: var(--muted); font-size: 0.9rem; font-weight: 400;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1 1 auto;
+}
+
+.brief-actions { display: inline-flex; align-items: center; gap: 6px; }
+
+.brief-listen {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 12px; border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-dim);
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.02em;
+  cursor: pointer; white-space: nowrap;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.brief-listen:hover { color: var(--text); border-color: rgba(107, 138, 253, 0.5); background: rgba(107, 138, 253, 0.08); }
+.brief-listen svg { fill: currentColor; }
+.brief-listen .ic-stop { display: none; }
+.brief-listen.playing { color: var(--accent-dim); border-color: rgba(107, 138, 253, 0.6); background: rgba(107, 138, 253, 0.12); }
+.brief-listen.playing .ic-play { display: none; }
+.brief-listen.playing .ic-stop { display: inline; }
+
+.brief-chevron {
+  display: inline-flex; color: var(--muted);
+  transition: transform 0.28s ease, color 0.15s ease;
+}
+.brief-head:hover .brief-chevron { color: var(--text-dim); }
+.brief[data-open="true"] .brief-chevron { transform: rotate(180deg); }
+/* When open, let the headline breathe on every width */
+.brief[data-open="true"] .brief-headline { white-space: normal; overflow: visible; }
+
+/* Body — animated open/close via grid rows (no fixed max-height guessing) */
+.brief-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s ease;
+}
+.brief[data-open="true"] .brief-body { grid-template-rows: 1fr; }
+.brief-body-inner {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  opacity: 0;
+  transition: opacity 0.24s ease, padding 0.32s ease;
+}
+.brief[data-open="true"] .brief-body-inner {
+  opacity: 1;
+  padding: 2px 18px 18px;
+}
+
+.brief-block + .brief-block { margin-top: 16px; }
+.brief-label {
+  margin: 0 0 5px;
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-dim);
+}
+.brief-text {
+  margin: 0; max-width: 68ch;
+  font-size: 1rem; line-height: 1.62; color: var(--text-dim);
+}
+.brief-text .anchor { color: var(--text); font-weight: 500; }
+.brief-foot {
+  margin: 18px 0 0; padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+  font-family: var(--mono); font-size: 0.7rem; color: var(--faint);
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 720px) {
+  .brief-teaser { display: inline; }
+  /* When collapsed, show the teaser; when open, hide it to reduce noise */
+  .brief[data-open="true"] .brief-teaser { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brief-body, .brief-body-inner, .brief-chevron, .brief-spark { transition: none; animation: none; }
+}
+
+/* ============================================================
    Toolbar
    ============================================================ */
 

@@ -170,6 +170,108 @@ function syncChips() {
   filterBar.querySelector(".chip-all")?.classList.toggle("active", activeTags.size === 0);
 }
 
+/* ============================================================
+   Editor's brief — render, expand/collapse, and read-aloud
+   ============================================================ */
+const briefEl = document.getElementById("brief");
+const briefToggle = document.getElementById("briefToggle");
+const briefListen = document.getElementById("briefListen");
+
+let currentBrief = null;
+
+function renderBrief(brief) {
+  if (!brief || !brief.whatsHappening) {
+    if (briefEl) briefEl.hidden = true;
+    return;
+  }
+  currentBrief = brief;
+  document.getElementById("briefHeadline").textContent = brief.headline || "The Brief";
+  document.getElementById("briefTeaser").textContent = brief.teaser || "";
+  document.getElementById("briefWhat").textContent = brief.whatsHappening;
+  document.getElementById("briefWhy").textContent = brief.whyItMatters;
+
+  const foot = document.getElementById("briefFoot");
+  const gen = brief.generatedAt ? timeAgo(brief.generatedAt) : "";
+  foot.textContent = `Auto-generated from this batch's themes${gen ? " · " + gen : ""}. A read of the wire, not investment advice.`;
+
+  briefEl.hidden = false;
+}
+
+/* Expand / collapse */
+function setBriefOpen(open) {
+  briefEl.dataset.open = open ? "true" : "false";
+  briefToggle.setAttribute("aria-expanded", open ? "true" : "false");
+}
+if (briefToggle) {
+  briefToggle.addEventListener("click", (e) => {
+    // Let the Listen control handle its own clicks without toggling.
+    if (e.target.closest("#briefListen")) return;
+    setBriefOpen(briefEl.dataset.open !== "true");
+  });
+}
+
+/* --- Read aloud (Web Speech API) --- */
+const synth = window.speechSynthesis;
+
+function pickVoice() {
+  if (!synth) return null;
+  const voices = synth.getVoices();
+  if (!voices.length) return null;
+  const en = voices.filter((v) => /^en(-|_|$)/i.test(v.lang));
+  const pool = en.length ? en : voices;
+  // Prefer known natural-sounding voices, then any local en-US voice.
+  const preferred = [
+    "Google US English", "Samantha", "Microsoft Aria", "Microsoft Jenny",
+    "Microsoft Guy", "Google UK English Female", "Daniel", "Karen", "Alex",
+  ];
+  for (const name of preferred) {
+    const hit = pool.find((v) => v.name === name || v.name.includes(name));
+    if (hit) return hit;
+  }
+  return pool.find((v) => /en-US/i.test(v.lang)) || pool[0];
+}
+// Voices populate asynchronously in some browsers.
+if (synth && typeof synth.onvoiceschanged !== "undefined") {
+  synth.onvoiceschanged = pickVoice;
+}
+
+let speaking = false;
+function setSpeaking(on) {
+  speaking = on;
+  briefListen.classList.toggle("playing", on);
+  briefListen.querySelector(".brief-listen-label").textContent = on ? "Stop" : "Listen";
+  briefListen.setAttribute("aria-label", on ? "Stop reading the brief" : "Listen to the brief");
+}
+
+function toggleSpeak() {
+  if (!synth) { alert("Your browser doesn't support read-aloud."); return; }
+  if (speaking || synth.speaking) { synth.cancel(); setSpeaking(false); return; }
+  if (!currentBrief) return;
+
+  const text = currentBrief.spoken ||
+    `${currentBrief.headline}. ${currentBrief.whatsHappening} Why it matters. ${currentBrief.whyItMatters}`;
+  const u = new SpeechSynthesisUtterance(text);
+  const v = pickVoice();
+  if (v) { u.voice = v; u.lang = v.lang; }
+  u.rate = 0.98;
+  u.pitch = 1.0;
+  u.onend = () => setSpeaking(false);
+  u.onerror = () => setSpeaking(false);
+  synth.cancel();          // clear any queued speech first
+  synth.speak(u);
+  setSpeaking(true);
+  setBriefOpen(true);      // open the panel so the reader can follow along
+}
+
+if (briefListen) {
+  briefListen.addEventListener("click", (e) => { e.stopPropagation(); toggleSpeak(); });
+  briefListen.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); toggleSpeak(); }
+  });
+}
+// Stop narration if the user navigates away.
+window.addEventListener("beforeunload", () => { if (synth) synth.cancel(); });
+
 /* --- Load feed (timeout + retry) --- */
 function showError(msg) {
   document.getElementById("navUpdated").textContent = "offline";
@@ -199,6 +301,7 @@ function loadFeed() {
       document.getElementById("statUpdated").textContent = upd;
       document.getElementById("navUpdated").textContent = upd;
 
+      renderBrief(data.briefing);
       buildChips(data.taxonomy || []);
       render(ALL);
     })

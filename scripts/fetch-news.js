@@ -8,6 +8,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { buildBriefing } = require("./build-brief");
 
 // Each feed: url + a fallback source label + whether to keyword-filter.
 // Google News search feeds are already on-topic; broad feeds get filtered.
@@ -281,11 +282,15 @@ async function fetchFeed(feed) {
     .filter((t) => counts[t])
     .map((t) => ({ name: t, count: counts[t] }));
 
+  // Editor's brief — themes + second-order effects for this batch.
+  const briefing = buildBriefing(articles, taxonomy);
+
   const payload = {
     updatedAt: new Date().toISOString(),
     count: articles.length,
     sources: [...new Set(articles.map((a) => a.source))].sort(),
     taxonomy,
+    briefing,
     articles,
   };
 
