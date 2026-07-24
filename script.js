@@ -192,7 +192,8 @@ function renderBrief(brief) {
 
   const foot = document.getElementById("briefFoot");
   const gen = brief.generatedAt ? timeAgo(brief.generatedAt) : "";
-  foot.textContent = `Auto-generated from this batch's themes${gen ? " · " + gen : ""}. A read of the wire, not investment advice.`;
+  const author = brief.by === "claude" ? "Written by Claude" : "Auto-generated";
+  foot.textContent = `${author} from this batch's themes${gen ? " · " + gen : ""}. A read of the wire, not investment advice.`;
 
   briefEl.hidden = false;
 }
