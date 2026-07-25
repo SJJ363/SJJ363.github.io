@@ -26,12 +26,17 @@ const FEEDS = [
   // all; these carry the outlet's own sentence about the story plus a
   // direct link. The dedupe below prefers this copy when the same story
   // also came through Google News.
+  // Insurtech-native: everything they publish is on-topic, so no gate.
   { url: "https://coverager.com/feed/", source: "Coverager" },
-  { url: "https://www.insurancejournal.com/rss/news/", source: "Insurance Journal" },
-  { url: "https://www.reinsurancene.ws/feed/", source: "Reinsurance News" },
-  { url: "https://www.artemis.bm/feed/", source: "Artemis" },
   { url: "https://www.insurtechinsights.com/feed/", source: "Insurtech Insights" },
-  { url: "https://www.carriermanagement.com/feed/", source: "Carrier Management" },
+
+  // General trade press. They file earnings, appointments, rate filings,
+  // catastrophe and court news all day; strict keeps only the stories with
+  // a technology angle.
+  { url: "https://www.insurancejournal.com/rss/news/", source: "Insurance Journal", strict: true },
+  { url: "https://www.reinsurancene.ws/feed/", source: "Reinsurance News", strict: true },
+  { url: "https://www.artemis.bm/feed/", source: "Artemis", strict: true },
+  { url: "https://www.carriermanagement.com/feed/", source: "Carrier Management", strict: true },
   // Broad trade feeds: heavy on coverage litigation, rate filings and
   // appointments. Marked strict so only items with a technology angle make
   // the wire — otherwise these three alone would take a third of it.
@@ -267,7 +272,12 @@ async function fetchFeed(feed) {
         summary = "";
       }
 
-      if (!RELEVANCE.test(title + " " + summary + " " + source)) continue;
+      // Judge the story, not the masthead. Including source here was
+      // harmless while every feed was a Google News search, but a
+      // publisher called "Insurance Journal" matches /insur/ on its own,
+      // which waved through everything it filed — mortgage rates, an
+      // earthquake, a lettuce recall, a Red Sea strike.
+      if (!RELEVANCE.test(title + " " + summary)) continue;
       if (feed.strict && !TECH_ANGLE.test(title + " " + summary)) continue;
 
       out.push({
