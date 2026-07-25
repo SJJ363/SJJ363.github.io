@@ -227,13 +227,16 @@ function render(list) {
   leadEl.innerHTML = "";
   feedEl.innerHTML = "";
   emptyEl.hidden = list.length > 0;
-  if (list.length === 0) { countEl.textContent = "0 shown"; return; }
+
+  // The count is feedback on a search or topic filter, so it only says
+  // anything while one is active — the unfiltered wire shows nothing.
+  const filtering = searchEl.value.trim() !== "" || activeTags.size > 0;
+  countEl.textContent = filtering
+    ? `${list.length} result${list.length === 1 ? "" : "s"}`
+    : "";
+  if (list.length === 0) return;
 
   const groups = groupThreads(list);
-  const folded = list.length - groups.length;
-  countEl.textContent = folded > 0
-    ? `${groups.length} shown · ${folded} folded in`
-    : `${list.length} shown`;
 
   // The lead is chosen by prominence within a freshness window, so it may not
   // be its thread's own head — pin it as head so the card shows the story we
