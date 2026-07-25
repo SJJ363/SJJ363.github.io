@@ -1,7 +1,41 @@
 {
-  "updatedAt": "2026-07-24T19:19:36.341Z",
-  "count": 111,
+  "updatedAt": "2026-07-25T02:21:18.280Z",
+  "count": 112,
   "companies": [
+    {
+      "slug": "the-hartford",
+      "name": "The Hartford",
+      "count": 1,
+      "firstSeen": "2026-07-24T20:40:00.000Z",
+      "lastSeen": "2026-07-24T20:40:00.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Digital Insurance"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "How AI is slashing underwriting time for The Hartford",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZU40ZTMyT2xjUFJQd1JOY0tidGlRTDhVM0xKVXpDUmJNdVB2bGY1Y1NzNC03bW1FYjVyZ0dJeDNqOU1ZSXZQNU5NX1RaOGY0SEJXMUlqeWhxb1lSTmZxU2lkWVhXTVFMNHlqY0dZM1dMQmNfcW1TdlJHOUZZbV8xbzFuVTRqU1U1?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-07-24T20:40:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "co": []
+        }
+      ]
+    },
     {
       "slug": "adam-riese",
       "name": "Adam Riese",
@@ -251,6 +285,68 @@
       ]
     },
     {
+      "slug": "oip-insurtech",
+      "name": "OIP Insurtech",
+      "count": 2,
+      "firstSeen": "2026-07-07T07:00:00.000Z",
+      "lastSeen": "2026-07-24T09:07:11.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Regulation",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Journal",
+        "Business Wire"
+      ],
+      "related": [
+        {
+          "slug": "insurity",
+          "name": "Insurity",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "OIP Insurtech Launches Document Intelligence AI, Reducing Compliance Review Time by Up to 80%",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBfY1VxbnNnemllVlVfS2FSTEJGT1hWOFE4ZFBwRmpGaW9kYnR4RHVqUmh2TzNKSlZmYVFwT0wySHpnRFlIOUtEVVI4Vkw2aUdLdHgyekZYUE5KdUYtMWhadk9OUmN3akNGb090OWp6emR0QQ?oc=5",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-24T09:07:11.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Regulation"
+          ],
+          "co": []
+        },
+        {
+          "title": "Insurity Expands Strategic Partnership with OIP Insurtech to Strengthen Insurance Technology Delivery and Innovation",
+          "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQMkpxdTJCTWtsdGo2X040WkUwU1VOMzZLaTA2ZXhfOHlocUFHNkdIcldic21wemJOQWhPbzZLZW5tbFl3T1A2TkxOV0lHWHdma1c3N1ZRcGVOX3R1QzRIZ1Fka19yVlpEd05PaUFma2V5S0VnZXpSS2lEalk0TUg0NEFLM0NQbThuQTk5VGVCY015UFpCejNob0FZeTJoSkplRFFDY3RrQ25QQmNMZ3NlcHNJZVBfd1lNdlRBTkhTQ19DMGY1UmpHRTRxU3ZIV0lZQ2V1WVJtN0x1NXF1ZTN6NWluMVNyVVpuQVZ1N2Y4bXVyaHVlb0hkS3N6WjZqYjhJV1Mw?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2026-07-07T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "co": [
+            "insurity"
+          ]
+        }
+      ]
+    },
+    {
       "slug": "mapfre",
       "name": "Mapfre",
       "count": 1,
@@ -379,8 +475,8 @@
         "Digital Pakistan",
         "Insurance Nerds",
         "The Fast Mode",
-        "Quiver Quantitative",
         "VEON",
+        "Quiver Quantitative",
         "富途牛牛",
         "Moomoo"
       ],
@@ -439,10 +535,10 @@
           ]
         },
         {
-          "title": "VEON Subsidiary JazzWorld Completes Acquisition of Controlling Stake in TPL Insurance in Pakistan",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOS2ZYUGZJMHAxY2xtMjlMN0hhUzAxbVV1OUgzWm5kcEZoVWNhb1JEeXpaTGdiM0NveUVtbi13N19sZjdNV203bGxkckpnZFJHNFFoNE11X1dYT2VGZVBDTnI3YkpGSmk5R1Vfa1loX2Npb2xqd19vaWhkS3J5V2lISXNSdk12R2hrNGZFWE4tRkdfakRfcG9nRlpFVzZFQVVKNURUV0FVYUVONVBGWlV3bGN3NXBnRFd0aDQwMmg4QlpHVk93NzlmQVBB?oc=5",
-          "source": "Quiver Quantitative",
-          "publishedAt": "2026-07-14T04:20:00.000Z",
+          "title": "VEON and JazzWorld Acquire TPL Insurance to Expand Digital Insurance Access Across Pakistan",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbmJlamN5bWZDZ2FHaWlvT19qbzA1RVkzUmN0eDZ2TFBmeV91ZXJ5SkY2a1NRZXA4a096ODktWkJMQTNicHhLY0hRUGlBaUh3LVg5RDV5LU9lUm8zbWdBVW5KODZiam13U1NLOG8ycDdmcUo0RnQwTVdlNVE5eXFLUHVleWtWQkR2TFMzQTBvREQyQzZoZUVPQzdlTDR4MWg2TDZaWHNMZlN1bTBsUC1oeU5yODI0cENQQ2htRkR1cFFhUGdDRlVvcWJZRVZLeThhaVE?oc=5",
+          "source": "VEON",
+          "publishedAt": "2026-07-14T07:00:00.000Z",
           "tags": [
             "M&A"
           ],
@@ -451,10 +547,10 @@
           ]
         },
         {
-          "title": "VEON and JazzWorld Acquire TPL Insurance to Expand Digital Insurance Access Across Pakistan",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbmJlamN5bWZDZ2FHaWlvT19qbzA1RVkzUmN0eDZ2TFBmeV91ZXJ5SkY2a1NRZXA4a096ODktWkJMQTNicHhLY0hRUGlBaUh3LVg5RDV5LU9lUm8zbWdBVW5KODZiam13U1NLOG8ycDdmcUo0RnQwTVdlNVE5eXFLUHVleWtWQkR2TFMzQTBvREQyQzZoZUVPQzdlTDR4MWg2TDZaWHNMZlN1bTBsUC1oeU5yODI0cENQQ2htRkR1cFFhUGdDRlVvcWJZRVZLeThhaVE?oc=5",
-          "source": "VEON",
-          "publishedAt": "2026-07-14T04:16:51.000Z",
+          "title": "VEON Subsidiary JazzWorld Completes Acquisition of Controlling Stake in TPL Insurance in Pakistan",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOS2ZYUGZJMHAxY2xtMjlMN0hhUzAxbVV1OUgzWm5kcEZoVWNhb1JEeXpaTGdiM0NveUVtbi13N19sZjdNV203bGxkckpnZFJHNFFoNE11X1dYT2VGZVBDTnI3YkpGSmk5R1Vfa1loX2Npb2xqd19vaWhkS3J5V2lISXNSdk12R2hrNGZFWE4tRkdfakRfcG9nRlpFVzZFQVVKNURUV0FVYUVONVBGWlV3bGN3NXBnRFd0aDQwMmg4QlpHVk93NzlmQVBB?oc=5",
+          "source": "Quiver Quantitative",
+          "publishedAt": "2026-07-14T04:20:00.000Z",
           "tags": [
             "M&A"
           ],
@@ -956,7 +1052,7 @@
       "sources": [
         "Citizen Digital",
         "Business Daily",
-        "capitalfm.co.ke"
+        "98.4 Capital FM Kenya"
       ],
       "related": [
         {
@@ -993,7 +1089,7 @@
         {
           "title": "Jubilee, Boltech partner to expand health insurance through embedded products",
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUkpBQjc4QWR3NU1xZF92bzE3aUEzRHJuRndJZEhzVFNMYU4yWFExRkhmT0tFeW5pbWJwTjc4SGFqVHl4Wldpb2NmRlNsWEhrUVhSM3ZjblJFSi1nSzRraUVDb01hcDROZHlsR1EwTGU3cmlFZzRkc1pheWt6MGZmNWZzSlVTTjZxRGpKUjk3ZHk1LWh4VHFfVm9lblI0V1FMYVg4eA?oc=5",
-          "source": "capitalfm.co.ke",
+          "source": "98.4 Capital FM Kenya",
           "publishedAt": "2026-07-23T11:54:31.000Z",
           "tags": [
             "Partnerships",
@@ -1027,7 +1123,7 @@
       ],
       "sources": [
         "Citizen Digital",
-        "capitalfm.co.ke",
+        "98.4 Capital FM Kenya",
         "itij.com"
       ],
       "related": [
@@ -1059,7 +1155,7 @@
         {
           "title": "Jubilee, Boltech partner to expand health insurance through embedded products",
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUkpBQjc4QWR3NU1xZF92bzE3aUEzRHJuRndJZEhzVFNMYU4yWFExRkhmT0tFeW5pbWJwTjc4SGFqVHl4Wldpb2NmRlNsWEhrUVhSM3ZjblJFSi1nSzRraUVDb01hcDROZHlsR1EwTGU3cmlFZzRkc1pheWt6MGZmNWZzSlVTTjZxRGpKUjk3ZHk1LWh4VHFfVm9lblI0V1FMYVg4eA?oc=5",
-          "source": "capitalfm.co.ke",
+          "source": "98.4 Capital FM Kenya",
           "publishedAt": "2026-07-23T11:54:31.000Z",
           "tags": [
             "Partnerships",
@@ -1609,8 +1705,8 @@
     {
       "slug": "britam",
       "name": "Britam",
-      "count": 2,
-      "firstSeen": "2026-07-22T13:57:43.000Z",
+      "count": 3,
+      "firstSeen": "2026-07-22T07:00:00.000Z",
       "lastSeen": "2026-07-23T11:38:24.000Z",
       "topics": [
         {
@@ -1619,13 +1715,14 @@
         }
       ],
       "sources": [
-        "TechAfrica News"
+        "TechAfrica News",
+        "Telecompaper"
       ],
       "related": [
         {
           "slug": "airtel-money",
           "name": "Airtel Money",
-          "count": 2
+          "count": 3
         }
       ],
       "articles": [
@@ -1652,14 +1749,26 @@
           "co": [
             "airtel-money"
           ]
+        },
+        {
+          "title": "Airtel Money Uganda and Britam expand digital insurance and financial services",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQWFZPazFwWmtobW5pemtMUW1ZY09NVmIzREtHRjhmcFk1bjczTllZaU50NzJoOUlpN0dWdGN5VEktYjliWFFmdDlULThOQ3BiZ0huTjE2Wlk4Y0F6Q2RXQ3g0OUxFQmJ4TFJzOFdYU2s4Q0VVYXJqbHI1RllTRTRkQ2tmeW9yaHRBNk00M2F4MzNtM3czVjJYUW14bDM1d0FrZk5ZX1phUUdFeVI0LS1qdzIxT21ITXRNZGxYb3Fn?oc=5",
+          "source": "Telecompaper",
+          "publishedAt": "2026-07-22T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "co": [
+            "airtel-money"
+          ]
         }
       ]
     },
     {
       "slug": "airtel-money",
       "name": "Airtel Money",
-      "count": 2,
-      "firstSeen": "2026-07-22T13:57:43.000Z",
+      "count": 3,
+      "firstSeen": "2026-07-22T07:00:00.000Z",
       "lastSeen": "2026-07-23T11:38:24.000Z",
       "topics": [
         {
@@ -1668,13 +1777,14 @@
         }
       ],
       "sources": [
-        "TechAfrica News"
+        "TechAfrica News",
+        "Telecompaper"
       ],
       "related": [
         {
           "slug": "britam",
           "name": "Britam",
-          "count": 2
+          "count": 3
         }
       ],
       "articles": [
@@ -1697,6 +1807,18 @@
           "publishedAt": "2026-07-22T13:57:43.000Z",
           "tags": [
             "Partnerships"
+          ],
+          "co": [
+            "britam"
+          ]
+        },
+        {
+          "title": "Airtel Money Uganda and Britam expand digital insurance and financial services",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQWFZPazFwWmtobW5pemtMUW1ZY09NVmIzREtHRjhmcFk1bjczTllZaU50NzJoOUlpN0dWdGN5VEktYjliWFFmdDlULThOQ3BiZ0huTjE2Wlk4Y0F6Q2RXQ3g0OUxFQmJ4TFJzOFdYU2s4Q0VVYXJqbHI1RllTRTRkQ2tmeW9yaHRBNk00M2F4MzNtM3czVjJYUW14bDM1d0FrZk5ZX1phUUdFeVI0LS1qdzIxT21ITXRNZGxYb3Fn?oc=5",
+          "source": "Telecompaper",
+          "publishedAt": "2026-07-22T07:00:00.000Z",
+          "tags": [
+            "Industry"
           ],
           "co": [
             "britam"
@@ -3049,8 +3171,8 @@
       "sources": [
         "Insurance Nerds",
         "The Fast Mode",
-        "Quiver Quantitative",
         "VEON",
+        "Quiver Quantitative",
         "富途牛牛",
         "Moomoo"
       ],
@@ -3099,10 +3221,10 @@
           ]
         },
         {
-          "title": "VEON Subsidiary JazzWorld Completes Acquisition of Controlling Stake in TPL Insurance in Pakistan",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOS2ZYUGZJMHAxY2xtMjlMN0hhUzAxbVV1OUgzWm5kcEZoVWNhb1JEeXpaTGdiM0NveUVtbi13N19sZjdNV203bGxkckpnZFJHNFFoNE11X1dYT2VGZVBDTnI3YkpGSmk5R1Vfa1loX2Npb2xqd19vaWhkS3J5V2lISXNSdk12R2hrNGZFWE4tRkdfakRfcG9nRlpFVzZFQVVKNURUV0FVYUVONVBGWlV3bGN3NXBnRFd0aDQwMmg4QlpHVk93NzlmQVBB?oc=5",
-          "source": "Quiver Quantitative",
-          "publishedAt": "2026-07-14T04:20:00.000Z",
+          "title": "VEON and JazzWorld Acquire TPL Insurance to Expand Digital Insurance Access Across Pakistan",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbmJlamN5bWZDZ2FHaWlvT19qbzA1RVkzUmN0eDZ2TFBmeV91ZXJ5SkY2a1NRZXA4a096ODktWkJMQTNicHhLY0hRUGlBaUh3LVg5RDV5LU9lUm8zbWdBVW5KODZiam13U1NLOG8ycDdmcUo0RnQwTVdlNVE5eXFLUHVleWtWQkR2TFMzQTBvREQyQzZoZUVPQzdlTDR4MWg2TDZaWHNMZlN1bTBsUC1oeU5yODI0cENQQ2htRkR1cFFhUGdDRlVvcWJZRVZLeThhaVE?oc=5",
+          "source": "VEON",
+          "publishedAt": "2026-07-14T07:00:00.000Z",
           "tags": [
             "M&A"
           ],
@@ -3111,10 +3233,10 @@
           ]
         },
         {
-          "title": "VEON and JazzWorld Acquire TPL Insurance to Expand Digital Insurance Access Across Pakistan",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbmJlamN5bWZDZ2FHaWlvT19qbzA1RVkzUmN0eDZ2TFBmeV91ZXJ5SkY2a1NRZXA4a096ODktWkJMQTNicHhLY0hRUGlBaUh3LVg5RDV5LU9lUm8zbWdBVW5KODZiam13U1NLOG8ycDdmcUo0RnQwTVdlNVE5eXFLUHVleWtWQkR2TFMzQTBvREQyQzZoZUVPQzdlTDR4MWg2TDZaWHNMZlN1bTBsUC1oeU5yODI0cENQQ2htRkR1cFFhUGdDRlVvcWJZRVZLeThhaVE?oc=5",
-          "source": "VEON",
-          "publishedAt": "2026-07-14T04:16:51.000Z",
+          "title": "VEON Subsidiary JazzWorld Completes Acquisition of Controlling Stake in TPL Insurance in Pakistan",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOS2ZYUGZJMHAxY2xtMjlMN0hhUzAxbVV1OUgzWm5kcEZoVWNhb1JEeXpaTGdiM0NveUVtbi13N19sZjdNV203bGxkckpnZFJHNFFoNE11X1dYT2VGZVBDTnI3YkpGSmk5R1Vfa1loX2Npb2xqd19vaWhkS3J5V2lISXNSdk12R2hrNGZFWE4tRkdfakRfcG9nRlpFVzZFQVVKNURUV0FVYUVONVBGWlV3bGN3NXBnRFd0aDQwMmg4QlpHVk93NzlmQVBB?oc=5",
+          "source": "Quiver Quantitative",
+          "publishedAt": "2026-07-14T04:20:00.000Z",
           "tags": [
             "M&A"
           ],
@@ -4745,43 +4867,6 @@
           ],
           "co": [
             "oip-insurtech"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "oip-insurtech",
-      "name": "OIP Insurtech",
-      "count": 1,
-      "firstSeen": "2026-07-07T07:00:00.000Z",
-      "lastSeen": "2026-07-07T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Business Wire"
-      ],
-      "related": [
-        {
-          "slug": "insurity",
-          "name": "Insurity",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Insurity Expands Strategic Partnership with OIP Insurtech to Strengthen Insurance Technology Delivery and Innovation",
-          "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQMkpxdTJCTWtsdGo2X040WkUwU1VOMzZLaTA2ZXhfOHlocUFHNkdIcldic21wemJOQWhPbzZLZW5tbFl3T1A2TkxOV0lHWHdma1c3N1ZRcGVOX3R1QzRIZ1Fka19yVlpEd05PaUFma2V5S0VnZXpSS2lEalk0TUg0NEFLM0NQbThuQTk5VGVCY015UFpCejNob0FZeTJoSkplRFFDY3RrQ25QQmNMZ3NlcHNJZVBfd1lNdlRBTkhTQ19DMGY1UmpHRTRxU3ZIV0lZQ2V1WVJtN0x1NXF1ZTN6NWluMVNyVVpuQVZ1N2Y4bXVyaHVlb0hkS3N6WjZqYjhJV1Mw?oc=5",
-          "source": "Business Wire",
-          "publishedAt": "2026-07-07T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "co": [
-            "insurity"
           ]
         }
       ]
