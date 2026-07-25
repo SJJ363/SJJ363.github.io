@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-25T19:57:39.189Z",
-  "count": 167,
+  "updatedAt": "2026-07-25T20:05:16.997Z",
+  "count": 175,
   "companies": [
     {
       "slug": "zurich",
@@ -2834,23 +2834,34 @@
     {
       "slug": "axa",
       "name": "AXA",
-      "count": 1,
-      "firstSeen": "2026-07-24T02:24:47.000Z",
+      "count": 2,
+      "firstSeen": "2026-07-21T02:40:35.000Z",
       "lastSeen": "2026-07-24T02:24:47.000Z",
       "topics": [
         {
           "name": "AI & Automation",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Claims & Underwriting",
           "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
         }
       ],
       "sources": [
-        "Insurance Business UK"
+        "Insurance Business UK",
+        "Insurance Business"
       ],
-      "related": [],
+      "related": [
+        {
+          "slug": "microsoft",
+          "name": "Microsoft",
+          "count": 1
+        }
+      ],
       "articles": [
         {
           "title": "AXA warns AI is no substitute for care as UK mental health hits crisis point",
@@ -2863,6 +2874,20 @@
           ],
           "summary": "Nearly half of Britons are turning to AI for mental health support - with direct implications for group risk, protection claims, and FCA oversight of vulnerable customers",
           "co": []
+        },
+        {
+          "title": "AXA rolls out Microsoft 365 Copilot to employees worldwide",
+          "link": "https://www.insurancebusinessmag.com/us/news/technology/axa-rolls-out-microsoft-365-copilot-to-employees-worldwide-583084.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-21T02:40:35.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "The deployment is part of a widening wave of AI adoption across UK and global insurers",
+          "co": [
+            "microsoft"
+          ]
         }
       ]
     },
@@ -5524,7 +5549,7 @@
     {
       "slug": "travelers",
       "name": "Travelers",
-      "count": 2,
+      "count": 3,
       "firstSeen": "2026-07-17T20:05:00.000Z",
       "lastSeen": "2026-07-21T10:00:00.000Z",
       "topics": [
@@ -5534,11 +5559,16 @@
         },
         {
           "name": "Claims & Underwriting",
+          "count": 2
+        },
+        {
+          "name": "Funding",
           "count": 1
         }
       ],
       "sources": [
-        "Digital Insurance"
+        "Digital Insurance",
+        "Insurance Business"
       ],
       "related": [],
       "articles": [
@@ -5554,6 +5584,18 @@
           "co": []
         },
         {
+          "title": "Travelers reports Q2 net income of $2.21 billion as underwriting and investment results improve",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/travelers-reports-q2-net-income-of-2-21-billion-as-underwriting-and-investment-results-improve-582887.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-20T04:15:03.000Z",
+          "tags": [
+            "Funding",
+            "Claims & Underwriting"
+          ],
+          "summary": "Strong activity on large construction projects fueled outsized growth in Travelers' surety line even as broader commercial pricing softens",
+          "co": []
+        },
+        {
           "title": "Travelers: How AI improved claims, underwriting efficiency in Q2",
           "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeHlGRENMU3NtZDBLejJkcldrSmJmekFuelNBcGR4d0pLOFQtVHVhVFAtY3NtZXgxWUdFUVJoVU1ndTFFVHZ3YjNFYTVWN0VxY285NFVxaUJrMDktSl84QnRia0V2S0RRS00yVWtvMlZ3Wll6blpmVUFDLVhwc242VUN0M2hMYlF6YmFNSEdBMA?oc=5",
           "source": "Digital Insurance",
@@ -5563,6 +5605,46 @@
             "Claims & Underwriting"
           ],
           "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "tokio-marine-hcc",
+      "name": "Tokio Marine HCC",
+      "count": 1,
+      "firstSeen": "2026-07-21T08:50:44.000Z",
+      "lastSeen": "2026-07-21T08:50:44.000Z",
+      "topics": [
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Tokio Marine HCC promotes veteran to lead international cyber team",
+          "link": "https://www.insurancebusinessmag.com/us/news/cyber/tokio-marine-hcc-promotes-veteran-to-lead-international-cyber-team-583072.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-21T08:50:44.000Z",
+          "tags": [
+            "Cyber",
+            "Claims & Underwriting",
+            "Leadership"
+          ],
+          "summary": "Gülsah Dagdelen takes the helm of a 22-strong cyber practice as rate softening tests underwriting discipline",
           "co": []
         }
       ]
@@ -5704,6 +5786,119 @@
       ]
     },
     {
+      "slug": "world-insurance-associates",
+      "name": "World Insurance Associates",
+      "count": 1,
+      "firstSeen": "2026-07-21T03:11:56.000Z",
+      "lastSeen": "2026-07-21T03:11:56.000Z",
+      "topics": [],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "World Insurance Associates names Rob Erfurt as New Jersey market leader",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/world-insurance-associates-names-rob-erfurt-as-new-jersey-market-leader-583015.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-21T03:11:56.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Rob Erfurt's move highlights how senior leaders now cycle between PE-backed brokerage platforms.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "nicb",
+      "name": "NICB",
+      "count": 1,
+      "firstSeen": "2026-07-21T03:03:26.000Z",
+      "lastSeen": "2026-07-21T03:03:26.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Regulation",
+          "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "NICB names Marta Magnuszewska as chief information and technology officer",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/nicb-names-marta-magnuszewska-as-chief-information-and-technology-officer-583014.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-21T03:03:26.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Regulation",
+            "Leadership"
+          ],
+          "summary": "Hire brings two decades of fraud analytics experience as AI governance becomes a live regulatory requirement for insurers.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "count": 1,
+      "firstSeen": "2026-07-21T02:40:35.000Z",
+      "lastSeen": "2026-07-21T02:40:35.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "axa",
+          "name": "AXA",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "AXA rolls out Microsoft 365 Copilot to employees worldwide",
+          "link": "https://www.insurancebusinessmag.com/us/news/technology/axa-rolls-out-microsoft-365-copilot-to-employees-worldwide-583084.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-21T02:40:35.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "The deployment is part of a widening wave of AI adoption across UK and global insurers",
+          "co": [
+            "axa"
+          ]
+        }
+      ]
+    },
+    {
       "slug": "generali",
       "name": "Generali",
       "count": 1,
@@ -5796,13 +5991,17 @@
     {
       "slug": "aon",
       "name": "Aon",
-      "count": 2,
+      "count": 4,
       "firstSeen": "2026-07-15T13:01:29.000Z",
       "lastSeen": "2026-07-20T15:33:29.000Z",
       "topics": [
         {
           "name": "Funding",
-          "count": 1
+          "count": 3
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
         },
         {
           "name": "Partnerships",
@@ -5819,6 +6018,8 @@
       ],
       "sources": [
         "Insurtech Insights",
+        "Insurance Business",
+        "Insurance Business UK",
         "Program Business"
       ],
       "related": [
@@ -5838,6 +6039,30 @@
             "Funding"
           ],
           "summary": "Aon has expanded its Data Center Lifecycle Insurance Program (DCLP), increasing the program's capacity to $5 billion while broadening the range of risk management and advisory services available to clients developing…",
+          "co": []
+        },
+        {
+          "title": "Aon expands data center insurance program to $5bn amid capacity crunch",
+          "link": "https://www.insurancebusinessmag.com/us/news/technology/aon-expands-data-center-insurance-program-to-5bn-amid-capacity-crunch-582902.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-20T08:18:59.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "Data center insurance premiums are set to nearly double by 2030 as AI infrastructure drives demand beyond market limits",
+          "co": []
+        },
+        {
+          "title": "Aon expands data centre insurance programme to US$5bn amid capacity crunch",
+          "link": "https://www.insurancebusinessmag.com/uk/news/technology/aon-expands-data-centre-insurance-programme-to-us5bn-amid-capacity-crunch-582901.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-20T08:18:59.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "Data centre insurance premiums are set to nearly double by 2030 as AI infrastructure drives demand beyond market limits",
           "co": []
         },
         {
@@ -5930,6 +6155,41 @@
           "co": [
             "fidelity-united"
           ]
+        }
+      ]
+    },
+    {
+      "slug": "ecclesiastical",
+      "name": "Ecclesiastical",
+      "count": 1,
+      "firstSeen": "2026-07-20T09:19:36.000Z",
+      "lastSeen": "2026-07-20T09:19:36.000Z",
+      "topics": [
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business UK"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Ecclesiastical names trio of internal leaders across operations and claims",
+          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/ecclesiastical-names-trio-of-internal-leaders-across-operations-and-claims-582918.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-20T09:19:36.000Z",
+          "tags": [
+            "Claims & Underwriting",
+            "Leadership"
+          ],
+          "summary": "Three roles, three internal promotions - Ecclesiastical's succession chain signals where a specialist insurer is placing its operational investment",
+          "co": []
         }
       ]
     },
@@ -6057,6 +6317,116 @@
           "co": [
             "jazzworld"
           ]
+        }
+      ]
+    },
+    {
+      "slug": "ameritas",
+      "name": "Ameritas",
+      "count": 1,
+      "firstSeen": "2026-07-19T18:47:37.000Z",
+      "lastSeen": "2026-07-19T18:47:37.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Health & Life",
+          "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Ameritas names Bob MacDonald and Gaurav Mehra as new senior vice presidents",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/ameritas-names-bob-macdonald-and-gaurav-mehra-as-new-senior-vice-presidents-582858.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-19T18:47:37.000Z",
+          "tags": [
+            "AI & Automation",
+            "Health & Life",
+            "Leadership"
+          ],
+          "summary": "Record annuity sales and ACA dental pressure frame two senior appointments at a mutual insurer leaning into AI-enabled marketing and enterprise strategy",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "bamboo-insurance",
+      "name": "Bamboo Insurance",
+      "count": 1,
+      "firstSeen": "2026-07-19T18:38:29.000Z",
+      "lastSeen": "2026-07-19T18:38:29.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Bamboo Insurance adds $150 million in admitted California homeowners' capacity",
+          "link": "https://www.insurancebusinessmag.com/us/news/excess-surplus/bamboo-insurance-adds-150-million-in-admitted-california-homeowners-capacity-582856.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-19T18:38:29.000Z",
+          "tags": [
+            "Funding",
+            "Partnerships",
+            "Property & Cat"
+          ],
+          "summary": "The partnership adds to a wave of capacity moves following the state's Sustainable Insurance Strategy reforms",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "quotezone",
+      "name": "Quotezone",
+      "count": 1,
+      "firstSeen": "2026-07-19T18:03:11.000Z",
+      "lastSeen": "2026-07-19T18:03:11.000Z",
+      "topics": [
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business UK"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Travel insurance premiums to Turkey jump 46% – Quotezone",
+          "link": "https://www.insurancebusinessmag.com/uk/news/travel/travel-insurance-premiums-to-turkey-jump-46--quotezone-582852.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-19T18:03:11.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "New data shows how proximity to Ukraine and Iran is feeding through into UK travel insurance pricing",
+          "co": []
         }
       ]
     },
