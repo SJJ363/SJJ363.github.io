@@ -60,6 +60,18 @@ jobs:
           fi
           node scripts/write-brief.js || echo "Brief enhancer failed — keeping deterministic brief."
 
+      # Only exists when the enhancement fell back. Holds the raw model reply
+      # and the guard that rejected it — the evidence that shouldn't ship to
+      # the site. The short reason code is also committed into news.json.
+      - name: Upload brief fallback diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brief-fallback-${{ github.run_number }}
+          path: brief-fallback.json
+          if-no-files-found: ignore
+          retention-days: 30
+
       # Regenerate all SEO artifacts from the refreshed data: static
       # per-company pages, sitemap.xml, robots.txt, and the structured
       # data injected into index.html / companies.html.

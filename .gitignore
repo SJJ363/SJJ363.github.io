@@ -1,2 +1,5 @@
 .DS_Store
 .claude/
+# Written by scripts/write-brief.js when the Claude brief falls back;
+# uploaded as a CI artifact rather than committed (it holds the raw reply).
+brief-fallback.json
