@@ -108,11 +108,21 @@ const countEl = document.getElementById("resultCount");
 const loadingEl = document.getElementById("loading");
 
 /* --- Rendering --- */
-// Lead = highest prominence score in the currently-shown list.
+// Lead = highest prominence score, but only among genuinely fresh stories.
+// A stale-but-heavily-corroborated piece shouldn't headline the page, so we
+// score inside a 24h window first and only widen (48h, then 72h) when that
+// window is empty. If nothing at all is recent, fall back to the whole list.
 // (List stays recency-ordered for the wire below.)
+const LEAD_WINDOWS_H = [24, 48, 72];
 function pickLead(list) {
-  let best = list[0];
-  for (const a of list) if ((a.score || 0) > (best.score || 0)) best = a;
+  const now = Date.now();
+  let pool = list;
+  for (const hours of LEAD_WINDOWS_H) {
+    const fresh = list.filter((a) => a.timestamp && now - a.timestamp <= hours * 3.6e6);
+    if (fresh.length) { pool = fresh; break; }
+  }
+  let best = pool[0];
+  for (const a of pool) if ((a.score || 0) > (best.score || 0)) best = a;
   return best;
 }
 
@@ -198,7 +208,7 @@ function renderBrief(brief) {
 
   const foot = document.getElementById("briefFoot");
   const gen = brief.generatedAt ? timeAgo(brief.generatedAt) : "";
-  const author = brief.by === "claude" ? "Written by Claude" : "Auto-generated";
+  const author = brief.by === "claude" ? "Written" : "Generated";
   foot.textContent = `${author} from this batch's themes${gen ? " · " + gen : ""}. A read of the wire, not investment advice.`;
 
   briefEl.hidden = false;

@@ -150,10 +150,10 @@ function header(active) {
 
 const FOOTER = `  <footer class="site-footer">
     <p class="foot-desc">
-      <b>Insurtech Daily</b> is an automated aggregator of publicly available insurtech headlines.
+      <b>Insurtech Daily</b> is an aggregator of publicly available insurtech headlines.
       Every story links to its original source.
     </p>
-    <p class="foot-meta">Auto-refreshed via GitHub Actions · © ${new Date().getFullYear()}</p>
+    <p class="foot-meta">© ${new Date().getFullYear()}</p>
   </footer>`;
 
 /* ── Structured-data fragments ──────────────────────────────── */
