@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-25T19:42:17.960Z",
-  "count": 154,
+  "updatedAt": "2026-07-25T19:54:29.869Z",
+  "count": 167,
   "companies": [
     {
       "slug": "zurich",
@@ -621,8 +621,8 @@
     {
       "slug": "allianz",
       "name": "Allianz",
-      "count": 2,
-      "firstSeen": "2026-07-24T10:51:29.000Z",
+      "count": 3,
+      "firstSeen": "2026-07-23T02:59:19.000Z",
       "lastSeen": "2026-07-24T15:00:55.000Z",
       "topics": [
         {
@@ -632,11 +632,24 @@
         {
           "name": "Funding",
           "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
         }
       ],
       "sources": [
         "Reinsurance News",
-        "Insurance Journal"
+        "Insurance Journal",
+        "Insurance Business UK"
       ],
       "related": [
         {
@@ -672,6 +685,19 @@
           "co": [
             "hsbc-life-singapore"
           ]
+        },
+        {
+          "title": "Allianz UK expands Northern Ireland broker access with mini fleet launch",
+          "link": "https://www.insurancebusinessmag.com/uk/news/auto-motor/allianz-uk-expands-northern-ireland-broker-access-with-mini-fleet-launch-583380.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-23T02:59:19.000Z",
+          "tags": [
+            "Product & Launches",
+            "Claims & Underwriting",
+            "Auto & Mobility"
+          ],
+          "summary": "The digital rollout arrives in a market where premium finance costs and underwriting capacity have long lagged the rest of the UK",
+          "co": []
         }
       ]
     },
@@ -775,21 +801,21 @@
     {
       "slug": "mapfre",
       "name": "Mapfre",
-      "count": 6,
+      "count": 7,
       "firstSeen": "2026-07-21T17:24:35.000Z",
       "lastSeen": "2026-07-24T14:30:30.000Z",
       "topics": [
         {
           "name": "Funding",
-          "count": 3
+          "count": 4
         },
         {
           "name": "M&A",
-          "count": 3
+          "count": 4
         },
         {
           "name": "Property & Cat",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Claims & Underwriting",
@@ -804,6 +830,7 @@
         "Reinsurance News",
         "Insurance Journal",
         "FF News",
+        "Insurance Business",
         "Carrier Management",
         "Insurtech Insights"
       ],
@@ -811,7 +838,7 @@
         {
           "slug": "safety-insurance-group",
           "name": "Safety Insurance Group",
-          "count": 3
+          "count": 4
         },
         {
           "slug": "blue-marble",
@@ -852,6 +879,21 @@
             "M&A"
           ],
           "summary": "",
+          "co": [
+            "safety-insurance-group"
+          ]
+        },
+        {
+          "title": "MAPFRE to acquire Safety Insurance for $1.54 billion amid shareholder probe",
+          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/mapfre-to-acquire-safety-insurance-for-1-54-billion-amid-shareholder-probe-583605.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-24T08:21:47.000Z",
+          "tags": [
+            "Funding",
+            "M&A",
+            "Property & Cat"
+          ],
+          "summary": "As company reveals financials, deal creates an auto and homeowners giant, but a law firm is already investigating whether board got shareholders a fair price",
           "co": [
             "safety-insurance-group"
           ]
@@ -1798,21 +1840,26 @@
     {
       "slug": "safety-insurance-group",
       "name": "Safety Insurance Group",
-      "count": 3,
+      "count": 4,
       "firstSeen": "2026-07-24T02:05:58.000Z",
       "lastSeen": "2026-07-24T09:03:50.000Z",
       "topics": [
         {
           "name": "M&A",
-          "count": 3
+          "count": 4
         },
         {
           "name": "Funding",
-          "count": 2
+          "count": 3
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
         }
       ],
       "sources": [
         "FF News",
+        "Insurance Business",
         "Insurance Journal",
         "Carrier Management"
       ],
@@ -1820,7 +1867,7 @@
         {
           "slug": "mapfre",
           "name": "Mapfre",
-          "count": 3
+          "count": 4
         }
       ],
       "articles": [
@@ -1833,6 +1880,21 @@
             "M&A"
           ],
           "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "MAPFRE to acquire Safety Insurance for $1.54 billion amid shareholder probe",
+          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/mapfre-to-acquire-safety-insurance-for-1-54-billion-amid-shareholder-probe-583605.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-24T08:21:47.000Z",
+          "tags": [
+            "Funding",
+            "M&A",
+            "Property & Cat"
+          ],
+          "summary": "As company reveals financials, deal creates an auto and homeowners giant, but a law firm is already investigating whether board got shareholders a fair price",
           "co": [
             "mapfre"
           ]
@@ -2684,6 +2746,127 @@
       ]
     },
     {
+      "slug": "questgates",
+      "name": "QuestGates",
+      "count": 1,
+      "firstSeen": "2026-07-24T02:48:02.000Z",
+      "lastSeen": "2026-07-24T02:48:02.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business UK"
+      ],
+      "related": [
+        {
+          "slug": "howell-wild",
+          "name": "Howell Wild",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "QuestGates acquires Howell Wild to strengthen liability adjusting arm",
+          "link": "https://www.insurancebusinessmag.com/uk/news/mergers-acquisitions/questgates-acquires-howell-wild-to-strengthen-liability-adjusting-arm-583565.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-24T02:48:02.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "summary": "The deal adds specialist liability capability as UK insurers report acute recruitment pressure in claims and adjusting",
+          "co": [
+            "howell-wild"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "howell-wild",
+      "name": "Howell Wild",
+      "count": 1,
+      "firstSeen": "2026-07-24T02:48:02.000Z",
+      "lastSeen": "2026-07-24T02:48:02.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business UK"
+      ],
+      "related": [
+        {
+          "slug": "questgates",
+          "name": "QuestGates",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "QuestGates acquires Howell Wild to strengthen liability adjusting arm",
+          "link": "https://www.insurancebusinessmag.com/uk/news/mergers-acquisitions/questgates-acquires-howell-wild-to-strengthen-liability-adjusting-arm-583565.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-24T02:48:02.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "summary": "The deal adds specialist liability capability as UK insurers report acute recruitment pressure in claims and adjusting",
+          "co": [
+            "questgates"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "axa",
+      "name": "AXA",
+      "count": 1,
+      "firstSeen": "2026-07-24T02:24:47.000Z",
+      "lastSeen": "2026-07-24T02:24:47.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business UK"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "AXA warns AI is no substitute for care as UK mental health hits crisis point",
+          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/axa-warns-ai-is-no-substitute-for-care-as-uk-mental-health-hits-crisis-point-583562.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-24T02:24:47.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "Nearly half of Britons are turning to AI for mental health support - with direct implications for group risk, protection claims, and FCA oversight of vulnerable customers",
+          "co": []
+        }
+      ]
+    },
+    {
       "slug": "klaimee",
       "name": "Klaimee",
       "count": 2,
@@ -2871,19 +3054,34 @@
     {
       "slug": "gallagher",
       "name": "Gallagher",
-      "count": 2,
-      "firstSeen": "2026-07-23T16:25:29.000Z",
+      "count": 3,
+      "firstSeen": "2026-07-22T03:52:26.000Z",
       "lastSeen": "2026-07-23T16:32:16.000Z",
       "topics": [
         {
           "name": "Product & Launches",
           "count": 1
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
         }
       ],
       "sources": [
-        "Insurance Journal"
+        "Insurance Journal",
+        "Insurance Business"
       ],
-      "related": [],
+      "related": [
+        {
+          "slug": "w-n-tuscano-agency",
+          "name": "W.N. Tuscano Agency",
+          "count": 1
+        }
+      ],
       "articles": [
         {
           "title": "Tech Update: Gallagher Enhances Digital Insurance Platform for Aviation Clients",
@@ -2906,6 +3104,20 @@
           ],
           "summary": "Insurance broker Gallagher has relaunched its aviation insurance web portal — Jacinth — which provides clients with an interconnected insurance management system. The new enhanced digital platform is designed to help…",
           "co": []
+        },
+        {
+          "title": "Gallagher's RPS acquires Pennsylvania wholesale broker W.N. Tuscano Agency",
+          "link": "https://www.insurancebusinessmag.com/us/news/excess-surplus/gallaghers-rps-acquires-pennsylvania-wholesale-broker-w-n--tuscano-agency-583198.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-22T03:52:26.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships"
+          ],
+          "summary": "One of 40-plus deals in Gallagher's term sheet pipeline, Tuscano illustrates how the firm is layering wholesale distribution into its AssuredPartners integration",
+          "co": [
+            "w-n-tuscano-agency"
+          ]
         }
       ]
     },
@@ -2932,7 +3144,7 @@
       "sources": [
         "Citizen Digital",
         "Business Daily",
-        "Capitalfm.co.ke"
+        "capitalfm.co.ke"
       ],
       "related": [
         {
@@ -2971,7 +3183,7 @@
         {
           "title": "Jubilee, Boltech partner to expand health insurance through embedded products",
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUkpBQjc4QWR3NU1xZF92bzE3aUEzRHJuRndJZEhzVFNMYU4yWFExRkhmT0tFeW5pbWJwTjc4SGFqVHl4Wldpb2NmRlNsWEhrUVhSM3ZjblJFSi1nSzRraUVDb01hcDROZHlsR1EwTGU3cmlFZzRkc1pheWt6MGZmNWZzSlVTTjZxRGpKUjk3ZHk1LWh4VHFfVm9lblI0V1FMYVg4eA?oc=5",
-          "source": "Capitalfm.co.ke",
+          "source": "capitalfm.co.ke",
           "publishedAt": "2026-07-23T11:54:31.000Z",
           "tags": [
             "Partnerships",
@@ -3006,7 +3218,7 @@
       ],
       "sources": [
         "Citizen Digital",
-        "Capitalfm.co.ke",
+        "capitalfm.co.ke",
         "itij.com"
       ],
       "related": [
@@ -3039,7 +3251,7 @@
         {
           "title": "Jubilee, Boltech partner to expand health insurance through embedded products",
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUkpBQjc4QWR3NU1xZF92bzE3aUEzRHJuRndJZEhzVFNMYU4yWFExRkhmT0tFeW5pbWJwTjc4SGFqVHl4Wldpb2NmRlNsWEhrUVhSM3ZjblJFSi1nSzRraUVDb01hcDROZHlsR1EwTGU3cmlFZzRkc1pheWt6MGZmNWZzSlVTTjZxRGpKUjk3ZHk1LWh4VHFfVm9lblI0V1FMYVg4eA?oc=5",
-          "source": "Capitalfm.co.ke",
+          "source": "capitalfm.co.ke",
           "publishedAt": "2026-07-23T11:54:31.000Z",
           "tags": [
             "Partnerships",
@@ -3487,6 +3699,31 @@
       ]
     },
     {
+      "slug": "epic",
+      "name": "EPIC",
+      "count": 1,
+      "firstSeen": "2026-07-23T13:42:00.000Z",
+      "lastSeen": "2026-07-23T13:42:00.000Z",
+      "topics": [],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "\"We’re not all things to all people\": EPIC specialty leader on growth strategy",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/were-not-all-things-to-all-people-epic-specialty-leader-on-growth-strategy-583459.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-23T13:42:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Brokerage concentrates investment in established sectors and product lines",
+          "co": []
+        }
+      ]
+    },
+    {
       "slug": "industrial-safety-solutions",
       "name": "Industrial Safety Solutions",
       "count": 1,
@@ -3538,21 +3775,22 @@
     {
       "slug": "boxx",
       "name": "BOXX",
-      "count": 1,
-      "firstSeen": "2026-07-23T13:07:57.000Z",
+      "count": 2,
+      "firstSeen": "2026-07-23T04:51:11.000Z",
       "lastSeen": "2026-07-23T13:07:57.000Z",
       "topics": [
         {
           "name": "AI & Automation",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Cyber",
-          "count": 1
+          "count": 2
         }
       ],
       "sources": [
-        "Beinsure"
+        "Beinsure",
+        "Insurance Business"
       ],
       "related": [],
       "articles": [
@@ -3566,6 +3804,18 @@
             "Cyber"
           ],
           "summary": "",
+          "co": []
+        },
+        {
+          "title": "BOXX Insurance adds affirmative AI and deepfake coverage to Cyberboxx Business policy",
+          "link": "https://www.insurancebusinessmag.com/us/news/cyber/boxx-insurance-adds-affirmative-ai-and-deepfake-coverage-to-cyberboxx-business-policy-583408.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-23T04:51:11.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber"
+          ],
+          "summary": "BOXX's new endorsement reflects a wider split forming across the cyber insurance market",
           "co": []
         }
       ]
@@ -3750,6 +4000,147 @@
           ],
           "summary": "",
           "co": []
+        }
+      ]
+    },
+    {
+      "slug": "santam",
+      "name": "Santam",
+      "count": 1,
+      "firstSeen": "2026-07-23T09:12:24.000Z",
+      "lastSeen": "2026-07-23T09:12:24.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business UK"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Santam Syndicate 1918 breaks from its launch class list with motor push",
+          "link": "https://www.insurancebusinessmag.com/uk/news/auto-motor/santam-syndicate-1918-breaks-from-its-launch-class-list-with-motor-push-583442.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-23T09:12:24.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Neil Smith leads the syndicate's first move into international motor since its January launch, while Stephen Kiedish joins to diversify the property book",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "oakbridge-insurance-agency",
+      "name": "Oakbridge Insurance Agency",
+      "count": 1,
+      "firstSeen": "2026-07-23T03:45:24.000Z",
+      "lastSeen": "2026-07-23T03:45:24.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Oakbridge Insurance Agency adds Charlotte-area firm to its platform",
+          "link": "https://www.insurancebusinessmag.com/us/news/auto-motor/oakbridge-insurance-agency-adds-charlottearea-firm-to-its-platform-583383.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-23T03:45:24.000Z",
+          "tags": [
+            "Partnerships",
+            "Auto & Mobility"
+          ],
+          "summary": "The move taps into one of the country's fastest-growing metro areas and a thriving collector car insurance niche",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "west-p-and-i",
+      "name": "West P&I",
+      "count": 1,
+      "firstSeen": "2026-07-23T02:57:06.000Z",
+      "lastSeen": "2026-07-23T02:57:06.000Z",
+      "topics": [
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business UK"
+      ],
+      "related": [
+        {
+          "slug": "s-and-p-global",
+          "name": "S&P Global",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "West P&I's S&P gets an upgrade – but who gets the credit?",
+          "link": "https://www.insurancebusinessmag.com/uk/news/marine/west-pandis-sandp-gets-an-upgrade--but-who-gets-the-credit-583382.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-23T02:57:06.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "Data shows A- owes as much to markets as to underwriting",
+          "co": [
+            "s-and-p-global"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "s-and-p-global",
+      "name": "S&P Global",
+      "count": 1,
+      "firstSeen": "2026-07-23T02:57:06.000Z",
+      "lastSeen": "2026-07-23T02:57:06.000Z",
+      "topics": [
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business UK"
+      ],
+      "related": [
+        {
+          "slug": "west-p-and-i",
+          "name": "West P&I",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "West P&I's S&P gets an upgrade – but who gets the credit?",
+          "link": "https://www.insurancebusinessmag.com/uk/news/marine/west-pandis-sandp-gets-an-upgrade--but-who-gets-the-credit-583382.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-23T02:57:06.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "Data shows A- owes as much to markets as to underwriting",
+          "co": [
+            "west-p-and-i"
+          ]
         }
       ]
     },
@@ -3970,6 +4361,79 @@
           "co": [
             "clyde-and",
             "neodigital"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "personal-group",
+      "name": "Personal Group",
+      "count": 1,
+      "firstSeen": "2026-07-22T06:55:23.000Z",
+      "lastSeen": "2026-07-22T06:55:23.000Z",
+      "topics": [
+        {
+          "name": "Embedded",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business UK"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Personal Group posts record H1 insurance sales, API hits £42.4 million",
+          "link": "https://www.insurancebusinessmag.com/uk/news/life-insurance/personal-group-posts-record-h1-insurance-sales-api-hits-42-4-million-583230.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-22T06:55:23.000Z",
+          "tags": [
+            "Embedded"
+          ],
+          "summary": "Insurance revenue up 11% as workplace health cover reaches record UK penetration",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "w-n-tuscano-agency",
+      "name": "W.N. Tuscano Agency",
+      "count": 1,
+      "firstSeen": "2026-07-22T03:52:26.000Z",
+      "lastSeen": "2026-07-22T03:52:26.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "gallagher",
+          "name": "Gallagher",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Gallagher's RPS acquires Pennsylvania wholesale broker W.N. Tuscano Agency",
+          "link": "https://www.insurancebusinessmag.com/us/news/excess-surplus/gallaghers-rps-acquires-pennsylvania-wholesale-broker-w-n--tuscano-agency-583198.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-22T03:52:26.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships"
+          ],
+          "summary": "One of 40-plus deals in Gallagher's term sheet pipeline, Tuscano illustrates how the firm is layering wholesale distribution into its AssuredPartners integration",
+          "co": [
+            "gallagher"
           ]
         }
       ]
@@ -4244,6 +4708,168 @@
           ],
           "summary": "",
           "co": []
+        }
+      ]
+    },
+    {
+      "slug": "homesite",
+      "name": "Homesite",
+      "count": 1,
+      "firstSeen": "2026-07-21T17:56:00.000Z",
+      "lastSeen": "2026-07-21T17:56:00.000Z",
+      "topics": [
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Regulation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "united",
+          "name": "United",
+          "count": 1
+        },
+        {
+          "slug": "crowdstrike",
+          "name": "CrowdStrike",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Homesite asks court to rule United's CrowdStrike claim isn't covered",
+          "link": "https://www.insurancebusinessmag.com/us/news/risk-compliance-legal/homesite-asks-court-to-rule-uniteds-crowdstrike-claim-isnt-covered-583090.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-21T17:56:00.000Z",
+          "tags": [
+            "Cyber",
+            "Claims & Underwriting",
+            "Regulation"
+          ],
+          "summary": "The airline calls its outage losses covered - its cyber insurer sees double recovery",
+          "co": [
+            "united",
+            "crowdstrike"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "united",
+      "name": "United",
+      "count": 1,
+      "firstSeen": "2026-07-21T17:56:00.000Z",
+      "lastSeen": "2026-07-21T17:56:00.000Z",
+      "topics": [
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Regulation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "homesite",
+          "name": "Homesite",
+          "count": 1
+        },
+        {
+          "slug": "crowdstrike",
+          "name": "CrowdStrike",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Homesite asks court to rule United's CrowdStrike claim isn't covered",
+          "link": "https://www.insurancebusinessmag.com/us/news/risk-compliance-legal/homesite-asks-court-to-rule-uniteds-crowdstrike-claim-isnt-covered-583090.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-21T17:56:00.000Z",
+          "tags": [
+            "Cyber",
+            "Claims & Underwriting",
+            "Regulation"
+          ],
+          "summary": "The airline calls its outage losses covered - its cyber insurer sees double recovery",
+          "co": [
+            "homesite",
+            "crowdstrike"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "crowdstrike",
+      "name": "CrowdStrike",
+      "count": 1,
+      "firstSeen": "2026-07-21T17:56:00.000Z",
+      "lastSeen": "2026-07-21T17:56:00.000Z",
+      "topics": [
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Regulation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "homesite",
+          "name": "Homesite",
+          "count": 1
+        },
+        {
+          "slug": "united",
+          "name": "United",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Homesite asks court to rule United's CrowdStrike claim isn't covered",
+          "link": "https://www.insurancebusinessmag.com/us/news/risk-compliance-legal/homesite-asks-court-to-rule-uniteds-crowdstrike-claim-isnt-covered-583090.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-21T17:56:00.000Z",
+          "tags": [
+            "Cyber",
+            "Claims & Underwriting",
+            "Regulation"
+          ],
+          "summary": "The airline calls its outage losses covered - its cyber insurer sees double recovery",
+          "co": [
+            "homesite",
+            "united"
+          ]
         }
       ]
     },
