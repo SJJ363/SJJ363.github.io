@@ -73,8 +73,9 @@ jobs:
           retention-days: 30
 
       # Regenerate all SEO artifacts from the refreshed data: static
-      # per-company pages, sitemap.xml, robots.txt, and the structured
-      # data injected into index.html / companies.html.
+      # per-company pages, the day's brief page (folded into the
+      # permanent archive under /brief/), sitemap.xml, robots.txt, and
+      # the structured data injected into index.html / companies.html.
       - name: Build SEO (pages, sitemap, structured data)
         run: node scripts/seo.js
 
@@ -82,7 +83,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/ company/ sitemap.xml robots.txt index.html companies.html
+          git add -A data/ company/ brief/ sitemap.xml robots.txt index.html companies.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh insurtech news ($(date -u +'%Y-%m-%d %H:%M UTC'))"
             git push

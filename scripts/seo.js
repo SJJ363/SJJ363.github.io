@@ -27,6 +27,7 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const NEWS = path.join(ROOT, "data", "news.json");
 const DB = path.join(ROOT, "data", "companies.json");
+const BRIEFS = path.join(ROOT, "data", "briefs.json");
 
 /* ── Site identity — change here, propagates everywhere ─────── */
 const SITE = {
@@ -85,7 +86,7 @@ const FAVICON =
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=14" />
+  <link rel="stylesheet" href="/style.css?v=15" />
   <link rel="icon" href="${FAVICON}" />`;
 
 /* ── The shared <head> builder — every page goes through here ── */
@@ -143,6 +144,7 @@ function header(active) {
     ${BRAND_MARK}
     <nav class="nav">
       <a href="/"${cls("wire")}>The Wire</a>
+      <a href="/brief/"${cls("brief")}>The Brief</a>
       <a href="/companies.html"${cls("companies")}>Companies</a>
     </nav>
   </header>`;
@@ -343,6 +345,282 @@ ${FOOTER}
 }
 
 /* ══════════════════════════════════════════════════════════════
+   THE BRIEF ARCHIVE — the only original writing on the site.
+   news.json holds just the *current* briefing and is overwritten
+   every run, so each build folds today's into data/briefs.json and
+   gives every past day a permanent, crawlable URL of its own.
+   ══════════════════════════════════════════════════════════════ */
+function loadBriefs() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(BRIEFS, "utf8"));
+    return Array.isArray(raw.briefs) ? raw.briefs : [];
+  } catch {
+    return []; // no archive yet — the first run creates it
+  }
+}
+
+/* Upsert today's briefing. The workflow runs several times a day, so
+   a date already in the archive is replaced rather than appended —
+   each day keeps one page holding that day's latest brief. */
+function recordBrief(news) {
+  const b = news.briefing || {};
+  const date = isoDate(b.generatedAt) || isoDate(news.updatedAt);
+
+  // A failed Claude enhancement leaves the briefing empty. Never
+  // publish a stub for it — that day simply gets no page, and the
+  // next run backfills it if the brief comes back.
+  if (!date || !b.headline || !b.whatsHappening) return loadBriefs();
+
+  const entry = {
+    date,
+    headline: b.headline,
+    teaser: b.teaser || "",
+    whatsHappening: b.whatsHappening,
+    whyItMatters: b.whyItMatters || "",
+    generatedAt: b.generatedAt || news.updatedAt,
+    by: b.by || "",
+    storyCount: news.count || (news.articles || []).length,
+    sourceCount: (news.sources || []).length,
+    topics: (news.taxonomy || [])
+      .slice()
+      .sort((x, y) => (y.count || 0) - (x.count || 0))
+      .slice(0, 6)
+      .map((t) => ({ name: t.name, count: t.count })),
+  };
+
+  const briefs = loadBriefs().filter((x) => x.date !== date);
+  briefs.push(entry);
+  briefs.sort((x, y) => y.date.localeCompare(x.date)); // newest first
+  fs.writeFileSync(
+    BRIEFS,
+    JSON.stringify(
+      { updatedAt: new Date().toISOString(), count: briefs.length, briefs },
+      null,
+      2
+    ) + "\n"
+  );
+  return briefs;
+}
+
+function briefBlocks(b) {
+  const blocks = [
+    `      <div class="brief-block">
+        <h2 class="brief-label">What's happening</h2>
+        <p class="brief-text">${escHtml(b.whatsHappening)}</p>
+      </div>`,
+  ];
+  if (b.whyItMatters) {
+    blocks.push(`      <div class="brief-block">
+        <h2 class="brief-label">Why it matters</h2>
+        <p class="brief-text">${escHtml(b.whyItMatters)}</p>
+      </div>`);
+  }
+  return blocks.join("\n");
+}
+
+/* newer/older are the adjacent archive entries — the prev/next pair
+   gives crawlers a path through every brief without the index. */
+function briefPageHtml(b, newer, older) {
+  const canonical = `/brief/${b.date}/`;
+  const day = fullDate(b.generatedAt || b.date);
+  const title = `${b.headline} — insurtech brief, ${day} | ${SITE.name}`;
+  const description = b.teaser || b.whatsHappening;
+
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: clamp(b.headline, 110), // Google ignores headlines past ~110
+    description: clamp(description),
+    url: url(canonical),
+    datePublished: b.generatedAt,
+    dateModified: b.generatedAt,
+    inLanguage: SITE.lang,
+    isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
+    author: { "@type": "Organization", name: SITE.name, url: url("/") },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: url("/"),
+      logo: { "@type": "ImageObject", url: url(SITE.ogImage) },
+    },
+    image: url(SITE.ogImage),
+    articleSection: "Insurtech",
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "The Brief", path: "/brief/" },
+    { name: day, path: canonical },
+  ]);
+
+  const statBits = [day];
+  if (b.storyCount) statBits.push(`${b.storyCount} stories`);
+  if (b.sourceCount) statBits.push(`${b.sourceCount} sources`);
+
+  const topics = (b.topics || []).length
+    ? `    <section class="co-facts">
+      <div class="co-fact">
+        <h2 class="fact-label">Most-covered that day</h2>
+        <div class="tags">${b.topics
+          .map(
+            (t) =>
+              `<span class="tag-pill">${escHtml(t.name)}${
+                t.count ? ` <span class="cnt">${t.count}</span>` : ""
+              }</span>`
+          )
+          .join("")}</div>
+      </div>
+    </section>`
+    : "";
+
+  const nav = [];
+  if (older)
+    nav.push(
+      `<a class="brief-nav-link" rel="prev" href="/brief/${escAttr(older.date)}/">` +
+        `<span class="brief-nav-dir">← Earlier</span>` +
+        `<span class="brief-nav-title">${escHtml(older.headline)}</span></a>`
+    );
+  if (newer)
+    nav.push(
+      `<a class="brief-nav-link next" rel="next" href="/brief/${escAttr(newer.date)}/">` +
+        `<span class="brief-nav-dir">Later →</span>` +
+        `<span class="brief-nav-title">${escHtml(newer.headline)}</span></a>`
+    );
+  const navHtml = nav.length
+    ? `    <nav class="brief-nav" aria-label="More briefs">\n      ${nav.join("\n      ")}\n    </nav>`
+    : "";
+
+  return `${head({ title, description, canonical, ogType: "article", jsonld: [articleLd, crumbLd] })}
+<body>
+${header("brief")}
+
+  <main id="top">
+    <p class="crumb"><a href="/brief/">← All briefs</a></p>
+
+    <div class="intro brief-head-page">
+      <p class="co-kicker">The Brief</p>
+      <h1 class="tagline">${escHtml(b.headline)}</h1>
+      <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
+      ${b.teaser ? `<p class="brief-lede-text">${escHtml(b.teaser)}</p>` : ""}
+    </div>
+
+    <article class="brief-article">
+${briefBlocks(b)}
+    </article>
+
+${topics}
+
+${navHtml}
+
+    <p class="brief-provenance">
+      Written from the ${b.storyCount || ""} headlines Insurtech Daily aggregated
+      that day. Every underlying story links to its original source on
+      <a href="/">the wire</a>.
+    </p>
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function briefIndexHtml(briefs) {
+  const canonical = "/brief/";
+  const title = `The Brief — daily insurtech briefings | ${SITE.name}`;
+  const description =
+    "A daily read on what moved in insurtech — what's happening and why it matters, written from the headlines aggregated that day.";
+
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "The Brief — daily insurtech briefings",
+    url: url(canonical),
+    description: clamp(description),
+    isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
+    mainEntity: {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Daily briefs",
+      numberOfItems: briefs.length,
+      itemListElement: briefs.slice(0, 50).map((b, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: url(`/brief/${b.date}/`),
+        name: b.headline,
+      })),
+    },
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "The Brief", path: canonical },
+  ]);
+
+  const rows = briefs.length
+    ? `    <ol class="feed brief-archive" aria-label="Brief archive">
+${briefs
+  .map(
+    (b) => `      <li class="story">
+        <a class="story-main" href="/brief/${escAttr(b.date)}/">
+          <div class="meta"><span class="time">${escHtml(
+            fullDate(b.generatedAt || b.date)
+          )}</span>${
+      b.storyCount
+        ? `<span class="dot"> · </span><span class="src">${b.storyCount} stories</span>`
+        : ""
+    }</div>
+          <h2>${escHtml(b.headline)}</h2>
+          ${b.teaser ? `<p class="summary">${escHtml(b.teaser)}</p>` : ""}
+        </a>
+      </li>`
+  )
+  .join("\n")}
+    </ol>`
+    : `    <p class="empty">No briefs published yet.</p>`;
+
+  return `${head({ title, description, canonical, jsonld: [collectionLd, crumbLd] })}
+<body>
+${header("brief")}
+
+  <main id="top">
+    <div class="intro">
+      <p class="co-kicker">Archive</p>
+      <h1 class="tagline">The Brief</h1>
+      <p class="statline">${briefs.length} briefing${
+    briefs.length === 1 ? "" : "s"
+  }  ·  what's happening and why it matters, every day</p>
+    </div>
+
+${rows}
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function buildBriefPages(briefs) {
+  const outRoot = path.join(ROOT, "brief");
+  fs.mkdirSync(outRoot, { recursive: true });
+
+  // Deliberately never pruned — unlike company pages, the archive
+  // accumulating *is* the point. Every page is rewritten from the
+  // store each run so template changes reach the whole archive.
+  briefs.forEach((b, i) => {
+    const dir = path.join(outRoot, b.date);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(
+      path.join(dir, "index.html"),
+      briefPageHtml(b, briefs[i - 1], briefs[i + 1])
+    );
+  });
+  fs.writeFileSync(path.join(outRoot, "index.html"), briefIndexHtml(briefs));
+  console.log(
+    `  ✓ ${briefs.length} brief page${briefs.length === 1 ? "" : "s"} under /brief/ + archive index`
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
    INJECTION into hand-authored pages (between HTML markers)
    ══════════════════════════════════════════════════════════════ */
 function replaceBlock(html, marker, content) {
@@ -449,7 +727,7 @@ function injectCompaniesIndex(db) {
 /* ══════════════════════════════════════════════════════════════
    sitemap.xml + robots.txt
    ══════════════════════════════════════════════════════════════ */
-function buildSitemap(news, db) {
+function buildSitemap(news, db, briefs = []) {
   const now = isoDate(new Date().toISOString());
   const entries = [
     { loc: "/", lastmod: isoDate(news.updatedAt) || now, priority: "1.0", changefreq: "hourly" },
@@ -460,6 +738,24 @@ function buildSitemap(news, db) {
       changefreq: "daily",
     },
   ];
+  if (briefs.length) {
+    entries.push({
+      loc: "/brief/",
+      lastmod: briefs[0].date || now,
+      priority: "0.9",
+      changefreq: "daily",
+    });
+    // Original writing, so ranked above the aggregated company pages.
+    // A past day's brief never changes once its date has rolled over.
+    briefs.forEach((b, i) => {
+      entries.push({
+        loc: `/brief/${b.date}/`,
+        lastmod: isoDate(b.generatedAt) || b.date,
+        priority: i === 0 ? "0.9" : "0.7",
+        changefreq: i === 0 ? "daily" : "yearly",
+      });
+    });
+  }
   (db.companies || [])
     .slice()
     .sort((a, b) => a.slug.localeCompare(b.slug))
@@ -532,10 +828,14 @@ function main() {
   const db = JSON.parse(fs.readFileSync(DB, "utf8"));
 
   console.log("SEO build:");
+  // Fold today's briefing into the archive before anything reads it,
+  // so the new page lands in this run's sitemap rather than the next.
+  const briefs = recordBrief(news);
   buildCompanyPages(db);
+  buildBriefPages(briefs);
   injectHomepage(news);
   injectCompaniesIndex(db);
-  buildSitemap(news, db);
+  buildSitemap(news, db, briefs);
   buildRobots();
   console.log("SEO build complete.");
 }
@@ -549,4 +849,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { head, SITE, companyPageHtml, clamp, isoDate };
+module.exports = { head, SITE, companyPageHtml, briefPageHtml, clamp, isoDate };

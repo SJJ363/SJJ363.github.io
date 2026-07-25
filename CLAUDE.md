@@ -36,6 +36,14 @@ produce all of that consistently — **route new pages through them.**
    server-rendered (work without JS) and regenerated each run. Never link
    companies via `company.html?c=…`; use `/company/<slug>/`. `company.html` is a
    legacy redirect shim only.
+3b. **The brief archive lives at `/brief/` + `/brief/<YYYY-MM-DD>/`.** It is the
+   site's only original writing, so it matters more than the aggregated pages.
+   `news.json` holds just the *current* briefing and is overwritten every run;
+   `recordBrief()` folds it into `data/briefs.json`, which is the durable store
+   and the source for every page. Two invariants: the archive is **append-only**
+   (`buildBriefPages()` deliberately never prunes, unlike the company pages), and
+   a run whose Claude enhancement fell back writes **no** page rather than a stub.
+   Re-running the same day updates that date in place.
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may

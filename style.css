@@ -213,6 +213,43 @@ main {
   text-transform: uppercase; letter-spacing: 0.06em;
 }
 
+/* ---- Brief archive pages (/brief/ and /brief/<date>/) ---- */
+.brief-lede-text {
+  margin: 14px 0 0; max-width: 60ch;
+  font-family: var(--serif); font-size: 1.22rem; line-height: 1.5;
+  font-style: italic; color: var(--ink-2);
+}
+.brief-article { margin: 26px 0 0; }
+.brief-article .brief-block + .brief-block { margin-top: 26px; }
+.brief-archive .summary { max-width: 68ch; }
+
+.brief-nav {
+  display: grid; gap: 12px; margin: 34px 0 0;
+  padding-top: 20px; border-top: 1px solid var(--rule-soft);
+}
+@media (min-width: 720px) { .brief-nav { grid-template-columns: 1fr 1fr; } }
+.brief-nav-link {
+  display: flex; flex-direction: column; gap: 5px;
+  padding: 13px 15px; border: 1px solid var(--rule-soft);
+  text-decoration: none; color: inherit; background: var(--paper);
+}
+.brief-nav-link:hover { border-color: var(--accent); background: rgba(154, 43, 30, 0.04); }
+/* The "later" link sits right-aligned so the pair reads as a timeline. */
+.brief-nav-link.next { text-align: right; }
+.brief-nav-dir {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em;
+  text-transform: uppercase; color: var(--accent);
+}
+.brief-nav-title {
+  font-family: var(--serif); font-size: 1rem; line-height: 1.35; color: var(--ink);
+}
+.brief-provenance {
+  margin: 30px 0 0; padding-top: 14px;
+  border-top: 1px solid var(--rule-soft);
+  max-width: 64ch; font-size: 0.82rem; line-height: 1.55; color: var(--ink-3);
+}
+.brief-provenance a { color: var(--accent); }
+
 /* ============================================================
    Toolbar — search + section filters
    ============================================================ */
@@ -538,6 +575,19 @@ main {
 @media (max-width: 620px) {
   .result-count { display: none; }
   .status { display: none; }
+  /* Three nav items no longer fit beside the masthead on a phone —
+     tighten the gaps and let the nav scroll rather than pushing the
+     sticky topbar wider than the viewport. */
+  .topbar { gap: 14px; }
+  .nav {
+    gap: 15px; min-width: 0; overflow-x: auto;
+    scrollbar-width: none; -ms-overflow-style: none;
+    /* Fade the trailing edge so a clipped item reads as "scroll me"
+       rather than as a broken layout. */
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+  }
+  .nav::-webkit-scrollbar { width: 0; height: 0; }
   .co-link { flex-direction: column; gap: 5px; }
   .sort-group { flex: 1 1 100%; flex-wrap: wrap; }
   .sort-btn { flex: 1 1 auto; text-align: center; }
