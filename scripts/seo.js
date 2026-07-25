@@ -231,7 +231,9 @@ function companyArticleLi(a) {
           <div class="meta"><span class="src">${escHtml(a.source)}</span><span class="dot"> · </span><span class="time">${escHtml(
     fullDate(a.publishedAt)
   )}</span></div>
-          <h3>${escHtml(a.title)}</h3>
+          <h3>${escHtml(a.title)}</h3>${
+    a.summary ? `\n          <p class="summary">${escHtml(a.summary)}</p>` : ""
+  }
         </a>${tagHtml}
       </li>`;
 }

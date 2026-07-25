@@ -20,6 +20,18 @@ const FEEDS = [
   { url: "https://news.google.com/rss/search?q=%22embedded+insurance%22&hl=en-US&gl=US&ceid=US:en", source: "Google News" },
   { url: "https://news.google.com/rss/search?q=insurtech+funding&hl=en-US&gl=US&ceid=US:en", source: "Google News" },
   { url: "https://www.finextra.com/rss/channel.aspx?channel=insurtech", source: "Finextra" },
+
+  // Publishers' own feeds. Google News strips descriptions down to an echo
+  // of the headline, so items arriving only through it have no summary at
+  // all; these carry the outlet's own sentence about the story plus a
+  // direct link. The dedupe below prefers this copy when the same story
+  // also came through Google News.
+  { url: "https://coverager.com/feed/", source: "Coverager" },
+  { url: "https://www.insurancejournal.com/rss/news/", source: "Insurance Journal" },
+  { url: "https://www.reinsurancene.ws/feed/", source: "Reinsurance News" },
+  { url: "https://www.artemis.bm/feed/", source: "Artemis" },
+  { url: "https://www.insurtechinsights.com/feed/", source: "Insurtech Insights" },
+  { url: "https://www.carriermanagement.com/feed/", source: "Carrier Management" },
 ];
 
 // Relevance gate applied to every item — genuine insurtech coverage
@@ -128,6 +140,31 @@ function stripTags(s = "") {
   return decodeEntities(s.replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
 }
 
+/* Publisher descriptions come with tails the reader doesn't want: the
+   WordPress "The post … appeared first on …" credit, "Continue reading"
+   links, a bare ellipsis. Strip those, then cut to a whole word so a card
+   never ends mid-syllable. Matched narrowly — "The post" only counts as
+   boilerplate when its "appeared first on" actually follows. */
+/* Some outlets watermark every description with an anti-syndication
+   notice (Artemis is one). Stripping the notice and keeping the prose
+   would be working around a request not to reuse it, so drop the whole
+   summary instead — the headline and the link back still stand, which is
+   what aggregation is. */
+const NO_REUSE =
+  /copyright to |infringement has occurred|all rights reserved|may not be (?:reproduced|republished|redistributed)/i;
+
+function tidySummary(s = "", max = 220) {
+  if (NO_REUSE.test(s)) return "";
+  s = String(s)
+    .replace(/\s+/g, " ")
+    .replace(/\s*The post\b[\s\S]*?appeared first on[\s\S]*$/i, "")
+    .replace(/\s*(?:Continue reading|Read more)\b[\s\S]*$/i, "")
+    .replace(/\s*\[(?:…|\.\.\.)\]\s*$/, "")
+    .trim();
+  if (s.length <= max) return s;
+  return s.slice(0, max).replace(/\s+\S*$/, "").replace(/[,;:—–-]$/, "") + "…";
+}
+
 // First inner text of <tag ...>...</tag>
 function tag(block, name) {
   const m = block.match(new RegExp(`<${name}[^>]*>([\\s\\S]*?)<\\/${name}>`, "i"));
@@ -193,9 +230,11 @@ async function fetchFeed(feed) {
         }
       }
 
-      let summary = stripTags(
-        tag(b, "description") || tag(b, "summary") || tag(b, "content") || tag(b, "content:encoded")
-      ).slice(0, 240);
+      let summary = tidySummary(
+        stripTags(
+          tag(b, "description") || tag(b, "summary") || tag(b, "content") || tag(b, "content:encoded")
+        )
+      );
 
       // Google News descriptions are usually just "Headline Source" — a
       // duplicate of the title. Drop those so cards read like a clean wire.
@@ -238,9 +277,15 @@ async function fetchFeed(feed) {
   const cutoff = Date.now() - MAX_AGE_DAYS * 864e5;
   all = all.filter((a) => a.timestamp >= cutoff);
 
-  // Dedupe by link and by normalized title
-  const seen = new Set();
-  const deduped = [];
+  // Dedupe by link and by normalized title, keeping the richest copy of a
+  // story rather than whichever feed happened to land first. The same item
+  // routinely arrives twice: via Google News (headline only, redirect link)
+  // and from the publisher (real description, direct link).
+  const rank = (a) =>
+    (a.summary ? 2 : 0) + (a.link.includes("news.google.com") ? 0 : 1);
+
+  const byKey = new Map(); // canonical key -> winning article
+  const canonOf = new Map(); // link/title key -> canonical key
   for (const a of all) {
     const keyLink = a.link.split("?")[0].toLowerCase();
     // Loose key collapses common look-alike glyphs (i/l→1, o→0) so OCR-style
@@ -248,11 +293,14 @@ async function fetchFeed(feed) {
     const keyTitle = a.title.toLowerCase()
       .replace(/[il]/g, "1").replace(/o/g, "0")
       .replace(/[^a-z0-9]+/g, "").trim();
-    if (seen.has(keyLink) || seen.has(keyTitle)) continue;
-    seen.add(keyLink);
-    seen.add(keyTitle);
-    deduped.push(a);
+
+    const canon = canonOf.get(keyLink) || canonOf.get(keyTitle) || keyTitle;
+    const incumbent = byKey.get(canon);
+    if (!incumbent || rank(a) > rank(incumbent)) byKey.set(canon, a);
+    canonOf.set(keyLink, canon);
+    canonOf.set(keyTitle, canon);
   }
+  const deduped = [...byKey.values()];
 
   deduped.sort((a, b) => b.timestamp - a.timestamp);
   const articles = deduped.slice(0, MAX_ITEMS);

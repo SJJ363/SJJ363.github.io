@@ -364,7 +364,16 @@ function main() {
   for (const s of (news.sources || [])) exclude.add(slugify(s));
 
   for (const a of news.articles) {
-    store.seen[a.link] = { title: a.title, source: a.source, publishedAt: a.publishedAt, tags: a.tags || [] };
+    // summary carries the publisher's own sentence about the story — kept
+    // so company pages can render it. Absent for items that only reached
+    // us via Google News, and for anything stored before it was tracked.
+    store.seen[a.link] = {
+      title: a.title,
+      source: a.source,
+      publishedAt: a.publishedAt,
+      tags: a.tags || [],
+      summary: a.summary || "",
+    };
   }
 
   // Extract the uncached — and re-extract heuristic-cached ones once Claude is
@@ -419,7 +428,7 @@ function main() {
       if (KNOWN.has(slug)) rec.name = KNOWN.get(slug);
       if (!rec.links.has(link)) {
         rec.links.add(link);
-        rec.articles.push({ title: meta.title, link, source: meta.source, publishedAt: meta.publishedAt, tags: meta.tags || [], co: slugs.filter((s2, k) => k !== i) });
+        rec.articles.push({ title: meta.title, link, source: meta.source, publishedAt: meta.publishedAt, tags: meta.tags || [], summary: meta.summary || "", co: slugs.filter((s2, k) => k !== i) });
       }
     });
   }
