@@ -23,11 +23,13 @@
 
 const fs = require("fs");
 const path = require("path");
+const { onTopic } = require("./relevance");
 
 const ROOT = path.join(__dirname, "..");
 const NEWS = path.join(ROOT, "data", "news.json");
 const DB = path.join(ROOT, "data", "companies.json");
 const BRIEFS = path.join(ROOT, "data", "briefs.json");
+const STORE = path.join(ROOT, "data", "companies-store.json");
 
 /* ── Site identity — change here, propagates everywhere ─────── */
 const SITE = {
@@ -66,13 +68,20 @@ function clamp(s, n = 158) {
   return s.slice(0, n - 1).replace(/\s+\S*$/, "") + "…";
 }
 
-/* Absolute-date formatter — stable across builds (no "2h ago"
-   drift on pre-rendered pages). */
+/* Absolute-date formatter — stable across builds (no "2h ago" drift on
+   pre-rendered pages). Pinned to UTC: without it the date renders in the
+   build machine's zone, so a local run west of Greenwich turns "Jul 24"
+   into "Jul 23" on every page and CI turns it back on the next run. */
 function fullDate(iso) {
   if (!iso) return "";
   const d = new Date(iso);
   if (isNaN(d)) return "";
-  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  return d.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 }
 function isoDate(iso) {
   const d = iso ? new Date(iso) : null;
@@ -145,6 +154,7 @@ function header(active) {
     <nav class="nav">
       <a href="/"${cls("wire")}>The Wire</a>
       <a href="/brief/"${cls("brief")}>The Brief</a>
+      <a href="/topic/"${cls("topics")}>Topics</a>
       <a href="/companies.html"${cls("companies")}>Companies</a>
     </nav>
   </header>`;
@@ -623,6 +633,292 @@ function buildBriefPages(briefs) {
 }
 
 /* ══════════════════════════════════════════════════════════════
+   TOPIC HUBS — one page per taxonomy category.
+   The chips on the wire are a client-side filter with no URL, so
+   none of this was reachable by a crawler. Built from the persistent
+   store (every article ever seen) rather than the current batch,
+   which is what keeps the smaller categories from being one-line
+   pages: Health & Life has 9 stories across the archive but might
+   have none in today's 140.
+   ══════════════════════════════════════════════════════════════ */
+const topicSlug = (name) =>
+  String(name)
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .replace(/\s+/g, "-");
+
+/* The store is keyed by link, with the article's fields as the value.
+   It is an archive of everything ever admitted, including items let in
+   under older, looser rules — so re-apply the current gate on the way
+   out. Without it the hubs resurface a lettuce recall and a Red Sea
+   strike that the wire has already stopped carrying. */
+function storeArticles() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(STORE, "utf8"));
+    return Object.entries(raw.seen || {})
+      .map(([link, v]) => ({ link, ...v }))
+      .filter((a) => a && a.title && a.publishedAt)
+      .filter((a) => onTopic(a.title + " " + (a.summary || "")));
+  } catch {
+    return [];
+  }
+}
+
+function collectTopics(news) {
+  const pool = storeArticles();
+  const arts = pool.length ? pool : news.articles || [];
+  const by = new Map();
+  for (const a of arts) {
+    for (const t of a.tags || []) {
+      if (!by.has(t)) by.set(t, []);
+      by.get(t).push(a);
+    }
+  }
+  return [...by.entries()]
+    .map(([name, list]) => ({
+      name,
+      slug: topicSlug(name),
+      articles: list
+        .slice()
+        .sort((x, y) => new Date(y.publishedAt) - new Date(x.publishedAt)),
+    }))
+    .filter((t) => t.slug && t.articles.length)
+    .sort((a, b) => b.articles.length - a.articles.length);
+}
+
+const STORY_CAP = 60; // page weight guard; the count in the statline is the true total
+
+function topicPageHtml(topic, allTopics, db) {
+  const canonical = `/topic/${topic.slug}/`;
+  const n = topic.articles.length;
+  const word = n === 1 ? "story" : "stories";
+  const newest = topic.articles[0];
+  const oldest = topic.articles[n - 1];
+
+  // Companies already carry their own topic breakdown — invert it.
+  const companies = (db.companies || [])
+    .map((c) => {
+      const hit = (c.topics || []).find((t) => t.name === topic.name);
+      return hit ? { slug: c.slug, name: c.name, n: hit.count || 0 } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.n - a.n || a.name.localeCompare(b.name))
+    .slice(0, 14);
+
+  const co = new Map();
+  for (const a of topic.articles) {
+    for (const t of a.tags || []) if (t !== topic.name) co.set(t, (co.get(t) || 0) + 1);
+  }
+  const related = [...co.entries()]
+    .sort((x, y) => y[1] - x[1])
+    .slice(0, 6)
+    .map(([name, count]) => ({ name, count, slug: topicSlug(name) }))
+    .filter((r) => allTopics.some((t) => t.slug === r.slug));
+
+  const srcMap = new Map();
+  for (const a of topic.articles) if (a.source) srcMap.set(a.source, (srcMap.get(a.source) || 0) + 1);
+  const sources = [...srcMap.entries()].sort((x, y) => y[1] - x[1]).slice(0, 10);
+
+  const title = `${topic.name} — insurtech news & coverage | ${SITE.name}`;
+  const description =
+    `${n} insurtech ${word} tagged ${topic.name}` +
+    (sources.length ? `, from ${sources.slice(0, 3).map(([s]) => s).join(", ")} and others` : "") +
+    ". Tracked continuously by Insurtech Daily.";
+
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `${topic.name} — insurtech coverage`,
+    url: url(canonical),
+    description: clamp(description),
+    isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
+    about: { "@type": "Thing", name: topic.name },
+    mainEntity: itemListLd(`${topic.name} coverage`, topic.articles, 50),
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Topics", path: "/topic/" },
+    { name: topic.name, path: canonical },
+  ]);
+
+  const statBits = [`${n} ${word}`];
+  if (oldest) statBits.push(`tracked since ${fullDate(oldest.publishedAt)}`);
+  if (newest) statBits.push(`latest ${fullDate(newest.publishedAt)}`);
+
+  const factBlocks = [];
+  if (companies.length) {
+    factBlocks.push(`      <div class="co-fact">
+        <h2 class="fact-label">Most active here</h2>
+        <div class="badges">${companies
+          .map(
+            (c) =>
+              `<a class="company-badge" href="/company/${escAttr(c.slug)}/">${escHtml(
+                c.name
+              )}</a>`
+          )
+          .join("")}</div>
+      </div>`);
+  }
+  if (related.length) {
+    factBlocks.push(`      <div class="co-fact">
+        <h2 class="fact-label">Often alongside</h2>
+        <div class="badges">${related
+          .map(
+            (r) =>
+              `<a class="company-badge" href="/topic/${escAttr(r.slug)}/">${escHtml(
+                r.name
+              )} <span class="cnt">${r.count}</span></a>`
+          )
+          .join("")}</div>
+      </div>`);
+  }
+  if (sources.length) {
+    factBlocks.push(`      <div class="co-fact">
+        <h2 class="fact-label">Reported by</h2>
+        <p class="co-sources">${escHtml(sources.map(([s]) => s).join(", "))}</p>
+      </div>`);
+  }
+  const facts = factBlocks.length
+    ? `    <section class="co-facts">\n${factBlocks.join("\n")}\n    </section>`
+    : "";
+
+  const shown = topic.articles.slice(0, STORY_CAP);
+  const more =
+    n > shown.length
+      ? `    <p class="topic-more">Showing the ${shown.length} most recent of ${n}.</p>`
+      : "";
+
+  return `${head({ title, description, canonical, jsonld: [collectionLd, crumbLd] })}
+<body>
+${header("topics")}
+
+  <main id="top">
+    <p class="crumb"><a href="/topic/">← All topics</a></p>
+
+    <div class="intro co-head">
+      <p class="co-kicker">Topic</p>
+      <h1 class="tagline">${escHtml(topic.name)}</h1>
+      <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
+    </div>
+
+${facts}
+
+    <h2 class="section-label">Coverage</h2>
+    <ol class="feed" aria-label="${escAttr(topic.name)} coverage">
+${shown.map(companyArticleLi).join("\n")}
+    </ol>
+${more}
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function topicIndexHtml(topics) {
+  const canonical = "/topic/";
+  const total = topics.reduce((s, t) => s + t.articles.length, 0);
+  const title = `Topics — every insurtech theme we track | ${SITE.name}`;
+  const description =
+    "Browse insurtech coverage by theme — funding, M&A, AI and automation, embedded, claims and underwriting, cyber and more, each with its own running archive.";
+
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Insurtech topics",
+    url: url(canonical),
+    description: clamp(description),
+    isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
+    mainEntity: {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Topics",
+      numberOfItems: topics.length,
+      itemListElement: topics.map((t, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: url(`/topic/${t.slug}/`),
+        name: t.name,
+      })),
+    },
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Topics", path: canonical },
+  ]);
+
+  const rows = topics
+    .map((t) => {
+      const latest = t.articles[0];
+      return `      <li class="story">
+        <a class="story-main" href="/topic/${escAttr(t.slug)}/">
+          <div class="meta"><span class="src">${t.articles.length} ${
+        t.articles.length === 1 ? "story" : "stories"
+      }</span>${
+        latest
+          ? `<span class="dot"> · </span><span class="time">latest ${escHtml(
+              fullDate(latest.publishedAt)
+            )}</span>`
+          : ""
+      }</div>
+          <h2>${escHtml(t.name)}</h2>
+          ${latest ? `<p class="summary">${escHtml(latest.title)}</p>` : ""}
+        </a>
+      </li>`;
+    })
+    .join("\n");
+
+  return `${head({ title, description, canonical, jsonld: [collectionLd, crumbLd] })}
+<body>
+${header("topics")}
+
+  <main id="top">
+    <div class="intro">
+      <p class="co-kicker">Browse</p>
+      <h1 class="tagline">Topics</h1>
+      <p class="statline">${topics.length} themes  ·  ${total} tagged ${
+    total === 1 ? "story" : "stories"
+  } across the archive</p>
+    </div>
+
+    <ol class="feed topic-list" aria-label="Topics">
+${rows}
+    </ol>
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function buildTopicPages(topics, db) {
+  const outRoot = path.join(ROOT, "topic");
+  fs.mkdirSync(outRoot, { recursive: true });
+
+  // Prune categories that no longer exist, the way company pages do —
+  // the taxonomy is a fixed list, so a stale directory means a rename.
+  const wanted = new Set(topics.map((t) => t.slug));
+  for (const name of fs.readdirSync(outRoot)) {
+    const dir = path.join(outRoot, name);
+    if (fs.statSync(dir).isDirectory() && !wanted.has(name)) {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
+  }
+
+  for (const t of topics) {
+    const dir = path.join(outRoot, t.slug);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, "index.html"), topicPageHtml(t, topics, db));
+  }
+  fs.writeFileSync(path.join(outRoot, "index.html"), topicIndexHtml(topics));
+  console.log(`  ✓ ${topics.length} topic pages under /topic/ + index`);
+}
+
+/* ══════════════════════════════════════════════════════════════
    INJECTION into hand-authored pages (between HTML markers)
    ══════════════════════════════════════════════════════════════ */
 function replaceBlock(html, marker, content) {
@@ -729,7 +1025,7 @@ function injectCompaniesIndex(db) {
 /* ══════════════════════════════════════════════════════════════
    sitemap.xml + robots.txt
    ══════════════════════════════════════════════════════════════ */
-function buildSitemap(news, db, briefs = []) {
+function buildSitemap(news, db, briefs = [], topics = []) {
   const now = isoDate(new Date().toISOString());
   const entries = [
     { loc: "/", lastmod: isoDate(news.updatedAt) || now, priority: "1.0", changefreq: "hourly" },
@@ -755,6 +1051,17 @@ function buildSitemap(news, db, briefs = []) {
         lastmod: isoDate(b.generatedAt) || b.date,
         priority: i === 0 ? "0.9" : "0.7",
         changefreq: i === 0 ? "daily" : "yearly",
+      });
+    });
+  }
+  if (topics.length) {
+    entries.push({ loc: "/topic/", lastmod: now, priority: "0.8", changefreq: "daily" });
+    topics.forEach((t) => {
+      entries.push({
+        loc: `/topic/${t.slug}/`,
+        lastmod: isoDate(t.articles[0] && t.articles[0].publishedAt) || now,
+        priority: "0.7",
+        changefreq: "daily",
       });
     });
   }
@@ -833,11 +1140,13 @@ function main() {
   // Fold today's briefing into the archive before anything reads it,
   // so the new page lands in this run's sitemap rather than the next.
   const briefs = recordBrief(news);
+  const topics = collectTopics(news);
   buildCompanyPages(db);
   buildBriefPages(briefs);
+  buildTopicPages(topics, db);
   injectHomepage(news);
   injectCompaniesIndex(db);
-  buildSitemap(news, db, briefs);
+  buildSitemap(news, db, briefs, topics);
   buildRobots();
   console.log("SEO build complete.");
 }

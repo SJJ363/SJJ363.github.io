@@ -83,7 +83,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/ company/ brief/ sitemap.xml robots.txt index.html companies.html
+          git add -A data/ company/ brief/ topic/ sitemap.xml robots.txt index.html companies.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh insurtech news ($(date -u +'%Y-%m-%d %H:%M UTC'))"
             git push

@@ -44,6 +44,15 @@ produce all of that consistently — **route new pages through them.**
    (`buildBriefPages()` deliberately never prunes, unlike the company pages), and
    a run whose Claude enhancement fell back writes **no** page rather than a stub.
    Re-running the same day updates that date in place.
+3c. **Topic hubs live at `/topic/` + `/topic/<slug>/`,** one per taxonomy
+   category, built by `collectTopics()` from the **persistent store**
+   (`companies-store.json`) rather than the current batch — the archive is
+   what keeps small categories from being one-line pages. The store holds
+   everything ever admitted, including items let in under older rules, so
+   `storeArticles()` re-applies the current gate on the way out. What counts
+   as on-topic lives in `scripts/relevance.js` and is shared with
+   `fetch-news.js`: **keep it there, never fork the regexes**, or the wire
+   and the hubs will disagree about what insurtech is.
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may

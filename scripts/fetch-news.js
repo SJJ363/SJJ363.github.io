@@ -37,23 +37,14 @@ const FEEDS = [
   { url: "https://www.reinsurancene.ws/feed/", source: "Reinsurance News", strict: true },
   { url: "https://www.artemis.bm/feed/", source: "Artemis", strict: true },
   { url: "https://www.carriermanagement.com/feed/", source: "Carrier Management", strict: true },
-  // Broad trade feeds: heavy on coverage litigation, rate filings and
-  // appointments. Marked strict so only items with a technology angle make
-  // the wire — otherwise these three alone would take a third of it.
   { url: "https://www.insurancebusinessmag.com/us/rss/", source: "Insurance Business", strict: true },
   { url: "https://www.insurancebusinessmag.com/uk/rss/", source: "Insurance Business UK", strict: true },
   { url: "https://www.claimsjournal.com/rss/news/", source: "Claims Journal", strict: true },
 ];
 
-// Relevance gate applied to every item — genuine insurtech coverage
-// almost always mentions insurance in some form. Keeps the feed on-topic.
-const RELEVANCE = /insur|insurtech|underwrit|reinsur|actuar|policyholder/i;
-
-// Second gate, applied only to feeds marked strict. RELEVANCE passes any
-// mention of insurance, which is the whole output of a trade publisher —
-// this asks for the technology angle that makes a story insurtech.
-const TECH_ANGLE =
-  /insurtech|fintech|technolog|platform|digital|software|\bapp\b|\bAPI\b|\bAI\b|artificial intelligence|machine learning|algorithm|automat|data|analytics|cyber|embedded|telematics|\bSaaS\b|startup|start-up|venture|funding|raise[sd]?\b|inves(?:t|tment)|acqui|partner|launch/i;
+// What counts as on-topic lives in one place — the topic hubs in
+// seo.js are built from the archive and have to agree with the wire.
+const { TECH_ANGLE, onTopic } = require("./relevance");
 
 // Skip non-article URLs (e.g. Finextra webinars/events).
 const SKIP_URL = /\/event-info\/|\/events?\/|\/webinar/i;
@@ -272,13 +263,13 @@ async function fetchFeed(feed) {
         summary = "";
       }
 
-      // Judge the story, not the masthead. Including source here was
-      // harmless while every feed was a Google News search, but a
-      // publisher called "Insurance Journal" matches /insur/ on its own,
-      // which waved through everything it filed — mortgage rates, an
-      // earthquake, a lettuce recall, a Red Sea strike.
-      if (!RELEVANCE.test(title + " " + summary)) continue;
-      if (feed.strict && !TECH_ANGLE.test(title + " " + summary)) continue;
+      // Judge the story, not the masthead: source is deliberately not in
+      // the text being tested, since a publisher called "Insurance
+      // Journal" would match on its own and wave through everything it
+      // filed — mortgage rates, an earthquake, a lettuce recall.
+      const body = title + " " + summary;
+      if (!onTopic(body)) continue;
+      if (feed.strict && !TECH_ANGLE.test(body)) continue;
 
       out.push({
         title: title.trim(),
