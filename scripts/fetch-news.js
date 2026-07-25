@@ -218,6 +218,7 @@ async function fetchFeed(feed) {
     const xml = await res.text();
     const items = [...blocks(xml, "item"), ...blocks(xml, "entry")];
     const out = [];
+    const isGoogleNews = feed.url.includes("news.google.com");
 
     for (const b of items) {
       const rawTitle = tag(b, "title");
@@ -237,10 +238,14 @@ async function fetchFeed(feed) {
       let source = tag(b, "source") || feed.source;
       let title = rawTitle;
       // Google News titles are "Headline - Publisher"; strip the suffix.
+      // Stripping a tail that merely looks like a publisher is only safe
+      // there. A publisher's own feed writes its headline as it means it,
+      // and "…breached customer data - report" is part of the headline,
+      // not a byline — guessing cost us the words and set source="report".
       const dash = title.lastIndexOf(" - ");
       if (dash > 20 && source && title.slice(dash + 3).trim() === source) {
         title = title.slice(0, dash).trim();
-      } else if (dash > 30) {
+      } else if (dash > 30 && isGoogleNews) {
         const tail = title.slice(dash + 3).trim();
         if (tail.length < 40 && !/[.!?]$/.test(tail)) {
           if (!source || source === feed.source) source = tail;
