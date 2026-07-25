@@ -46,8 +46,13 @@ produce all of that consistently — **route new pages through them.**
    confirm it reports the expected page/URL counts. It's idempotent — safe to
    re-run; markers are replaced, not appended.
 7. **Canonical origin** is `SITE.origin` in `seo.js` (overridable via the
-   `SITE_URL` env var). If a custom domain is ever added, change it there and add
-   a `CNAME` file — nothing else needs to move.
+   `SITE_URL` env var), and must match the domain in `/CNAME`. Changing it covers
+   every *generated* page, but the hand-authored `<head>` blocks in `index.html`
+   and `companies.html` hold their own absolute `canonical`/`og:url`/`og:image`/
+   `twitter:image` literals — `seo.js` only rewrites the JSON-LD between the
+   markers in those two files. Update them too, then confirm with
+   `grep -rn '<old-origin>' --include='*.html' --include='*.xml' --include='*.txt' .`
+   returning nothing.
 8. **OG image** is `assets/og.svg` (1200×630). Swapping in a raster `og.png` is a
    one-line change to `SITE.ogImage`; some scrapers (Facebook/LinkedIn) prefer PNG.
 

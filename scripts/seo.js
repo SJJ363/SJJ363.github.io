@@ -30,9 +30,9 @@ const DB = path.join(ROOT, "data", "companies.json");
 
 /* ── Site identity — change here, propagates everywhere ─────── */
 const SITE = {
-  // Canonical origin. Override in CI with SITE_URL if a custom
-  // domain is ever added (e.g. https://insurtechdaily.news).
-  origin: (process.env.SITE_URL || "https://sjj363.github.io").replace(/\/+$/, ""),
+  // Canonical origin. Served from the custom domain declared in /CNAME —
+  // keep the two in sync. Override with SITE_URL for previews/staging.
+  origin: (process.env.SITE_URL || "https://insurtechdaily.io").replace(/\/+$/, ""),
   name: "Insurtech Daily",
   tagline: "Insurtech news, aggregated",
   description:
