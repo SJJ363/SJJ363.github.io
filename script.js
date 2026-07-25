@@ -31,12 +31,14 @@ function sourceEl(a) {
   return src;
 }
 
-function metaEl(a) {
+// `showOutlets` is suppressed when the card carries a thread disclosure —
+// that control already states the outlet count, so repeating it here is noise.
+function metaEl(a, showOutlets = true) {
   const m = el("div", "meta");
   m.append(sourceEl(a));
   m.append(el("span", "dot", " · "));
   m.append(el("span", "time", timeAgo(a.publishedAt)));
-  if (a.cluster > 1) {
+  if (showOutlets && a.cluster > 1) {
     m.append(el("span", "dot", " · "));
     m.append(el("span", "outlets", `${a.cluster} outlets`));
   }
@@ -66,32 +68,99 @@ function cardTags(a, maxTags) {
   return wrap;
 }
 
-function leadCard(a) {
+/* ---- Threads: the same event, reported by several outlets ----
+   The feed shows one headline per thread and tucks the rest behind a
+   disclosure, so repeat coverage stops crowding out distinct stories. */
+
+// Enough to prove corroboration without turning a row into a wall of dupes.
+const MAX_THREAD_ITEMS = 6;
+let threadSeq = 0;
+
+function threadEl(group) {
+  const others = group.others;
+  if (!others.length) return null;
+
+  const wrap = el("div", "thread");
+  const listId = "thread-" + ++threadSeq;
+
+  // "Outlets" only if the extra coverage really is from distinct outlets —
+  // a source running several pieces on one story is "more stories".
+  const distinct = new Set(others.map((a) => a.source));
+  const n = others.length;
+  const noun = distinct.size === n
+    ? (n === 1 ? "outlet" : "outlets")
+    : (n === 1 ? "story" : "stories");
+
+  const btn = el("button", "thread-toggle");
+  btn.type = "button";
+  btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute("aria-controls", listId);
+  const label = el("span", "thread-label", `+${n} more ${noun}`);
+  btn.append(el("span", "thread-chevron"));   // caret is drawn in CSS
+  btn.append(label);
+
+  const list = el("ul", "thread-list");
+  list.id = listId;
+  list.hidden = true;
+  others.slice(0, MAX_THREAD_ITEMS).forEach((a) => {
+    const li = el("li", "thread-item");
+    const link = el("a", "thread-link");
+    link.href = a.link; link.target = "_blank"; link.rel = "noopener noreferrer";
+    link.append(el("span", "thread-src", a.source));
+    link.append(el("span", "thread-dot", " · "));
+    link.append(el("span", "thread-time", timeAgo(a.publishedAt)));
+    link.append(el("span", "thread-title", a.title));
+    li.append(link);
+    list.append(li);
+  });
+  if (n > MAX_THREAD_ITEMS) {
+    list.append(el("li", "thread-more", `and ${n - MAX_THREAD_ITEMS} more`));
+  }
+
+  btn.addEventListener("click", () => {
+    const open = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", open ? "false" : "true");
+    list.hidden = open;
+    label.textContent = open ? `+${n} more ${noun}` : "Hide coverage";
+  });
+
+  wrap.append(btn);
+  wrap.append(list);
+  return wrap;
+}
+
+function leadCard(group) {
+  const a = group.head;
   const card = el("div", "lead-card");
   const main = el("a", "lead-main");
   main.href = a.link; main.target = "_blank"; main.rel = "noopener noreferrer";
   const badge = el("div", "lead-badge-row");
   badge.append(el("span", "lead-badge", "Lead story"));
   main.append(badge);
-  main.append(metaEl(a));
+  main.append(metaEl(a, !group.others.length));
   main.append(headingEl("h2", a.title));
   if (a.summary) main.append(el("p", "summary", a.summary));
   card.append(main);
   const ct = cardTags(a, 4);
   if (ct) card.append(ct);
+  const th = threadEl(group);
+  if (th) card.append(th);
   return card;
 }
 
-function storyRow(a) {
+function storyRow(group) {
+  const a = group.head;
   const li = el("li", "story");
   const main = el("a", "story-main");
   main.href = a.link; main.target = "_blank"; main.rel = "noopener noreferrer";
-  main.append(metaEl(a));
+  main.append(metaEl(a, !group.others.length));
   main.append(headingEl("h3", a.title));
   if (a.summary) main.append(el("p", "summary", a.summary));
   li.append(main);
   const ct = cardTags(a, 3);
   if (ct) li.append(ct);
+  const th = threadEl(group);
+  if (th) li.append(th);
   return li;
 }
 
@@ -126,18 +195,59 @@ function pickLead(list) {
   return best;
 }
 
+/* Fold a (already filtered) list into threads.
+
+   Grouping runs on the filtered list rather than once up front, so a search
+   or topic filter that matches only part of a thread shows exactly what it
+   matched — the disclosure never promises coverage the filter excluded.
+
+   A thread keeps the wire position of its most recent member (the feed is
+   recency-ordered) but fronts its highest-scoring one, so a fresh press-wire
+   dupe can't bury the better-sourced write-up of the same event. */
+function groupThreads(list) {
+  const byId = new Map();
+  const groups = [];
+  list.forEach((a) => {
+    // No clusterId (older cached payload) → the article stands alone.
+    if (!a.clusterId) { groups.push({ members: [a] }); return; }
+    let g = byId.get(a.clusterId);
+    if (!g) { g = { members: [] }; byId.set(a.clusterId, g); groups.push(g); }
+    g.members.push(a);
+  });
+  groups.forEach((g) => {
+    let head = g.members[0];
+    for (const m of g.members) if ((m.score || 0) > (head.score || 0)) head = m;
+    g.head = head;
+    g.others = g.members.filter((m) => m !== head);
+  });
+  return groups;
+}
+
 function render(list) {
   leadEl.innerHTML = "";
   feedEl.innerHTML = "";
   emptyEl.hidden = list.length > 0;
-  countEl.textContent = `${list.length} shown`;
-  if (list.length === 0) return;
+  if (list.length === 0) { countEl.textContent = "0 shown"; return; }
 
+  const groups = groupThreads(list);
+  const folded = list.length - groups.length;
+  countEl.textContent = folded > 0
+    ? `${groups.length} shown · ${folded} folded in`
+    : `${list.length} shown`;
+
+  // The lead is chosen by prominence within a freshness window, so it may not
+  // be its thread's own head — pin it as head so the card shows the story we
+  // promoted, with the rest of that thread behind its disclosure.
   const lead = pickLead(list);
-  leadEl.append(leadCard(lead));
+  const leadGroup = groups.find((g) => g.members.includes(lead));
+  if (leadGroup) {
+    leadGroup.head = lead;
+    leadGroup.others = leadGroup.members.filter((m) => m !== lead);
+  }
+  leadEl.append(leadCard(leadGroup || { members: [lead], head: lead, others: [] }));
 
   const frag = document.createDocumentFragment();
-  list.filter((a) => a !== lead).forEach((a) => frag.append(storyRow(a)));
+  groups.filter((g) => g !== leadGroup).forEach((g) => frag.append(storyRow(g)));
   feedEl.append(frag);
 }
 

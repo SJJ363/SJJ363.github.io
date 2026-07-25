@@ -9,6 +9,7 @@
 const fs = require("fs");
 const path = require("path");
 const { buildBriefing } = require("./build-brief");
+const { buildAdjacency, assignClusters } = require("./cluster");
 
 // Each feed: url + a fallback source label + whether to keyword-filter.
 // Google News search feeds are already on-topic; broad feeds get filtered.
@@ -71,32 +72,16 @@ const LOW_SIGNAL = new Set([
   "Pluang", "marketscreener.com", "Zawya", "EIN News", "Centurion Jewelry Show",
 ]);
 
-const STOP = new Set(
-  "the a an and or for to of in on at with from by is are as it its their new this that has have will its than into over amid insurtech insurance tech technology company companies firm firms report reports says announce announces announced launch launches".split(/\s+/)
-);
-function keywordSet(title) {
-  return new Set(
-    title.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/)
-      .filter((w) => w.length > 3 && !STOP.has(w))
-  );
-}
-
 // Score components (additive): recency (decay), corroboration (distinct
 // outlets covering the same story), source tier, and event signal words.
-function scoreArticles(articles) {
+// Takes the adjacency from cluster.js so "same story" is defined once.
+function scoreArticles(articles, adj) {
   const now = Date.now();
-  const kw = articles.map((a) => keywordSet(a.title));
 
   articles.forEach((a, i) => {
     // Corroboration — how many distinct sources cover a near-identical story
     const outlets = new Set([a.source]);
-    for (let j = 0; j < articles.length; j++) {
-      if (j === i) continue;
-      let inter = 0;
-      for (const w of kw[i]) if (kw[j].has(w)) inter++;
-      const union = kw[i].size + kw[j].size - inter;
-      if (inter >= 2 && union > 0 && inter / union >= 0.4) outlets.add(articles[j].source);
-    }
+    for (const j of adj[i]) outlets.add(articles[j].source);
     const cluster = outlets.size;
 
     const ageH = (now - a.timestamp) / 3.6e6;
@@ -114,7 +99,8 @@ function scoreArticles(articles) {
     if (/launch|unveil|partner|raises?\b/i.test(t)) signal += 0.2;
     signal = Math.min(signal, 1);
 
-    a.cluster = cluster;
+    // `cluster` is set later by assignClusters, from the thread the article
+    // actually lands in — that count is the one the UI shows.
     a.score = +(2.5 * recency + 1.5 * corrob + src + signal).toFixed(3);
   });
 }
@@ -271,8 +257,11 @@ async function fetchFeed(feed) {
   deduped.sort((a, b) => b.timestamp - a.timestamp);
   const articles = deduped.slice(0, MAX_ITEMS);
 
-  // Prominence score (used by the UI to choose the lead story)
-  scoreArticles(articles);
+  // Prominence score (used by the UI to choose the lead story), then thread
+  // assignment so the wire can fold repeat coverage of one event together.
+  const adjacency = buildAdjacency(articles);
+  scoreArticles(articles, adjacency);
+  assignClusters(articles, adjacency);
 
   // Taxonomy counts, in canonical order, only for tags actually present.
   const counts = {};
