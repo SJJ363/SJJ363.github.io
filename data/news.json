@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-25T13:17:10.643Z",
+  "updatedAt": "2026-07-25T15:20:54.049Z",
   "count": 140,
   "sources": [
     "Afm.nl",
@@ -27,8 +27,7 @@
     "Fortune Business Insights",
     "GlobeNewswire",
     "ICLG",
-    "Indian Startup News",
-    "Indian Startup Times",
+    "India Technology News",
     "Insurance Asia",
     "Insurance Business",
     "Insurance Edge",
@@ -39,7 +38,6 @@
     "Intelligent Insurer",
     "Market Data Forecast",
     "Mexico Business News",
-    "My Startup World",
     "PRWeb",
     "Program Business",
     "PropertyCasualty360",
@@ -48,9 +46,11 @@
     "Quiver Quantitative",
     "Reinsurance News",
     "SMBtech",
+    "SNS Insider",
     "Stock Titan",
     "TechAfrica News",
     "Telecompaper",
+    "Texas Department of Insurance (.gov)",
     "The Malaysian Reserve",
     "The National Law Review",
     "Tracxn",
@@ -58,7 +58,6 @@
     "VEON",
     "WV News",
     "Yahoo Finance",
-    "citybiz",
     "intlbm",
     "itij.com",
     "jamaicaobserver.com",
@@ -76,7 +75,7 @@
     },
     {
       "name": "M&A",
-      "count": 13
+      "count": 12
     },
     {
       "name": "Partnerships",
@@ -84,7 +83,7 @@
     },
     {
       "name": "Product & Launches",
-      "count": 17
+      "count": 18
     },
     {
       "name": "AI & Automation",
@@ -100,7 +99,7 @@
     },
     {
       "name": "Claims & Underwriting",
-      "count": 6
+      "count": 7
     },
     {
       "name": "Health & Life",
@@ -119,16 +118,21 @@
       "count": 2
     },
     {
+      "name": "Leadership",
+      "count": 1
+    },
+    {
       "name": "Industry",
-      "count": 51
+      "count": 50
     }
   ],
   "briefing": {
-    "headline": "AI moves from pilot to plumbing",
-    "teaser": "AI and automation, new partnerships and what it sets in motion.",
-    "whatsHappening": "Scanning 140 stories from 66 outlets, AI keeps dominating the conversation, threaded through 27 stories. Close behind, the wire is thick with new partnerships and fresh funding. By our count that's at least $138 million in disclosed funding changing hands across 7 deals. The story drawing the widest coverage — picked up by 4 outlets — is “Willis and Kayna launch embedded insurance program for subcontractors in partnership with Kwant.”",
-    "whyItMatters": "AI is moving from pilot to plumbing. As it settles into underwriting and claims, the cost advantage compounds — and carriers still running on manual, legacy workflows will feel the margin squeeze first. Distribution is quietly becoming the whole game: these alliances decide whose product reaches the customer at the exact moment they're buying — and increasingly that's not the traditional carrier. The through-line: capital, technology and risk keep swapping places at the center of the story — and the gap between the operators adapting to that and the ones waiting it out widens with every cycle.",
-    "generatedAt": "2026-07-25T13:17:10.643Z"
+    "headline": "Embedded insurance and AI keep pulling the industry forward",
+    "teaser": "Embedded deals, AI underwriting tools, and a fresh wave of M&A",
+    "whatsHappening": "Partnerships and embedded insurance dominate this batch, with brokers, MGAs, and tech platforms stitching coverage directly into other businesses' workflows. AI shows up everywhere from underwriting speed-ups to document review, though a few voices are pushing back on full automation and flagging where AI could backfire. M&A stayed active as insurers and platforms bought claims technology and regional books of business to expand capability and reach, while funding rounds, though fewer in number, moved real money into embedded and claims-focused startups.",
+    "whyItMatters": "The embedded push signals insurance is increasingly being sold where customers already are, rather than through traditional channels, which raises the bar for distribution partnerships and integration technology. The AI split, some praising speed gains, others urging caution, suggests the industry is entering a more skeptical, selective phase of adoption rather than blanket automation. Watch whether the acquisition activity around claims and compliance tools consolidates into fewer, broader platforms over the next few cycles.",
+    "generatedAt": "2026-07-25T15:21:09.693Z",
+    "by": "claude"
   },
   "articles": [
     {
@@ -143,7 +147,7 @@
       "publishedAt": "2026-07-24T20:40:00.000Z",
       "timestamp": 1784925600000,
       "cluster": 1,
-      "score": 2.251,
+      "score": 2.148,
       "companies": [
         {
           "name": "The Hartford",
@@ -162,7 +166,7 @@
       "publishedAt": "2026-07-24T15:17:36.000Z",
       "timestamp": 1784906256000,
       "cluster": 1,
-      "score": 2.5,
+      "score": 2.418,
       "companies": [
         {
           "name": "Adam Riese",
@@ -185,7 +189,7 @@
       "publishedAt": "2026-07-24T14:38:15.000Z",
       "timestamp": 1784903895000,
       "cluster": 1,
-      "score": 0.973,
+      "score": 0.893,
       "companies": []
     },
     {
@@ -199,7 +203,7 @@
       "publishedAt": "2026-07-24T14:12:00.000Z",
       "timestamp": 1784902320000,
       "cluster": 1,
-      "score": 1.955,
+      "score": 1.877,
       "companies": []
     },
     {
@@ -213,8 +217,32 @@
       "publishedAt": "2026-07-24T14:03:14.000Z",
       "timestamp": 1784901794000,
       "cluster": 2,
-      "score": 2.45,
+      "score": 2.371,
       "companies": []
+    },
+    {
+      "title": "AI-Insurtech NeuralKart raises INR 2.35 Cr in Seed round led by Inflection Point Ventures",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPUXp6bUtpWUNLbVVmcVc0Vy1VSUJKZEZvZVRIY1U0azVmdmh5NG9BbTlvcENMQ2tsSEM0VVVsLXoycS1fX2YxMHFwODRINy1fejI0ZFVvSTRfZ3JaNU5TRnB6cGt0bnZoTnp5QThUd09YeFd2ZXhQSzRLbFhWUWhLaF9BcWFrUFN1cWZ1VGlqRGpwcmRuTWUwdjRpcEdVNzdmd3VnQnZVRkw4eXhjT1RpSzZpMFhRWWJzYWdWOXZB?oc=5",
+      "source": "India Technology News",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-07-24T13:32:11.000Z",
+      "timestamp": 1784899931000,
+      "cluster": 2,
+      "score": 1.553,
+      "companies": [
+        {
+          "name": "NeuralKart",
+          "slug": "neuralkart"
+        },
+        {
+          "name": "Inflection Point Ventures",
+          "slug": "inflection-point-ventures"
+        }
+      ]
     },
     {
       "title": "Cotality recognized in Insurance Business's Global 5-Star Technology and Software Providers 2026",
@@ -227,7 +255,7 @@
       "publishedAt": "2026-07-24T12:05:00.000Z",
       "timestamp": 1784894700000,
       "cluster": 3,
-      "score": 0.675,
+      "score": 0.603,
       "companies": [
         {
           "name": "Cotality",
@@ -247,7 +275,7 @@
       "publishedAt": "2026-07-24T11:29:11.000Z",
       "timestamp": 1784892551000,
       "cluster": 1,
-      "score": 1.853,
+      "score": 1.783,
       "companies": [
         {
           "name": "Liberty Mutual Re",
@@ -266,7 +294,7 @@
       "publishedAt": "2026-07-24T11:08:40.000Z",
       "timestamp": 1784891320000,
       "cluster": 2,
-      "score": 2.341,
+      "score": 2.272,
       "companies": [
         {
           "name": "QIC",
@@ -284,8 +312,8 @@
       ],
       "publishedAt": "2026-07-24T10:50:48.000Z",
       "timestamp": 1784890248000,
-      "cluster": 3,
-      "score": 1.831,
+      "cluster": 2,
+      "score": 1.262,
       "companies": [
         {
           "name": "QIC",
@@ -304,7 +332,7 @@
       "publishedAt": "2026-07-24T10:14:18.000Z",
       "timestamp": 1784888058000,
       "cluster": 1,
-      "score": 0.81,
+      "score": 0.743,
       "companies": [
         {
           "name": "ERGO NEXT Insurance",
@@ -323,7 +351,7 @@
       "publishedAt": "2026-07-24T10:00:00.000Z",
       "timestamp": 1784887200000,
       "cluster": 1,
-      "score": 1.802,
+      "score": 1.736,
       "companies": []
     },
     {
@@ -339,7 +367,7 @@
       "publishedAt": "2026-07-24T09:07:11.000Z",
       "timestamp": 1784884031000,
       "cluster": 1,
-      "score": 1.973,
+      "score": 1.909,
       "companies": [
         {
           "name": "OIP Insurtech",
@@ -358,7 +386,7 @@
       "publishedAt": "2026-07-24T09:03:50.000Z",
       "timestamp": 1784883830000,
       "cluster": 1,
-      "score": 1.271,
+      "score": 1.208,
       "companies": [
         {
           "name": "Mapfre",
@@ -381,7 +409,7 @@
       "publishedAt": "2026-07-24T07:29:19.000Z",
       "timestamp": 1784878159000,
       "cluster": 3,
-      "score": 1.722,
+      "score": 1.663,
       "companies": [
         {
           "name": "QuoteCheck",
@@ -400,7 +428,7 @@
       "publishedAt": "2026-07-24T05:38:55.000Z",
       "timestamp": 1784871535000,
       "cluster": 1,
-      "score": 1.669,
+      "score": 1.614,
       "companies": [
         {
           "name": "Guidewire",
@@ -435,7 +463,7 @@
       "publishedAt": "2026-07-24T05:06:11.000Z",
       "timestamp": 1784869571000,
       "cluster": 1,
-      "score": 0.654,
+      "score": 0.6,
       "companies": [
         {
           "name": "CAB",
@@ -454,7 +482,7 @@
       "publishedAt": "2026-07-24T04:33:07.000Z",
       "timestamp": 1784867587000,
       "cluster": 1,
-      "score": 0.639,
+      "score": 0.587,
       "companies": [
         {
           "name": "Funding Societies",
@@ -473,7 +501,7 @@
       "publishedAt": "2026-07-24T01:52:00.000Z",
       "timestamp": 1784857920000,
       "cluster": 1,
-      "score": 0.571,
+      "score": 0.524,
       "companies": [
         {
           "name": "QuoteCheck",
@@ -492,7 +520,7 @@
       "publishedAt": "2026-07-23T22:56:34.000Z",
       "timestamp": 1784847394000,
       "cluster": 3,
-      "score": 2.506,
+      "score": 2.464,
       "companies": []
     },
     {
@@ -508,7 +536,7 @@
       "publishedAt": "2026-07-23T18:18:41.000Z",
       "timestamp": 1784830721000,
       "cluster": 1,
-      "score": 1.417,
+      "score": 1.383,
       "companies": [
         {
           "name": "Klaimee",
@@ -527,7 +555,7 @@
       "publishedAt": "2026-07-23T16:32:16.000Z",
       "timestamp": 1784824336000,
       "cluster": 1,
-      "score": 1.387,
+      "score": 1.356,
       "companies": [
         {
           "name": "Gallagher",
@@ -547,7 +575,7 @@
       "publishedAt": "2026-07-23T15:59:06.000Z",
       "timestamp": 1784822346000,
       "cluster": 1,
-      "score": 0.579,
+      "score": 0.547,
       "companies": [
         {
           "name": "Jubilee",
@@ -571,7 +599,7 @@
       "publishedAt": "2026-07-23T15:02:01.000Z",
       "timestamp": 1784818921000,
       "cluster": 1,
-      "score": 0.564,
+      "score": 0.534,
       "companies": [
         {
           "name": "SpeedBuilder Systems",
@@ -591,7 +619,7 @@
       "publishedAt": "2026-07-23T14:43:35.000Z",
       "timestamp": 1784817815000,
       "cluster": 1,
-      "score": 1.359,
+      "score": 1.33,
       "companies": [
         {
           "name": "Coverwatch",
@@ -610,7 +638,7 @@
       "publishedAt": "2026-07-23T14:33:00.000Z",
       "timestamp": 1784817180000,
       "cluster": 1,
-      "score": 1.357,
+      "score": 1.327,
       "companies": []
     },
     {
@@ -625,7 +653,7 @@
       "publishedAt": "2026-07-23T14:30:00.000Z",
       "timestamp": 1784817000000,
       "cluster": 1,
-      "score": 0.356,
+      "score": 0.327,
       "companies": [
         {
           "name": "Jubilee",
@@ -645,7 +673,7 @@
       "publishedAt": "2026-07-23T14:02:00.000Z",
       "timestamp": 1784815320000,
       "cluster": 1,
-      "score": 1.349,
+      "score": 1.32,
       "companies": [
         {
           "name": "Federato",
@@ -664,7 +692,7 @@
       "publishedAt": "2026-07-23T14:01:22.000Z",
       "timestamp": 1784815282000,
       "cluster": 2,
-      "score": 0.849,
+      "score": 0.82,
       "companies": [
         {
           "name": "Airtel Money",
@@ -673,34 +701,6 @@
         {
           "name": "Britam",
           "slug": "britam"
-        }
-      ]
-    },
-    {
-      "title": "NeuralKart Raises ₹2.35 Crore in Seed Funding Led by Inflection Point Ventures to Scale AI-Powered Insurance and Industrial Safety Solutions",
-      "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPdThZU0RjMW1IVFNTWWJFMi1CeXlPaTduU1NyVXpGN2FUbEkxMVhRREU5VjBZazBQNkFZR3JISkpXOFhjaXFGSkU3U0V0al9YOU1wQXlkN2Zqbm5DV2dTZlUwSnhoTkx6UVJNWlRVUVE3ZDllS2tELTk5cHc1M0FOX3lIQ0FuSmlEdkdrZFcxM0hjYWJMM2FpeTlKWHRkME9fX08tbjIxdVJscEFoM3dVRk5aRm00ek5PckpYREFIMTR3di1udmpoMXpMdnM4Sy1WNTJnNkRBcjNpb3ZVeC1PNy11bnV6SF9sTU9GZm9qa1dGbUE4eUNCOW9LUXJ1TTZtdkNkVTA5eThZZXkxUHVPOVFlWjlaVGdYVS1nQUsyaFA?oc=5",
-      "source": "Indian Startup Times",
-      "summary": "",
-      "tags": [
-        "Funding",
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-07-23T13:36:49.000Z",
-      "timestamp": 1784813809000,
-      "cluster": 3,
-      "score": 1.543,
-      "companies": [
-        {
-          "name": "NeuralKart",
-          "slug": "neuralkart"
-        },
-        {
-          "name": "Inflection Point Ventures",
-          "slug": "inflection-point-ventures"
-        },
-        {
-          "name": "Industrial Safety Solutions",
-          "slug": "industrial-safety-solutions"
         }
       ]
     },
@@ -715,7 +715,7 @@
       "publishedAt": "2026-07-23T12:57:36.000Z",
       "timestamp": 1784811456000,
       "cluster": 1,
-      "score": 0.334,
+      "score": 0.306,
       "companies": []
     },
     {
@@ -730,7 +730,7 @@
       "publishedAt": "2026-07-23T11:54:31.000Z",
       "timestamp": 1784807671000,
       "cluster": 1,
-      "score": 0.519,
+      "score": 0.493,
       "companies": [
         {
           "name": "Jubilee",
@@ -755,7 +755,7 @@
       "publishedAt": "2026-07-23T11:13:20.000Z",
       "timestamp": 1784805200000,
       "cluster": 2,
-      "score": 1.81,
+      "score": 1.785,
       "companies": [
         {
           "name": "Genki",
@@ -779,30 +779,11 @@
       "publishedAt": "2026-07-23T10:10:18.000Z",
       "timestamp": 1784801418000,
       "cluster": 1,
-      "score": 0.297,
+      "score": 0.273,
       "companies": [
         {
           "name": "Root",
           "slug": "root"
-        }
-      ]
-    },
-    {
-      "title": "Qatar Insurance Company Wins Initiative of the Year at Insurance Asia Awards for Digital Ecosystem",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQNW9qdFNHMVZQb1BMYVI1cGNZa1h1YmpxanhGT2FRVVEwaVl6ZlpvVmNtbGVUWkkyM3R6a05TT3JiNWZlTmdtTEVUbVhKbktULUJKNkE0Mnd6RVk2REg4clZiWklLaEFPWDZtd05KUHFDU3pmRWdWTjJPV2owYld1V0dXeFZlUVdFLTBCcnZkNDR6cllHVG9ZZTZjZ01lUU5JSFV5Z1BCNWtqc21ZaDdYREFtWkZvSlZQVWtoTUlxZw?oc=5",
-      "source": "FF News",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-07-23T10:10:16.000Z",
-      "timestamp": 1784801416000,
-      "cluster": 3,
-      "score": 1.297,
-      "companies": [
-        {
-          "name": "QIC",
-          "slug": "qic"
         }
       ]
     },
@@ -817,7 +798,7 @@
       "publishedAt": "2026-07-23T10:01:46.000Z",
       "timestamp": 1784800906000,
       "cluster": 1,
-      "score": 0.295,
+      "score": 0.271,
       "companies": [
         {
           "name": "SCOR",
@@ -836,31 +817,8 @@
       "publishedAt": "2026-07-23T10:00:00.000Z",
       "timestamp": 1784800800000,
       "cluster": 1,
-      "score": 1.295,
+      "score": 1.271,
       "companies": []
-    },
-    {
-      "title": "Insurtech startup NeuralKart raises Rs 2.35 crore in funding from Inflection Point Ventures",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNSWdrR3drMlVYRWY3dnpJSFV3Skp3OXUwRnpFYk9LOWJzdkdJSV9GSWdMekhSa2t6dW02anh0YUhYVDlTR2ZtbXVoemFVcHBjb3N2dmFaTTEzWE1FN0RXajRkRzdNRnBKbWI0Nm04eS1NZGo1SU1DNXF5YlFtMEpVd1FVUXNoMWRib0ptX1EzSGxGUVVYdjZPYnVFakw5SlhSakJySlVpRTJ4U0FwY0JoMWtqUGk4VEYtZ0RiYWlGREdlQkZ2cGQ4c1ZzbXJjbTdGTFpv0gHTAUFVX3lxTE1JZ2tHd2syVVhFZjd2eklIVXdKSnc5dTBGekViT0s5YnN2R0lJX0ZJZ0x6SFJra3p1bTZqeHRhSFhUOVNHZm1tdWh6YVVwcGNvc3Z2YVpNMTNYTUU3RFdqNGRHN01GcEptYjQ2bTh5LU1kajVJTUM1cXliUW0wSlV3UVVRc2gxZGJvSm1fUTNIbEZRVVh2Nk9idUVqTDlKWFJqQnJKVWlFMnhTQXBjQmgxa2pQaThURi1nRGJhaUZER2VCRnZwZDhzVnNtcmNtN0ZMWm8?oc=5",
-      "source": "Indian Startup News",
-      "summary": "",
-      "tags": [
-        "Funding"
-      ],
-      "publishedAt": "2026-07-23T08:14:42.000Z",
-      "timestamp": 1784794482000,
-      "cluster": 3,
-      "score": 1.474,
-      "companies": [
-        {
-          "name": "NeuralKart",
-          "slug": "neuralkart"
-        },
-        {
-          "name": "Inflection Point Ventures",
-          "slug": "inflection-point-ventures"
-        }
-      ]
     },
     {
       "title": "AI insurtech startup NeuralKart raises seed funding led by Inflection Point Ventures",
@@ -873,8 +831,8 @@
       ],
       "publishedAt": "2026-07-23T06:02:27.000Z",
       "timestamp": 1784786547000,
-      "cluster": 3,
-      "score": 1.45,
+      "cluster": 2,
+      "score": 0.93,
       "companies": [
         {
           "name": "NeuralKart",
@@ -883,26 +841,6 @@
         {
           "name": "Inflection Point Ventures",
           "slug": "inflection-point-ventures"
-        }
-      ]
-    },
-    {
-      "title": "NeuralKart raises $243K seed to scale AI‑driven Insurtech",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQd3ZMSXA1ZU9iWV9yTmhtWEstNWZsdU9ldVAxZUp6bkJBNnhOanpGSkVHbUdHMWd0VUxYaUN0NHozcmZtdi1vTDNHU3g1LUJTWDJNYW42ajdacUlpb29yaDFzOGgtdkZuVV81ZjF1SjVDS3VaVW5QS2h6TTltVG81YVFiQUFvdmVoUEZDUg?oc=5",
-      "source": "My Startup World",
-      "summary": "",
-      "tags": [
-        "Funding",
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-07-23T05:31:40.000Z",
-      "timestamp": 1784784700000,
-      "cluster": 1,
-      "score": 1.045,
-      "companies": [
-        {
-          "name": "NeuralKart",
-          "slug": "neuralkart"
         }
       ]
     },
@@ -916,8 +854,8 @@
       ],
       "publishedAt": "2026-07-22T23:29:23.000Z",
       "timestamp": 1784762963000,
-      "cluster": 4,
-      "score": 1.69,
+      "cluster": 3,
+      "score": 1.175,
       "companies": [
         {
           "name": "QIC",
@@ -936,7 +874,7 @@
       "publishedAt": "2026-07-22T19:14:16.000Z",
       "timestamp": 1784747656000,
       "cluster": 1,
-      "score": 1.159,
+      "score": 1.146,
       "companies": []
     },
     {
@@ -950,7 +888,7 @@
       "publishedAt": "2026-07-22T18:21:57.000Z",
       "timestamp": 1784744517000,
       "cluster": 1,
-      "score": 0.754,
+      "score": 0.741,
       "companies": []
     },
     {
@@ -964,7 +902,7 @@
       "publishedAt": "2026-07-22T16:51:35.000Z",
       "timestamp": 1784739095000,
       "cluster": 1,
-      "score": -0.856,
+      "score": -0.867,
       "companies": [
         {
           "name": "Valliani Jewelers",
@@ -987,7 +925,7 @@
       "publishedAt": "2026-07-22T16:16:53.000Z",
       "timestamp": 1784737013000,
       "cluster": 1,
-      "score": 0.141,
+      "score": 0.129,
       "companies": []
     },
     {
@@ -1001,7 +939,7 @@
       "publishedAt": "2026-07-22T15:31:32.000Z",
       "timestamp": 1784734292000,
       "cluster": 2,
-      "score": 1.637,
+      "score": 1.625,
       "companies": [
         {
           "name": "Lemonade",
@@ -1020,7 +958,7 @@
       "publishedAt": "2026-07-22T14:37:00.000Z",
       "timestamp": 1784731020000,
       "cluster": 1,
-      "score": 1.332,
+      "score": 1.321,
       "companies": []
     },
     {
@@ -1034,7 +972,7 @@
       "publishedAt": "2026-07-22T14:32:44.000Z",
       "timestamp": 1784730764000,
       "cluster": 1,
-      "score": 0.331,
+      "score": 0.32,
       "companies": [
         {
           "name": "Orange Money",
@@ -1057,7 +995,7 @@
       "publishedAt": "2026-07-22T14:17:13.000Z",
       "timestamp": 1784729833000,
       "cluster": 1,
-      "score": 0.13,
+      "score": 0.119,
       "companies": [
         {
           "name": "Clyde & Co",
@@ -1084,7 +1022,7 @@
       "publishedAt": "2026-07-22T13:57:43.000Z",
       "timestamp": 1784728663000,
       "cluster": 2,
-      "score": 0.828,
+      "score": 0.817,
       "companies": [
         {
           "name": "Airtel Money",
@@ -1107,7 +1045,7 @@
       "publishedAt": "2026-07-22T08:40:00.000Z",
       "timestamp": 1784709600000,
       "cluster": 1,
-      "score": -1.097,
+      "score": -1.106,
       "companies": []
     },
     {
@@ -1121,7 +1059,7 @@
       "publishedAt": "2026-07-22T08:18:31.000Z",
       "timestamp": 1784708311000,
       "cluster": 1,
-      "score": 1.301,
+      "score": 1.293,
       "companies": [
         {
           "name": "MoneySuperMarket",
@@ -1140,7 +1078,7 @@
       "publishedAt": "2026-07-22T02:48:07.000Z",
       "timestamp": 1784688487000,
       "cluster": 1,
-      "score": 1.08,
+      "score": 1.074,
       "companies": [
         {
           "name": "Etiqa Insurance",
@@ -1163,7 +1101,7 @@
       "publishedAt": "2026-07-22T02:11:00.000Z",
       "timestamp": 1784686260000,
       "cluster": 1,
-      "score": -0.922,
+      "score": -0.928,
       "companies": [
         {
           "name": "Willis Towers Watson",
@@ -1188,7 +1126,7 @@
       "publishedAt": "2026-07-21T18:17:50.000Z",
       "timestamp": 1784657870000,
       "cluster": 1,
-      "score": 1.256,
+      "score": 1.252,
       "companies": [
         {
           "name": "Qumis",
@@ -1208,7 +1146,7 @@
       "publishedAt": "2026-07-21T17:35:04.000Z",
       "timestamp": 1784655304000,
       "cluster": 3,
-      "score": 2.555,
+      "score": 2.55,
       "companies": [
         {
           "name": "Genki",
@@ -1231,7 +1169,7 @@
       "publishedAt": "2026-07-21T17:32:43.000Z",
       "timestamp": 1784655163000,
       "cluster": 2,
-      "score": 1.555,
+      "score": 1.55,
       "companies": [
         {
           "name": "Lemonade",
@@ -1251,7 +1189,7 @@
       "publishedAt": "2026-07-21T16:27:00.000Z",
       "timestamp": 1784651220000,
       "cluster": 1,
-      "score": -0.948,
+      "score": -0.952,
       "companies": [
         {
           "name": "Loadsure",
@@ -1274,7 +1212,7 @@
       "publishedAt": "2026-07-21T14:54:00.000Z",
       "timestamp": 1784645640000,
       "cluster": 1,
-      "score": 1.049,
+      "score": 1.045,
       "companies": []
     },
     {
@@ -1288,7 +1226,7 @@
       "publishedAt": "2026-07-21T14:00:47.000Z",
       "timestamp": 1784642447000,
       "cluster": 1,
-      "score": 1.047,
+      "score": 1.043,
       "companies": [
         {
           "name": "CSIO",
@@ -1308,7 +1246,7 @@
       "publishedAt": "2026-07-21T13:00:00.000Z",
       "timestamp": 1784638800000,
       "cluster": 1,
-      "score": -0.955,
+      "score": -0.958,
       "companies": [
         {
           "name": "iGMS",
@@ -1331,7 +1269,7 @@
       "publishedAt": "2026-07-21T12:50:32.000Z",
       "timestamp": 1784638232000,
       "cluster": 2,
-      "score": 1.545,
+      "score": 1.541,
       "companies": [
         {
           "name": "PolicyStreet",
@@ -1351,7 +1289,7 @@
       "publishedAt": "2026-07-21T12:49:42.000Z",
       "timestamp": 1784638182000,
       "cluster": 1,
-      "score": 1.245,
+      "score": 1.241,
       "companies": [
         {
           "name": "Qumis",
@@ -1370,13 +1308,27 @@
       "publishedAt": "2026-07-21T07:30:33.000Z",
       "timestamp": 1784619033000,
       "cluster": 2,
-      "score": 0.536,
+      "score": 0.533,
       "companies": [
         {
           "name": "PolicyStreet",
           "slug": "policystreet"
         }
       ]
+    },
+    {
+      "title": "Blockchain in Insurance Market Size To Exceed $194.0 Billion By 2035",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPeHVQdFo2Nk8tcGs5by0xX05nS2NFU2FRM3I1dmo3ZnY5dFhEWHZGdU5ZdnBEU2x5V3pwOFBIQmltcnBOVWFOY3lzZFlRVmdPaVZORGY2NmVyUDBraG16TEoxczBhUlhQRUZqS2Q5Z3AyemlPdTBPcGRJQkpCOFJSSWkwclA?oc=5",
+      "source": "SNS Insider",
+      "summary": "",
+      "tags": [
+        "Funding"
+      ],
+      "publishedAt": "2026-07-21T06:15:24.000Z",
+      "timestamp": 1784614524000,
+      "cluster": 1,
+      "score": 0.631,
+      "companies": []
     },
     {
       "title": "Zurich expands digital insurance distribution through Shopee, ShopeePay",
@@ -1389,7 +1341,7 @@
       "publishedAt": "2026-07-21T02:57:18.000Z",
       "timestamp": 1784602638000,
       "cluster": 1,
-      "score": 0.03,
+      "score": 0.027,
       "companies": [
         {
           "name": "Zurich",
@@ -1416,7 +1368,7 @@
       "publishedAt": "2026-07-20T20:53:02.000Z",
       "timestamp": 1784580782000,
       "cluster": 1,
-      "score": 1.023,
+      "score": 1.021,
       "companies": []
     },
     {
@@ -1430,7 +1382,7 @@
       "publishedAt": "2026-07-20T13:35:41.000Z",
       "timestamp": 1784554541000,
       "cluster": 1,
-      "score": 0.017,
+      "score": 0.016,
       "companies": []
     },
     {
@@ -1444,7 +1396,7 @@
       "publishedAt": "2026-07-20T12:54:17.000Z",
       "timestamp": 1784552057000,
       "cluster": 1,
-      "score": 1.017,
+      "score": 1.015,
       "companies": []
     },
     {
@@ -1458,7 +1410,7 @@
       "publishedAt": "2026-07-20T12:17:05.000Z",
       "timestamp": 1784549825000,
       "cluster": 1,
-      "score": -0.984,
+      "score": -0.985,
       "companies": [
         {
           "name": "Fidelity United",
@@ -1481,7 +1433,7 @@
       "publishedAt": "2026-07-20T10:00:00.000Z",
       "timestamp": 1784541600000,
       "cluster": 1,
-      "score": 1.015,
+      "score": 1.013,
       "companies": []
     },
     {
@@ -1495,7 +1447,7 @@
       "publishedAt": "2026-07-20T04:54:56.000Z",
       "timestamp": 1784523296000,
       "cluster": 3,
-      "score": 2.512,
+      "score": 2.511,
       "companies": [
         {
           "name": "JazzWorld",
@@ -1543,7 +1495,7 @@
       "publishedAt": "2026-07-19T07:07:42.000Z",
       "timestamp": 1784444862000,
       "cluster": 1,
-      "score": 0.205,
+      "score": 0.204,
       "companies": [
         {
           "name": "Oman Air",
@@ -1873,25 +1825,6 @@
         {
           "name": "Kwant",
           "slug": "kwant"
-        }
-      ]
-    },
-    {
-      "title": "Insurtech Cover Genius raises $100 mn at $1.9 bn valuation to expand embedded protection",
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE13ZExWalQ1YzZBOWZDM1NFNVQwcm4yZ1N0QUFPT3RWUnhWUG1lazhXUTJSSnV6V0p5YXZoY0JUNmlNd283ZlhGbUhDSUYxQXFxZXBjZk1TYm5oTUQ0WjNwWFpkQlgxdkN2LVpkRzYtOA?oc=5",
-      "source": "Beinsure",
-      "summary": "",
-      "tags": [
-        "Funding"
-      ],
-      "publishedAt": "2026-07-15T17:00:48.000Z",
-      "timestamp": 1784134848000,
-      "cluster": 1,
-      "score": 1.8,
-      "companies": [
-        {
-          "name": "Cover Genius",
-          "slug": "cover-genius"
         }
       ]
     },
@@ -2284,29 +2217,6 @@
       "companies": []
     },
     {
-      "title": "Mile Auto Acquires Insurance House to Expand MGA Platform and Distribution Network",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQN3E3dS1lYzJfY1plaVJzb3VUOVYtRnc1dHp3RE90ZFJrdnU1blpvbmwxWDdVcDFJS0RrZThjWThYbmtaNDdBaTNsUXJDNEJOZ1ZzMUpha2tqVkZFbTc0N2tPMkVSdEg5MFk3dkQyX2hOUUEwUUpXYTR4dzFmZzllckxGdWxIMGFVS0RFOEh1UDJSYkVYNzY0S0VLRDBEM0lPNnRGZkM0UndzaUhZdXZpWVNWem53dFZ2UlpaLWd3?oc=5",
-      "source": "citybiz",
-      "summary": "",
-      "tags": [
-        "M&A"
-      ],
-      "publishedAt": "2026-07-10T14:21:02.000Z",
-      "timestamp": 1783693262000,
-      "cluster": 1,
-      "score": 0.5,
-      "companies": [
-        {
-          "name": "Mile Auto",
-          "slug": "mile-auto"
-        },
-        {
-          "name": "Insurance House",
-          "slug": "insurance-house"
-        }
-      ]
-    },
-    {
       "title": "AOG Acquires ITH Life LLC, Expanding Digital and InsurTech Capabilities",
       "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQRW11UTJIMnc4LThMd3dqNlBWSFg0SnU5TzA2Qlh2YUZ4UHF5eWpGdHFQNGUwOU11ZXRiR2xpNXBtUTd1T0pwRWRXQWVMMmZzcEp1UW9KdFh5NTlVMmppVTNIdGd3Q3BiemFDQWtQSy1VbkhlOUxVYmEweF9PdEZtMFQxNEFrTU5sWmItLVBkZ2wzVkpuTTBoYTZEckNXVG1Dal96YUVGX2g5ZWlnU1Nr?oc=5",
       "source": "The National Law Review",
@@ -2431,6 +2341,20 @@
       "timestamp": 1783523742000,
       "cluster": 1,
       "score": 1,
+      "companies": []
+    },
+    {
+      "title": "TDI’s new Chief Prosecutor Patrick Cryer aims to strengthen fraud enforcement across Texas",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPaERDbksySTEyNUFSYnA5Z21Tc0NWUGtWQnNsZ29EU0xOUm1JLVlfMkVFZUVCNFV0S2wxSHN1V2VyZHBEN19abzBoLXQwN2dXeURVZ2JKenhUVFJoZXVvMGhnZWhwby12WnZqdzFGNFZFcmtHdk1yVzdVaGNMcl9oVE1EVDZJZ3hqWHgyeQ?oc=5",
+      "source": "Texas Department of Insurance (.gov)",
+      "summary": "",
+      "tags": [
+        "Claims & Underwriting"
+      ],
+      "publishedAt": "2026-07-08T10:38:52.000Z",
+      "timestamp": 1783507132000,
+      "cluster": 1,
+      "score": 0,
       "companies": []
     },
     {
@@ -2847,6 +2771,64 @@
       "cluster": 1,
       "score": 1,
       "companies": []
+    },
+    {
+      "title": "RGA names CFO; Nationwide launches remote-monitoring for farms",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQYS1JYXEtNGtYTXBEWGpPZlFkUTZFdHBFaHp3WTNmU0ZuXzNaX2t4SksxN1VmQmIwdkdoNVdkdXJZMmp0OEk5SkFNZ0M3dnplUm1EcFFGd0Z3bkJjYlBMd1ctTzl6bFIzQ0Q5UFR1bmdoZlVKdHJZMlV5cTRUYUo4MlhiMzN5dw?oc=5",
+      "source": "Digital Insurance",
+      "summary": "",
+      "tags": [
+        "Product & Launches",
+        "Leadership"
+      ],
+      "publishedAt": "2026-06-26T07:00:00.000Z",
+      "timestamp": 1782457200000,
+      "cluster": 1,
+      "score": 1.2,
+      "companies": [
+        {
+          "name": "RGA",
+          "slug": "rga"
+        },
+        {
+          "name": "Nationwide",
+          "slug": "nationwide"
+        }
+      ]
+    },
+    {
+      "title": "2025 Global InsurTech Funding Report: The Role of AI in Insurance",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5TakNUdzRaQ0huckJSa3pJUEpoZjF4S1lMMk5MU2ZKVXBYeG14QWRVNHdHcnJyRi1qSGVYX09xZVpROVMxeTJGNU16ZFBMOFo4OUgzN1UwRnVya0hEcWtob3ZtTnBTelk0?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-06-26T07:00:00.000Z",
+      "timestamp": 1782457200000,
+      "cluster": 1,
+      "score": 1,
+      "companies": []
+    },
+    {
+      "title": "Alan raises €480m to expand prevention insurance globally",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaExnVE1jTmdtRF9BQlNsa0NkWlY4Yy1rckNDdW02XzYwVkpCSG1CR1FpVzNmMDNNSFEtdTV3VzZTd1hGZy04Q0FGWjhxaXR6TW4tb3p0bEIySXhUVmRBNHU4Z242d3VuYi1YNl8tWHdSRFdGUnFkOXRCWnZsNzZHTUhHT01JYUVRNjNydXZGVTA0bWNTZXUw?oc=5",
+      "source": "FinTech Global",
+      "summary": "",
+      "tags": [
+        "Funding"
+      ],
+      "publishedAt": "2026-06-26T07:00:00.000Z",
+      "timestamp": 1782457200000,
+      "cluster": 1,
+      "score": 1.2,
+      "companies": [
+        {
+          "name": "Alan",
+          "slug": "alan"
+        }
+      ]
     }
   ]
 }
