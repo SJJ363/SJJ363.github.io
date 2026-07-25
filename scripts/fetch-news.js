@@ -32,11 +32,23 @@ const FEEDS = [
   { url: "https://www.artemis.bm/feed/", source: "Artemis" },
   { url: "https://www.insurtechinsights.com/feed/", source: "Insurtech Insights" },
   { url: "https://www.carriermanagement.com/feed/", source: "Carrier Management" },
+  // Broad trade feeds: heavy on coverage litigation, rate filings and
+  // appointments. Marked strict so only items with a technology angle make
+  // the wire — otherwise these three alone would take a third of it.
+  { url: "https://www.insurancebusinessmag.com/us/rss/", source: "Insurance Business", strict: true },
+  { url: "https://www.insurancebusinessmag.com/uk/rss/", source: "Insurance Business UK", strict: true },
+  { url: "https://www.claimsjournal.com/rss/news/", source: "Claims Journal", strict: true },
 ];
 
 // Relevance gate applied to every item — genuine insurtech coverage
 // almost always mentions insurance in some form. Keeps the feed on-topic.
 const RELEVANCE = /insur|insurtech|underwrit|reinsur|actuar|policyholder/i;
+
+// Second gate, applied only to feeds marked strict. RELEVANCE passes any
+// mention of insurance, which is the whole output of a trade publisher —
+// this asks for the technology angle that makes a story insurtech.
+const TECH_ANGLE =
+  /insurtech|fintech|technolog|platform|digital|software|\bapp\b|\bAPI\b|\bAI\b|artificial intelligence|machine learning|algorithm|automat|data|analytics|cyber|embedded|telematics|\bSaaS\b|startup|start-up|venture|funding|raise[sd]?\b|inves(?:t|tment)|acqui|partner|launch/i;
 
 // Skip non-article URLs (e.g. Finextra webinars/events).
 const SKIP_URL = /\/event-info\/|\/events?\/|\/webinar/i;
@@ -136,8 +148,14 @@ function decodeEntities(s = "") {
     .replace(/&amp;/g, "&");
 }
 
+/* Decode before stripping, not after: Atom feeds and some WordPress ones
+   escape their own markup, so "&lt;p&gt;…&lt;img …&gt;" only looks like tags
+   once it has been decoded — strip it after that, then decode again for
+   entities that were in the prose itself. */
 function stripTags(s = "") {
-  return decodeEntities(s.replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+  return decodeEntities(decodeEntities(s).replace(/<[^>]*>/g, " "))
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 /* Publisher descriptions come with tails the reader doesn't want: the
@@ -245,6 +263,7 @@ async function fetchFeed(feed) {
       }
 
       if (!RELEVANCE.test(title + " " + summary + " " + source)) continue;
+      if (feed.strict && !TECH_ANGLE.test(title + " " + summary)) continue;
 
       out.push({
         title: title.trim(),
