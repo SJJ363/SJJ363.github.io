@@ -46,6 +46,19 @@ produce all of that consistently — **route new pages through them.**
    server-rendered (work without JS) and regenerated each run. Never link
    companies via `company.html?c=…`; use `/company/<slug>/`. `company.html` is a
    legacy redirect shim only.
+3a. **A company page is only *indexable* once it has `PAGE_MIN_STORIES`
+   stories** (see `indexable()` in `seo.js`). Every company still gets a
+   built, linked page — the wire, the topic hubs, the companies index and
+   the related-company badges all point at one, and a click must never dead-end
+   — but a thin one is served `noindex, follow` and kept out of `sitemap.xml`
+   and out of the companies-index `ItemList`. Most companies appear once, so
+   without the gate ~85% of the site is near-identical stubs, and mass-produced
+   thin pages are a *sitewide* quality liability, not just dead weight on their
+   own URLs. The gate is a floor, not a decision: a company crosses it as the
+   archive grows and its page becomes indexable on the next build, with no
+   redirect and no migration. Lower the threshold as the store deepens.
+   **Keep the visible list complete and the crawler-facing list gated** — that
+   split is the whole point.
 3b. **The brief archive lives at `/brief/` + `/brief/<YYYY-MM-DD>/`.** It is the
    site's only original writing, so it matters more than the aggregated pages.
    `news.json` holds just the *current* briefing and is overwritten every run;

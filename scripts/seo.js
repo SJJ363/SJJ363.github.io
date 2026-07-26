@@ -49,6 +49,26 @@ const SITE = {
 
 const url = (p = "/") => SITE.origin + (p.startsWith("/") ? p : "/" + p);
 
+/* ── Which company pages are worth indexing ─────────────────────
+   A company that has appeared once gets a page with a headline, a
+   summary line and an outbound link on it — nothing a search result
+   should point at, and there are ~140 of them against ~30 with real
+   depth. Mass-produced near-identical pages are a sitewide quality
+   liability, not just dead weight on their own URLs.
+
+   So thin pages are still *built* and still linked: the wire, the
+   topic hubs, the companies index and the related-company badges all
+   point at /company/<slug>/, and a reader who clicks one should land
+   somewhere real. They are simply kept out of the index — noindex
+   (so they can't rank) + follow (so their outbound links still
+   count) — and out of the sitemap and the index's ItemList.
+
+   The gate is a floor, not a decision: as the archive grows a company
+   crosses it and its page becomes indexable on the next build, with
+   no migration and no redirect. Lower it as the store deepens. */
+const PAGE_MIN_STORIES = 3;
+const indexable = (c) => (c.count || (c.articles || []).length) >= PAGE_MIN_STORIES;
+
 /* ── Escaping ───────────────────────────────────────────────── */
 const escHtml = (s = "") =>
   String(s)
@@ -101,7 +121,14 @@ const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com
   <script src="/nav.js?v=1" defer></script>`;
 
 /* ── The shared <head> builder — every page goes through here ── */
-function head({ title, description, canonical, ogType = "website", jsonld = [] }) {
+function head({
+  title,
+  description,
+  canonical,
+  ogType = "website",
+  jsonld = [],
+  robots = "index, follow, max-image-preview:large, max-snippet:-1",
+}) {
   const desc = clamp(description);
   const ogImg = url(SITE.ogImage);
   const cUrl = url(canonical);
@@ -120,7 +147,7 @@ function head({ title, description, canonical, ogType = "website", jsonld = [] }
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${escHtml(title)}</title>
   <meta name="description" content="${escAttr(desc)}" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="robots" content="${escAttr(robots)}" />
   <link rel="canonical" href="${escAttr(cUrl)}" />
   <meta name="theme-color" content="#f7f4ee" />
 
@@ -305,6 +332,7 @@ function companyPageHtml(c) {
     ". Funding, launches, partnerships and platform moves, tracked by Insurtech Daily.";
 
   const articles = c.articles || [];
+  const thin = !indexable(c);
 
   // JSON-LD: breadcrumb + a CollectionPage that is about the company
   // (as an Organization) and contains the coverage as an ItemList.
@@ -377,7 +405,10 @@ ${articles.map(companyArticleLi).join("\n")}
     description,
     canonical,
     ogType: "profile",
-    jsonld: [collectionLd, crumbLd],
+    // Structured data on a noindex page is ignored anyway; emitting only
+    // the breadcrumb keeps the markup honest about what this page is.
+    jsonld: thin ? [crumbLd] : [collectionLd, crumbLd],
+    robots: thin ? "noindex, follow" : undefined,
   })}
 <body>
 ${header("companies")}
@@ -1019,6 +1050,7 @@ function injectCompaniesIndex(db) {
   const companies = (db.companies || [])
     .slice()
     .sort((a, b) => new Date(b.lastSeen) - new Date(a.lastSeen));
+  const indexed = companies.filter(indexable);
 
   // Server-rendered list — real <a> links so every company page is
   // reachable by a crawler without running JS. The client script
@@ -1053,11 +1085,14 @@ function injectCompaniesIndex(db) {
       url: url("/companies.html"),
       description: "A searchable index of every company tracked across Insurtech Daily's coverage.",
       isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
+      // Every company stays in the visible list above — the rows are for
+      // readers. The ItemList is for crawlers, so it carries only the
+      // pages that are actually indexable.
       mainEntity: {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        numberOfItems: companies.length,
-        itemListElement: companies.slice(0, 100).map((c, i) => ({
+        numberOfItems: indexed.length,
+        itemListElement: indexed.slice(0, 100).map((c, i) => ({
           "@type": "ListItem",
           position: i + 1,
           url: url(`/company/${c.slug}/`),
@@ -1125,8 +1160,10 @@ function buildSitemap(news, db, briefs = [], topics = []) {
       });
     });
   }
+  // Thin company pages are noindex, so listing them here would only ask
+  // Google to crawl what it has been told not to index.
   (db.companies || [])
-    .slice()
+    .filter(indexable)
     .sort((a, b) => a.slug.localeCompare(b.slug))
     .forEach((c) => {
       entries.push({
@@ -1188,7 +1225,11 @@ function buildCompanyPages(db) {
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, "index.html"), companyPageHtml(c));
   }
-  console.log(`  ✓ ${companies.length} company pages under /company/`);
+  const n = companies.filter(indexable).length;
+  console.log(
+    `  ✓ ${companies.length} company pages under /company/ — ` +
+      `${n} indexable, ${companies.length - n} noindex (under ${PAGE_MIN_STORIES} stories)`
+  );
 }
 
 /* ── Entry point ────────────────────────────────────────────── */
