@@ -460,6 +460,17 @@ function recordBrief(news) {
   // next run backfills it if the brief comes back.
   if (!date || !b.headline || !b.whatsHappening) return loadBriefs();
 
+  // The archive upserts by date, so a later run *replaces* an earlier one.
+  // That's right when the brief improves and wrong when it regresses: on
+  // 2026-07-26 a run that fell back to the deterministic brief overwrote a
+  // Claude-written one already published for that date. Upgrades in, never
+  // downgrades — the run that fell back keeps the good entry.
+  const existing = loadBriefs().find((x) => x.date === date);
+  if (existing && existing.by === "claude" && b.by !== "claude") {
+    console.log(`  ↻ ${date}: keeping the Claude-written brief (this run fell back)`);
+    return loadBriefs();
+  }
+
   const entry = {
     date,
     headline: b.headline,

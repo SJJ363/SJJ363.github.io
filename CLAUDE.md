@@ -66,7 +66,27 @@ produce all of that consistently — **route new pages through them.**
    and the source for every page. Two invariants: the archive is **append-only**
    (`buildBriefPages()` deliberately never prunes, unlike the company pages), and
    a run whose Claude enhancement fell back writes **no** page rather than a stub.
-   Re-running the same day updates that date in place.
+   Re-running the same day updates that date in place — but **only upwards**:
+   `recordBrief()` refuses to replace a `by: "claude"` entry with a
+   deterministic one, because the archive upserts by date and a later
+   fallback run would otherwise destroy prose Claude had already published
+   for that day (it did, on 2026-07-26).
+3b-i. **The deterministic brief is a safety net, not an outcome.** It is the
+   one page on the site nobody wrote, so `write-brief.js` walks an escalation
+   ladder before conceding: CLI (resampling malformed replies, backing off
+   transient ones) → the CLI model ladder (`BRIEF_CLI_MODELS`, since weekly
+   per-model caps are separate from the shared session limit) → waiting out a
+   limit that resets within 15 minutes → the **metered API**
+   (`ANTHROPIC_API_KEY`, a separate quota, with structured outputs so the
+   reply can't fail to parse) → re-publishing today's existing Claude brief
+   from the archive. Only then deterministic, stamped with
+   `briefing.fallback.retryAfter` so **`brief-retry.yml`** (cron, twice
+   hourly) comes back once the limit has lifted. Two rules when touching this:
+   **the brief step runs before company extraction** in `news.yml` — they
+   share one subscription budget and the extractor's fallback is invisible
+   heuristics while the brief's is visible prose — and the CLI is always
+   spawned with `ANTHROPIC_API_KEY` stripped from its environment, or it
+   silently bills every subscription call to the metered key.
 3c. **Topic hubs live at `/topic/` + `/topic/<slug>/`,** one per taxonomy
    category, built by `collectTopics()` from the **persistent store**
    (`companies-store.json`) rather than the current batch — the archive is

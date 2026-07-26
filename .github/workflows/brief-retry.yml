@@ -1,0 +1,99 @@
+name: Retry Claude brief
+
+# The last line of defence. When a run falls back to the deterministic brief
+# because the Claude budget was exhausted, the limit resets on a clock — often
+# hours later, long after that run has finished. This workflow comes back for
+# it, so a fallback is a delay rather than a published outcome.
+#
+# It is deliberately cheap: `write-brief.js --if-fallback` exits in
+# milliseconds unless data/news.json actually carries a fallback whose
+# `retryAfter` has passed, so most firings do nothing and commit nothing.
+
+on:
+  schedule:
+    # Twice an hour, offset from the 6-hourly refresh so the two don't queue up.
+    - cron: "20,50 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# Shared with news.yml — these two must never push concurrently.
+concurrency:
+  group: refresh-news
+  cancel-in-progress: false
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      # Cheap gate: skips the Claude CLI install entirely when nothing is owed.
+      - name: Is a retry due?
+        id: due
+        run: |
+          if node -e '
+            const b = require("./data/news.json").briefing || {};
+            const owed = b.by !== "claude" || !!b.fallback;
+            const until = b.fallback && b.fallback.retryAfter;
+            const ready = !until || Date.now() >= Date.parse(until);
+            process.exit(owed && ready ? 0 : 1);
+          '; then
+            echo "due=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "due=false" >> "$GITHUB_OUTPUT"
+            echo "Current brief is Claude-written or not yet due — nothing to do."
+          fi
+
+      - name: Install Claude CLI
+        if: steps.due.outputs.due == 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            npm install -g @anthropic-ai/claude-code
+          fi
+
+      # Re-runs the full ladder against the batch already in data/news.json.
+      # No refetch: the goal is to replace this batch's brief, not to build a
+      # new one from stories the site has since moved past.
+      - name: Retry the brief
+        if: steps.due.outputs.due == 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/write-brief.js --if-fallback || echo "Retry failed — deterministic brief stands."
+
+      - name: Upload brief fallback diagnostics
+        if: always() && steps.due.outputs.due == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: brief-retry-${{ github.run_number }}
+          path: brief-fallback.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Build SEO (pages, sitemap, structured data)
+        if: steps.due.outputs.due == 'true'
+        run: node scripts/seo.js
+
+      - name: Commit if changed
+        if: steps.due.outputs.due == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/ company/ brief/ topic/ sitemap.xml robots.txt index.html companies.html
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: rewrite brief with Claude ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git push
+            echo "Brief recovered and pushed."
+          else
+            echo "No changes to publish."
+          fi
