@@ -20,14 +20,25 @@ const TAXONOMY = [
   ["Partnerships", /(partner|partnership|teams? up|collaborat|joins forces|alliance|tie-?up|taps |selects |integrat|to distribute|distribution deal|powers )/i],
   ["Product & Launches", /(launch|unveil|rolls? out|introduc|debut|releases?|goes live|new (product|platform|tool|app|solution|feature)|expands? (in)?to|now available)/i],
   ["AI & Automation", /(\bAI\b|artificial intelligence|machine learning|\bML\b|gen(erative)?[ -]?ai|\bLLM\b|automat|chatbot|algorithm|predictive|\bGPT\b|agentic|copilot|no-code)/i],
-  ["Embedded", /(embedded insurance|embedded finance|insurance as a service|\bAPI\b|api-first|point[- ]of[- ]sale insurance|bancassurance|at checkout)/i],
+  /* No bare \bAPI\b: in this industry API is as often Annual Premium
+     Income ("API hits £42.4 million") as it is an interface, and the
+     category doesn't need it — 18 of 21 matches say "embedded insurance"
+     outright. */
+  ["Embedded", /(embedded insurance|embedded finance|insurance as a service|api-first|point[- ]of[- ]sale insurance|bancassurance|at checkout)/i],
   ["Cyber", /(cyber|ransomware|data breach|malware|phishing|cyberattack|cyber risk)/i],
   ["Claims & Underwriting", /(claims?\b|underwrit|pricing|risk assessment|loss adjust|actuar|fraud|\bfnol\b|first notice of loss)/i],
   ["Health & Life", /(health ?insur|life insur|health ?tech|healthcare|medicare|medicaid|employee benefits|group health|disability insur|dental|telehealth|wellness)/i],
-  ["Auto & Mobility", /(auto insur|motor insur|car insur|telematics|usage-based|\bUBI\b|fleet|\bEV\b|autonomous|mobility|driver|vehicle)/i],
+  /* "autonomous" needs something to be autonomous *about*. Bare, it
+     files AI-agent stories under motor — Klaimee insuring "autonomous AI
+     agents" — and catches the research house literally called Autonomous. */
+  ["Auto & Mobility", /(auto insur|motor insur|car insur|telematics|usage-based|\bUBI\b|fleet|\bEV\b|autonomous (?:vehicle|driving|car|truck|fleet|taxi|ride|mobility)|robotaxi|self-driving|mobility|driver|vehicle)/i],
   ["Property & Cat", /(property insur|homeowners?|property.and.casualty|\bP&C\b|catastrophe|\bcat bond\b|reinsur|climate|flood|wildfire|hurricane|natural disaster|parametric|commercial property)/i],
   ["Regulation", /(regulat|complian|lawsuit|\bcourt\b|department of insurance|licens|sanction|fined|penalty|legislat|\bNAIC\b|policyholder protection)/i],
-  ["Leadership", /(appoint|names? (new )?(ceo|cfo|cto|coo|chair|president|head|chief)|hires?\b|joins as|steps down|resign|promot|new ceo|board of directors|expands leadership)/i],
+  /* "promot" bare matches "financial promotions", a UK conduct term with
+     nothing to do with who got the job. Guard that one collision rather
+     than demanding a following to/across/of, which loses the ordinary
+     phrasings — "three internal promotions", "a wave of promotions". */
+  ["Leadership", /(appoint|names? (new )?(ceo|cfo|cto|coo|chair|president|head|chief)|hires?\b|joins as|steps down|resign|(?<!financial )promot(?:e|es|ed|ion|ions)\b|new ceo|board of directors|expands leadership)/i],
 ];
 
 const FALLBACK_TAG = "Industry";
