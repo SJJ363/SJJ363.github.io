@@ -460,14 +460,21 @@ function recordBrief(news) {
   // next run backfills it if the brief comes back.
   if (!date || !b.headline || !b.whatsHappening) return loadBriefs();
 
-  // The archive upserts by date, so a later run *replaces* an earlier one.
-  // That's right when the brief improves and wrong when it regresses: on
-  // 2026-07-26 a run that fell back to the deterministic brief overwrote a
-  // Claude-written one already published for that date. Upgrades in, never
-  // downgrades — the run that fell back keeps the good entry.
-  const existing = loadBriefs().find((x) => x.date === date);
-  if (existing && existing.by === "claude" && b.by !== "claude") {
-    console.log(`  ↻ ${date}: keeping the Claude-written brief (this run fell back)`);
+  // The archive holds Claude's writing and nothing else — it is the only
+  // original prose on the site, so a machine-assembled stand-in doesn't
+  // belong in it however well it reads. A run that fell back leaves the
+  // deterministic brief on the wire (the homepage always shows something)
+  // but writes no archive entry: that date simply has no page until
+  // brief-retry.yml lands a real one, which then upserts in place.
+  //
+  // Note the test is `!== "claude"`, not `=== "deterministic"`. The brief
+  // fetch-news.js writes carries no `by` field at all — only write-brief.js
+  // stamps one — so an equality test would archive an unstamped stub.
+  //
+  // This also subsumes the downgrade case that lost the 2026-07-26 brief: a
+  // fallback run can't replace a Claude entry it may not write in the first place.
+  if (b.by !== "claude") {
+    console.log(`  ↻ ${date}: no archive entry yet — brief is ${b.by || "unwritten"}, waiting for Claude`);
     return loadBriefs();
   }
 

@@ -65,12 +65,18 @@ produce all of that consistently — **route new pages through them.**
    `recordBrief()` folds it into `data/briefs.json`, which is the durable store
    and the source for every page. Two invariants: the archive is **append-only**
    (`buildBriefPages()` deliberately never prunes, unlike the company pages), and
-   a run whose Claude enhancement fell back writes **no** page rather than a stub.
-   Re-running the same day updates that date in place — but **only upwards**:
-   `recordBrief()` refuses to replace a `by: "claude"` entry with a
-   deterministic one, because the archive upserts by date and a later
-   fallback run would otherwise destroy prose Claude had already published
-   for that day (it did, on 2026-07-26).
+   it holds **only Claude's writing** — `recordBrief()` archives a briefing
+   solely when `by === "claude"`. A run that fell back leaves the deterministic
+   brief on the wire, where the homepage always needs *something*, but writes no
+   archive entry: that date has no `/brief/<date>/` page until `brief-retry.yml`
+   lands a real one, which then upserts in place. So a fallback costs a
+   temporary gap in the archive, never a stub inside it.
+   Test `by !== "claude"`, **not** `=== "deterministic"` — the briefing
+   `fetch-news.js` writes carries no `by` field at all (only `write-brief.js`
+   stamps one), so an equality test would archive an unstamped stub.
+   This subsumes the older downgrade guard: because a fallback may not write
+   an entry at all, it can no longer replace a Claude entry already published
+   for that date — which is how the 2026-07-26 brief was lost.
 3b-i. **The deterministic brief is a safety net, not an outcome.** It is the
    one page on the site nobody wrote, so `write-brief.js` walks an escalation
    ladder before conceding: CLI (resampling malformed replies, backing off
