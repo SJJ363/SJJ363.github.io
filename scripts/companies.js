@@ -17,6 +17,7 @@
 const fs = require("fs");
 const path = require("path");
 const { claudeAvailable, callClaude, parseJsonObject } = require("./claude");
+const { tagArticle } = require("./taxonomy");
 
 const NEWS = path.join(__dirname, "..", "data", "news.json");
 const DB = path.join(__dirname, "..", "data", "companies.json");        // client-facing (derived)
@@ -431,7 +432,10 @@ function main() {
       if (KNOWN.has(slug)) rec.name = KNOWN.get(slug);
       if (!rec.links.has(link)) {
         rec.links.add(link);
-        rec.articles.push({ title: meta.title, link, source: meta.source, publishedAt: meta.publishedAt, tags: meta.tags || [], summary: meta.summary || "", co: slugs.filter((s2, k) => k !== i) });
+        // Re-tag rather than reuse meta.tags: stored tags are frozen at
+        // fetch time, so a taxonomy fix would show on the topic hubs (which
+        // re-tag) but not on company pages, which render these.
+        rec.articles.push({ title: meta.title, link, source: meta.source, publishedAt: meta.publishedAt, tags: tagArticle(meta.title + " " + (meta.summary || "")), summary: meta.summary || "", co: slugs.filter((s2, k) => k !== i) });
       }
     });
   }

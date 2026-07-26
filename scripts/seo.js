@@ -24,6 +24,7 @@
 const fs = require("fs");
 const path = require("path");
 const { RELEVANCE, onTopic } = require("./relevance");
+const { tagArticle } = require("./taxonomy");
 
 const ROOT = path.join(__dirname, "..");
 const NEWS = path.join(ROOT, "data", "news.json");
@@ -667,7 +668,12 @@ function storeArticles() {
         // default for an archive of mixed vintage.
         const text = a.title + " " + (a.summary || "");
         return a.native ? onTopic(text) : RELEVANCE.test(text);
-      });
+      })
+      // Re-tag rather than trust the stored tags: those are frozen at
+      // fetch time, so a taxonomy fix would never reach the archive.
+      // Today that matters because Funding used to match a bare money
+      // figure and swept in every earnings report and deal price.
+      .map((a) => ({ ...a, tags: tagArticle(a.title + " " + (a.summary || "")) }));
   } catch {
     return [];
   }

@@ -63,6 +63,14 @@ produce all of that consistently — **route new pages through them.**
    unless every story it files is insurtech** — Finextra's "insurtech"
    channel is a general fintech wire and delivered 21 payments stories in
    one run when it was.
+3d. **The category taxonomy lives in `scripts/taxonomy.js`,** shared by
+   `fetch-news.js` (tags on arrival), `companies.js` and `seo.js` (both
+   **re-tag** on read). Stored tags are frozen at fetch time, so without
+   the re-tag a taxonomy fix reaches new articles only and the archive
+   keeps whatever the rules said when it was written. Tag regexes should
+   match the *event*, not incidental wording: `Funding` used to match a
+   bare money figure and so filed every earnings report, acquisition
+   price and catastrophe loss as a funding round.
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may

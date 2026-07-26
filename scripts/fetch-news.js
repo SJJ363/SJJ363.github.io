@@ -57,30 +57,9 @@ const { RELEVANCE, TECH_ANGLE, onTopic } = require("./relevance");
 const SKIP_URL = /\/event-info\/|\/events?\/|\/webinar/i;
 
 // ---- Taxonomy ----------------------------------------------------------
-// Each article is tagged with every category it matches (title + summary).
-// A blend of deal-type, technology, line-of-business and market themes.
-// Order here is the order chips appear in the UI.
-const TAXONOMY = [
-  ["Funding", /(rais(e|es|ed|ing)\b|funding|seed round|series [a-e]\b|pre-seed|venture|valuation|fundrais|secures? \$|lands? \$|closes? \$[\d.]+|bags? \$|\$[\d.]+\s?(m|bn|million|billion)|investment round|capital raise|backed by)/i],
-  ["M&A", /(acquir|acquisition|merg(e|es|er|ing)|buyout|takeover|to buy|snaps up|buys )/i],
-  ["Partnerships", /(partner|partnership|teams? up|collaborat|joins forces|alliance|tie-?up|taps |selects |integrat|to distribute|distribution deal|powers )/i],
-  ["Product & Launches", /(launch|unveil|rolls? out|introduc|debut|releases?|goes live|new (product|platform|tool|app|solution|feature)|expands? (in)?to|now available)/i],
-  ["AI & Automation", /(\bAI\b|artificial intelligence|machine learning|\bML\b|gen(erative)?[ -]?ai|\bLLM\b|automat|chatbot|algorithm|predictive|\bGPT\b|agentic|copilot|no-code)/i],
-  ["Embedded", /(embedded insurance|embedded finance|insurance as a service|\bAPI\b|api-first|point[- ]of[- ]sale insurance|bancassurance|at checkout)/i],
-  ["Cyber", /(cyber|ransomware|data breach|malware|phishing|cyberattack|cyber risk)/i],
-  ["Claims & Underwriting", /(claims?\b|underwrit|pricing|risk assessment|loss adjust|actuar|fraud|\bfnol\b|first notice of loss)/i],
-  ["Health & Life", /(health ?insur|life insur|health ?tech|healthcare|medicare|medicaid|employee benefits|group health|disability insur|dental|telehealth|wellness)/i],
-  ["Auto & Mobility", /(auto insur|motor insur|car insur|telematics|usage-based|\bUBI\b|fleet|\bEV\b|autonomous|mobility|driver|vehicle)/i],
-  ["Property & Cat", /(property insur|homeowners?|property.and.casualty|\bP&C\b|catastrophe|\bcat bond\b|reinsur|climate|flood|wildfire|hurricane|natural disaster|parametric|commercial property)/i],
-  ["Regulation", /(regulat|complian|lawsuit|\bcourt\b|department of insurance|licens|sanction|fined|penalty|legislat|\bNAIC\b|policyholder protection)/i],
-  ["Leadership", /(appoint|names? (new )?(ceo|cfo|cto|coo|chair|president|head|chief)|hires?\b|joins as|steps down|resign|promot|new ceo|board of directors|expands leadership)/i],
-];
-const FALLBACK_TAG = "Industry";
-
-function tagArticle(text) {
-  const tags = TAXONOMY.filter(([, re]) => re.test(text)).map(([name]) => name);
-  return tags.length ? tags : [FALLBACK_TAG];
-}
+// Shared with seo.js, which re-tags the persistent store when building
+// the topic hubs — stored tags are frozen at fetch time.
+const { TAXONOMY, FALLBACK_TAG, tagArticle } = require("./taxonomy");
 
 // ---- Prominence scoring ------------------------------------------------
 // Source tiers: reputable outlets get a lift; press-wire / market-research
