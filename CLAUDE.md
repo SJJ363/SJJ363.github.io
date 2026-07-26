@@ -52,7 +52,17 @@ produce all of that consistently — **route new pages through them.**
    `storeArticles()` re-applies the current gate on the way out. What counts
    as on-topic lives in `scripts/relevance.js` and is shared with
    `fetch-news.js`: **keep it there, never fork the regexes**, or the wire
-   and the hubs will disagree about what insurtech is.
+   and the hubs will disagree about what insurtech is. Admission is
+   per-feed: `native` feeds are already confined to insurtech so a story
+   may qualify on technology wording alone, `strict` feeds are broad
+   publishers that need a technology angle *on top of* insurance wording,
+   and everything else needs insurance wording. That verdict rides along
+   on each article as `native` and is persisted into the store, because a
+   Google News item's `source` is rewritten to the real publisher and
+   provenance can't be recovered afterwards. **Don't mark a feed `native`
+   unless every story it files is insurtech** — Finextra's "insurtech"
+   channel is a general fintech wire and delivered 21 payments stories in
+   one run when it was.
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may

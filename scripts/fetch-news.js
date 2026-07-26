@@ -11,14 +11,22 @@ const path = require("path");
 const { buildBriefing } = require("./build-brief");
 const { buildAdjacency, assignClusters } = require("./cluster");
 
-// Each feed: url + a fallback source label + whether to keyword-filter.
-// Google News search feeds are already on-topic; broad feeds get filtered.
+/* Each feed carries its own admission rule:
+     native — the feed is already confined to insurtech, so a story may
+              qualify on technology alone without saying "insurance".
+     strict — a broad publisher, so a technology angle is *required* on
+              top of insurance wording.
+     neither — insurance wording required, technology optional.
+   Google News entries are searches for insurtech terms, so they count as
+   native. Finextra deliberately does not: its "insurtech" channel is a
+   general fintech wire, and under native it delivered 21 payments
+   stories in one run. */
 const FEEDS = [
-  { url: "https://news.google.com/rss/search?q=insurtech&hl=en-US&gl=US&ceid=US:en", source: "Google News" },
-  { url: "https://news.google.com/rss/search?q=%22insurance+technology%22&hl=en-US&gl=US&ceid=US:en", source: "Google News" },
-  { url: "https://news.google.com/rss/search?q=%22digital+insurance%22&hl=en-US&gl=US&ceid=US:en", source: "Google News" },
-  { url: "https://news.google.com/rss/search?q=%22embedded+insurance%22&hl=en-US&gl=US&ceid=US:en", source: "Google News" },
-  { url: "https://news.google.com/rss/search?q=insurtech+funding&hl=en-US&gl=US&ceid=US:en", source: "Google News" },
+  { url: "https://news.google.com/rss/search?q=insurtech&hl=en-US&gl=US&ceid=US:en", source: "Google News", native: true },
+  { url: "https://news.google.com/rss/search?q=%22insurance+technology%22&hl=en-US&gl=US&ceid=US:en", source: "Google News", native: true },
+  { url: "https://news.google.com/rss/search?q=%22digital+insurance%22&hl=en-US&gl=US&ceid=US:en", source: "Google News", native: true },
+  { url: "https://news.google.com/rss/search?q=%22embedded+insurance%22&hl=en-US&gl=US&ceid=US:en", source: "Google News", native: true },
+  { url: "https://news.google.com/rss/search?q=insurtech+funding&hl=en-US&gl=US&ceid=US:en", source: "Google News", native: true },
   { url: "https://www.finextra.com/rss/channel.aspx?channel=insurtech", source: "Finextra" },
 
   // Publishers' own feeds. Google News strips descriptions down to an echo
@@ -26,9 +34,8 @@ const FEEDS = [
   // all; these carry the outlet's own sentence about the story plus a
   // direct link. The dedupe below prefers this copy when the same story
   // also came through Google News.
-  // Insurtech-native: everything they publish is on-topic, so no gate.
-  { url: "https://coverager.com/feed/", source: "Coverager" },
-  { url: "https://www.insurtechinsights.com/feed/", source: "Insurtech Insights" },
+  { url: "https://coverager.com/feed/", source: "Coverager", native: true },
+  { url: "https://www.insurtechinsights.com/feed/", source: "Insurtech Insights", native: true },
 
   // General trade press. They file earnings, appointments, rate filings,
   // catastrophe and court news all day; strict keeps only the stories with
@@ -44,7 +51,7 @@ const FEEDS = [
 
 // What counts as on-topic lives in one place — the topic hubs in
 // seo.js are built from the archive and have to agree with the wire.
-const { TECH_ANGLE, onTopic } = require("./relevance");
+const { RELEVANCE, TECH_ANGLE, onTopic } = require("./relevance");
 
 // Skip non-article URLs (e.g. Finextra webinars/events).
 const SKIP_URL = /\/event-info\/|\/events?\/|\/webinar/i;
@@ -268,7 +275,13 @@ async function fetchFeed(feed) {
       // Journal" would match on its own and wave through everything it
       // filed — mortgage rates, an earthquake, a lettuce recall.
       const body = title + " " + summary;
-      if (!onTopic(body)) continue;
+      // native feeds may qualify on technology alone, because everything
+      // they carry is already insurtech — that is how "How Travelers
+      // measures ROI for its in-house LLM" gets in without saying
+      // insurance. Everywhere else insurance wording is required, or
+      // Finextra's payments desk arrives: stablecoins on cards, a Wise
+      // bank charter, Making Tax Digital.
+      if (!(feed.native ? onTopic(body) : RELEVANCE.test(body))) continue;
       if (feed.strict && !TECH_ANGLE.test(body)) continue;
 
       out.push({
@@ -279,6 +292,10 @@ async function fetchFeed(feed) {
         tags: tagArticle(title + " " + summary),
         publishedAt: new Date(ts).toISOString(),
         timestamp: ts,
+        // Carried into the store so the topic hubs can re-apply the same
+        // rule later. A Google News item's source is rewritten to the real
+        // publisher, so provenance cannot be recovered from source alone.
+        ...(feed.native ? { native: true } : {}),
       });
     }
     console.log(`  ✓ ${feed.url.slice(0, 60)}… → ${out.length}`);

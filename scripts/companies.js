@@ -373,6 +373,9 @@ function main() {
       publishedAt: a.publishedAt,
       tags: a.tags || [],
       summary: a.summary || "",
+      // Came from a feed confined to insurtech. seo.js needs it to know
+      // whether a story may qualify on technology wording alone.
+      ...(a.native ? { native: true } : {}),
     };
   }
 

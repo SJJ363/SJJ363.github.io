@@ -23,7 +23,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { onTopic } = require("./relevance");
+const { RELEVANCE, onTopic } = require("./relevance");
 
 const ROOT = path.join(__dirname, "..");
 const NEWS = path.join(ROOT, "data", "news.json");
@@ -660,7 +660,14 @@ function storeArticles() {
     return Object.entries(raw.seen || {})
       .map(([link, v]) => ({ link, ...v }))
       .filter((a) => a && a.title && a.publishedAt)
-      .filter((a) => onTopic(a.title + " " + (a.summary || "")));
+      .filter((a) => {
+        // Same rule the wire applies, using the provenance the store
+        // carries. Entries written before that flag existed have no
+        // `native`, so they face the stricter test — which is the right
+        // default for an archive of mixed vintage.
+        const text = a.title + " " + (a.summary || "");
+        return a.native ? onTopic(text) : RELEVANCE.test(text);
+      });
   } catch {
     return [];
   }
