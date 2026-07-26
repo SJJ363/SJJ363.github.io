@@ -76,7 +76,10 @@ a { color: inherit; text-decoration: none; }
 
 /* Topics dropdown — a <details>, so it opens without JS and stays
    keyboard-operable. script only closes it on Escape / outside click. */
-.nav-drop { position: relative; }
+/* Flex, not block: an inline-flex <summary> otherwise sits in a line box
+   sized by the details' own 17px line-height, which drops "Topics" a few
+   px below the links beside it. */
+.nav-drop { position: relative; display: flex; align-items: center; }
 .nav-drop-btn {
   display: inline-flex; align-items: center; gap: 5px;
   cursor: pointer; list-style: none; user-select: none;
