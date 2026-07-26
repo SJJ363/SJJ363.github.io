@@ -65,14 +65,59 @@ a { color: inherit; text-decoration: none; }
 
 /* Section nav */
 .nav { display: inline-flex; align-items: baseline; gap: 20px; }
-.nav a {
+.nav > a, .nav-drop-btn {
   font-size: 0.74rem; font-weight: 600; color: var(--ink-3);
   text-transform: uppercase; letter-spacing: 0.09em; white-space: nowrap;
   padding-bottom: 2px; border-bottom: 2px solid transparent;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
-.nav a:hover { color: var(--ink); }
-.nav a.active { color: var(--ink); border-bottom-color: var(--accent); }
+.nav > a:hover, .nav-drop-btn:hover { color: var(--ink); }
+.nav > a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+/* Topics dropdown — a <details>, so it opens without JS and stays
+   keyboard-operable. script only closes it on Escape / outside click. */
+.nav-drop { position: relative; }
+.nav-drop-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  cursor: pointer; list-style: none; user-select: none;
+}
+.nav-drop-btn::-webkit-details-marker { display: none; }
+.nav-drop[data-active="true"] .nav-drop-btn {
+  color: var(--ink); border-bottom-color: var(--accent);
+}
+.nav-drop[open] .nav-drop-btn { color: var(--ink); }
+.nav-caret {
+  width: 0; height: 0; margin-top: 1px;
+  border-left: 3.5px solid transparent; border-right: 3.5px solid transparent;
+  border-top: 4px solid currentColor;
+  transition: transform 0.15s ease;
+}
+.nav-drop[open] .nav-caret { transform: rotate(180deg); }
+
+.nav-drop-menu {
+  position: absolute; top: calc(100% + 11px); left: -14px; z-index: 120;
+  display: grid; grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 2px 18px;
+  padding: 14px; background: var(--paper);
+  border: 1px solid var(--rule); border-top: 2px solid var(--accent);
+  box-shadow: 0 14px 34px rgba(28, 26, 21, 0.13);
+}
+.nav-drop-menu a {
+  padding: 5px 2px; font-size: 0.78rem; font-weight: 500; color: var(--ink-2);
+  letter-spacing: 0; text-transform: none; white-space: nowrap;
+  border-bottom: 1px solid transparent;
+}
+.nav-drop-menu a:hover { color: var(--accent); }
+.nav-drop-menu a.active { color: var(--ink); font-weight: 600; }
+.nav-drop-all {
+  grid-column: 1 / -1;
+  margin-top: 6px; padding-top: 9px !important;
+  border-top: 1px solid var(--rule-soft);
+  font-size: 0.7rem !important; font-weight: 600 !important;
+  text-transform: uppercase !important; letter-spacing: 0.08em !important;
+  color: var(--ink-3) !important;
+}
+.nav-drop-all:hover { color: var(--accent) !important; }
 /* red masthead rule instead of the old glowing tick */
 .brand-tick {
   align-self: center;
@@ -575,19 +620,32 @@ main {
 @media (max-width: 620px) {
   .result-count { display: none; }
   .status { display: none; }
-  /* Three nav items no longer fit beside the masthead on a phone —
-     tighten the gaps and let the nav scroll rather than pushing the
-     sticky topbar wider than the viewport. */
-  .topbar { gap: 14px; }
+  /* All four sections have to be legible at a glance. The nav used to
+     sit beside the masthead and scroll sideways, which parked
+     Companies off-screen where nobody found it; on a phone it now
+     takes its own full-width row under the brand. */
+  .topbar { flex-wrap: wrap; gap: 0 14px; padding-top: 12px; padding-bottom: 0; }
   .nav {
-    gap: 15px; min-width: 0; overflow-x: auto;
-    scrollbar-width: none; -ms-overflow-style: none;
-    /* Fade the trailing edge so a clipped item reads as "scroll me"
-       rather than as a broken layout. */
-    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
-    mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+    order: 3; width: 100%; margin-top: 11px; padding: 9px 0 8px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 6px; border-top: 1px solid var(--rule-soft);
   }
-  .nav::-webkit-scrollbar { width: 0; height: 0; }
+  .nav > a, .nav-drop-btn { font-size: 0.7rem; letter-spacing: 0.06em; padding-bottom: 3px; }
+  /* The topic menu spans the whole bar rather than hanging off the
+     third item, where half of it would be past the right edge. */
+  .nav-drop { position: static; }
+  .nav-drop-menu {
+    top: 100%; left: 0; right: 0;
+    gap: 0 16px; padding: 10px var(--gutter) 16px;
+    border-left: 0; border-right: 0;
+  }
+  .nav-drop-menu a { padding: 10px 0; font-size: 0.85rem; white-space: normal; }
+  .nav-drop-all { padding-top: 12px !important; }
+}
+
+/* The four labels only just clear a 360px viewport at 0.7rem. */
+@media (max-width: 360px) {
+  .nav > a, .nav-drop-btn { font-size: 0.65rem; letter-spacing: 0.04em; }
   .co-link { flex-direction: column; gap: 5px; }
   .sort-group { flex: 1 1 100%; flex-wrap: wrap; }
   .sort-btn { flex: 1 1 auto; text-align: center; }

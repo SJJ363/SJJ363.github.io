@@ -24,7 +24,7 @@
 const fs = require("fs");
 const path = require("path");
 const { RELEVANCE, onTopic } = require("./relevance");
-const { tagArticle } = require("./taxonomy");
+const { TAXONOMY, FALLBACK_TAG, tagArticle } = require("./taxonomy");
 
 const ROOT = path.join(__dirname, "..");
 const NEWS = path.join(ROOT, "data", "news.json");
@@ -96,8 +96,9 @@ const FAVICON =
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=15" />
-  <link rel="icon" href="${FAVICON}" />`;
+  <link rel="stylesheet" href="/style.css?v=16" />
+  <link rel="icon" href="${FAVICON}" />
+  <script src="/nav.js?v=1" defer></script>`;
 
 /* ── The shared <head> builder — every page goes through here ── */
 function head({ title, description, canonical, ogType = "website", jsonld = [] }) {
@@ -148,16 +149,60 @@ const BRAND_MARK =
   `<span class="brand-tick"></span>` +
   `<span class="brand-name">Insurtech&nbsp;Daily</span></a>`;
 
-function header(active) {
+/* ── The nav ────────────────────────────────────────────────────
+   One builder for every page, hand-authored ones included (they take
+   it through the SEO:NAV marker), so the Topics menu can never drift
+   between the wire and the generated pages.
+
+   Topics is a <details> dropdown rather than a link to the hub index:
+   on a phone that turns "find the cyber stories" from three taps
+   (Topics → hub → topic) into two, and the links are real <a>s in the
+   served HTML, so crawlers get a link to every hub from every page.
+   ── */
+let NAV_TOPICS = [];
+
+/* Taxonomy order, not story count — count order reshuffles the nav on
+   every run and turns each build into a diff across ~200 pages. */
+function setNavTopics(topics) {
+  const order = new Map(
+    [...TAXONOMY.map(([n]) => n), FALLBACK_TAG].map((n, i) => [topicSlug(n), i])
+  );
+  NAV_TOPICS = topics
+    .map((t) => ({ name: t.name, slug: t.slug }))
+    .sort((a, b) => (order.get(a.slug) ?? 99) - (order.get(b.slug) ?? 99));
+}
+
+function navMarkup(active, currentTopic = "") {
   const cls = (n) => (n === active ? ' class="active" aria-current="page"' : "");
-  return `  <header class="topbar">
-    ${BRAND_MARK}
-    <nav class="nav">
+  // No topics built yet (a first run, or an injection before the hubs
+  // exist) — degrade to the plain link rather than an empty menu.
+  const topics = NAV_TOPICS.length
+    ? `      <details class="nav-drop"${active === "topics" ? ' data-active="true"' : ""}>
+        <summary class="nav-drop-btn">Topics<span class="nav-caret" aria-hidden="true"></span></summary>
+        <div class="nav-drop-menu">
+${NAV_TOPICS.map(
+  (t) =>
+    `          <a href="/topic/${escAttr(t.slug)}/"${
+      t.slug === currentTopic ? ' class="active" aria-current="page"' : ""
+    }>${escHtml(t.name)}</a>`
+).join("\n")}
+          <a class="nav-drop-all" href="/topic/">All topics</a>
+        </div>
+      </details>`
+    : `      <a href="/topic/"${cls("topics")}>Topics</a>`;
+
+  return `    <nav class="nav" aria-label="Sections">
       <a href="/"${cls("wire")}>The Wire</a>
       <a href="/brief/"${cls("brief")}>The Brief</a>
-      <a href="/topic/"${cls("topics")}>Topics</a>
+${topics}
       <a href="/companies.html"${cls("companies")}>Companies</a>
-    </nav>
+    </nav>`;
+}
+
+function header(active, currentTopic = "") {
+  return `  <header class="topbar">
+    ${BRAND_MARK}
+${navMarkup(active, currentTopic)}
   </header>`;
 }
 
@@ -805,7 +850,7 @@ function topicPageHtml(topic, allTopics, db) {
 
   return `${head({ title, description, canonical, jsonld: [collectionLd, crumbLd] })}
 <body>
-${header("topics")}
+${header("topics", topic.slug)}
 
   <main id="top">
     <p class="crumb"><a href="/topic/">← All topics</a></p>
@@ -963,8 +1008,9 @@ function injectHomepage(news) {
     )
     .join("\n");
   html = replaceBlock(html, "JSONLD", block);
+  html = replaceBlock(html, "NAV", navMarkup("wire"));
   fs.writeFileSync(p, html);
-  console.log("  ✓ index.html structured data");
+  console.log("  ✓ index.html structured data + nav");
 }
 
 function injectCompaniesIndex(db) {
@@ -1030,6 +1076,7 @@ function injectCompaniesIndex(db) {
 
   // Keep the visible count accurate even before JS runs.
   html = replaceBlock(html, "COCOUNT", String(companies.length));
+  html = replaceBlock(html, "NAV", navMarkup("companies"));
 
   fs.writeFileSync(p, html);
   console.log(`  ✓ companies.html — ${companies.length} rows + structured data`);
@@ -1154,6 +1201,9 @@ function main() {
   // so the new page lands in this run's sitemap rather than the next.
   const briefs = recordBrief(news);
   const topics = collectTopics(news);
+  // Every page's nav lists the hubs, so the list has to exist before
+  // the first page is written.
+  setNavTopics(topics);
   buildCompanyPages(db);
   buildBriefPages(briefs);
   buildTopicPages(topics, db);

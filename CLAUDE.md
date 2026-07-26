@@ -32,6 +32,16 @@ produce all of that consistently — **route new pages through them.**
    (canonical, OG, Twitter, robots, JSON-LD markers) and adapt the values. Add a
    `<!-- SEO:JSONLD -->…<!-- /SEO:JSONLD -->` marker if it needs injected
    structured data, and wire it up in `seo.js`.
+2b. **The nav is generated too.** `navMarkup()` in `seo.js` is the only place
+   it is written: generated pages get it through `header()`, and `index.html` /
+   `companies.html` get the same markup injected into their
+   `<!-- SEO:NAV -->…<!-- /SEO:NAV -->` markers — never hand-edit it in those
+   two files, the next build overwrites it. It lists every topic hub, so each
+   hub is one tap from every page and one link away for a crawler; the list
+   comes from the topics actually built and is ordered by `taxonomy.js`, not by
+   story count, so the nav doesn't reshuffle across ~200 pages every run. The
+   Topics menu is a `<details>`, so it opens with no JS at all; `/nav.js` only
+   adds dismiss-on-Escape and dismiss-on-outside-click.
 3. **Company pages live at `/company/<slug>/`** as real static HTML — fully
    server-rendered (work without JS) and regenerated each run. Never link
    companies via `company.html?c=…`; use `/company/<slug>/`. `company.html` is a
