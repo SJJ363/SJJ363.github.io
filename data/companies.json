@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-27T20:21:34.677Z",
-  "count": 956,
+  "updatedAt": "2026-07-27T20:25:08.428Z",
+  "count": 1032,
   "companies": [
     {
       "slug": "agi",
@@ -412,15 +412,27 @@
     {
       "slug": "pb-fintech",
       "name": "PB Fintech",
-      "count": 2,
-      "firstSeen": "2025-11-19T08:00:00.000Z",
+      "count": 3,
+      "firstSeen": "2025-05-08T07:00:00.000Z",
       "lastSeen": "2026-07-27T13:30:00.000Z",
-      "topics": [],
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
       "sources": [
         "Trade Brains",
-        "BFSI News"
+        "BFSI News",
+        "Business Standard"
       ],
-      "related": [],
+      "related": [
+        {
+          "slug": "policybazaar",
+          "name": "Policybazaar",
+          "count": 1
+        }
+      ],
       "articles": [
         {
           "title": "From 6.5 Lakh Advisors to 19,000+ PIN Codes: Why This Insurance Platform Is Being Compared With PB Fintech",
@@ -443,32 +455,62 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "Policybazaar parent PB Fintech's new India hospital venture raises $218 mn",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPM0NQZHVvcVE2N0pXMjZjYjNCZTBuRXBScW1aaUpLRnZGRVZsTHhiN0dwWFZrRGROT01tOEhON3ptYUdUem5heVpZZ2hfTVZOSVVkOGVpZTFFMkVLdU8tWXdfdjlBS0RVSmlzcXJ2ZGYzUnNBM2J2TDFSNGhHUUN1aHVnUTZGYXQ3Vk14LW5tdzZMUlhzNFBXTU9tYlZkeVZCNTFFR1pCVVdLUUR6VzRDLWNnbXNGNUlCVlNHaVNFVVFjbVZFY2FFcmh6aWpXRVU1Ulk5WXlnX09vd9IB3wFBVV95cUxPT1ZsWmZVdEI1dWxJY2NVSjh4aE5FSmNqeFpEclNqVlZWQ0NJV0Y4YVRsUHR6Umxrc0laWkNYNFN2R1JYaWFEUFNQdW1sSml1d21KMjYxVF9wZ04tNUViSGpoem81TFhSS2NxUXdzck1RWU9Yanh2c2t3bGdJUjR4RFZSWnd3dy1wYnp3cXZJa0RhQk9rWGZnNVpuYWtUaGFxbTdqandsaFRGSWxuT3FoaHVyM2VxQWRmU19FbmpqeFJIYkY3UGJwSzlKZzljekFpOVdoTmlsQkl1S2MtQW1F?oc=5",
+          "source": "Business Standard",
+          "publishedAt": "2025-05-08T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "policybazaar"
+          ]
         }
       ]
     },
     {
       "slug": "ominimo",
       "name": "Ominimo",
-      "count": 4,
-      "firstSeen": "2026-07-27T07:00:49.000Z",
+      "count": 7,
+      "firstSeen": "2025-04-10T07:00:00.000Z",
       "lastSeen": "2026-07-27T13:29:30.000Z",
       "topics": [
         {
           "name": "Funding",
-          "count": 3
+          "count": 4
         },
         {
           "name": "Product & Launches",
           "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
         }
       ],
       "sources": [
         "Beinsure",
         "Tech Funding News",
         "Insurance Nerds",
-        "EU-Startups"
+        "EU-Startups",
+        "FinTech Global",
+        "Insurance Business",
+        "SiliconANGLE"
       ],
-      "related": [],
+      "related": [
+        {
+          "slug": "zurich",
+          "name": "Zurich",
+          "count": 2
+        }
+      ],
       "articles": [
         {
           "title": "Insurtech Ominimo reaches $1.6 bn valuation after Series B",
@@ -511,6 +553,44 @@
           "publishedAt": "2026-07-27T07:00:49.000Z",
           "tags": [
             "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Zurich invests in InsurTech Ominimo to boost AI-powered car insurance in Europe",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQLUpvV3FHWUlwcHZHMUVYVk9UOTFVS2xxZ0VheVg4R1Flcy1HQjdjUWpjQUVGYUtfMFNZYm1iUnNCdE1yYmxFN1lGNUFmY3IxSWN0MkFEdVktcTlyS1ZzNVJTNmNhLUQxZmhqQ2tKZmwtX3JubHI4a0ZjbVlScEtBeERPdVNIMWZZeDBvMktjT1hQZHJ2MkFLTWpvMkFVa0ZsUnNnMkNfakFSUXMyUzgyU3FQUVptOEJhWVV3?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-04-15T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": [
+            "zurich"
+          ]
+        },
+        {
+          "title": "Zurich takes a stake in AI-powered insurer Ominimo to drive European expansion",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNZ3pMbzMtRUN3S1lTVlg3bkJFbEFKelNTeGpxSFdZMnluNWxFVHJGWDJUT29mZHZzeXpPazQ2eEVzT05lekFEU0p6aHBoaTZEQTJac1htbnh4MGkxYUFNeHRwbzFvSEdwNGNDQWNkTFZUZExvVTRCcFFueEo4UU1nQ0NLajBlbHdzZG91bktHNXJSdEl0dnNTMWplNXJGeVRSREtwX3E3UEwzQkNEWjYzN2J0c21KOHV6UmFSbFdtVlltZ2JzSkJuXzI1UUJ1dGFLVi16VzEtTTVDRnp5QTdOM3J3?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-04-11T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "zurich"
+          ]
+        },
+        {
+          "title": "Insurance technology startup Ominimo raises €10M in funding",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObXRfbU9mMTZjUTdHRC1KcjgzdmRHZ1ZKWVpsZTFTaHBVazhHalZNNlFYbTZic0w1blRfWmd0R0Z4eWowM2J3X1l1dVNKNUtTbG5yLWRsNnNES1FoaDFteWI4X3ZRTnJ3UW5hLXhmNHhnRS1wenZFdDZ3Q2JSTi02YmdyTktzeVlfRFBxQVNabFY3Vm1sM2NFNQ?oc=5",
+          "source": "SiliconANGLE",
+          "publishedAt": "2025-04-10T07:00:00.000Z",
+          "tags": [
+            "Funding"
           ],
           "summary": "",
           "co": []
@@ -2370,17 +2450,17 @@
     {
       "slug": "chubb",
       "name": "Chubb",
-      "count": 16,
-      "firstSeen": "2025-10-09T07:00:00.000Z",
+      "count": 18,
+      "firstSeen": "2025-05-07T07:00:00.000Z",
       "lastSeen": "2026-07-26T10:48:01.000Z",
       "topics": [
         {
           "name": "Product & Launches",
-          "count": 8
+          "count": 9
         },
         {
           "name": "Partnerships",
-          "count": 6
+          "count": 7
         },
         {
           "name": "Embedded",
@@ -2395,8 +2475,8 @@
           "count": 2
         },
         {
-          "name": "Claims & Underwriting",
-          "count": 1
+          "name": "Health & Life",
+          "count": 2
         }
       ],
       "sources": [
@@ -2414,7 +2494,9 @@
         "Reinsurance News",
         "Insurance Edge",
         "Fintech Singapore",
-        "Australasian Leisure Management Magazine"
+        "Australasian Leisure Management Magazine",
+        "Business Wire",
+        "Macau Business"
       ],
       "related": [
         {
@@ -2426,6 +2508,11 @@
           "slug": "igloo",
           "name": "Igloo",
           "count": 2
+        },
+        {
+          "slug": "european-watch-company",
+          "name": "European Watch Company",
+          "count": 1
         }
       ],
       "articles": [
@@ -2630,22 +2717,47 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "European Watch Company Partners with Chubb to Offer Insurance Protection for Luxury Timepieces and Jewelry",
+          "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOMkJVNnN5d2tEWG1oODhGTTR5b2NGOHhScFhPamVlRXY1RzJVSW5CWm51OW42b25BM3pHUU9qRnFxY28tZS10QWQ3Y2ViejFZMlBDZC1RX1BrSlEtMTRLTDg4YXNKZWpHM0lnLUF4NWlobzFpZW80Vkk1ZVZnQ0NITzYtSExobUU5d0g2NzhXY0FJS1dyTkp6MUUyNXZEVFNsX0hLOXZ6TmFOWGh4dmlEazFEeDB6ZWZ1ZVFNQ2Fxclo2Wl81MDdwX004d19aUXA5TXlhejk3UVJ0eWZ3VGljZkdvNnJwc3JFUUZaMDFFUExtLVBXYWc?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2025-06-04T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "european-watch-company"
+          ]
+        },
+        {
+          "title": "Chubb Life Hong Kong Launches \"Health Up\" Insurance Plan to Foster a Wellness Lifestyle for the Tech-savvy Generation",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOWHhMbEk2RmRzYzNZWVdsZkNxdFQyT3ZRNTdIc0d4NHNaaWVITTVKTWlmZHlySS1fZUJRLXhMZFdjY3lYajFJRlRKc0ZDVndVbUloYU1pMlRMLVJuNGRubHFGdm5qTzRRdU9tdVNLLU5GRnhUSVc5MzBmOWJWWFFmR2NYWGx6NExsc3R2emI2dzdGLVM3a21PTmYzVzNjM0NidGVFYTlyRkYycEI4Z1puRVIyMmNLVGRfTXlBZDFSazNibEZiU0x4c1lwUHNSNmhxWmFKXzNGOEEzdw?oc=5",
+          "source": "Macau Business",
+          "publishedAt": "2025-05-07T07:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
     {
       "slug": "zurich",
       "name": "Zurich",
-      "count": 26,
-      "firstSeen": "2025-07-03T07:00:00.000Z",
+      "count": 31,
+      "firstSeen": "2025-04-11T07:00:00.000Z",
       "lastSeen": "2026-07-25T15:03:51.000Z",
       "topics": [
         {
-          "name": "Product & Launches",
-          "count": 7
+          "name": "AI & Automation",
+          "count": 9
         },
         {
-          "name": "AI & Automation",
+          "name": "Product & Launches",
           "count": 7
         },
         {
@@ -2658,11 +2770,11 @@
         },
         {
           "name": "M&A",
-          "count": 2
+          "count": 3
         },
         {
-          "name": "Partnerships",
-          "count": 1
+          "name": "Auto & Mobility",
+          "count": 3
         }
       ],
       "sources": [
@@ -2684,7 +2796,9 @@
         "FF News",
         "FintechNews CH",
         "digfingroup.com",
-        "Insurance Journal"
+        "Insurance Journal",
+        "BusinessToday Malaysia",
+        "IntelliNews"
       ],
       "related": [
         {
@@ -2708,6 +2822,11 @@
           "count": 2
         },
         {
+          "slug": "ominimo",
+          "name": "Ominimo",
+          "count": 2
+        },
+        {
           "slug": "arch-insurance",
           "name": "Arch Insurance",
           "count": 1
@@ -2720,11 +2839,6 @@
         {
           "slug": "honey",
           "name": "Honey",
-          "count": 1
-        },
-        {
-          "slug": "kenanga",
-          "name": "Kenanga",
           "count": 1
         }
       ],
@@ -3048,6 +3162,67 @@
           "co": [
             "boxx"
           ]
+        },
+        {
+          "title": "Zurich Malaysia Sets New Benchmarks In Digital Transformation",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPN0VIY09CUWZyNFEzY1pPVW9qTkZvZkRGYnZiV3BKVm1EeEpmV25TcWVzcU84ckZRVzMtUzdnSWJMRHV6bEJ0NzlwNGZ3S0JHdlBFWDQ5ZVR1aktCYl9FTjF3TTI0d3JVblc3MkhGengxY1kzbEoxNWFlNW5TTkVpWU83ejR4XzdNbTVoVGhiZV9ocmZ1TGpvU095TXpHalg5cWVZcUp5YnllQQ?oc=5",
+          "source": "BusinessToday Malaysia",
+          "publishedAt": "2025-04-25T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Zurich invests in InsurTech Ominimo to boost AI-powered car insurance in Europe",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQLUpvV3FHWUlwcHZHMUVYVk9UOTFVS2xxZ0VheVg4R1Flcy1HQjdjUWpjQUVGYUtfMFNZYm1iUnNCdE1yYmxFN1lGNUFmY3IxSWN0MkFEdVktcTlyS1ZzNVJTNmNhLUQxZmhqQ2tKZmwtX3JubHI4a0ZjbVlScEtBeERPdVNIMWZZeDBvMktjT1hQZHJ2MkFLTWpvMkFVa0ZsUnNnMkNfakFSUXMyUzgyU3FQUVptOEJhWVV3?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-04-15T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": [
+            "ominimo"
+          ]
+        },
+        {
+          "title": "Zurich Insurance buys into Serbian-Hungarian car insurtech startup",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUnl3S2haa0pITVNZeVZyek5EZ1BXenl5bm9SVmNqQjlmUnZnNFJUZjhGUHVaQ05UMHoycTlQUkV3TzZyUXFPR0g1bTlKSXV3UmxqUnRIWVIwVXVqeHhEYnFmT0NGbm5jYnhmRjZQS0c2c3Ezalk0QU5IMkR4dlJxS1pDZzM0cEZCdFVWcnYwY05EUlJXTHExMFNEMTdVcnNZOFRYeg?oc=5",
+          "source": "IntelliNews",
+          "publishedAt": "2025-04-11T07:00:00.000Z",
+          "tags": [
+            "M&A",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Zurich takes a stake in AI-powered insurer Ominimo to drive European expansion",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNZ3pMbzMtRUN3S1lTVlg3bkJFbEFKelNTeGpxSFdZMnluNWxFVHJGWDJUT29mZHZzeXpPazQ2eEVzT05lekFEU0p6aHBoaTZEQTJac1htbnh4MGkxYUFNeHRwbzFvSEdwNGNDQWNkTFZUZExvVTRCcFFueEo4UU1nQ0NLajBlbHdzZG91bktHNXJSdEl0dnNTMWplNXJGeVRSREtwX3E3UEwzQkNEWjYzN2J0c21KOHV6UmFSbFdtVlltZ2JzSkJuXzI1UUJ1dGFLVi16VzEtTTVDRnp5QTdOM3J3?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-04-11T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "ominimo"
+          ]
+        },
+        {
+          "title": "Zurich bets on Balkan-born insurtech disruptor in bid to reinvent motor insurance",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQOU9uMG40WnZTQzljVzB3XzdjTEVCZ0JSeGU2YjJ1NXc4U0JRbzFKYUptdVBlMUpseEoxTGppVVUzT050RV80S0dxNzBfcnBEbE1NLXBGbHZzNG9Cb0k2NTZUQU1hZWVfZXBhNnJHZzZoNW5wZElVa0YyU2hnMS1tOVN3Sms5OXlTRXBsejN3TW5WdUxBZnh0eVh3eU9Ha0VOOXpXeTlXbDdzVzNyVVM4aTlYREdiMk1LMHZpRm1PbTZUMDRHTmVlYnNsRmdXanhoQmtWaUVVMWRXdFcxbXdYejZ3?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-04-11T07:00:00.000Z",
+          "tags": [
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -3101,8 +3276,8 @@
     {
       "slug": "root",
       "name": "Root",
-      "count": 12,
-      "firstSeen": "2025-08-07T07:00:00.000Z",
+      "count": 13,
+      "firstSeen": "2025-04-04T07:00:00.000Z",
       "lastSeen": "2026-07-24T21:18:32.000Z",
       "topics": [
         {
@@ -3114,11 +3289,11 @@
           "count": 5
         },
         {
-          "name": "Product & Launches",
-          "count": 3
+          "name": "Embedded",
+          "count": 4
         },
         {
-          "name": "Embedded",
+          "name": "Product & Launches",
           "count": 3
         }
       ],
@@ -3163,6 +3338,11 @@
         {
           "slug": "lemonade",
           "name": "Lemonade",
+          "count": 1
+        },
+        {
+          "slug": "hyundai-capital-america",
+          "name": "Hyundai Capital America",
           "count": 1
         }
       ],
@@ -3321,6 +3501,19 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "Root, Hyundai Capital America Strike Embedded Insurance Deal",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8wNVhUempvbW12SVItQy0zVWpKbEh0cnoxWFpDYVk4TUw0QXhVdzI0TVdfWmVnLWx1WjNGY1lnbE5CVEJkWm1peXRuZFlXZXh1SFJmelc0NnYyYkR5OHZLNzdJS194bl9wYlBNaw?oc=5",
+          "source": "Carrier Management",
+          "publishedAt": "2025-04-04T07:00:00.000Z",
+          "tags": [
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "hyundai-capital-america"
+          ]
         }
       ]
     },
@@ -6028,8 +6221,8 @@
     {
       "slug": "guidewire",
       "name": "Guidewire",
-      "count": 12,
-      "firstSeen": "2025-09-19T07:00:00.000Z",
+      "count": 13,
+      "firstSeen": "2025-05-26T07:00:00.000Z",
       "lastSeen": "2026-07-24T05:38:55.000Z",
       "topics": [
         {
@@ -6063,7 +6256,8 @@
         "Livingston Daily",
         "Insurance Nerds",
         "insurance-portal.ca",
-        "LinkedIn"
+        "LinkedIn",
+        "BW Businessworld"
       ],
       "related": [
         {
@@ -6256,6 +6450,17 @@
           "publishedAt": "2025-09-19T07:00:00.000Z",
           "tags": [
             "Health & Life"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Mohammed Anzy S Sheds Light On How Guidewire India Is Helping Insurers Scale With Cloud And Analytics",
+          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOZGlkUXZtOUdGZUg2cGw5UGVPeko4bFhTcW13d3o1YUxUcU1fMzk5QU4yU3l5NkpzSXZXd0V0TmQtNDhJRVl3QktwSFR1bGJDVXJHejFRektEc05KcENPREo4TVNUX1JCaG1oa1hxQk90QlB4bnlEczN0YmhnSHhwbUU5elZMQlpaWU1mTFFtRzRtRVVnVnFqYWkyVS1hb282RVlpdDBXTTFwQzBhYjJIZDZPTWFEcnVyenFBVkRfeFRDWXhNQWFuc2E2dUxvMnVueUQ5ek5tS2xBaDhVRXc?oc=5",
+          "source": "BW Businessworld",
+          "publishedAt": "2025-05-26T07:00:00.000Z",
+          "tags": [
+            "Industry"
           ],
           "summary": "",
           "co": []
@@ -7079,8 +7284,8 @@
     {
       "slug": "gallagher",
       "name": "Gallagher",
-      "count": 10,
-      "firstSeen": "2026-02-12T08:00:00.000Z",
+      "count": 11,
+      "firstSeen": "2025-05-07T07:00:00.000Z",
       "lastSeen": "2026-07-23T16:32:16.000Z",
       "topics": [
         {
@@ -7215,6 +7420,17 @@
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPYmEzdUlpbjVOT2NPT0xDZllNd1BjR3l6b2ZTN28zRFFLTFB4MDBsOVppd2k4bzJOMUF6Ym85dVRBNVoyRTNtTVV5VC1WWk4xel9WM0g3aUtzSUdKbjBsWGVaZ2F6X09GOV9meDdTbVJGblI0cm4wRGg3SU5HU2tUV3N4NU5BNmd1SVdaaVIxcGVHOV9hTE9wTld1TlV2M3c4U2czTFBQbVhoOFB2UHZiYnpvT3VzdktoM0E?oc=5",
           "source": "Reinsurance News",
           "publishedAt": "2026-02-12T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "InsurTech funding hits $1.31bn in Q1’25: Gallagher Re",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPdEw1bjdOV0Faa0FhOUIwMVNQcGc3aG5rNjNFZG1LY2pCci1yQ3I0Sk1mS2VzRGNTbzd3dndCYVVIeG9LVFdCWWlGMVkyOWRsXy1DdkdndVBvVk9WZVJ2bzJZUmJpVWlFMUJZelQ3YmlrTjZRN2FVc2FOZHFRLWVNajRNd2w4a2M?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2025-05-07T07:00:00.000Z",
           "tags": [
             "Industry"
           ],
@@ -8373,8 +8589,8 @@
     {
       "slug": "zhibao",
       "name": "Zhibao",
-      "count": 9,
-      "firstSeen": "2025-12-12T08:00:00.000Z",
+      "count": 10,
+      "firstSeen": "2025-04-22T07:00:00.000Z",
       "lastSeen": "2026-07-22T21:15:49.000Z",
       "topics": [
         {
@@ -8383,7 +8599,7 @@
         },
         {
           "name": "Property & Cat",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Embedded",
@@ -8512,6 +8728,17 @@
           "publishedAt": "2025-12-12T08:00:00.000Z",
           "tags": [
             "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Zhibao Technology Announces the Establishment of Zhibao Labuan Reinsurance Company Limited",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQVnBuRGthd0ZkXzJja19HYlpacXJjYjZlQ05yOFdDN1Q4TTFlSzNUaXpmSW5Zd25YN09TdkhxM3N2akVoak5Nd0cybVFQbUpDNWNpTmhvTUlYbXUteGhLT2FtQVYxRTQ0bTd1RWZCRXFoMkQtRW1SNEs1dU5zUGROYjcwVHg0d25obG5EYWl2cG1jVVNKeGhJQlhQeEU1Zjl2ZVI2Z0N3bnJld1NTNmdOamJOSlk2ZDlRX2tWS2xJa28zbXh0X3lxcDhzNS1EWDg?oc=5",
+          "source": "TMX Newsfile",
+          "publishedAt": "2025-04-22T07:00:00.000Z",
+          "tags": [
+            "Property & Cat"
           ],
           "summary": "",
           "co": []
@@ -10233,10 +10460,14 @@
     {
       "slug": "marshmallow",
       "name": "Marshmallow",
-      "count": 2,
-      "firstSeen": "2026-07-20T10:09:56.000Z",
+      "count": 6,
+      "firstSeen": "2025-04-14T07:00:00.000Z",
       "lastSeen": "2026-07-21T10:53:08.000Z",
       "topics": [
+        {
+          "name": "Funding",
+          "count": 3
+        },
         {
           "name": "Partnerships",
           "count": 2
@@ -10248,11 +10479,19 @@
         {
           "name": "Regulation",
           "count": 2
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
         }
       ],
       "sources": [
         "Insurtech Insights",
-        "FF News"
+        "FF News",
+        "FintechNews CH",
+        "Sifted",
+        "Insurance Business",
+        "TechCrunch"
       ],
       "related": [
         {
@@ -10291,6 +10530,51 @@
           "co": [
             "adclear"
           ]
+        },
+        {
+          "title": "UK’s Marshmallow Raises €79.4M to Expand Insurance Services for Immigrants",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQckJxRWtsaGdCemx3Sm9GeElrcUFMWXNEWjB5dVNKd0hqWUJ5RldaOW00Q0VlNTRncU9KQVlnZ2J1MFFnZWVweW9rWjl2NW1keDVjQ0Ywby1kM0FreDFDOFdBSUpjR0tsRUhudWNIVnFsanhYOC1QOE8yVE5zX1ByMkNn?oc=5",
+          "source": "FintechNews CH",
+          "publishedAt": "2025-04-16T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Car insurtech Marshmallow secures $90m in bid to become the ‘one-stop financial shop for migrants’",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE91eE9PWHY1RnV0ZnlKTi1HR01jcU5VcWx3cW5hdlBDc0QzN18wcDRPeDktQ0lENU1ycTJITmpUaWRua0FyZjh4MTRVWk02RmhESEhSc2pZT2Ixbmdh?oc=5",
+          "source": "Sifted",
+          "publishedAt": "2025-04-15T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "UK insurtech Marshmallow gets funding boost to go global",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPX09WMVdqc3NENV9wMWg0SzlPVjh2dF9MOUFKSDk1bjZha1VvSzQ1NDdOUGphM1ZybTMyYllheTQzdDR2bF9Jd2tkbHppMEZBVUhqd3JmMVZISE9YaGlYak12R2hjekhwQVZTM18zb2RVTHphaGZqSFNQSXcxM1ItM1BjZVdROE5mNGEtNjFtZnpPdmVicTJ3Tlc0VWJ0ZGRIWHZUYTNWclpJcHVGTFRya0s4cllEcnNiS0F3UTJBSThFUQ?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-04-15T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Marshmallow, the UK insurance startup for migrants, raises $90M at a $2B+ valuation",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaUpENm9EajdtanZ4OHBLaWtXQ1pycFJPdllmd2NXMTIwYzY0Rk1rUVBHbEhlVVF0YVZDLUdiODBUWDVjeWNQWUlMamcwQmtzbzBncVFzX05PdFM4cGl0V0toNFNIQUxmQ2N4NGFaVnlIa2dpSFJOUzBTV1hRdlg3cU1IMmN4SC1JMmRzVlFCRmNDLTVGNlJfUk04WkJtdmhPYVJHZWR1T19zWTNEdnVDaUdJdw?oc=5",
+          "source": "TechCrunch",
+          "publishedAt": "2025-04-14T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -10693,24 +10977,28 @@
     {
       "slug": "axa",
       "name": "AXA",
-      "count": 5,
-      "firstSeen": "2025-07-17T07:00:00.000Z",
+      "count": 7,
+      "firstSeen": "2025-04-09T07:00:00.000Z",
       "lastSeen": "2026-07-21T02:40:35.000Z",
       "topics": [
         {
           "name": "Product & Launches",
-          "count": 2
+          "count": 3
+        },
+        {
+          "name": "Partnerships",
+          "count": 3
         },
         {
           "name": "AI & Automation",
           "count": 1
         },
         {
-          "name": "Partnerships",
+          "name": "M&A",
           "count": 1
         },
         {
-          "name": "M&A",
+          "name": "Embedded",
           "count": 1
         }
       ],
@@ -10719,12 +11007,24 @@
         "itij.com",
         "EU-Startups",
         "Silicon Canals",
-        "InsiderPH"
+        "InsiderPH",
+        "Life Insurance International",
+        "Asian Banking & Finance"
       ],
       "related": [
         {
           "slug": "prima-assicurazioni",
           "name": "Prima Assicurazioni",
+          "count": 2
+        },
+        {
+          "slug": "ant-bank",
+          "name": "Ant Bank",
+          "count": 2
+        },
+        {
+          "slug": "alipayhk",
+          "name": "AlipayHK",
           "count": 2
         },
         {
@@ -10802,6 +11102,36 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "AXA partners with Ant Bank and AlipayHK to offer embedded insurance",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbGFYX041Zmxtd2hvTTE1eUZadTV4SU4tQmNnOTh2VE53QmJrM2R5U1JudHg2dF9fMkpCeDFaQWVyOHZWWVlzdEZuaHNpZ1VKRDRjZHVhV3VvUTNKZ1Z6a0RiaTNLZU9pd1N5SzdtbU45bnRmTGpFazFvRlpCMG92RTdvckc3YWM?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2025-04-10T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "ant-bank",
+            "alipayhk"
+          ]
+        },
+        {
+          "title": "AXA launches digital insurance with Ant Bank, AlipayHK tie-up",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQMnR2UHRRZHh2T25PRTFNaFRQUEdUcFFEMjJPNEFKZ3lfaGNDbHJHa0EzdmxzVTIxRl9rU3RIUmc4WTM4Q3ZkY3BYVE91ckZRZmVHR1Q0M0hXaWVuemhmdlZSUkU0VHdzVXlHTEhNdXhmaGd1MEZ4emdPNmFmeUdycGs5dEUtTnNINjRLaDZEOW9hd1ozaEhxa2tBcThTRmFJVjlkNA?oc=5",
+          "source": "Asian Banking & Finance",
+          "publishedAt": "2025-04-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "ant-bank",
+            "alipayhk"
+          ]
         }
       ]
     },
@@ -11353,8 +11683,8 @@
     {
       "slug": "bamboo-insurance",
       "name": "Bamboo Insurance",
-      "count": 3,
-      "firstSeen": "2025-09-18T07:00:00.000Z",
+      "count": 4,
+      "firstSeen": "2025-05-02T07:00:00.000Z",
       "lastSeen": "2026-07-19T18:38:29.000Z",
       "topics": [
         {
@@ -11363,6 +11693,10 @@
         },
         {
           "name": "Property & Cat",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
           "count": 1
         }
       ],
@@ -11385,6 +11719,11 @@
         {
           "slug": "accredited",
           "name": "Accredited",
+          "count": 1
+        },
+        {
+          "slug": "whisker-labs",
+          "name": "Whisker Labs",
           "count": 1
         }
       ],
@@ -11426,6 +11765,19 @@
           "summary": "",
           "co": [
             "accredited"
+          ]
+        },
+        {
+          "title": "Bamboo Insurance launches fire prevention tool with Whisker Labs’ Ting sensor",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNZGpUajJLakJ6TEVmTlVPdjF4WllYNC1tNU5nckpXX3FhT0w3dTRvYlhTT0xrUmFqeVdvUGItRkR0VDM1VGpuVnNZajZIT05uQkQ4b3NDeFNpdG1qSVFXZXM2N05vdWY3MER5blNDaGJCdWh3SVA1S3g3TzVRZ2VXM1AzaVYxM1paaER6YzF3RFhzWER5eFd3STZkNUJwMElSNEhlMmdXSk1DTVdVTHc5bQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-05-02T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "whisker-labs"
           ]
         }
       ]
@@ -11720,22 +12072,28 @@
     {
       "slug": "easypaisa",
       "name": "easypaisa",
-      "count": 1,
-      "firstSeen": "2026-07-18T06:00:38.000Z",
+      "count": 3,
+      "firstSeen": "2025-03-27T07:00:00.000Z",
       "lastSeen": "2026-07-18T06:00:38.000Z",
       "topics": [
         {
           "name": "Product & Launches",
-          "count": 1
+          "count": 2
         }
       ],
       "sources": [
-        "Digital Pakistan"
+        "Digital Pakistan",
+        "ProPakistani"
       ],
       "related": [
         {
           "slug": "efu-life",
           "name": "EFU Life",
+          "count": 1
+        },
+        {
+          "slug": "webdoc",
+          "name": "WEBDOC",
           "count": 1
         }
       ],
@@ -11751,6 +12109,30 @@
           "summary": "",
           "co": [
             "efu-life"
+          ]
+        },
+        {
+          "title": "EasyPaisa Introduces Digital Insurance Platform",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOa2tjZElpenI1T0hVRS1QZnU1dTNTOVRCRlhpZURhQjZNemdsbFE3aEtsVGZrSjROTlJHZzZxM0dVR1FLOXRBeDBoRC1BaEFzSFBnX29UODdTQzZyQWRfOFV4dFIwX2w3d1Q0SDJveFFXWlBzWUVfVlZvbk5CQTE2Mw?oc=5",
+          "source": "Digital Pakistan",
+          "publishedAt": "2025-03-29T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "100% Off on Monthly Insurance Plans from WEBDOC, the Leading Health & InsurTech Innovator through easypaisa Insurance Marketplace",
+          "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNTUVIN0tSRENSRmVMQ3ZaTEpmeG92UExMM1pTRU93OUdWOEhvajB3X3R1NTcwQUdkRzVDU3BueFhzSzRMaXVQdWxxN1ZJbjhuUUFXc05uZWs4c2VtSklMUDBQcUJjQkRUcVRWZnNxV1VvTFBJM1lFUTl5dV9xVTc2ZGZMT3RhdE9qRzZGSEUtTzlzaFlkdm9BTmpJN3o5a3BJSXRJT1BaOE9JdEx3UC15UmN5ZnJWYjFxX255SkljZjR4UmU3MnNZcHFET2Z2TXlxSzZDalZpVFNzamxlU0oxanFQOVRveXdsSmpRal9wenh2MGvSAfgBQVVfeXFMTXdpWldUZ0ZoVEJrYmN1bmJGM0hBMmhwMElHZ0MwWEU2WWhuT1o2UVl5QnRjeHRzLUk0VVAycFExSmJSSlFrQ20tbktTeWFMNlcyeEFKMUswSkdnUnhHMWtYVnpDYnphRV9OWmZTdjAzUGFSUEk1SDFhUmUtajF1Ul9aejk2M0ZqRW5qN09jd0dteDRiaFA4VmZWbzhCMDRGUlVKVl8zcWxLWTBLZEVITE1QWWRxU2lvdVRFRHRpQkJWeGRGUjVwSFJHQzRqSzY5Z3NIb0RoTjZnUV9YVkIzb091V1FRLUhtRVJoeERRRzUwSmZGME1Pc1o?oc=5",
+          "source": "ProPakistani",
+          "publishedAt": "2025-03-27T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "webdoc"
           ]
         }
       ]
@@ -11963,8 +12345,8 @@
     {
       "slug": "policybazaar",
       "name": "Policybazaar",
-      "count": 9,
-      "firstSeen": "2025-06-23T07:00:00.000Z",
+      "count": 10,
+      "firstSeen": "2025-05-08T07:00:00.000Z",
       "lastSeen": "2026-07-17T18:56:55.000Z",
       "topics": [
         {
@@ -11986,6 +12368,10 @@
         {
           "name": "Claims & Underwriting",
           "count": 1
+        },
+        {
+          "name": "Funding",
+          "count": 1
         }
       ],
       "sources": [
@@ -11995,7 +12381,8 @@
         "CNBC TV18",
         "Beinsure",
         "Passionate In Marketing",
-        "Gulf News"
+        "Gulf News",
+        "Business Standard"
       ],
       "related": [
         {
@@ -12016,6 +12403,11 @@
         {
           "slug": "galaxy-health-insurance",
           "name": "Galaxy Health Insurance",
+          "count": 1
+        },
+        {
+          "slug": "pb-fintech",
+          "name": "PB Fintech",
           "count": 1
         }
       ],
@@ -12131,6 +12523,19 @@
           "summary": "",
           "co": [
             "galaxy-health-insurance"
+          ]
+        },
+        {
+          "title": "Policybazaar parent PB Fintech's new India hospital venture raises $218 mn",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPM0NQZHVvcVE2N0pXMjZjYjNCZTBuRXBScW1aaUpLRnZGRVZsTHhiN0dwWFZrRGROT01tOEhON3ptYUdUem5heVpZZ2hfTVZOSVVkOGVpZTFFMkVLdU8tWXdfdjlBS0RVSmlzcXJ2ZGYzUnNBM2J2TDFSNGhHUUN1aHVnUTZGYXQ3Vk14LW5tdzZMUlhzNFBXTU9tYlZkeVZCNTFFR1pCVVdLUUR6VzRDLWNnbXNGNUlCVlNHaVNFVVFjbVZFY2FFcmh6aWpXRVU1Ulk5WXlnX09vd9IB3wFBVV95cUxPT1ZsWmZVdEI1dWxJY2NVSjh4aE5FSmNqeFpEclNqVlZWQ0NJV0Y4YVRsUHR6Umxrc0laWkNYNFN2R1JYaWFEUFNQdW1sSml1d21KMjYxVF9wZ04tNUViSGpoem81TFhSS2NxUXdzck1RWU9Yanh2c2t3bGdJUjR4RFZSWnd3dy1wYnp3cXZJa0RhQk9rWGZnNVpuYWtUaGFxbTdqandsaFRGSWxuT3FoaHVyM2VxQWRmU19FbmpqeFJIYkY3UGJwSzlKZzljekFpOVdoTmlsQkl1S2MtQW1F?oc=5",
+          "source": "Business Standard",
+          "publishedAt": "2025-05-08T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "pb-fintech"
           ]
         }
       ]
@@ -12470,8 +12875,8 @@
     {
       "slug": "kayna",
       "name": "Kayna",
-      "count": 12,
-      "firstSeen": "2026-02-26T08:00:00.000Z",
+      "count": 13,
+      "firstSeen": "2025-04-28T07:00:00.000Z",
       "lastSeen": "2026-07-16T13:43:11.000Z",
       "topics": [
         {
@@ -12500,7 +12905,8 @@
         "FinTech Global",
         "Quiver Quantitative",
         "Insurance Edge",
-        "techbuzzireland.com"
+        "techbuzzireland.com",
+        "Business Post"
       ],
       "related": [
         {
@@ -12709,6 +13115,17 @@
             "willis-towers-watson",
             "belfry"
           ]
+        },
+        {
+          "title": "‘Insurance moves slowly but it’s exciting’: Cork’s Kayna to create 13 jobs in US and UK expansion",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNNUpDd2VGSGZXVVNoVXk3OU9RNmZPQ2F4eGptSENDUmdUYVZvZGt3dDRYN0VqYmYwUWdGXzc1YU00U2FueUZhWF9mS09Kb3VHc19HNUs1MkNUcWR3ZVFSZERRejE5cnFxQkZWbDZ4RFNOazRkMXlvMFpGYVgtYTRkY05YS0I3cG85a0VjZ2hIUF9jUXRpZnRRa0Q5bVZpOHZNTDI5TmZFRjExNTlBR2pQbEFhUlB5TWZsX2p5UDNFSTNWOGtFdzlLQWdFc0FJTVR4c1E?oc=5",
+          "source": "Business Post",
+          "publishedAt": "2025-04-28T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -14964,8 +15381,8 @@
     {
       "slug": "send-technology",
       "name": "Send Technology",
-      "count": 1,
-      "firstSeen": "2026-07-07T13:41:19.000Z",
+      "count": 2,
+      "firstSeen": "2025-05-01T07:00:00.000Z",
       "lastSeen": "2026-07-07T13:41:19.000Z",
       "topics": [
         {
@@ -14974,12 +15391,18 @@
         }
       ],
       "sources": [
-        "theinsurer.com"
+        "theinsurer.com",
+        "Insurance Business"
       ],
       "related": [
         {
           "slug": "duck-creek",
           "name": "Duck Creek",
+          "count": 1
+        },
+        {
+          "slug": "phoenix-specialty",
+          "name": "Phoenix Specialty",
           "count": 1
         }
       ],
@@ -14995,6 +15418,19 @@
           "summary": "",
           "co": [
             "duck-creek"
+          ]
+        },
+        {
+          "title": "Insurance moves: Phoenix Specialty and Send Technology",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQQTB3OFZpeml4WWEtN2FJRlJTS01lNXJ4MGVwcjR0elJPeEhkNXhtMnN3Ym03cDBWbUpWNTFzM0FnUHd5Q1F2eGVTSnc2VUozMDhPUFd5ai1qbUZWQ2ZhaG1mN0FBR3dkLTVMaGhZQVZRcTNGalMySWNoMk90aldsdkxlT3FxdWsyZkVhRzhHcTdCMGVHT2RuNm9fUzdMSmR5OVRTQjg3UHJGZUdNZHlBQXRhT0dXelNSUHdnRFZwbHpBdw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-05-01T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "phoenix-specialty"
           ]
         }
       ]
@@ -16313,8 +16749,8 @@
     {
       "slug": "igloo",
       "name": "Igloo",
-      "count": 12,
-      "firstSeen": "2025-09-23T07:00:00.000Z",
+      "count": 13,
+      "firstSeen": "2025-06-03T07:00:00.000Z",
       "lastSeen": "2026-06-30T07:00:00.000Z",
       "topics": [
         {
@@ -16323,7 +16759,7 @@
         },
         {
           "name": "Product & Launches",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Partnerships",
@@ -16530,6 +16966,17 @@
           "co": [
             "telkomsel"
           ]
+        },
+        {
+          "title": "Igloo unveils Igloo Tech Solutions to transform insurance across Southeast Asia",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWU9Qa0F0bXU5MUlNUFkxRFJ1MEQxWG9OdmFnMks5Y3RpSmFiOUlVNkNVOTJhSm94RHlodVNhZTdpMWZuYzFRVHpOemZkMHZ0eWt5TmxJWUdha1kyNmx6UWhMU1htVzg5NVoxbGdrNEw4VGdGLTBka3JKdzVuOU1vUDBXdTk3TFBNQ0VaejYxRkRBR1ZGeVFnMG1na2NnYmN5VTVMZU5yRkdOM3NqRTRzQ2tQazQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-06-03T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -16920,13 +17367,17 @@
     {
       "slug": "turtlemint",
       "name": "Turtlemint",
-      "count": 20,
-      "firstSeen": "2025-08-11T07:00:00.000Z",
+      "count": 21,
+      "firstSeen": "2025-04-07T07:00:00.000Z",
       "lastSeen": "2026-06-29T17:57:53.000Z",
       "topics": [
         {
           "name": "Funding",
-          "count": 5
+          "count": 6
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
         }
       ],
       "sources": [
@@ -16944,7 +17395,8 @@
         "Upstox",
         "SMEStreet",
         "Life Insurance International",
-        "BFSI News"
+        "BFSI News",
+        "livemint.com"
       ],
       "related": [],
       "articles": [
@@ -17164,6 +17616,18 @@
           "publishedAt": "2025-08-11T07:00:00.000Z",
           "tags": [
             "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech startup Turtlemint taps bankers to raise $200-250 million via IPO",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWEFUbkc2TG9VOVZSdFBRTG1PREJqeDVwbmdNVGY5cGNvaVM0NGtQYktmS29XWmdFNmpQbnl2Y2xqQTJ3RWhmX2hiWVFGU0pmZ1U3NVo3a3BTeU5vXzFQMGtqaWt4TXBKcm50ejV2VmdZTmRqTFJEbDZZcVZGMWl3bGJDV3JEVVRIWldZaVJ1cWp4UXFhMVI2MjBDc3dsajJ2T3gwMEFtblp5b2F3dEx3Tmw5MC1kZEhnbkI4MUpKVnA5QWdLb2xiT9IBzgFBVV95cUxQY1VNSzBFa2ZpRXFRc0J0OHpiLWY1bktsOFgxOERrQnF0WFpDQjZCNjRFRnJ2enFfaWJSWlNJaVFiMk5XS29kWlhPMDFfbHZXVGUtdUxsR1AxR2xTS3ZMM09td21Ucm5wY3B5amhEelI1TlNJV0tmQlcxV3BjbHotbVdYNWota3NrQUoyYUtCRHFmM1R0QVZncDRiZkNxTzlCY3U3UzZXSHp0d0hEZ3dYcDVaVVlEbE5sSkhneFVCVjBncHplQklvSVFtNjlZdw?oc=5",
+          "source": "livemint.com",
+          "publishedAt": "2025-04-07T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "Partnerships"
           ],
           "summary": "",
           "co": []
@@ -17396,8 +17860,8 @@
     {
       "slug": "alan",
       "name": "Alan",
-      "count": 8,
-      "firstSeen": "2026-03-11T07:00:00.000Z",
+      "count": 10,
+      "firstSeen": "2025-03-27T07:00:00.000Z",
       "lastSeen": "2026-06-26T07:00:00.000Z",
       "topics": [
         {
@@ -17406,7 +17870,15 @@
         },
         {
           "name": "Health & Life",
-          "count": 4
+          "count": 6
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
         }
       ],
       "sources": [
@@ -17417,7 +17889,9 @@
         "Beinsure",
         "Silicon Republic",
         "Sifted",
-        "TechCrunch"
+        "TechCrunch",
+        "BetaKit",
+        "Banks.am"
       ],
       "related": [
         {
@@ -17428,6 +17902,16 @@
         {
           "slug": "prosus",
           "name": "Prosus",
+          "count": 1
+        },
+        {
+          "slug": "nairi-insurance",
+          "name": "Nairi Insurance",
+          "count": 1
+        },
+        {
+          "slug": "mistral-ai",
+          "name": "Mistral AI",
           "count": 1
         }
       ],
@@ -17526,6 +18010,33 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "France’s Alan comes to Canada with digital group health insurance for tech startups",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYmY0TUtSQU5kVWdSUlJxd1VwTDNPYTZjdXlqMzA5QWo0aThDck1jUExVR096ck9PNFJPSmgxOE1KZEN2VEhPaHA1MmdBa09jb2YtTmd1NzZnTFQ5bktfa1AtaHNpUkRGWjRVYURJZnlKX0t3czljMnlfSldEcmVaN3MtbDRNOC1yVkV2N3IwbFNQRnR3NTJfRWpSSXp5Z3FXSDA5bXFB?oc=5",
+          "source": "BetaKit",
+          "publishedAt": "2025-04-22T07:00:00.000Z",
+          "tags": [
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Nairi Insurance to collaborate with European Mistral AI and ALAN in digital healthcare",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFAwY19GS19aMnlCX0JPQlZjR0s0ZDA3ZXpRelQ0bjhYcVhrUTFTdk9PclUzYWk3TEp3SHFDOHJ2U0pVNGROUktzMi1IaWpFaWpI?oc=5",
+          "source": "Banks.am",
+          "publishedAt": "2025-03-27T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "nairi-insurance",
+            "mistral-ai"
+          ]
         }
       ]
     },
@@ -17594,12 +18105,18 @@
     {
       "slug": "hannover-re",
       "name": "Hannover Re",
-      "count": 1,
-      "firstSeen": "2026-06-25T07:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-04-10T07:00:00.000Z",
       "lastSeen": "2026-06-25T07:00:00.000Z",
-      "topics": [],
+      "topics": [
+        {
+          "name": "Health & Life",
+          "count": 1
+        }
+      ],
       "sources": [
-        "Intelligent Insurer"
+        "Intelligent Insurer",
+        "Insurance Business"
       ],
       "related": [],
       "articles": [
@@ -17610,6 +18127,17 @@
           "publishedAt": "2026-06-25T07:00:00.000Z",
           "tags": [
             "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Swiss Re to transfer Australian direct life insurance portfolio to Hannover Life Re of Australasia",
+          "link": "https://news.google.com/rss/articles/CBMiigJBVV95cUxORUQ1S1pqRkZTdzdFdWg3STRoZHAxUDVPNGxnTzA2TGdSMjJNOHRhc2hTSTJ1RVMzVHpLNlh2aWdvakRFeE1wX01EaGpqN3RFUmJOaUFjTzF2N24tcG5KWm5HQkI1TTJtVHRRUllkQy1ZZDJGZHhvLWN6d3RENWctcFVGNV9GeW11YjRNVm9qU0Z2WWp6TkNRVF81aWZYNjBDMGJld2lMS0ZNN0g0MncwUnZDTXczQThmWWtqMk8tR2JOUlFXTGo5Y1FvRWItaWdmRGI3WmM0RlNOaEhiTzFyczRGY1psenZBcHNrU2JlY1R2eUZ1MGlYNHBEUnpkYVk4cElvaUQ2WUx6dw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-04-10T07:00:00.000Z",
+          "tags": [
+            "Health & Life"
           ],
           "summary": "",
           "co": []
@@ -17814,12 +18342,18 @@
     {
       "slug": "ontario-teachers-pension-plan",
       "name": "Ontario Teachers' Pension Plan",
-      "count": 1,
-      "firstSeen": "2026-06-25T07:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-05-23T07:00:00.000Z",
       "lastSeen": "2026-06-25T07:00:00.000Z",
-      "topics": [],
+      "topics": [
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
       "sources": [
-        "The Logic"
+        "The Logic",
+        "Artemis.bm"
       ],
       "related": [
         {
@@ -17841,6 +18375,17 @@
           "co": [
             "alan"
           ]
+        },
+        {
+          "title": "OTPP promotes Nagarwalla to MD Head of Hedge Funds and Insurance Linked Securities",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMHhVSXY3anFvYzBURFFmRkVZZ2FWbU1kNmxucGZJWlYtYk9HeFd6bm9YQzdHVkN2aWF6bm5zMVlnb253NktNYWF5akIxZVlHRENSM1g1RjNNOFEtRFhaMHl3ck5idUZpVXl6ellhNDBNazY4a0Y5ZWtqQkZLTldtN1hWVDl1ZklFYUVUWC1YaGlDUFF3V1VXaDkyTmotUXNXeE5udF9DMlo3c0VLRUNtLQ?oc=5",
+          "source": "Artemis.bm",
+          "publishedAt": "2025-05-23T07:00:00.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -18027,17 +18572,21 @@
     {
       "slug": "bolttech",
       "name": "bolttech",
-      "count": 11,
-      "firstSeen": "2025-06-13T07:00:00.000Z",
+      "count": 15,
+      "firstSeen": "2025-05-08T07:00:00.000Z",
       "lastSeen": "2026-06-24T07:00:00.000Z",
       "topics": [
         {
           "name": "Partnerships",
-          "count": 5
+          "count": 6
+        },
+        {
+          "name": "Funding",
+          "count": 4
         },
         {
           "name": "Embedded",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Auto & Mobility",
@@ -18050,10 +18599,6 @@
         {
           "name": "Cyber",
           "count": 1
-        },
-        {
-          "name": "M&A",
-          "count": 1
         }
       ],
       "sources": [
@@ -18064,7 +18609,11 @@
         "DeXpose",
         "CIO Africa",
         "Africa Business Communities",
-        "Pulse 2.0"
+        "Pulse 2.0",
+        "Finovate",
+        "Life Insurance International",
+        "TechCrunch",
+        "sumitomocorp.com"
       ],
       "related": [
         {
@@ -18224,6 +18773,51 @@
           "publishedAt": "2025-06-13T07:00:00.000Z",
           "tags": [
             "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insuretech Company bolttech Raises $147 Million at a $2.1 Billion Valuation",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxORUV3TkJ2eHZFNk1XZ3g3ZXBvZ0diQmJNV2wyeGp5RnlhNlN4TEFZQ2NYS2RCZVR1eHdEdjdHTEhkY0F3b1RVMlNRRkZKYVEwczFZN0ZoU0lpa0d1OHpaT1pka3Fib2ZycTlrWWRHMWpGbTlocldSMG1DTm81NC1mRmhsZFR3amJnWlNuRWxZQ1pPcWtIQXZvOWhHSQ?oc=5",
+          "source": "Finovate",
+          "publishedAt": "2025-06-06T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech company bolttech raises $147m at $2.1bn valuation",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOaEwyMWlINGdiSUFtSXU3ZnlPMXFBVFlOQ0I4SUhaZXNOb2JfS2ZBUGNVcWJJU1cxVzNnX1RnVkQ1T1ZkTmY0ZGpuLWhVVFM4WkZseHdTUnR0cEZsdVRJQWFLUjNielVBbEZZQTU4alRnSmZVT1AzMkFFS1ViYXNrY2djU3gtVmdnZ1o2ZkVB?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2025-06-05T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Bolttech closes Series C at $147M with a $2.1B valuation to bolster its embedded insurance offerings",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNanJ6MkZwWEZrZ2RwQmJacVd0ZXBuRkNaak1ncXRLMVN0WktVTE1LNjQtdUlQNW90S3lEU0dBbFo4MnN0bEtZaWo0bXZTdHNRdFhKS2RGaDBzZl9RaVUzUk1RMlNFakxvVTJjTVcxcFgtMGFRbm5WdDVhRVRLWC16TXJlNGJEdGhtNm0zeGs2djhyTjhDS21wd0V5dWMwRjVRTXhwRkR5R0NIM0xESnFz?oc=5",
+          "source": "TechCrunch",
+          "publishedAt": "2025-06-04T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Investment in bolttech an Insurtech Company Offering Insurance Products in 37 Countries Including Southeast Asia and Strategic Partnership Formed",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBJUHU4cEV5M0NHZEtQWTRsajVOeUx3cTJxUW9xaDU3OXJoZW5XWWl3MEcxbkVMMkdCNjkwRzdUYnp5cVlnLVd5X0JwRWpxMnc2U0lkamJfZGxxU1RTcGtIM09BdDVMeDNtS0N6TmV3RmQ2LUExZTJtTVRn?oc=5",
+          "source": "sumitomocorp.com",
+          "publishedAt": "2025-05-08T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
           ],
           "summary": "",
           "co": []
@@ -18457,8 +19051,8 @@
     {
       "slug": "manulife",
       "name": "Manulife",
-      "count": 2,
-      "firstSeen": "2026-06-01T07:00:00.000Z",
+      "count": 3,
+      "firstSeen": "2025-04-30T07:00:00.000Z",
       "lastSeen": "2026-06-22T07:00:00.000Z",
       "topics": [
         {
@@ -18472,7 +19066,8 @@
       ],
       "sources": [
         "Digital Insurance",
-        "Passionate In Marketing"
+        "Passionate In Marketing",
+        "Insurance Asia"
       ],
       "related": [
         {
@@ -18505,6 +19100,17 @@
           "co": [
             "mahindra"
           ]
+        },
+        {
+          "title": "Manulife dares startups to tackle Asia’s age imbalance",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNaVdNTFNraHZlUU9EZTFLVVFkQThBZzdVWFlOaDRUQlJWMEM0eExHWVpWTmlPMDlQSWtwNTBua1FnVXdCS2pUTEhYbWYzY053MkgzZ1FPV0xxN2wwVkRsNWFHWjdzWEJMSGRkRHdybGk4aHRPYk1VaDAxZ1REN3lGR01fRWRudmM3RmFNNjhkdw?oc=5",
+          "source": "Insurance Asia",
+          "publishedAt": "2025-04-30T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -19207,8 +19813,8 @@
     {
       "slug": "nassau-financial-group",
       "name": "Nassau Financial Group",
-      "count": 3,
-      "firstSeen": "2026-03-02T08:00:00.000Z",
+      "count": 5,
+      "firstSeen": "2025-04-21T07:00:00.000Z",
       "lastSeen": "2026-06-17T07:00:00.000Z",
       "topics": [
         {
@@ -19257,6 +19863,28 @@
           "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPV3J0UVhoSDRPQWVfU2pOTjZJdWI4MkZVc1NxY0xPNGZvd0hDN2ZRTjVUWkxsLXlFNnBPN0V0S2RVQ1I5N1BIUnVqVmlxbTFwNEhSa3VyUDM2d1JNelVSdndKRk9xdzQ2UFhHZGZGX2dHZlo2OTJHc2hfeE1UTG9CZE96T1dKbWJiRWRhYzFONW1WNVI1V215WUp4UjItbnFrWVNQTVJtRTc5RThncl9mZ0ZPQnVhUU4zbnhrRkNDVEdKeE9SRHc?oc=5",
           "source": "Business Wire",
           "publishedAt": "2026-03-02T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Nassau Financial Group commits $10M to support tech startups in CT, NY",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcG0tUnFvWTNsYzRhR2JBTFkxNVdQY043eXlpMnd2SUlLT3JBZHM0cU95NFpfRTF0Z2lGelF4NF95UjFka2N2Z3kyMWxfbDZmMHpqRlVubFQySGM2OGx5WW5ZMFZYc29oRlVjeURvWkJ6SUU1QkdCazBZc09oTUFscDJseUM2LXpfTFA4MklmQ0ROeEJwOGlqUnpBWEdLRHNIWEtiVFY3Nmk5Zw?oc=5",
+          "source": "Hartford Business Journal",
+          "publishedAt": "2025-04-22T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Nassau Financial Group Expands Insurtech Program with New Capital Commitment",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNOUp3eVdPNnFGakgzSVZXR3dweHlpV2pwMlVpdzZyOUVwaDFUZzF5YVpYb2RaNm5hR01fNGpwNlQ1a1JFRVRRR0xIN3JoMXdRdHZwc1VqY1dDNW1YejdYaUhyRXFJTThVVTRSWE1OZERCejZ6M1ozYVlkMlFwbXJ1QmpkQWVjMmhZUUpxUXExRjJjUWZZd0dFZEl5ZWJTZjRYX1gxNnVXMDRjcDUwQmduS3pNMUNPRDlZeTJYTndGS1lIODdkU3BOam5DaXZvUQ?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2025-04-21T07:00:00.000Z",
           "tags": [
             "Industry"
           ],
@@ -19423,10 +20051,14 @@
     {
       "slug": "policyme",
       "name": "PolicyMe",
-      "count": 1,
-      "firstSeen": "2026-06-16T07:00:00.000Z",
+      "count": 3,
+      "firstSeen": "2025-04-16T07:00:00.000Z",
       "lastSeen": "2026-06-16T07:00:00.000Z",
       "topics": [
+        {
+          "name": "Funding",
+          "count": 2
+        },
         {
           "name": "Product & Launches",
           "count": 1
@@ -19434,10 +20066,15 @@
         {
           "name": "Health & Life",
           "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
         }
       ],
       "sources": [
-        "Business Wire"
+        "Business Wire",
+        "BetaKit"
       ],
       "related": [],
       "articles": [
@@ -19449,6 +20086,29 @@
           "tags": [
             "Product & Launches",
             "Health & Life"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "PolicyMe Announces $30 Million CAD in Funding and Expanded Product Suite, Transforming Digital Insurance",
+          "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQd0lGV0VxWVNUSWI2MlZUd2NMTlJEN0lZenNTc1d2WUZJV0hZcHpBd0RQTjJNNmVjUFpwNjg5UnV6bUhMM1FZdEttQmxuMjdWVXQyN2hyNTQ0SVY3NWI0cnpLVElBZUxCZ2ZkQWIyR25ZT3ZMaXZjVVJseXY1MFNkLUNzWFNZNEIzRHRVQlZTaEVDWUVjZXNHUGRyaUhEY0NTZEVVMm1NMkNFSVU3N0trTk1ZLUNOdE9ibVZKV0lwM1F4Nm9Nbk9xSHVoNFBSSkltNTlqbmJDTDZtX3g2UVFNRkw1NlRNR3ZrTmFwcE9WSUlITWtl?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2025-04-16T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "PolicyMe eyes new insurance products, more partners after raising $30 million over two years",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOWjNLZ3lJNkRSMnFSNkRIWWxfVWtoOTEwMW1KX2l4emlkcnc1VEdhcW9UbGhOcXVINW5XRzFoMml0cGhzVGFzTUxudnFuTlktSVlxbnp4a2V2MGdBeXkzNnNQamxTWEpBR09QWWdycGdSc0l2SnF6bGFqREZtZ3V2N3dTQnRKSTdNcktrN01ZTWJIMjFZdXdrSTN0N2l0TzhxUVJDVzdBZUNtMEIxbnRKcFFMYnFnOHQzTk1SRA?oc=5",
+          "source": "BetaKit",
+          "publishedAt": "2025-04-16T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "Partnerships"
           ],
           "summary": "",
           "co": []
@@ -20173,8 +20833,8 @@
     {
       "slug": "ageas-uk",
       "name": "Ageas UK",
-      "count": 3,
-      "firstSeen": "2026-06-04T07:00:00.000Z",
+      "count": 4,
+      "firstSeen": "2025-04-10T07:00:00.000Z",
       "lastSeen": "2026-06-12T07:00:00.000Z",
       "topics": [
         {
@@ -20182,11 +20842,11 @@
           "count": 2
         },
         {
-          "name": "Partnerships",
-          "count": 1
+          "name": "Embedded",
+          "count": 2
         },
         {
-          "name": "Embedded",
+          "name": "Partnerships",
           "count": 1
         }
       ],
@@ -20246,6 +20906,17 @@
           "co": [
             "byd"
           ]
+        },
+        {
+          "title": "Ageas UK is ‘very interested’ in embedded insurance – Ant Middle",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNeWFfLWE5S2gtclZLNXZPeVRGaGFTSW9NMXdXVXlsT204angtZE1rRGJDZ2FITVFoaWEzUlVfcUlmUGlYazNFXy1TdHBGSUlVV2lieGNBQ3RXWFpOLW8wSHlNT3hrNFloLUx2QWt1bzQ2VTctdVdvN09DVzRZYVZGTDRERGRiVkJCZ1RlZ2J6cU9BUW02dFJSWUJmNTE3d3RxS0hWZ1kyWDlJZUZwMU9WWDlVZl8?oc=5",
+          "source": "Insurance Times",
+          "publishedAt": "2025-04-10T07:00:00.000Z",
+          "tags": [
+            "Embedded"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -21158,13 +21829,14 @@
     {
       "slug": "turaco",
       "name": "Turaco",
-      "count": 2,
-      "firstSeen": "2026-04-22T07:00:00.000Z",
+      "count": 3,
+      "firstSeen": "2025-04-17T07:00:00.000Z",
       "lastSeen": "2026-06-07T07:00:00.000Z",
       "topics": [],
       "sources": [
         "Citizen Digital",
-        "The Nation (Pakistan )"
+        "The Nation (Pakistan )",
+        "Business Daily"
       ],
       "related": [],
       "articles": [
@@ -21184,6 +21856,17 @@
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxObTIyTGZwWTZVcmdBT1RpV0drTlV2d1hpaG11dm95NFp5UURuTHpKaDhyeXRENUs3T1pFREtsTWRWTHd3QzV3ZDZnNmZMRjhSODNWYjFPTjBMQWktaTIzNXVTLTFfd2VydGI5M2xqalZhbl9aeHF1WjdSbGJsYWVDRHJoZU85ZGZPdzUwaEpvS01nZmpTVkxVdXg4QWRBNXJpNzNLUVlBeFF3bHZraUU5Q3FWZkExWkU0dnRVT0YwaGdsVm0yUUJBcQ?oc=5",
           "source": "The Nation (Pakistan )",
           "publishedAt": "2026-04-22T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Turaco CEO Ted Pantone on disrupting insurance and surviving Kenya's startup crunch",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQTWh2alRlbkJpOXlWakwyRnVadmJSaWFGVzJOb3VxblRYSnpCT3Q3Mk1jS0ZiVFA1RGduUWVVQS13V3NPcXlzX2piTVpnY1JFUTc2NkhlWTdGVmxlekhMaVd0d0Q5WjNaWE9IVUdFRjB4QjMwSVFpcVVPTW9XTGh5a1RVdVJxY0Rodk1TV2pBRWRUT2lxZ1REcWt4TmZrUDhqU1p6dGlVZjJBUW00RExDckRuSXNuZnNrRFVxZ2Q4QnFYN2hz?oc=5",
+          "source": "Business Daily",
+          "publishedAt": "2025-04-17T07:00:00.000Z",
           "tags": [
             "Industry"
           ],
@@ -21670,8 +22353,8 @@
     {
       "slug": "undp",
       "name": "UNDP",
-      "count": 1,
-      "firstSeen": "2026-06-03T07:00:00.000Z",
+      "count": 3,
+      "firstSeen": "2025-05-13T07:00:00.000Z",
       "lastSeen": "2026-06-03T07:00:00.000Z",
       "topics": [
         {
@@ -21681,15 +22364,26 @@
         {
           "name": "Property & Cat",
           "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
         }
       ],
       "sources": [
-        "Techpoint Africa"
+        "Techpoint Africa",
+        "Shega",
+        "United Nations Development Programme"
       ],
       "related": [
         {
           "slug": "riwe",
           "name": "Riwe",
+          "count": 1
+        },
+        {
+          "slug": "jamii-one",
+          "name": "Jamii.one",
           "count": 1
         }
       ],
@@ -21707,6 +22401,30 @@
           "co": [
             "riwe"
           ]
+        },
+        {
+          "title": "Jamii.one Wins $40,000 Grand Prize at UNDP Ethiopia's Innovative Insurance Challenge Fund",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMGppcGh4S2YwWXNDSDVVMlRmZGxGcUlaajJfOHRvTHN6Qk04cUhtNTZGMEN3b2hSSk5tRE9QN0tlRkhFeXNsZzNjWkRSeFJMNDB0MGtpWk1MR2pNTHc4MnJMVGhieWU2WlVwQnowcHFES3dHSzlhTHNnUWVZSWxJRkN1dVFGVXRnaTRIaXhQQWJUV3NsUXIyU0I3cU1fNmdRWEV1WDV1V19RVjg?oc=5",
+          "source": "Shega",
+          "publishedAt": "2025-05-17T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "jamii-one"
+          ]
+        },
+        {
+          "title": "UNDP and NIC Launch Inclusive Insurance Innovation Challenge to Safeguard Ghana’s Vulnerable Communities",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQOUliS3RrbDlWYm4yZmZkUUZjdGVRbVU5M3ZBbTJuc0F0Qlh4OGcyb05mTEt3dHowdzZXV1Z0cFNadmxmbk1Oa1ZYMGo3cG1lYWFlNWZkQ0NCZGczbm81LWg3NmpGVnFBLVNFNy1MV1ZpVGlmZ3RfaV9sUWJHQ3JoLWxvbFdYVUttVDM3YWs1M2FVc0J1Y3pNSFljV3hvd3NfNVJYbGoxOFBPZ0F4M19STFVrdnYtTjNXTmMyelhXdWRkX1l3Zl9yMWxpZThldmI0WjdzSnFHMzlCZw?oc=5",
+          "source": "United Nations Development Programme",
+          "publishedAt": "2025-05-13T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -23310,12 +24028,19 @@
     {
       "slug": "hub-international",
       "name": "Hub International",
-      "count": 1,
-      "firstSeen": "2026-05-27T07:00:00.000Z",
+      "count": 3,
+      "firstSeen": "2025-05-12T07:00:00.000Z",
       "lastSeen": "2026-05-27T07:00:00.000Z",
-      "topics": [],
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 2
+        }
+      ],
       "sources": [
-        "Insurance Business"
+        "Insurance Business",
+        "FinTech Global",
+        "Reuters"
       ],
       "related": [],
       "articles": [
@@ -23326,6 +24051,28 @@
           "publishedAt": "2026-05-27T07:00:00.000Z",
           "tags": [
             "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "InsurTech giant HUB International lands $1.6bn funding to hit $29bn valuation",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORHVicEdDNUl6UlE4YlBGdlB1bGtzNmR5OElFMl9JaU9tM1BwY0RBV2tFZHJoSnQ1UzNTOHVIZjJiWlhYUWFEYS1lNnpjYm5LdS1aQ1dCdndybllYbVRDc1VYdk1EYVZZS054M1p6bTluNUNEQWoyZlJ4cTFWUUZ5Y1pzVF84UmZubDJZZmRCSXJEUHZhMksxNHZ0Z0lEME1rdWFMTUlXYV81ZHFOZ193?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-05-14T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurance broker Hub valued at $29 billion in fresh investment round",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOb19NOU1mWVptV3Z1RjFrVERDakxIQ2V6eFBvOG9Eb25qbDhIS3VWQ0x5aVowMFYtelNhSnNPN0lLTW8xZ2Z4WHlqUDVOTkRKX3VMWlFQSDQzTlhHZ09wVWpiUzU4ekphWU1mM1VkX3NPSGp4UW9YaU9jYUoxV014S1hyRXpROXR1TUJwUDc0NFBqQXFyLUFpMXZWRVdUMjY0Y2dROTRCMnp3RWc4ZEFPSU1UR1E0NTVuaGo5RFlTZEdUTGxNRnc?oc=5",
+          "source": "Reuters",
+          "publishedAt": "2025-05-12T07:00:00.000Z",
+          "tags": [
+            "Funding"
           ],
           "summary": "",
           "co": []
@@ -25198,10 +25945,14 @@
     {
       "slug": "j-d-power",
       "name": "J.D. Power",
-      "count": 2,
-      "firstSeen": "2025-12-09T08:00:00.000Z",
+      "count": 5,
+      "firstSeen": "2025-04-28T07:00:00.000Z",
       "lastSeen": "2026-05-13T07:00:00.000Z",
       "topics": [
+        {
+          "name": "Auto & Mobility",
+          "count": 2
+        },
         {
           "name": "Claims & Underwriting",
           "count": 1
@@ -25209,7 +25960,9 @@
       ],
       "sources": [
         "Digital Insurance",
-        "Insurance Journal"
+        "Insurance Journal",
+        "Insurance Business",
+        "repairerdrivennews.com"
       ],
       "related": [],
       "articles": [
@@ -25231,6 +25984,39 @@
           "publishedAt": "2025-12-09T08:00:00.000Z",
           "tags": [
             "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Auto insurance digital shopping hits record high in 2025 – J.D. Power",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdURuQ05rTGNpLXpSdHo5Qzc0QjdjaWFQQ0JERHU4OUJGT0xyRlhVZFc5VVB5LUZJTXJsSWtyRXF4bWlZYWJKeHV5VktJbHAwYmJyN01TaXJOOXN5QkcxYVBvdTRMbk01ZzNmWVdhTmtIV2dyVXN2UjNOMnJUSklLTUF4Mm1UUE9pTExCNFgwY0VJR1ljN0JaYnFmazRueGpxTnZ3TzZscHBtZWVnSEg3YnRTMUktR1huaWswc2J5UHFiN0EyQTcyLS1nTFdwdTZYVWc?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-05-15T07:00:00.000Z",
+          "tags": [
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "JD Power: Drivers Keep Shopping Even as Auto Insurance Price Increases Slow",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE90Y2JReWE4WlJKelJiRENpM1Y3bzBUbWZzdEo2M2g1QUtUbzRwLVhCM2JBa3FsX2Y4NWhkLU9HdkU4djhxR1hVNWRzb0g5Sl9BRmNnY0p5OUN1Qy1XVDcyUHVtLVhILUpjRHBneFZBVTV4NFZldTBv?oc=5",
+          "source": "Insurance Journal",
+          "publishedAt": "2025-05-02T07:00:00.000Z",
+          "tags": [
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "J.D. Power: Insurance shopping still up, carrier focus shifting to traditional rate approaches",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPeXNTSWFPaFM3QTdLWGotZmprVlUxZlo2R09VMXdyY3JiRnpDWW5LdjByTzJkMkZVc0U0RUNXMVZqd2pjN0VmSHdOM3BZdzNFdGVBbGxqRzZ2ZjRRMEtkMEphdnhwU0Vsa3VLSVBQdGppNTRwMVdCc0NnUkpYOExzSmFyblhwcFNoSllaOUFfdGNYcGkzbHlkdmNBU2NBVmtEWlBSMWpDcmpuaDFOYXJvbWhMRngzbGVsQjZFNE9TRzNjVDRaQlB0d1ZwN2ZfX2JOYjc1SQ?oc=5",
+          "source": "repairerdrivennews.com",
+          "publishedAt": "2025-04-28T07:00:00.000Z",
+          "tags": [
+            "Industry"
           ],
           "summary": "",
           "co": []
@@ -25582,8 +26368,8 @@
     {
       "slug": "applied-systems",
       "name": "Applied Systems",
-      "count": 4,
-      "firstSeen": "2025-09-09T07:00:00.000Z",
+      "count": 5,
+      "firstSeen": "2025-06-10T07:00:00.000Z",
       "lastSeen": "2026-05-11T07:00:00.000Z",
       "topics": [
         {
@@ -25689,6 +26475,17 @@
           "co": [
             "cytora"
           ]
+        },
+        {
+          "title": "Applied Systems to withdraw platform from UK",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSHFlQ0hlOEtlRGo5S084V1dxai14ZUhrZ1ZQWWk5ZDM1WDc0N0pEbHNfaWFXcHB3RVRjdXFNQ2lHbUlwWmZmTE1CTV83NmxTclhpd3NyYVhnUGc0TDdtNEZ0VFF6MVZDSXhCbGFzTG9wRzUxUmlNYWVnN19MakJBcTRKZkI4RUw2YjBiQ2tlU0RxajB2bXp4cElwTzBMbFVzZlVjQy1FTVhUYmZMQlJkcnJR?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-06-10T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -26587,19 +27384,30 @@
     {
       "slug": "ripe",
       "name": "Ripe",
-      "count": 1,
-      "firstSeen": "2026-04-28T07:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-04-14T07:00:00.000Z",
       "lastSeen": "2026-04-28T07:00:00.000Z",
       "topics": [
         {
           "name": "Product & Launches",
           "count": 1
+        },
+        {
+          "name": "M&A",
+          "count": 1
         }
       ],
       "sources": [
-        "Insurance Edge"
+        "Insurance Edge",
+        "Insurance Business"
       ],
-      "related": [],
+      "related": [
+        {
+          "slug": "gjw",
+          "name": "GJW",
+          "count": 1
+        }
+      ],
       "articles": [
         {
           "title": "Ripe Launches ChatGPT App For Its Cycleplan Product -",
@@ -26611,6 +27419,19 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "Ripe advances digital strategy with GJW acquisition",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNanRzYzJzdEVhSmpUTS0xUW1sRWhVT25vOFk3Tm9lMWtiN0dlV3hhd2E5ZENONV83NUtKN2JoRW4zNU1wQVlXZmtqbUVoSk1OVklXRUtZbE9SNmxXMW91dlNlRlFTNGNjTDYzVXZwRUZYRHRTMS1PNUFqMkQ4LU1LYVkzb013TGdyOExpeEE4Zl9fdnk4RnlVRTljcHl2SllRWU5NbHV4dzhCOW51bTRtOU43QzFhdw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-04-14T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "gjw"
+          ]
         }
       ]
     },
@@ -27097,8 +27918,8 @@
     {
       "slug": "flow-specialty",
       "name": "Flow Specialty",
-      "count": 1,
-      "firstSeen": "2026-04-20T07:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-05-27T07:00:00.000Z",
       "lastSeen": "2026-04-20T07:00:00.000Z",
       "topics": [
         {
@@ -27129,6 +27950,17 @@
           "co": [
             "resourcepro"
           ]
+        },
+        {
+          "title": "Exclusive: Flow Specialty cuts brokerage staff including Derigiotis in pivot to SaaS model",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPTDlDdWh4Mjg3RUdiM2syYWpuZUZzbUFneHZQUnZVM0sxUFlCeEVyNXNWYURNR1hmSG05VWZIMjZNbldaRnp3dzJlRVM0UWFNdnF3S1hydlp6WFhUTEZRTXZhSE16Nk13RXVRWkZMXzR5SFhyUDhsaXU3dXFMNDVjT2FobEp4N2h2M0x5cDlhbjhQdXhnOHd1M2pzTVAzc0MyOWNrNlJJTUhYVGlHaHY2VWRTVHdsbkVxVzdXMEM5c1h3MTlYMHFuc0l3?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2025-05-27T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -28102,17 +28934,22 @@
     {
       "slug": "blink-parametric",
       "name": "Blink Parametric",
-      "count": 1,
-      "firstSeen": "2026-04-10T07:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-06-05T07:00:00.000Z",
       "lastSeen": "2026-04-10T07:00:00.000Z",
       "topics": [
         {
           "name": "Property & Cat",
+          "count": 2
+        },
+        {
+          "name": "Leadership",
           "count": 1
         }
       ],
       "sources": [
-        "theinsurer.com"
+        "theinsurer.com",
+        "RTE.ie"
       ],
       "related": [
         {
@@ -28134,6 +28971,18 @@
           "co": [
             "cpp-group"
           ]
+        },
+        {
+          "title": "Insurtech Blink Parametric appoints Brian Barter as CEO",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNG16SmxRbGM0VVo4QkppcUZ3Qnl6N3BRWUp2NnFPSXZuQjFOcnJOZjNNMWNYblNsdUJSZGdyMk5qdExnVEUxNmEtbWJFamxpaG5vTHJvSm1GNk84bGtUOGxRdXNkNUtpUi1NdnVzRXVZWjkxZHM1WUE4Wmo4QmhUTU1fZGlwZXl0ZDA5dXNfaU54TmNQQ21jMmFWdXRMa1cyU0s3SC1KcjRBWVU?oc=5",
+          "source": "RTE.ie",
+          "publishedAt": "2025-06-05T07:00:00.000Z",
+          "tags": [
+            "Property & Cat",
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -28402,10 +29251,14 @@
     {
       "slug": "bestow",
       "name": "Bestow",
-      "count": 1,
-      "firstSeen": "2026-04-09T07:00:00.000Z",
+      "count": 6,
+      "firstSeen": "2025-05-13T07:00:00.000Z",
       "lastSeen": "2026-04-09T07:00:00.000Z",
       "topics": [
+        {
+          "name": "Funding",
+          "count": 4
+        },
         {
           "name": "Partnerships",
           "count": 1
@@ -28413,12 +29266,26 @@
         {
           "name": "Leadership",
           "count": 1
+        },
+        {
+          "name": "Health & Life",
+          "count": 1
         }
       ],
       "sources": [
-        "Dallas Innovates"
+        "Dallas Innovates",
+        "D Magazine",
+        "Dallas News",
+        "Pulse 2.0",
+        "TechCrunch"
       ],
-      "related": [],
+      "related": [
+        {
+          "slug": "smith-point-capital",
+          "name": "Smith Point Capital",
+          "count": 1
+        }
+      ],
       "articles": [
         {
           "title": "Bestow Appoints New CMO as It Expands Its Platform and Deepens Partnerships",
@@ -28431,14 +29298,71 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "Insurance Tech Company Bestow Closes Series D With $120 Million",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNYWwyeFVUZldSUGtXZklYTm96a2l4Si1iSVNhTmJtUlUwam1yWkp2YWRqOW95Q3hsVFFReC00WXRUc0NlcXhLUnJ5NWZQUWJUam5JcnBFcDA4RC0tUmxmRk9Fang1WmNBdjlla3BpWTJuQkM2V0tOVkdpbEdDeUtBOHJxYjdNTWphUzZwS3hGNm02MWhlVFo0aFNTX1pXNGxiem1XaFpKQW12Zm1rbU44QTdyRDA?oc=5",
+          "source": "D Magazine",
+          "publishedAt": "2025-05-16T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Dallas-based Bestow gets $120M capital boost for life insurance business",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOOTk3QVFmM011Z18wRDRTaDMyRjFqMGVEdjNQVUVCbUdHSkswWUhuR2x6Yi1rREpzdEV6UlRvTFg5dG1uZGdJR1JBSVhVZ29IVTNTZFlzbkRacUtMb1IwWER3RHJ1VlhXNXJuZkdCanRhX1VzZWFYbmkwUEdzbTRmSWRIOHU5Sml6MzVYYUhMaUVxOXVGcjQ3b0JkVTBLVm1uZWUtckx4TkZ3S180VkRqMW1qMXNDRzdWcXJ0QWwxRUVaYy1HTkJVQVdValNab2lU?oc=5",
+          "source": "Dallas News",
+          "publishedAt": "2025-05-16T07:00:00.000Z",
+          "tags": [
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Bestow: $120 Million Series D Raised For Insurance Technology Platform",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOU9uOUItcnZMbjJxSzYzX3d1dHltZml0NVFzUjJINm5HczY1VWdQVGFtT2ViZzNRUllSbzBkZHB1ZEptcGl6TGhMN2IyNllsREFlZzZGcFprZ3lZdUE4NEEyMlRuOGstb3JIdXM2dDlleWh4ZjlKS0VLc2ZhR2F6SHlTV2tMUFltRGlLN1RDNGRwd9IBlwFBVV95cUxOY1BUclF2cWVraVc0bFZtSHY4QlJHTUVQdXJQZXdHZHRqTEwySnd3emJGMkkzUC0yMWFJMHBrSzNGYlcya0Q2eC15YWVic0dFRlVFSDYwcEhDRHJabm5BZHdlbDVja3hJWEhjNE9INmRkRXo0czJDVzJISEVuVlBwaV9DZVlHOTVmTmFvOVFiYi1OeXlYWGFR?oc=5",
+          "source": "Pulse 2.0",
+          "publishedAt": "2025-05-14T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech Bestow lands $120M Series D from Goldman Sachs, Smith Point Capital",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcmFFQzI3ZnVtSE5mSWxQZkk1Q1pTNVM5MXJJaERmckRIYzBHbHgyNV9jWnV5RDZsNHU3Zm1ua1F4a1ZFV3d3WGVoSjdLSXZNcUx4ZWpIRjZSTzlqb2QyeGFYeF9RLTNVM2lvdU0yZDRHb1h6N2pzSHNhbWlTT2JyX1BveUpnTFUwajc4LTAwZmY2MHQ1ZFVRMHhfZ1ZkdUlLb29ETkFpTkltcllHaHZn?oc=5",
+          "source": "TechCrunch",
+          "publishedAt": "2025-05-13T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "smith-point-capital"
+          ]
+        },
+        {
+          "title": "Dallas Insurance Innovator Bestow Closes $120M Series D Fundraising Round",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNOVE4VTVOVlZTa2E0eTN5RTZJbVlyQUZsQUdCWEpKNFRJTU4weG5UMzFXTGxwclgwTnpFTWF1eVZmaW4wNnN6QllnM2VVVTRlOEpUcHBpTUg3aHZJQ25QU2NvekdZOW5Eb3NlWFpmajBjS0twN1Y1ZjhJbE5nUEFkbnhlT25wdlhwdHdLaE05OHBJajZwc0FfbFhFZVg1MGh4NjZF?oc=5",
+          "source": "Dallas Innovates",
+          "publishedAt": "2025-05-13T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
     {
       "slug": "dxc",
       "name": "DXC",
-      "count": 2,
-      "firstSeen": "2025-10-07T07:00:00.000Z",
+      "count": 3,
+      "firstSeen": "2025-04-24T07:00:00.000Z",
       "lastSeen": "2026-04-09T07:00:00.000Z",
       "topics": [
         {
@@ -28456,11 +29380,16 @@
         {
           "name": "Product & Launches",
           "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
         }
       ],
       "sources": [
         "Rolling Out",
-        "PR Newswire"
+        "PR Newswire",
+        "Consulting.us"
       ],
       "related": [],
       "articles": [
@@ -28484,6 +29413,17 @@
           "tags": [
             "Partnerships",
             "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "DXC hires William Pieroni as strategy and growth leader for insurance software and BPS",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOTJPb013a1JWX0xBUlpQVjRUQWIwY3hEc2FvRkYtcEFJazRNLUJJQlZXZ0Y4NEd1cEpmVzYxWlRZUVhab0puWEpnVXR0TFozUUxJMHV3MWpSdmtCbExxcjVkWFZaSFBHWWQtMkZIYzU5al9helNuNFVEc19lSWhkUGk1Y2VidzFzNnc0Z3F2TGZnNXVUTXlrMmFNdElGT0pSOExneC1sNk9JMnN4Z3ZNcXFKLUNHZUQyc0FhZTRLLTjSAcYBQVVfeXFMT0NaVzl0QVhCRnRtRUwxLVRQaVlsSGdnSGFyNWFIZ3d1U0h4ZWI2QUlhYlJabWNnTV9PMmVrbjdiSl9jZlZfTkNJVHExYTlnVFlmUy1HOVRIcnY5X2xwX3F4NlZ0V1gxZG1RdGNmb0tBUGRTeFlueXBRT2FsTVZDZmJzdTRQd3daUVlYV2ZtOFIxbloxZHFPOXdvSDNmbzRfSzRtamNROGdfYzBRYUJzbHpQam0wN0VHVjB1Z0ZicHFJdnhlejJR?oc=5",
+          "source": "Consulting.us",
+          "publishedAt": "2025-04-24T07:00:00.000Z",
+          "tags": [
+            "Leadership"
           ],
           "summary": "",
           "co": []
@@ -28591,13 +29531,13 @@
     {
       "slug": "aviva",
       "name": "Aviva",
-      "count": 5,
-      "firstSeen": "2025-06-11T07:00:00.000Z",
+      "count": 6,
+      "firstSeen": "2025-05-09T07:00:00.000Z",
       "lastSeen": "2026-04-08T07:00:00.000Z",
       "topics": [
         {
           "name": "AI & Automation",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Leadership",
@@ -28610,6 +29550,10 @@
         {
           "name": "Funding",
           "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
         }
       ],
       "sources": [
@@ -28617,7 +29561,18 @@
         "InfotechLead",
         "Insurance Business"
       ],
-      "related": [],
+      "related": [
+        {
+          "slug": "blackrock",
+          "name": "BlackRock",
+          "count": 1
+        },
+        {
+          "slug": "aia",
+          "name": "AIA",
+          "count": 1
+        }
+      ],
       "articles": [
         {
           "title": "Ex-Aviva COO among multiple hires at insurtech",
@@ -28674,6 +29629,21 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "BlackRock dives into new AI-heavy reinsurance co with ex-Aviva/AIA CEO",
+          "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPbDJEV3hkQ3cwY1Z0WUZ6RVhOcFVhMWJXT2R5VkhpRHAzUkFqc2d0clltUXdDdUJjWUVIYUFENDNLOE9HWHZ3bUVndWlmV1BXTlBCMkxHSEpMb01qWHdmRmI2RDU4a05Qck91c0pHWERacE5lM2xKU1BrQjQtMEs0aTRXUWxHLW4xdmxJeXpXblRWOUdLcm1mbURmQzBGZU9OU2pQcEF6YVFreXRySUxQS2laLVRIN3dDYTFwRV83WTJ6UG14Ui1FUjNWS3FoS2k3OHZxLXFXeHVwM0ZvZE5YYw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-05-09T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": [
+            "blackrock",
+            "aia"
+          ]
         }
       ]
     },
@@ -31000,17 +31970,22 @@
     {
       "slug": "steadily",
       "name": "Steadily",
-      "count": 1,
-      "firstSeen": "2026-03-16T07:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-04-23T07:00:00.000Z",
       "lastSeen": "2026-03-16T07:00:00.000Z",
       "topics": [
         {
           "name": "Product & Launches",
           "count": 1
+        },
+        {
+          "name": "Funding",
+          "count": 1
         }
       ],
       "sources": [
-        "Beinsure"
+        "Beinsure",
+        "Newswire.com"
       ],
       "related": [
         {
@@ -31032,6 +32007,17 @@
           "co": [
             "openai"
           ]
+        },
+        {
+          "title": "Steadily Secures $30M Series C to Fuel Rapid Growth in Landlord Insurance Market",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQeGpxMjB0eE5CT1VSU29makg5czhmd2hyR0xrU09nbzJmcnBkYVJUUC1GRkozUWs2T21jQjExUW41dmNxVWJzLVhkT09UVUZZOTVBYUQxVERTUVBDSnlBcmFOWWFpM2lxVUU5OEV3TlNJSlNDZHhuNXNWNEZDckYzLXpwWHpka2RabTlqSnBSWFJCVVdkMndvc1VvcVcxNWRuQUg4?oc=5",
+          "source": "Newswire.com",
+          "publishedAt": "2025-04-23T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -31120,18 +32106,20 @@
     {
       "slug": "loxa",
       "name": "Loxa",
-      "count": 2,
-      "firstSeen": "2026-03-13T07:00:00.000Z",
+      "count": 4,
+      "firstSeen": "2025-05-08T07:00:00.000Z",
       "lastSeen": "2026-03-13T07:00:00.000Z",
       "topics": [
         {
           "name": "Funding",
-          "count": 2
+          "count": 4
         }
       ],
       "sources": [
         "FinTech Global",
-        "Furniture News"
+        "Furniture News",
+        "EU-Startups",
+        "businesscloud.co.uk"
       ],
       "related": [],
       "articles": [
@@ -31151,6 +32139,28 @@
           "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQVVRVYWVvUGUzOVlhazNEUFVrelA0dnN1Q2QtcENxcEFIdmR6akQzNlJrUGpPZ0NfeklpM3c3aVBtQkhJX1A5Y3k4QzVnR0dCYThxRk1iTmp5X0pnSW43MnBTQm56S2k4RUFJcGJsWi1YVXlFdWFYWWdDZ0RlQ3NjOGtKVQ?oc=5",
           "source": "Furniture News",
           "publishedAt": "2026-03-13T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "British InsurTech Loxa raises €1.9 million for product protection in the UK",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRHFOMlYwYW0xTWRUTXJpN0UzVm5vb3daU25PR3JFSS1OaGwyYTVXM1VaWFdaWWFsUGJrbnl3TFdMUGJGaXJlNlhCQUdLQ01QNjRaaXY3WVU4VDNPSlVwMFBiRlU5M0tzT0pvTW14bUF1VUI1QnNYdDhIdmNOS3cwLXJPR2t0UUdrRjBsQU1QdkM4NUU2NjgxdF9tbDJzY1puX3dDeG1FdEV1QTBQVU9FWGtn?oc=5",
+          "source": "EU-Startups",
+          "publishedAt": "2025-05-08T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "InsurTech Loxa secures £1.69m funding in seed round",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcVRCNjVNV0ZXREdqbm1uQ21yejVtQUFXZ0VuZ1ZiTnNPS3FXRUlmazdpaXpIZXE0OXpqM0hZbXNXVFZ1TUllSWR0UkF1ZDFBaEZrRTF6SHJzd1JxZ2htTUl0b2p0dmY3R2lDRE1VRUlkM0poQ0V0VHh0TWt4V2Jtd0U5aEZpeEU0YUVfdw?oc=5",
+          "source": "businesscloud.co.uk",
+          "publishedAt": "2025-05-08T07:00:00.000Z",
           "tags": [
             "Funding"
           ],
@@ -31646,13 +32656,13 @@
     {
       "slug": "shory",
       "name": "Shory",
-      "count": 3,
-      "firstSeen": "2025-11-12T08:00:00.000Z",
+      "count": 4,
+      "firstSeen": "2025-04-17T07:00:00.000Z",
       "lastSeen": "2026-03-11T07:00:00.000Z",
       "topics": [
         {
           "name": "Auto & Mobility",
-          "count": 3
+          "count": 4
         },
         {
           "name": "AI & Automation",
@@ -31670,7 +32680,8 @@
       "sources": [
         "Gulf News",
         "FinTech Global",
-        "Intelligent CIO"
+        "Intelligent CIO",
+        "TMX Newsfile"
       ],
       "related": [
         {
@@ -31714,6 +32725,17 @@
           "publishedAt": "2025-11-12T08:00:00.000Z",
           "tags": [
             "AI & Automation",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Shory, Insurtech Company Sets New Standards in the Vehicle Insurance Market",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSkw0ekRXbEtHb0duVmp3YjFfZXpYVGF3RE5teWp5Vmd1emRQeUJDZFF5N3ExeUROdUxIMUhidHVsLUpLMmhhOWhOeWgzTWRIVFpGXzNTZG9ybmZNTHNQcU9uRmhXYk9oMkxFZkVNOFZkMHQ2bHB1WnJSVXBGcElHR3VaYm5yaURLMy0wTzAxc1Vha3JocVhPeWZSRGlfSzZlQ1VuQUFtQnhBTkNJTUlLNU5KQUtnTDdUR2c?oc=5",
+          "source": "TMX Newsfile",
+          "publishedAt": "2025-04-17T07:00:00.000Z",
+          "tags": [
             "Auto & Mobility"
           ],
           "summary": "",
@@ -32578,19 +33600,24 @@
     {
       "slug": "acrisure",
       "name": "Acrisure",
-      "count": 3,
-      "firstSeen": "2025-12-25T08:00:00.000Z",
+      "count": 4,
+      "firstSeen": "2025-05-21T07:00:00.000Z",
       "lastSeen": "2026-03-02T08:00:00.000Z",
       "topics": [
         {
           "name": "M&A",
           "count": 2
+        },
+        {
+          "name": "Funding",
+          "count": 1
         }
       ],
       "sources": [
         "Insurance Business",
         "Beinsure",
-        "Coverager"
+        "Coverager",
+        "FinTech Global"
       ],
       "related": [
         {
@@ -32655,6 +33682,17 @@
           "co": [
             "efficient-insurance-solutions"
           ]
+        },
+        {
+          "title": "FinTech giant Acrisure secures $2.1bn funding led by Bain Capital",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWTBLb2F6Wi1vNEI5OWFlN0xDX29sWnpSY01qLUVsUG9tOUhUWHhGNGg3RXJGSTBkUUV0T3pvNEVQZExrTlFyb2pEYVp4NHJjOURlb3RkMmZtQzNjZ3JVc3F6WEw2U29JcV8teFlkRTdQV1lvOWZIX3RrUnVNcFJrWU81cExyV2pQbDZtOWZDcHhRYXcyNHdiZXMtdUhhaUt3?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-05-21T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -38534,22 +39572,28 @@
     {
       "slug": "moneyhero",
       "name": "MoneyHero",
-      "count": 1,
-      "firstSeen": "2025-12-15T08:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-06-09T07:00:00.000Z",
       "lastSeen": "2025-12-15T08:00:00.000Z",
       "topics": [
         {
           "name": "Partnerships",
-          "count": 1
+          "count": 2
         }
       ],
       "sources": [
-        "Fintech News Philippines"
+        "Fintech News Philippines",
+        "The Manila Times"
       ],
       "related": [
         {
           "slug": "insuremo",
           "name": "InsureMO",
+          "count": 1
+        },
+        {
+          "slug": "osl",
+          "name": "OSL",
           "count": 1
         }
       ],
@@ -38565,6 +39609,19 @@
           "summary": "",
           "co": [
             "insuremo"
+          ]
+        },
+        {
+          "title": "MoneyHero Group Expands Digital Asset Wealth Product Offerings in Hong Kong in Strategic Collaboration with OSL",
+          "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNMlBWdVhHNXI3MS1LQmluM0V4NmxSeFlqeHVnYUxjckU2aEV5NmlRTHNaMVphTi0xS2FwclhvazJTTGdJTUREa0NJajhtcHN5U3RRZEp6MzRWSXRvdnJpeFhGaUtHYk8xeDJQX1ZsbzZjMUFHQTYzTjlweE9Ua3pGMVZMSFZ3NzAwTXBENDlKVU1Cc0NENHFuX2lqVEJFbi10RzU1aHBVem9ZYXMzRFR2ODgweEhNMGRZeEh3NGtRMEcxMm9jeWVVMFJoTEt2UkFGY3FtOUtTalRzYUszRmNmS3RlVHdGMFhSN3FfQXVCa3pWWC0zcDJkVGlaYWszMTdSV0ZKSjFOd2MweGp6YnBwZUp4SdIBmAJBVV95cUxPSHpBTkFJTklQZ2Q0NEswTU5RWmM2NUtFNElBWlk2ZkI4WnRRTUdZbm9pejQxaHMwdDdMSDlqb0J4cnFRaGlCWDNjNHNQX0hhNXBkaV82Y2I3SlUxOC02ei1QSENoalAzTFZ3cnlNNDB6WWNMSEp5SDFqdVk2N0tHZHkzV1dhUXhyY1ZIZV93LVdKa1JVYXRZUlMtcEs2Zm9hMEN5Q2xKbkMzX3M1U1lQV2lacDFYanVTOEUzam10S2Y5VEZkMm02dDd0MUNjUExRWFNMdFI0N1FhbDZxdDluS2FBSUFVdXB0TVpycUFPbHczT25tSUFoWWN6aHhKRUxPZ0RXUlgzQmJQTU1HUXo3VFgzTmVoNVhC?oc=5",
+          "source": "The Manila Times",
+          "publishedAt": "2025-06-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "osl"
           ]
         }
       ]
@@ -39450,22 +40507,32 @@
     {
       "slug": "prudential-financial",
       "name": "Prudential Financial",
-      "count": 1,
-      "firstSeen": "2025-12-04T08:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-05-27T07:00:00.000Z",
       "lastSeen": "2025-12-04T08:00:00.000Z",
       "topics": [
         {
           "name": "AI & Automation",
           "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
         }
       ],
       "sources": [
-        "Business Wire"
+        "Business Wire",
+        "FinTech Global"
       ],
       "related": [
         {
           "slug": "pace",
           "name": "Pace",
+          "count": 1
+        },
+        {
+          "slug": "neutrinos",
+          "name": "Neutrinos",
           "count": 1
         }
       ],
@@ -39481,6 +40548,19 @@
           "summary": "",
           "co": [
             "pace"
+          ]
+        },
+        {
+          "title": "Prudential Financial’s Simplified Solutions taps Neutrinos to drive digital insurance transformation",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbnRiOHhnQzFDWVY4RzhiQlhwV1dGdmVMQmJBWVVDYk9wRW9aVnpmaWVLUU11YVU5UEVCRTJoLWI5SGc2WDVUY09xNWhiRklCX2ZKZTN2bGN6ZnJ1QkFzV3pROXVkanlZeS1NNDdnNWFtdEJIZHpyeTJkUnRKeHNhUnhzVXNSaVlBOENGUmpFWTVpY0RoSGtTQTFJVHdfYnhzaHlPS2pJYmE3enRWOGctWlBPTGl2eEN0YUV1b3J6VlAyREh3VFBmX2pVV3NrcWc?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-05-27T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "neutrinos"
           ]
         }
       ]
@@ -40536,17 +41616,18 @@
     {
       "slug": "thoma-bravo",
       "name": "Thoma Bravo",
-      "count": 1,
-      "firstSeen": "2025-11-21T08:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-05-20T07:00:00.000Z",
       "lastSeen": "2025-11-21T08:00:00.000Z",
       "topics": [
         {
           "name": "M&A",
-          "count": 1
+          "count": 2
         }
       ],
       "sources": [
-        "pehub.com"
+        "pehub.com",
+        "Reuters"
       ],
       "related": [
         {
@@ -40557,6 +41638,16 @@
         {
           "slug": "vitech",
           "name": "Vitech",
+          "count": 1
+        },
+        {
+          "slug": "nearmap",
+          "name": "Nearmap",
+          "count": 1
+        },
+        {
+          "slug": "itel",
+          "name": "itel",
           "count": 1
         }
       ],
@@ -40573,6 +41664,20 @@
           "co": [
             "majesco",
             "vitech"
+          ]
+        },
+        {
+          "title": "Thoma Bravo's Nearmap to buy insurance tech firm itel for over $1.3 billion",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPaFdsQmI3Y09LaFNsUWpJekR4bExjUTZhU2ZxcXNEX0JzQ1VCbC1kNG42S1BKOWdiVXZNcFFieWtielJhNmFTc0xyRFBjWnpVdmczOWw4ZDlZbnVfcWR3OFdBWEdWZkcyZEp1djY0aEE5Z2o5QzNqdW93RGcyaEREbERYMVJiZWRDZDJTcm9IOTYybV9tS1VmYTk2a0JVWjhIVGpiZ2VGZGNTSG9HZU5OczFB?oc=5",
+          "source": "Reuters",
+          "publishedAt": "2025-05-20T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "nearmap",
+            "itel"
           ]
         }
       ]
@@ -40810,13 +41915,13 @@
     {
       "slug": "neutrinos",
       "name": "Neutrinos",
-      "count": 1,
-      "firstSeen": "2025-11-20T08:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-05-27T07:00:00.000Z",
       "lastSeen": "2025-11-20T08:00:00.000Z",
       "topics": [
         {
           "name": "Partnerships",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Auto & Mobility",
@@ -40824,12 +41929,18 @@
         }
       ],
       "sources": [
-        "FF News"
+        "FF News",
+        "FinTech Global"
       ],
       "related": [
         {
           "slug": "mutakamela-insurance-company",
           "name": "Mutakamela Insurance Company",
+          "count": 1
+        },
+        {
+          "slug": "prudential-financial",
+          "name": "Prudential Financial",
           "count": 1
         }
       ],
@@ -40846,6 +41957,19 @@
           "summary": "",
           "co": [
             "mutakamela-insurance-company"
+          ]
+        },
+        {
+          "title": "Prudential Financial’s Simplified Solutions taps Neutrinos to drive digital insurance transformation",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbnRiOHhnQzFDWVY4RzhiQlhwV1dGdmVMQmJBWVVDYk9wRW9aVnpmaWVLUU11YVU5UEVCRTJoLWI5SGc2WDVUY09xNWhiRklCX2ZKZTN2bGN6ZnJ1QkFzV3pROXVkanlZeS1NNDdnNWFtdEJIZHpyeTJkUnRKeHNhUnhzVXNSaVlBOENGUmpFWTVpY0RoSGtTQTFJVHdfYnhzaHlPS2pJYmE3enRWOGctWlBPTGl2eEN0YUV1b3J6VlAyREh3VFBmX2pVV3NrcWc?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-05-27T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "prudential-financial"
           ]
         }
       ]
@@ -43860,17 +44984,17 @@
     {
       "slug": "furtherai",
       "name": "FurtherAI",
-      "count": 3,
-      "firstSeen": "2025-10-07T07:00:00.000Z",
+      "count": 4,
+      "firstSeen": "2025-04-02T07:00:00.000Z",
       "lastSeen": "2025-10-08T07:00:00.000Z",
       "topics": [
         {
           "name": "Funding",
-          "count": 3
+          "count": 4
         },
         {
           "name": "AI & Automation",
-          "count": 3
+          "count": 4
         }
       ],
       "sources": [
@@ -43923,6 +45047,18 @@
           "co": [
             "andreessen-horowitz"
           ]
+        },
+        {
+          "title": "FurtherAI raises $5m in funding to enhance AI solutions for commercial insurance",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOUmN4LTlYQTZ0LVc0blBrWnlUSHB2WHNCQkFLRUFWNV9fdDJyUHdqelUyV3h4VjZEbjVqRnIyWXNMcEwwd21kaGJyZFFnRlZ6UXl1cmw0S0NDS016Y0RVYjIzSlk3WGhUM3F3RG1ZTnNqdUlvc2pldzJvTkctMnpGenB4aEN4NTk0Yy1fbW56eGhrOFJHQ0gzXzFoVkZwY09kNlFfcG9CajNvWE5HaGc?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2025-04-02T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -44802,8 +45938,8 @@
     {
       "slug": "zego",
       "name": "Zego",
-      "count": 2,
-      "firstSeen": "2025-09-17T07:00:00.000Z",
+      "count": 3,
+      "firstSeen": "2025-04-01T07:00:00.000Z",
       "lastSeen": "2025-09-25T07:00:00.000Z",
       "topics": [
         {
@@ -44812,7 +45948,8 @@
         }
       ],
       "sources": [
-        "FinTech Global"
+        "FinTech Global",
+        "Insurance Edge"
       ],
       "related": [],
       "articles": [
@@ -44834,6 +45971,17 @@
           "publishedAt": "2025-09-17T07:00:00.000Z",
           "tags": [
             "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech Zego Hits Profit Milestone -",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNR0E4RTA2QmowMG9MZnRHLTRXdDJtOE5BcUl5ZmN2VlNFQnlXdkZ4X3hTN3R1eGFLZmtfVVBWTVZ3OHlZczBzc1BpcXFkUHJEV0dueGFqVHlUVldpZnJub3lXQzBMZTRwcXUwM0RsNC01NDF0QnNsbkh6YkRiMVBwdQ?oc=5",
+          "source": "Insurance Edge",
+          "publishedAt": "2025-04-01T07:00:00.000Z",
+          "tags": [
+            "Industry"
           ],
           "summary": "",
           "co": []
@@ -45853,14 +47001,15 @@
     {
       "slug": "coterie",
       "name": "Coterie",
-      "count": 3,
-      "firstSeen": "2025-08-21T07:00:00.000Z",
+      "count": 4,
+      "firstSeen": "2025-05-15T07:00:00.000Z",
       "lastSeen": "2025-09-12T07:00:00.000Z",
       "topics": [],
       "sources": [
         "FinTech Global",
         "The Business Journals",
-        "Reinsurance News"
+        "Reinsurance News",
+        "Insurance Business"
       ],
       "related": [
         {
@@ -45899,6 +47048,17 @@
           "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOT3ROVFpxQlJGald3YU5vcDRtMFNFclMxVmdGME45UmpaQm90OUZCTkdlTjA5WEl5dDI2Z0FPb1A5ODN1YlVDQ0JER0o5WXRtYjhVTzZKUEZLVjA0amh0ZWJtS2VGUFBucWVpa3RiUUpJOWQ0TmpNMEliZTN5SnJrbEtuUjlwVHViM0hGVDJFN0pETW96VHVJRkZuMWpQMjZfdmFXQ19qR0lwaFZSSkNJNTkzQQ?oc=5",
           "source": "Reinsurance News",
           "publishedAt": "2025-08-21T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Coterie Insurance moves HQ to Wisconsin",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZE95bUZ3MU5oNVFwZUh0QVRXZGROb21CNHQwSE5QRk5DWEVfMUhDSHA1Y2ExQzJmZ01Zc01ISTB3ckplLXZRcUpGeDFsclJHeDRzMWI2YTlJWERVczA1TF9aSnJ0N1FnajBVZWtIQkxsUDhUakhrcms2OVItSnprci1EbGJsTUNSU1BtWmRKYUlRVDQ0VFR5UXppQXJRbmM4UXpxMWtqb0wxTnFabW5V?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-05-15T07:00:00.000Z",
           "tags": [
             "Industry"
           ],
@@ -49451,8 +50611,8 @@
     {
       "slug": "wefox",
       "name": "wefox",
-      "count": 4,
-      "firstSeen": "2025-07-07T07:00:00.000Z",
+      "count": 5,
+      "firstSeen": "2025-05-14T07:00:00.000Z",
       "lastSeen": "2025-07-10T07:00:00.000Z",
       "topics": [
         {
@@ -49466,7 +50626,13 @@
         "Insurance Nerds",
         "Silicon Canals"
       ],
-      "related": [],
+      "related": [
+        {
+          "slug": "j-c-flowers",
+          "name": "J.C. Flowers",
+          "count": 1
+        }
+      ],
       "articles": [
         {
           "title": "wefox Raises €151 Million Following Business Restructuring - Fintech Schweiz Digital Finance News",
@@ -49511,6 +50677,19 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "Business Moves: Insurtech wefox to Sell Italian Businesses to PE Firm J.C. Flowers",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBMOURxcEJNZlJmdGxSR2ZtVk5kVXYzclRzZkhBTVItSGg3LUZiaGM5UHFzU0FqUzBnMHZ0YjlhazhZWWhJYjc2Z3FhN19lSlFYREd1UDNWZWd6TU9oZE1hQzZnSzQ5bkw2aEFDb0JOUllJUGRBZjVDQWh3S0lfUQ?oc=5",
+          "source": "Insurance Journal",
+          "publishedAt": "2025-05-14T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "j-c-flowers"
+          ]
         }
       ]
     },
@@ -50174,18 +51353,27 @@
     {
       "slug": "ledgebrook",
       "name": "Ledgebrook",
-      "count": 2,
-      "firstSeen": "2025-06-25T07:00:00.000Z",
+      "count": 3,
+      "firstSeen": "2025-05-06T07:00:00.000Z",
       "lastSeen": "2025-06-26T07:00:00.000Z",
       "topics": [
         {
           "name": "Funding",
           "count": 2
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
         }
       ],
       "sources": [
         "Pulse 2.0",
-        "Insurance Journal"
+        "Insurance Journal",
+        "Insurance Business"
       ],
       "related": [],
       "articles": [
@@ -50207,6 +51395,18 @@
           "publishedAt": "2025-06-25T07:00:00.000Z",
           "tags": [
             "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Ledgebrook appoints Christopher Grether as SVP of strategy and reinsurance",
+          "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxObnNrOGpka1NhV0hNRTdUZTdUNnU5ejM1VEprRWJNWDUxZzNsVkliNFB2REQ0Sms1SGZjLVF0RjhxME5ra1FobEtTd1hlV1ViYlRNeTlkR2g0eDlIcFIxQnEyZGdreE5iYmt4WlRnVFhmSm1yRDEtQUZ1VXNXNXpjV0JxaTdwRFBickJaQXF2bnpWbzJDTXJPdlpXdmxNSEE0eXJPT2dYQ21ycTducVZ6c0ZuSUVSZVNPSTFDOV9jTlZKWk5wNE91eWs2WU5neEszOTFLZHlJT19wakFfNEZxTE1zRUJWaW4td1E?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-05-06T07:00:00.000Z",
+          "tags": [
+            "Property & Cat",
+            "Leadership"
           ],
           "summary": "",
           "co": []
@@ -50258,12 +51458,16 @@
     {
       "slug": "galaxy-health-insurance",
       "name": "Galaxy Health Insurance",
-      "count": 2,
-      "firstSeen": "2025-06-23T07:00:00.000Z",
+      "count": 3,
+      "firstSeen": "2025-04-28T07:00:00.000Z",
       "lastSeen": "2025-06-24T07:00:00.000Z",
       "topics": [
         {
           "name": "Health & Life",
+          "count": 3
+        },
+        {
+          "name": "Product & Launches",
           "count": 2
         },
         {
@@ -50271,13 +51475,14 @@
           "count": 1
         },
         {
-          "name": "Product & Launches",
+          "name": "Embedded",
           "count": 1
         }
       ],
       "sources": [
         "Passionate In Marketing",
-        "CNBC TV18"
+        "CNBC TV18",
+        "Moneycontrol.com"
       ],
       "related": [
         {
@@ -50312,6 +51517,19 @@
           "co": [
             "policybazaar"
           ]
+        },
+        {
+          "title": "MC Interview | Galaxy Health Insurance to launch bancassurance in 6 months: CEO Srinivasan",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPd0dTMENpdVU1NmgtaEVCUnMwOU5tMFpMY0dIS1VvZFpQeWFzc2EyZkltZnV1REV5ZXRCUHlmOU43RVFSeWY2aUQyMnhCX0VQcktRZkl5d01nMFdGOVh1bXRpb25uaVBkVnpxbHV3WkZTNHdPOVJTX0NXRldhcDByaGJSOGtzelB1ZWlFVmk0S1dUblBCRTk2ZjlIdWdTNzQ1d0hlVlBLRHp1eFJ1cTBXODNZcWxmQmF6STNGSk9ETHZ0NUxnUjdiTFp4YUN1aWRMYktxZkZLWDBOWkZHTkVJ0gHkAUFVX3lxTE54d0lxeDZMcmYyME94SmFZNTdKTVRpSEQ4SE0xQ1FablUxQ1NNX2k1YlFGU3BybXhPUGxYTnlFTDVwTFlBV0k3czdFa0VLbWtMQ0x3WWQwSEdaV2ZkTExLaWxoekM0Sm5rZ0FOcGZvR2Q5REJJbEVIdWQ2anEwQmw5TEdLMUFqcWFJUi1tVWRKY1ZFT1BCNGJ0RVFRdlBWTThhQ3kyV1c2d1VwQ0NUYzZDSTNHZEVIb0VMMFVuY19hSV9SOERlRVdSQjJGYmFvOUdtRENCRzUtNzBUWC0wcUhlX0N6WQ?oc=5",
+          "source": "Moneycontrol.com",
+          "publishedAt": "2025-04-28T07:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "Embedded",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -50728,21 +51946,22 @@
     {
       "slug": "sure",
       "name": "Sure",
-      "count": 1,
-      "firstSeen": "2025-06-16T07:00:00.000Z",
+      "count": 2,
+      "firstSeen": "2025-06-10T07:00:00.000Z",
       "lastSeen": "2025-06-16T07:00:00.000Z",
       "topics": [
         {
           "name": "Product & Launches",
-          "count": 1
+          "count": 2
         },
         {
           "name": "AI & Automation",
-          "count": 1
+          "count": 2
         }
       ],
       "sources": [
-        "FinTech Global"
+        "FinTech Global",
+        "PR Newswire"
       ],
       "related": [],
       "articles": [
@@ -50751,6 +51970,18 @@
           "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPQlRzUEJtdHJ0UEQyQ2lPOHZiUXhoQWFVXzVENmtfdUw1Wk1XOU1iTU1ETmNUZERnclpKbUgxcU9UOWM5eExvVk9PS2FrNktYamNRZDllR1BvQTBzS2tsVDNYa1p2TnRveXI0R0tUTTdRVU1mZlhXVmZHNXlVN1FyanNtNkt1V1ZmOXNSZlVVUmRZRUk?oc=5",
           "source": "FinTech Global",
           "publishedAt": "2025-06-16T07:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Sure launches insurance industry's first Model Context Protocol (MCP) capability, enabling AI agents to quote, bind, and service policies",
+          "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQUFc0LTBaTW1FdWhKRzRQOEwxUmJHS0dWWTZUWW45YlhvUk9xS1duU1JXQnVwWEl2N0x5WWlkSkpVOUpyWmx2d214b294ZF9mTVdRejVja2N5VEItQ3pjWlFtekF2UnBVWW80WjJGUlZ3YlNMS01QeUhxR2lsZEJfbzZla29mRm0td0FZanZaQlhOcklFR0wwcHJ6dzJiM0NveUVudFpCdy16NGt0OEF1bWctZmlhTF9oZnN2TkZiRktLTlQ5akk5clM2MldSLXBnam9OV1R5aXBKVlZaRlNjOG1xWklaV2dqNTY2b3FLMUtzZlhvVTdKNEItNXIwSkRFdWUzeGs4WkNQczZ2N2xHbFdVVDFBdw?oc=5",
+          "source": "PR Newswire",
+          "publishedAt": "2025-06-10T07:00:00.000Z",
           "tags": [
             "Product & Launches",
             "AI & Automation"
@@ -50958,6 +52189,2815 @@
           ],
           "summary": "",
           "co": []
+        }
+      ]
+    },
+    {
+      "slug": "crabi",
+      "name": "Crabi",
+      "count": 2,
+      "firstSeen": "2025-06-05T07:00:00.000Z",
+      "lastSeen": "2025-06-09T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "LatamList",
+        "PR Newswire"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Crabi raises $13.6M to expand AI-Powered car insurance in Mexico",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPYzRzR1ZQY2UwbnZpRkFKOU1iRkVjcUZzUEt3RVFxaWJpb1psaWVhci1TRXEwalRKTV9fMzVVZFlhWkVSdVZKeXdFU0IwWFRUUjMwY2ZlbzNOa0dra3dudy10aFBNbEU3RVROTW9pcGx4M1dacWFVbFdEYVlJM3lGdEtIWW1mNDZWMC04UEl5TdIBlAFBVV95cUxOWlhIREZwMGJDalFFR2lDMTlDOVNBMEdXbzZwS2kybV9PMkJwSEdFRmVlSDZ4SDBad1JSUEtEVXlaSk1EcVhrWnZMYl9XWnlSSnJsNmRMU2tGX2xEVTk3Nk5kbV9CVEJfaEo0NjJFSHlqSVhxZlUzeHNoWmctRkV1NElSWFU3cmc0Qk16Q1FrOFppLXJE?oc=5",
+          "source": "LatamList",
+          "publishedAt": "2025-06-09T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Crabi Raises $13.6M to Scale Access to Its AI-Driven Auto Insurance Across Mexico",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNb3BzazFoWEFRTk5HMTN0UVg2RTA3ZGptbmxFSEdkSDhHdHQ2VUNRZXgwalBodFVfWFR2RFRvMjZuY3JScXZUazhObXF0S3NSVUk1SmFzNzYtU05SLWl5eHRMeDBtQ1E1OUI5cXZHMzZpX1lNTGQzWEZPbTNlUGdtVDhKcG9WYkNOSW9xRVU3TThYT2VPRml0ZUxiUjNzVEU0Q1pDak5qUXRsZWo1eDZPNGJWTXpyQl9SNjBvMDhEeUxkdUpSc0E4eDVaZTA0Y1h3V2c?oc=5",
+          "source": "PR Newswire",
+          "publishedAt": "2025-06-05T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "fixxy",
+      "name": "Fixxy",
+      "count": 1,
+      "firstSeen": "2025-06-09T07:00:00.000Z",
+      "lastSeen": "2025-06-09T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Startupbusiness.it"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "EUR 1.8 million round for insurtech Fixxy",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQcVBxZ3NPNHhzRlpxN0lLdmVxYUxQTzE0VjBOaEJ1Ym1lcVRLbnlLb2ZQZUk1aDVSbHRpTWdudEk3TFZ3X3FmNlBfdlZhaGVtdFZwSzhzYmRZcDZ2bF9WLTBwNTQzZGI5N3dXNGNLZDhpMXg4bUVxb3pVdFg4TjlmeWd1VDNjMU1TdGY4?oc=5",
+          "source": "Startupbusiness.it",
+          "publishedAt": "2025-06-09T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "osl",
+      "name": "OSL",
+      "count": 1,
+      "firstSeen": "2025-06-09T07:00:00.000Z",
+      "lastSeen": "2025-06-09T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "The Manila Times"
+      ],
+      "related": [
+        {
+          "slug": "moneyhero",
+          "name": "MoneyHero",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "MoneyHero Group Expands Digital Asset Wealth Product Offerings in Hong Kong in Strategic Collaboration with OSL",
+          "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNMlBWdVhHNXI3MS1LQmluM0V4NmxSeFlqeHVnYUxjckU2aEV5NmlRTHNaMVphTi0xS2FwclhvazJTTGdJTUREa0NJajhtcHN5U3RRZEp6MzRWSXRvdnJpeFhGaUtHYk8xeDJQX1ZsbzZjMUFHQTYzTjlweE9Ua3pGMVZMSFZ3NzAwTXBENDlKVU1Cc0NENHFuX2lqVEJFbi10RzU1aHBVem9ZYXMzRFR2ODgweEhNMGRZeEh3NGtRMEcxMm9jeWVVMFJoTEt2UkFGY3FtOUtTalRzYUszRmNmS3RlVHdGMFhSN3FfQXVCa3pWWC0zcDJkVGlaYWszMTdSV0ZKSjFOd2MweGp6YnBwZUp4SdIBmAJBVV95cUxPSHpBTkFJTklQZ2Q0NEswTU5RWmM2NUtFNElBWlk2ZkI4WnRRTUdZbm9pejQxaHMwdDdMSDlqb0J4cnFRaGlCWDNjNHNQX0hhNXBkaV82Y2I3SlUxOC02ei1QSENoalAzTFZ3cnlNNDB6WWNMSEp5SDFqdVk2N0tHZHkzV1dhUXhyY1ZIZV93LVdKa1JVYXRZUlMtcEs2Zm9hMEN5Q2xKbkMzX3M1U1lQV2lacDFYanVTOEUzam10S2Y5VEZkMm02dDd0MUNjUExRWFNMdFI0N1FhbDZxdDluS2FBSUFVdXB0TVpycUFPbHczT25tSUFoWWN6aHhKRUxPZ0RXUlgzQmJQTU1HUXo3VFgzTmVoNVhC?oc=5",
+          "source": "The Manila Times",
+          "publishedAt": "2025-06-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "moneyhero-group"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "covrzy",
+      "name": "Covrzy",
+      "count": 2,
+      "firstSeen": "2025-06-09T07:00:00.000Z",
+      "lastSeen": "2025-06-09T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 2
+        },
+        {
+          "name": "Health & Life",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Manufacturing Today India",
+        "ET Edge Insights"
+      ],
+      "related": [
+        {
+          "slug": "namma-yatri",
+          "name": "Namma Yatri",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "Covrzy-Namma Yatri tie-up to offer 50k drivers health insurance",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9jb0JLM3NTRzI0eHVTTVlFaTVCeXZtUUxqdkExd3NsbkhWS20tYi1SdkdMZERfRi13VTFQeWNuTnFFZnFoX255dy1MRnVwc3Y3N3FYalBpTzQzUGs5NXhNcUduTGdUa2hwcVo4M2kxeWdOR0U?oc=5",
+          "source": "Manufacturing Today India",
+          "publishedAt": "2025-06-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Health & Life",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": [
+            "namma-yatri"
+          ]
+        },
+        {
+          "title": "Insurtech startup Covrzy partners with Namma Yatri to offer affordable, accessible health coverage to 3000-plus drivers and their families",
+          "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPTXBkNWV6YmRTNmdSZDBVQkR3eFN2V2FnTGc2TFBXQlJBZzFDM1FWSFNrNUxjZFV4eXZ0azFkdWF5S2FhUTVDSkNrTlByZHZENExuX2FLWXB5eFZ2SjZURXhGcHJnbUdoR002amQ4V1UyeVVaajdCcnRSMHJIVExPMVBTRDd5WG1ReG11X3gzWUZldFFLYzViUnY2b3hlemY2SXY5cWc1UUQtSnc4QmlPaTcxWUpOcS1ORFQxVjJKanQxdHhTYU8xVkw2TzZsb19yS3hhWTRIbUZZR0kyYVBXMl9aRDAzX2o1RWdOXzljdWFvSHlJcWhCS1JWcGdua0ZBT1RtRXhR?oc=5",
+          "source": "ET Edge Insights",
+          "publishedAt": "2025-06-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": [
+            "namma-yatri"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "namma-yatri",
+      "name": "Namma Yatri",
+      "count": 2,
+      "firstSeen": "2025-06-09T07:00:00.000Z",
+      "lastSeen": "2025-06-09T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 2
+        },
+        {
+          "name": "Health & Life",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Manufacturing Today India",
+        "ET Edge Insights"
+      ],
+      "related": [
+        {
+          "slug": "covrzy",
+          "name": "Covrzy",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "Covrzy-Namma Yatri tie-up to offer 50k drivers health insurance",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9jb0JLM3NTRzI0eHVTTVlFaTVCeXZtUUxqdkExd3NsbkhWS20tYi1SdkdMZERfRi13VTFQeWNuTnFFZnFoX255dy1MRnVwc3Y3N3FYalBpTzQzUGs5NXhNcUduTGdUa2hwcVo4M2kxeWdOR0U?oc=5",
+          "source": "Manufacturing Today India",
+          "publishedAt": "2025-06-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Health & Life",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": [
+            "covrzy"
+          ]
+        },
+        {
+          "title": "Insurtech startup Covrzy partners with Namma Yatri to offer affordable, accessible health coverage to 3000-plus drivers and their families",
+          "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPTXBkNWV6YmRTNmdSZDBVQkR3eFN2V2FnTGc2TFBXQlJBZzFDM1FWSFNrNUxjZFV4eXZ0azFkdWF5S2FhUTVDSkNrTlByZHZENExuX2FLWXB5eFZ2SjZURXhGcHJnbUdoR002amQ4V1UyeVVaajdCcnRSMHJIVExPMVBTRDd5WG1ReG11X3gzWUZldFFLYzViUnY2b3hlemY2SXY5cWc1UUQtSnc4QmlPaTcxWUpOcS1ORFQxVjJKanQxdHhTYU8xVkw2TzZsb19yS3hhWTRIbUZZR0kyYVBXMl9aRDAzX2o1RWdOXzljdWFvSHlJcWhCS1JWcGdua0ZBT1RtRXhR?oc=5",
+          "source": "ET Edge Insights",
+          "publishedAt": "2025-06-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": [
+            "covrzy"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "shin-kong",
+      "name": "Shin Kong",
+      "count": 1,
+      "firstSeen": "2025-06-06T07:00:00.000Z",
+      "lastSeen": "2025-06-06T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "aift",
+          "name": "AIFT",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Shin Kong, AIFT target Vietnam in digital insurance move",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOT3BYTXFBNTR5clFoZ1JQc0xYaWtrV25NSXV0VEZnbXY0OWVETG9vUDhtTE05cEQ0Umx0cTZueWhFQ2lMNjRqSU90YlZFazg5OWhTc0V3NFhVWlFYampaNVcyRjY3SFpqVVlVc1NZM01CeFVoNlFPbDJvLXBkREFaZGdoQ2xLb2JWZHh3d3luRTgxOW81R3RWX21TQmRGUnNmNFBReVlFQWpXUTFHRF9IY2JrQXduX2E4QVVxWkZrV3ZDOUFueGxJeA?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-06-06T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "aift"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "aift",
+      "name": "AIFT",
+      "count": 1,
+      "firstSeen": "2025-06-06T07:00:00.000Z",
+      "lastSeen": "2025-06-06T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "shin-kong",
+          "name": "Shin Kong",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Shin Kong, AIFT target Vietnam in digital insurance move",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOT3BYTXFBNTR5clFoZ1JQc0xYaWtrV25NSXV0VEZnbXY0OWVETG9vUDhtTE05cEQ0Umx0cTZueWhFQ2lMNjRqSU90YlZFazg5OWhTc0V3NFhVWlFYampaNVcyRjY3SFpqVVlVc1NZM01CeFVoNlFPbDJvLXBkREFaZGdoQ2xLb2JWZHh3d3luRTgxOW81R3RWX21TQmRGUnNmNFBReVlFQWpXUTFHRF9IY2JrQXduX2E4QVVxWkZrV3ZDOUFueGxJeA?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-06-06T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "shin-kong"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "baobab-insurance",
+      "name": "Baobab Insurance",
+      "count": 1,
+      "firstSeen": "2025-06-04T07:00:00.000Z",
+      "lastSeen": "2025-06-04T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "EU-Startups"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Berlin-based InsurTech startup Baobab Insurance raises €12 million for cybersecurity insurance",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPbnV1dXZCTUVIaGIxMG42YjhyZHVZeDRXRC1lanRLQUNrYW1DVGViT2ZlVjduM2w1VGRWeTNkcmdydDJoNDYyRWJ1NWNkbGlaQlhXbGNFTWljM05mdFRwVGV0Sm1wM3hmZ2J4QkYtWm9ycFdqREhJSS15Y3dnZzF3XzRGSXo2eXpGR0plaGxVTHlfaE5ubHdHeEVURS1pTW1Ybjd4OTE4SmF2M1FJMUZlbVg3V2NldkNDSDJZeUt1OHRpbzNSM0pjVHVYWQ?oc=5",
+          "source": "EU-Startups",
+          "publishedAt": "2025-06-04T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "Cyber"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "quantiphi",
+      "name": "Quantiphi",
+      "count": 1,
+      "firstSeen": "2025-06-04T07:00:00.000Z",
+      "lastSeen": "2025-06-04T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Digital Insurance"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Meet the insurtech: Quantiphi",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0xZ3lVTWJ0R1BJS3JtcXFGWExIZFM5dG9Uc2dNRFZTeFExX3d5MWdmYWhlb3lQcE9EZnpDdFJnQkpYLVVBREo5RWlKQV9FNEpVSGtZalJTQUh0blJCMTZyWTRaU3g4VTA?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2025-06-04T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "oona-insurance",
+      "name": "Oona Insurance",
+      "count": 1,
+      "firstSeen": "2025-06-04T07:00:00.000Z",
+      "lastSeen": "2025-06-04T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Insurance Asia"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Oona Insurance bets on platforms to widen access",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQWUhTbnZiRk5Ja0daX0RPbnNJaWlPYnZHWWd1cG5kUVZxNVNSbndGNTVTdXNXZDdZOUF5cVphNWJLdHhkdjZaR0gzRVVfdkJCbWgwQUdZMzhNOGF5bVpnaUZjdDRaWlp0SWxTdWlubVNnQ2ZFYklqTGhabEhfTTZ0Sw?oc=5",
+          "source": "Insurance Asia",
+          "publishedAt": "2025-06-04T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "european-watch-company",
+      "name": "European Watch Company",
+      "count": 1,
+      "firstSeen": "2025-06-04T07:00:00.000Z",
+      "lastSeen": "2025-06-04T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Business Wire"
+      ],
+      "related": [
+        {
+          "slug": "chubb",
+          "name": "Chubb",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "European Watch Company Partners with Chubb to Offer Insurance Protection for Luxury Timepieces and Jewelry",
+          "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOMkJVNnN5d2tEWG1oODhGTTR5b2NGOHhScFhPamVlRXY1RzJVSW5CWm51OW42b25BM3pHUU9qRnFxY28tZS10QWQ3Y2ViejFZMlBDZC1RX1BrSlEtMTRLTDg4YXNKZWpHM0lnLUF4NWlobzFpZW80Vkk1ZVZnQ0NITzYtSExobUU5d0g2NzhXY0FJS1dyTkp6MUUyNXZEVFNsX0hLOXZ6TmFOWGh4dmlEazFEeDB6ZWZ1ZVFNQ2Fxclo2Wl81MDdwX004d19aUXA5TXlhejk3UVJ0eWZ3VGljZkdvNnJwc3JFUUZaMDFFUExtLVBXYWc?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2025-06-04T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "chubb"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "tencent",
+      "name": "Tencent",
+      "count": 1,
+      "firstSeen": "2025-06-03T07:00:00.000Z",
+      "lastSeen": "2025-06-03T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Embedded",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "sundayindependent.co.za"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "From WeChat's Nigerian failure to embedded insurance success: lessons in local innovation",
+          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNRU9QLXJZemtmVEVtbV9Mbk0xcThuQTJNUGtKR1F3TE13NFVhdEhxdmNtSnFSNFlpZjhvS2dJMHpaS0o2OURGRThFQU9KXzNrRUo3MS1XeGlRRTNkdjJ1UWZzaHRzN294UlBwZlg3WVlzaHU0OExNOHdaZWliVDlaNkNURmJOekI4U1RyNVFOSTRELW1wRkNsVzEwa3hINWMxd0ZPaVlya2VHU0NYRjVpck5NVlVrd0RlOGJoNkQxa1Y1aUk4OFZ5ZHpRLTkxTGNZWWlucjhxZVBVR2lEWENCYjd2dEtoR1F6NHhN?oc=5",
+          "source": "sundayindependent.co.za",
+          "publishedAt": "2025-06-03T07:00:00.000Z",
+          "tags": [
+            "Embedded"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "heph",
+      "name": "Heph",
+      "count": 2,
+      "firstSeen": "2025-05-31T07:00:00.000Z",
+      "lastSeen": "2025-06-03T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Embedded",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Elets BFSI",
+        "digital terminal"
+      ],
+      "related": [
+        {
+          "slug": "capri-global",
+          "name": "Capri Global",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "Heph partners with Capri Global to transform embedded insurance in lending",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSXZkT1lsZExpb1g2UUdaOFhUdkRWdGhqSGNxbGlvbkswSG9SSFdxWWRsMUI0NklzTWpKdjY3dW9qMERZUWVURDFOa195bE5HWnZoeXdiODU1bjhTMWJqX2J6SXhQa0pHbUJka3lUQkZObGFLM2E4enV6TldRS09rRndCc2g1NEdhVkhxYk4tMmtwWHZBcjFfSlI1RHdJaHVaR3hjU09QNA?oc=5",
+          "source": "Elets BFSI",
+          "publishedAt": "2025-06-03T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "capri-global"
+          ]
+        },
+        {
+          "title": "Heph Partners with Capri Global to Revolutionize Insurance Distribution in Lending",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT2F2dTM0dUpGVE9XdlA4SkFwUEo5c0Z1U3RvVVdMcXBNRTVDb3M0d2s3ZHNGLWNRUXppc3piMVVmV2JVMklFOUtydXIwNHo5NWlSeW43cEZsa0NkYXdZMXY2MlBxU21nenNoMm9vWmY5WXg5Q3YwSlZNR3diNjRIQUwzajc1STlOa1ZfdWhNM3JqMkswWEJtQVZaSWFfLTdOOFFLSzl0LVdSak1ad2pEdjBvb3NRRWhKeGxRTHRpWTVDZ9IBzwFBVV95cUxQY0Z4d2otSXdRZEhOaGJKZGt3QXhIY214NFk3WUh4NWtwM2lMb19relhkb0JTVkNhWEFfTm84YlZxMnBJVU9TTUwtX0FBZTNnVWtyTFVhYWpiRXdUX2VhX192VjZLb25WdzBEcnFzMjc0aUdBTl8xSk00SnFWMzA2bThUbDhMU243QklSQnNEN20zMG5IN2hPQ3g4NWh2S2RIZFQ4ckcyZFpYanZsM3N6cE1GWjQxdUFqZW1wYTFNd0FVSFloWDRlVVQ2eGtIQ1E?oc=5",
+          "source": "digital terminal",
+          "publishedAt": "2025-05-31T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "capri-global"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "capri-global",
+      "name": "Capri Global",
+      "count": 2,
+      "firstSeen": "2025-05-31T07:00:00.000Z",
+      "lastSeen": "2025-06-03T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Embedded",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Elets BFSI",
+        "digital terminal"
+      ],
+      "related": [
+        {
+          "slug": "heph",
+          "name": "Heph",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "Heph partners with Capri Global to transform embedded insurance in lending",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSXZkT1lsZExpb1g2UUdaOFhUdkRWdGhqSGNxbGlvbkswSG9SSFdxWWRsMUI0NklzTWpKdjY3dW9qMERZUWVURDFOa195bE5HWnZoeXdiODU1bjhTMWJqX2J6SXhQa0pHbUJka3lUQkZObGFLM2E4enV6TldRS09rRndCc2g1NEdhVkhxYk4tMmtwWHZBcjFfSlI1RHdJaHVaR3hjU09QNA?oc=5",
+          "source": "Elets BFSI",
+          "publishedAt": "2025-06-03T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "heph"
+          ]
+        },
+        {
+          "title": "Heph Partners with Capri Global to Revolutionize Insurance Distribution in Lending",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT2F2dTM0dUpGVE9XdlA4SkFwUEo5c0Z1U3RvVVdMcXBNRTVDb3M0d2s3ZHNGLWNRUXppc3piMVVmV2JVMklFOUtydXIwNHo5NWlSeW43cEZsa0NkYXdZMXY2MlBxU21nenNoMm9vWmY5WXg5Q3YwSlZNR3diNjRIQUwzajc1STlOa1ZfdWhNM3JqMkswWEJtQVZaSWFfLTdOOFFLSzl0LVdSak1ad2pEdjBvb3NRRWhKeGxRTHRpWTVDZ9IBzwFBVV95cUxQY0Z4d2otSXdRZEhOaGJKZGt3QXhIY214NFk3WUh4NWtwM2lMb19relhkb0JTVkNhWEFfTm84YlZxMnBJVU9TTUwtX0FBZTNnVWtyTFVhYWpiRXdUX2VhX192VjZLb25WdzBEcnFzMjc0aUdBTl8xSk00SnFWMzA2bThUbDhMU243QklSQnNEN20zMG5IN2hPQ3g4NWh2S2RIZFQ4ckcyZFpYanZsM3N6cE1GWjQxdUFqZW1wYTFNd0FVSFloWDRlVVQ2eGtIQ1E?oc=5",
+          "source": "digital terminal",
+          "publishedAt": "2025-05-31T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "heph"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "neo-insurance",
+      "name": "Neo Insurance",
+      "count": 1,
+      "firstSeen": "2025-06-03T07:00:00.000Z",
+      "lastSeen": "2025-06-03T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News"
+      ],
+      "related": [
+        {
+          "slug": "itochu",
+          "name": "ITOCHU Corporation",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Neo Insurance secures funding from Japan’s ITOCHU Corporation",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPQmRfRXQ5eDNDeGhhQVIzNG5RMFl4Zkl1NTN2cWZreS03SXh6QjF6V2FMRENDekwxQVQ1MkkwUU84UERwOWJ5T0FWNDB3RnIyOHZFZGJGRTJCc2VYcTg5TzBvNXFyYmZiRHVMT0l1MkhFVHRZc0w0RG9EbFpoRTFCanV3ZjFwWWFacjE0anJfbjB0ZXBP?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2025-06-03T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "itochu"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "itochu",
+      "name": "ITOCHU Corporation",
+      "count": 1,
+      "firstSeen": "2025-06-03T07:00:00.000Z",
+      "lastSeen": "2025-06-03T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News"
+      ],
+      "related": [
+        {
+          "slug": "neo-insurance",
+          "name": "Neo Insurance",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Neo Insurance secures funding from Japan’s ITOCHU Corporation",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPQmRfRXQ5eDNDeGhhQVIzNG5RMFl4Zkl1NTN2cWZreS03SXh6QjF6V2FMRENDekwxQVQ1MkkwUU84UERwOWJ5T0FWNDB3RnIyOHZFZGJGRTJCc2VYcTg5TzBvNXFyYmZiRHVMT0l1MkhFVHRZc0w0RG9EbFpoRTFCanV3ZjFwWWFacjE0anJfbjB0ZXBP?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2025-06-03T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "neo-insurance"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "scalable-capital",
+      "name": "Scalable Capital",
+      "count": 1,
+      "firstSeen": "2025-06-03T07:00:00.000Z",
+      "lastSeen": "2025-06-03T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "FF News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Scalable Capital Receives €155 Million and Continues to Expand Its Digital Investment Platform",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQTDVNdXZOdWpUY1ZqTXl2am5jclRfb3RSeUlISFZKOTgwalMxNnNDRVRiNTAxSmlfZ182c08taDBoMmRuN21ndEcwRGdBLWVZMG5QUnk3R1c0eGg3WTZVOHdSS2NPVFh5SlVkYXI2UW43eHZ6OUxlUTctUmowd0NPbnFhd2hMbTZieXJ4TU5LSTRvMWRhdVJaMExZYWstWUVYRHR0bjAtMFg3ay1DaXdtalhJT0M3WExpVWJsRkhNUGQwN3JoS3Nwc0ZETzJOdw?oc=5",
+          "source": "FF News",
+          "publishedAt": "2025-06-03T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "triple-i",
+      "name": "Triple-I",
+      "count": 1,
+      "firstSeen": "2025-06-02T07:00:00.000Z",
+      "lastSeen": "2025-06-02T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Reinsurance News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Legal advertising & third-party litigation funding fuel rise in insurance costs: Triple-I",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQZDNWSzlxcEpMZFJyaktnQTJWbHBFMHJKNmVMTEd1VGIxaXh5VmVxdEJoM0dVUnJwMjlWLWpmREZwYXJSR2NIU2JFVTNXUS1LM3o4T0M5R3pDbUJnLWFsVkU3Q1Vxb2NYbEJDdzVKSEZlZ1Z0MHlJTmhfSmp2T2tmc1A4cGFyQ1VTRWRwc0NJM1dESWl4OExGektzQUFhQ2pQZlNrTTZJamZZOUE3SzF0S1ZYak5ub00?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2025-06-02T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "amanleek",
+      "name": "Amanleek",
+      "count": 1,
+      "firstSeen": "2025-05-30T12:44:59.000Z",
+      "lastSeen": "2025-05-30T12:44:59.000Z",
+      "topics": [],
+      "sources": [
+        "We are Tech"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Mohab Aboueita Amanleek Simplifies Digital Insurance in Egypt",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOTnZPR0ozUUhOcThVYms2bXFmRzA1b1VXa3c3WFhFNkV0dmlzNHhYSGhXX1dUY3dNS2d2NXEzOE1MZTd5akhmejM2VkFFM09FNGtVVXl2cWVFVVE1YkM4dTVFeVdnLXNQVnJVeFcxZDZkeThFVmpkaGVyUXFjMUYwUGlFdWpSS0V6WktQbmdhQmh4NUh5QWhRZ3VXT0kzTWpXenc0eWNxNlo4RDlBYXV2SXZ3?oc=5",
+          "source": "We are Tech",
+          "publishedAt": "2025-05-30T12:44:59.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "meritage-homes",
+      "name": "Meritage Homes",
+      "count": 1,
+      "firstSeen": "2025-05-30T07:00:00.000Z",
+      "lastSeen": "2025-05-30T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Builder Magazine"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "3 Ways Meritage Homes Improves Closings and Insurability",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTkk1TmtEYVpwRUE5WFdiX0dZcGVDUWVrejI1QWM4Tkk2U2FaMjVQaGEwMkN1c253dEFzb0h1aTJCSWloQkFJcWJodWQ5NU1VY3BnLUZWQWhVU1FjMHRUTHpoMmIzRF9qbmVzaFpTYzFZNi15a1VpRHVXc2R5QlJRXzkySmJzTnpxTWMwbmRhYTJXUmFWeml3eE9IRW1Wb0FEcjVYWlNFNm9BOURES0FB?oc=5",
+          "source": "Builder Magazine",
+          "publishedAt": "2025-05-30T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "today",
+      "name": "TODAY",
+      "count": 1,
+      "firstSeen": "2025-05-29T07:00:00.000Z",
+      "lastSeen": "2025-05-29T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "EU-Startups"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "\"Golden nuggets of insight\" - Danish startup TODAY secures €1 million to help financial advisors save time and sell smarter",
+          "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPb3BCZ09NWEhfNmdrZmRDc1VKNHFCSFhra041YjR1UGtIcjRxTVowcEFEbHlKcm1BMFVhN1NoU3lhSkJHc09sTUlUMEwyQUZ4cU82SkJYdFlUaDBlcGJvVm5RV1JTbFN4WkxaOXhMbnVDWHo3c0wyRERBVlMxNFBFdjF4OE5Jc0UyNTlaV29ocFVZS3g2ZXZrejNQR0hEZnFCRzJCRmRnVzBuM0U4emo2Uk0yQXFvSXVtY05fWTRaVnNVV2JIU2dENjVLVHdSaUw2enVNcXhwX3FBTlBPS2tIRkpHOTFDTlVlcHh4MA?oc=5",
+          "source": "EU-Startups",
+          "publishedAt": "2025-05-29T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "insurance-advisory-partners",
+      "name": "Insurance Advisory Partners",
+      "count": 1,
+      "firstSeen": "2025-05-27T07:00:00.000Z",
+      "lastSeen": "2025-05-27T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Captive International"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Joe Plumeri appointed chairman of Insurance Advisory Partners",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNODBHUnhCUHhpcXg4enY0NFpmYnVlanpuSnNnVWU0V3o2X21MQ1RmdjZwT29kR3cybHVfSnBWNW5lVlVpZ3pKb21YU09nMnhPeHFtT2hqM2xPdXh5bUxNU2ljbFVoZW5ZcHNZT3B4SnNNbVBHYTFWT1BqVkR4NHkwWHZzTUlfanpCcTFVY0RIUWhXVVNDNVNwQ1BUZzBTd00?oc=5",
+          "source": "Captive International",
+          "publishedAt": "2025-05-27T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "tawuniya",
+      "name": "Tawuniya",
+      "count": 1,
+      "firstSeen": "2025-05-27T07:00:00.000Z",
+      "lastSeen": "2025-05-27T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Arab News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Tawuniya’s ‘InsurAI’ challenge showcases AI-powered breakthrough in insurance",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBfMEFvaG5PTm5EMThzLTlXZ1hCWlhiTG1RYWFETktWM3VCOVk2dDFONlVQcFNQS1JhVVdFX25wbzFsN2t4anlKWjJnQS1zeER4djR5WG5rVVdFZFVwRmIzX0d6bmtsYVdrZVgzeWxVRjlXU3VHWEF1aw?oc=5",
+          "source": "Arab News",
+          "publishedAt": "2025-05-27T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "nearmap",
+      "name": "Nearmap",
+      "count": 2,
+      "firstSeen": "2025-05-20T07:00:00.000Z",
+      "lastSeen": "2025-05-26T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "FinTech Global",
+        "Reuters"
+      ],
+      "related": [
+        {
+          "slug": "itel",
+          "name": "itel",
+          "count": 2
+        },
+        {
+          "slug": "thoma-bravo",
+          "name": "Thoma Bravo",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Nearmap acquires itel to create all-in-one property intelligence platform for insurers",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSklERTJNMDNpOUxwOWZNSDFsczBvby11NlhVcHpZMWFfYzN5bXduaW5wNFZ0eFZrSUQ1LWU2eEs3QUtLZllaN0Vma0htNExkMmp5aVROUGdKSkxJM1ZPMTN1SDFoRlBZNFIzczJQbjhOdHhmQjBnUHFlc0c5S2R2UXRCdThRdzAzUkNmVUZ4VkpKQk83ZjFCOHBTSzUwcVJtMmdoSExQa3dNNFNFbVhkc25nTzMyY0xCYUZFNXdB?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-05-26T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "itel"
+          ]
+        },
+        {
+          "title": "Thoma Bravo's Nearmap to buy insurance tech firm itel for over $1.3 billion",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPaFdsQmI3Y09LaFNsUWpJekR4bExjUTZhU2ZxcXNEX0JzQ1VCbC1kNG42S1BKOWdiVXZNcFFieWtielJhNmFTc0xyRFBjWnpVdmczOWw4ZDlZbnVfcWR3OFdBWEdWZkcyZEp1djY0aEE5Z2o5QzNqdW93RGcyaEREbERYMVJiZWRDZDJTcm9IOTYybV9tS1VmYTk2a0JVWjhIVGpiZ2VGZGNTSG9HZU5OczFB?oc=5",
+          "source": "Reuters",
+          "publishedAt": "2025-05-20T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "thoma-bravo",
+            "itel"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "itel",
+      "name": "itel",
+      "count": 2,
+      "firstSeen": "2025-05-20T07:00:00.000Z",
+      "lastSeen": "2025-05-26T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "FinTech Global",
+        "Reuters"
+      ],
+      "related": [
+        {
+          "slug": "nearmap",
+          "name": "Nearmap",
+          "count": 2
+        },
+        {
+          "slug": "thoma-bravo",
+          "name": "Thoma Bravo",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Nearmap acquires itel to create all-in-one property intelligence platform for insurers",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSklERTJNMDNpOUxwOWZNSDFsczBvby11NlhVcHpZMWFfYzN5bXduaW5wNFZ0eFZrSUQ1LWU2eEs3QUtLZllaN0Vma0htNExkMmp5aVROUGdKSkxJM1ZPMTN1SDFoRlBZNFIzczJQbjhOdHhmQjBnUHFlc0c5S2R2UXRCdThRdzAzUkNmVUZ4VkpKQk83ZjFCOHBTSzUwcVJtMmdoSExQa3dNNFNFbVhkc25nTzMyY0xCYUZFNXdB?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-05-26T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "nearmap"
+          ]
+        },
+        {
+          "title": "Thoma Bravo's Nearmap to buy insurance tech firm itel for over $1.3 billion",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPaFdsQmI3Y09LaFNsUWpJekR4bExjUTZhU2ZxcXNEX0JzQ1VCbC1kNG42S1BKOWdiVXZNcFFieWtielJhNmFTc0xyRFBjWnpVdmczOWw4ZDlZbnVfcWR3OFdBWEdWZkcyZEp1djY0aEE5Z2o5QzNqdW93RGcyaEREbERYMVJiZWRDZDJTcm9IOTYybV9tS1VmYTk2a0JVWjhIVGpiZ2VGZGNTSG9HZU5OczFB?oc=5",
+          "source": "Reuters",
+          "publishedAt": "2025-05-20T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "thoma-bravo",
+            "nearmap"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "gail",
+      "name": "Gail",
+      "count": 1,
+      "firstSeen": "2025-05-22T07:00:00.000Z",
+      "lastSeen": "2025-05-22T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Refresh Miami"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Miami startup Gail secures $8.2M to build the AI-powered brain of financial services",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMnBpSmNNS3dMNWZhekFJT1BBN0FUTjNqMUhEbktMMXlBaWlrVDNtYlpnN3NiTmtwa3VMN0g0NW9FcC1oV1hmZ1M2RWtSUGtTUmw1c0x6a3dCbERtTDFWOTdxdTRrR2swY0dFaUdpc1dMdlZvSENHQXZ4eTdxbklKbldDTjdLM1RoYVhMS3ZjRl9mWU56bEpmYWRVclNyczlwRUt2Ul9ZZlV6b2JVSjFOS3pxN3I?oc=5",
+          "source": "Refresh Miami",
+          "publishedAt": "2025-05-22T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "bright-health",
+      "name": "Bright Health",
+      "count": 1,
+      "firstSeen": "2025-05-21T07:00:00.000Z",
+      "lastSeen": "2025-05-21T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Modern Healthcare"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "How Bright Health went from insurtech darling to cautionary tale",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNMHFqT0EzNm90ZjJLSVZ2elNrQmVKYXNQTHM0bkhzMDBYU2NpZHZ1MTk5LWJRRlgwMThNWjlYdXlBX3BnRHNuRWp6clJISVpMRUF6M1NFdV9vOU5WdnZUcmJLQmJGYy1tTW5yNGVaeFQ2cm1kQ2JsMWVXSDVuWUxEVi1fVkJLVDJwQWJJ?oc=5",
+          "source": "Modern Healthcare",
+          "publishedAt": "2025-05-21T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "branch-insurance-exchange",
+      "name": "Branch Insurance Exchange",
+      "count": 1,
+      "firstSeen": "2025-05-20T07:00:00.000Z",
+      "lastSeen": "2025-05-20T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Branch Insurance Exchange reports Q1 2025 results",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5mSW52MmNXTmhQU25YQi12dkV6RXhuVU9CMGlFTzJvUllfMXkxLU1IbmUtMC13ckFqN0N2SEktckxaM0VfTXlxVW11aHFPOGM5Nk5QaEg1U0F0b21FbVVKSEhhNEc2WHp2Um5BdmpiRUY2LS01Z2tMckNITng?oc=5",
+          "source": "Coverager",
+          "publishedAt": "2025-05-20T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "jamii-one",
+      "name": "Jamii.one",
+      "count": 1,
+      "firstSeen": "2025-05-17T07:00:00.000Z",
+      "lastSeen": "2025-05-17T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Shega"
+      ],
+      "related": [
+        {
+          "slug": "undp",
+          "name": "UNDP",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Jamii.one Wins $40,000 Grand Prize at UNDP Ethiopia's Innovative Insurance Challenge Fund",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMGppcGh4S2YwWXNDSDVVMlRmZGxGcUlaajJfOHRvTHN6Qk04cUhtNTZGMEN3b2hSSk5tRE9QN0tlRkhFeXNsZzNjWkRSeFJMNDB0MGtpWk1MR2pNTHc4MnJMVGhieWU2WlVwQnowcHFES3dHSzlhTHNnUWVZSWxJRkN1dVFGVXRnaTRIaXhQQWJUV3NsUXIyU0I3cU1fNmdRWEV1WDV1V19RVjg?oc=5",
+          "source": "Shega",
+          "publishedAt": "2025-05-17T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "undp"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ciab",
+      "name": "CIAB",
+      "count": 1,
+      "firstSeen": "2025-05-16T07:00:00.000Z",
+      "lastSeen": "2025-05-16T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Reinsurance News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "CIAB reports moderation in commercial insurance premium increases for Q1’25",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQamY5cU5PUlNUUWoxZW9uVWhuRGhiS3h6Z3ZLbVlHQXRpVklVNTZyckZGUXp4cDJBb19XWm5mdm9YbHcwaUpIYW4yQWVMaVJZWHRkOFFBR0lOM2UyNFpoOVFVVnJFNll5WWdiQWlGbE9JNS1ETjdBb2x6aUhDem9Ham5kWHRMYUNTOVBuQ3dQdkoxb2ZiYUJrLVRRQW10c255YXpoQjFGaw?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2025-05-16T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "myclick-insurance",
+      "name": "MyClick Insurance",
+      "count": 1,
+      "firstSeen": "2025-05-15T23:43:15.000Z",
+      "lastSeen": "2025-05-15T23:43:15.000Z",
+      "topics": [],
+      "sources": [
+        "The Business Journals"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Maria Coello, Founder and CEO, MyClick Insurance",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSmFiRlJwRV94OTVFREtqdlkwaEtrYXJKcjc3ZkZjUmxzZ0ZxZ0F5SmdyejlVckgyQ3ppTHQxMUJqeXI5OTFpdmNrQk5PcGo5Tnh0STNiLTJFd1l3WVFhdWFBa1BuUmdYX1ZSdmpVWU4zdnJ2c1RLLTJGbmVPakhWTzJsM2NKSU5qbnMzS2hqVDRKbEJMbUFLR3UwcG1HYkpuVWJHUnZ1Qm9YVG1rdDB0N2h2WVVSaHcxUXBsUGVoTzNYSUkt?oc=5",
+          "source": "The Business Journals",
+          "publishedAt": "2025-05-15T23:43:15.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "j-c-flowers",
+      "name": "J.C. Flowers",
+      "count": 1,
+      "firstSeen": "2025-05-14T07:00:00.000Z",
+      "lastSeen": "2025-05-14T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Insurance Journal"
+      ],
+      "related": [
+        {
+          "slug": "wefox",
+          "name": "wefox",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Business Moves: Insurtech wefox to Sell Italian Businesses to PE Firm J.C. Flowers",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBMOURxcEJNZlJmdGxSR2ZtVk5kVXYzclRzZkhBTVItSGg3LUZiaGM5UHFzU0FqUzBnMHZ0YjlhazhZWWhJYjc2Z3FhN19lSlFYREd1UDNWZWd6TU9oZE1hQzZnSzQ5bkw2aEFDb0JOUllJUGRBZjVDQWh3S0lfUQ?oc=5",
+          "source": "Insurance Journal",
+          "publishedAt": "2025-05-14T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "wefox"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "smith-point-capital",
+      "name": "Smith Point Capital",
+      "count": 1,
+      "firstSeen": "2025-05-13T07:00:00.000Z",
+      "lastSeen": "2025-05-13T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "TechCrunch"
+      ],
+      "related": [
+        {
+          "slug": "bestow",
+          "name": "Bestow",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Insurtech Bestow lands $120M Series D from Goldman Sachs, Smith Point Capital",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcmFFQzI3ZnVtSE5mSWxQZkk1Q1pTNVM5MXJJaERmckRIYzBHbHgyNV9jWnV5RDZsNHU3Zm1ua1F4a1ZFV3d3WGVoSjdLSXZNcUx4ZWpIRjZSTzlqb2QyeGFYeF9RLTNVM2lvdU0yZDRHb1h6N2pzSHNhbWlTT2JyX1BveUpnTFUwajc4LTAwZmY2MHQ1ZFVRMHhfZ1ZkdUlLb29ETkFpTkltcllHaHZn?oc=5",
+          "source": "TechCrunch",
+          "publishedAt": "2025-05-13T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "bestow"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "marvelx",
+      "name": "MarvelX",
+      "count": 1,
+      "firstSeen": "2025-05-13T07:00:00.000Z",
+      "lastSeen": "2025-05-13T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "EU-Startups"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "\"Insurance services are at a pivotal moment\": Amsterdam-based MarvelX raises €5.4 million for AI platform",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVllTR1N2enZpZy1tcnEtOE5BNFg1d0c2RjU3Y1o4VXRNc3RBS19KcHpzR0Z0OG9FVjdHNmFyYXV6UGpOUnVTV2NGcmVXZzh6cGRZQkFFNTJDVl9NcmdaV24wNU5uc0dsei0wcXZBNlFuYXZlVlJ5YllGUk9VRXc0bXcwNzRPLXJHd2loaXhXR3k0cmI1alItTk9hNHk4Qi04V1hLSUlHemVORXhGSXlCSlFXRVBxVGx4UjVmdFNYbll6RnBlZFp4aVIxSEV0MWhYckNMbVdB?oc=5",
+          "source": "EU-Startups",
+          "publishedAt": "2025-05-13T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "blackrock",
+      "name": "BlackRock",
+      "count": 1,
+      "firstSeen": "2025-05-09T07:00:00.000Z",
+      "lastSeen": "2025-05-09T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "aviva",
+          "name": "Aviva",
+          "count": 1
+        },
+        {
+          "slug": "aia",
+          "name": "AIA",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "BlackRock dives into new AI-heavy reinsurance co with ex-Aviva/AIA CEO",
+          "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPbDJEV3hkQ3cwY1Z0WUZ6RVhOcFVhMWJXT2R5VkhpRHAzUkFqc2d0clltUXdDdUJjWUVIYUFENDNLOE9HWHZ3bUVndWlmV1BXTlBCMkxHSEpMb01qWHdmRmI2RDU4a05Qck91c0pHWERacE5lM2xKU1BrQjQtMEs0aTRXUWxHLW4xdmxJeXpXblRWOUdLcm1mbURmQzBGZU9OU2pQcEF6YVFreXRySUxQS2laLVRIN3dDYTFwRV83WTJ6UG14Ui1FUjNWS3FoS2k3OHZxLXFXeHVwM0ZvZE5YYw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-05-09T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": [
+            "aviva",
+            "aia"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "aia",
+      "name": "AIA",
+      "count": 2,
+      "firstSeen": "2025-05-08T07:00:00.000Z",
+      "lastSeen": "2025-05-09T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "blackrock",
+          "name": "BlackRock",
+          "count": 1
+        },
+        {
+          "slug": "aviva",
+          "name": "Aviva",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "BlackRock dives into new AI-heavy reinsurance co with ex-Aviva/AIA CEO",
+          "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPbDJEV3hkQ3cwY1Z0WUZ6RVhOcFVhMWJXT2R5VkhpRHAzUkFqc2d0clltUXdDdUJjWUVIYUFENDNLOE9HWHZ3bUVndWlmV1BXTlBCMkxHSEpMb01qWHdmRmI2RDU4a05Qck91c0pHWERacE5lM2xKU1BrQjQtMEs0aTRXUWxHLW4xdmxJeXpXblRWOUdLcm1mbURmQzBGZU9OU2pQcEF6YVFreXRySUxQS2laLVRIN3dDYTFwRV83WTJ6UG14Ui1FUjNWS3FoS2k3OHZxLXFXeHVwM0ZvZE5YYw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-05-09T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": [
+            "blackrock",
+            "aviva"
+          ]
+        },
+        {
+          "title": "AIA China deepens AI ties with tech intelligence firm",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPczRyNnFxQk82VDQtb3JWQWJmbFpzbmxZOVJkVnY5MjVoRllrbGVWY3BmNWxoMTgzaE9vUkpsNHZxZEYyZTY5cVJ6cjNsQzk4RVlZS3pVR1RRM2xYRGhweW0zTHRzTEdVZzRreV9ZYkVvSF82VVVpamRydG1GeGQ3ay1iTnVMbmwtOWNBUGdiTktEeEtrRklVWm5BbnBLYTZNbFBYTkhJbm40V282OG5FaDFObUNDRWRoSV80YzNPNWQ?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-05-08T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "pawchi",
+      "name": "PAWCHI",
+      "count": 1,
+      "firstSeen": "2025-05-08T07:00:00.000Z",
+      "lastSeen": "2025-05-08T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "Health & Life",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Wowtale"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "PAWCHI Raises $4.5 million Series A funding to Develop Insurance-based Pet Healthcare Solutions",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE4wV1dpTXhkWUgwcVk0UU9zS2xaNmxlZDRUUkhkdW0zenc2Z2thMGNDcWhSTWZjcUw3cHhOZGwyYjFXcjdNNFRFMDhiN2NpalVzU3Rj?oc=5",
+          "source": "Wowtale",
+          "publishedAt": "2025-05-08T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "insurance-samadhan",
+      "name": "Insurance Samadhan",
+      "count": 1,
+      "firstSeen": "2025-05-06T07:00:00.000Z",
+      "lastSeen": "2025-05-06T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Entrackr"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Insurance Samadhan secures Rs 8.5 Cr to boost tech infrastructure",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNOTVMR3JXMXdKNFFQY3pKbV9wSjc5c2dIRkZ3Y184VDZya3BjZVhSSkRMT21WOHZaRk5xLTFfMlA0OTUwbWFMa3c5YlN1ZFZBM1NaaUNYRlE0MjBMWmN6STVHZ1FGaEFMOXRLSEdraHYyWm9fS0RTUURFUTQtUGpobTIyOFNSWGh6WFF5SDhTMVcxUHJyMEJBYUprb29zWFF3Z0pWRNIBpAFBVV95cUxNOTVMR3JXMXdKNFFQY3pKbV9wSjc5c2dIRkZ3Y184VDZya3BjZVhSSkRMT21WOHZaRk5xLTFfMlA0OTUwbWFMa3c5YlN1ZFZBM1NaaUNYRlE0MjBMWmN6STVHZ1FGaEFMOXRLSEdraHYyWm9fS0RTUURFUTQtUGpobTIyOFNSWGh6WFF5SDhTMVcxUHJyMEJBYUprb29zWFF3Z0pWRA?oc=5",
+          "source": "Entrackr",
+          "publishedAt": "2025-05-06T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "strategy-and",
+      "name": "Strategy&",
+      "count": 1,
+      "firstSeen": "2025-05-05T07:00:00.000Z",
+      "lastSeen": "2025-05-05T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Embedded",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "PwC"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Embedded Insurance | Strategy&",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNekdubTgwRnJURUtuQWN4bnFWZUZjZ0RGMmFpZGJjZW1aRWNsdDR5MkxCNlQ3bkwwVjEwZUV5TDlnS21TNGxMR0VpdTluLS1ZNjI5VzV0cjZnUE5iLUFSMmhSQXdySUZqSHFDd3pEUlIxSFFRWHZPLUhqanpBcGVhTDRVdnEydXVrTzdGNG8wUENJVDg5UHc?oc=5",
+          "source": "PwC",
+          "publishedAt": "2025-05-05T07:00:00.000Z",
+          "tags": [
+            "Embedded"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "whisker-labs",
+      "name": "Whisker Labs",
+      "count": 1,
+      "firstSeen": "2025-05-02T07:00:00.000Z",
+      "lastSeen": "2025-05-02T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "FinTech Global"
+      ],
+      "related": [
+        {
+          "slug": "bamboo-insurance",
+          "name": "Bamboo Insurance",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Bamboo Insurance launches fire prevention tool with Whisker Labs’ Ting sensor",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNZGpUajJLakJ6TEVmTlVPdjF4WllYNC1tNU5nckpXX3FhT0w3dTRvYlhTT0xrUmFqeVdvUGItRkR0VDM1VGpuVnNZajZIT05uQkQ4b3NDeFNpdG1qSVFXZXM2N05vdWY3MER5blNDaGJCdWh3SVA1S3g3TzVRZ2VXM1AzaVYxM1paaER6YzF3RFhzWER5eFd3STZkNUJwMElSNEhlMmdXSk1DTVdVTHc5bQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-05-02T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "bamboo-insurance"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "nmb",
+      "name": "NMB",
+      "count": 1,
+      "firstSeen": "2025-05-02T07:00:00.000Z",
+      "lastSeen": "2025-05-02T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "The Digital Banker"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "NMB launches digital insurance services",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB4b2x6RUNIY0R1VkRRWTNfaFQ0R2ktOHBaaGtaVU9yMHM3X2dYdjlUX195aEltSUFPS3FBVkRvcnlQa0VVYTJzT25CTVpzNUJpUEp2N2JRYWhCcjZ4UERPbWdUVkJUSVhnNkJxaTYybThxTVdZYVFrMA?oc=5",
+          "source": "The Digital Banker",
+          "publishedAt": "2025-05-02T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "phoenix-specialty",
+      "name": "Phoenix Specialty",
+      "count": 1,
+      "firstSeen": "2025-05-01T07:00:00.000Z",
+      "lastSeen": "2025-05-01T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "send-technology",
+          "name": "Send Technology",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Insurance moves: Phoenix Specialty and Send Technology",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQQTB3OFZpeml4WWEtN2FJRlJTS01lNXJ4MGVwcjR0elJPeEhkNXhtMnN3Ym03cDBWbUpWNTFzM0FnUHd5Q1F2eGVTSnc2VUozMDhPUFd5ai1qbUZWQ2ZhaG1mN0FBR3dkLTVMaGhZQVZRcTNGalMySWNoMk90aldsdkxlT3FxdWsyZkVhRzhHcTdCMGVHT2RuNm9fUzdMSmR5OVRTQjg3UHJGZUdNZHlBQXRhT0dXelNSUHdnRFZwbHpBdw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-05-01T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "send-technology"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "insureku",
+      "name": "insureKU",
+      "count": 1,
+      "firstSeen": "2025-04-28T07:00:00.000Z",
+      "lastSeen": "2025-04-28T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "CodeBlue"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "insureKU Introduces First Native Aggregation Service For Consumers",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQLUpQMDUyLWEybGRnQUR6ZV9OMTFZd1oyMUdhU1RzN1ItVlR5V3Q0eTRGSTBTYVY1YjdwZDQwaXcwdnloYlpJdzNtTHVQTXhSZE82TGZvcjRmYjBDOFFLVVh2OHQ0V1NQbFdVa05aVUZyTUFnRUVMOHBtZ2dHVG1neGpxWTFEYW1iMm1ycEhSYnc0ZlVzd2Y0S0l5cG9yeXlkbVBiYkFEZHFTY0lj?oc=5",
+          "source": "CodeBlue",
+          "publishedAt": "2025-04-28T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "vesttoo",
+      "name": "Vesttoo",
+      "count": 1,
+      "firstSeen": "2025-04-23T07:00:00.000Z",
+      "lastSeen": "2025-04-23T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "calcalistech.com"
+      ],
+      "related": [
+        {
+          "slug": "everoak",
+          "name": "Everoak",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Vesttoo’s former CEO launches Everoak as new investment fund targets insurance policy trades",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1yV2dYM0V2YmZPbW1FTkFDWl9DVUE5X2hLWUEzX3VFdmlLZHk0eS16UzZkaDQxbGxNMlFVZFNVQ2NrM1VVMTRHQVcxUk5ndGJOQ2FlYTBiT18wX2RiREpRSjEzZER2NGhOOUE?oc=5",
+          "source": "calcalistech.com",
+          "publishedAt": "2025-04-23T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "everoak"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "everoak",
+      "name": "Everoak",
+      "count": 1,
+      "firstSeen": "2025-04-23T07:00:00.000Z",
+      "lastSeen": "2025-04-23T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "calcalistech.com"
+      ],
+      "related": [
+        {
+          "slug": "vesttoo",
+          "name": "Vesttoo",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Vesttoo’s former CEO launches Everoak as new investment fund targets insurance policy trades",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1yV2dYM0V2YmZPbW1FTkFDWl9DVUE5X2hLWUEzX3VFdmlLZHk0eS16UzZkaDQxbGxNMlFVZFNVQ2NrM1VVMTRHQVcxUk5ndGJOQ2FlYTBiT18wX2RiREpRSjEzZER2NGhOOUE?oc=5",
+          "source": "calcalistech.com",
+          "publishedAt": "2025-04-23T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "vesttoo"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "chapter",
+      "name": "Chapter",
+      "count": 1,
+      "firstSeen": "2025-04-18T07:00:00.000Z",
+      "lastSeen": "2025-04-18T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Health & Life",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Fierce Healthcare"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Medicare navigation startup Chapter pockets $75M to expand health system partnerships",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOVzE0N295OTN4STQ0UF9oNmVndkNIVmd3ZFVoU0M3dEFJUXJuYWpDSkhUY3JuRlVnamZ6OFdiTDJsQTdYTmhZZFBRXzF3OFNBVTM1NTdockJab3E5VGx3UXdRNjluNUY2cXRETWRlZGdvR09MUDlfZG9QVVE2UzAyNHRLcXU2d3FYbVBxQnlTVzhLVUZOa1Ftc3E0bks3WWlLMVpaQ1RMWnhCTEQ0eUFQbnA2SUN1NjAwVjQtLW5B?oc=5",
+          "source": "Fierce Healthcare",
+          "publishedAt": "2025-04-18T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "1fort",
+      "name": "1Fort",
+      "count": 2,
+      "firstSeen": "2025-04-17T07:00:00.000Z",
+      "lastSeen": "2025-04-17T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Insurance Journal",
+        "VentureBeat"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Insurtech 1Fort Raises $7.5M to Support AI Binding Tech for Brokers",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5zeXBEOUFROFlRNmpVdXVqeTZtbF9ka3BERHFTZFo2UVNMdEhTVFM0NmtMZmtpRHlacEFJUnUyc25IV212WFhQMThJS2lDSXJpR29CUTJ1MEo5bHo1SnU2VXRZZ05TZEoyb0RlSWNpMjBHeHFfczZz?oc=5",
+          "source": "Insurance Journal",
+          "publishedAt": "2025-04-17T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "This AI startup just raised $7.5m to fix commercial insurance for America's 24m underprotected small businesses",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQS0dwRjBYWFJscEZZSjhQQ0s2S2M2Smd0RUFBZkxjeUZmZm5JVkNYVVdhV2N6aFA2WFRicGM1d0F1ME9OOFVtUXhESVNuQ0lnNThNYmZ0QjdiWFVrZ1VWLUxLRXBYbHJSWkRqN0JDcnkxMkVCRHFYZGFyb1ByRHR2ZEw3bUlxcWVPeWtRSUNmLWdBeDQ1S3IwOUxyOVcyaE9BS3ptXzRHVHN6WE1HWDBScGhwWWhBM0JFeWgxNmdSNVlGMVZfNHVoQzVvWER3MzYxdEE?oc=5",
+          "source": "VentureBeat",
+          "publishedAt": "2025-04-17T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "pliant",
+      "name": "Pliant",
+      "count": 1,
+      "firstSeen": "2025-04-17T07:00:00.000Z",
+      "lastSeen": "2025-04-17T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "PYMNTS.com"
+      ],
+      "related": [
+        {
+          "slug": "hi-health",
+          "name": "Hi.health",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "B2B Payment Firm Pliant Expands Into Insurance With Hi.health Acquisition",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOeEZzdVZwTTFvUVptZWlUMDhtZWtuZU9Uc01SbUVfTXVWY1JQYTJzZGJBakNJRXFmM1ZzUUVGMlktSFAzSEdlZlA0Y0JkSHpMTWhNMnNYMkNFSzdyNGVFRmxKOVFydVNfbnpNeDBuQ2t1UEd5eEtlLWQzalpZd09jWW9CejVpdmNRWGlUSkxCZjlHU3ZsdGVFUHo4dElkM1JVUmo3ODZBazRfR3pScmFsNEk3WFhodw?oc=5",
+          "source": "PYMNTS.com",
+          "publishedAt": "2025-04-17T07:00:00.000Z",
+          "tags": [
+            "M&A",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "hi-health"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "hi-health",
+      "name": "Hi.health",
+      "count": 1,
+      "firstSeen": "2025-04-17T07:00:00.000Z",
+      "lastSeen": "2025-04-17T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "PYMNTS.com"
+      ],
+      "related": [
+        {
+          "slug": "pliant",
+          "name": "Pliant",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "B2B Payment Firm Pliant Expands Into Insurance With Hi.health Acquisition",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOeEZzdVZwTTFvUVptZWlUMDhtZWtuZU9Uc01SbUVfTXVWY1JQYTJzZGJBakNJRXFmM1ZzUUVGMlktSFAzSEdlZlA0Y0JkSHpMTWhNMnNYMkNFSzdyNGVFRmxKOVFydVNfbnpNeDBuQ2t1UEd5eEtlLWQzalpZd09jWW9CejVpdmNRWGlUSkxCZjlHU3ZsdGVFUHo4dElkM1JVUmo3ODZBazRfR3pScmFsNEk3WFhodw?oc=5",
+          "source": "PYMNTS.com",
+          "publishedAt": "2025-04-17T07:00:00.000Z",
+          "tags": [
+            "M&A",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "pliant"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "grimshaw",
+      "name": "Grimshaw",
+      "count": 1,
+      "firstSeen": "2025-04-16T07:00:00.000Z",
+      "lastSeen": "2025-04-16T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Cyber",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Issuewire"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Insure With Grimshaw: How Do We Navigate the Current Cyber & Technology Market?",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQUGpjaTZ4RFdYZlFheGJWUHJTeXphbG5JZUx6OWNXTzJvR0lwSHhZWVNkN1Mwdks5WGw1UGxUNVhGRTlPODhJbTZET3hTSjZ6bU8wQm5JbFRSbmVQS01xQVQ3LXJyM0VJclZLZVNYbkowVmxtTGQ1bkFNRFlTbVdJaFVPcHd4a3hBRDRaRThCandpeWJ6cGNOUW5XcGktVVFFWDBYOFdkWk5zVEstU3k4ZlRBZ2NucGQzX3c?oc=5",
+          "source": "Issuewire",
+          "publishedAt": "2025-04-16T07:00:00.000Z",
+          "tags": [
+            "Cyber"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "turvi",
+      "name": "Turvi",
+      "count": 1,
+      "firstSeen": "2025-04-15T07:00:00.000Z",
+      "lastSeen": "2025-04-15T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Carrier Management"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "InsurTech Profile: Tech Innovation Guides Work at Turvi",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBEbWZWNzdpMmUxOWNkS2FxcVN3WDJWS1hnTTlqa1c1UlE3NzcycklWRGhrUDA4Q3NwdkhhM3lDUDZmTVdXdXNqMXNfbEN1M2N3MDJ0aTgxS2xQMDU5RXZEbWpieVA1ZGQ2dGFPVVZwVk5GQQ?oc=5",
+          "source": "Carrier Management",
+          "publishedAt": "2025-04-15T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "pikl",
+      "name": "Pikl",
+      "count": 1,
+      "firstSeen": "2025-04-15T07:00:00.000Z",
+      "lastSeen": "2025-04-15T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "FinTech Global"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Pikl expands leadership team to scale InsurTech growth",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOZHRaVGkwY1NVUEl4bVVzOWVjTHFKcGJJRFk1QkdTaFVQcTZ1VngwRURQdW8xcHBlUHJOal8xb01CN0lXaFNHdnFfa3JYc29tZUs2TlBIZWVsMzNKbXU3MXZoRUpidmVVeHFndWp6SjRndXFEUmlOUHhPSWVWRVY5RUZwYXI5Ui1GUk9mbS1uUndhWjg?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-04-15T07:00:00.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "nicl",
+      "name": "NICL",
+      "count": 1,
+      "firstSeen": "2025-04-15T07:00:00.000Z",
+      "lastSeen": "2025-04-15T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Express Computer"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "We are in the process of building a scalable digital foundation using three pillars - data, API & cloud: Kallol Basu, CTO, NICL",
+          "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNMXFuYWYyWW52TFF3Wk5kQTVlenNzOXFTR2w4VFBRS05uY2lMRFdkM3VQTUVlT0hRTE9uaDNUY19CNXlxQlF2dHZGX2RmNkNXSGdNX3dYNmxWYkZlNnlrYjNPaW0zanhEZmdKVDV6eDNKS2RSS2tFZXJxRWdSdXNxb0d0S3JqWEI5UHJXaHRYMmVlaWgtU1dkTGVxMkxESmF6Y3QtNGZwQjBPXzNRdGxQczF5TXlSV1p0M2U3VXdzZkE5ZmpBLTV2Z1ZmS1hQN1R3MUhWUjBIOERTOU1taEtpWWdSVmJJQ1pjVVFLRHREc0xsQXl5Nk9KSWpyMkdlQQ?oc=5",
+          "source": "Express Computer",
+          "publishedAt": "2025-04-15T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "insurtech-maven",
+      "name": "Insurtech Maven",
+      "count": 1,
+      "firstSeen": "2025-04-14T07:00:00.000Z",
+      "lastSeen": "2025-04-14T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Innovation Reporter"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Sarah Bogan Launches INSURTECH MAVEN for Growth Advisory",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNdy1seF9PeWgwSFpXWWxGcWZPQnNaanM4anRUb3lsWEdZcWpyTmZCcWpMMjFOZDV3bGh0eWwzSm8xNmhOaUM3c0gwLVZSdW9MeUtIUmx3bTJtbHdyVmpkZTV6ZlhnUGtWYjNyVzRjbU9Zcm9LV2NwQmlEb1E1TnJoSzZQRjVLWVE?oc=5",
+          "source": "Insurance Innovation Reporter",
+          "publishedAt": "2025-04-14T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "kettle",
+      "name": "Kettle",
+      "count": 1,
+      "firstSeen": "2025-04-14T07:00:00.000Z",
+      "lastSeen": "2025-04-14T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "theinsurer.com"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Kettle CEO Espinoza says 'the market is ripe' for what wildfire insurtech MGA is building",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOYl96aXJHdnhGZUhQcWlscmw2TWtBcGsxdV8yV3o3cm4wYWc4aV92VmJSMVlYdXhPeS1IOFM4OUN1ekhVRFdNSGwwaF8tV2E4VkQ2RlV6N2FCaHJaODFnWXBhVldQb2dVSUxDLUF0SDFha0xHZ3lvQVlhWE11YUIydzdzTFlJb2hFWkdxYnN0Ujgxakd1OW5LVE1jZU41NFhrbmphd29NWGZyRUtwdFBwcTREN2pFMmlCYjNhUDJqREIzdmZ6ZmJ2TGJBQXBXLUk?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2025-04-14T07:00:00.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "gjw",
+      "name": "GJW",
+      "count": 1,
+      "firstSeen": "2025-04-14T07:00:00.000Z",
+      "lastSeen": "2025-04-14T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "ripe",
+          "name": "Ripe",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Ripe advances digital strategy with GJW acquisition",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNanRzYzJzdEVhSmpUTS0xUW1sRWhVT25vOFk3Tm9lMWtiN0dlV3hhd2E5ZENONV83NUtKN2JoRW4zNU1wQVlXZmtqbUVoSk1OVklXRUtZbE9SNmxXMW91dlNlRlFTNGNjTDYzVXZwRUZYRHRTMS1PNUFqMkQ4LU1LYVkzb013TGdyOExpeEE4Zl9fdnk4RnlVRTljcHl2SllRWU5NbHV4dzhCOW51bTRtOU43QzFhdw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-04-14T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "ripe"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ant-bank",
+      "name": "Ant Bank",
+      "count": 2,
+      "firstSeen": "2025-04-09T07:00:00.000Z",
+      "lastSeen": "2025-04-10T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Embedded",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Life Insurance International",
+        "Asian Banking & Finance"
+      ],
+      "related": [
+        {
+          "slug": "axa",
+          "name": "AXA",
+          "count": 2
+        },
+        {
+          "slug": "alipayhk",
+          "name": "AlipayHK",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "AXA partners with Ant Bank and AlipayHK to offer embedded insurance",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbGFYX041Zmxtd2hvTTE1eUZadTV4SU4tQmNnOTh2VE53QmJrM2R5U1JudHg2dF9fMkpCeDFaQWVyOHZWWVlzdEZuaHNpZ1VKRDRjZHVhV3VvUTNKZ1Z6a0RiaTNLZU9pd1N5SzdtbU45bnRmTGpFazFvRlpCMG92RTdvckc3YWM?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2025-04-10T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "axa",
+            "alipayhk"
+          ]
+        },
+        {
+          "title": "AXA launches digital insurance with Ant Bank, AlipayHK tie-up",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQMnR2UHRRZHh2T25PRTFNaFRQUEdUcFFEMjJPNEFKZ3lfaGNDbHJHa0EzdmxzVTIxRl9rU3RIUmc4WTM4Q3ZkY3BYVE91ckZRZmVHR1Q0M0hXaWVuemhmdlZSUkU0VHdzVXlHTEhNdXhmaGd1MEZ4emdPNmFmeUdycGs5dEUtTnNINjRLaDZEOW9hd1ozaEhxa2tBcThTRmFJVjlkNA?oc=5",
+          "source": "Asian Banking & Finance",
+          "publishedAt": "2025-04-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "axa",
+            "alipayhk"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "alipayhk",
+      "name": "AlipayHK",
+      "count": 2,
+      "firstSeen": "2025-04-09T07:00:00.000Z",
+      "lastSeen": "2025-04-10T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Embedded",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Life Insurance International",
+        "Asian Banking & Finance"
+      ],
+      "related": [
+        {
+          "slug": "axa",
+          "name": "AXA",
+          "count": 2
+        },
+        {
+          "slug": "ant-bank",
+          "name": "Ant Bank",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "AXA partners with Ant Bank and AlipayHK to offer embedded insurance",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbGFYX041Zmxtd2hvTTE1eUZadTV4SU4tQmNnOTh2VE53QmJrM2R5U1JudHg2dF9fMkpCeDFaQWVyOHZWWVlzdEZuaHNpZ1VKRDRjZHVhV3VvUTNKZ1Z6a0RiaTNLZU9pd1N5SzdtbU45bnRmTGpFazFvRlpCMG92RTdvckc3YWM?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2025-04-10T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "axa",
+            "ant-bank"
+          ]
+        },
+        {
+          "title": "AXA launches digital insurance with Ant Bank, AlipayHK tie-up",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQMnR2UHRRZHh2T25PRTFNaFRQUEdUcFFEMjJPNEFKZ3lfaGNDbHJHa0EzdmxzVTIxRl9rU3RIUmc4WTM4Q3ZkY3BYVE91ckZRZmVHR1Q0M0hXaWVuemhmdlZSUkU0VHdzVXlHTEhNdXhmaGd1MEZ4emdPNmFmeUdycGs5dEUtTnNINjRLaDZEOW9hd1ozaEhxa2tBcThTRmFJVjlkNA?oc=5",
+          "source": "Asian Banking & Finance",
+          "publishedAt": "2025-04-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "axa",
+            "ant-bank"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "kita",
+      "name": "Kita",
+      "count": 1,
+      "firstSeen": "2025-04-09T07:00:00.000Z",
+      "lastSeen": "2025-04-09T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "FinTech Global"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Carbon insurance specialist Kita secures £22.5m capacity boost amid rising demand",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRklaaUEwZ2lpa0h4cUVHUVluTEI4elNwVHZ3TDR6M1lmX0lEc1FWb1dqZHhONzRPdVBoeTZISXJfcnB0eTFzc1ZBNXN0Z1pyM2I5UXpacEhxdTgtNmJyMXlhY2tfcVMxNHFCTTBOZGpma1ZmUlZULVBUSkwzOW5xRXNMTXJiUUtNazkyT0lDZDhURDBJOGZRUTJLLTBQNjVhSDJtODdLSmhDVTFSNm50M2NGMUFuQQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-04-09T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "miss-moneypenny-technologies",
+      "name": "Miss Moneypenny Technologies",
+      "count": 1,
+      "firstSeen": "2025-04-07T07:00:00.000Z",
+      "lastSeen": "2025-04-07T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "EU-Startups"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Miss Moneypenny Technologies raises €7 million for its SaaS Wallet Studio platform",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQaVEyNi1HS3lIQTNEekM0UVp1N21vNHR5eDBjOXJLMEplNWY0aF9TMmNzSnpad0VYSGxib2xEZFFPaEd6UG5tNklmdERLU3NadW9jb0NuUTFpUTdrTGNtMmprNy1kc3Fqa0FKc0NMbmZwU2w2dUthVG1pWENVa0R0UFEzYzkzeUI0dEVwTmc5UG9FbUM3UG14SzZFZnFyTkF3RGxDQ3NYdDAzLU9sU3EtSXpIRXhYQjk3eGdF?oc=5",
+          "source": "EU-Startups",
+          "publishedAt": "2025-04-07T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "brookfield",
+      "name": "Brookfield",
+      "count": 1,
+      "firstSeen": "2025-04-07T07:00:00.000Z",
+      "lastSeen": "2025-04-07T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Bisnow"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Brookfield Sells Stake In $20B-Plus Property Fund To Insurance Company It Owns",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSFZLVGhQVWdpUVVsQ0dfVWdEOHdVc1NDUnJ3Tmx3Q0VpUjBLUzJPMjNsX29GaGV6VlpzTkpxS05rUW41TFZ5WmxIVE1NajRHOHluX1Qyd0NFempLOEtxS0lPTHpWbndTTFJkU1lPakRhajc4REJ4OUUybXJYeFoxQndRMldjR2YyeHhyNmxaakQyek04VG9Yb3pLTG80ZEFpOTZQQmdLcjlYX3E5ZEpxbkh2U2xYMk9QM3lpZ0JmN2JHdTRH?oc=5",
+          "source": "Bisnow",
+          "publishedAt": "2025-04-07T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "the-standard",
+      "name": "The Standard",
+      "count": 1,
+      "firstSeen": "2025-04-06T07:00:00.000Z",
+      "lastSeen": "2025-04-06T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Digital Insurance"
+      ],
+      "related": [
+        {
+          "slug": "allstate",
+          "name": "Allstate",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "The Standard acquires Allstate's employer benefits for $2B: Insurtech news",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQV182VGlaR20ybm9zNkp6YVN1akNUUGZOWGVqRDJrNmZMX21XWDJlNHNZWjd2aXluejVsOUdkZXNtbUdvOE1xcTFnb0VlOXU1bE4zd2NiU1U5aWVmX1JHeXBuNS11a3VnT2paSXlic05hUU4tYzVfeGNuRm85aWFfZ3F5TmxGa3lFVzg0dl85b2c?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2025-04-06T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "allstate"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "allstate",
+      "name": "Allstate",
+      "count": 1,
+      "firstSeen": "2025-04-06T07:00:00.000Z",
+      "lastSeen": "2025-04-06T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Digital Insurance"
+      ],
+      "related": [
+        {
+          "slug": "the-standard",
+          "name": "The Standard",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "The Standard acquires Allstate's employer benefits for $2B: Insurtech news",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQV182VGlaR20ybm9zNkp6YVN1akNUUGZOWGVqRDJrNmZMX21XWDJlNHNZWjd2aXluejVsOUdkZXNtbUdvOE1xcTFnb0VlOXU1bE4zd2NiU1U5aWVmX1JHeXBuNS11a3VnT2paSXlic05hUU4tYzVfeGNuRm85aWFfZ3F5TmxGa3lFVzg0dl85b2c?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2025-04-06T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "the-standard"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "infras",
+      "name": "Infras",
+      "count": 1,
+      "firstSeen": "2025-04-04T07:00:00.000Z",
+      "lastSeen": "2025-04-04T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "FinTech Global"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "iLife Technologies rebrands as Infras to expand insurance infrastructure solutions",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUFh2S2w0MjlLSGtkajlvUVFWX2FCVzJrM1FKOS1KZFFZSklXbDV4MHVFNkE0LUlWem1zWUdJWkc2Y0pNVzk3ZHdVZTZwWUZhcUVJYUxMYVQ4VmJNb2dCZDNXS00xUXpNQnZvOW1oVWM4NXlVRDRQNDFzS3NVeVZucTNvRmNEZXhsM3N3dWRwRjJGaHJLTXM2SkYwSkV1eGROQW56OWFEWHIzVC1qekhqei1nVklwdVRM?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-04-04T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "hyundai-capital-america",
+      "name": "Hyundai Capital America",
+      "count": 1,
+      "firstSeen": "2025-04-04T07:00:00.000Z",
+      "lastSeen": "2025-04-04T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Embedded",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Carrier Management"
+      ],
+      "related": [
+        {
+          "slug": "root",
+          "name": "Root",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Root, Hyundai Capital America Strike Embedded Insurance Deal",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8wNVhUempvbW12SVItQy0zVWpKbEh0cnoxWFpDYVk4TUw0QXhVdzI0TVdfWmVnLWx1WjNGY1lnbE5CVEJkWm1peXRuZFlXZXh1SFJmelc0NnYyYkR5OHZLNzdJS194bl9wYlBNaw?oc=5",
+          "source": "Carrier Management",
+          "publishedAt": "2025-04-04T07:00:00.000Z",
+          "tags": [
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "root"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "insurtech-express",
+      "name": "InsurTech Express",
+      "count": 1,
+      "firstSeen": "2025-04-03T07:00:00.000Z",
+      "lastSeen": "2025-04-03T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Newswire.com"
+      ],
+      "related": [
+        {
+          "slug": "apis-productions",
+          "name": "Apis Productions",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "InsurTech Express Acquires LDTC Life Underwriting Benchmarking Tool and Partners With Apis Productions",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQYlFIVVNPTHhwWkI2am16T3ZmT2tnMTJ4STVkbTZ5ZjRSZHYzMjN3aWFXcUJkdmJubS1qYUczbUg3a0pmV2d4Q2Jidm8yMTRUcjMxOHY2ejNBWkVCWTlGYnk5YzVnblBwZlBtM05VLVllbGo1ODdKcWJ2UGNOUnp5WGR1N0xsc3NFNE5rZXgxeUgxRnZaVEItYVRFaXRYYWRIcUtrMHI0c1VfZw?oc=5",
+          "source": "Newswire.com",
+          "publishedAt": "2025-04-03T07:00:00.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": [
+            "apis-productions"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "apis-productions",
+      "name": "Apis Productions",
+      "count": 1,
+      "firstSeen": "2025-04-03T07:00:00.000Z",
+      "lastSeen": "2025-04-03T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Newswire.com"
+      ],
+      "related": [
+        {
+          "slug": "insurtech-express",
+          "name": "InsurTech Express",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "InsurTech Express Acquires LDTC Life Underwriting Benchmarking Tool and Partners With Apis Productions",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQYlFIVVNPTHhwWkI2am16T3ZmT2tnMTJ4STVkbTZ5ZjRSZHYzMjN3aWFXcUJkdmJubS1qYUczbUg3a0pmV2d4Q2Jidm8yMTRUcjMxOHY2ejNBWkVCWTlGYnk5YzVnblBwZlBtM05VLVllbGo1ODdKcWJ2UGNOUnp5WGR1N0xsc3NFNE5rZXgxeUgxRnZaVEItYVRFaXRYYWRIcUtrMHI0c1VfZw?oc=5",
+          "source": "Newswire.com",
+          "publishedAt": "2025-04-03T07:00:00.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": [
+            "insurtech-express"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "grace",
+      "name": "Grace",
+      "count": 1,
+      "firstSeen": "2025-04-03T07:00:00.000Z",
+      "lastSeen": "2025-04-03T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "TechCrunch"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Grace raises €5.9M seed to offer insurance to luxury goods",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOdVNPUV91ZldZcFM3RTJQcG5WcVlUWTh3eS1SMEFCSGlGdmxFTEFOaGFZbklSUG9jOGVUWU82NnhzeFJSeDRvamVFT2dVSHhTYktwM0FMOGFLT1RtM09Yek9NZDN2WFdzdTNaOW14TERtSWRvLXBSMm51Ql9CZXdoZjVhQkhHLUFXdk1FX0J2WWM4a3Y0d1haWEh1WUpQaG82LVE?oc=5",
+          "source": "TechCrunch",
+          "publishedAt": "2025-04-03T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "discovermarket",
+      "name": "discovermarket",
+      "count": 1,
+      "firstSeen": "2025-04-02T07:00:00.000Z",
+      "lastSeen": "2025-04-02T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "FintechNews CH"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "discovermarket Launches Evento Seguro to Simplify Event Insurance",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOd19CekJHa0lTMDZtMjZZa1lzaGpkWU1JYWU4bjFoQzlNcFJWY3JCbTBLRXBCMHcwazV6TmF0SzhjVWVhZmVReGRzeUVycHFFNXd1Q2hVYTF2UGFMV0E5ZzdJR2o3NkozX3ZqS0VhVE85RnpjSkVVdDBzUXZ5cFExY3hLS2FPaFphcm5aYlZaT0t5eDQyZXc0YXp0amk?oc=5",
+          "source": "FintechNews CH",
+          "publishedAt": "2025-04-02T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "vivere-partners",
+      "name": "Vivere Partners",
+      "count": 1,
+      "firstSeen": "2025-04-02T07:00:00.000Z",
+      "lastSeen": "2025-04-02T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Business Wire"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Vivere Partners Raises $7.5M Series A to Launch Transformative Specialty Insurance Platform",
+          "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPdE5ieXpDTTJfS24xRTFHT0JwYjJGN1pwYm43S3dzdi1YRkxibk05dGxDNXQ5Umlhc0hLYmVkdGdNS0RTRE5NQkwtZTE0d2NDdXB4UUtTNmkxeU11S3p3VjBkaDltcVE3dW9GR1VmVnNvbmhkMmtnYU0xc2lLLU9ySlROdXZueFFxRmtubFpmeFB1aFUwbS1wNEE4cTl2emJMYU1iOThjUnpZSmFrRW1xVk9VMmw0WjlCNjIwUmRXb1BwQWR6WHRkMUl4YTludHNYZU5mdGRiSEo2Y2pzSzBXcFAzcWk?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2025-04-02T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "kay-ai",
+      "name": "Kay.ai",
+      "count": 1,
+      "firstSeen": "2025-03-28T07:00:00.000Z",
+      "lastSeen": "2025-03-28T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Business Wire"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Kay.ai Raises $3M to Eliminate Data Entry Work in Insurance Operations",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNWVJaUDB5c05ORUlCa3JZaXJvUEZBRkhDV3d6NHNoTGJueE84MGp2aDRqbkl0VjMxcHAwZkQxcW5FSnVEQXE0N0N6OXZ6VDlzU2lBU2ZaV1RVRnZxVGRNYkctTnZJOHFmMW9uOFFmb3Npb0lzaVNBalgtSHFJOHJoRWhPZ3NFX2ctanZ1dXZfbUF6Z1VwZFdUMFVZZ3Jtc2Uyc0lUMV92dTFLUmd1QWhzWV9aNU84Qk5BVXV0UDlZTmxSZktVS05sLQ?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2025-03-28T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "bank-negara-malaysia",
+      "name": "Bank Negara Malaysia",
+      "count": 1,
+      "firstSeen": "2025-03-27T07:00:00.000Z",
+      "lastSeen": "2025-03-27T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "Fintech News Malaysia"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "What is Bank Negara Malaysia Doing to Tackle Rising Insurance Premiums?",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPU291bWkxdmd1WWc2anNPd2xlVUdYUUNUMmJLWW1NOGRNcXhVX1hrRG45eEpRblc2OTF0S3piclBfOXNrTTlRTnpYdV9ZdFUwVXhtb0dSeWxva1Vsd0o3ZmcyeC10a3htVUV2WE02eXRsNjJFalk4VExWTHNmTEw2MlFKOWtMTTJUc2c?oc=5",
+          "source": "Fintech News Malaysia",
+          "publishedAt": "2025-03-27T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "webdoc",
+      "name": "WEBDOC",
+      "count": 1,
+      "firstSeen": "2025-03-27T07:00:00.000Z",
+      "lastSeen": "2025-03-27T07:00:00.000Z",
+      "topics": [],
+      "sources": [
+        "ProPakistani"
+      ],
+      "related": [
+        {
+          "slug": "easypaisa",
+          "name": "easypaisa",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "100% Off on Monthly Insurance Plans from WEBDOC, the Leading Health & InsurTech Innovator through easypaisa Insurance Marketplace",
+          "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNTUVIN0tSRENSRmVMQ3ZaTEpmeG92UExMM1pTRU93OUdWOEhvajB3X3R1NTcwQUdkRzVDU3BueFhzSzRMaXVQdWxxN1ZJbjhuUUFXc05uZWs4c2VtSklMUDBQcUJjQkRUcVRWZnNxV1VvTFBJM1lFUTl5dV9xVTc2ZGZMT3RhdE9qRzZGSEUtTzlzaFlkdm9BTmpJN3o5a3BJSXRJT1BaOE9JdEx3UC15UmN5ZnJWYjFxX255SkljZjR4UmU3MnNZcHFET2Z2TXlxSzZDalZpVFNzamxlU0oxanFQOVRveXdsSmpRal9wenh2MGvSAfgBQVVfeXFMTXdpWldUZ0ZoVEJrYmN1bmJGM0hBMmhwMElHZ0MwWEU2WWhuT1o2UVl5QnRjeHRzLUk0VVAycFExSmJSSlFrQ20tbktTeWFMNlcyeEFKMUswSkdnUnhHMWtYVnpDYnphRV9OWmZTdjAzUGFSUEk1SDFhUmUtajF1Ul9aejk2M0ZqRW5qN09jd0dteDRiaFA4VmZWbzhCMDRGUlVKVl8zcWxLWTBLZEVITE1QWWRxU2lvdVRFRHRpQkJWeGRGUjVwSFJHQzRqSzY5Z3NIb0RoTjZnUV9YVkIzb091V1FRLUhtRVJoeERRRzUwSmZGME1Pc1o?oc=5",
+          "source": "ProPakistani",
+          "publishedAt": "2025-03-27T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "easypaisa"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "vip-software",
+      "name": "VIP Software",
+      "count": 1,
+      "firstSeen": "2025-03-27T07:00:00.000Z",
+      "lastSeen": "2025-03-27T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "PR Newswire"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "VIP Software Announces Key Leadership Promotions to Drive the Future of Insurance Technology",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOSTkwRTNzOEl1S0RfQ3JTNS1oUnhGRlo3VTJzUjNqTmI0TmROWlJoeW95US1mZ05nQmtVT0MzRl94SlpKSEpfTmxvWlpQWGJ4UFBXZDRrWHRYa2hoTHdoZ1ZvM1EwUjYtTk1nTXdWQm93T3poTTI0OERES3V6dUZ3bTVKbzlQRnh6TEppZk13WTgzUjdBdV8ybFdKOVBHYURiOE85YnpQb2JwR3Jwcko0d1NMTURkdTROVUFRMW9DeEVkQi1FbnNYQ3NJRWoyNUMyZDFELXNVVlZGMHpxOHpPOU9n?oc=5",
+          "source": "PR Newswire",
+          "publishedAt": "2025-03-27T07:00:00.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "nairi-insurance",
+      "name": "Nairi Insurance",
+      "count": 1,
+      "firstSeen": "2025-03-27T07:00:00.000Z",
+      "lastSeen": "2025-03-27T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Health & Life",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Banks.am"
+      ],
+      "related": [
+        {
+          "slug": "mistral-ai",
+          "name": "Mistral AI",
+          "count": 1
+        },
+        {
+          "slug": "alan",
+          "name": "Alan",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Nairi Insurance to collaborate with European Mistral AI and ALAN in digital healthcare",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFAwY19GS19aMnlCX0JPQlZjR0s0ZDA3ZXpRelQ0bjhYcVhrUTFTdk9PclUzYWk3TEp3SHFDOHJ2U0pVNGROUktzMi1IaWpFaWpI?oc=5",
+          "source": "Banks.am",
+          "publishedAt": "2025-03-27T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "mistral-ai",
+            "alan"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "mistral-ai",
+      "name": "Mistral AI",
+      "count": 1,
+      "firstSeen": "2025-03-27T07:00:00.000Z",
+      "lastSeen": "2025-03-27T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Health & Life",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Banks.am"
+      ],
+      "related": [
+        {
+          "slug": "nairi-insurance",
+          "name": "Nairi Insurance",
+          "count": 1
+        },
+        {
+          "slug": "alan",
+          "name": "Alan",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Nairi Insurance to collaborate with European Mistral AI and ALAN in digital healthcare",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFAwY19GS19aMnlCX0JPQlZjR0s0ZDA3ZXpRelQ0bjhYcVhrUTFTdk9PclUzYWk3TEp3SHFDOHJ2U0pVNGROUktzMi1IaWpFaWpI?oc=5",
+          "source": "Banks.am",
+          "publishedAt": "2025-03-27T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "nairi-insurance",
+            "alan"
+          ]
         }
       ]
     }
