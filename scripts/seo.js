@@ -1376,7 +1376,7 @@ ${header("funding")}
       <h1 class="tagline">Insurtech funding rounds</h1>
       <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
       <p class="dek">
-        Every insurtech raise with a disclosed dollar figure, pulled from
+        Compiles insurtech raises with disclosed dollar figures, pulled from
         across the trade press and deduplicated into one table. For the
         reporting behind the numbers, see <a href="/topic/funding/">funding coverage</a>.
       </p>
