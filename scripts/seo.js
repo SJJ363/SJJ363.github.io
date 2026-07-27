@@ -114,6 +114,25 @@ function isoDate(iso) {
 const FAVICON =
   'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23f7f4ee%22/><rect x=%2222%22 y=%2226%22 width=%228%22 height=%2250%22 fill=%22%239a2b1e%22/><rect x=%2238%22 y=%2234%22 width=%2240%22 height=%227%22 fill=%22%231c1a15%22/><rect x=%2238%22 y=%2249%22 width=%2240%22 height=%225%22 fill=%22%23837d70%22/><rect x=%2238%22 y=%2260%22 width=%2228%22 height=%225%22 fill=%22%23837d70%22/></svg>';
 
+/* ── Analytics ──────────────────────────────────────────────────
+   One Google tag for the whole site, written here and nowhere else.
+   Generated pages pick it up from head(); the three hand-authored
+   pages take the identical block through their SEO:GA marker. That
+   split is the only way a page can end up with two tags — so never
+   paste a second gtag snippet into a page, change GA_ID here.
+   Set GA_ID="" to build a tag-free copy (local checks, forks). ── */
+const GA_ID = process.env.GA_ID ?? "G-TMPWQVXYLF";
+const ANALYTICS = GA_ID
+  ? `  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${escAttr(GA_ID)}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${escAttr(GA_ID)}');
+  </script>`
+  : "";
+
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
@@ -147,7 +166,7 @@ function head({
   return `<!DOCTYPE html>
 <html lang="${SITE.lang}">
 <head>
-  <meta charset="UTF-8" />
+${ANALYTICS ? ANALYTICS + "\n" : ""}  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${escHtml(title)}</title>
   <meta name="description" content="${escAttr(desc)}" />
@@ -1570,6 +1589,30 @@ function replaceBlock(html, marker, content) {
   return html;
 }
 
+/* The hand-authored pages don't go through head(), so the Google tag
+   reaches them the same way the nav does — through a marker, refreshed
+   every build. company.html is in the list for completeness; it is a
+   redirect shim that replaces the location before the async tag can
+   load, so it will rarely record a hit. */
+const GA_PAGES = ["index.html", "companies.html", "company.html"];
+
+function injectAnalytics() {
+  let n = 0;
+  for (const file of GA_PAGES) {
+    const p = path.join(ROOT, file);
+    if (!fs.existsSync(p)) continue;
+    const html = fs.readFileSync(p, "utf8");
+    const next = replaceBlock(html, "GA", ANALYTICS);
+    if (next !== html) fs.writeFileSync(p, next);
+    n++;
+  }
+  console.log(
+    GA_ID
+      ? `  ✓ Google tag ${GA_ID} on ${n} hand-authored page${n === 1 ? "" : "s"}`
+      : `  ✓ analytics disabled (GA_ID empty) — tag cleared from ${n} page${n === 1 ? "" : "s"}`
+  );
+}
+
 function injectHomepage(news) {
   const p = path.join(ROOT, "index.html");
   let html = fs.readFileSync(p, "utf8");
@@ -1821,6 +1864,7 @@ function main() {
   buildBriefPages(briefs);
   buildTopicPages(topics, db, deals);
   buildFundingPages(deals, months);
+  injectAnalytics();
   injectHomepage(news);
   injectCompaniesIndex(db);
   buildSitemap(news, db, briefs, topics, months, deals);

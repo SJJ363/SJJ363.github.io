@@ -48,6 +48,22 @@ produce all of that consistently — **route new pages through them.**
    story count, so the nav doesn't reshuffle across ~200 pages every run. The
    Topics menu is a `<details>`, so it opens with no JS at all; `/nav.js` only
    adds dismiss-on-Escape and dismiss-on-outside-click.
+2c. **The Google tag is generated too, and there is exactly one of it.**
+   `GA_ID` + `ANALYTICS` in `seo.js` hold the only copy of the gtag.js
+   snippet: generated pages get it from `head()`, and `index.html`,
+   `companies.html` and `company.html` take the identical block through
+   their `<!-- SEO:GA -->…<!-- /SEO:GA -->` markers, refreshed every
+   build. **Never paste a second snippet into a page** — two tags on one
+   page double every pageview, and unlike a broken link it looks fine
+   until the numbers are wrong. A new hand-authored page needs the marker
+   pair and its filename in `GA_PAGES`; a new *generated* page type needs
+   nothing, it inherits the tag with the rest of the head. The tag sits
+   immediately after `<head>`, ahead of `<meta charset>`, which is where
+   Google's own instructions put it — it is ~330 bytes, so charset still
+   lands inside the 1024-byte window browsers sniff. Changing the property
+   means changing `GA_ID` and re-running `seo.js`, nothing else; setting
+   `GA_ID=""` builds a tag-free copy, which is what a fork or a local
+   check should use rather than sending hits to the real property.
 3. **Company pages live at `/company/<slug>/`** as real static HTML — fully
    server-rendered (work without JS) and regenerated each run. Never link
    companies via `company.html?c=…`; use `/company/<slug>/`. `company.html` is a
