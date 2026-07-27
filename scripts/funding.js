@@ -45,16 +45,65 @@ const GENERIC = new Set(
    "extension backs backed valuation firm company").split(/\s+/)
 );
 
-// First dollar figure in a headline → millions (best-effort).
-function amountM(text) {
-  const m = text.match(/\$\s?([\d,.]+)\s?(k|m|mn|bn|b|million|billion|thousand)?/i);
-  if (!m) return 0;
+/* Wording that makes a dollar figure a company's *valuation* rather than
+   the money it raised. The two are an order of magnitude apart and both
+   sit in the same headline — "Ominimo reaches $1.6 bn valuation after
+   Series B" filed a $22.5M round as a $1.6B one, which is the single
+   worst thing a funding tracker can get wrong.
+
+   Deliberately narrow: only phrasing that attaches to a figure. "Unicorn"
+   is left out on purpose — it describes the company, not the number, so
+   testing for it would throw away the genuine raise in "X becomes a
+   unicorn after $50M round".
+
+   A valuation phrase between two figures belongs to exactly one of them,
+   and which one is a matter of direction: "$1.6B valuation" points back
+   at the figure it follows, "valued at $1.6B" points forward at the one
+   it precedes. So both patterns are anchored to the figure's edge —
+   testing for the bare word anywhere nearby condemns the raise as well
+   as the valuation in "raises $30M, bringing its valuation to $1.2B". */
+// The trailing lookahead keeps a phrase that only *reads* as trailing from
+// claiming the figure behind it: in "secures $30M — market cap of $1.2B",
+// "market cap of" is pointing forward at the next number, not back at this one.
+const VALUATION_AFTER =
+  /^[\s,;:–—-]*(?:(?:post|pre)[- ]?money\s+)?(?:valuation|market cap)\b(?!\s+(?:of|at|to)\b)/i;
+const VALUATION_BEFORE =
+  /(?:valued(?:\s+at)?|valuation\s+(?:of|at|to)|\bworth|market cap\s+of)\s+(?:a|an|about|roughly|nearly|around|some|over|almost)?\s*$/i;
+
+const FIGURE = /\$\s?([\d,.]+)\s?(k|m|mn|bn|b|million|billion|thousand)?/gi;
+
+function toMillions(m) {
   const n = parseFloat(m[1].replace(/,/g, ""));
   if (!isFinite(n)) return 0;
   const u = (m[2] || "").toLowerCase();
   if (u === "bn" || u === "b" || u === "billion") return n * 1000;
   if (u === "k" || u === "thousand") return n / 1000;
   return n; // m / mn / million / bare
+}
+
+/* The raise in a headline → millions (best-effort): the first dollar
+   figure that isn't a valuation.
+
+   Each figure is read with the text on either side of it, clipped at the
+   neighbouring figures so no number is judged on wording that belongs to
+   the one next to it.
+
+   A headline whose only number is a valuation returns 0 and so isn't a
+   deal at all — undercounting is the contract here, and a valuation
+   printed in the amount column is worse than a missing row. */
+function amountM(text) {
+  text = String(text);
+  const hits = [...text.matchAll(FIGURE)];
+  for (let i = 0; i < hits.length; i++) {
+    const m = hits[i];
+    const from = i === 0 ? 0 : hits[i - 1].index + hits[i - 1][0].length;
+    const to = i === hits.length - 1 ? text.length : hits[i + 1].index;
+    if (VALUATION_BEFORE.test(text.slice(from, m.index))) continue;
+    if (VALUATION_AFTER.test(text.slice(m.index + m[0].length, to))) continue;
+    const v = toMillions(m);
+    if (v > 0) return v;
+  }
+  return 0;
 }
 
 function distinctiveWords(title) {

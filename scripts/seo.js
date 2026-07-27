@@ -1244,7 +1244,9 @@ const METHOD_NOTE = `    <section class="method">
         publication states a figure in US dollars, so raises disclosed
         only in other currencies, and rounds closed without a number, are
         absent. Market-size forecasts, earnings, acquisition prices and
-        catastrophe losses are excluded. The same round reported by
+        catastrophe losses are excluded, as are valuations — a headline
+        that gives only what a company is now worth, and not what it
+        raised, is not counted as a round. The same round reported by
         several outlets is collapsed into one row, with the extra outlets
         counted in the source column. Stage and lead investor are filled
         in only where a headline states them outright and left blank
