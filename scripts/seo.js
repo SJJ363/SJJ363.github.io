@@ -117,7 +117,7 @@ const FAVICON =
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=18" />
+  <link rel="stylesheet" href="/style.css?v=19" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -129,6 +129,9 @@ function head({
   ogType = "website",
   jsonld = [],
   robots = "index, follow, max-image-preview:large, max-snippet:-1",
+  // Page-specific enhancement scripts (deferred, additive). The page must
+  // still be complete without them — see rule 5 in CLAUDE.md.
+  scripts = [],
 }) {
   const desc = clamp(description);
   const ogImg = url(SITE.ogImage);
@@ -167,7 +170,9 @@ function head({
     SITE.twitter ? `\n  <meta name="twitter:site" content="${escAttr(SITE.twitter)}" />` : ""
   }
 
-${HEAD_ASSETS}
+${HEAD_ASSETS}${scripts
+    .map((s) => `\n  <script src="${escAttr(s)}" defer></script>`)
+    .join("")}
 ${ld ? "\n" + ld + "\n" : ""}</head>`;
 }
 
@@ -1061,6 +1066,10 @@ function buildTopicPages(topics, db, deals = []) {
    linked, but noindex and out of the sitemap until it fills up. */
 const MONTH_MIN_DEALS = 3;
 
+/* Table enhancement (stage filtering + column sorting). Versioned like the
+   other assets so a change isn't held behind a cached copy. */
+const FUNDING_JS = "/funding.js?v=1";
+
 const monthKey = (iso) => String(iso || "").slice(0, 7); // 2026-07
 function monthLabel(key) {
   const d = new Date(key + "-01T00:00:00Z");
@@ -1146,17 +1155,31 @@ function collectDeals(news, db) {
 }
 
 /* One row. The company cell links to its page when we know it (internal
-   link into the archive), the headline links out to whoever reported it. */
+   link into the archive), the headline links out to whoever reported it.
+
+   Both link cells carry .deal-link: in a dense financial table the site's
+   bare `a { color: inherit }` makes a link indistinguishable from the text
+   beside it, and a reader who doesn't know the cells are clickable never
+   reaches the company archive or the reporting.
+
+   The sort/filter keys are attributes on the <tr>, not values re-parsed
+   out of the rendered cells — "$1.2B" and "Jul 3, 2026" are display
+   formats, and a client that has to reverse them will eventually disagree
+   with the formatter about what they meant. */
 function dealRow(d) {
   const co = d.company
-    ? `<a href="/company/${escAttr(d.company.slug)}/">${escHtml(d.company.name)}</a>`
+    ? `<a class="deal-link" href="/company/${escAttr(d.company.slug)}/">${escHtml(
+        d.company.name
+      )}</a>`
     : escHtml((d.title.split(/\s+(?:raises|secures|lands|closes|bags|nets)\b/i)[0] || "—").trim());
   const outlets = [d.source, ...(d.alsoReportedBy || [])].filter(Boolean);
   const also =
     outlets.length > 1
       ? `<span class="deal-also" title="${escAttr(outlets.join(", "))}">+${outlets.length - 1}</span>`
       : "";
-  return `        <tr>
+  return `        <tr data-stage="${escAttr(d.stage || "")}" data-amount="${
+    Number(d.amountM) || 0
+  }" data-date="${escAttr(isoDate(d.publishedAt))}">
           <td class="deal-co">${co}</td>
           <td class="deal-amt">${escHtml(money(d.amountM))}</td>
           <td class="deal-stage">${d.stage ? escHtml(d.stage) : '<span class="deal-blank">—</span>'}</td>
@@ -1164,24 +1187,42 @@ function dealRow(d) {
           <td class="deal-date"><time datetime="${escAttr(isoDate(d.publishedAt))}">${escHtml(
     fullDate(d.publishedAt)
   )}</time></td>
-          <td class="deal-src"><a href="${escAttr(
+          <td class="deal-src"><a class="deal-link" href="${escAttr(
             d.link
-          )}" target="_blank" rel="noopener noreferrer">${escHtml(d.source || "source")}</a>${also}</td>
+          )}" target="_blank" rel="noopener noreferrer">${escHtml(
+    d.source || "source"
+  )}<span class="deal-ext" aria-hidden="true">↗</span></a>${also}</td>
         </tr>`;
+}
+
+/* Amount and Announced are sortable; the other four aren't (Company and
+   Lead are unranked names, Stage has its own filter, Source is the
+   outlet). The control is the header itself — a <button> inside the <th>
+   so it's reachable by keyboard and announced as a control, with aria-sort
+   on the <th> carrying the state. Without JS it renders as plain header
+   text: the caret and the pointer only appear once funding.js has marked
+   the document enhanced. */
+function sortableTh(label, key) {
+  return `            <th scope="col" class="th-sort" aria-sort="none">
+              <button type="button" class="th-sort-btn" data-sort="${escAttr(key)}">${escHtml(
+    label
+  )}<span class="sort-caret" aria-hidden="true"></span></button>
+            </th>`;
 }
 
 function dealTable(deals, caption) {
   if (!deals.length) return `    <p class="empty">No disclosed rounds yet in this period.</p>`;
-  return `    <div class="table-wrap">
-      <table class="deal-table">
+  return `    <p class="deal-status" id="deal-status" role="status" hidden></p>
+    <div class="table-wrap">
+      <table class="deal-table" data-deal-table>
         <caption class="sr-only">${escHtml(caption)}</caption>
         <thead>
           <tr>
             <th scope="col">Company</th>
-            <th scope="col">Amount</th>
+${sortableTh("Amount", "amount")}
             <th scope="col">Stage</th>
             <th scope="col">Lead investor</th>
-            <th scope="col">Announced</th>
+${sortableTh("Announced", "date")}
             <th scope="col">Source</th>
           </tr>
         </thead>
@@ -1210,6 +1251,11 @@ const METHOD_NOTE = `    <section class="method">
         otherwise. Totals are therefore a floor on real activity, not a
         market estimate. Figures link to the reporting they come from —
         check it before citing.
+      </p>
+      <p class="method-text">
+        This tracker is a work in progress, and data may contain errors
+        and/or some rounds may be missing from this tracker. We do not
+        guarantee the accuracy or completeness of the data tracked here.
       </p>
     </section>`;
 
@@ -1266,13 +1312,21 @@ function fundingIndexHtml(deals, months) {
 
   const factBlocks = [];
   if (stages.length) {
-    factBlocks.push(`      <div class="co-fact">
-        <h2 class="fact-label">By stage</h2>
-        <div class="tags">${stages
+    // The stage pills looked like controls long before they were any, so
+    // they are now the filter: real <button>s with aria-pressed, multi-select
+    // (an OR across the selected stages), driven by funding.js. Server-side
+    // they still read as the stage breakdown they always were, which is what
+    // a crawler and a JS-less reader get.
+    factBlocks.push(`      <div class="co-fact co-fact-wide">
+        <h2 class="fact-label">By stage <span class="fact-hint">— select to filter the table</span></h2>
+        <div class="tags stage-filters" role="group" aria-label="Filter rounds by stage">${stages
           .map(
-            ([s, c]) => `<span class="tag-pill">${escHtml(s)} <span class="cnt">${c}</span></span>`
+            ([s, c]) =>
+              `<button type="button" class="tag-pill stage-filter" data-stage="${escAttr(
+                s
+              )}" aria-pressed="false">${escHtml(s)} <span class="cnt">${c}</span></button>`
           )
-          .join("")}</div>
+          .join("")}<button type="button" class="stage-clear" hidden>Clear</button></div>
       </div>`);
   }
   if (biggest) {
@@ -1280,7 +1334,9 @@ function fundingIndexHtml(deals, months) {
         <h2 class="fact-label">Largest round</h2>
         <p class="co-sources"><b>${escHtml(money(biggest.amountM))}</b> — ${
       biggest.company
-        ? `<a href="/company/${escAttr(biggest.company.slug)}/">${escHtml(biggest.company.name)}</a>`
+        ? `<a class="deal-link" href="/company/${escAttr(biggest.company.slug)}/">${escHtml(
+            biggest.company.name
+          )}</a>`
         : escHtml(biggest.title)
     }</p>
       </div>`);
@@ -1302,7 +1358,13 @@ function fundingIndexHtml(deals, months) {
     ? `    <section class="co-facts">\n${factBlocks.join("\n")}\n    </section>`
     : "";
 
-  return `${head({ title, description, canonical, jsonld: [datasetLd, crumbLd] })}
+  return `${head({
+    title,
+    description,
+    canonical,
+    jsonld: [datasetLd, crumbLd],
+    scripts: [FUNDING_JS],
+  })}
 <body>
 ${header("funding")}
 
@@ -1393,6 +1455,9 @@ function fundingMonthHtml(m, newer, older) {
     canonical,
     jsonld: thin ? [crumbLd] : [datasetLd, crumbLd],
     robots: thin ? "noindex, follow" : undefined,
+    // No stage filters on a month page (there's no facts block), but the
+    // table sorts the same way — one script, one behaviour.
+    scripts: [FUNDING_JS],
   })}
 <body>
 ${header("funding")}

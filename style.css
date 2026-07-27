@@ -653,7 +653,27 @@ main {
 .deal-table tbody tr:hover td { background: rgba(28, 26, 21, 0.022); }
 
 .deal-co { font-weight: 600; color: var(--ink); min-width: 11ch; }
-.deal-co a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* Cells that are links have to look like links. The site's bare
+   `a { color: inherit }` is right for a headline that fills its own row
+   and wrong inside a dense table, where an unmarked link is just text —
+   readers were never finding the company archive or the reporting. So
+   the accent colour and a soft underline are on by default, and both
+   firm up on hover. Also used for the Largest round company. */
+.deal-link {
+  color: var(--accent-deep);
+  text-decoration: underline; text-underline-offset: 2px;
+  text-decoration-thickness: 1px; text-decoration-color: rgba(154, 43, 30, 0.3);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+.deal-link:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.deal-co .deal-link { font-weight: 600; }
+/* Marks the source link as leaving the site — the one link in the row
+   that doesn't go deeper into the archive. */
+.deal-ext {
+  margin-left: 3px; font-size: 0.78em; line-height: 1;
+  text-decoration: none; display: inline-block;
+}
 .deal-amt {
   font-family: var(--serif); font-size: 1.06rem; font-weight: 600;
   color: var(--ink); white-space: nowrap;
@@ -662,10 +682,83 @@ main {
 .deal-lead { color: var(--ink-2); font-size: 0.88rem; }
 .deal-blank { color: var(--ink-4); }
 .deal-src { white-space: nowrap; font-size: 0.84rem; color: var(--ink-3); }
-.deal-src a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 .deal-also {
   margin-left: 5px; padding: 1px 5px; border-radius: 2px;
   background: var(--paper-2); color: var(--ink-3); font-size: 0.72rem; font-weight: 600;
+}
+
+/* ---- Sortable column headers (Amount, Announced) ----
+   The control is the header itself. Everything below the [data-dealui]
+   guard only applies once funding.js has run: on a page served without
+   it these render as ordinary header text, with no caret and no pointer
+   promising a sort that can't happen. */
+.deal-table th.th-sort { padding: 0; }
+.th-sort-btn {
+  -webkit-appearance: none; appearance: none;
+  font: inherit; letter-spacing: inherit; text-transform: inherit;
+  color: inherit; background: none; border: 0;
+  padding: 10px 14px 9px 0; margin: 0;
+  display: inline-flex; align-items: center; gap: 5px;
+  cursor: default;
+}
+.sort-caret { display: none; }
+
+body[data-dealui="on"] .th-sort-btn { cursor: pointer; transition: color 0.15s ease; }
+body[data-dealui="on"] .th-sort-btn:hover { color: var(--ink); }
+body[data-dealui="on"] .sort-caret {
+  display: inline-block; width: 0; height: 0;
+  border-left: 3.5px solid transparent; border-right: 3.5px solid transparent;
+  border-top: 4px solid var(--ink-4); opacity: 0.45;
+}
+body[data-dealui="on"] .th-sort-btn:hover .sort-caret { opacity: 0.8; }
+/* Active column: the caret points the way the rows run. */
+body[data-dealui="on"] .th-sort-btn[data-dir] { color: var(--ink); }
+body[data-dealui="on"] .th-sort-btn[data-dir="desc"] .sort-caret,
+body[data-dealui="on"] .th-sort-btn[data-dir="asc"] .sort-caret {
+  border-top-color: var(--accent); opacity: 1;
+}
+body[data-dealui="on"] .th-sort-btn[data-dir="asc"] .sort-caret {
+  border-top: 0; border-bottom: 4px solid var(--accent);
+}
+
+/* ---- Stage filters ----
+   Same pills as before, now buttons. Multi-select, so the pressed state
+   has to be unmistakable at a glance across a row of six. */
+.fact-hint { display: none; font-weight: 500; text-transform: none; letter-spacing: 0.02em; color: var(--ink-4); }
+body[data-dealui="on"] .fact-hint { display: inline; }
+
+.co-fact-wide { flex: 1 1 100%; }
+
+button.tag-pill {
+  -webkit-appearance: none; appearance: none;
+  display: inline-flex; align-items: baseline; gap: 5px;
+  cursor: default; margin: 0;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+body[data-dealui="on"] .stage-filter { cursor: pointer; }
+body[data-dealui="on"] .stage-filter:hover { border-color: var(--ink-3); color: var(--ink); }
+body[data-dealui="on"] .stage-filter[aria-pressed="true"] {
+  color: var(--paper); background: var(--ink); border-color: var(--ink);
+}
+body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247, 244, 238, 0.6); }
+.stage-filter .cnt { color: var(--ink-4); font-size: 0.9em; }
+
+.stage-clear {
+  font-family: var(--sans); font-size: 0.68rem; font-weight: 600; line-height: 1.5;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--accent); background: none; border: 0;
+  padding: 2px 4px; cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
+}
+.stage-clear:hover { color: var(--accent-deep); }
+
+/* Live count of what the filters left standing. */
+.deal-status {
+  margin: 14px 0 0; font-size: 0.76rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3);
+  font-feature-settings: "tnum" 1;
+}
+.deal-empty-row td {
+  padding: 26px 0; text-align: center; color: var(--ink-3); font-size: 0.9rem;
 }
 
 /* Disclosure note — small print, but the part that earns the citation. */
@@ -674,6 +767,7 @@ main {
   margin: 0; max-width: 62ch;
   font-size: 0.86rem; line-height: 1.6; color: var(--ink-3);
 }
+.method-text + .method-text { margin-top: 13px; }
 
 /* Pointer from the funding hub across to the tracker. */
 .topic-cue {
