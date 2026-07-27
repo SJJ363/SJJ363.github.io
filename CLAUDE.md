@@ -118,10 +118,15 @@ produce all of that consistently — **route new pages through them.**
 3b-ii. **The publishing clock lives in `scripts/schedule.js`, not in cron.**
    The wire refreshes at 08:00, 13:00 and 18:00 CT on weekdays and once at
    13:00 CT at weekends; the brief is written **once a day**, on the first
-   refresh of that day. GitHub's cron is UTC-only and DST-blind, so `news.yml`
-   fires at every UTC hour either offset could put a slot on
-   (`0,13,14,18,19,23`) and `schedule()` decides which firing is real —
-   **half of them are no-ops by design.** Three things follow from that:
+   refresh of that day. `news.yml` fires **hourly** and `schedule()` decides
+   which firing is a real slot — **~21 of the 24 are no-ops by design**, and
+   the cron deliberately encodes none of the schedule. Hourly rather than
+   slot-specific because GitHub's `schedule` is best-effort and reliably late
+   here (every run in the five days to 2026-07-27 landed 1–4h after its cron
+   time), so more firings means a shorter wait before *some* run lands to
+   serve the slot; it also sidesteps DST, which a UTC cron cannot express.
+   Punctuality is not achievable this way at all — that needs an external
+   trigger hitting the `workflow_dispatch` API. Three things follow:
    • **A slot is "served" by comparing `news.json`'s `updatedAt` to the most
      recent slot, not by matching a clock time.** That is what makes the
      wrong-offset firing an hour later exit quietly *and* lets a slot whose

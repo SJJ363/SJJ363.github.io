@@ -4,15 +4,26 @@ name: Refresh insurtech news
 #   Mon–Fri  08:00, 13:00, 18:00 CT   (the brief is written on the 08:00 run)
 #   Sat–Sun  13:00 CT only            (the brief is written on that run)
 #
-# GitHub's cron is UTC-only and does not observe DST, so every slot is listed
-# at both the hour CDT (UTC−5) puts it on and the hour CST (UTC−6) does, and
-# scripts/schedule.js decides which firing is the real one. Half of these
-# firings are no-ops by design; the gate job exits in seconds.
+# The cron itself carries none of that. It fires hourly and scripts/schedule.js
+# decides which firing is a real slot, so ~21 of the 24 are no-ops that exit in
+# seconds. Two reasons it is hourly rather than the six UTC hours the slots
+# actually fall on:
 #
-#   13,14 UTC → 08:00 CT     18,19 UTC → 13:00 CT     23,0 UTC → 18:00 CT
+#  1. GitHub's `schedule` is best-effort, and on this repo it is *reliably*
+#     late — every scheduled run over the five days before 2026-07-27 landed
+#     1h01m to 3h43m after its cron time, not one of them on time. Firing
+#     hourly doesn't make a run punctual, but it shortens the wait between a
+#     slot opening and some firing actually landing to serve it, since the gate
+#     hands the slot to whichever run gets there first.
+#  2. It makes DST a non-issue. A slot-specific cron would have to list each
+#     slot at both its CDT (UTC−5) and CST (UTC−6) hour and would still be
+#     wrong for the fortnight when the US and EU offsets disagree.
+#
+# If the wire ever needs to land *punctually*, cron is the wrong tool: an
+# external trigger calling the workflow_dispatch API skips this queue entirely.
 on:
   schedule:
-    - cron: "0 0,13,14,18,19,23 * * *"
+    - cron: "0 * * * *"
   workflow_dispatch:
     inputs:
       brief:
