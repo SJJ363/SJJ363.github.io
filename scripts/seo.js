@@ -25,6 +25,7 @@ const fs = require("fs");
 const path = require("path");
 const { RELEVANCE, onTopic } = require("./relevance");
 const { TAXONOMY, FALLBACK_TAG, tagArticle } = require("./taxonomy");
+const { fundingDeals } = require("./funding");
 
 const ROOT = path.join(__dirname, "..");
 const NEWS = path.join(ROOT, "data", "news.json");
@@ -116,7 +117,7 @@ const FAVICON =
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=17" />
+  <link rel="stylesheet" href="/style.css?v=18" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -201,6 +202,10 @@ function setNavTopics(topics) {
 
 function navMarkup(active, currentTopic = "") {
   const cls = (n) => (n === active ? ' class="active" aria-current="page"' : "");
+  // Funding sits at top level rather than inside Topics: /topic/funding/ is
+  // the story feed, /funding/ is the deal table, and the table is the thing
+  // worth a permanent slot — it's the only page here that isn't a list of
+  // someone else's headlines.
   // No topics built yet (a first run, or an injection before the hubs
   // exist) — degrade to the plain link rather than an empty menu.
   const topics = NAV_TOPICS.length
@@ -221,6 +226,7 @@ ${NAV_TOPICS.map(
   return `    <nav class="nav" aria-label="Sections">
       <a href="/"${cls("wire")}>The Wire</a>
       <a href="/brief/"${cls("brief")}>The Brief</a>
+      <a href="/funding/"${cls("funding")}>Funding</a>
 ${topics}
       <a href="/companies.html"${cls("companies")}>Companies</a>
     </nav>`;
@@ -797,7 +803,7 @@ function collectTopics(news) {
 
 const STORY_CAP = 60; // page weight guard; the count in the statline is the true total
 
-function topicPageHtml(topic, allTopics, db) {
+function topicPageHtml(topic, allTopics, db, deals = []) {
   const canonical = `/topic/${topic.slug}/`;
   const n = topic.articles.length;
   const word = n === 1 ? "story" : "stories";
@@ -854,6 +860,17 @@ function topicPageHtml(topic, allTopics, db) {
   if (oldest) statBits.push(`tracked since ${fullDate(oldest.publishedAt)}`);
   if (newest) statBits.push(`latest ${fullDate(newest.publishedAt)}`);
 
+  // The funding hub and the funding tracker are two views of the same
+  // subject and would otherwise compete for the same queries. Point the
+  // hub at the table explicitly: this page is the reporting, that one is
+  // the numbers, and the link tells both readers and crawlers which is which.
+  const trackerCue =
+    topic.slug === "funding" && deals.length
+      ? `    <p class="topic-cue">Looking for the numbers? The
+      <a href="/funding/">insurtech funding tracker</a> has all ${deals.length}
+      disclosed rounds in one table — amount, stage, lead investor and source.</p>`
+      : "";
+
   const factBlocks = [];
   if (companies.length) {
     factBlocks.push(`      <div class="co-fact">
@@ -909,6 +926,8 @@ ${header("topics", topic.slug)}
       <h1 class="tagline">${escHtml(topic.name)}</h1>
       <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
     </div>
+
+${trackerCue}
 
 ${facts}
 
@@ -1002,7 +1021,7 @@ ${FOOTER}
 `;
 }
 
-function buildTopicPages(topics, db) {
+function buildTopicPages(topics, db, deals = []) {
   const outRoot = path.join(ROOT, "topic");
   fs.mkdirSync(outRoot, { recursive: true });
 
@@ -1019,10 +1038,443 @@ function buildTopicPages(topics, db) {
   for (const t of topics) {
     const dir = path.join(outRoot, t.slug);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, "index.html"), topicPageHtml(t, topics, db));
+    fs.writeFileSync(path.join(dir, "index.html"), topicPageHtml(t, topics, db, deals));
   }
   fs.writeFileSync(path.join(outRoot, "index.html"), topicIndexHtml(topics));
   console.log(`  ✓ ${topics.length} topic pages under /topic/ + index`);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   THE FUNDING TRACKER — /funding/ + /funding/<YYYY-MM>/
+
+   Every other generated page on this site restates headlines the
+   source publications wrote, and competes with them on their own
+   material. This one doesn't: no single outlet covers more than its
+   own rounds, so a deduplicated table across all of them is
+   information that exists nowhere else — which is the whole reason
+   it's worth building, and why it gets a top-level nav slot.
+
+   Deals are re-derived from the persistent store on every build (see
+   funding.js), never persisted, so a fix to the extraction regexes
+   retroactively corrects the whole archive — the same contract
+   taxonomy.js has with tags.
+   ══════════════════════════════════════════════════════════════ */
+
+/* A month page with two rows is the same thin-content liability as a
+   one-story company page, so it gets the same treatment: built and
+   linked, but noindex and out of the sitemap until it fills up. */
+const MONTH_MIN_DEALS = 3;
+
+const monthKey = (iso) => String(iso || "").slice(0, 7); // 2026-07
+function monthLabel(key) {
+  const d = new Date(key + "-01T00:00:00Z");
+  return isNaN(d)
+    ? key
+    : d.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+}
+
+/* $243K / $5.5M / $180M / $1.2B — one formatter so the table, the
+   summary line and the meta description can never disagree. */
+function money(m) {
+  if (!m || m <= 0) return "";
+  if (m >= 1000) {
+    const b = m / 1000;
+    return "$" + (Math.round(b * 10) / 10).toFixed(b < 10 ? 1 : 0) + "B";
+  }
+  if (m < 1) return "$" + Math.round(m * 1000) + "K";
+  return "$" + (Math.round(m * 10) / 10).toFixed(Number.isInteger(m) ? 0 : 1) + "M";
+}
+
+/* Attach the raising company to each deal.
+
+   The company names come from companies.json (Claude-extracted, and far
+   better than anything a regex gets out of a headline), joined on the
+   article link. A headline names both sides of a round — "X raises $Y
+   led by Z" — so of the companies on that article we take the one
+   mentioned EARLIEST in the title, which is the raiser in essentially
+   every headline construction. */
+function attachCompanies(deals, db) {
+  const byLink = new Map();
+  for (const c of db.companies || []) {
+    for (const a of c.articles || []) {
+      if (!a.link) continue;
+      if (!byLink.has(a.link)) byLink.set(a.link, []);
+      byLink.get(a.link).push({ slug: c.slug, name: c.name });
+    }
+  }
+  return deals.map((d) => {
+    const cands = byLink.get(d.link) || [];
+    const ranked = cands
+      .map((c) => ({ ...c, at: d.title.toLowerCase().indexOf(c.name.toLowerCase()) }))
+      .filter((c) => c.at >= 0)
+      .sort((a, b) => a.at - b.at);
+    return { ...d, company: ranked[0] || cands[0] || null };
+  });
+}
+
+/* Second dedup pass, only possible once companies are attached.
+
+   funding.js collapses re-reports by amount + shared headline tokens,
+   which misses the case where two outlets describe one round in barely
+   overlapping words — PolicyStreet's $26M Series C was filed both as
+   "raises Series C to $26 mn" and "Extends Malaysia's Largest Insurtech
+   Funding Round to US$26M", sharing exactly one distinctive token. Same
+   company and same amount inside the window is the same round. */
+function dedupeByCompany(deals) {
+  const kept = [];
+  for (const d of deals) {
+    const dup =
+      d.company &&
+      kept.find(
+        (k) =>
+          k.company &&
+          k.company.slug === d.company.slug &&
+          Math.round(k.amountM) === Math.round(d.amountM) &&
+          Math.abs(new Date(k.publishedAt) - new Date(d.publishedAt)) / 86400000 <= 45
+      );
+    if (dup) {
+      if (d.source && !dup.alsoReportedBy.includes(d.source)) dup.alsoReportedBy.push(d.source);
+      if (!dup.stage) dup.stage = d.stage;
+      if (!dup.lead) dup.lead = d.lead;
+      continue;
+    }
+    kept.push({ ...d, alsoReportedBy: [...d.alsoReportedBy] });
+  }
+  return kept;
+}
+
+function collectDeals(news, db) {
+  const pool = storeArticles();
+  const arts = pool.length ? pool : news.articles || [];
+  return dedupeByCompany(attachCompanies(fundingDeals(arts), db));
+}
+
+/* One row. The company cell links to its page when we know it (internal
+   link into the archive), the headline links out to whoever reported it. */
+function dealRow(d) {
+  const co = d.company
+    ? `<a href="/company/${escAttr(d.company.slug)}/">${escHtml(d.company.name)}</a>`
+    : escHtml((d.title.split(/\s+(?:raises|secures|lands|closes|bags|nets)\b/i)[0] || "—").trim());
+  const outlets = [d.source, ...(d.alsoReportedBy || [])].filter(Boolean);
+  const also =
+    outlets.length > 1
+      ? `<span class="deal-also" title="${escAttr(outlets.join(", "))}">+${outlets.length - 1}</span>`
+      : "";
+  return `        <tr>
+          <td class="deal-co">${co}</td>
+          <td class="deal-amt">${escHtml(money(d.amountM))}</td>
+          <td class="deal-stage">${d.stage ? escHtml(d.stage) : '<span class="deal-blank">—</span>'}</td>
+          <td class="deal-lead">${d.lead ? escHtml(d.lead) : '<span class="deal-blank">—</span>'}</td>
+          <td class="deal-date"><time datetime="${escAttr(isoDate(d.publishedAt))}">${escHtml(
+    fullDate(d.publishedAt)
+  )}</time></td>
+          <td class="deal-src"><a href="${escAttr(
+            d.link
+          )}" target="_blank" rel="noopener noreferrer">${escHtml(d.source || "source")}</a>${also}</td>
+        </tr>`;
+}
+
+function dealTable(deals, caption) {
+  if (!deals.length) return `    <p class="empty">No disclosed rounds yet in this period.</p>`;
+  return `    <div class="table-wrap">
+      <table class="deal-table">
+        <caption class="sr-only">${escHtml(caption)}</caption>
+        <thead>
+          <tr>
+            <th scope="col">Company</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Stage</th>
+            <th scope="col">Lead investor</th>
+            <th scope="col">Announced</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+${deals.map(dealRow).join("\n")}
+        </tbody>
+      </table>
+    </div>`;
+}
+
+/* The disclosure note is the honest part of the tracker and the only
+   prose on it: what's counted, what isn't, and why the total is a
+   floor. Shown on every tracker page. */
+const METHOD_NOTE = `    <section class="method">
+      <h2 class="fact-label">How this is compiled</h2>
+      <p class="method-text">
+        Every row is a funding round announced in the insurtech press and
+        aggregated by Insurtech Daily. A round is counted only when a
+        publication states a figure in US dollars, so raises disclosed
+        only in other currencies, and rounds closed without a number, are
+        absent. Market-size forecasts, earnings, acquisition prices and
+        catastrophe losses are excluded. The same round reported by
+        several outlets is collapsed into one row, with the extra outlets
+        counted in the source column. Stage and lead investor are filled
+        in only where a headline states them outright and left blank
+        otherwise. Totals are therefore a floor on real activity, not a
+        market estimate. Figures link to the reporting they come from —
+        check it before citing.
+      </p>
+    </section>`;
+
+function fundingSummary(deals) {
+  const total = deals.reduce((s, d) => s + d.amountM, 0);
+  const stages = new Map();
+  for (const d of deals) if (d.stage) stages.set(d.stage, (stages.get(d.stage) || 0) + 1);
+  const biggest = deals.slice().sort((a, b) => b.amountM - a.amountM)[0];
+  return { total, stages: [...stages.entries()].sort((a, b) => b[1] - a[1]), biggest };
+}
+
+/* Page-weight guard, the table equivalent of STORY_CAP. The summary line
+   and the totals always count every round — only the rendered rows are
+   capped, and the months below hold the rest. */
+const DEAL_CAP = 150;
+
+function fundingIndexHtml(deals, months) {
+  const canonical = "/funding/";
+  const { total, stages, biggest } = fundingSummary(deals);
+  const n = deals.length;
+  const shown = deals.slice(0, DEAL_CAP);
+  const oldest = deals[n - 1];
+  const title = `Insurtech funding tracker — every disclosed round | ${SITE.name}`;
+  const description =
+    `${n} disclosed insurtech funding round${n === 1 ? "" : "s"} totalling at least ${money(
+      total
+    )} — company, amount, stage, lead investor and source for each, updated through the day.`;
+
+  // A table of rounds genuinely is a dataset; describing it as one is both
+  // accurate and the markup Google's dataset surfaces look for.
+  const datasetLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "Insurtech funding rounds",
+    description: clamp(description, 300),
+    url: url(canonical),
+    keywords: ["insurtech", "funding rounds", "venture capital", "insurance technology"],
+    license: url("/funding/"),
+    isAccessibleForFree: true,
+    creator: { "@type": "Organization", name: SITE.name, url: url("/") },
+    inLanguage: SITE.lang,
+    ...(oldest && deals[0]
+      ? { temporalCoverage: `${isoDate(oldest.publishedAt)}/${isoDate(deals[0].publishedAt)}` }
+      : {}),
+    variableMeasured: ["Company", "Amount raised (USD)", "Round stage", "Lead investor", "Announcement date"],
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Funding tracker", path: canonical },
+  ]);
+
+  const statBits = [`${n} round${n === 1 ? "" : "s"}`, `${money(total)} disclosed`];
+  if (oldest) statBits.push(`since ${fullDate(oldest.publishedAt)}`);
+
+  const factBlocks = [];
+  if (stages.length) {
+    factBlocks.push(`      <div class="co-fact">
+        <h2 class="fact-label">By stage</h2>
+        <div class="tags">${stages
+          .map(
+            ([s, c]) => `<span class="tag-pill">${escHtml(s)} <span class="cnt">${c}</span></span>`
+          )
+          .join("")}</div>
+      </div>`);
+  }
+  if (biggest) {
+    factBlocks.push(`      <div class="co-fact">
+        <h2 class="fact-label">Largest round</h2>
+        <p class="co-sources"><b>${escHtml(money(biggest.amountM))}</b> — ${
+      biggest.company
+        ? `<a href="/company/${escAttr(biggest.company.slug)}/">${escHtml(biggest.company.name)}</a>`
+        : escHtml(biggest.title)
+    }</p>
+      </div>`);
+  }
+  if (months.length) {
+    factBlocks.push(`      <div class="co-fact">
+        <h2 class="fact-label">By month</h2>
+        <div class="badges">${months
+          .map(
+            (m) =>
+              `<a class="company-badge" href="/funding/${escAttr(m.key)}/">${escHtml(
+                monthLabel(m.key)
+              )} <span class="cnt">${m.deals.length}</span></a>`
+          )
+          .join("")}</div>
+      </div>`);
+  }
+  const facts = factBlocks.length
+    ? `    <section class="co-facts">\n${factBlocks.join("\n")}\n    </section>`
+    : "";
+
+  return `${head({ title, description, canonical, jsonld: [datasetLd, crumbLd] })}
+<body>
+${header("funding")}
+
+  <main id="top">
+    <div class="intro co-head">
+      <p class="co-kicker">Tracker</p>
+      <h1 class="tagline">Insurtech funding rounds</h1>
+      <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
+      <p class="dek">
+        Every insurtech raise with a disclosed dollar figure, pulled from
+        across the trade press and deduplicated into one table. For the
+        reporting behind the numbers, see <a href="/topic/funding/">funding coverage</a>.
+      </p>
+    </div>
+
+${facts}
+
+    <h2 class="section-label">${shown.length < n ? "Most recent rounds" : "All disclosed rounds"}</h2>
+${dealTable(shown, "Insurtech funding rounds — company, amount, stage, lead investor, date and source")}
+${
+  shown.length < n
+    ? `    <p class="topic-more">Showing the ${shown.length} most recent of ${n}. Earlier rounds are on the monthly pages above.</p>`
+    : ""
+}
+
+${METHOD_NOTE}
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function fundingMonthHtml(m, newer, older) {
+  const canonical = `/funding/${m.key}/`;
+  const label = monthLabel(m.key);
+  const deals = m.deals;
+  const { total, biggest } = fundingSummary(deals);
+  const n = deals.length;
+  const thin = n < MONTH_MIN_DEALS;
+
+  const title = `Insurtech funding rounds, ${label} | ${SITE.name}`;
+  const description =
+    `${n} disclosed insurtech funding round${n === 1 ? "" : "s"} announced in ${label}, ` +
+    `totalling at least ${money(total)}` +
+    (biggest && biggest.company ? `, led by ${biggest.company.name}'s ${money(biggest.amountM)}` : "") +
+    ".";
+
+  const datasetLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: `Insurtech funding rounds — ${label}`,
+    description: clamp(description, 300),
+    url: url(canonical),
+    isAccessibleForFree: true,
+    creator: { "@type": "Organization", name: SITE.name, url: url("/") },
+    inLanguage: SITE.lang,
+    temporalCoverage: m.key,
+    isPartOf: { "@type": "Dataset", name: "Insurtech funding rounds", url: url("/funding/") },
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Funding tracker", path: "/funding/" },
+    { name: label, path: canonical },
+  ]);
+
+  const nav = [];
+  if (older)
+    nav.push(
+      `<a class="brief-nav-link" rel="prev" href="/funding/${escAttr(older.key)}/">` +
+        `<span class="brief-nav-dir">← Earlier</span>` +
+        `<span class="brief-nav-title">${escHtml(monthLabel(older.key))}</span></a>`
+    );
+  if (newer)
+    nav.push(
+      `<a class="brief-nav-link next" rel="next" href="/funding/${escAttr(newer.key)}/">` +
+        `<span class="brief-nav-dir">Later →</span>` +
+        `<span class="brief-nav-title">${escHtml(monthLabel(newer.key))}</span></a>`
+    );
+  const navHtml = nav.length
+    ? `    <nav class="brief-nav" aria-label="Other months">\n      ${nav.join("\n      ")}\n    </nav>`
+    : "";
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    jsonld: thin ? [crumbLd] : [datasetLd, crumbLd],
+    robots: thin ? "noindex, follow" : undefined,
+  })}
+<body>
+${header("funding")}
+
+  <main id="top">
+    <p class="crumb"><a href="/funding/">← Full funding tracker</a></p>
+
+    <div class="intro co-head">
+      <p class="co-kicker">Tracker</p>
+      <h1 class="tagline">Insurtech funding, ${escHtml(label)}</h1>
+      <p class="statline">${escHtml(
+        [`${n} round${n === 1 ? "" : "s"}`, `${money(total)} disclosed`].join("  ·  ")
+      )}</p>
+    </div>
+
+${dealTable(deals, `Insurtech funding rounds announced in ${label}`)}
+
+${navHtml}
+
+${METHOD_NOTE}
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+/* Group into months, newest first. Months are derived from the data
+   rather than authored, so — unlike the brief archive — stale
+   directories are pruned: a dedup fix that empties a month should
+   remove its page, not leave an orphan behind.
+
+   While the archive spans a single month, that month's page would be a
+   byte-for-byte duplicate of /funding/ — the worst kind of extra URL, a
+   second copy of the page you actually want ranked. So the split only
+   starts once there are two months to split. It begins on its own the
+   first time a month rolls over; nothing has to be migrated, because
+   both pages are rebuilt from the store every run. */
+function collectMonths(deals) {
+  const by = new Map();
+  for (const d of deals) {
+    const k = monthKey(d.publishedAt);
+    if (!k) continue;
+    if (!by.has(k)) by.set(k, []);
+    by.get(k).push(d);
+  }
+  const months = [...by.entries()]
+    .map(([key, list]) => ({ key, deals: list }))
+    .sort((a, b) => b.key.localeCompare(a.key));
+  return months.length > 1 ? months : [];
+}
+
+function buildFundingPages(deals, months) {
+  const outRoot = path.join(ROOT, "funding");
+  fs.mkdirSync(outRoot, { recursive: true });
+
+  const wanted = new Set(months.map((m) => m.key));
+  for (const name of fs.readdirSync(outRoot)) {
+    const dir = path.join(outRoot, name);
+    if (fs.statSync(dir).isDirectory() && !wanted.has(name)) {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
+  }
+
+  months.forEach((m, i) => {
+    const dir = path.join(outRoot, m.key);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, "index.html"), fundingMonthHtml(m, months[i - 1], months[i + 1]));
+  });
+  fs.writeFileSync(path.join(outRoot, "index.html"), fundingIndexHtml(deals, months));
+
+  const idx = months.filter((m) => m.deals.length >= MONTH_MIN_DEALS).length;
+  console.log(
+    `  ✓ funding tracker — ${deals.length} deals, ${months.length} month page${
+      months.length === 1 ? "" : "s"
+    } (${idx} indexable, ${months.length - idx} noindex under ${MONTH_MIN_DEALS} deals)`
+  );
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -1138,7 +1590,7 @@ function injectCompaniesIndex(db) {
 /* ══════════════════════════════════════════════════════════════
    sitemap.xml + robots.txt
    ══════════════════════════════════════════════════════════════ */
-function buildSitemap(news, db, briefs = [], topics = []) {
+function buildSitemap(news, db, briefs = [], topics = [], months = [], deals = []) {
   const now = isoDate(new Date().toISOString());
   const entries = [
     { loc: "/", lastmod: isoDate(news.updatedAt) || now, priority: "1.0", changefreq: "hourly" },
@@ -1166,6 +1618,29 @@ function buildSitemap(news, db, briefs = [], topics = []) {
         changefreq: i === 0 ? "daily" : "yearly",
       });
     });
+  }
+  if (deals.length) {
+    // Ranked with the brief, above the aggregated hubs: it's the other page
+    // here that isn't a restatement of someone else's reporting.
+    entries.push({
+      loc: "/funding/",
+      lastmod: isoDate(deals[0].publishedAt) || now,
+      priority: "0.9",
+      changefreq: "daily",
+    });
+    // Thin months are noindex — listing them would only ask Google to crawl
+    // what it has been told not to index (same rule as company pages).
+    months
+      .filter((m) => m.deals.length >= MONTH_MIN_DEALS)
+      .forEach((m, i) => {
+        entries.push({
+          loc: `/funding/${m.key}/`,
+          lastmod: isoDate(m.deals[0].publishedAt) || now,
+          priority: "0.7",
+          // A month that has closed can't gain rounds; only the current one moves.
+          changefreq: i === 0 ? "daily" : "monthly",
+        });
+      });
   }
   if (topics.length) {
     entries.push({ loc: "/topic/", lastmod: now, priority: "0.8", changefreq: "daily" });
@@ -1260,15 +1735,18 @@ function main() {
   // so the new page lands in this run's sitemap rather than the next.
   const briefs = recordBrief(news);
   const topics = collectTopics(news);
+  const deals = collectDeals(news, db);
+  const months = collectMonths(deals);
   // Every page's nav lists the hubs, so the list has to exist before
   // the first page is written.
   setNavTopics(topics);
   buildCompanyPages(db);
   buildBriefPages(briefs);
-  buildTopicPages(topics, db);
+  buildTopicPages(topics, db, deals);
+  buildFundingPages(deals, months);
   injectHomepage(news);
   injectCompaniesIndex(db);
-  buildSitemap(news, db, briefs, topics);
+  buildSitemap(news, db, briefs, topics, months, deals);
   buildRobots();
   console.log("SEO build complete.");
 }
