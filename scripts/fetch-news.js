@@ -10,6 +10,7 @@ const fs = require("fs");
 const path = require("path");
 const { buildBriefing } = require("./build-brief");
 const { buildAdjacency, assignClusters } = require("./cluster");
+const { localDate } = require("./schedule");
 
 /* Each feed carries its own admission rule:
      native — the feed is already confined to insurtech, so a story may
@@ -287,6 +288,20 @@ async function fetchFeed(feed) {
   }
 }
 
+/* The brief already on the wire, if it is usable. Read before this run
+   overwrites news.json, so the afternoon refreshes can carry the day's brief
+   forward instead of regenerating one. */
+function previousBriefing() {
+  try {
+    const prev = JSON.parse(
+      fs.readFileSync(path.join(__dirname, "..", "data", "news.json"), "utf8")
+    ).briefing;
+    return prev && prev.headline && prev.whatsHappening ? prev : null;
+  } catch {
+    return null;
+  }
+}
+
 /* ---------- main ---------- */
 
 (async () => {
@@ -341,7 +356,29 @@ async function fetchFeed(feed) {
     .map((t) => ({ name: t, count: counts[t] }));
 
   // Editor's brief — themes + second-order effects for this batch.
-  const briefing = buildBriefing(articles, taxonomy);
+  //
+  // The wire refreshes three times a weekday but the brief is written once, so
+  // the later refreshes run with KEEP_BRIEF=1 and carry the day's brief across
+  // untouched. Without that, this line would quietly replace Claude's prose
+  // with a fresh deterministic stand-in every afternoon.
+  //
+  // `date` is the brief's day in Central terms and is what the archive files it
+  // under — never the UTC date of `generatedAt`, which lands on tomorrow for
+  // anything written after 18:00 CT. A carried-over brief keeps the date it
+  // came with; a failed carry-over deliberately leaves the field unset, so the
+  // day still reads as unbriefed and the next slot writes one.
+  let briefing = buildBriefing(articles, taxonomy);
+  if (process.env.KEEP_BRIEF === "1") {
+    const prev = previousBriefing();
+    if (prev) {
+      briefing = prev;
+      console.log(`\nKept the existing brief (${prev.date || "undated"}) — this run refreshes the wire only.`);
+    } else {
+      console.warn("\nKEEP_BRIEF set but no brief to carry over — writing a fresh deterministic one.");
+    }
+  } else {
+    briefing.date = process.env.BRIEF_DATE || localDate();
+  }
 
   const payload = {
     updatedAt: new Date().toISOString(),

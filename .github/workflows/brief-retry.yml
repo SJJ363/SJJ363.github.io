@@ -11,7 +11,7 @@ name: Retry Claude brief
 
 on:
   schedule:
-    # Twice an hour, offset from the 6-hourly refresh so the two don't queue up.
+    # Twice an hour, offset from the refresh slots so the two don't queue up.
     - cron: "20,50 * * * *"
   workflow_dispatch: {}
 
@@ -36,24 +36,17 @@ jobs:
           node-version: "22"
 
       # Cheap gate: skips the Claude CLI install entirely when nothing is owed.
+      # scripts/schedule.js owns the answer so this and news.yml can't drift —
+      # it emits `retry`, which is true only for a fallen-back brief belonging
+      # to *today* (Central) whose retryAfter has passed. The date check is what
+      # stops a limit that lifts after midnight from rewriting yesterday's brief
+      # against a batch it was never about.
       - name: Is a retry due?
-        id: due
-        run: |
-          if node -e '
-            const b = require("./data/news.json").briefing || {};
-            const owed = b.by !== "claude" || !!b.fallback;
-            const until = b.fallback && b.fallback.retryAfter;
-            const ready = !until || Date.now() >= Date.parse(until);
-            process.exit(owed && ready ? 0 : 1);
-          '; then
-            echo "due=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "due=false" >> "$GITHUB_OUTPUT"
-            echo "Current brief is Claude-written or not yet due — nothing to do."
-          fi
+        id: gate
+        run: node scripts/schedule.js
 
       - name: Install Claude CLI
-        if: steps.due.outputs.due == 'true'
+        if: steps.gate.outputs.retry == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
@@ -65,14 +58,14 @@ jobs:
       # No refetch: the goal is to replace this batch's brief, not to build a
       # new one from stories the site has since moved past.
       - name: Retry the brief
-        if: steps.due.outputs.due == 'true'
+        if: steps.gate.outputs.retry == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/write-brief.js --if-fallback || echo "Retry failed — deterministic brief stands."
 
       - name: Upload brief fallback diagnostics
-        if: always() && steps.due.outputs.due == 'true'
+        if: always() && steps.gate.outputs.retry == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: brief-retry-${{ github.run_number }}
@@ -81,15 +74,17 @@ jobs:
           retention-days: 30
 
       - name: Build SEO (pages, sitemap, structured data)
-        if: steps.due.outputs.due == 'true'
+        if: steps.gate.outputs.retry == 'true'
         run: node scripts/seo.js
 
       - name: Commit if changed
-        if: steps.due.outputs.due == 'true'
+        if: steps.gate.outputs.retry == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/ company/ brief/ topic/ sitemap.xml robots.txt index.html companies.html
+          # Kept identical to news.yml's pathspec — this workflow runs the same
+          # seo.js build, so anything missing here freezes the same way.
+          git add -A data/ company/ brief/ topic/ funding/ sitemap.xml robots.txt index.html companies.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: rewrite brief with Claude ($(date -u +'%Y-%m-%d %H:%M UTC'))"
             git push

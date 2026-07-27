@@ -42,6 +42,7 @@ const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
 const { fundingStats } = require("./funding");
+const { localDate } = require("./schedule");
 
 const FILE = path.join(__dirname, "..", "data", "news.json");
 const BRIEFS = path.join(__dirname, "..", "data", "briefs.json");
@@ -506,14 +507,18 @@ async function produceBrief(prompt, state) {
    Last resorts and bookkeeping
    ============================================================ */
 
-const isoDate = (iso) => { const d = new Date(iso || ""); return isNaN(d) ? null : d.toISOString().slice(0, 10); };
+/* The day a briefing belongs to, in Central terms — the same stamp the archive
+   files it under. Never the UTC date of `generatedAt`: a brief written or
+   retried after 18:00 CT carries a UTC date of tomorrow. */
+const briefDate = (data) =>
+  (data.briefing || {}).date || localDate((data.briefing || {}).generatedAt) || localDate(data.updatedAt);
 
 /* Rung 6: this date may already have a Claude-written brief from an earlier
    run today. Re-publishing it keeps human-quality prose on the site while the
    retry workflow goes after a fresh one — and, crucially, stops this run from
    overwriting that archive entry with a deterministic downgrade. */
 function reuseTodaysClaudeBrief(data) {
-  const date = isoDate((data.briefing || {}).generatedAt) || isoDate(data.updatedAt);
+  const date = briefDate(data);
   if (!date) return null;
   let store;
   try { store = JSON.parse(fs.readFileSync(BRIEFS, "utf8")); }
@@ -521,6 +526,7 @@ function reuseTodaysClaudeBrief(data) {
   const prior = (store.briefs || []).find((b) => b.date === date && b.by === "claude");
   if (!prior || !prior.headline || !prior.whatsHappening) return null;
   return {
+    date,
     headline: prior.headline,
     teaser: prior.teaser || "",
     whatsHappening: prior.whatsHappening,
@@ -588,6 +594,9 @@ function recordFallback(data, info, extra = {}) {
 }
 
 function publish(data, brief, note) {
+  // Carry the day stamp across the swap. A replacement brief is still *that
+  // day's* brief, even when the retry that produced it ran after midnight UTC.
+  brief.date = brief.date || briefDate(data) || localDate();
   data.briefing = brief; // existing key keeps its position (before `articles`)
   fs.writeFileSync(FILE, JSON.stringify(data, null, 2));
   console.log(`✓ ${note} — "${brief.headline}"`);
@@ -607,6 +616,15 @@ async function main() {
       const b = data.briefing || {};
       // A brief Claude wrote and that carries no fallback stamp is finished work.
       if (b.by === "claude" && !b.fallback) { console.log("Brief already written by Claude — nothing to retry."); return; }
+      // Only today's brief is ever owed a retry. A limit that lifts after
+      // midnight would otherwise rewrite yesterday's brief from whatever batch
+      // is on the wire and file the result under the wrong day.
+      const owedFor = briefDate(data);
+      const today = localDate();
+      if (owedFor && owedFor !== today) {
+        console.log(`Current brief is dated ${owedFor}, not today (${today}) — that day is closed.`);
+        return;
+      }
       const until = b.fallback && b.fallback.retryAfter;
       if (until && Date.now() < Date.parse(until)) {
         console.log(`Fallback recorded ${b.fallback.reason}; not retrying until ${until}.`);

@@ -464,7 +464,11 @@ function loadBriefs() {
    each day keeps one page holding that day's latest brief. */
 function recordBrief(news) {
   const b = news.briefing || {};
-  const date = isoDate(b.generatedAt) || isoDate(news.updatedAt);
+  // `b.date` is the brief's day in Central terms, stamped when it was written.
+  // Prefer it over the UTC date of `generatedAt`, which rolls over to tomorrow
+  // for anything written or retried after 18:00 CT — the archive would then
+  // file the 18:00 slot's brief under the following day.
+  const date = b.date || isoDate(b.generatedAt) || isoDate(news.updatedAt);
 
   // A failed Claude enhancement leaves the briefing empty. Never
   // publish a stub for it — that day simply gets no page, and the
@@ -486,6 +490,16 @@ function recordBrief(news) {
   // fallback run can't replace a Claude entry it may not write in the first place.
   if (b.by !== "claude") {
     console.log(`  ↻ ${date}: no archive entry yet — brief is ${b.by || "unwritten"}, waiting for Claude`);
+    return loadBriefs();
+  }
+
+  // The wire refreshes after the brief is written, so most builds see prose
+  // they have already archived — against a *later* batch. Re-stamping the
+  // entry then would leave the prose describing the morning while storyCount
+  // and topics described the evening. Identical prose means a finished entry:
+  // leave it exactly as filed.
+  const filed = loadBriefs().find((x) => x.date === date);
+  if (filed && filed.headline === b.headline && filed.generatedAt === (b.generatedAt || news.updatedAt)) {
     return loadBriefs();
   }
 
@@ -540,7 +554,7 @@ function briefBlocks(b) {
    gives crawlers a path through every brief without the index. */
 function briefPageHtml(b, newer, older) {
   const canonical = `/brief/${b.date}/`;
-  const day = fullDate(b.generatedAt || b.date);
+  const day = fullDate(b.date || b.generatedAt);
   const title = `${b.headline} — insurtech brief, ${day} | ${SITE.name}`;
   const description = b.teaser || b.whatsHappening;
 
@@ -680,7 +694,7 @@ ${briefs
     (b) => `      <li class="story">
         <a class="story-main" href="/brief/${escAttr(b.date)}/">
           <div class="meta"><span class="time">${escHtml(
-            fullDate(b.generatedAt || b.date)
+            fullDate(b.date || b.generatedAt)
           )}</span>${
       b.storyCount
         ? `<span class="dot"> · </span><span class="src">${b.storyCount} stories</span>`
@@ -1676,7 +1690,7 @@ function buildSitemap(news, db, briefs = [], topics = [], months = [], deals = [
     briefs.forEach((b, i) => {
       entries.push({
         loc: `/brief/${b.date}/`,
-        lastmod: isoDate(b.generatedAt) || b.date,
+        lastmod: b.date || isoDate(b.generatedAt),
         priority: i === 0 ? "0.9" : "0.7",
         changefreq: i === 0 ? "daily" : "yearly",
       });

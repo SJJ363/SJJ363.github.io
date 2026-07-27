@@ -1,10 +1,25 @@
 name: Refresh insurtech news
 
+# The site publishes on a Central-time clock:
+#   Mon–Fri  08:00, 13:00, 18:00 CT   (the brief is written on the 08:00 run)
+#   Sat–Sun  13:00 CT only            (the brief is written on that run)
+#
+# GitHub's cron is UTC-only and does not observe DST, so every slot is listed
+# at both the hour CDT (UTC−5) puts it on and the hour CST (UTC−6) does, and
+# scripts/schedule.js decides which firing is the real one. Half of these
+# firings are no-ops by design; the gate job exits in seconds.
+#
+#   13,14 UTC → 08:00 CT     18,19 UTC → 13:00 CT     23,0 UTC → 18:00 CT
 on:
   schedule:
-    # A few times a day — every 6 hours (UTC). GitHub may delay runs under load.
-    - cron: "0 */6 * * *"
-  workflow_dispatch: {}   # allows manual "Run workflow" from the Actions tab
+    - cron: "0 0,13,14,18,19,23 * * *"
+  workflow_dispatch:
+    inputs:
+      brief:
+        description: "Daily brief on this run"
+        type: choice
+        options: [auto, force, skip]
+        default: auto
 
 permissions:
   contents: write
@@ -14,7 +29,36 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Which of the six daily firings is a real slot — and does today still need
+  # its brief? Decided from the committed data/news.json, so a slot whose run
+  # failed or was skipped by GitHub is picked up by the next firing instead of
+  # being lost. A manual dispatch always runs.
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.plan.outputs.run }}
+      brief: ${{ steps.plan.outputs.brief }}
+      date: ${{ steps.plan.outputs.date }}
+      slot: ${{ steps.plan.outputs.slot }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Plan this run
+        id: plan
+        env:
+          FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
+          FORCE_BRIEF: ${{ inputs.brief }}
+        run: node scripts/schedule.js
+
   refresh:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,7 +69,15 @@ jobs:
         with:
           node-version: "22"
 
+      # KEEP_BRIEF carries the day's brief across the two later weekday
+      # refreshes. fetch-news.js always builds a deterministic briefing, so
+      # without it the 13:00 and 18:00 runs would silently replace Claude's
+      # prose with a stand-in — a downgrade nobody asked for and nobody sees
+      # until it is on the homepage.
       - name: Fetch latest news
+        env:
+          KEEP_BRIEF: ${{ needs.gate.outputs.brief == 'true' && '0' || '1' }}
+          BRIEF_DATE: ${{ needs.gate.outputs.date }}
         run: node scripts/fetch-news.js
 
       # Install the Claude CLI once (used by both company extraction and the
@@ -47,11 +99,16 @@ jobs:
       # before the brief asked for it; the brief now gets first claim, and the
       # extractor degrades to heuristics — which nobody reads as prose.
       #
+      # Once a day, on the first slot of the day: 08:00 CT on weekdays, 13:00
+      # CT at weekends. The gate hangs this off the *date* rather than the slot,
+      # so if the 08:00 run never happened the 13:00 one writes the brief.
+      #
       # Fail-safe by design: the script walks a ladder (CLI → other models →
       # wait out a short limit → the metered API → today's earlier Claude
       # brief) and only then keeps the deterministic one, stamping a
       # retryAfter that brief-retry.yml picks up.
       - name: Write brief with Claude
+        if: needs.gate.outputs.brief == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           # Separate quota from the subscription — the rung that survives a
@@ -75,7 +132,7 @@ jobs:
       # and the guard that rejected it — the evidence that shouldn't ship to
       # the site. The short reason code is also committed into news.json.
       - name: Upload brief fallback diagnostics
-        if: always()
+        if: always() && needs.gate.outputs.brief == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: brief-fallback-${{ github.run_number }}
@@ -94,9 +151,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/ company/ brief/ topic/ sitemap.xml robots.txt index.html companies.html
+          # Every directory seo.js writes has to be listed here — a generated
+          # page missing from this pathspec is regenerated on every run, left
+          # dirty in the runner and never pushed, so the live page silently
+          # freezes while sitemap.xml keeps advertising it as fresh. `funding/`
+          # covers the month pages too, once collectMonths() starts returning any.
+          git add -A data/ company/ brief/ topic/ funding/ sitemap.xml robots.txt index.html companies.html
           if ! git diff --cached --quiet; then
-            git commit -m "chore: refresh insurtech news ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git commit -m "chore: refresh insurtech news (${{ needs.gate.outputs.slot }} CT ${{ needs.gate.outputs.date }})"
             git push
             echo "News + SEO updated and pushed."
           else
