@@ -587,4 +587,4 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { extractCompanies, canonicalName, sanitizeNames, buildExtractPrompt, slugify };
+module.exports = { extractCompanies, canonicalName, sanitizeNames, buildExtractPrompt, slugify, extractWithClaude, PROMPT_VERSION };

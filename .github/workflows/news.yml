@@ -35,8 +35,11 @@ on:
 permissions:
   contents: write
 
+# Shared with backfill.yml, deliberately: both commit data/ and the generated
+# pages, so two of them in flight means the loser's push is rejected and that
+# run's work is dropped. The group name is the resource, not the workflow.
 concurrency:
-  group: refresh-news
+  group: site-write
   cancel-in-progress: false
 
 jobs:

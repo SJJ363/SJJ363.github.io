@@ -192,92 +192,101 @@ function extractLink(block) {
 
 /* ---------- fetch + parse a feed ---------- */
 
+/* Parse is separate from fetch so backfill.js can replay these searches
+   over historical windows with its own retry policy: fetchFeed treats any
+   failure as an empty feed, which is right for one run of the wire and
+   wrong across 100+ requests, where a rate-limit answer and a month with
+   no insurtech news must not look the same. */
+function parseFeedXml(xml, feed) {
+  const items = [...blocks(xml, "item"), ...blocks(xml, "entry")];
+  const out = [];
+  const isGoogleNews = feed.url.includes("news.google.com");
+
+  for (const b of items) {
+    const rawTitle = tag(b, "title");
+    if (!rawTitle) continue;
+
+    const link = extractLink(b);
+    if (!link || SKIP_URL.test(link)) continue;
+
+    // Date: RSS pubDate / dc:date, Atom published/updated
+    const dateStr = tag(b, "pubDate") || tag(b, "dc:date") || tag(b, "published") || tag(b, "updated");
+    const ts = dateStr ? Date.parse(dateStr) : NaN;
+    if (isNaN(ts)) continue;
+    // Drop future-dated items (events/webinars masquerading as news)
+    if (ts > Date.now() + 864e5) continue;
+
+    // Source: Google News embeds <source url=...>Publisher</source>
+    let source = tag(b, "source") || feed.source;
+    let title = rawTitle;
+    // Google News titles are "Headline - Publisher"; strip the suffix.
+    // Stripping a tail that merely looks like a publisher is only safe
+    // there. A publisher's own feed writes its headline as it means it,
+    // and "…breached customer data - report" is part of the headline,
+    // not a byline — guessing cost us the words and set source="report".
+    const dash = title.lastIndexOf(" - ");
+    if (dash > 20 && source && title.slice(dash + 3).trim() === source) {
+      title = title.slice(0, dash).trim();
+    } else if (dash > 30 && isGoogleNews) {
+      const tail = title.slice(dash + 3).trim();
+      if (tail.length < 40 && !/[.!?]$/.test(tail)) {
+        if (!source || source === feed.source) source = tail;
+        title = title.slice(0, dash).trim();
+      }
+    }
+
+    let summary = tidySummary(
+      stripTags(
+        tag(b, "description") || tag(b, "summary") || tag(b, "content") || tag(b, "content:encoded")
+      )
+    );
+
+    // Google News descriptions are usually just "Headline Source" — a
+    // duplicate of the title. Drop those so cards read like a clean wire.
+    const nt = title.toLowerCase().replace(/[^a-z0-9]+/g, "");
+    const ns = summary.toLowerCase().replace(/[^a-z0-9]+/g, "");
+    if (!ns || (ns.startsWith(nt.slice(0, 24)) && summary.length < title.length + source.length + 12)) {
+      summary = "";
+    }
+
+    // Judge the story, not the masthead: source is deliberately not in
+    // the text being tested, since a publisher called "Insurance
+    // Journal" would match on its own and wave through everything it
+    // filed — mortgage rates, an earthquake, a lettuce recall.
+    const body = title + " " + summary;
+    // native feeds may qualify on technology alone, because everything
+    // they carry is already insurtech — that is how "How Travelers
+    // measures ROI for its in-house LLM" gets in without saying
+    // insurance. Everywhere else insurance wording is required, or
+    // Finextra's payments desk arrives: stablecoins on cards, a Wise
+    // bank charter, Making Tax Digital.
+    if (!(feed.native ? onTopic(body) : RELEVANCE.test(body))) continue;
+    if (feed.strict && !TECH_ANGLE.test(body)) continue;
+
+    out.push({
+      title: title.trim(),
+      link,
+      source: (source || "News").trim(),
+      summary,
+      tags: tagArticle(title + " " + summary),
+      publishedAt: new Date(ts).toISOString(),
+      timestamp: ts,
+      // Carried into the store so the topic hubs can re-apply the same
+      // rule later. A Google News item's source is rewritten to the real
+      // publisher, so provenance cannot be recovered from source alone.
+      ...(feed.native ? { native: true } : {}),
+    });
+  }
+    return out;
+}
+
 async function fetchFeed(feed) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), 20000);
   try {
     const res = await fetch(feed.url, { headers: { "User-Agent": UA }, signal: ctrl.signal });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const xml = await res.text();
-    const items = [...blocks(xml, "item"), ...blocks(xml, "entry")];
-    const out = [];
-    const isGoogleNews = feed.url.includes("news.google.com");
-
-    for (const b of items) {
-      const rawTitle = tag(b, "title");
-      if (!rawTitle) continue;
-
-      const link = extractLink(b);
-      if (!link || SKIP_URL.test(link)) continue;
-
-      // Date: RSS pubDate / dc:date, Atom published/updated
-      const dateStr = tag(b, "pubDate") || tag(b, "dc:date") || tag(b, "published") || tag(b, "updated");
-      const ts = dateStr ? Date.parse(dateStr) : NaN;
-      if (isNaN(ts)) continue;
-      // Drop future-dated items (events/webinars masquerading as news)
-      if (ts > Date.now() + 864e5) continue;
-
-      // Source: Google News embeds <source url=...>Publisher</source>
-      let source = tag(b, "source") || feed.source;
-      let title = rawTitle;
-      // Google News titles are "Headline - Publisher"; strip the suffix.
-      // Stripping a tail that merely looks like a publisher is only safe
-      // there. A publisher's own feed writes its headline as it means it,
-      // and "…breached customer data - report" is part of the headline,
-      // not a byline — guessing cost us the words and set source="report".
-      const dash = title.lastIndexOf(" - ");
-      if (dash > 20 && source && title.slice(dash + 3).trim() === source) {
-        title = title.slice(0, dash).trim();
-      } else if (dash > 30 && isGoogleNews) {
-        const tail = title.slice(dash + 3).trim();
-        if (tail.length < 40 && !/[.!?]$/.test(tail)) {
-          if (!source || source === feed.source) source = tail;
-          title = title.slice(0, dash).trim();
-        }
-      }
-
-      let summary = tidySummary(
-        stripTags(
-          tag(b, "description") || tag(b, "summary") || tag(b, "content") || tag(b, "content:encoded")
-        )
-      );
-
-      // Google News descriptions are usually just "Headline Source" — a
-      // duplicate of the title. Drop those so cards read like a clean wire.
-      const nt = title.toLowerCase().replace(/[^a-z0-9]+/g, "");
-      const ns = summary.toLowerCase().replace(/[^a-z0-9]+/g, "");
-      if (!ns || (ns.startsWith(nt.slice(0, 24)) && summary.length < title.length + source.length + 12)) {
-        summary = "";
-      }
-
-      // Judge the story, not the masthead: source is deliberately not in
-      // the text being tested, since a publisher called "Insurance
-      // Journal" would match on its own and wave through everything it
-      // filed — mortgage rates, an earthquake, a lettuce recall.
-      const body = title + " " + summary;
-      // native feeds may qualify on technology alone, because everything
-      // they carry is already insurtech — that is how "How Travelers
-      // measures ROI for its in-house LLM" gets in without saying
-      // insurance. Everywhere else insurance wording is required, or
-      // Finextra's payments desk arrives: stablecoins on cards, a Wise
-      // bank charter, Making Tax Digital.
-      if (!(feed.native ? onTopic(body) : RELEVANCE.test(body))) continue;
-      if (feed.strict && !TECH_ANGLE.test(body)) continue;
-
-      out.push({
-        title: title.trim(),
-        link,
-        source: (source || "News").trim(),
-        summary,
-        tags: tagArticle(title + " " + summary),
-        publishedAt: new Date(ts).toISOString(),
-        timestamp: ts,
-        // Carried into the store so the topic hubs can re-apply the same
-        // rule later. A Google News item's source is rewritten to the real
-        // publisher, so provenance cannot be recovered from source alone.
-        ...(feed.native ? { native: true } : {}),
-      });
-    }
+    const out = parseFeedXml(await res.text(), feed);
     console.log(`  ✓ ${feed.url.slice(0, 60)}… → ${out.length}`);
     return out;
   } catch (err) {
@@ -304,7 +313,7 @@ function previousBriefing() {
 
 /* ---------- main ---------- */
 
-(async () => {
+async function main() {
   console.log("Fetching insurtech feeds…");
   const results = await Promise.all(FEEDS.map(fetchFeed));
   let all = results.flat();
@@ -393,4 +402,14 @@ function previousBriefing() {
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, "news.json"), JSON.stringify(payload, null, 2));
   console.log(`\nWrote data/news.json — ${articles.length} articles from ${payload.sources.length} sources.`);
-})();
+}
+
+if (require.main === module) main();
+
+/* Exported for scripts/backfill.js, which replays these same Google News
+   searches over historical date windows. It needs the feed list and the
+   parser, not the wire: a second RSS reader would drift from this one on
+   exactly the details that decide what a story is — the "Headline -
+   Publisher" split, the summary-is-just-the-headline test, and which feeds
+   count as native. Keep them sharing this file. */
+module.exports = { FEEDS, fetchFeed, parseFeedXml, decodeEntities, stripTags, tidySummary };

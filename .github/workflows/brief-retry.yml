@@ -19,8 +19,10 @@ permissions:
   contents: write
 
 # Shared with news.yml — these two must never push concurrently.
+# Shared with news.yml and backfill.yml — see the note there. Every workflow
+# that commits data/ and the generated pages takes the same lock.
 concurrency:
-  group: refresh-news
+  group: site-write
   cancel-in-progress: false
 
 jobs:

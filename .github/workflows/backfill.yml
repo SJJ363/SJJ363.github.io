@@ -1,0 +1,98 @@
+# One-time historical backfill — manual only.
+#
+# The wire only sees what a feed is currently serving, so the archive starts
+# the day the site does. scripts/backfill.js replays the same Google News
+# searches over past months; this runs it here rather than on a laptop
+# because the extract pass needs Claude, and CLAUDE_CODE_OAUTH_TOKEN already
+# lives in this repo's secrets.
+#
+# Never scheduled. It is a staged catch-up, not part of the publishing clock,
+# and the extract pass draws on the SAME subscription budget as the daily
+# brief (see CLAUDE.md 3b-i, which is why the brief runs first in news.yml).
+# Run it after the day's brief has landed, and leave `limit` modest — the
+# whole point of staging is that a stalled batch costs one batch.
+name: Backfill archive
+
+on:
+  workflow_dispatch:
+    inputs:
+      months:
+        description: "Months of history to fetch (0 = skip the fetch phase)"
+        required: false
+        default: "0"
+      limit:
+        description: "Articles to attribute with Claude (0 = skip the extract phase)"
+        required: false
+        default: "200"
+
+concurrency:
+  # Never let two backfills — or a backfill and a scheduled refresh — write
+  # the store at once; the loser's articles would be lost on push.
+  group: site-write
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      # Free: writes only store.seen, no model calls. seo.js reads `seen`, so
+      # the tracker, the month pages and the topic hubs deepen off this alone.
+      - name: Fetch history
+        if: inputs.months != '0'
+        run: node scripts/backfill.js --months "${{ inputs.months }}"
+
+      - name: Install Claude CLI
+        if: inputs.limit != '0'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "::error::No CLAUDE_CODE_OAUTH_TOKEN secret — the extract phase cannot run."
+            exit 1
+          fi
+          npm install -g @anthropic-ai/claude-code
+
+      # Metered. Bounded by `limit` so it can be run in stages; backfill.js
+      # refuses outright rather than writing heuristic entries, which
+      # companies.js would treat as stale and re-extract wholesale.
+      - name: Attribute companies
+        if: inputs.limit != '0'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: node scripts/backfill.js --extract --limit "${{ inputs.limit }}"
+
+      # Rebuilds the index from the enlarged store. Runs with Claude available
+      # so newly attributed articles settle at Claude quality in one pass.
+      - name: Rebuild company index
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: node scripts/companies.js
+
+      - name: Build SEO (pages, sitemap, structured data)
+        run: node scripts/seo.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Same pathspec as news.yml: a generated directory missing here is
+          # rebuilt every run, left dirty in the runner and never pushed.
+          git add -A data/ company/ brief/ topic/ funding/ sitemap.xml robots.txt index.html companies.html
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: backfill archive (months=${{ inputs.months }} limit=${{ inputs.limit }})"
+            git push
+            echo "Backfill committed."
+          else
+            echo "No changes to publish."
+          fi
