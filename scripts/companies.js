@@ -18,6 +18,7 @@ const fs = require("fs");
 const path = require("path");
 const { claudeAvailable, callClaude, parseJsonObject } = require("./claude");
 const { tagArticle } = require("./taxonomy");
+const { admits } = require("./relevance");
 
 const NEWS = path.join(__dirname, "..", "data", "news.json");
 const DB = path.join(__dirname, "..", "data", "companies.json");        // client-facing (derived)
@@ -344,6 +345,80 @@ function mergePrefixes(byslug) {
   return mergeMap;
 }
 
+/* ============================================================
+   Investors are not companies on this site
+   ------------------------------------------------------------
+   The extraction prompt asks for every actor in a story, investors
+   included — which is right for the wire's badges but wrong for the
+   company index: a VC that led one round was on the other side of it,
+   and giving it a page files it among the insurtechs it funded.
+
+   Role is decided from POSITION IN THE HEADLINE, not from the name.
+   The obvious name-suffix heuristic (Ventures|Capital|Partners) fails
+   in both directions on real data here: it misses BlueOrchard, an
+   investment manager with no telltale suffix, and it flags Pelagos
+   Insurance Capital, which is not a VC. Position is evidence; a suffix
+   is a guess.
+
+   An entity is demoted only when EVERY mention of it across the whole
+   archive sits in an investor slot. One appearance as the party doing
+   something — raising, launching, partnering — and it stays a company,
+   which is what keeps Munich Re from vanishing the day it backs a
+   startup. Because the index is rebuilt from the store each run, a
+   demoted entity returns by itself the first time it acts.
+   ============================================================ */
+const MONEY = /[$€£₹]\s?[\d.,]+|\b\d+(?:\.\d+)?\s?(?:m|mn|bn|million|billion|crore|cr)\b/i;
+
+// Connectives after which the named party is putting money in.
+const INVESTOR_LEAD =
+  /\b(?:led by|backed by|funded by|investment from|funding from|participation from|investors?:?)\s+/gi;
+
+/* Character offsets in `title` where an investor's name would begin. */
+function investorPositions(title) {
+  const out = [];
+  let m;
+  INVESTOR_LEAD.lastIndex = 0;
+  while ((m = INVESTOR_LEAD.exec(title))) out.push(m.index + m[0].length);
+
+  // On a funding story that names a figure, money arrives FROM someone and
+  // the party named after WITH is a co-investor rather than the raiser.
+  // Both are gated on a preceding money figure, because bare "from"/"with"
+  // are the commonest words in a partnership headline.
+  if (tagArticle(title).includes("Funding") && MONEY.test(title)) {
+    for (const kw of [/\bfrom\s+/gi, /\bwith\s+/gi]) {
+      let x;
+      while ((x = kw.exec(title))) {
+        if (MONEY.test(title.slice(0, x.index))) out.push(x.index + x[0].length);
+      }
+    }
+  }
+  return out;
+}
+
+/* slug -> true for entities seen only ever in an investor slot. Takes the
+   already-admitted articles, so a rejected story can't cast a vote. */
+function investorSlugs(entries) {
+  const tally = new Map(); // slug -> { inv, other }
+  for (const { meta, names } of entries) {
+    const pos = investorPositions(meta.title);
+    for (const n of names) {
+      const slug = slugify(n);
+      if (!slug) continue;
+      const at = meta.title.toLowerCase().indexOf(n.toLowerCase());
+      const rec = tally.get(slug) || { inv: 0, other: 0 };
+      // Not present in the headline at all (Claude read it out of the
+      // summary) — no positional evidence either way, so it counts as
+      // "other" and protects the entity from demotion.
+      if (at >= 0 && pos.some((p) => Math.abs(p - at) <= 2)) rec.inv++;
+      else rec.other++;
+      tally.set(slug, rec);
+    }
+  }
+  const out = new Set();
+  for (const [slug, r] of tally) if (r.inv > 0 && r.other === 0) out.add(slug);
+  return out;
+}
+
 /* ============================================================ */
 function loadJSON(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, "utf8")); } catch { return fallback; }
@@ -411,20 +486,29 @@ function main() {
     store.extracted[a.link] = entry;
   }
 
-  // Attach companies to current articles (home-page badges).
-  for (const a of news.articles) {
-    const names = (store.extracted[a.link] && store.extracted[a.link].names) || [];
-    a.companies = names.map((n) => ({ name: n, slug: slugify(n) }));
-  }
-
   // Rebuild every company from the full fact store (history across batches).
   // Because this derives purely from `extracted`, re-extraction cleanly drops
   // any company that no longer has a mention (junk self-heals).
-  const byslug = {};
+  //
+  // Two filters run on the way out, both re-applied every build so a rule
+  // change reaches the whole archive rather than only what arrives next:
+  //   1. the relevance gate, so the index can't publish a company page built
+  //      from an article the topic hubs and the funding tracker reject;
+  //   2. investor demotion, decided across all admitted mentions at once —
+  //      hence the pass below before anything is accumulated.
+  const admitted = [];
+  let rejected = 0;
   for (const [link, ex] of Object.entries(store.extracted)) {
     const meta = store.seen[link];
     if (!meta || !ex.names || !ex.names.length) continue;
-    const names = [...new Set(ex.names.map(canonicalName))].filter((n) => !JUNK.has(slugify(n)));
+    if (!admits(meta)) { rejected++; continue; }
+    admitted.push({ link, meta, names: [...new Set(ex.names.map(canonicalName))].filter((n) => !JUNK.has(slugify(n))) });
+  }
+  const investors = investorSlugs(admitted);
+
+  const byslug = {};
+  for (const { link, meta, names: allNames } of admitted) {
+    const names = allNames.filter((n) => !investors.has(slugify(n)));
     const slugs = names.map(slugify);
     names.forEach((name, i) => {
       const slug = slugs[i]; if (!slug) return;
@@ -441,6 +525,28 @@ function main() {
   }
 
   const mergeMap = mergePrefixes(byslug);
+
+  /* Attach companies to current articles (the wire's badges).
+
+     Resolved against the finished index rather than the raw extraction,
+     because a badge is a link to /company/<slug>/ and seo.js prunes every
+     directory without a company record. The raw names skip canonicalisation,
+     JUNK and mergePrefixes, so trusting them put six dead links on the wire:
+     "Wave" (canonical: Wave Claims), "Telecommunications Ltd Singtel"
+     (Singtel), "Mulberry Insurance Technology Platform" (Mulberry),
+     "Liberty Mutual Re" (merged into Liberty Mutual) and two JUNK entries.
+     Demoted investors drop out here for the same reason. */
+  for (const a of news.articles) {
+    const names = (store.extracted[a.link] && store.extracted[a.link].names) || [];
+    const seenSlug = new Set();
+    a.companies = names
+      .map((n) => {
+        const s0 = slugify(canonicalName(n));
+        const slug = mergeMap[s0] || s0;
+        return byslug[slug] ? { name: byslug[slug].name, slug } : null;
+      })
+      .filter((c) => c && !seenSlug.has(c.slug) && seenSlug.add(c.slug));
+  }
 
   const companies = Object.values(byslug).map((c) => {
     const articles = c.articles.slice().sort((x, y) => new Date(y.publishedAt) - new Date(x.publishedAt));
@@ -472,6 +578,11 @@ function main() {
   fs.writeFileSync(STORE, JSON.stringify({ updatedAt: new Date().toISOString(), seen: store.seen, extracted: store.extracted }, null, 2));
   fs.writeFileSync(DB, JSON.stringify({ updatedAt: new Date().toISOString(), count: companies.length, companies }, null, 2));
   console.log(`Companies: ${companies.length} tracked · extraction cache ${byCount.claude} claude / ${byCount.heuristic} heuristic.`);
+  console.log(
+    `  ↳ ${rejected} stored article(s) failed the relevance gate; ` +
+      `${investors.size} entit${investors.size === 1 ? "y" : "ies"} demoted to investor` +
+      (investors.size ? ` (${[...investors].join(", ")})` : "")
+  );
 }
 
 if (require.main === module) main();

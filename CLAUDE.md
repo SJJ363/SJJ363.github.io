@@ -147,6 +147,39 @@ produce all of that consistently — **route new pages through them.**
      the archive spans two, and the split starts by itself at the first
      rollover. Thin months (under `MONTH_MIN_DEALS`) are noindex and out of
      the sitemap, exactly like thin company pages.
+3c-ii. **The relevance gate is applied by every reader of the store, via
+   `admits()` in `scripts/relevance.js`.** `seo.js` (hubs, tracker) and
+   `companies.js` (the company index) both call it — never re-implement
+   the predicate locally. A gate only some readers apply produces exactly
+   the incoherence it exists to prevent: `/company/augustus/` was a page
+   about a clearing bank, built from a Finextra story the hubs and the
+   tracker already refused to carry, because the index was the one reader
+   that skipped the check. Applying it costs real pages (36 stored
+   articles and ~32 companies, some of them genuine insurers whose only
+   mention was a story that no longer clears the bar) — that is the
+   intended trade, and it self-heals: the index is rebuilt from the store
+   every run, so a company returns the moment it appears in a story that
+   does clear it.
+3c-iii. **Investors are not companies.** The extraction prompt asks for
+   every actor including investors, which is right for the wire's badges
+   and wrong for the index — a VC that led a round was on the other side
+   of it. `investorSlugs()` in `companies.js` demotes an entity only when
+   **every** mention of it across the archive sits in an investor slot,
+   so one appearance as the party raising/launching/partnering keeps it a
+   company (Munich Re doesn't vanish the day it backs a startup). Role is
+   read from **position in the headline, never from the name**: the
+   obvious `Ventures|Capital|Partners` suffix test fails both ways on this
+   data — it misses BlueOrchard, an investment manager with no suffix, and
+   flags Pelagos Insurance Capital, which isn't a VC. Investors still
+   appear in the funding tracker's lead-investor column, which reads the
+   headline directly and doesn't need a company record.
+3c-iv. **The wire's company badges are resolved against the finished
+   index,** not the raw extraction — see the loop after `mergePrefixes()`
+   in `companies.js`. Raw names skip canonicalisation, `JUNK` and prefix
+   merging, and `seo.js` prunes any `/company/<slug>/` without a record, so
+   trusting them put six dead links on the wire ("Wave" for Wave Claims,
+   "Liberty Mutual Re" merged into Liberty Mutual, two JUNK entries).
+   Anything that renders a company link must resolve it the same way.
 3d. **The category taxonomy lives in `scripts/taxonomy.js`,** shared by
    `fetch-news.js` (tags on arrival), `companies.js` and `seo.js` (both
    **re-tag** on read). Stored tags are frozen at fetch time, so without

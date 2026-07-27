@@ -23,7 +23,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { RELEVANCE, onTopic } = require("./relevance");
+const { admits } = require("./relevance");
 const { TAXONOMY, FALLBACK_TAG, tagArticle } = require("./taxonomy");
 const { fundingDeals } = require("./funding");
 
@@ -761,14 +761,10 @@ function storeArticles() {
     return Object.entries(raw.seen || {})
       .map(([link, v]) => ({ link, ...v }))
       .filter((a) => a && a.title && a.publishedAt)
-      .filter((a) => {
-        // Same rule the wire applies, using the provenance the store
-        // carries. Entries written before that flag existed have no
-        // `native`, so they face the stricter test — which is the right
-        // default for an archive of mixed vintage.
-        const text = a.title + " " + (a.summary || "");
-        return a.native ? onTopic(text) : RELEVANCE.test(text);
-      })
+      // Same rule the wire applies, shared with companies.js so the hubs,
+      // the tracker and the company index can never disagree about what
+      // the archive still counts as an insurtech story.
+      .filter(admits)
       // Re-tag rather than trust the stored tags: those are frozen at
       // fetch time, so a taxonomy fix would never reach the archive.
       // Today that matters because Funding used to match a bare money
