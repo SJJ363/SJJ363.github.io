@@ -28,6 +28,46 @@ const MARKET_NOISE = new RegExp(
     "halv(e|ed|es|ing)", "rebound", "\\bdrop(ped|s)?\\b", "\\bfell\\b", "\\brose\\b",
     "\\b[1-4]H\\d\\d\\b", "\\b[1-4]Q\\d\\d\\b", "\\bH[12]\\b", "\\bQ[1-4]\\b", // period stats
     "full[- ]year", "year[- ]on[- ]year", "quarterly", "annual(ly)?",
+
+    /* Multi-company roundups: "A total of $570m was raised across 26
+       FinTech deals this week". The figure is real and the window is
+       real, so nothing above rejects it — it just belongs to a dozen
+       companies at once, and filed as one row it becomes the tracker's
+       largest "round" and inflates the disclosed total.
+
+       Every pattern here needs a COUNT or an explicit aggregate phrase,
+       because the loose reading of this shape is what genuine rounds look
+       like too. "across" alone would drop Fulcrum's $25M ("to scale AI
+       automation across US insurance brokers") and SehaTech's seed
+       ("across Egypt"); "total" alone would drop Camber's Series B
+       ("bringing total funding to $50M"). Hence `across \d+` and
+       `a total of $`, not the bare words. */
+    "as many as",
+    "a total of\\s*\\$",
+    "raised across",
+    "across \\d+",
+    "\\b\\d+\\s+(?:[A-Za-z]+\\s+)?(?:startups|deals|companies|rounds)\\b",
+
+    // Same shape, different verb: "InsurTech funding tops $1bn in February".
+    "\\btops?\\s*\\$",
+
+    /* An IPO is a real raise but not a *round*, and this table has a Stage
+       column reading Seed/Series A/… — listing Ethos's $211M float beside a
+       seed cheque is a category error, and the two IPO headlines that also
+       quote a valuation were the worst offenders. Excluded whether or not
+       the float has happened, so "hopes to raise … in IPO" and "raises $168
+       million in US IPO" are treated alike. */
+    "\\bIPO\\b",
+
+    /* A fund vehicle is not a company round: "Stone Point raises $610.5m in
+       first close of new Insurance Solutions Fund" is an investor raising
+       money TO deploy, the other side of the table from the startups here.
+       Same principle as investors-are-not-companies in companies.js.
+
+       Matched on the two terms of art rather than a trailing "Fund",
+       which would drop genuine rows — "InsuranceDekho raises $70 million
+       led by Beams Fintech Fund" ends in exactly that word. */
+    "first close", "investible capital",
   ].join("|"),
   "i"
 );
@@ -67,10 +107,25 @@ const GENERIC = new Set(
 // "market cap of" is pointing forward at the next number, not back at this one.
 const VALUATION_AFTER =
   /^[\s,;:–—-]*(?:(?:post|pre)[- ]?money\s+)?(?:valuation|market cap)\b(?!\s+(?:of|at|to)\b)/i;
+/* The verb form needs its own arm: "could value HO insurtech at $2bn+"
+   puts the company between "value" and "at", so the adjacency the rest of
+   this pattern relies on doesn't hold. Bounded to 40 characters and
+   stopped at a `$` so it can only reach across a company name, never back
+   past an earlier figure. */
 const VALUATION_BEFORE =
-  /(?:valued(?:\s+at)?|valuation\s+(?:of|at|to)|\bworth|market cap\s+of)\s+(?:a|an|about|roughly|nearly|around|some|over|almost)?\s*$/i;
+  /(?:valued(?:\s+at)?|valuation\s+(?:of|at|to)|\bworth|market cap\s+of|\bvalue[sd]?\s+[^$]{0,40}?\bat)\s+(?:a|an|about|roughly|nearly|around|some|over|almost)?\s*$/i;
 
-const FIGURE = /\$\s?([\d,.]+)\s?(k|m|mn|bn|b|million|billion|thousand)?/gi;
+/* Units are listed longest-first, and that ordering is load-bearing.
+   Alternation is leftmost-first, so with `b` ahead of `billion` the regex
+   matched "$2 b" out of "$2 billion" and left "illion valuation in US IPO"
+   as the trailing text. The *value* still came out right — b and bn both
+   mean billion — so this hid in plain sight while blinding the guard
+   below: VALUATION_AFTER is anchored to the figure's edge, and it never
+   saw the word "valuation" because "illion" sat in front of it. That is
+   how "Exzeo eyes $2 billion valuation in US IPO" reached the tracker as
+   a $2B round. Keep mn before m, bn before b, and the spelled-out words
+   before either. */
+const FIGURE = /\$\s?([\d,.]+)\s?(thousand|million|billion|mn|bn|k|m|b)?/gi;
 
 function toMillions(m) {
   const n = parseFloat(m[1].replace(/,/g, ""));
