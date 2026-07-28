@@ -743,6 +743,56 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] {
 body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247, 244, 238, 0.6); }
 .stage-filter .cnt { color: var(--ink-4); font-size: 0.9em; }
 
+/* ---- By month ----
+   A calendar grid that happens to be a column chart: twelve fixed
+   columns per year so the years align vertically, bars carrying the
+   volume, the whole thing sitting on one hairline axis. Every filled
+   cell is the link to that month's page — the chart is the nav. */
+.mo-chart { display: flex; flex-direction: column; gap: 14px; }
+.mo-year { display: grid; grid-template-columns: 2.6em 1fr; gap: 12px; align-items: end; }
+.mo-y {
+  font-size: 0.72rem; font-weight: 700; color: var(--ink-3);
+  letter-spacing: 0.04em; font-feature-settings: "tnum" 1;
+  padding-bottom: 2px;
+}
+.mo-row {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 4px;
+}
+.mo-cell { min-width: 0; }
+.mo-link { display: block; }
+.mo-n {
+  display: block; text-align: center;
+  font-size: 0.62rem; font-weight: 600; color: var(--ink-3);
+  font-feature-settings: "tnum" 1; line-height: 1.4;
+  transition: color 0.15s ease;
+}
+.mo-bar {
+  display: flex; align-items: flex-end; height: 30px;
+  border-bottom: 1px solid var(--rule);
+}
+.mo-bar i {
+  display: block; width: 100%;
+  min-height: 2px;
+  background: rgba(154, 43, 30, 0.34);
+  transition: background 0.15s ease;
+}
+.mo-m {
+  display: block; margin-top: 5px; text-align: center;
+  font-size: 0.64rem; font-weight: 600; color: var(--ink-3);
+  text-transform: uppercase; letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+}
+/* A covered month with no rounds keeps its label, greyed; a month
+   outside the archive keeps only the axis. */
+.mo-zero .mo-m { color: var(--ink-4); opacity: 0.6; }
+.mo-out .mo-m { visibility: hidden; }
+.mo-link:hover .mo-bar i { background: var(--accent); }
+.mo-link:hover .mo-m, .mo-link:hover .mo-n { color: var(--accent-deep); }
+.mo-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.fact-sub { font-weight: 500; text-transform: none; letter-spacing: 0.02em; color: var(--ink-4); }
+
 .stage-clear {
   font-family: var(--sans); font-size: 0.68rem; font-weight: 600; line-height: 1.5;
   text-transform: uppercase; letter-spacing: 0.05em;
@@ -821,6 +871,16 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
   .deal-lead, .deal-table th:nth-child(4) { display: none; }
   .deal-table { font-size: 0.86rem; }
   .deal-table td { padding-right: 11px; }
+
+  /* A twelfth of a phone is ~25px: three letters won't fit, one will,
+     and JFMAMJJASOND is a calendar convention anyway. */
+  .mo-rest { display: none; }
+  .mo-year { grid-template-columns: 2.2em 1fr; gap: 8px; }
+  .mo-row { gap: 0 3px; }
+  .mo-bar { height: 24px; }
+  .mo-y { font-size: 0.68rem; }
+  .mo-n { font-size: 0.58rem; }
+  .mo-m { font-size: 0.62rem; letter-spacing: 0; }
 }
 
 /* Five labels only just clear a 360px viewport at 0.65rem. */

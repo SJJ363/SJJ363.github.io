@@ -136,7 +136,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=19" />
+  <link rel="stylesheet" href="/style.css?v=20" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -1307,6 +1307,74 @@ function fundingSummary(deals) {
    capped, and the months below hold the rest. */
 const DEAL_CAP = 150;
 
+/* The month list is navigation and a data series at the same time: the
+   count per month is the only volume history the site holds, and spelling
+   it out on two dozen identical pills wastes it — "July 2026 11" doesn't
+   even read as two fields. So it's drawn as a small column chart on a
+   fixed 12-column calendar grid, one row per year, which is what makes
+   the years stack into aligned columns you can read down.
+
+   Two consequences worth keeping: the list grows a row a year instead of
+   a pill a month, and months inside the covered range that produced no
+   rounds show up as gaps in the axis, which is information the pill
+   strip couldn't express at all. Newest year first (the page's order
+   everywhere else), Jan→Dec inside a year, so time still runs left to
+   right where it's being compared. */
+function monthChart(months) {
+  const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const byKey = new Map(months.map((m) => [m.key, m]));
+  const keys = months.map((m) => m.key).sort();
+  const first = keys[0];
+  const last = keys[keys.length - 1];
+  const max = Math.max(...months.map((m) => m.deals.length));
+
+  const years = [];
+  for (let y = +last.slice(0, 4); y >= +first.slice(0, 4); y--) years.push(y);
+
+  const rows = years.map((y) => {
+    const cells = MON.map((label, i) => {
+      const key = `${y}-${String(i + 1).padStart(2, "0")}`;
+      // The initial carries the column on a phone, where three letters
+      // in a twelfth of 375px would collide.
+      const mo = `<span class="mo-m" aria-hidden="true">${label[0]}<span class="mo-rest">${label.slice(
+        1
+      )}</span></span>`;
+      const m = byKey.get(key);
+      if (!m) {
+        // Outside the covered range there was nothing to miss, so the
+        // label goes but the baseline stays — a ragged axis would read
+        // as a rendering fault rather than as coverage.
+        const out = key < first || key > last;
+        return `<li class="mo-cell${out ? " mo-out" : " mo-zero"}">
+              <span class="mo-bar"></span>${mo}
+            </li>`;
+      }
+      const n = m.deals.length;
+      return `<li class="mo-cell">
+              <a class="mo-link" href="/funding/${escAttr(key)}/" aria-label="${escAttr(
+        monthLabel(key)
+      )} — ${n} round${n === 1 ? "" : "s"}">
+                <span class="mo-n" aria-hidden="true">${n}</span>
+                <span class="mo-bar"><i style="height:${Math.round((n / max) * 100)}%"></i></span>${mo}
+              </a>
+            </li>`;
+    }).join("\n            ");
+    return `          <div class="mo-year">
+            <span class="mo-y">${y}</span>
+            <ol class="mo-row">
+            ${cells}
+            </ol>
+          </div>`;
+  }).join("\n");
+
+  return `      <div class="co-fact co-fact-wide">
+        <h2 class="fact-label">By month <span class="fact-sub">— disclosed rounds per month</span></h2>
+        <div class="mo-chart">
+${rows}
+        </div>
+      </div>`;
+}
+
 function fundingIndexHtml(deals, months) {
   const canonical = "/funding/";
   const { total, stages, biggest } = fundingSummary(deals);
@@ -1376,19 +1444,7 @@ function fundingIndexHtml(deals, months) {
     }</p>
       </div>`);
   }
-  if (months.length) {
-    factBlocks.push(`      <div class="co-fact">
-        <h2 class="fact-label">By month</h2>
-        <div class="badges">${months
-          .map(
-            (m) =>
-              `<a class="company-badge" href="/funding/${escAttr(m.key)}/">${escHtml(
-                monthLabel(m.key)
-              )} <span class="cnt">${m.deals.length}</span></a>`
-          )
-          .join("")}</div>
-      </div>`);
-  }
+  if (months.length) factBlocks.push(monthChart(months));
   const facts = factBlocks.length
     ? `    <section class="co-facts">\n${factBlocks.join("\n")}\n    </section>`
     : "";
