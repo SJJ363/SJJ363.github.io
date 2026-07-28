@@ -628,12 +628,12 @@ main {
 
 /* Links inside running prose need to look like links — the site's bare
    `a { color: inherit }` is right for headlines, invisible in a sentence. */
-.dek a, .method-text a {
+.dek a, .method-text a, .topic-more a {
   color: var(--accent); font-weight: 500;
   text-decoration: underline; text-underline-offset: 2px;
   text-decoration-thickness: 1px; text-decoration-color: rgba(154, 43, 30, 0.35);
 }
-.dek a:hover, .method-text a:hover { text-decoration-color: var(--accent); }
+.dek a:hover, .method-text a:hover, .topic-more a:hover { text-decoration-color: var(--accent); }
 
 .deal-table {
   width: 100%; border-collapse: collapse;
@@ -686,6 +686,23 @@ main {
   margin-left: 5px; padding: 1px 5px; border-radius: 2px;
   background: var(--paper-2); color: var(--ink-3); font-size: 0.72rem; font-weight: 600;
 }
+
+/* ---- The company ranking, /funding/companies/ ----
+   The tracker's table with the time columns traded for aggregate ones,
+   so it inherits .deal-table wholesale and adds only the two cells that
+   have no equivalent there. */
+.rank-n {
+  width: 3ch; color: var(--ink-4); font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.rank-table td.rank-n { padding-right: 10px; }
+.rank-rounds {
+  color: var(--ink-3); font-size: 0.86rem; white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+/* The top of a ranking is what the page is for — the first three totals
+   carry the serif treatment a step further so the eye lands there. */
+.rank-table tbody tr:nth-child(-n + 3) .deal-amt { font-size: 1.14rem; }
 
 /* ---- A company's rounds, on its own page ----
    Sits above the coverage list because it's the part of the page that
@@ -971,6 +988,13 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
   .deal-lead { display: none; }
   .deal-table { font-size: 0.86rem; }
   .deal-table td { padding-right: 11px; }
+
+  /* The ranking has no Lead column to give up, so it drops the date of
+     the most recent round instead — rank, company, total and round count
+     are the spine, and .deal-stage follows at 360px as it does on the
+     tracker. Scoped to .rank-table so the round tables, where Announced
+     is a sort key, keep theirs. */
+  .rank-table .deal-date { display: none; }
 
   /* A twelfth of a phone is ~25px: three letters won't fit, one will,
      and JFMAMJJASOND is a calendar convention anyway. */

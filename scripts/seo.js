@@ -163,7 +163,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=24" />
+  <link rel="stylesheet" href="/style.css?v=25" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -1599,7 +1599,9 @@ ${rows}
         </table>
       </div>
       <p class="co-fund-note">Disclosed rounds only, as reported in the insurtech press —
-        see the <a href="/funding/">funding tracker</a> for what is counted and what isn't.</p>
+        see the <a href="/funding/">funding tracker</a> for what is counted and what isn't,
+        or how this compares in the <a href="/funding/companies/">ranking of the most-funded
+        insurtech companies</a>.</p>
     </section>
 `;
 }
@@ -1979,7 +1981,34 @@ function periodNav(newer, older, base, labelFn, label) {
     : "";
 }
 
-function fundingIndexHtml(deals, months, quarters = [], years = []) {
+/* The ranking, teased on the tracker index.
+
+   Written as five plain links with their numbers rather than a bare
+   "see the ranking" line: the top of the list is the part a reader
+   wants, and .pl-link makes them accent ink and underlined at rest —
+   the same rule the month links follow, and for the same reason. */
+function rankTeaser(rows) {
+  if (!rows.length) return "";
+  const shown = rows.slice(0, 5);
+  return `      <div class="co-fact co-fact-wide">
+        <h2 class="fact-label">Most-funded companies <span class="fact-sub">— total raised across every disclosed round</span></h2>
+        <ol class="period-list">
+${shown
+  .map(
+    (r) =>
+      `          <li class="pl-row"><a class="pl-inner pl-link" href="/company/${escAttr(
+        r.slug
+      )}/"><span class="pl-label">${escHtml(r.name)}</span><span class="pl-val">${escHtml(
+        money(r.total)
+      )} <span class="pl-n">${r.rounds} round${r.rounds === 1 ? "" : "s"}</span></span></a></li>`
+  )
+  .join("\n")}
+        </ol>
+        <p class="topic-more"><a href="/funding/companies/">All ${rows.length} companies, ranked →</a></p>
+      </div>`;
+}
+
+function fundingIndexHtml(deals, months, quarters = [], years = [], ranked = []) {
   const canonical = "/funding/";
   const { total, median, stages, biggest } = fundingSummary(deals);
   const n = deals.length;
@@ -2027,6 +2056,10 @@ function fundingIndexHtml(deals, months, quarters = [], years = []) {
     factBlocks.push(quarterChart(quarters, new Set(years.map((y) => y.key))));
     factBlocks.push(periodIndex(quarters, years));
   }
+  // The other axis, directly under the time one — every page below this
+  // point on the tracker slices by date, and this is the only link to
+  // the ranking that doesn't.
+  if (ranked.length) factBlocks.push(rankTeaser(ranked));
   if (stages.length) {
     // The stage pills looked like controls long before they were any, so
     // they are now the filter: real <button>s with aria-pressed, multi-select
@@ -2082,6 +2115,195 @@ ${dealTable(shown, "Insurtech funding rounds — company, amount, stage, lead in
 ${
   shown.length < n
     ? `    <p class="topic-more">Showing the ${shown.length} most recent of ${n}. Earlier rounds are on the monthly pages above.</p>`
+    : ""
+}
+
+${METHOD_NOTE}
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+/* ── /funding/companies/ — the tracker's other axis ─────────────
+   Every other funding URL slices the archive by time. Time is not how
+   anyone looks for this: "insurtech funding August 2024" is nobody's
+   search, and "most funded insurtech companies" is, so the one ranking
+   the data supports is worth a page of its own.
+
+   It is not a re-sort of /funding/ either, which is the test these URLs
+   have to pass (see collectQuarters). A per-company total aggregates
+   ACROSS rounds — Nirvana's $204M over three, Alan's $309M over two —
+   and that number appears nowhere in the round table, on any period
+   page, or in anyone else's reporting. The largest-single-rounds block
+   below it is the secondary, capped the way a period page's table is.
+
+   It also does a second job: it is a ranked hub linking every company
+   that has a disclosed round, and those are exactly the pages the
+   funding door in indexable() lets through. Before this they were
+   reachable mainly through the 1,300-link companies index. */
+const COMPANY_RANK_MIN = 10;
+const COMPANY_RANK_CAP = 250;
+
+/* Deals arrive newest-first from collectDeals(), and the per-company
+   lists inherit that order — so deals[0] is the most recent round and
+   the first non-empty stage is the latest one stated. Rounds without an
+   attributed company are dropped: they can't be summed under a name or
+   linked to a page, and a row that is neither is not a ranking entry. */
+function collectFundedCompanies(deals) {
+  const by = new Map();
+  for (const d of deals) {
+    if (!d.company) continue;
+    if (!by.has(d.company.slug))
+      by.set(d.company.slug, { slug: d.company.slug, name: d.company.name, deals: [] });
+    by.get(d.company.slug).deals.push(d);
+  }
+  const rows = [...by.values()].map((c) => ({
+    ...c,
+    total: totalOf(c.deals),
+    rounds: c.deals.length,
+    latest: c.deals[0],
+    stage: (c.deals.find((d) => d.stage) || {}).stage || "",
+  }));
+  // Capital, then round count, then name — so the order is stable across
+  // builds instead of reshuffling ties on every run.
+  rows.sort((a, b) => b.total - a.total || b.rounds - a.rounds || a.name.localeCompare(b.name));
+  // Too few companies and the ranking is just the round table with the
+  // columns moved — the same duplicate-of-/funding/ guard collectMonths()
+  // applies. It starts by itself once the archive is deep enough.
+  return rows.length >= COMPANY_RANK_MIN ? rows.slice(0, COMPANY_RANK_CAP) : [];
+}
+
+/* The ranking. No sort controls and no data-deal-table hook: there is
+   one meaningful order here and the page is already in it, so the table
+   needs no JS at all (same call as companyFundingBlock).
+
+   Cells reuse the tracker's classes wherever the content matches, which
+   is what keeps the phone breakpoints shared rather than re-tuned —
+   .deal-stage drops at 360px here exactly as it does there. */
+function companyRankTable(rows) {
+  return `    <div class="table-wrap">
+      <table class="deal-table rank-table">
+        <caption class="sr-only">Insurtech companies ranked by total disclosed funding — rank, company, capital raised, number of rounds, latest stage and most recent round</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="rank-n">#</th>
+            <th scope="col">Company</th>
+            <th scope="col">Disclosed</th>
+            <th scope="col" class="rank-rounds">Rounds</th>
+            <th scope="col" class="deal-stage">Latest stage</th>
+            <th scope="col" class="deal-date">Most recent</th>
+          </tr>
+        </thead>
+        <tbody>
+${rows
+  .map(
+    (r, i) => `          <tr>
+            <td class="rank-n">${i + 1}</td>
+            <td class="deal-co"><a class="deal-link" href="/company/${escAttr(
+              r.slug
+            )}/">${escHtml(r.name)}</a></td>
+            <td class="deal-amt">${escHtml(money(r.total))}</td>
+            <td class="rank-rounds">${r.rounds}</td>
+            <td class="deal-stage">${
+              r.stage ? escHtml(r.stage) : '<span class="deal-blank">—</span>'
+            }</td>
+            <td class="deal-date"><time datetime="${escAttr(
+              isoDate(r.latest.publishedAt)
+            )}">${escHtml(fullDate(r.latest.publishedAt))}</time></td>
+          </tr>`
+  )
+  .join("\n")}
+        </tbody>
+      </table>
+    </div>`;
+}
+
+function fundingCompaniesHtml(rows, deals) {
+  const canonical = "/funding/companies/";
+  const capital = rows.reduce((s, r) => s + r.total, 0);
+  const nRounds = rows.reduce((s, r) => s + r.rounds, 0);
+  const multi = rows.filter((r) => r.rounds > 1).length;
+  const top = rows[0];
+
+  const title = `Most-funded insurtech companies | ${SITE.name}`;
+  const description =
+    `${rows.length} insurtech companies ranked by disclosed capital raised — ` +
+    `${money(capital)} across ${nRounds} round${nRounds === 1 ? "" : "s"}` +
+    (top ? `, led by ${top.name} at ${money(top.total)}` : "") +
+    ". Round counts, stage and the reporting behind every figure.";
+
+  // A ranked list is what ItemList is for, and the positions are the
+  // page. The Dataset markup stays on /funding/, which holds the rows —
+  // this page is a derived ranking of them, not a second copy.
+  const listLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Most-funded insurtech companies",
+    description: clamp(description, 300),
+    url: url(canonical),
+    numberOfItems: rows.length,
+    itemListOrder: "https://schema.org/ItemListOrderDescending",
+    itemListElement: rows.map((r, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: url(`/company/${r.slug}/`),
+      name: r.name,
+    })),
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Funding tracker", path: "/funding/" },
+    { name: "Most-funded companies", path: canonical },
+  ]);
+
+  const biggest = deals.slice().sort((a, b) => b.amountM - a.amountM).slice(0, PERIOD_DEAL_CAP);
+  const statBits = [
+    `${rows.length} companies`,
+    `${money(capital)} disclosed`,
+    `${nRounds} round${nRounds === 1 ? "" : "s"}`,
+  ];
+  if (multi) statBits.push(`${multi} raised more than once`);
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("funding"),
+    imageAlt: `Most-funded insurtech companies — ${SITE.name}`,
+    jsonld: [listLd, crumbLd],
+    // Only the largest-rounds table below wants sorting; the ranking
+    // above is already in its one meaningful order.
+    scripts: [FUNDING_JS],
+  })}
+<body>
+${header("funding")}
+
+  <main id="top">
+    <p class="crumb"><a href="/funding/">← Full funding tracker</a></p>
+
+    <div class="intro co-head">
+      <p class="co-kicker">Tracker</p>
+      <h1 class="tagline">Most-funded insurtech companies</h1>
+      <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
+      <p class="dek">
+        Every company in this archive with a disclosed round, ranked by total
+        capital raised across all of them. Totals count only rounds a
+        publication stated in US dollars, so they are a floor — the
+        <a href="/funding/">full tracker</a> lists each round with the
+        reporting it came from.
+      </p>
+    </div>
+
+${companyRankTable(rows)}
+
+    <h2 class="section-label">Largest single rounds</h2>
+${dealTable(biggest, "Largest disclosed insurtech funding rounds")}
+${
+  deals.length > biggest.length
+    ? `    <p class="topic-more">The ${biggest.length} largest of ${deals.length}, by amount. Every round is listed in date order in the <a href="/funding/">full tracker</a>.</p>`
     : ""
 }
 
@@ -2447,16 +2669,19 @@ function collectYears(deals) {
   return years.length > 1 ? years : [];
 }
 
-function buildFundingPages(deals, months, quarters, years) {
+function buildFundingPages(deals, months, quarters, years, ranked = []) {
   const outRoot = path.join(ROOT, "funding");
   fs.mkdirSync(outRoot, { recursive: true });
 
   // Every period type shares one directory, so the prune set has to know
   // about all three — a year page left out of it would be deleted on the
-  // run after the one that wrote it.
+  // run after the one that wrote it. /funding/companies/ lives in the
+  // same directory and is not a period at all, so it has to be named
+  // here explicitly or the next run deletes the page this one wrote.
   const monthKeys = new Set(months.map((m) => m.key));
   const quarterKeys = new Set(quarters.map((q) => q.key));
   const wanted = new Set([...monthKeys, ...quarterKeys, ...years.map((y) => y.key)]);
+  if (ranked.length) wanted.add("companies");
   for (const name of fs.readdirSync(outRoot)) {
     const dir = path.join(outRoot, name);
     if (fs.statSync(dir).isDirectory() && !wanted.has(name)) {
@@ -2495,7 +2720,11 @@ function buildFundingPages(deals, months, quarters, years) {
   years.forEach((y, i) => {
     write(y.key, fundingYearHtml(y, years[i - 1], years[i + 1], quarters, archiveStart));
   });
-  fs.writeFileSync(path.join(outRoot, "index.html"), fundingIndexHtml(deals, months, quarters, years));
+  if (ranked.length) write("companies", fundingCompaniesHtml(ranked, deals));
+  fs.writeFileSync(
+    path.join(outRoot, "index.html"),
+    fundingIndexHtml(deals, months, quarters, years, ranked)
+  );
 
   const count = (list, min) => list.filter((p) => p.deals.length >= min).length;
   const line = (name, list, min) =>
@@ -2506,6 +2735,7 @@ function buildFundingPages(deals, months, quarters, years) {
         line("year pages", years, YEAR_MIN_DEALS),
         line("quarter pages", quarters, QUARTER_MIN_DEALS),
         line("month pages", months, MONTH_MIN_DEALS),
+        ranked.length ? `${ranked.length} companies ranked` : "company ranking held (too few)",
       ].join(", ")
   );
 }
@@ -2713,7 +2943,8 @@ function buildSitemap(
   months = [],
   deals = [],
   quarters = [],
-  years = []
+  years = [],
+  ranked = []
 ) {
   const now = isoDate(new Date().toISOString());
   const entries = [
@@ -2752,6 +2983,16 @@ function buildSitemap(
       priority: "0.9",
       changefreq: "daily",
     });
+    // Ranked with /funding/ itself: a per-company total is an aggregate
+    // across rounds, which no period page and no outlet publishes.
+    if (ranked.length) {
+      entries.push({
+        loc: "/funding/companies/",
+        lastmod: isoDate(deals[0].publishedAt) || now,
+        priority: "0.9",
+        changefreq: "daily",
+      });
+    }
     // The aggregate pages rank above the month tables: a year or quarter
     // total is the part of this dataset that exists nowhere else, while a
     // month page is the same rows cut finer.
@@ -2889,6 +3130,7 @@ function main() {
   const months = collectMonths(deals);
   const quarters = collectQuarters(deals);
   const years = collectYears(deals);
+  const ranked = collectFundedCompanies(deals);
   // Every page's nav lists the hubs, so the list has to exist before
   // the first page is written — and so must the funded-company set,
   // which the company pages, the companies index and the sitemap all
@@ -2898,12 +3140,12 @@ function main() {
   buildCompanyPages(db, deals);
   buildBriefPages(briefs);
   buildTopicPages(topics, db, deals);
-  buildFundingPages(deals, months, quarters, years);
+  buildFundingPages(deals, months, quarters, years, ranked);
   injectAnalytics();
   injectSocial();
   injectHomepage(news);
   injectCompaniesIndex(db);
-  buildSitemap(news, db, briefs, topics, months, deals, quarters, years);
+  buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked);
   buildRobots();
   console.log("SEO build complete.");
 }

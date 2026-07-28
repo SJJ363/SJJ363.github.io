@@ -312,6 +312,28 @@ produce all of that consistently — **route new pages through them.**
      arrives for. `quarterChart()` reuses the `.mo-*` classes at four
      columns (`.mo-row-q`, `.mo-chart-cap`) rather than forking the
      component, so the phone breakpoints stay shared.
+   • **`/funding/companies/` is the tracker's other axis, and the only
+     one that isn't time.** Every other funding URL slices the archive by
+     date, which is not how anyone looks for this — "insurtech funding
+     August 2024" is nobody's search and "most funded insurtech
+     companies" is. It passes the same test the period pages do
+     (`collectQuarters`): a per-company total aggregates *across* rounds
+     — Nirvana's $204M over three, Alan's $309M over two — and that
+     number is on no period page, in no round table and in nobody else's
+     reporting. `collectFundedCompanies()` builds it, deals without an
+     attributed company are dropped (they can't be summed under a name or
+     linked), and the sort is capital → round count → name so ties don't
+     reshuffle across builds. Three things it depends on: it holds until
+     `COMPANY_RANK_MIN` companies exist, the same duplicate-of-`/funding/`
+     guard `collectMonths()` carries; **`buildFundingPages()`'s prune set
+     must name `"companies"` explicitly** — it shares the `funding/`
+     directory with the three period types but is not one of them, so a
+     key left out deletes the page the previous run wrote; and it is
+     **not in the nav** (rule 2b — five items is what the breakpoints are
+     measured for), so it is reached from the tracker index teaser and
+     from `companyFundingBlock()`'s note, which is ~160 inbound internal
+     links onto the ranking and a ranked hub pointing back at every page
+     the funding door in `indexable()` lets through.
    • **`style.css` is cache-busted by hand.** The `?v=N` lives in
      `head()` in `seo.js` *and* in the hand-authored `index.html` and
      `companies.html`. Change the stylesheet and all three need bumping
