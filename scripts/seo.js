@@ -24,8 +24,9 @@
 const fs = require("fs");
 const path = require("path");
 const { admits } = require("./relevance");
-const { TAXONOMY, FALLBACK_TAG, tagArticle } = require("./taxonomy");
+const { TAXONOMY, FALLBACK_TAG, tagArticle, topicSlug } = require("./taxonomy");
 const { fundingDeals } = require("./funding");
+const { cardFor, W: OG_W, H: OG_H } = require("./og");
 
 const ROOT = path.join(__dirname, "..");
 const NEWS = path.join(ROOT, "data", "news.json");
@@ -44,7 +45,15 @@ const SITE = {
     "Insurtech funding, launches, partnerships and platform moves — aggregated from hundreds of outlets and refreshed through the day.",
   locale: "en_US",
   lang: "en",
-  ogImage: "/assets/og.svg", // 1200×630 branded card (see assets/og.svg)
+  /* The default share card. PNG, not SVG, and that is the whole point:
+     no link-preview crawler anywhere rasterizes SVG, so the vector card
+     this used to point at rendered as no card at all — on Facebook,
+     LinkedIn, X, Slack, Discord and iMessage alike. Cards are built by
+     scripts/og.js; pick one per page type with cardFor(). */
+  ogImage: cardFor("home"),
+  /* Organization JSON-LD wants a logo, and a 1.91:1 news card is the
+     wrong shape for one even now that it's the right format. */
+  logo: "/assets/logo.png",
   twitter: "", // add "@handle" if/when one exists
 };
 
@@ -140,6 +149,42 @@ const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
+/* ── The social card block ──────────────────────────────────────
+   Written here and nowhere else, so every page — generated or
+   hand-authored — carries an identical, complete set.
+
+   The width/height/type trio is not decoration. Facebook and LinkedIn
+   both queue an image they have not measured and render the link
+   *without* a card on that first scrape; declaring the dimensions lets
+   them lay the card out immediately, which is the difference between a
+   preview on the first paste and a preview once someone re-shares.
+   The alt text is what screen readers announce in a timeline, and X
+   requires it to expose alt at all. ── */
+function socialTags({ title, desc, cUrl, ogType, ogImage, imageAlt }) {
+  const ogImg = url(ogImage || SITE.ogImage);
+  const alt = imageAlt || `${SITE.name} — ${SITE.tagline}`;
+  return `  <meta property="og:type" content="${escAttr(ogType)}" />
+  <meta property="og:site_name" content="${escAttr(SITE.name)}" />
+  <meta property="og:title" content="${escAttr(title)}" />
+  <meta property="og:description" content="${escAttr(desc)}" />
+  <meta property="og:url" content="${escAttr(cUrl)}" />
+  <meta property="og:image" content="${escAttr(ogImg)}" />
+  <meta property="og:image:secure_url" content="${escAttr(ogImg)}" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="${OG_W}" />
+  <meta property="og:image:height" content="${OG_H}" />
+  <meta property="og:image:alt" content="${escAttr(alt)}" />
+  <meta property="og:locale" content="${SITE.locale}" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${escAttr(title)}" />
+  <meta name="twitter:description" content="${escAttr(desc)}" />
+  <meta name="twitter:image" content="${escAttr(ogImg)}" />
+  <meta name="twitter:image:alt" content="${escAttr(alt)}" />${
+    SITE.twitter ? `\n  <meta name="twitter:site" content="${escAttr(SITE.twitter)}" />` : ""
+  }`;
+}
+
 /* ── The shared <head> builder — every page goes through here ── */
 function head({
   title,
@@ -148,12 +193,16 @@ function head({
   ogType = "website",
   jsonld = [],
   robots = "index, follow, max-image-preview:large, max-snippet:-1",
+  // Which share card this page type gets — a cardFor() path. Defaults to
+  // the masthead card, so a new page type previews correctly on day one
+  // and only needs its own card if it earns one.
+  ogImage = SITE.ogImage,
+  imageAlt,
   // Page-specific enhancement scripts (deferred, additive). The page must
   // still be complete without them — see rule 5 in CLAUDE.md.
   scripts = [],
 }) {
   const desc = clamp(description);
-  const ogImg = url(SITE.ogImage);
   const cUrl = url(canonical);
   const ld = (Array.isArray(jsonld) ? jsonld : [jsonld])
     .filter(Boolean)
@@ -174,20 +223,7 @@ ${ANALYTICS ? ANALYTICS + "\n" : ""}  <meta charset="UTF-8" />
   <link rel="canonical" href="${escAttr(cUrl)}" />
   <meta name="theme-color" content="#f7f4ee" />
 
-  <meta property="og:type" content="${ogType}" />
-  <meta property="og:site_name" content="${escAttr(SITE.name)}" />
-  <meta property="og:title" content="${escAttr(title)}" />
-  <meta property="og:description" content="${escAttr(desc)}" />
-  <meta property="og:url" content="${escAttr(cUrl)}" />
-  <meta property="og:image" content="${escAttr(ogImg)}" />
-  <meta property="og:locale" content="${SITE.locale}" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="${escAttr(title)}" />
-  <meta name="twitter:description" content="${escAttr(desc)}" />
-  <meta name="twitter:image" content="${escAttr(ogImg)}" />${
-    SITE.twitter ? `\n  <meta name="twitter:site" content="${escAttr(SITE.twitter)}" />` : ""
-  }
+${socialTags({ title, desc, cUrl, ogType, ogImage, imageAlt })}
 
 ${HEAD_ASSETS}${scripts
     .map((s) => `\n  <script src="${escAttr(s)}" defer></script>`)
@@ -279,7 +315,7 @@ function organizationLd() {
     name: SITE.name,
     url: url("/"),
     description: SITE.description,
-    logo: url(SITE.ogImage),
+    logo: url(SITE.logo),
   };
 }
 
@@ -435,6 +471,8 @@ ${articles.map(companyArticleLi).join("\n")}
     description,
     canonical,
     ogType: "profile",
+    ogImage: cardFor("company"),
+    imageAlt: `${c.name} on ${SITE.name}`,
     // Structured data on a noindex page is ignored anyway; emitting only
     // the breadcrumb keeps the markup honest about what this page is.
     jsonld: thin ? [crumbLd] : [collectionLd, crumbLd],
@@ -592,9 +630,16 @@ function briefPageHtml(b, newer, older) {
       "@type": "Organization",
       name: SITE.name,
       url: url("/"),
-      logo: { "@type": "ImageObject", url: url(SITE.ogImage) },
+      logo: { "@type": "ImageObject", url: url(SITE.logo) },
     },
-    image: url(SITE.ogImage),
+    // Google Discover and the news carousels read `image`, not og:image —
+    // and a 1200×630 raster is what they want, same as the scrapers.
+    image: {
+      "@type": "ImageObject",
+      url: url(cardFor("brief")),
+      width: OG_W,
+      height: OG_H,
+    },
     articleSection: "Insurtech",
   };
   const crumbLd = breadcrumbLd([
@@ -640,7 +685,15 @@ function briefPageHtml(b, newer, older) {
     ? `    <nav class="brief-nav" aria-label="More briefs">\n      ${nav.join("\n      ")}\n    </nav>`
     : "";
 
-  return `${head({ title, description, canonical, ogType: "article", jsonld: [articleLd, crumbLd] })}
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogType: "article",
+    ogImage: cardFor("brief"),
+    imageAlt: `The Daily Brief, ${fullDate(b.date)} — ${SITE.name}`,
+    jsonld: [articleLd, crumbLd],
+  })}
 <body>
 ${header("brief")}
 
@@ -728,7 +781,14 @@ ${briefs
     </ol>`
     : `    <p class="empty">No briefs published yet.</p>`;
 
-  return `${head({ title, description, canonical, jsonld: [collectionLd, crumbLd] })}
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("brief"),
+    imageAlt: `The Daily Brief archive — ${SITE.name}`,
+    jsonld: [collectionLd, crumbLd],
+  })}
 <body>
 ${header("brief")}
 
@@ -780,13 +840,8 @@ function buildBriefPages(briefs) {
    pages: Health & Life has 9 stories across the archive but might
    have none in today's 140.
    ══════════════════════════════════════════════════════════════ */
-const topicSlug = (name) =>
-  String(name)
-    .toLowerCase()
-    .replace(/&/g, " and ")
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim()
-    .replace(/\s+/g, "-");
+/* topicSlug now lives in taxonomy.js — og.js names each hub's share
+   card after the same slug, and two copies would drift silently. */
 
 /* The store is keyed by link, with the article's fields as the value.
    It is an archive of everything ever admitted, including items let in
@@ -948,7 +1003,15 @@ function topicPageHtml(topic, allTopics, db, deals = []) {
       ? `    <p class="topic-more">Showing the ${shown.length} most recent of ${n}.</p>`
       : "";
 
-  return `${head({ title, description, canonical, jsonld: [collectionLd, crumbLd] })}
+  return `${head({
+    title,
+    description,
+    canonical,
+    // One card per hub, keyed on the same slug that built the URL.
+    ogImage: cardFor(`topic-${topic.slug}`),
+    imageAlt: `${topic.name} — insurtech coverage on ${SITE.name}`,
+    jsonld: [collectionLd, crumbLd],
+  })}
 <body>
 ${header("topics", topic.slug)}
 
@@ -1031,7 +1094,14 @@ function topicIndexHtml(topics) {
     })
     .join("\n");
 
-  return `${head({ title, description, canonical, jsonld: [collectionLd, crumbLd] })}
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("topics"),
+    imageAlt: `Insurtech topics on ${SITE.name}`,
+    jsonld: [collectionLd, crumbLd],
+  })}
 <body>
 ${header("topics")}
 
@@ -1453,6 +1523,8 @@ function fundingIndexHtml(deals, months) {
     title,
     description,
     canonical,
+    ogImage: cardFor("funding"),
+    imageAlt: `Insurtech funding tracker — ${SITE.name}`,
     jsonld: [datasetLd, crumbLd],
     scripts: [FUNDING_JS],
   })}
@@ -1544,6 +1616,8 @@ function fundingMonthHtml(m, newer, older) {
     title,
     description,
     canonical,
+    ogImage: cardFor("funding"),
+    imageAlt: `Insurtech funding, ${label} — ${SITE.name}`,
     jsonld: thin ? [crumbLd] : [datasetLd, crumbLd],
     robots: thin ? "noindex, follow" : undefined,
     // No stage filters on a month page (there's no facts block), but the
@@ -1667,6 +1741,64 @@ function injectAnalytics() {
       ? `  ✓ Google tag ${GA_ID} on ${n} hand-authored page${n === 1 ? "" : "s"}`
       : `  ✓ analytics disabled (GA_ID empty) — tag cleared from ${n} page${n === 1 ? "" : "s"}`
   );
+}
+
+/* ── Social cards on the hand-authored pages ────────────────────
+   Same problem the Google tag has: index.html and companies.html
+   don't go through head(), so without a marker they keep whatever
+   OG block was hand-typed into them — which is exactly how they
+   ended up pointing at an SVG card that no platform renders, and
+   stayed there through every subsequent build.
+
+   So the block is generated for them too, from the same
+   socialTags() the generated pages use. The per-page title and
+   description live here rather than in the file, because they are
+   now inputs to a builder rather than markup.
+
+   Note these three are NOT the page's <title>/<meta description> —
+   those stay hand-authored in the file. This is the share card's
+   copy, which reads better shorter. ── */
+const SOCIAL_PAGES = [
+  {
+    file: "index.html",
+    canonical: "/",
+    ogType: "website",
+    card: "home",
+    title: `${SITE.name} — insurtech news, aggregated all day`,
+    description: SITE.description,
+    imageAlt: `${SITE.name} — insurtech news, aggregated all day`,
+  },
+  {
+    file: "companies.html",
+    canonical: "/companies.html",
+    ogType: "website",
+    card: "companies",
+    title: `Companies tracked — ${SITE.name}`,
+    description:
+      "A searchable index of every insurtech company tracked across Insurtech Daily's coverage.",
+    imageAlt: `The company index on ${SITE.name}`,
+  },
+];
+
+function injectSocial() {
+  let n = 0;
+  for (const p of SOCIAL_PAGES) {
+    const file = path.join(ROOT, p.file);
+    if (!fs.existsSync(file)) continue;
+    const html = fs.readFileSync(file, "utf8");
+    const block = socialTags({
+      title: p.title,
+      desc: clamp(p.description),
+      cUrl: url(p.canonical),
+      ogType: p.ogType,
+      ogImage: cardFor(p.card),
+      imageAlt: p.imageAlt,
+    });
+    const next = replaceBlock(html, "OG", block);
+    if (next !== html) fs.writeFileSync(file, next);
+    n++;
+  }
+  console.log(`  ✓ social cards on ${n} hand-authored page${n === 1 ? "" : "s"}`);
 }
 
 function injectHomepage(news) {
@@ -1921,6 +2053,7 @@ function main() {
   buildTopicPages(topics, db, deals);
   buildFundingPages(deals, months);
   injectAnalytics();
+  injectSocial();
   injectHomepage(news);
   injectCompaniesIndex(db);
   buildSitemap(news, db, briefs, topics, months, deals);

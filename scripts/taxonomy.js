@@ -48,4 +48,17 @@ function tagArticle(text) {
   return tags.length ? tags : [FALLBACK_TAG];
 }
 
-module.exports = { TAXONOMY, FALLBACK_TAG, tagArticle };
+/* A category name → its URL segment. Lives here rather than in seo.js
+   because it is now read from two places: seo.js builds /topic/<slug>/
+   from it and og.js names that hub's share card after it. Two copies
+   drift the day a category is renamed, and the failure is silent — the
+   hub keeps working and its card 404s. */
+const topicSlug = (name) =>
+  String(name)
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .replace(/\s+/g, "-");
+
+module.exports = { TAXONOMY, FALLBACK_TAG, tagArticle, topicSlug };

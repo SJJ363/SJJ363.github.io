@@ -245,19 +245,54 @@ produce all of that consistently — **route new pages through them.**
    re-run; markers are replaced, not appended.
 7. **Canonical origin** is `SITE.origin` in `seo.js` (overridable via the
    `SITE_URL` env var), and must match the domain in `/CNAME`. Changing it covers
-   every *generated* page, but the hand-authored `<head>` blocks in `index.html`
-   and `companies.html` hold their own absolute `canonical`/`og:url`/`og:image`/
-   `twitter:image` literals — `seo.js` only rewrites the JSON-LD between the
-   markers in those two files. Update them too, then confirm with
+   every *generated* page and, since the OG block moved behind a marker (rule 8),
+   the social tags on the hand-authored pages too — but `index.html` and
+   `companies.html` still hold their own absolute `canonical` literal outside the
+   markers. Update those, then confirm with
    `grep -rn '<old-origin>' --include='*.html' --include='*.xml' --include='*.txt' .`
    returning nothing.
-8. **OG image** is `assets/og.svg` (1200×630). Swapping in a raster `og.png` is a
-   one-line change to `SITE.ogImage`; some scrapers (Facebook/LinkedIn) prefer PNG.
+8. **Social cards are PNG, and that is the entire point.** `og:image` used to
+   point at `assets/og.svg`, and **no link-preview scraper anywhere rasterizes
+   SVG** — Facebook (whose crawler LinkedIn and most others imitate), X, Slack,
+   Discord and Apple's iMessage fetcher take PNG/JPEG/GIF/WEBP and silently drop
+   the rest. A vector card is not a degraded card, it is *no* card: every link
+   shared off this site rendered as bare blue text. Four rules:
+   • **`scripts/og.js` is the only place a card is drawn or named.** It renders
+     each one through headless Chrome — which is what gets the site's real
+     Newsreader/Libre Franklin instead of a system-serif stand-in — and exports
+     `cardFor(id)`. **Never write an `/assets/og/…` path at a call site**;
+     `cardFor()` falls back to the home card for an unknown id, so a typo costs
+     the wrong picture rather than a 404, which previews as no card at all.
+   • **The PNGs are committed, not built in CI.** Rendering needs a browser
+     binary and `news.yml` shouldn't grow a Chrome install to redraw artwork
+     whose text never changes. Run `node scripts/og.js` after touching the
+     design, the palette or the card list, and commit the output.
+   • **One card per page *type*, not per page.** The page-specific half of a
+     preview — the headline and blurb a platform prints beside the image — is
+     `og:title`/`og:description`, which `head()` already writes per page. So
+     ~1,300 company pages share one section card, the way a newspaper shares a
+     section front. A new page type inherits the masthead card and only needs
+     its own once it earns one.
+   • **`og:image:width`/`height`/`type` are load-bearing.** Facebook and
+     LinkedIn queue an unmeasured image and render that first scrape *without*
+     a card; declaring the dimensions is the difference between a preview on
+     the first paste and a preview after someone re-shares. `socialTags()` in
+     `seo.js` writes the whole set — including `og:image:alt` — for generated
+     pages *and*, through the `<!-- SEO:OG -->` marker, for `index.html` and
+     `companies.html`. That marker exists because the hand-typed block in those
+     two files is precisely what went stale and pointed at the SVG through
+     every build. `company.html` is deliberately left out: it is a `noindex`
+     redirect shim titled "Redirecting…", and a card there would be worse
+     than none.
+   `assets/logo.png` (512×512) is separate — it fills the `logo` slot in the
+   Organization JSON-LD, where a 1.91:1 news card is the wrong *shape* even now
+   that it is the right format. `og.js` renders it in the same pass.
 
 ### Local check
 
 ```bash
 node scripts/schedule.js       # what the workflow would decide right now
+node scripts/og.js             # redraw the social cards (needs Chrome; only after a design change)
 node scripts/seo.js            # regenerate pages, sitemap, robots, structured data
 python3 -m http.server 8099    # serve root; visit /company/<slug>/ to spot-check
 ```
