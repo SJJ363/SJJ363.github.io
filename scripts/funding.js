@@ -288,17 +288,29 @@ const MARKET_NOISE = new RegExp(
     "\\bto invest\\b",                                  // "Plum to invest $23m"
     "\\btargets?\\s+(?:[A-Z]{0,2}[$€£₹¥]|Rs\\.?\\s*\\d|₹|\\d)",
 
-    /* FinTech Global's feed re-serves its own archive pages, and the RSS
-       stamps them with today's date: "Hippo Insurance raises $100m in
-       Series D – Digital Wealth & CX Tech Forum – Virtual" arrived dated
-       2025-07-24 for a round that closed in 2018. The headline is true
-       and the date is fiction, and a funding row is a dated claim — so
-       the whole shape is excluded rather than filed under a year it did
-       not happen in. Recognised by the conference suffix the feed adds. */
-    "(?:digital (?:insurance|wealth)|cx tech) forum",
   ].join("|"),
   "i"
 );
+
+/* Provenance, not semantics — and the difference is the whole reason this
+   is a separate list.
+
+   FinTech Global's feed re-serves its own archive pages and the RSS stamps
+   them with today's date. "Hippo Insurance raises $100m in Series D –
+   Digital Wealth & CX Tech Forum – Virtual" arrived dated 2025-07-24 for a
+   round that closed in 2018; "Shift Technology accelerates growth drive
+   following $60m Series C – Digital Insurance & CX Tech Forum 2022" for
+   one that closed in 2021. The headline is true and the date is fiction,
+   and a funding row is a dated claim.
+
+   MARKET_NOISE above is about what a headline MEANS, so the extractor
+   overrides it — that is the point of having a reader. This is about
+   whether the record can be trusted at all, which the extractor cannot
+   judge: shown that Hippo headline it correctly answers "yes, a Series D",
+   because nothing in the text says the date is wrong. So STALE_RECORD is
+   applied on BOTH paths. A guard encoding something the model cannot see
+   must not be one the model can overrule. */
+const STALE_RECORD = /(?:digital (?:insurance|wealth)|cx tech)\s+forum/i;
 
 // A single disclosed insurtech round is realistically well under this.
 // Anything larger is almost certainly a market-size or aggregate figure.
@@ -543,6 +555,7 @@ const INSURANCE_ROUND = new RegExp(
    it is how Blitzy's AI-coding raise and JVP's fund leave the table. */
 function fromFact(article, fact) {
   if (!fact || !fact.round) return null;
+  if (STALE_RECORD.test(article.title || "")) return null;
   const currency = RATES[fact.currency] !== undefined ? fact.currency : "USD";
   const native = Number(fact.amountM);
   if (!isFinite(native) || native <= 0) return null;
@@ -571,7 +584,7 @@ function fromFact(article, fact) {
 function fromRegex(article) {
   const title = article.title || "";
   if (!(article.tags || []).includes("Funding")) return null;
-  if (MARKET_NOISE.test(title)) return null;
+  if (MARKET_NOISE.test(title) || STALE_RECORD.test(title)) return null;
   if (!INSURANCE_ROUND.test(title + " " + (article.summary || ""))) return null;
   const { usdM, nativeM, currency } = amountOf(title);
   if (usdM <= 0 || usdM > CAP_M) return null;

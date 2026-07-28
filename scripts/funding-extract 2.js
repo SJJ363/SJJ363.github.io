@@ -58,31 +58,7 @@ const { isFundingCandidate, RATES } = require("./funding");
 const STORE = path.join(__dirname, "..", "data", "companies-store.json");
 
 // Bump when the prompt changes so cached verdicts re-extract.
-const PROMPT_VERSION = 2;
-
-/* How far a round's real announcement may sit behind the article's date
-   before the record is treated as a republished archive item.
-
-   FinTech Global's RSS re-serves its own back catalogue stamped with
-   today's date. Some of those carry a conference suffix and are caught
-   deterministically (STALE_RECORD in funding.js); these do not:
-
-     "FinTech giant Acrisure secures $2.1bn funding led by Bain Capital"
-        filed 2025-05-21 — the round was 2021
-     "InsurTech giant HUB International lands $1.6bn funding to hit $29bn
-      valuation" filed 2025-05-14 — the round was 2023
-
-   Both would have been the largest row on the tracker by a factor of
-   three. Acrisure escaped only because CAP_M happens to sit at $2000M,
-   which is luck, not a guard.
-
-   Nothing in either headline says the date is wrong, so this cannot be
-   read off the text — it needs to be recognised. That is a fair question
-   to ask the model and a poor one to trust loosely, so the field is
-   optional (null when it doesn't recognise the round) and the tolerance
-   is a full year either side, well past any announced-in-December /
-   written-up-in-January drift. Only a confident, large gap drops a row. */
-const STALE_YEARS = 1;
+const PROMPT_VERSION = 1;
 
 /* Smaller than companies.js's 45: each answer here is an object with six
    fields rather than a list of names, and an over-long reply is one that
@@ -103,11 +79,7 @@ const VALID_STAGES = new Set([
 const UNITS = { K: 1e-3, M: 1, B: 1e3, T: 1e6, CRORE: 10, LAKH: 0.1 };
 
 function buildPrompt(items) {
-  // The filed date travels with each headline, because one of the
-  // questions below is whether the two agree.
-  const lines = items
-    .map((it) => `${it.id}: [filed ${String(it.publishedAt).slice(0, 10)}] ${JSON.stringify(it.title)}`)
-    .join("\n");
+  const lines = items.map((it) => `${it.id}: ${JSON.stringify(it.title)}`).join("\n");
   return `You extract FUNDING ROUNDS from insurance / insurtech news headlines.
 
 A funding round is a company raising investment capital FOR ITSELF — seed, venture, growth or strategic equity, or venture debt.
@@ -116,7 +88,7 @@ Answer {"round": false} when the headline is anything else. In particular:
 - a sector tally, market-size forecast or periodic roundup ("InsurTech funding reaches $420m in January", "Over $2bn raised across this week's 22 FinTech deals")
 - an INVESTOR raising a fund to deploy ("3IF Ventures closes USD 12M fund to back insurtech startups", "Northwestern Mutual announces $150 million Fund III")
 - an acquisition, merger, stake purchase, IPO, public placing or share offering
-- a company SPENDING money — buying something, investing in its own R&D, or committing capital to a partner, a joint venture or another company ("CGC commits $200m to GreenieRE to expand clean energy insurance" is a commitment by CGC, not a round raised by GreenieRE)
+- a company SPENDING money — buying something, investing in its own R&D, committing capital to a partner or a joint venture
 - underwriting capacity, a lending facility, a debt refinancing, an earnings or revenue figure, a claims payout, a fine, a settlement, a prize or a grant competition
 - a round that has NOT closed: rumoured, planned, "in talks", "could raise", "seeks", "targets", "eyes", "set to raise"
 - a round by a company that is NOT in insurance. Insurance means insurers, reinsurers, insurtechs, brokers, MGAs, and technology sold into underwriting, claims, distribution or employee benefits. An AI coding tool, a payments company or a general fraud-detection vendor is NOT insurance, even when an insurtech publication reports its round.
@@ -129,9 +101,6 @@ When it IS a closed insurance funding round, answer with:
   "unit": "K", "M", "B", "crore" or "lakh"
   "stage": one of ${[...VALID_STAGES].join(", ")} — or "" when the headline does not say. "pre-Series A" is Pre-Series A, not Series A.
   "lead": the lead investor, only when the headline says who led it; otherwise ""
-  "announced": the calendar year the round was actually announced, IF you recognise this specific round from your own knowledge; otherwise null
-
-About "announced": one feed here re-publishes its own back catalogue with today's date on it, so the filed date is sometimes years off. Acrisure's $2.1bn led by Bain Capital was announced in 2021 but arrives filed 2025; Hippo's $100m Series D was 2018; Shift Technology's $60m Series C was 2021. If you recognise the round and know its year, give that year — it is checked against the filed date and a large gap drops the row. If you do not recognise it, answer null. Do not guess: null is the right answer for the great majority of these, which are small rounds you have no reason to know.
 
 Rules that matter:
 - Take the amount RAISED, never the valuation. "Prosus pours $460M into Alan at $6.3B" -> amount 460. "Corgi raises $160 mn Series B at $1.3 bn valuation" -> amount 160. "Insurtech firm Alan valued at $8.9B after Teachers' backs Series G" -> amount null (only a valuation is stated), stage "Series E+".
@@ -148,19 +117,8 @@ Respond with ONLY a JSON object mapping each id to its answer. No commentary. Ex
 /* Trust nothing about shape. A model that answers "€10 million" in the
    amount field, "Series G" as a stage we don't render, or a currency we
    hold no rate for should cost one row's precision, never a build. */
-function normalise(raw, publishedAt) {
+function normalise(raw) {
   if (!raw || typeof raw !== "object" || raw.round !== true) return { round: false, pv: PROMPT_VERSION };
-
-  /* A real round filed years after it happened. Rejected rather than
-     re-dated: the archive is organised by month and quarter, and moving a
-     row to a date this feed never published would put a claim on a period
-     page that no cited source supports. Dropping it costs one row; the
-     alternative silently rewrites history. */
-  const year = Number(raw.announced);
-  const filed = new Date(publishedAt || "").getUTCFullYear();
-  if (Number.isInteger(year) && year > 1990 && filed && filed - year > STALE_YEARS) {
-    return { round: false, stale: year, pv: PROMPT_VERSION };
-  }
 
   const amount = typeof raw.amount === "number"
     ? raw.amount
@@ -194,7 +152,7 @@ function extract(need) {
   const out = {};
   let ok = 0, failed = 0;
   for (let i = 0; i < need.length; i += CHUNK) {
-    const chunk = need.slice(i, i + CHUNK).map((a, k) => ({ id: `a${i + k}`, title: a.title, link: a.link, publishedAt: a.publishedAt }));
+    const chunk = need.slice(i, i + CHUNK).map((a, k) => ({ id: `a${i + k}`, title: a.title, link: a.link }));
     const parsed = parseJsonObject(callClaude(buildPrompt(chunk)));
     if (!parsed) {
       failed++;
@@ -202,7 +160,7 @@ function extract(need) {
       continue;
     }
     ok++;
-    for (const it of chunk) if (it.id in parsed) out[it.link] = normalise(parsed[it.id], it.publishedAt);
+    for (const it of chunk) if (it.id in parsed) out[it.link] = normalise(parsed[it.id]);
   }
   console.log(`  chunks: ${ok} ok, ${failed} failed`);
   return out;
@@ -236,7 +194,7 @@ function main() {
     if (!isFundingCandidate(meta)) continue;
     const cached = store.funding[link];
     if (cached && cached.pv === PROMPT_VERSION) continue;
-    need.push({ title: meta.title, link, publishedAt: meta.publishedAt });
+    need.push({ title: meta.title, link });
   }
   // Newest first, so a run that hits a limit or a rate cap has still done
   // the articles anyone is looking at.

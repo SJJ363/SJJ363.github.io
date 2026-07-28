@@ -382,6 +382,27 @@ produce all of that consistently — **route new pages through them.**
    • **A negative verdict is cached too.** "Not a round" is the whole
      point of the pass; if it isn't persisted the false positives return
      on the next build.
+   • **A guard the model cannot see must not be one it can overrule.**
+     `MARKET_NOISE` is about what a headline *means*, so a cached verdict
+     overrides it — that is what having a reader is for. `STALE_RECORD`
+     is about whether the record can be trusted at all, and it applies on
+     **both** paths. FinTech Global's RSS re-serves its own back
+     catalogue stamped with today's date: shown "Hippo Insurance raises
+     $100m in Series D – Digital Wealth & CX Tech Forum", the extractor
+     correctly answers "yes, a Series D", because nothing in the text
+     says the date is fiction — and a funding row is a dated claim. The
+     first version of `fromFact()` skipped every deterministic guard and
+     put that 2018 round back on the tracker under July 2025.
+     The suffix only catches some of them, so the prompt also asks for
+     the year the round was **actually** announced (null unless the model
+     recognises it) and `normalise()` drops a row when that sits more
+     than `STALE_YEARS` behind the filed date. Acrisure's 2021 $2.1bn and
+     HUB International's 2023 $1.6bn both arrived filed 2025 and would
+     have been the largest rows on the tracker by 3x; Acrisure escaped
+     only because `CAP_M` happens to sit at $2000M, which is luck rather
+     than a guard. Rejected, never re-dated — the archive is organised by
+     month and quarter, and moving a row to a date no cited source
+     published puts an unsupported claim on a period page.
    • **`companies.js` must carry the `funding` key through its own
      write.** Both scripts write `companies-store.json`, and a write that
      names only its own keys truncates the other's cache — the symptom is
