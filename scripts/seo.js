@@ -163,7 +163,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=21" />
+  <link rel="stylesheet" href="/style.css?v=23" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -1804,6 +1804,51 @@ ${rows}
       </div>`;
 }
 
+/* The period pages, written out as plain links.
+
+   The quarter chart already links to every one of them — the year label
+   to the year page, each bar to its quarter — and that was for a while
+   the only route in. It doesn't work: a bar chart reads as a picture,
+   so the affordance is invisible and the pages may as well not be
+   linked. Charts are a poor primary navigation and a fine secondary
+   one, so the chart keeps its links and this block is the obvious way
+   in. It also gives a crawler an unambiguous list rather than twelve
+   <a>s wrapped around <span>s of bar geometry. */
+function periodIndex(quarters, years) {
+  if (!quarters.length && !years.length) return "";
+  const yearKeys = years.map((y) => y.key);
+  const byYear = new Map(yearKeys.map((k) => [k, []]));
+  for (const q of quarters) {
+    const y = q.key.slice(0, 4);
+    if (!byYear.has(y)) byYear.set(y, []);
+    byYear.get(y).push(q);
+  }
+  const rows = [...byYear.entries()]
+    .sort((a, b) => b[0].localeCompare(a[0]))
+    .map(([y, qs]) => {
+      const yLink = yearKeys.includes(y)
+        ? `<a class="pi-year" href="/funding/${escAttr(y)}/">${escHtml(y)}</a>`
+        : `<span class="pi-year pi-plain">${escHtml(y)}</span>`;
+      const qLinks = qs
+        .slice()
+        .sort((a, b) => a.key.localeCompare(b.key))
+        .map(
+          (q) =>
+            `<a class="pi-q" href="/funding/${escAttr(q.key)}/">Q${q.key.slice(-1)}</a>`
+        )
+        .join('<span class="pi-sep" aria-hidden="true">·</span>');
+      return `          <li class="pi-row">${yLink}<span class="pi-qs">${qLinks}</span></li>`;
+    })
+    .join("\n");
+
+  return `      <div class="co-fact co-fact-wide">
+        <h2 class="fact-label">Period pages <span class="fact-sub">— totals, medians and the change on the period before</span></h2>
+        <ol class="period-index">
+${rows}
+        </ol>
+      </div>`;
+}
+
 /* The change against the period before it — the one number a reader (or
    an outlet quoting the tracker) actually came for.
 
@@ -1978,8 +2023,10 @@ function fundingIndexHtml(deals, months, quarters = [], years = []) {
   // Capital first: it's the series a reader arrives wanting, and putting
   // it above the stage filters keeps the filters next to the table they
   // act on.
-  if (quarters.length)
+  if (quarters.length) {
     factBlocks.push(quarterChart(quarters, new Set(years.map((y) => y.key))));
+    factBlocks.push(periodIndex(quarters, years));
+  }
   if (stages.length) {
     // The stage pills looked like controls long before they were any, so
     // they are now the filter: real <button>s with aria-pressed, multi-select

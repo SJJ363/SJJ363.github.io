@@ -826,6 +826,34 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
 .mo-ylink { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
 .mo-ylink:hover { color: var(--accent-deep); border-bottom-color: currentColor; }
 
+/* ---- Period index ----
+   The written-out route to the year and quarter pages. These have to
+   look like links and not like the chart above them, which is exactly
+   the mistake this block exists to correct: accent ink, underlined,
+   nothing subtle. */
+/* The links carry their own padding rather than sitting as bare text:
+   "Q1" set at 0.78rem is a 16x19px tap target, which is under the 24px
+   floor and misses on a phone. The list is pulled left by the same
+   amount so the first column still lines up with the label above it. */
+.period-index { list-style: none; margin: 0 0 0 -7px; padding: 0; }
+.pi-row {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 2px 8px;
+  padding: 1px 0; border-bottom: 1px solid var(--rule);
+}
+.pi-row:last-child { border-bottom: 0; }
+.pi-year, .pi-q {
+  display: inline-flex; align-items: center; min-height: 34px; padding: 0 7px;
+  font-family: var(--sans); font-feature-settings: "tnum" 1;
+  color: var(--accent-deep); text-decoration: underline;
+  text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
+.pi-year { min-width: 4em; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; }
+.pi-q { font-size: 0.78rem; font-weight: 600; }
+.pi-plain { color: var(--ink-3); text-decoration: none; }
+.pi-qs { display: flex; align-items: center; flex-wrap: wrap; gap: 0; }
+.pi-year:hover, .pi-q:hover { color: var(--ink); }
+.pi-sep { color: var(--ink-4); font-size: 0.75rem; }
+
 /* ---- Period breakdown ----
    Three months inside a quarter. A three-bar chart would carry no shape
    worth reading, so this is a list: label, capital, round count. */
