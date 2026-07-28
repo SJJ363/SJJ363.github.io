@@ -1,7 +1,37 @@
 {
-  "updatedAt": "2026-07-28T19:34:55.513Z",
-  "count": 1295,
+  "updatedAt": "2026-07-28T19:36:29.329Z",
+  "count": 1299,
   "companies": [
+    {
+      "slug": "flexible-finance",
+      "name": "Flexible Finance",
+      "count": 1,
+      "firstSeen": "2026-07-28T18:08:00.000Z",
+      "lastSeen": "2026-07-28T18:08:00.000Z",
+      "topics": [
+        {
+          "name": "Regulation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Finextra"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Rent payment fintech Flexible Finance applies for bank license",
+          "link": "https://www.finextra.com/pressarticle/110515/rent-payment-fintech-flexible-finance-applies-for-bank-license?utm_medium=rssfinextra&utm_source=finextrafeed",
+          "source": "Finextra",
+          "publishedAt": "2026-07-28T18:08:00.000Z",
+          "tags": [
+            "Regulation"
+          ],
+          "summary": "Flexible Finance, Inc. (“Flex”), the financial technology company behind Flex Rent, today announced it has submitted applications to the Federal Deposit Insurance Corporation (“FDIC”) and the Utah Department of…",
+          "co": []
+        }
+      ]
+    },
     {
       "slug": "geico",
       "name": "GEICO",
@@ -19,6 +49,11 @@
         "Digital Insurance"
       ],
       "related": [
+        {
+          "slug": "mercury",
+          "name": "Mercury",
+          "count": 1
+        },
         {
           "slug": "carvana",
           "name": "Carvana",
@@ -45,7 +80,9 @@
             "Industry"
           ],
           "summary": "According to a recent survey by Clearsurance.com, Geico and Mercury are the cheapest home insurance providers in California.",
-          "co": []
+          "co": [
+            "mercury"
+          ]
         },
         {
           "title": "Embedded Car Insurance: GEICO & Carvana",
@@ -72,6 +109,39 @@
           "co": [
             "state-farm",
             "allstate"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "mercury",
+      "name": "Mercury",
+      "count": 1,
+      "firstSeen": "2026-07-28T17:53:38.000Z",
+      "lastSeen": "2026-07-28T17:53:38.000Z",
+      "topics": [],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "geico",
+          "name": "GEICO",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Geico and Mercury: Cheapest Insurance in California",
+          "link": "https://coverager.com/geico-and-mercury-cheapest-insurance-in-california/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-28T17:53:38.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "According to a recent survey by Clearsurance.com, Geico and Mercury are the cheapest home insurance providers in California.",
+          "co": [
+            "geico"
           ]
         }
       ]
@@ -866,75 +936,27 @@
       ]
     },
     {
-      "slug": "natwest",
-      "name": "NatWest",
-      "count": 2,
-      "firstSeen": "2026-07-28T09:13:27.000Z",
-      "lastSeen": "2026-07-28T11:51:21.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 2
-        },
-        {
-          "name": "Product & Launches",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "The Intermediary"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "NatWest partners with Uinsure",
-          "link": "https://coverager.com/natwest-partners-with-uinsure/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-28T11:51:21.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches"
-          ],
-          "summary": "NatWest has also launched its Home Insurance Tracker.",
-          "co": []
-        },
-        {
-          "title": "NatWest partners with Uinsure to launch home insurance proposition",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVVNXSnd6UjBkWXh4Z0pla2FlNDRaODdleDExcXZkUmRpaGF0bEszY0RnZ0JTa3VWT2dVMnNGeUZMXzc2ZUMzMUltMkN3X295emNtM0JfYzdWa3pWWUhiTHI0blpVQnJMN1p2RGl0TkNlc2RPUWc3cUxZUzllOU56VUVhTS1QZDFTS3lEU1R6VVRJLUhLaGVDQVFoNW5jRFhCVzkzNWlaZ2U?oc=5",
-          "source": "The Intermediary",
-          "publishedAt": "2026-07-28T09:13:27.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "cover-genius",
       "name": "Cover Genius",
-      "count": 14,
+      "count": 15,
       "firstSeen": "2024-12-04T08:00:00.000Z",
-      "lastSeen": "2026-07-28T10:39:31.000Z",
+      "lastSeen": "2026-07-28T13:12:42.000Z",
       "topics": [
         {
           "name": "Embedded",
-          "count": 6
+          "count": 7
         },
         {
           "name": "Funding",
           "count": 6
         },
         {
-          "name": "Partnerships",
+          "name": "M&A",
           "count": 4
         },
         {
-          "name": "M&A",
-          "count": 3
+          "name": "Partnerships",
+          "count": 4
         },
         {
           "name": "AI & Automation",
@@ -946,6 +968,7 @@
         }
       ],
       "sources": [
+        "citybiz",
         "theinsurer.com",
         "01net",
         "Insurance Business UK",
@@ -953,12 +976,16 @@
         "FinTech Futures",
         "Tech Times",
         "Beinsure",
-        "citybiz",
         "Business Wire",
         "itij.com",
         "FinTech Global"
       ],
       "related": [
+        {
+          "slug": "friendsurance",
+          "name": "Friendsurance",
+          "count": 1
+        },
         {
           "slug": "traveloka",
           "name": "Traveloka",
@@ -986,6 +1013,20 @@
         }
       ],
       "articles": [
+        {
+          "title": "Cover Genius Acquires Friendsurance to Expand Embedded Insurance Platform Across European Banking",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQWGc2aGxGQ0tnQlRCR3VQdlozSlRkR25nd1Rub1FCRGpnckJ3YjlwLWQ3c0NfYlFTYjZhVVFSSkc1eDg0SDJkcWtFNl8tcFExLVB6QXNHLWtRVHh3dGRMR0d3TXhvSU9aTk1sWnEzRGRDR0FHTzI5RkRfLUNuMms3aGFlZTNkTGNuMWhiWkZkSUFiU0p6M05XUkxaMDVUa21hRXlBVWV1Xy1DMkUwWUU5WnBuUFZfQXhORnp6NjVTODdJVFBCQ2xYWGhvNUZOTkxXSmc?oc=5",
+          "source": "citybiz",
+          "publishedAt": "2026-07-28T13:12:42.000Z",
+          "tags": [
+            "M&A",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "friendsurance"
+          ]
+        },
         {
           "title": "Cover Genius acquires Berlin-based bancassurance platform Friendsurance",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQU1dRN3N0ZXduM1BIY1F3ajJVOUVaRmdodEZKR3hmRjZYVjVnRDZWeDdNdmtXTHllZGNtVm0yRVNLaFhnMUl6N1AtUElDMWxmbHhjOFNTZU5MMHdLT092YXVINHY3VE84d2xSeXFLZVZZM2VhQ1RDeTRkam53MGdfaXBfdGh4ZlYxY1dUQ2J3aDh5MktyTnZlUVJsUjg2d0ZJWWNtT1NSRFkycFFnTFlTQU0xMXFrZlFROUE?oc=5",
@@ -1159,6 +1200,132 @@
           "co": [
             "airpaz"
           ]
+        }
+      ]
+    },
+    {
+      "slug": "friendsurance",
+      "name": "Friendsurance",
+      "count": 1,
+      "firstSeen": "2026-07-28T13:12:42.000Z",
+      "lastSeen": "2026-07-28T13:12:42.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Embedded",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "citybiz"
+      ],
+      "related": [
+        {
+          "slug": "cover-genius",
+          "name": "Cover Genius",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Cover Genius Acquires Friendsurance to Expand Embedded Insurance Platform Across European Banking",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQWGc2aGxGQ0tnQlRCR3VQdlozSlRkR25nd1Rub1FCRGpnckJ3YjlwLWQ3c0NfYlFTYjZhVVFSSkc1eDg0SDJkcWtFNl8tcFExLVB6QXNHLWtRVHh3dGRMR0d3TXhvSU9aTk1sWnEzRGRDR0FHTzI5RkRfLUNuMms3aGFlZTNkTGNuMWhiWkZkSUFiU0p6M05XUkxaMDVUa21hRXlBVWV1Xy1DMkUwWUU5WnBuUFZfQXhORnp6NjVTODdJVFBCQ2xYWGhvNUZOTkxXSmc?oc=5",
+          "source": "citybiz",
+          "publishedAt": "2026-07-28T13:12:42.000Z",
+          "tags": [
+            "M&A",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "cover-genius"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "natwest",
+      "name": "NatWest",
+      "count": 2,
+      "firstSeen": "2026-07-28T09:13:27.000Z",
+      "lastSeen": "2026-07-28T11:51:21.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Product & Launches",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "The Intermediary"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "NatWest partners with Uinsure",
+          "link": "https://coverager.com/natwest-partners-with-uinsure/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-28T11:51:21.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "NatWest has also launched its Home Insurance Tracker.",
+          "co": []
+        },
+        {
+          "title": "NatWest partners with Uinsure to launch home insurance proposition",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVVNXSnd6UjBkWXh4Z0pla2FlNDRaODdleDExcXZkUmRpaGF0bEszY0RnZ0JTa3VWT2dVMnNGeUZMXzc2ZUMzMUltMkN3X295emNtM0JfYzdWa3pWWUhiTHI0blpVQnJMN1p2RGl0TkNlc2RPUWc3cUxZUzllOU56VUVhTS1QZDFTS3lEU1R6VVRJLUhLaGVDQVFoNW5jRFhCVzkzNWlaZ2U?oc=5",
+          "source": "The Intermediary",
+          "publishedAt": "2026-07-28T09:13:27.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "scale-ai",
+      "name": "Scale AI",
+      "count": 1,
+      "firstSeen": "2026-07-28T10:00:00.000Z",
+      "lastSeen": "2026-07-28T10:00:00.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Digital Insurance"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Why underwriters must set guardrails for AI: Scale exec",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQNHJzSG1QdnhDRTdDSzFHU05SamZKdHRQSjl2SUZ3N3dseWFDaHFLbWE3LWFkbHE0azA2UFVrdE9VdGNycUJmZUI1VFl2VW9TX0dob00wYzRBMXNjNXZsa04tTkl0UHkzU1hKR09UTXNsWW1WNS1BdlB0UWN3LUZvNnFQVldMc01VeXc?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-07-28T10:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
