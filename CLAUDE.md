@@ -263,6 +263,48 @@ produce all of that consistently — **route new pages through them.**
      the archive spans two, and the split starts by itself at the first
      rollover. Thin months (under `MONTH_MIN_DEALS`) are noindex and out of
      the sitemap, exactly like thin company pages.
+   • **The aggregate pages are `/funding/<YYYY>/` and
+     `/funding/<YYYY>-q<N>/`, and what makes them pages is the
+     aggregate, not the rows.** A quarter holds exactly the rows its
+     three months hold, so a quarter page that prints them all is a
+     fourth copy of a table already crawled three times — the same
+     duplication `collectMonths()` exists to prevent, one level up. So
+     `periodPageHtml()` leads with what *only* exists here (capital,
+     round count, median, stage mix, the change against the previous
+     period) and caps the table at `PERIOD_DEAL_CAP` largest rounds,
+     with the full run one click down. Keep that ratio: these URLs earn
+     their place on the aggregate or not at all. All three period types
+     share the `funding/` directory, so `buildFundingPages()`'s prune set
+     must list all three — a key left out of it deletes the pages the
+     previous run wrote. `collectQuarters()`/`collectYears()` carry the
+     same two-periods-or-nothing guard as months.
+   • **A period comparison is shown only between two whole periods.**
+     `partialWhy()` fails a period at either end of the archive: the
+     current one is still open, and the earliest is cut off by where the
+     store begins. Both used to be silently compared anyway, and the
+     2025 page read "up 682% on capital" against a 2024 that is five
+     months long — a number the method note's own promise ("a floor, not
+     a market estimate") forbids. Partial periods say which end they are
+     short at and show no delta. The same rule governs the month
+     breakdown inside a quarter: "No disclosed rounds" is a claim about a
+     month the archive covers, so months before the store starts read
+     "Before this archive" and months that haven't happened read "Not
+     yet". And because the backfill thins out the further back it
+     reaches, `METHOD_NOTE` says so — a rise across the earliest periods
+     may be the tracker seeing more rather than the market doing more.
+   • **Two series, and neither replaces the other.** `monthChart()` plots
+     round *counts* and is the month nav; `quarterChart()` plots
+     *dollars* and is the year/quarter nav. They disagree often enough to
+     be worth the space — 2024 Q3 raised more across 13 rounds than
+     2024 Q4 did across 20. Capital goes first, being what a reader
+     arrives for. `quarterChart()` reuses the `.mo-*` classes at four
+     columns (`.mo-row-q`, `.mo-chart-cap`) rather than forking the
+     component, so the phone breakpoints stay shared.
+   • **`style.css` is cache-busted by hand.** The `?v=N` lives in
+     `head()` in `seo.js` *and* in the hand-authored `index.html` and
+     `companies.html`. Change the stylesheet and all three need bumping
+     together, or returning visitors get new markup against old CSS —
+     which fails silently and looks fine in a fresh browser.
 3c-ii. **The relevance gate is applied by every reader of the store, via
    `admits()` in `scripts/relevance.js`.** `seo.js` (hubs, tracker) and
    `companies.js` (the company index) both call it — never re-implement

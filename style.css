@@ -808,6 +808,47 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
 .mo-link:hover .mo-m, .mo-link:hover .mo-n { color: var(--accent-deep); }
 .mo-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
+/* ---- By quarter ----
+   The same grid as the month chart at four columns instead of twelve,
+   plotting dollars instead of counts. Four columns means the value label
+   has room to be a real figure ("$1.7B"), so it is set larger and in the
+   ink the numbers elsewhere use — this is the series people read. */
+.mo-row-q { grid-template-columns: repeat(4, 1fr); gap: 0 10px; }
+.mo-chart-cap { gap: 20px; }
+.mo-chart-cap .mo-n { font-size: 0.72rem; color: var(--ink-2); }
+/* Taller than the month chart, because it has to be. At a quarter of the
+   column width these bars are wide, and a wide bar 30px tall reads as a
+   band — the eye takes it as a label rule, not a value. The series spans
+   $131M to $1.4B; the height is what makes that a tenfold difference you
+   can see rather than one you have to read. */
+.mo-chart-cap .mo-bar { height: 66px; }
+.mo-chart-cap .mo-m { letter-spacing: 0.06em; }
+.mo-ylink { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.mo-ylink:hover { color: var(--accent-deep); border-bottom-color: currentColor; }
+
+/* ---- Period breakdown ----
+   Three months inside a quarter. A three-bar chart would carry no shape
+   worth reading, so this is a list: label, capital, round count. */
+.period-list { list-style: none; margin: 0; padding: 0; max-width: 34rem; }
+.pl-row { border-bottom: 1px solid var(--rule); }
+.pl-row:last-child { border-bottom: 0; }
+.pl-inner {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding: 9px 0; color: inherit; text-decoration: none;
+}
+.pl-label {
+  font-family: var(--sans); font-size: 0.76rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2);
+}
+.pl-val { font-size: 0.86rem; font-weight: 600; color: var(--ink); font-feature-settings: "tnum" 1; }
+.pl-n { margin-left: 8px; font-weight: 500; color: var(--ink-3); }
+.pl-empty .pl-val { font-weight: 500; color: var(--ink-4); }
+.pl-link:hover .pl-label, .pl-link:hover .pl-val { color: var(--accent-deep); }
+.pl-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.delta-up b { color: var(--accent-deep); }
+.delta-down b { color: var(--ink); }
+
 .fact-sub { font-weight: 500; text-transform: none; letter-spacing: 0.02em; color: var(--ink-4); }
 
 .stage-clear {

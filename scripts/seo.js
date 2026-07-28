@@ -163,7 +163,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=20" />
+  <link rel="stylesheet" href="/style.css?v=21" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -1250,6 +1250,45 @@ function monthLabel(key) {
     ? key
     : d.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 }
+function shortMonthLabel(key) {
+  const d = new Date(key + "-01T00:00:00Z");
+  return isNaN(d)
+    ? key
+    : d.toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
+}
+
+/* ── Quarters and years ─────────────────────────────────────────
+   Keyed off monthKey, so every period on the site is cut on the same
+   UTC boundary the months already use. A second convention (Central,
+   say, to match the brief's publishing clock) would put a round
+   announced late on March 31 in Q1 on one page and Q2 on another. */
+const quarterKey = (iso) => {
+  const k = monthKey(iso);
+  return k ? `${k.slice(0, 4)}-q${Math.ceil(+k.slice(5, 7) / 3)}` : "";
+};
+const quarterLabel = (key) => `Q${key.slice(-1)} ${key.slice(0, 4)}`;
+const quarterMonthKeys = (key) => {
+  const y = key.slice(0, 4);
+  const q = +key.slice(-1);
+  return [0, 1, 2].map((i) => `${y}-${String((q - 1) * 3 + i + 1).padStart(2, "0")}`);
+};
+const yearKey = (iso) => monthKey(iso).slice(0, 4);
+
+const totalOf = (deals) => deals.reduce((s, d) => s + (Number(d.amountM) || 0), 0);
+
+/* The median round, alongside the total.
+
+   A quarter's total is dominated by whichever quarter happened to
+   contain one $550M outlier — Q2 2025 outranks Q4 2025 on the strength
+   of a single row. The median is what "a round" is worth in this market
+   and moves only when the market does, so both go on every aggregate
+   page and neither is presented alone. */
+function medianOf(deals) {
+  const s = deals.map((d) => Number(d.amountM) || 0).sort((a, b) => a - b);
+  if (!s.length) return 0;
+  const mid = s.length >> 1;
+  return s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
+}
 
 /* $243K / $5.5M / $180M / $1.2B — one formatter so the table, the
    summary line and the meta description can never disagree. */
@@ -1587,6 +1626,16 @@ const METHOD_NOTE = `    <section class="method">
         check it before citing.
       </p>
       <p class="method-text">
+        The earliest months here were backfilled from dated searches
+        rather than collected live, and those searches surface less the
+        further back they reach. Coverage is thinner at the start of the
+        archive than at the end, so a rise across the earliest periods
+        may be this tracker seeing more rather than the market doing
+        more. The quarter-on-quarter and year-on-year figures on the
+        period pages are shown only between periods the archive covers
+        in full.
+      </p>
+      <p class="method-text">
         This tracker is a work in progress, and data may contain errors
         and/or some rounds may be missing from this tracker. We do not
         guarantee the accuracy or completeness of the data tracked here.
@@ -1594,11 +1643,16 @@ const METHOD_NOTE = `    <section class="method">
     </section>`;
 
 function fundingSummary(deals) {
-  const total = deals.reduce((s, d) => s + d.amountM, 0);
+  const total = totalOf(deals);
   const stages = new Map();
   for (const d of deals) if (d.stage) stages.set(d.stage, (stages.get(d.stage) || 0) + 1);
   const biggest = deals.slice().sort((a, b) => b.amountM - a.amountM)[0];
-  return { total, stages: [...stages.entries()].sort((a, b) => b[1] - a[1]), biggest };
+  return {
+    total,
+    median: medianOf(deals),
+    stages: [...stages.entries()].sort((a, b) => b[1] - a[1]),
+    biggest,
+  };
 }
 
 /* Page-weight guard, the table equivalent of STORY_CAP. The summary line
@@ -1674,9 +1728,215 @@ ${rows}
       </div>`;
 }
 
-function fundingIndexHtml(deals, months) {
+/* The capital series — the same calendar-grid-as-chart idea as
+   monthChart, cut to four columns and plotted in dollars rather than
+   round counts.
+
+   Both series have to exist and neither replaces the other. Counts say
+   how busy the market was; dollars say how much money moved, and they
+   disagree often enough to be worth separate charts (2026 Q1 leads on
+   both, but 2024 Q3 raised more across 13 rounds than 2024 Q4 did across
+   20). Dollars is the series a reader arrives wanting, so it goes first.
+
+   Doubling as navigation is deliberate: the year label links to the year
+   page and each bar to its quarter, which is what puts every aggregate
+   page one click from /funding/ and one link from a crawler. */
+function quarterChart(quarters, yearPages = new Set(), heading = "By quarter") {
+  const QN = ["Q1", "Q2", "Q3", "Q4"];
+  const byKey = new Map(quarters.map((q) => [q.key, q]));
+  const keys = quarters.map((q) => q.key).sort();
+  const first = keys[0];
+  const last = keys[keys.length - 1];
+  const max = Math.max(...quarters.map((q) => totalOf(q.deals)), 1);
+
+  const years = [];
+  for (let y = +last.slice(0, 4); y >= +first.slice(0, 4); y--) years.push(y);
+
+  const rows = years
+    .map((y) => {
+      const cells = QN.map((label, i) => {
+        const key = `${y}-q${i + 1}`;
+        const q = byKey.get(key);
+        if (!q) {
+          // Same convention as the month chart: outside the covered range
+          // the label goes but the baseline stays, so a ragged axis never
+          // reads as a rendering fault.
+          const out = key < first || key > last;
+          return `<li class="mo-cell${out ? " mo-out" : " mo-zero"}">
+              <span class="mo-bar"></span><span class="mo-m">${label}</span>
+            </li>`;
+        }
+        const cap = totalOf(q.deals);
+        const n = q.deals.length;
+        return `<li class="mo-cell">
+              <a class="mo-link" href="/funding/${escAttr(key)}/" aria-label="${escAttr(
+          quarterLabel(key)
+        )} — ${escAttr(money(cap) || "no disclosed capital")} across ${n} round${
+          n === 1 ? "" : "s"
+        }">
+                <span class="mo-n">${escHtml(money(cap) || "—")}</span>
+                <span class="mo-bar"><i style="height:${Math.max(
+                  2,
+                  Math.round((cap / max) * 100)
+                )}%"></i></span><span class="mo-m">${label}</span>
+              </a>
+            </li>`;
+      }).join("\n            ");
+      const yLabel = yearPages.has(String(y))
+        ? `<a class="mo-ylink" href="/funding/${y}/">${y}</a>`
+        : String(y);
+      return `          <div class="mo-year">
+            <span class="mo-y">${yLabel}</span>
+            <ol class="mo-row mo-row-q">
+            ${cells}
+            </ol>
+          </div>`;
+    })
+    .join("\n");
+
+  return `      <div class="co-fact co-fact-wide">
+        <h2 class="fact-label">${escHtml(
+          heading
+        )} <span class="fact-sub">— disclosed capital per quarter</span></h2>
+        <div class="mo-chart mo-chart-cap">
+${rows}
+        </div>
+      </div>`;
+}
+
+/* The change against the period before it — the one number a reader (or
+   an outlet quoting the tracker) actually came for.
+
+   Stated only for a period that has closed. A quarter three weeks old
+   compared against a full one is not a decline, it is an arithmetic
+   error with a minus sign, and this site's whole method note is a
+   promise not to print numbers like that. In-progress periods say so
+   instead. */
+function deltaBlock(cur, prev, labelFn) {
+  if (!prev || !prev.deals.length) return "";
+  const a = totalOf(prev.deals);
+  const b = totalOf(cur.deals);
+  if (!a) return "";
+  const pct = Math.round(((b - a) / a) * 100);
+  const dn = cur.deals.length - prev.deals.length;
+  const word = pct > 0 ? "up" : pct < 0 ? "down" : "level";
+  const cls = pct > 0 ? "delta-up" : pct < 0 ? "delta-down" : "";
+  const capital =
+    pct === 0
+      ? "level on capital"
+      : `${word} <b>${Math.abs(pct)}%</b> on capital`;
+  const rounds =
+    dn === 0
+      ? "same number of rounds"
+      : `${dn > 0 ? "+" : "−"}${Math.abs(dn)} round${Math.abs(dn) === 1 ? "" : "s"}`;
+  return `      <div class="co-fact">
+        <h2 class="fact-label">vs ${escHtml(labelFn(prev.key))}</h2>
+        <p class="co-sources ${cls}">${capital}, ${escHtml(rounds)} — ${escHtml(
+    money(a)
+  )} across ${prev.deals.length}.</p>
+      </div>`;
+}
+
+/* Stage mix as a static breakdown. The tracker's identical-looking pills
+   are filter controls driven by funding.js; here there is no table to
+   filter down to, so these are plain text and deliberately not buttons. */
+function stageBlock(stages) {
+  if (!stages.length) return "";
+  return `      <div class="co-fact">
+        <h2 class="fact-label">By stage</h2>
+        <div class="tags">${stages
+          .map(
+            ([s, c]) =>
+              `<span class="tag-pill">${escHtml(s)} <span class="cnt">${c}</span></span>`
+          )
+          .join("")}</div>
+      </div>`;
+}
+
+function biggestBlock(biggest) {
+  if (!biggest) return "";
+  return `      <div class="co-fact">
+        <h2 class="fact-label">Largest round</h2>
+        <p class="co-sources"><b>${escHtml(money(biggest.amountM))}</b> — ${
+    biggest.company
+      ? `<a class="deal-link" href="/company/${escAttr(biggest.company.slug)}/">${escHtml(
+          biggest.company.name
+        )}</a>`
+      : escHtml(biggest.title)
+  }</p>
+      </div>`;
+}
+
+/* The months inside a quarter, as a linked breakdown rather than a
+   three-bar chart: at three periods the shape carries nothing the
+   numbers don't, and the numbers are the point. */
+function monthBreakdown(qKey, monthKeys, byMonth, archiveStart) {
+  const nowMonth = monthKey(new Date().toISOString());
+  const startMonth = monthKey(archiveStart);
+  const rows = quarterMonthKeys(qKey).map((k) => {
+    const m = byMonth.get(k);
+    const label = shortMonthLabel(k);
+    if (!m || !m.deals.length) {
+      // "No disclosed rounds" is a claim about a month, and it can only be
+      // made about one the archive actually covers. The first quarter's
+      // leading months predate the store and the current quarter's
+      // trailing months haven't happened — asserting an empty month for
+      // either is stating a fact we don't have.
+      const val =
+        startMonth && k < startMonth
+          ? "Before this archive"
+          : k > nowMonth
+          ? "Not yet"
+          : "No disclosed rounds";
+      return `          <li class="pl-row pl-empty"><span class="pl-inner"><span class="pl-label">${escHtml(
+        label
+      )}</span><span class="pl-val">${val}</span></span></li>`;
+    }
+    const n = m.deals.length;
+    const inner =
+      `<span class="pl-label">${escHtml(label)}</span>` +
+      `<span class="pl-val">${escHtml(money(totalOf(m.deals)) || "—")} <span class="pl-n">${n} round${
+        n === 1 ? "" : "s"
+      }</span></span>`;
+    return monthKeys.has(k)
+      ? `          <li class="pl-row"><a class="pl-inner pl-link" href="/funding/${escAttr(
+          k
+        )}/">${inner}</a></li>`
+      : `          <li class="pl-row"><span class="pl-inner">${inner}</span></li>`;
+  });
+  return `      <div class="co-fact co-fact-wide">
+        <h2 class="fact-label">By month <span class="fact-sub">— round-by-round tables</span></h2>
+        <ol class="period-list">
+${rows.join("\n")}
+        </ol>
+      </div>`;
+}
+
+/* Prev/next between sibling periods, in the brief archive's markup. */
+function periodNav(newer, older, base, labelFn, label) {
+  const nav = [];
+  if (older)
+    nav.push(
+      `<a class="brief-nav-link" rel="prev" href="${base}${escAttr(older.key)}/">` +
+        `<span class="brief-nav-dir">← Earlier</span>` +
+        `<span class="brief-nav-title">${escHtml(labelFn(older.key))}</span></a>`
+    );
+  if (newer)
+    nav.push(
+      `<a class="brief-nav-link next" rel="next" href="${base}${escAttr(newer.key)}/">` +
+        `<span class="brief-nav-dir">Later →</span>` +
+        `<span class="brief-nav-title">${escHtml(labelFn(newer.key))}</span></a>`
+    );
+  return nav.length
+    ? `    <nav class="brief-nav" aria-label="${escAttr(label)}">\n      ${nav.join(
+        "\n      "
+      )}\n    </nav>`
+    : "";
+}
+
+function fundingIndexHtml(deals, months, quarters = [], years = []) {
   const canonical = "/funding/";
-  const { total, stages, biggest } = fundingSummary(deals);
+  const { total, median, stages, biggest } = fundingSummary(deals);
   const n = deals.length;
   const shown = deals.slice(0, DEAL_CAP);
   const oldest = deals[n - 1];
@@ -1684,7 +1944,8 @@ function fundingIndexHtml(deals, months) {
   const description =
     `${n} disclosed insurtech funding round${n === 1 ? "" : "s"} totalling at least ${money(
       total
-    )} — company, amount, stage, lead investor and source for each, updated through the day.`;
+    )}${median ? `, ${money(median)} median` : ""} — capital by quarter, plus amount, stage, ` +
+    `lead investor and source for every round.`;
 
   // A table of rounds genuinely is a dataset; describing it as one is both
   // accurate and the markup Google's dataset surfaces look for.
@@ -1710,9 +1971,15 @@ function fundingIndexHtml(deals, months) {
   ]);
 
   const statBits = [`${n} round${n === 1 ? "" : "s"}`, `${money(total)} disclosed`];
+  if (median) statBits.push(`${money(median)} median`);
   if (oldest) statBits.push(`since ${fullDate(oldest.publishedAt)}`);
 
   const factBlocks = [];
+  // Capital first: it's the series a reader arrives wanting, and putting
+  // it above the stage filters keeps the filters next to the table they
+  // act on.
+  if (quarters.length)
+    factBlocks.push(quarterChart(quarters, new Set(years.map((y) => y.key))));
   if (stages.length) {
     // The stage pills looked like controls long before they were any, so
     // they are now the filter: real <button>s with aria-pressed, multi-select
@@ -1731,18 +1998,7 @@ function fundingIndexHtml(deals, months) {
           .join("")}<button type="button" class="stage-clear" hidden>Clear</button></div>
       </div>`);
   }
-  if (biggest) {
-    factBlocks.push(`      <div class="co-fact">
-        <h2 class="fact-label">Largest round</h2>
-        <p class="co-sources"><b>${escHtml(money(biggest.amountM))}</b> — ${
-      biggest.company
-        ? `<a class="deal-link" href="/company/${escAttr(biggest.company.slug)}/">${escHtml(
-            biggest.company.name
-          )}</a>`
-        : escHtml(biggest.title)
-    }</p>
-      </div>`);
-  }
+  if (biggest) factBlocks.push(biggestBlock(biggest));
   if (months.length) factBlocks.push(monthChart(months));
   const facts = factBlocks.length
     ? `    <section class="co-facts">\n${factBlocks.join("\n")}\n    </section>`
@@ -1791,9 +2047,11 @@ ${FOOTER}
 `;
 }
 
-function fundingMonthHtml(m, newer, older) {
+function fundingMonthHtml(m, newer, older, quarterKeys = new Set()) {
   const canonical = `/funding/${m.key}/`;
   const label = monthLabel(m.key);
+  const qKey = quarterKey(m.key + "-01");
+  const inQuarter = quarterKeys.has(qKey);
   const deals = m.deals;
   const { total, biggest } = fundingSummary(deals);
   const n = deals.length;
@@ -1821,25 +2079,11 @@ function fundingMonthHtml(m, newer, older) {
   const crumbLd = breadcrumbLd([
     { name: "Home", path: "/" },
     { name: "Funding tracker", path: "/funding/" },
+    ...(inQuarter ? [{ name: quarterLabel(qKey), path: `/funding/${qKey}/` }] : []),
     { name: label, path: canonical },
   ]);
 
-  const nav = [];
-  if (older)
-    nav.push(
-      `<a class="brief-nav-link" rel="prev" href="/funding/${escAttr(older.key)}/">` +
-        `<span class="brief-nav-dir">← Earlier</span>` +
-        `<span class="brief-nav-title">${escHtml(monthLabel(older.key))}</span></a>`
-    );
-  if (newer)
-    nav.push(
-      `<a class="brief-nav-link next" rel="next" href="/funding/${escAttr(newer.key)}/">` +
-        `<span class="brief-nav-dir">Later →</span>` +
-        `<span class="brief-nav-title">${escHtml(monthLabel(newer.key))}</span></a>`
-    );
-  const navHtml = nav.length
-    ? `    <nav class="brief-nav" aria-label="Other months">\n      ${nav.join("\n      ")}\n    </nav>`
-    : "";
+  const navHtml = periodNav(newer, older, "/funding/", monthLabel, "Other months");
 
   return `${head({
     title,
@@ -1857,7 +2101,11 @@ function fundingMonthHtml(m, newer, older) {
 ${header("funding")}
 
   <main id="top">
-    <p class="crumb"><a href="/funding/">← Full funding tracker</a></p>
+    <p class="crumb"><a href="/funding/">← Full funding tracker</a>${
+      inQuarter
+        ? ` · <a href="/funding/${escAttr(qKey)}/">← ${escHtml(quarterLabel(qKey))}</a>`
+        : ""
+    }</p>
 
     <div class="intro co-head">
       <p class="co-kicker">Tracker</p>
@@ -1880,6 +2128,227 @@ ${FOOTER}
 `;
 }
 
+/* ── The aggregate pages: /funding/<year>/ and /funding/<year>-q<n>/ ──
+
+   How many rounds get shown is the whole design constraint. A quarter
+   holds the same rows its three months hold, so printing them all makes
+   the quarter page a fourth copy of a table Google has already crawled
+   three times. PERIOD_DEAL_CAP keeps it to the largest few — enough to
+   show what the period was about, short enough that the aggregates above
+   are unmistakably the page. The full table stays one click down. */
+const PERIOD_DEAL_CAP = 10;
+const QUARTER_MIN_DEALS = 5;
+const YEAR_MIN_DEALS = 8;
+
+/* Is this the period we're currently inside? Read off the same UTC
+   boundary the keys are cut on, so the answer can't disagree with the
+   grouping. Matters because an in-progress period gets no delta. */
+const isCurrent = (key, keyFn) => key === keyFn(new Date().toISOString());
+
+/* The first day a period covers — "2025" → 2025-01-01, "2025-q2" →
+   2025-04-01. */
+const periodStart = (key) =>
+  key.includes("-q") ? `${quarterMonthKeys(key)[0]}-01` : `${key}-01-01`;
+
+/* A period is partial at BOTH ends of the archive, and a comparison
+   against a partial period is arithmetic with a minus sign rather than a
+   finding. The open end is obvious — three weeks of a quarter. The
+   closed end is the one that actually shipped a wrong number: the store
+   starts 2024-08-08, so "2024" is five months of data, and 2025 measured
+   against it read "up 682% on capital" on a page whose method note
+   promises the totals are a floor, not an estimate. Both ends suppress
+   the delta and say why instead. */
+function partialWhy(key, keyFn, archiveStart) {
+  if (isCurrent(key, keyFn)) return "open";
+  if (archiveStart && periodStart(key) < archiveStart) return "truncated";
+  return "";
+}
+
+function periodPageHtml({
+  key,
+  label,
+  deals,
+  canonical,
+  crumbs,
+  kicker,
+  h1,
+  minDeals,
+  temporalCoverage,
+  breakdown,
+  delta,
+  partial,
+  partialNote,
+  navHtml,
+  extraDesc,
+}) {
+  const { total, median, stages, biggest } = fundingSummary(deals);
+  const n = deals.length;
+  const thin = n < minDeals;
+  const shown = deals.slice().sort((a, b) => b.amountM - a.amountM).slice(0, PERIOD_DEAL_CAP);
+
+  const title = `Insurtech funding in ${label} — ${
+    money(total) || "no disclosed capital"
+  } across ${n} round${n === 1 ? "" : "s"} | ${SITE.name}`;
+  const description =
+    `Insurtech raised at least ${money(total)} across ${n} disclosed round${
+      n === 1 ? "" : "s"
+    } in ${label}${median ? `, ${money(median)} median` : ""}.${extraDesc ? ` ${extraDesc}` : ""}`;
+
+  const datasetLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: `Insurtech funding rounds — ${label}`,
+    description: clamp(description, 300),
+    url: url(canonical),
+    isAccessibleForFree: true,
+    creator: { "@type": "Organization", name: SITE.name, url: url("/") },
+    inLanguage: SITE.lang,
+    temporalCoverage,
+    isPartOf: { "@type": "Dataset", name: "Insurtech funding rounds", url: url("/funding/") },
+    variableMeasured: [
+      { "@type": "PropertyValue", name: "Disclosed capital raised (USD)", value: total * 1e6 },
+      { "@type": "PropertyValue", name: "Disclosed rounds", value: n },
+      ...(median
+        ? [{ "@type": "PropertyValue", name: "Median round size (USD)", value: median * 1e6 }]
+        : []),
+    ],
+  };
+  const crumbLd = breadcrumbLd(crumbs);
+
+  const factBlocks = [delta, stageBlock(stages), biggestBlock(biggest), breakdown].filter(Boolean);
+  const facts = factBlocks.length
+    ? `    <section class="co-facts">\n${factBlocks.join("\n")}\n    </section>`
+    : "";
+
+  const statBits = [`${n} round${n === 1 ? "" : "s"}`, `${money(total)} disclosed`];
+  if (median) statBits.push(`${money(median)} median`);
+  if (partial === "open") statBits.push("in progress");
+  else if (partial === "truncated") statBits.push("partial coverage");
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("funding"),
+    imageAlt: `Insurtech funding, ${label} — ${SITE.name}`,
+    jsonld: thin ? [crumbLd] : [datasetLd, crumbLd],
+    robots: thin ? "noindex, follow" : undefined,
+    scripts: [FUNDING_JS],
+  })}
+<body>
+${header("funding")}
+
+  <main id="top">
+    <p class="crumb">${crumbs
+      .slice(1, -1)
+      .map((c) => `<a href="${escAttr(c.path)}">← ${escHtml(c.name)}</a>`)
+      .join(" · ")}</p>
+
+    <div class="intro co-head">
+      <p class="co-kicker">${escHtml(kicker)}</p>
+      <h1 class="tagline">${escHtml(h1)}</h1>
+      <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
+      ${partialNote ? `<p class="dek">${partialNote}</p>` : ""}
+    </div>
+
+${facts}
+
+    <h2 class="section-label">${
+      shown.length < n ? `Largest rounds in ${escHtml(label)}` : `All rounds in ${escHtml(label)}`
+    }</h2>
+${dealTable(shown, `Largest insurtech funding rounds in ${label}`)}
+${
+  shown.length < n
+    ? `    <p class="topic-more">The ${shown.length} largest of ${n}, by amount. Every round is listed in date order on the pages above and in the <a href="/funding/">full tracker</a>.</p>`
+    : ""
+}
+
+${navHtml}
+
+${METHOD_NOTE}
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+/* The delta is shown only when BOTH periods are whole — the one being
+   read and the one it is measured against. */
+function periodDelta(cur, prev, keyFn, labelFn, archiveStart) {
+  if (partialWhy(cur.key, keyFn, archiveStart)) return "";
+  if (!prev || partialWhy(prev.key, keyFn, archiveStart)) return "";
+  return deltaBlock(cur, prev, labelFn);
+}
+
+function partialDek(partial, label, archiveStart) {
+  if (partial === "open")
+    return `${escHtml(
+      label
+    )} is still open, so these are running totals and no comparison against the previous period is shown until it closes.`;
+  if (partial === "truncated")
+    return `This archive begins ${escHtml(
+      fullDate(archiveStart)
+    )}, so ${escHtml(label)} is covered in part only. Its totals are not comparable with a whole period, and no change against the period before it is shown.`;
+  return "";
+}
+
+function fundingQuarterHtml(q, newer, older, monthKeys, byMonth, hasYearPage, archiveStart) {
+  const label = quarterLabel(q.key);
+  const year = q.key.slice(0, 4);
+  const partial = partialWhy(q.key, quarterKey, archiveStart);
+  return periodPageHtml({
+    key: q.key,
+    label,
+    deals: q.deals,
+    canonical: `/funding/${q.key}/`,
+    crumbs: [
+      { name: "Home", path: "/" },
+      { name: "Funding tracker", path: "/funding/" },
+      ...(hasYearPage ? [{ name: year, path: `/funding/${year}/` }] : []),
+      { name: label, path: `/funding/${q.key}/` },
+    ],
+    kicker: "Tracker",
+    h1: `Insurtech funding, ${label}`,
+    minDeals: QUARTER_MIN_DEALS,
+    temporalCoverage: `${quarterMonthKeys(q.key)[0]}/${quarterMonthKeys(q.key)[2]}`,
+    breakdown: monthBreakdown(q.key, monthKeys, byMonth, archiveStart),
+    delta: periodDelta(q, older, quarterKey, quarterLabel, archiveStart),
+    partial,
+    partialNote: partialDek(partial, label, archiveStart),
+    navHtml: periodNav(newer, older, "/funding/", quarterLabel, "Other quarters"),
+    extraDesc: "Round count, median size, stage mix and the largest raises.",
+  });
+}
+
+function fundingYearHtml(y, newer, older, quarters, archiveStart) {
+  const label = y.key;
+  const mine = quarters.filter((q) => q.key.startsWith(y.key + "-"));
+  const partial = partialWhy(y.key, yearKey, archiveStart);
+  return periodPageHtml({
+    key: y.key,
+    label,
+    deals: y.deals,
+    canonical: `/funding/${y.key}/`,
+    crumbs: [
+      { name: "Home", path: "/" },
+      { name: "Funding tracker", path: "/funding/" },
+      { name: label, path: `/funding/${y.key}/` },
+    ],
+    kicker: "Tracker",
+    h1: `Insurtech funding in ${label}`,
+    minDeals: YEAR_MIN_DEALS,
+    temporalCoverage: y.key,
+    breakdown: mine.length ? quarterChart(mine, new Set(), "By quarter") : "",
+    delta: periodDelta(y, older, yearKey, (k) => k, archiveStart),
+    partial,
+    partialNote: partialDek(partial, label, archiveStart),
+    navHtml: periodNav(newer, older, "/funding/", (k) => k, "Other years"),
+    extraDesc: "Quarter-by-quarter capital, median round size and the year's largest raises.",
+  });
+}
+
 /* Group into months, newest first. Months are derived from the data
    rather than authored, so — unlike the brief archive — stale
    directories are pruned: a dedup fix that empties a month should
@@ -1891,25 +2360,56 @@ ${FOOTER}
    starts once there are two months to split. It begins on its own the
    first time a month rolls over; nothing has to be migrated, because
    both pages are rebuilt from the store every run. */
-function collectMonths(deals) {
+function groupDeals(deals, keyFn) {
   const by = new Map();
   for (const d of deals) {
-    const k = monthKey(d.publishedAt);
+    const k = keyFn(d.publishedAt);
     if (!k) continue;
     if (!by.has(k)) by.set(k, []);
     by.get(k).push(d);
   }
-  const months = [...by.entries()]
+  return [...by.entries()]
     .map(([key, list]) => ({ key, deals: list }))
     .sort((a, b) => b.key.localeCompare(a.key));
+}
+
+function collectMonths(deals) {
+  const months = groupDeals(deals, monthKey);
   return months.length > 1 ? months : [];
 }
 
-function buildFundingPages(deals, months) {
+/* Quarters and years get pages for the same reason months do, and are
+   gated the same way: one period is a duplicate of /funding/, so the
+   split waits for the second.
+
+   They are NOT a re-slicing of the month pages, and mustn't become one.
+   A month page is the round-by-round table for a month; a quarter or
+   year page is the aggregate layer — capital, round count, median, stage
+   mix, the change against the period before it — with only the largest
+   rounds shown (PERIOD_DEAL_CAP). That aggregate is the part of this
+   dataset nobody else publishes for insurtech, and it is the only reason
+   these URLs earn their place: build them as tables of the same rows and
+   they are three copies of a page you already have. */
+function collectQuarters(deals) {
+  const quarters = groupDeals(deals, quarterKey);
+  return quarters.length > 1 ? quarters : [];
+}
+
+function collectYears(deals) {
+  const years = groupDeals(deals, yearKey);
+  return years.length > 1 ? years : [];
+}
+
+function buildFundingPages(deals, months, quarters, years) {
   const outRoot = path.join(ROOT, "funding");
   fs.mkdirSync(outRoot, { recursive: true });
 
-  const wanted = new Set(months.map((m) => m.key));
+  // Every period type shares one directory, so the prune set has to know
+  // about all three — a year page left out of it would be deleted on the
+  // run after the one that wrote it.
+  const monthKeys = new Set(months.map((m) => m.key));
+  const quarterKeys = new Set(quarters.map((q) => q.key));
+  const wanted = new Set([...monthKeys, ...quarterKeys, ...years.map((y) => y.key)]);
   for (const name of fs.readdirSync(outRoot)) {
     const dir = path.join(outRoot, name);
     if (fs.statSync(dir).isDirectory() && !wanted.has(name)) {
@@ -1917,18 +2417,49 @@ function buildFundingPages(deals, months) {
     }
   }
 
-  months.forEach((m, i) => {
-    const dir = path.join(outRoot, m.key);
+  const write = (key, html) => {
+    const dir = path.join(outRoot, key);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, "index.html"), fundingMonthHtml(m, months[i - 1], months[i + 1]));
-  });
-  fs.writeFileSync(path.join(outRoot, "index.html"), fundingIndexHtml(deals, months));
+    fs.writeFileSync(path.join(dir, "index.html"), html);
+  };
 
-  const idx = months.filter((m) => m.deals.length >= MONTH_MIN_DEALS).length;
+  const byMonth = new Map(months.map((m) => [m.key, m]));
+  const yearKeys = new Set(years.map((y) => y.key));
+  // deals arrive newest-first from collectDeals().
+  const archiveStart = deals.length ? isoDate(deals[deals.length - 1].publishedAt) : "";
+
+  months.forEach((m, i) => {
+    write(m.key, fundingMonthHtml(m, months[i - 1], months[i + 1], quarterKeys));
+  });
+  quarters.forEach((q, i) => {
+    write(
+      q.key,
+      fundingQuarterHtml(
+        q,
+        quarters[i - 1],
+        quarters[i + 1],
+        monthKeys,
+        byMonth,
+        yearKeys.has(q.key.slice(0, 4)),
+        archiveStart
+      )
+    );
+  });
+  years.forEach((y, i) => {
+    write(y.key, fundingYearHtml(y, years[i - 1], years[i + 1], quarters, archiveStart));
+  });
+  fs.writeFileSync(path.join(outRoot, "index.html"), fundingIndexHtml(deals, months, quarters, years));
+
+  const count = (list, min) => list.filter((p) => p.deals.length >= min).length;
+  const line = (name, list, min) =>
+    `${list.length} ${name} (${count(list, min)} indexable)`;
   console.log(
-    `  ✓ funding tracker — ${deals.length} deals, ${months.length} month page${
-      months.length === 1 ? "" : "s"
-    } (${idx} indexable, ${months.length - idx} noindex under ${MONTH_MIN_DEALS} deals)`
+    `  ✓ funding tracker — ${deals.length} deals, ` +
+      [
+        line("year pages", years, YEAR_MIN_DEALS),
+        line("quarter pages", quarters, QUARTER_MIN_DEALS),
+        line("month pages", months, MONTH_MIN_DEALS),
+      ].join(", ")
   );
 }
 
@@ -2127,7 +2658,16 @@ function injectCompaniesIndex(db) {
 /* ══════════════════════════════════════════════════════════════
    sitemap.xml + robots.txt
    ══════════════════════════════════════════════════════════════ */
-function buildSitemap(news, db, briefs = [], topics = [], months = [], deals = []) {
+function buildSitemap(
+  news,
+  db,
+  briefs = [],
+  topics = [],
+  months = [],
+  deals = [],
+  quarters = [],
+  years = []
+) {
   const now = isoDate(new Date().toISOString());
   const entries = [
     { loc: "/", lastmod: isoDate(news.updatedAt) || now, priority: "1.0", changefreq: "hourly" },
@@ -2165,19 +2705,26 @@ function buildSitemap(news, db, briefs = [], topics = [], months = [], deals = [
       priority: "0.9",
       changefreq: "daily",
     });
+    // The aggregate pages rank above the month tables: a year or quarter
+    // total is the part of this dataset that exists nowhere else, while a
+    // month page is the same rows cut finer.
+    const period = (list, min, prio) =>
+      list
+        .filter((p) => p.deals.length >= min)
+        .forEach((p, i) => {
+          entries.push({
+            loc: `/funding/${p.key}/`,
+            lastmod: isoDate(p.deals[0].publishedAt) || now,
+            priority: prio,
+            // A closed period can't gain rounds; only the current one moves.
+            changefreq: i === 0 ? "daily" : "monthly",
+          });
+        });
+    period(years, YEAR_MIN_DEALS, "0.8");
+    period(quarters, QUARTER_MIN_DEALS, "0.8");
     // Thin months are noindex — listing them would only ask Google to crawl
     // what it has been told not to index (same rule as company pages).
-    months
-      .filter((m) => m.deals.length >= MONTH_MIN_DEALS)
-      .forEach((m, i) => {
-        entries.push({
-          loc: `/funding/${m.key}/`,
-          lastmod: isoDate(m.deals[0].publishedAt) || now,
-          priority: "0.7",
-          // A month that has closed can't gain rounds; only the current one moves.
-          changefreq: i === 0 ? "daily" : "monthly",
-        });
-      });
+    period(months, MONTH_MIN_DEALS, "0.7");
   }
   if (topics.length) {
     entries.push({ loc: "/topic/", lastmod: now, priority: "0.8", changefreq: "daily" });
@@ -2293,6 +2840,8 @@ function main() {
   const topics = collectTopics(news);
   const deals = collectDeals(news, db);
   const months = collectMonths(deals);
+  const quarters = collectQuarters(deals);
+  const years = collectYears(deals);
   // Every page's nav lists the hubs, so the list has to exist before
   // the first page is written — and so must the funded-company set,
   // which the company pages, the companies index and the sitemap all
@@ -2302,12 +2851,12 @@ function main() {
   buildCompanyPages(db, deals);
   buildBriefPages(briefs);
   buildTopicPages(topics, db, deals);
-  buildFundingPages(deals, months);
+  buildFundingPages(deals, months, quarters, years);
   injectAnalytics();
   injectSocial();
   injectHomepage(news);
   injectCompaniesIndex(db);
-  buildSitemap(news, db, briefs, topics, months, deals);
+  buildSitemap(news, db, briefs, topics, months, deals, quarters, years);
   buildRobots();
   console.log("SEO build complete.");
 }
