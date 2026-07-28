@@ -204,6 +204,35 @@ produce all of that consistently — **route new pages through them.**
      its first). `dedupeByCompany()` in `seo.js` runs afterwards, once
      company attribution exists, and catches the case two outlets describe
      one round in barely overlapping words.
+   • **Outlets disagree about the number, so the second pass bounds the
+     amounts rather than matching them.** Same company inside the window
+     and within `SAME_ROUND_MAX` (2x) is one round. Three real causes, all
+     of which used to show up as duplicate rows: local trade press
+     printing local currency ("Quandri secures $16.5 million CAD" beside
+     the same round's "$12m"), a figure drifting as a round is re-reported
+     (Corgi's $160M Series B came back as $106M three weeks later), and a
+     round rumoured before it closed ("could secure up to $100m", closed
+     at $70M). Don't relax this to same-company-same-window: 2x is what
+     keeps InsuranceDekho's $14.5M and $70M rounds, six weeks apart,
+     from collapsing into each other. Against every such pair in the
+     archive the widest true duplicate is 1.73x and the closest true pair
+     4.83x, so the bound has room on both sides — re-measure it, don't
+     nudge it.
+   • **`resolveRound()` picks the figure the most outlets stated, ties to
+     the smaller,** and then adopts the earliest report of that figure
+     whole — link, source, date and title together, so a row can never
+     cite a number the source it links to didn't print. The tie-break
+     looks timid and isn't: the inflated figure in a disagreement is
+     systematically the foreign-currency one or the rumoured one, and the
+     tracker's own method note promises a floor on real activity. Taking
+     the larger filed Quandri in Canadian dollars on a table that says it
+     counts US dollars.
+   • **Company aliases are curated, never inferred.** `AGI` and `American
+     Growth Insurance` were two pages for one $70M round, and an initials
+     rule fixes that — and also folds `IAG` (Insurance Australia Group,
+     four stories) into International Airlines Group. So the fix is one
+     verified line in `CANON_LIST` in `companies.js`, not a heuristic that
+     is right once and wrong once.
    • **Month pages only exist once there are two months.** With a single
      month, `/funding/<month>/` is byte-identical to `/funding/` — a second
      copy of the page you want ranked. `collectMonths()` returns `[]` until

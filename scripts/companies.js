@@ -125,6 +125,12 @@ const CANON_LIST = {
   "Singtel": ["Telecommunications Ltd Singtel", "Singapore Telecommunications", "Singapore Telecommunications Ltd"],
   "Wave Claims": ["Wave"],
   "Insurance House": ["House"],
+  // Listed by hand, not by an initials rule: "AGI" really is American
+  // Growth Insurance here, but the same rule folds IAG (Insurance
+  // Australia Group, four stories) into International Airlines Group,
+  // which is a different industry. One verified alias beats a heuristic
+  // that is right once and wrong once.
+  "American Growth Insurance": ["AGI"],
 };
 
 // Non-companies Claude occasionally emits (products / techniques / generic

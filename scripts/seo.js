@@ -1296,35 +1296,115 @@ function attachCompanies(deals, db) {
    which misses the case where two outlets describe one round in barely
    overlapping words — PolicyStreet's $26M Series C was filed both as
    "raises Series C to $26 mn" and "Extends Malaysia's Largest Insurtech
-   Funding Round to US$26M", sharing exactly one distinctive token. Same
-   company and same amount inside the window is the same round. */
+   Funding Round to US$26M", sharing exactly one distinctive token.
+
+   It also misses the bigger case: outlets that agree it's one round and
+   disagree about the number. Three ways that happens, all of them real
+   here — a non-US round printed in local currency by the local trade
+   press ("Quandri secures $16.5 million CAD" / "Quandri raises $12m"),
+   a figure that drifts as a round is re-reported (Corgi's $160M Series B
+   came back as $106M three weeks later), and a round rumoured before it
+   closed ("InsuranceDekho could secure up to $100m", closing at $70M).
+   Requiring the amounts to match left all of those on the table as
+   separate rows — six duplicates that made the tracker look like it was
+   double-counting, on the one page here that isn't a restatement of
+   someone else's reporting.
+
+   So the amounts no longer have to be equal, only within SAME_ROUND_MAX
+   of each other. A company does not close two rounds inside 45 days, but
+   it does raise a $14.5M round and then a $70M one 6 weeks apart — which
+   is exactly the pair a ratio bound keeps apart and a pure
+   same-company-same-window rule would have merged. Against every such
+   pair in the archive (12 of them, across 6 companies) 2x separates the
+   re-reports from the genuinely distinct rounds with room on both
+   sides: the widest true duplicate is 1.73x, the closest true pair
+   4.83x. */
+const SAME_ROUND_MAX = 2;
+const sameRound = (a, b) =>
+  a > 0 && b > 0 && Math.max(a, b) / Math.min(a, b) <= SAME_ROUND_MAX;
+
+/* Collapse one cluster of reports into the row that represents it.
+
+   Which figure survives matters as much as the merge: taking the newest,
+   as first-wins did, is how Corgi's May round would have been filed at
+   the $106M a single outlet printed three weeks late rather than the
+   $160M two of them reported on the day. So the row shows the figure the
+   most outlets stated.
+
+   Ties go to the SMALLER figure, which looks timid and isn't. The two
+   ways a cluster disagrees about the number are a local outlet printing
+   local currency (Quandri's "$16.5 million CAD" against the same round's
+   $12m) and a round rumoured before it closed ("could secure up to
+   $100m", closed at $70M) — and in both the inflated figure is the
+   larger one. Taking the larger on a tie filed Quandri in Canadian
+   dollars on a table that says it counts US dollars, and filed
+   InsuranceDekho at a number nobody ever raised. The tracker already
+   says its totals are a floor on real activity; the tie-break is where
+   that has to be true.
+
+   The representative is then the *earliest* report carrying that figure,
+   adopted whole — link, source, date and title travel together, so a row
+   can never cite a number the source it links to didn't print, and
+   "Announced" is the first report of the round rather than the last.
+   Everyone else becomes the +n in the source column. */
+function resolveRound(members) {
+  if (members.length === 1) {
+    return { ...members[0], alsoReportedBy: [...members[0].alsoReportedBy] };
+  }
+  const tally = new Map();
+  for (const m of members) {
+    const key = Math.round(m.amountM * 10) / 10;
+    if (!tally.has(key)) tally.set(key, []);
+    tally.get(key).push(m);
+  }
+  const winners = [...tally.entries()].sort((a, b) => b[1].length - a[1].length || a[0] - b[0])[0][1];
+  const rep = winners
+    .slice()
+    .sort((a, b) => new Date(a.publishedAt) - new Date(b.publishedAt))[0];
+
+  const outlets = [];
+  for (const m of members) {
+    for (const s of [m.source, ...(m.alsoReportedBy || [])]) {
+      if (s && s !== rep.source && !outlets.includes(s)) outlets.push(s);
+    }
+  }
+  // members arrive newest-first, so this keeps the previous "first
+  // non-empty wins" behaviour for the two fields that are often blank.
+  return {
+    ...rep,
+    alsoReportedBy: outlets,
+    stage: (members.find((m) => m.stage) || {}).stage || "",
+    lead: (members.find((m) => m.lead) || {}).lead || "",
+  };
+}
+
 function dedupeByCompany(deals) {
-  const kept = [];
+  const clusters = [];
   for (const d of deals) {
-    const dup =
+    const hit =
       d.company &&
-      kept.find(
-        (k) =>
+      clusters.find(
+        ([k]) =>
           k.company &&
           k.company.slug === d.company.slug &&
-          Math.round(k.amountM) === Math.round(d.amountM) &&
+          sameRound(k.amountM, d.amountM) &&
           Math.abs(new Date(k.publishedAt) - new Date(d.publishedAt)) / 86400000 <= 45
       );
-    if (dup) {
-      if (d.source && !dup.alsoReportedBy.includes(d.source)) dup.alsoReportedBy.push(d.source);
-      if (!dup.stage) dup.stage = d.stage;
-      if (!dup.lead) dup.lead = d.lead;
-      continue;
-    }
-    kept.push({ ...d, alsoReportedBy: [...d.alsoReportedBy] });
+    if (hit) hit.push(d);
+    else clusters.push([d]);
   }
-  return kept;
+  return clusters.map(resolveRound);
 }
 
 function collectDeals(news, db) {
   const pool = storeArticles();
   const arts = pool.length ? pool : news.articles || [];
-  return dedupeByCompany(attachCompanies(fundingDeals(arts), db));
+  const deals = dedupeByCompany(attachCompanies(fundingDeals(arts), db));
+  // resolveRound() can hand a row an earlier date than the report it was
+  // clustered under, and everything downstream — the "most recent" table,
+  // the month split, the sitemap's lastmod — reads this array as
+  // newest-first. Re-sort rather than assume the input order survived.
+  return deals.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
 }
 
 /* One row. The company cell links to its page when we know it (internal
