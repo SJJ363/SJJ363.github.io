@@ -79,6 +79,17 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: node scripts/companies.js
 
+      # The backfill is where this one actually costs something: it reaches
+      # months of archive at once, and every candidate headline in them is a
+      # cache miss. Bounded by the same `limit` for the same reason, and
+      # newest-first inside the script, so a partial pass leaves the recent
+      # tracker correct and the older months on the regexes until next time.
+      - name: Extract funding rounds
+        if: inputs.limit != '0'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: node scripts/funding-extract.js --limit "${{ inputs.limit }}" || echo "Funding extraction failed — regex fallback stands."
+
       - name: Build SEO (pages, sitemap, structured data)
         run: node scripts/seo.js
 

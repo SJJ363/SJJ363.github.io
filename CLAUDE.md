@@ -217,7 +217,23 @@ produce all of that consistently — **route new pages through them.**
      `taxonomy.js` has with tags — so a regex fix retroactively corrects
      the whole archive. It also means the tracker inherits the relevance
      gate for free, which is what keeps Finextra's clearing banks and
-     game-commerce startups out of it.
+     game-commerce startups out of it. The *verdicts* are cached (3c-v);
+     the rows built from them are not.
+   • **Amounts are US dollars, converted, and the row shows the original.**
+     `amountOf()` reads a currency off every figure — symbol, `US$`/`C$`
+     prefix, `EUR`/`Rs` code, a trailing "CAD"/"euros", or `crore`/`lakh`
+     — and converts through the fixed `RATES` table. This was invisible
+     breakage in both directions: a round reported only in euros, pounds
+     or rupees produced **no row at all** (Qover €10M, Napo €14.4M, Plum
+     ₹193cr, EdenCare €250k), while four Canadian rounds were filed at
+     face value ~37% high because `$` was assumed to be USD. Two rules.
+     **The rates are fixed, not live** — this file re-derives a two-year
+     archive on every build, and a rate that moved between builds would
+     silently restate rounds that already published; wrong by a few
+     percent and *staying* wrong is the property that matters. And **a
+     converted row prints what the outlet printed** (`deal-native`),
+     because otherwise the row shows a number no source contains and the
+     link beside it can't be used to check it.
    • **Blank beats guessed.** Stage and lead investor are filled in only
      from an explicit headline statement (`led by` + a Title Case run);
      anything looser invents investors. A blank cell is honest, a wrong
@@ -339,6 +355,90 @@ produce all of that consistently — **route new pages through them.**
      `companies.html`. Change the stylesheet and all three need bumping
      together, or returning visitors get new markup against old CSS —
      which fails silently and looks fine in a fresh browser.
+3c-v. **Claude reads the round; the regexes are the net and the
+   fallback.** `scripts/funding-extract.js` runs after `companies.js` and
+   before `seo.js`, asks Claude one question per candidate headline — is
+   this a closed insurance funding round, and if so: company, amount,
+   currency, stage, lead — and caches the verdict in
+   `companies-store.json` under **`funding`**, keyed by link and stamped
+   with `PROMPT_VERSION`, exactly as `companies.js` caches `extracted`.
+   `fundingDeals(articles, { facts })` prefers a cached verdict over its
+   own regexes.
+
+   It exists because both failure directions were unfixable by pattern.
+   **Recall:** the tracker missed Alan's largest round — "Prosus pours
+   $460M into Alan at $6.3B" — because `pours` was not one of nine
+   funding verbs; likewise "Investors bet $10M that Laka…", "General
+   Magic Nabs $7.2M", "Chapter pockets $75M", "Bestow gets $120M capital
+   boost". Every miss is silent: a row that simply isn't there.
+   **Precision:** `Blitzy raises $200 mn for AI coding`, `Cake Raises
+   $13MM Seed Round … Open-Source AI` and `Sardine AI Raises $70M` were
+   four of the biggest rows on a page about *insurtech* funding, `JVP
+   raises $290M from TPG` was a fund and not a round, and
+   `InsuranceDekho could secure up to $100m` never happened at that
+   number. Telling those apart needs the sentence read.
+
+   Five things this depends on:
+   • **A negative verdict is cached too.** "Not a round" is the whole
+     point of the pass; if it isn't persisted the false positives return
+     on the next build.
+   • **`companies.js` must carry the `funding` key through its own
+     write.** Both scripts write `companies-store.json`, and a write that
+     names only its own keys truncates the other's cache — the symptom is
+     a tracker silently re-extracting its whole archive every run.
+   • **The candidate pre-filter is deliberately wide** —
+     `isFundingCandidate()` takes any currency figure *or* any round
+     vocabulary, about a third of the store. A headline the pre-filter
+     misses is one Claude is never shown, which is precisely how the Alan
+     round was lost. Same reason the `Funding` tag in `taxonomy.js` now
+     carries far more verbs than a topic hub needs: it is the fallback
+     gate, and its job is to under-reject.
+   • **Failure is ordinary and soft.** No credentials, a rate limit, an
+     unparseable reply: the link gets no entry and the regexes decide it.
+     The site degrades to what it did before this file existed. It is the
+     *last* of the three Claude steps in `news.yml` for that reason — the
+     brief is prose nobody else wrote, the company index feeds every page,
+     and this one has a working fallback.
+   • **The fallback still has to be good,** because it decides every
+     article between arrival and the next extraction. Its own insurance
+     test is `INSURANCE_ROUND` in `funding.js`, not bare `RELEVANCE`: an
+     insurtech's funding headline routinely never says "insurance" ("Cara
+     raises $8m seed to build AI platform for brokers", "Angle Health
+     Secures $134M to Grow Benefits Platform"), so broker/coverage/
+     claims/premium/MGA/benefits join it *here and nowhere else*.
+
+3c-vi. **A round belongs to the company that raised it, and headlines
+   name the other side first.** `attachCompanies()` in `seo.js` takes the
+   extractor's `company` when it has one, resolved against the finished
+   index (rule 3c-iv — never as a raw slug). Its positional fallback
+   ("earliest company named in the title") is right most of the time and
+   wrong in one common shape: investor-first. "Beams Fintech Fund leads
+   $70 Mn round in InsuranceDekho", "Japanese wealth fund Cool Japan Fund
+   leads US$21 million … for PolicyStreet", "Apis Partners' Funds Lead
+   US$60 Million Series C in … Roojai", "Aviva-backed AI broker raises
+   £950k" — all filed under the investor, and each one also produced a
+   *duplicate* row, since the real raiser's own report clustered
+   separately. So the fallback rules out the named lead and the subject of
+   any investing verb before ranking by position, and **when that leaves
+   nothing it attributes nothing**: an unlinked descriptor is right where
+   the only company named is the backer. Falling back to the full
+   candidate list there put £950k on Aviva's page and on its ranking total.
+
+3c-vii. **`SPLIT_LIST` in `companies.js` is the inverse of `CANON_LIST`,
+   and merging two real companies is the worse error.** `/company/nirvana/`
+   held eight stories about two unrelated firms — Nirvana Insurance, the
+   AI trucking insurtech ($80M Series C, $100M Series D), and a
+   health-insurance-verification startup that raised $24.2M — and the
+   ranking summed all three into "$204.2M across 3 rounds" for a company
+   that raised $180M across two. Keyed by shared slug; the first pattern
+   to match the *article title* renames that mention, so the split is
+   per-story. **Curated and hand-verified, never inferred**, on exactly
+   the reasoning `CANON_LIST` carries: a heuristic general enough to
+   separate these two would eventually separate a company from itself.
+   `mergePrefixes()` must skip `SPLIT_SLUGS` — "Nirvana Health" is
+   `nirvana` plus a word that sits in `COMPANY_TYPE`, so without the
+   exemption the heuristic folds a hand-verified decision straight back.
+
 3c-ii. **The relevance gate is applied by every reader of the store, via
    `admits()` in `scripts/relevance.js`.** `seo.js` (hubs, tracker) and
    `companies.js` (the company index) both call it — never re-implement
@@ -441,4 +541,14 @@ node scripts/schedule.js       # what the workflow would decide right now
 node scripts/og.js             # redraw the social cards (needs Chrome; only after a design change)
 node scripts/seo.js            # regenerate pages, sitemap, robots, structured data
 python3 -m http.server 8099    # serve root; visit /company/<slug>/ to spot-check
+```
+
+`funding-extract.js` needs a logged-in Claude CLI or `CLAUDE_CODE_OAUTH_TOKEN`,
+so a local `seo.js` builds the tracker from whatever verdicts are already
+committed in `companies-store.json` plus the regexes for the rest — which is
+also exactly what a run with a rate-limited CLI does, and therefore worth
+looking at. To extract locally, log the CLI in and bound it:
+
+```bash
+node scripts/funding-extract.js --limit 60
 ```

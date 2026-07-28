@@ -163,7 +163,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=25" />
+  <link rel="stylesheet" href="/style.css?v=26" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -918,6 +918,23 @@ function buildBriefPages(briefs) {
    under older, looser rules — so re-apply the current gate on the way
    out. Without it the hubs resurface a lettuce recall and a Red Sea
    strike that the wire has already stopped carrying. */
+/* Claude's per-article funding verdicts, written by funding-extract.js
+   and keyed by link. Read once per build and handed to fundingDeals(),
+   which prefers them over its own regexes — including a verdict of "not
+   a round", which is how the fund vehicles, the sector tallies and the
+   AI-coding raises stay off a page about insurtech funding.
+
+   Empty is a valid state (no credentials, a rate-limited run, a fresh
+   clone), and it means the regexes decide everything, as they did
+   before the cache existed. */
+function fundingFacts() {
+  try {
+    return JSON.parse(fs.readFileSync(STORE, "utf8")).funding || {};
+  } catch {
+    return {};
+  }
+}
+
 function storeArticles() {
   try {
     const raw = JSON.parse(fs.readFileSync(STORE, "utf8"));
@@ -1302,6 +1319,56 @@ function money(m) {
   return "$" + (Math.round(m * 10) / 10).toFixed(Number.isInteger(m) ? 0 : 1) + "M";
 }
 
+/* The figure as its outlet printed it, for a row this table converted.
+
+   Indian rounds get crore rather than a rupee count in the millions:
+   "₹193cr" is what the headline said and what a reader would search for,
+   and "₹1,930M" is a unit nobody in that market uses. */
+const CURRENCY_GLYPH = {
+  EUR: "€", GBP: "£", INR: "₹", JPY: "¥", CHF: "CHF ",
+  CAD: "C$", AUD: "A$", NZD: "NZ$", SGD: "S$", HKD: "HK$",
+  MYR: "RM", ZAR: "R", BRL: "R$", AED: "AED ", SAR: "SAR ",
+};
+function nativeMoney(m, currency) {
+  if (!m || m <= 0 || !currency || currency === "USD") return "";
+  if (currency === "INR") {
+    const cr = m / 10; // m is millions of rupees; 1 crore = 10 million
+    return "₹" + (cr >= 100 ? Math.round(cr) : Math.round(cr * 10) / 10) + "cr";
+  }
+  const g = CURRENCY_GLYPH[currency] || currency + " ";
+  if (m >= 1000) return g + (Math.round(m / 100) / 10).toFixed(1) + "B";
+  if (m < 1) return g + Math.round(m * 1000) + "K";
+  return g + (Math.round(m * 10) / 10).toFixed(Number.isInteger(m) ? 0 : 1) + "M";
+}
+
+/* The Company cell for a row with no company record behind it — no page
+   to link to, so all we can print is a name.
+
+   The extractor's answer first; failing that, the headline up to its
+   funding verb. That split used to know six verbs, and a headline using
+   a seventh put its entire text in the cell: one row read "Insurance-tech
+   startup plans to double Charlotte workforce after $45M raise" where a
+   company name belongs. So the verb list is wide, the result is capped,
+   and anything that fails both tests renders an em dash — a blank cell is
+   a missing name, a sentence in a Company column is a broken table. */
+const RAISE_VERB =
+  /\s+(?:raises?|raised|secures?|secured|lands?|closes?|closed|bags?|nets?|nabs?|pockets?|scoops?|scores?|hauls?|snags?|draws?|attracts?|receives?|gets?|announces?|completes?|extends?|wins?|picks up|pulls in|brings in)\b/i;
+function unlinkedCompany(d) {
+  const head = String(d.title || "").split(RAISE_VERB)[0].replace(/^Exclusive:\s*/i, "").trim();
+  const name = d.raiser || (head && head.length <= 40 ? head : "");
+  return name || "—";
+}
+
+/* The amount cell, shared by the tracker's table and the one on a company
+   page so a converted round can never read differently in the two places. */
+function amountCell(d) {
+  const native = nativeMoney(d.nativeM, d.currency);
+  return (
+    escHtml(money(d.amountM)) +
+    (native ? `<span class="deal-native">as reported: ${escHtml(native)}</span>` : "")
+  );
+}
+
 /* Attach the raising company to each deal.
 
    The company names come from companies.json (Claude-extracted, and far
@@ -1309,7 +1376,22 @@ function money(m) {
    article link. A headline names both sides of a round — "X raises $Y
    led by Z" — so of the companies on that article we take the one
    mentioned EARLIEST in the title, which is the raiser in essentially
-   every headline construction. */
+   every headline construction.
+
+   "Essentially every" was optimistic. The construction that breaks it is
+   investor-first, and it is common: "Beams Fintech Fund leads $70 Mn
+   round in InsuranceDekho", "Antler leads $500K round in
+   InsurancePadosi", "Thrive And Sequoia Back Pace With $46 Million",
+   "Prosus pours $460M into Alan". Earliest-mentioned files every one of
+   those under the INVESTOR.
+
+   So the extractor's answer wins when it has one: funding-extract.js is
+   asked for the company that raised, specifically, and the name it
+   returns is matched against the companies actually on that article —
+   never trusted as a slug of its own. That last part matters for the
+   same reason rule 3c-iv does: a raw name skips canonicalisation and
+   prefix-merging, and a `/company/<slug>/` built from one is a dead
+   link. If the name doesn't resolve, we fall back to position. */
 function attachCompanies(deals, db) {
   const byLink = new Map();
   for (const c of db.companies || []) {
@@ -1319,13 +1401,70 @@ function attachCompanies(deals, db) {
       byLink.get(a.link).push({ slug: c.slug, name: c.name });
     }
   }
+  const norm = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
   return deals.map((d) => {
     const cands = byLink.get(d.link) || [];
-    const ranked = cands
-      .map((c) => ({ ...c, at: d.title.toLowerCase().indexOf(c.name.toLowerCase()) }))
-      .filter((c) => c.at >= 0)
-      .sort((a, b) => a.at - b.at);
-    return { ...d, company: ranked[0] || cands[0] || null };
+    let picked = null;
+    if (d.raiser) {
+      const want = norm(d.raiser);
+      picked =
+        cands.find((c) => norm(c.name) === want) ||
+        /* "Alan" against a record named "Alan Health", "Corgi" against
+           "Corgi Insurance" — one is a prefix of the other and they are
+           the same company. Bounded at four characters so a short generic
+           answer can't attach itself to an unrelated record. */
+        (want.length >= 4 &&
+          cands.find((c) => norm(c.name).startsWith(want) || want.startsWith(norm(c.name)))) ||
+        null;
+    }
+    if (!picked) {
+      /* Position, but not before ruling out the two entities we can
+         positively identify as the wrong side of the round: the lead
+         investor the headline names outright, and whoever is the SUBJECT
+         of an investing verb. Without this the fallback filed rounds
+         under Prosus, a16z, Antler, Balderton, Aviva and Scottish Equity
+         Partners — every one of them the party writing the cheque. */
+      /* Matched as a prefix in either direction, because the phrase the
+         headline uses and the name the index holds rarely line up
+         exactly: "Apis Partners' Funds Lead US$60 Million Series C in …
+         Roojai" yields "Apis Partners' Funds" against a record called
+         "Apis Partners", and an equality test filed the round under the
+         investor anyway — twice, since Roojai's own report of the same
+         round became a second row. */
+      const bad = [];
+      const isBad = (name) => {
+        const n = norm(name);
+        if (n.length < 4) return false;
+        // Substring rather than prefix once the name is long enough to be
+        // distinctive: "Japanese wealth fund Cool Japan Fund leads US$21
+        // million … for PolicyStreet" buries the investor's name mid-phrase,
+        // and the round belongs to PolicyStreet.
+        return bad.some((b) => b.startsWith(n) || n.startsWith(b) || (n.length >= 5 && b.includes(n)));
+      };
+      if (d.lead) bad.push(norm(d.lead));
+      const inv = d.title.match(
+        // The hyphen matters: "Aviva-backed AI broker raises £950k" names
+        // its backer and never names the broker, and attributing that
+        // round to Aviva is exactly the error this guard exists to stop.
+        /^(?:Exclusive:\s*)?(.{2,45}?)[\s-]+(?:co-)?(?:leads?|led|backs?|backed|pours?|invests?|bets?|hands?|commits?)\b/i
+      );
+      if (inv) bad.push(norm(inv[1]));
+      const usable = cands.filter((c) => !isBad(c.name));
+      /* When ruling out the investor leaves nothing, the answer is
+         nothing. "Aviva-backed AI broker raises £950k" names one company
+         and it is the backer; the broker is never named. Falling back to
+         the full candidate list here — as this did — links the round to
+         Aviva's page, which is both a wrong attribution and $1.2M added
+         to a FTSE insurer's total on the ranking. An unlinked descriptor
+         is the honest cell. */
+      const pool = usable.length || bad.length ? usable : cands;
+      const ranked = pool
+        .map((c) => ({ ...c, at: d.title.toLowerCase().indexOf(c.name.toLowerCase()) }))
+        .filter((c) => c.at >= 0)
+        .sort((a, b) => a.at - b.at);
+      picked = ranked[0] || pool[0] || null;
+    }
+    return { ...d, company: picked };
   });
 }
 
@@ -1338,12 +1477,21 @@ function attachCompanies(deals, db) {
    Funding Round to US$26M", sharing exactly one distinctive token.
 
    It also misses the bigger case: outlets that agree it's one round and
-   disagree about the number. Three ways that happens, all of them real
-   here — a non-US round printed in local currency by the local trade
-   press ("Quandri secures $16.5 million CAD" / "Quandri raises $12m"),
-   a figure that drifts as a round is re-reported (Corgi's $160M Series B
-   came back as $106M three weeks later), and a round rumoured before it
-   closed ("InsuranceDekho could secure up to $100m", closing at $70M).
+   disagree about the number. The original three causes were a non-US
+   round printed in local currency ("Quandri secures $16.5 million CAD" /
+   "Quandri raises $12m"), a figure that drifts as a round is re-reported
+   (Corgi's $160M Series B came back as $106M three weeks later), and a
+   round rumoured before it closed ("InsuranceDekho could secure up to
+   $100m", closing at $70M).
+
+   Two of those three are now handled upstream and no longer reach here:
+   funding.js converts currencies, so Quandri's two reports arrive as
+   $12.05M and $12M, and it declines the conditional outright, so the
+   rumoured figure is never a row. The bound stays because the third
+   cause — a figure that simply drifts between outlets — has no upstream
+   fix, and because rows that arrive from the regex fallback rather than
+   the extractor still exhibit all three.
+
    Requiring the amounts to match left all of those on the table as
    separate rows — six duplicates that made the tracker look like it was
    double-counting, on the one page here that isn't a restatement of
@@ -1438,7 +1586,7 @@ function dedupeByCompany(deals) {
 function collectDeals(news, db) {
   const pool = storeArticles();
   const arts = pool.length ? pool : news.articles || [];
-  const deals = dedupeByCompany(attachCompanies(fundingDeals(arts), db));
+  const deals = dedupeByCompany(attachCompanies(fundingDeals(arts, { facts: fundingFacts() }), db));
   // resolveRound() can hand a row an earlier date than the report it was
   // clustered under, and everything downstream — the "most recent" table,
   // the month split, the sitemap's lastmod — reads this array as
@@ -1463,7 +1611,7 @@ function dealRow(d) {
     ? `<a class="deal-link" href="/company/${escAttr(d.company.slug)}/">${escHtml(
         d.company.name
       )}</a>`
-    : escHtml((d.title.split(/\s+(?:raises|secures|lands|closes|bags|nets)\b/i)[0] || "—").trim());
+    : escHtml(unlinkedCompany(d));
   const outlets = [d.source, ...(d.alsoReportedBy || [])].filter(Boolean);
   const also =
     outlets.length > 1
@@ -1473,7 +1621,7 @@ function dealRow(d) {
     Number(d.amountM) || 0
   }" data-date="${escAttr(isoDate(d.publishedAt))}">
           <td class="deal-co">${co}</td>
-          <td class="deal-amt">${escHtml(money(d.amountM))}</td>
+          <td class="deal-amt">${amountCell(d)}</td>
           <td class="deal-stage">${d.stage ? escHtml(d.stage) : '<span class="deal-blank">—</span>'}</td>
           <td class="deal-lead">${d.lead ? escHtml(d.lead) : '<span class="deal-blank">—</span>'}</td>
           <td class="deal-date"><time datetime="${escAttr(isoDate(d.publishedAt))}">${escHtml(
@@ -1557,7 +1705,7 @@ function companyFundingBlock(c, deals = []) {
             }</span>`
           : "";
       return `        <tr>
-          <td class="deal-amt">${escHtml(money(d.amountM))}</td>
+          <td class="deal-amt">${amountCell(d)}</td>
           <td class="deal-stage">${
             d.stage ? escHtml(d.stage) : '<span class="deal-blank">—</span>'
           }</td>
@@ -1614,12 +1762,18 @@ const METHOD_NOTE = `    <section class="method">
       <p class="method-text">
         Every row is a funding round announced in the insurtech press and
         aggregated by Insurtech Daily. A round is counted only when a
-        publication states a figure in US dollars, so raises disclosed
-        only in other currencies, and rounds closed without a number, are
-        absent. Market-size forecasts, earnings, acquisition prices and
+        publication states a figure, so rounds closed without a number
+        are absent. Amounts are shown in US dollars; a round reported in
+        another currency is converted at a fixed reference rate and the
+        row shows the figure as it was originally printed, so it can be
+        checked against the reporting it links to. Market-size forecasts,
+        earnings, acquisition prices and
         catastrophe losses are excluded, as are valuations — a headline
         that gives only what a company is now worth, and not what it
-        raised, is not counted as a round. The same round reported by
+        raised, is not counted as a round. So are money raised by
+        investors into their own funds, capital a company is spending
+        rather than raising, public offerings and placings, and rounds
+        still described as planned or rumoured. The same round reported by
         several outlets is collapsed into one row, with the extra outlets
         counted in the source column. Stage and lead investor are filled
         in only where a headline states them outright and left blank

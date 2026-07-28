@@ -14,8 +14,46 @@ const TAXONOMY = [
      funding round: 23 of 57 matches were false, and none of the real
      ones needed it. A raise now has to be a raise — a funding verb, a
      round name, or money that a funding verb is actually reaching for.
-     Note "nets? $" is absent on purpose: it matches "net income of $". */
-  ["Funding", /(rais(?:e|es|ed|ing)\s+(?:\w+\s+){0,2}(?:[$€£₹]|\d|seed|series|round|funding|capital)|fundrais|funding round|seed funding|seed round|series [a-e]\b|pre-seed|in funding|funding from|funding led|funding to|venture (?:capital|round|funding|debt)|\bVC round\b|valuation|(?:secures?|lands?|closes?|bags?)\s+(?:\w+\s+){0,2}[$€£₹]|investment round|capital raise|backed by)/i],
+     Note "nets? $" is absent on purpose: it matches "net income of $".
+
+     This tag is also the funding tracker's fallback gate, which is why
+     the verb list below is longer than a topic hub strictly needs. It was
+     once nine verbs, and every headline using a tenth was invisible to
+     /funding/ entirely: "Prosus pours $460M into Alan", "Tokio Marine
+     invests $5m in Igloo", "General Magic Nabs $7.2M", "Chapter pockets
+     $75M", "LightSpun chomps $13M", "Investors bet $10M that Laka…",
+     "Bestow gets $120M capital boost". English has more verbs for this
+     than a list can hold, which is why funding-extract.js reads the
+     headline properly — but a story this regex never tags is a story the
+     extractor is never shown, so the net here is cast wide and the
+     precision is recovered downstream.
+
+     Three shapes beyond the verbs, all of them previously missed:
+       · MONEY is its own atom, so "US$60 million" works. The old pattern
+         wanted whitespace before the symbol and "Roojai Raises US$60
+         Million" therefore didn't match — nor did PolicyStreet's or
+         Koltin's US$ rounds.
+       · money BEFORE the verb: "Fulcrum: $25 Million Raised To…",
+         "$50 Million Growth Equity Raise From SEP", "after $45M raise".
+       · `series [a-z]`, not `[a-e]`. Alan's Series G was the first round
+         past E in the archive and simply fell out. */
+  ["Funding", (() => {
+    const MONEY = "(?:(?:US|C|CA|A|AU|NZ|S|HK)?[$€£₹¥]|\\b(?:USD|EUR|GBP|INR|CAD|AUD|SGD|Rs|RM)\\b|\\b\\d[\\d,.]*\\s?(?:million|billion|thousand|mn|bn|crore|lakh|[kmb])\\b)";
+    const VERB = "(?:rais(?:e|es|ed|ing)|secur(?:e|es|ed)|land(?:s|ed)?|clos(?:e|es|ed)|bag(?:s|ged)?|nab(?:s|bed)?|pour(?:s|ed)?|pocket(?:s|ed)?|chomp(?:s|ed)?|scoop(?:s|ed)?|score(?:s|d)?|haul(?:s|ed)?|draw(?:s|n)?|attract(?:s|ed)?|receiv(?:e|es|ed)|get(?:s)?|invest(?:s|ed)?|bet(?:s)?|back(?:s|ed)|commit(?:s|ted)?|extend(?:s|ed)?|snag(?:s|ged)?|pull(?:s|ed)? in|picks? up|brings? in)";
+    return new RegExp(
+      "(" + [
+        VERB + "\\s+(?:\\S+\\s+){0,3}" + MONEY,
+        MONEY + "[^.;]{0,30}?\\b(?:rais(?:e|ed)|round|funding|financing|seed|series [a-z]\\b)\\b",
+        "fundrais", "funding round", "seed funding", "seed round", "seed capital",
+        "series [a-z]\\b", "pre-?seed", "in funding", "funding from", "funding led",
+        "funding to", "funding round", "growth (?:funding|financing|equity|capital)",
+        "venture (?:capital|round|funding|debt)", "\\bVC round\\b", "valuation",
+        "investment round", "capital raise", "backed by", "led by",
+        "financing round", "\\bfunding\\b", "oversubscribed",
+      ].join("|") + ")",
+      "i"
+    );
+  })()],
   ["M&A", /(acquir|acquisition|merg(e|es|er|ing)|buyout|takeover|to buy|snaps up|buys )/i],
   ["Partnerships", /(partner|partnership|teams? up|collaborat|joins forces|alliance|tie-?up|taps |selects |integrat|to distribute|distribution deal|powers )/i],
   ["Product & Launches", /(launch|unveil|rolls? out|introduc|debut|releases?|goes live|new (product|platform|tool|app|solution|feature)|expands? (in)?to|now available)/i],

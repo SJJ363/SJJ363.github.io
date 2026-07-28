@@ -133,6 +133,37 @@ const CANON_LIST = {
   "American Growth Insurance": ["AGI"],
 };
 
+/* ---- Curated splits: one name, two companies ----
+   The exact inverse of CANON_LIST, and it matters more, because merging
+   two real companies is a worse error than splitting one.
+
+   /company/nirvana/ held eight stories about two unrelated firms: Nirvana
+   Insurance, the AI commercial-trucking insurtech ($80M Series C, $100M
+   Series D), and a health-insurance-verification startup that raised a
+   $24.2M Series A. The funding ranking summed all three into "$204.2M
+   across 3 rounds" for a company that raised $180M across two, and the
+   company page read as one firm with two businesses.
+
+   Keyed by the shared slug. The first pattern to match the ARTICLE TITLE
+   renames that mention, so the split is per-story rather than per-name.
+   Hand-verified per entry, on the same principle as the alias list two
+   blocks up: a heuristic general enough to separate these two would
+   eventually separate a company from itself. */
+const SPLIT_LIST = {
+  nirvana: [[/health insurance verification/i, "Nirvana Health"]],
+};
+
+const SPLIT_SLUGS = new Set(
+  Object.values(SPLIT_LIST).flat().map(([, into]) => slugify(into))
+);
+
+function splitName(name, title) {
+  const rules = SPLIT_LIST[slugify(name)];
+  if (!rules) return name;
+  const hit = rules.find(([re]) => re.test(title || ""));
+  return hit ? hit[1] : name;
+}
+
 // Non-companies Claude occasionally emits (products / techniques / generic
 // terms). Dropped on every rebuild, so no re-extraction is needed to clean.
 const JUNK = new Set([
@@ -333,6 +364,12 @@ function mergePrefixes(byslug) {
   const mergeMap = {};
   for (const s of Object.keys(byslug)) {
     if (!byslug[s]) continue;
+    /* A curated split must survive this pass. "Nirvana Health" is
+       nirvana + a word that happens to sit in COMPANY_TYPE, so the rule
+       below would fold it straight back into the company SPLIT_LIST just
+       separated it from — undoing a hand-verified decision with a
+       heuristic, which is the wrong way round. */
+    if (SPLIT_SLUGS.has(s)) continue;
     const parts = s.split("-");
     for (let cut = parts.length - 1; cut >= 1; cut--) {
       const root = parts.slice(0, cut).join("-");
@@ -438,6 +475,7 @@ function main() {
   const store = loadJSON(STORE, {});
   store.seen = store.seen || {};
   store.extracted = store.extracted || {};
+  store.funding = store.funding || {};   // funding-extract.js's; read here only to preserve it
   // Previous canonical names — fed to Claude so it reuses them.
   const knownNames = (loadJSON(DB, {}).companies || []).map((c) => c.name);
 
@@ -508,7 +546,12 @@ function main() {
     const meta = store.seen[link];
     if (!meta || !ex.names || !ex.names.length) continue;
     if (!admits(meta)) { rejected++; continue; }
-    admitted.push({ link, meta, names: [...new Set(ex.names.map(canonicalName))].filter((n) => !JUNK.has(slugify(n))) });
+    admitted.push({
+      link,
+      meta,
+      names: [...new Set(ex.names.map((n) => splitName(canonicalName(n), meta.title)))]
+        .filter((n) => !JUNK.has(slugify(n))),
+    });
   }
   const investors = investorSlugs(admitted);
 
@@ -547,7 +590,7 @@ function main() {
     const seenSlug = new Set();
     a.companies = names
       .map((n) => {
-        const s0 = slugify(canonicalName(n));
+        const s0 = slugify(splitName(canonicalName(n), a.title));
         const slug = mergeMap[s0] || s0;
         return byslug[slug] ? { name: byslug[slug].name, slug } : null;
       })
@@ -581,7 +624,17 @@ function main() {
   for (const e of Object.values(store.extracted)) if (e.by) byCount[e.by] = (byCount[e.by] || 0) + 1;
 
   fs.writeFileSync(NEWS, JSON.stringify(news, null, 2));
-  fs.writeFileSync(STORE, JSON.stringify({ updatedAt: new Date().toISOString(), seen: store.seen, extracted: store.extracted }, null, 2));
+  /* `funding` belongs to funding-extract.js, which runs after this and
+     writes the same file. Carry it through untouched — a write that
+     names only its own keys silently truncates the other script's cache,
+     and the symptom is a funding tracker that quietly re-extracts its
+     whole archive on every run. */
+  fs.writeFileSync(STORE, JSON.stringify({
+    updatedAt: new Date().toISOString(),
+    seen: store.seen,
+    extracted: store.extracted,
+    funding: store.funding || {},
+  }, null, 2));
   fs.writeFileSync(DB, JSON.stringify({ updatedAt: new Date().toISOString(), count: companies.length, companies }, null, 2));
   console.log(`Companies: ${companies.length} tracked · extraction cache ${byCount.claude} claude / ${byCount.heuristic} heuristic.`);
   console.log(

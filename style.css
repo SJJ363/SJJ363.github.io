@@ -678,6 +678,18 @@ main {
   font-family: var(--serif); font-size: 1.06rem; font-weight: 600;
   color: var(--ink); white-space: nowrap;
 }
+/* What the outlet actually printed, under a converted figure. The table
+   counts US dollars, and roughly a fifth of the rounds in it were never
+   reported in dollars — "€480 million", "₹193 crore", "$16.5 million
+   CAD". Showing only the conversion asks the reader to trust a number no
+   source contains; showing the original beside it makes the row
+   checkable against the link in the same row. Absent for USD rounds,
+   which is most of them, so it costs nothing where it says nothing. */
+.deal-native {
+  display: block; margin-top: 1px;
+  font-family: var(--sans); font-size: 0.74rem; font-weight: 500;
+  color: var(--ink-4); letter-spacing: 0.01em;
+}
 .deal-stage, .deal-date { white-space: nowrap; color: var(--ink-3); font-size: 0.86rem; }
 .deal-lead { color: var(--ink-2); font-size: 0.88rem; }
 .deal-blank { color: var(--ink-4); }

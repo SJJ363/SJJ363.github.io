@@ -150,6 +150,21 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: node scripts/companies.js || echo "Company index step failed — keeping previous."
 
+      # Read the funding round out of each candidate headline — amount,
+      # currency, stage, lead, and whether it is a round at all. Cached per
+      # link in the same store, so this is a handful of calls on a normal
+      # run and only re-reads the archive when the prompt version changes.
+      #
+      # Last of the three Claude steps on purpose. The brief is the page
+      # nobody else wrote, the company index feeds every page on the site,
+      # and this one degrades to the regexes in funding.js — which is a
+      # thinner tracker for a run, not a broken one. Same shared
+      # subscription budget, so the order is the priority order.
+      - name: Extract funding rounds
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: node scripts/funding-extract.js || echo "Funding extraction failed — regex fallback stands."
+
       # Only exists when the enhancement fell back. Holds the raw model reply
       # and the guard that rejected it — the evidence that shouldn't ship to
       # the site. The short reason code is also committed into news.json.
