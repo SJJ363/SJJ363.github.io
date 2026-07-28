@@ -85,10 +85,10 @@ const BASE_CARDS = [
   },
   {
     id: "brief",
-    eyebrow: "Written each morning",
-    title: "The Daily Brief",
-    sub: "What moved in insurtech overnight, and what it means.",
-    kicker: "Original analysis · archived daily",
+    eyebrow: "Published each morning",
+    title: "The Brief",
+    sub: "What moved in insurtech, and what it means.",
+    kicker: "Archived daily",
   },
   {
     id: "funding",

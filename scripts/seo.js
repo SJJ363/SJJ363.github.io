@@ -691,7 +691,7 @@ function briefPageHtml(b, newer, older) {
     canonical,
     ogType: "article",
     ogImage: cardFor("brief"),
-    imageAlt: `The Daily Brief, ${fullDate(b.date)} — ${SITE.name}`,
+    imageAlt: `The Brief, ${fullDate(b.date)} — ${SITE.name}`,
     jsonld: [articleLd, crumbLd],
   })}
 <body>
@@ -786,7 +786,7 @@ ${briefs
     description,
     canonical,
     ogImage: cardFor("brief"),
-    imageAlt: `The Daily Brief archive — ${SITE.name}`,
+    imageAlt: `The Brief archive — ${SITE.name}`,
     jsonld: [collectionLd, crumbLd],
   })}
 <body>
