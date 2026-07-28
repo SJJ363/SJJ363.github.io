@@ -28,7 +28,19 @@ function callClaude(prompt, { timeout = 180000 } = {}) {
   const out = res.stdout || "";
   const err = clean(res.stderr || "");
   console.log(`  claude exit=${res.status} stdout=${out.length}b${err ? ` stderr=${JSON.stringify(err.slice(0, 300))}` : ""}`);
-  if (res.status !== 0) { console.warn("  ✗ claude exited non-zero"); return null; }
+  if (res.status !== 0) {
+    /* Print what it actually said. The CLI reports usage limits on *stdout*
+       with a non-zero exit and an empty stderr, so logging only the byte
+       count — as this did — makes a limit indistinguishable from a crash.
+       That cost a backfill run: five chunks failed in 2.5s each with
+       "stdout=53b" and nothing to say whether to retry now or in an hour.
+       write-brief.js classifies the same message properly; this is only
+       the extractor path, which falls back rather than escalating, so it
+       needs the text visible, not the ladder. */
+    const detail = clean(out).slice(0, 300) || err.slice(0, 300) || "no output";
+    console.warn(`  ✗ claude exited non-zero: ${detail}`);
+    return null;
+  }
   return out;
 }
 
