@@ -868,10 +868,21 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
   font-family: var(--sans); font-size: 0.76rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2);
 }
+/* The month is the link and has to say so without being hovered. It used
+   to turn accent on :hover only — a cue that arrives after you have
+   already found the thing, and never arrives at all on a touch screen,
+   which is the same mistake the period index was built to correct. Rows
+   for months with no page keep the plain grey, so the styling also
+   distinguishes "there is a table behind this" from "nothing to show". */
+.pl-link .pl-label {
+  color: var(--accent-deep); text-decoration: underline;
+  text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
 .pl-val { font-size: 0.86rem; font-weight: 600; color: var(--ink); font-feature-settings: "tnum" 1; }
 .pl-n { margin-left: 8px; font-weight: 500; color: var(--ink-3); }
 .pl-empty .pl-val { font-weight: 500; color: var(--ink-4); }
-.pl-link:hover .pl-label, .pl-link:hover .pl-val { color: var(--accent-deep); }
+.pl-link:hover .pl-label { color: var(--ink); }
+.pl-link:hover .pl-val, .pl-link:hover .pl-n { color: var(--accent-deep); }
 .pl-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .delta-up b { color: var(--accent-deep); }

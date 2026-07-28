@@ -292,6 +292,18 @@ produce all of that consistently — **route new pages through them.**
      yet". And because the backfill thins out the further back it
      reaches, `METHOD_NOTE` says so — a rise across the earliest periods
      may be the tracker seeing more rather than the market doing more.
+   • **A chart is not navigation, and neither is a hover state.** The
+     year and quarter pages shipped reachable only through the bars of
+     `quarterChart()`, and the month links on a quarter page were plain
+     grey text that turned accent on `:hover`. Both are the same bug: a
+     bar reads as a picture, and a cue that needs a pointer arrives after
+     you have found the link and never arrives at all on a touch screen.
+     Anything that navigates is accent ink and underlined **at rest** —
+     `periodIndex()` writes the period pages out as plain links under the
+     chart, and `.pl-link .pl-label` does the same for the months. Charts
+     keep their links; they are a fine second route and a poor only one.
+     The styling then also distinguishes a month with a table behind it
+     from one with nothing to show.
    • **Two series, and neither replaces the other.** `monthChart()` plots
      round *counts* and is the month nav; `quarterChart()` plots
      *dollars* and is the year/quarter nav. They disagree often enough to
