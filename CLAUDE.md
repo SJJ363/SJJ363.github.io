@@ -160,6 +160,30 @@ produce all of that consistently — **route new pages through them.**
      `generatedAt`: anything written or retried after 18:00 CT lands on
      tomorrow. The same stamp bounds `brief-retry.yml` to today's brief, so a
      limit that lifts after midnight can't rewrite yesterday's.
+3b-iii. **A firing that lands just before a slot holds its runner
+   (`schedule.js --wait`).** GitHub honours only ~46% of the hourly firings
+   and delivers them in waves 1–3h apart, so the run that arrives 30 minutes
+   *before* a slot is often the last one before it — on 2026-07-28 the 08:00
+   CT slot missed its wave by 31 minutes and the wire sat unrefreshed until
+   09:00. Within `WAIT_WINDOW_MIN` (100) the gate sleeps to the slot instead
+   of handing it back to the queue. Simulated over 60 days against the
+   observed wave distribution, that moves average lateness from 75 to 10
+   minutes and slots landing within a quarter-hour from 12% to 81%, for
+   ~1.6 h/day of idle runner (free on a public repo; the curve is steep past
+   here — 130 min buys 4 min average for 2.7 h/day). Three things this
+   depends on:
+   • **The gate must not hold the `site-write` lock.** That group is claimed
+     by the `refresh` job, not the workflow, or a gate sleeping 100 minutes
+     would stall `brief-retry.yml` and `backfill.yml` behind a job that
+     writes nothing.
+   • **After waking it re-reads the wire from the remote** (`refetchWire()`),
+     because another run may have served the slot while it slept and this
+     checkout would never know. Skipping that buys duplicate refreshes.
+   • **A dispatch never waits** — `FORCE_RUN` is applied before the hold is
+     considered, since a manual run means *now* by definition.
+   None of this makes a run punctual; it only shortens the wait. Real
+   punctuality needs an external trigger on the `workflow_dispatch` API,
+   which bypasses the schedule queue altogether.
 3c. **Topic hubs live at `/topic/` + `/topic/<slug>/`,** one per taxonomy
    category, built by `collectTopics()` from the **persistent store**
    (`companies-store.json`) rather than the current batch — the archive is

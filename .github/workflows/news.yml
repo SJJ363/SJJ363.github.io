@@ -35,20 +35,21 @@ on:
 permissions:
   contents: write
 
-# Shared with backfill.yml, deliberately: both commit data/ and the generated
-# pages, so two of them in flight means the loser's push is rejected and that
-# run's work is dropped. The group name is the resource, not the workflow.
-concurrency:
-  group: site-write
-  cancel-in-progress: false
+# NOTE: the site-write concurrency group is held by the `refresh` job below, not
+# by the workflow. The gate can sit on its runner for up to ~100 minutes waiting
+# out an imminent slot, and holding a write lock that whole time would stall
+# brief-retry.yml and backfill.yml behind a job that writes nothing.
 
 jobs:
-  # Which of the six daily firings is a real slot — and does today still need
-  # its brief? Decided from the committed data/news.json, so a slot whose run
-  # failed or was skipped by GitHub is picked up by the next firing instead of
-  # being lost. A manual dispatch always runs.
+  # Which firings are real slots — and does today still need its brief? Decided
+  # from the committed data/news.json, so a slot whose run failed or was skipped
+  # by GitHub is picked up by the next firing instead of being lost. A manual
+  # dispatch always runs. `--wait` lets a firing that lands shortly before a slot
+  # hold its runner and serve the slot on time rather than hand it back to
+  # GitHub's queue, which may not come round again for hours.
   gate:
     runs-on: ubuntu-latest
+    timeout-minutes: 120 # the hold is capped well under this; a stuck gate isn't free
     outputs:
       run: ${{ steps.plan.outputs.run }}
       brief: ${{ steps.plan.outputs.brief }}
@@ -68,12 +69,19 @@ jobs:
         env:
           FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
           FORCE_BRIEF: ${{ inputs.brief }}
-        run: node scripts/schedule.js
+        run: node scripts/schedule.js --wait
 
   refresh:
     needs: gate
     if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
+    # Shared with brief-retry.yml and backfill.yml, deliberately: all three
+    # commit data/ and the generated pages, so two in flight means the loser's
+    # push is rejected and that run's work is dropped. The group name is the
+    # resource, not the workflow.
+    concurrency:
+      group: site-write
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v5

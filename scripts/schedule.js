@@ -6,10 +6,10 @@
   13:00 and 18:00 Monday–Friday and once at 13:00 on Saturday and Sunday, and
   the brief is written once a day, off the first refresh of that day.
 
-  GitHub's cron is UTC-only and has no idea DST exists, so news.yml fires at
-  every UTC hour either offset could put a slot on (13, 14, 18, 19, 23, 0) and
-  this script decides which of those firings is the real one. It answers three
-  questions from the committed data/news.json alone:
+  GitHub's cron is UTC-only and has no idea DST exists, so news.yml fires
+  hourly and this script decides which firings are real — the schedule lives
+  here, not in the cron. It answers three questions from the committed
+  data/news.json alone:
 
     run   — is a wire refresh due right now?
     brief — does today still need its brief?
@@ -29,6 +29,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { spawnSync } = require("child_process");
 
 const ZONE = "America/Chicago";
 const WEEKDAY_SLOTS = [8, 13, 18];
@@ -108,6 +109,13 @@ function schedule(now = new Date(), news = readNews()) {
         ? `${hhmm(slot)} CT already served at ${hhmm(last.hour)}`
         : `${hhmm(slot)} CT slot is due`;
 
+  // How long until the next slot opens today, if one is still to come. Only
+  // same-day slots count: the wait is short by construction, so this stays
+  // plain wall-clock arithmetic and never has to reason about a DST boundary.
+  const mins = t.hour * 60 + t.minute;
+  const upcoming = slots.filter((h) => h * 60 > mins);
+  const waitMins = upcoming.length ? upcoming[0] * 60 - mins : null;
+
   // One brief a day, hung off the day's date rather than off a particular
   // slot: if the 08:00 run is missed entirely, the 13:00 one writes it.
   const brief = briefDateOf(news) !== t.date;
@@ -125,23 +133,75 @@ function schedule(now = new Date(), news = readNews()) {
     run,
     brief,
     retry,
+    waitMins,
     date: t.date,
     slot: slot === null ? "" : hhmm(slot),
+    nextSlot: upcoming.length ? hhmm(upcoming[0]) : "",
     now: `${t.date} ${hhmm(t.hour).slice(0, 3)}${String(t.minute).padStart(2, "0")} CT`,
     reason,
   };
 }
 
+/* ── holding a runner for an imminent slot ──
+   GitHub honours only about half of the hourly firings and delivers them in
+   waves 1–3h apart (measured 2026-07-28: 9 runs in 19h, gaps of 0.9h to 3.5h),
+   so the firing that lands half an hour *before* a slot is often the last one
+   before it. On 2026-07-28 the 08:00 CT slot missed its wave by 31 minutes and
+   the wire sat unrefreshed all morning.
+
+   So rather than hand the slot back to GitHub's queue, a firing that lands
+   inside WAIT_WINDOW_MIN of the next slot keeps its runner and waits. Runner
+   minutes are free on a public repo; the alternative is publishing hours late.
+
+   This is a mitigation, not a fix — it does nothing when a 3h gap straddles a
+   slot with no firing in the window. Punctuality needs an external trigger
+   calling the workflow_dispatch API, which bypasses the schedule queue. */
+const WAIT_WINDOW_MIN = 100;
+const WAIT_GRACE_MS = 20000; // land clearly past the boundary, not on it
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/* Worth holding for? Only when nothing is due right now (a due slot runs
+   immediately) and the next slot is close enough to be worth a runner. */
+const shouldHold = (plan, windowMin = WAIT_WINDOW_MIN) =>
+  !plan.run && plan.waitMins !== null && plan.waitMins <= windowMin;
+
+/* Best-effort: another run may have served the slot while we slept, and this
+   checkout would not know. Re-read the wire from the remote so the post-hold
+   decision is made against what is actually published. A failure here is not
+   worth aborting for — the worst case is a duplicate refresh. */
+function refetchWire() {
+  const opts = { stdio: "inherit", timeout: 60000 };
+  if (spawnSync("git", ["fetch", "--depth=1", "origin", "HEAD"], opts).status !== 0) return;
+  spawnSync("git", ["checkout", "FETCH_HEAD", "--", "data/news.json"], opts);
+}
+
 /* ── CLI ──
    Prints `key=value` lines and, in Actions, appends them to $GITHUB_OUTPUT.
-   FORCE_RUN / FORCE_BRIEF let a manual dispatch override the clock. */
-if (require.main === module) {
-  const plan = schedule();
+   FORCE_RUN / FORCE_BRIEF let a manual dispatch override the clock, and
+   `--wait` opts into the hold above (news.yml only — brief-retry.yml calls
+   this bare, and must never sit on a runner). */
+async function cli() {
+  let plan = schedule();
 
+  // A dispatch runs now, by definition — it must never wait for a slot.
   if (process.env.FORCE_RUN === "1" && !plan.run) {
     plan.run = true;
     plan.reason = `forced (clock says: ${plan.reason})`;
   }
+
+  if (process.argv.includes("--wait") && shouldHold(plan)) {
+    console.log(`${plan.now} — ${plan.reason}`);
+    console.log(
+      `Holding this runner ${plan.waitMins} min for the ${plan.nextSlot} CT slot — ` +
+        `GitHub's next firing may not arrive before it.`
+    );
+    await sleep(plan.waitMins * 60000 + WAIT_GRACE_MS);
+    refetchWire();
+    plan = schedule();
+    console.log("— resumed —");
+  }
+
   if (process.env.FORCE_BRIEF === "force") plan.brief = true;
   if (process.env.FORCE_BRIEF === "skip") plan.brief = false;
 
@@ -167,4 +227,14 @@ if (require.main === module) {
   }
 }
 
-module.exports = { local, localDate, briefDateOf, schedule, slotsFor, ZONE };
+if (require.main === module) {
+  cli().catch((err) => {
+    // The gate must not fail the workflow: a crash here would look like a
+    // broken build rather than a skipped slot. Emit nothing and let the
+    // refresh job's `if` treat it as "no run".
+    console.warn(`Schedule gate failed: ${err && err.stack}`);
+    process.exitCode = 0;
+  });
+}
+
+module.exports = { local, localDate, briefDateOf, schedule, shouldHold, slotsFor, WAIT_WINDOW_MIN, ZONE };
