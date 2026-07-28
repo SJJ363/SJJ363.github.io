@@ -687,6 +687,23 @@ main {
   background: var(--paper-2); color: var(--ink-3); font-size: 0.72rem; font-weight: 600;
 }
 
+/* ---- A company's rounds, on its own page ----
+   Sits above the coverage list because it's the part of the page that
+   isn't a restatement of the headlines below it. The statline repeats
+   the company header's treatment so the two read as one column. */
+.co-funding { margin: 30px 0 4px; }
+.co-funding .statline { margin-top: 4px; }
+.co-fund-note {
+  margin: 12px 0 0;
+  font-size: 0.78rem; line-height: 1.5; color: var(--ink-3); max-width: 62ch;
+}
+.co-fund-note a {
+  color: var(--accent-deep);
+  text-decoration: underline; text-underline-offset: 2px;
+  text-decoration-thickness: 1px; text-decoration-color: rgba(154, 43, 30, 0.3);
+}
+.co-fund-note a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
 /* ---- Sortable column headers (Amount, Announced) ----
    The control is the header itself. Everything below the [data-dealui]
    guard only applies once funding.js has run: on a page served without
@@ -867,8 +884,11 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
 
   /* Lead investor is the widest column and the least load-bearing — the
      row still says who raised, how much, at what stage and where it was
-     reported. Dropped rather than wrapped so the rest stays on one line. */
-  .deal-lead, .deal-table th:nth-child(4) { display: none; }
+     reported. Dropped rather than wrapped so the rest stays on one line.
+     Keyed to the cell class, not to a column position: the company pages
+     run the same table one column narrower (no Company — it's the page),
+     so nth-child would hide Announced there instead. */
+  .deal-lead { display: none; }
   .deal-table { font-size: 0.86rem; }
   .deal-table td { padding-right: 11px; }
 
@@ -888,7 +908,7 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
   .nav > a, .nav-drop-btn { font-size: 0.65rem; letter-spacing: 0.03em; }
   .nav { gap: 1px; }
   /* Stage goes too — company, amount, date and source are the spine. */
-  .deal-stage, .deal-table th:nth-child(3) { display: none; }
+  .deal-stage { display: none; }
   .co-link { flex-direction: column; gap: 5px; }
   .sort-group { flex: 1 1 100%; flex-wrap: wrap; }
   .sort-btn { flex: 1 1 auto; text-align: center; }

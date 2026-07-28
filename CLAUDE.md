@@ -68,8 +68,9 @@ produce all of that consistently — **route new pages through them.**
    server-rendered (work without JS) and regenerated each run. Never link
    companies via `company.html?c=…`; use `/company/<slug>/`. `company.html` is a
    legacy redirect shim only.
-3a. **A company page is only *indexable* once it has `PAGE_MIN_STORIES`
-   stories** (see `indexable()` in `seo.js`). Every company still gets a
+3a. **A company page is *indexable* once it has `PAGE_MIN_STORIES` stories
+   *or* one disclosed funding round** (see `indexable()` in `seo.js`). Every
+   company still gets a
    built, linked page — the wire, the topic hubs, the companies index and
    the related-company badges all point at one, and a click must never dead-end
    — but a thin one is served `noindex, follow` and kept out of `sitemap.xml`
@@ -81,6 +82,22 @@ produce all of that consistently — **route new pages through them.**
    redirect and no migration. Lower the threshold as the store deepens.
    **Keep the visible list complete and the crawler-facing list gated** — that
    split is the whole point.
+3a-i. **The funding door is not a loosened threshold, it is a different
+   test.** The reason to withhold a one-story page is that it restates one
+   outlet's headline; that reason doesn't apply to a page carrying the
+   round table `funding.js` assembled — amount, stage, lead and date,
+   deduplicated across every outlet that covered it, which for companies
+   this small exists in one place nowhere else. So `companyFundingBlock()`
+   renders those rounds above the coverage list, and a company with rounds
+   passes on that block alone (108 pages at the time of writing, 234 → 342
+   indexable). Two rules: the funded set is computed once per build by
+   **`setFundedSlugs(deals)`**, the same way `setNavTopics()` works, because
+   the page builder, the sitemap and the companies index all consult
+   `indexable()` and must agree; and the block reuses the tracker's cell
+   classes so the styling and the phone breakpoints are shared — which is
+   why the `@media` rules key off `.deal-lead`/`.deal-stage` and **not**
+   `th:nth-child()`, since the company table runs one column narrower and
+   positional selectors hid the wrong column there.
 3b. **The brief archive lives at `/brief/` + `/brief/<YYYY-MM-DD>/`.** It is the
    site's only original writing, so it matters more than the aggregated pages.
    `news.json` holds just the *current* briefing and is overwritten every run;

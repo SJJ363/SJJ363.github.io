@@ -75,9 +75,27 @@ const url = (p = "/") => SITE.origin + (p.startsWith("/") ? p : "/" + p);
 
    The gate is a floor, not a decision: as the archive grows a company
    crosses it and its page becomes indexable on the next build, with
-   no migration and no redirect. Lower it as the store deepens. */
+   no migration and no redirect. Lower it as the store deepens.
+
+   The story count is not the only door. A company with one story but a
+   disclosed funding round is not a thin page — the round is a *fact*
+   about the company (amount, stage, lead, date, deduplicated across
+   every outlet that reported it), and that table exists nowhere else
+   for companies this small. The reason to withhold a one-story page is
+   that it restates someone else's headline; that reason doesn't apply
+   to a page carrying data the tracker assembled. So funded companies
+   pass on their funding block alone.
+
+   FUNDED_SLUGS is set once per build by setFundedSlugs(), the same way
+   NAV_TOPICS is, because every reader of the gate — the page builder,
+   the sitemap and the companies index — has to agree about it. */
 const PAGE_MIN_STORIES = 3;
-const indexable = (c) => (c.count || (c.articles || []).length) >= PAGE_MIN_STORIES;
+let FUNDED_SLUGS = new Set();
+function setFundedSlugs(deals) {
+  FUNDED_SLUGS = new Set(deals.filter((d) => d.company).map((d) => d.company.slug));
+}
+const indexable = (c) =>
+  (c.count || (c.articles || []).length) >= PAGE_MIN_STORIES || FUNDED_SLUGS.has(c.slug);
 
 /* ── Escaping ───────────────────────────────────────────────── */
 const escHtml = (s = "") =>
@@ -387,15 +405,36 @@ function companyArticleLi(a) {
       </li>`;
 }
 
-function companyPageHtml(c) {
+function companyPageHtml(c, deals = []) {
   const canonical = `/company/${c.slug}/`;
   const storyWord = c.count === 1 ? "story" : "stories";
   const sources = (c.sources || []).slice(0, 6).join(", ");
-  const title = `${c.name} — insurtech news & coverage | ${SITE.name}`;
-  const description =
-    `${c.count} insurtech ${storyWord} on ${c.name}` +
-    (sources ? `, reported by ${sources}` : "") +
-    ". Funding, launches, partnerships and platform moves, tracked by Insurtech Daily.";
+
+  /* When we hold rounds for a company, the funding is what the page is
+     *for* — "<name> funding" is the query it can actually win, and the
+     title and description are the only part of the page a search result
+     shows. Lead with the money and keep the coverage line behind it. */
+  const raised = deals.reduce((s, d) => s + (d.amountM || 0), 0);
+  const latest = deals[0];
+  const title = deals.length
+    ? `${c.name} funding, rounds & insurtech news | ${SITE.name}`
+    : `${c.name} — insurtech news & coverage | ${SITE.name}`;
+  /* Kept under the ~158 chars a result actually shows, so the tail isn't
+     an ellipsis: the money leads, the promise of the table closes it.
+     One round doesn't get a "most recently" — it gets stated outright. */
+  const description = deals.length
+    ? (deals.length === 1
+        ? `${c.name} raised ${money(latest.amountM)}${
+            latest.stage ? ` in a ${latest.stage} round` : ""
+          } on ${fullDate(latest.publishedAt)}.`
+        : `${c.name} has raised ${money(raised)} across ${deals.length} disclosed rounds, ` +
+          `most recently ${money(latest.amountM)}${
+            latest.stage ? ` (${latest.stage})` : ""
+          } on ${fullDate(latest.publishedAt)}.`) +
+      ` Amount, stage, lead investor and source for each.`
+    : `${c.count} insurtech ${storyWord} on ${c.name}` +
+      (sources ? `, reported by ${sources}` : "") +
+      ". Funding, launches, partnerships and platform moves, tracked by Insurtech Daily.";
 
   const articles = c.articles || [];
   const thin = !indexable(c);
@@ -417,6 +456,36 @@ function companyPageHtml(c) {
     { name: "Companies", path: "/companies.html" },
     { name: c.name, path: canonical },
   ]);
+
+  /* The rounds table is a dataset in the same sense /funding/ is, just
+     scoped to one company — same claim, same variables, so it gets the
+     same markup rather than a company-shaped approximation of it. */
+  const fundingLd = deals.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        name: `${c.name} funding rounds`,
+        description: clamp(
+          `Every disclosed funding round raised by ${c.name}, with amount, stage, lead investor, announcement date and the reporting each figure comes from.`,
+          300
+        ),
+        url: url(canonical),
+        keywords: [c.name, "funding rounds", "insurtech", "venture capital"],
+        isAccessibleForFree: true,
+        creator: { "@type": "Organization", name: SITE.name, url: url("/") },
+        about: { "@type": "Organization", name: c.name },
+        inLanguage: SITE.lang,
+        temporalCoverage: `${isoDate(deals[deals.length - 1].publishedAt)}/${isoDate(
+          deals[0].publishedAt
+        )}`,
+        variableMeasured: [
+          "Amount raised (USD)",
+          "Round stage",
+          "Lead investor",
+          "Announcement date",
+        ],
+      }
+    : null;
 
   const statBits = [`${c.count} ${storyWord}`];
   if (c.firstSeen) statBits.push(`tracked since ${fullDate(c.firstSeen)}`);
@@ -471,11 +540,11 @@ ${articles.map(companyArticleLi).join("\n")}
     description,
     canonical,
     ogType: "profile",
-    ogImage: cardFor("company"),
+    ogImage: cardFor(deals.length ? "funding" : "company"),
     imageAlt: `${c.name} on ${SITE.name}`,
     // Structured data on a noindex page is ignored anyway; emitting only
     // the breadcrumb keeps the markup honest about what this page is.
-    jsonld: thin ? [crumbLd] : [collectionLd, crumbLd],
+    jsonld: thin ? [crumbLd] : [collectionLd, ...(fundingLd ? [fundingLd] : []), crumbLd],
     robots: thin ? "noindex, follow" : undefined,
   })}
 <body>
@@ -492,6 +561,7 @@ ${header("companies")}
 
 ${facts}
 
+${companyFundingBlock(c, deals)}
 ${coverage}
   </main>
 
@@ -1323,8 +1393,8 @@ function dealTable(deals, caption) {
           <tr>
             <th scope="col">Company</th>
 ${sortableTh("Amount", "amount")}
-            <th scope="col">Stage</th>
-            <th scope="col">Lead investor</th>
+            <th scope="col" class="deal-stage">Stage</th>
+            <th scope="col" class="deal-lead">Lead investor</th>
 ${sortableTh("Announced", "date")}
             <th scope="col">Source</th>
           </tr>
@@ -1334,6 +1404,85 @@ ${deals.map(dealRow).join("\n")}
         </tbody>
       </table>
     </div>`;
+}
+
+/* ── A company's own rounds, on its own page ─────────────────────
+   The tracker's data restricted to one company. This is the only part
+   of /company/<slug>/ that isn't a restatement of someone else's
+   headline: the amount, stage, lead and date, deduplicated across every
+   outlet that covered the round, is a record that doesn't exist in one
+   place anywhere else for companies this small.
+
+   Same rows as the tracker minus the Company column (it's the page) and
+   minus the sort/filter controls — six rows don't need sorting, and the
+   block then needs no JS at all. The cells keep the tracker's classes so
+   the styling and the phone breakpoints are shared, not re-tuned.
+
+   The deals come pre-sorted newest-first from collectDeals(). */
+function companyFundingBlock(c, deals = []) {
+  if (!deals.length) return "";
+  const raised = deals.reduce((s, d) => s + (d.amountM || 0), 0);
+  const oldest = deals[deals.length - 1];
+
+  const bits = [`${deals.length} disclosed round${deals.length === 1 ? "" : "s"}`];
+  if (raised > 0) bits.push(`${money(raised)} raised`);
+  if (oldest) bits.push(`first tracked ${fullDate(oldest.publishedAt)}`);
+
+  const rows = deals
+    .map((d) => {
+      const outlets = [d.source, ...(d.alsoReportedBy || [])].filter(Boolean);
+      const also =
+        outlets.length > 1
+          ? `<span class="deal-also" title="${escAttr(outlets.join(", "))}">+${
+              outlets.length - 1
+            }</span>`
+          : "";
+      return `        <tr>
+          <td class="deal-amt">${escHtml(money(d.amountM))}</td>
+          <td class="deal-stage">${
+            d.stage ? escHtml(d.stage) : '<span class="deal-blank">—</span>'
+          }</td>
+          <td class="deal-lead">${
+            d.lead ? escHtml(d.lead) : '<span class="deal-blank">—</span>'
+          }</td>
+          <td class="deal-date"><time datetime="${escAttr(isoDate(d.publishedAt))}">${escHtml(
+        fullDate(d.publishedAt)
+      )}</time></td>
+          <td class="deal-src"><a class="deal-link" href="${escAttr(
+            d.link
+          )}" target="_blank" rel="noopener noreferrer">${escHtml(
+        d.source || "source"
+      )}<span class="deal-ext" aria-hidden="true">↗</span></a>${also}</td>
+        </tr>`;
+    })
+    .join("\n");
+
+  return `    <section class="co-funding">
+      <h2 class="section-label">Funding</h2>
+      <p class="statline">${escHtml(bits.join("  ·  "))}</p>
+      <div class="table-wrap">
+        <table class="deal-table">
+          <caption class="sr-only">${escHtml(
+            c.name
+          )} funding rounds — amount, stage, lead investor, date and source</caption>
+          <thead>
+            <tr>
+              <th scope="col">Amount</th>
+              <th scope="col" class="deal-stage">Stage</th>
+              <th scope="col" class="deal-lead">Lead investor</th>
+              <th scope="col">Announced</th>
+              <th scope="col">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+${rows}
+          </tbody>
+        </table>
+      </div>
+      <p class="co-fund-note">Disclosed rounds only, as reported in the insurtech press —
+        see the <a href="/funding/">funding tracker</a> for what is counted and what isn't.</p>
+    </section>
+`;
 }
 
 /* The disclosure note is the honest part of the tracker and the only
@@ -2004,9 +2153,18 @@ Sitemap: ${url("/sitemap.xml")}
 /* ══════════════════════════════════════════════════════════════
    Company page directory management
    ══════════════════════════════════════════════════════════════ */
-function buildCompanyPages(db) {
+function buildCompanyPages(db, deals = []) {
   const outRoot = path.join(ROOT, "company");
   fs.mkdirSync(outRoot, { recursive: true });
+
+  // One pass over the deals rather than a filter per company — 1,300
+  // companies against ~190 rounds makes the naive version quadratic.
+  const bySlug = new Map();
+  for (const d of deals) {
+    if (!d.company) continue;
+    if (!bySlug.has(d.company.slug)) bySlug.set(d.company.slug, []);
+    bySlug.get(d.company.slug).push(d);
+  }
 
   const companies = db.companies || [];
   const wanted = new Set(companies.map((c) => c.slug));
@@ -2021,15 +2179,25 @@ function buildCompanyPages(db) {
     }
   }
 
+  let funded = 0;
   for (const c of companies) {
+    const cd = bySlug.get(c.slug) || [];
+    if (cd.length) funded++;
     const dir = path.join(outRoot, c.slug);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, "index.html"), companyPageHtml(c));
+    fs.writeFileSync(path.join(dir, "index.html"), companyPageHtml(c, cd));
   }
   const n = companies.filter(indexable).length;
+  // The second number is the point of the funding door: pages that carry
+  // round data and would otherwise have been noindex on story count.
+  const onFunding = companies.filter(
+    (c) => (c.count || 0) < PAGE_MIN_STORIES && FUNDED_SLUGS.has(c.slug)
+  ).length;
   console.log(
     `  ✓ ${companies.length} company pages under /company/ — ` +
-      `${n} indexable, ${companies.length - n} noindex (under ${PAGE_MIN_STORIES} stories)`
+      `${n} indexable, ${companies.length - n} noindex (under ${PAGE_MIN_STORIES} stories` +
+      ` and no disclosed round)\n` +
+      `    ${funded} carry a funding block; ${onFunding} of those are indexable on it alone`
   );
 }
 
@@ -2046,9 +2214,12 @@ function main() {
   const deals = collectDeals(news, db);
   const months = collectMonths(deals);
   // Every page's nav lists the hubs, so the list has to exist before
-  // the first page is written.
+  // the first page is written — and so must the funded-company set,
+  // which the company pages, the companies index and the sitemap all
+  // consult through indexable().
   setNavTopics(topics);
-  buildCompanyPages(db);
+  setFundedSlugs(deals);
+  buildCompanyPages(db, deals);
   buildBriefPages(briefs);
   buildTopicPages(topics, db, deals);
   buildFundingPages(deals, months);
