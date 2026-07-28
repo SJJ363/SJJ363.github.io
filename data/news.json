@@ -232,7 +232,12 @@
       "score": 2.799,
       "clusterId": "t5",
       "cluster": 1,
-      "companies": []
+      "companies": [
+        {
+          "name": "Willis Towers Watson",
+          "slug": "willis-towers-watson"
+        }
+      ]
     },
     {
       "title": "La Caisse and Cinven to acquire U.K. specialty insurance platform Optio Group",
@@ -250,8 +255,12 @@
       "cluster": 2,
       "companies": [
         {
-          "name": "U.K.",
-          "slug": "u-k"
+          "name": "La Caisse",
+          "slug": "la-caisse"
+        },
+        {
+          "name": "Cinven",
+          "slug": "cinven"
         },
         {
           "name": "Optio",
