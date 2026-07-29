@@ -58,7 +58,7 @@ const { isFundingCandidate, RATES } = require("./funding");
 const STORE = path.join(__dirname, "..", "data", "companies-store.json");
 
 // Bump when the prompt changes so cached verdicts re-extract.
-const PROMPT_VERSION = 3;
+const PROMPT_VERSION = 4;
 
 /* How far a round's real announcement may sit behind the article's date
    before the record is treated as a republished archive item.
@@ -136,6 +136,7 @@ When it IS a closed insurance funding round, answer with:
 About "announced": one feed here re-publishes its own back catalogue with today's date on it, so the filed date is sometimes years off. Acrisure's $2.1bn led by Bain Capital was announced in 2021 but arrives filed 2025; Hippo's $100m Series D was 2018; Shift Technology's $60m Series C was 2021. If you recognise the round and know its year, give that year — it is checked against the filed date and a large gap drops the row. If you do not recognise it, answer null. Do not guess: null is the right answer for the great majority of these, which are small rounds you have no reason to know.
 
 Rules that matter:
+- When a headline gives BOTH a round total and an increment added to it, take the TOTAL. "PolicyStreet tops up Series C to US$26mil with additional US$5mil from BlueOrchard" is a $26M round, not a $5M one — the $5M is part of the $26M, and filing it separately counts the same money twice. Same for "extends Series B to $40m with a further $8m".
 - Take the amount RAISED, never the valuation. "Prosus pours $460M into Alan at $6.3B" -> amount 460. "Corgi raises $160 mn Series B at $1.3 bn valuation" -> amount 160. "Insurtech firm Alan valued at $8.9B after Teachers' backs Series G" -> amount null (only a valuation is stated), stage "Series E+".
 - Read the currency from the headline, not from the "$". "Quandri secures $16.5 million CAD" is CAD. "Roojai Raises US$60 Million" is USD. "Tuio closes a financing round of 15 million euros" is EUR.
 - Do not infer an amount the headline does not state. null is a correct answer.

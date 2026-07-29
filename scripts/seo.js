@@ -1341,6 +1341,11 @@ function nativeMoney(m, currency) {
   return g + (Math.round(m * 10) / 10).toFixed(Number.isInteger(m) ? 0 : 1) + "M";
 }
 
+/* Longest corporate suffix an extracted name may carry over the indexed
+   record (or vice versa) and still be treated as the same company.
+   "Technologies" is 12; a descriptive phrase is longer. */
+const PREFIX_SLACK = 12;
+
 /* The Company cell for a row with no company record behind it — no page
    to link to, so all we can print is a name.
 
@@ -1355,7 +1360,13 @@ const RAISE_VERB =
   /\s+(?:raises?|raised|secures?|secured|lands?|closes?|closed|bags?|nets?|nabs?|pockets?|scoops?|scores?|hauls?|snags?|draws?|attracts?|receives?|gets?|announces?|completes?|extends?|wins?|picks up|pulls in|brings in)\b/i;
 function unlinkedCompany(d) {
   const head = String(d.title || "").split(RAISE_VERB)[0].replace(/^Exclusive:\s*/i, "").trim();
-  const name = d.raiser || (head && head.length <= 40 ? head : "");
+  // The extractor's answer only if it reads like a name. When it hands back
+  // a descriptor — "Pie Insurance co-founder's new startup", "Midtown
+  // startup" — it is telling us the headline never named the company, and
+  // a phrase in a Company column is worse than an em dash.
+  const raiser = String(d.raiser || "").trim();
+  const namey = raiser && raiser.length <= 32 && !/\b(?:co-?founder|startup|firm|company|platform|its|new)\b/i.test(raiser);
+  const name = namey ? raiser : (head && head.length <= 40 ? head : "");
   return name || "—";
 }
 
@@ -1412,11 +1423,40 @@ function attachCompanies(deals, db) {
         /* "Alan" against a record named "Alan Health", "Corgi" against
            "Corgi Insurance" — one is a prefix of the other and they are
            the same company. Bounded at four characters so a short generic
-           answer can't attach itself to an unrelated record. */
+           answer can't attach itself to an unrelated record, and the
+           overhang is capped at PREFIX_SLACK.
+
+           That cap is not cosmetic. The extractor sometimes answers with
+           a descriptor instead of a name, and "Pie Insurance co-founder
+           raises $7.5M for new insurtech startup" came back as company
+           "Pie Insurance co-founder's new startup" — which begins with a
+           real company's name. Uncapped, the round of a company that
+           isn't Pie Insurance was filed on Pie Insurance's page and added
+           to its ranking total. A corporate suffix is short ("Health",
+           "Insurance", "Group", "Technologies"); a descriptive phrase is
+           not, and that is the whole distinction being drawn here. */
         (want.length >= 4 &&
-          cands.find((c) => norm(c.name).startsWith(want) || want.startsWith(norm(c.name)))) ||
+          cands.find((c) => {
+            const n = norm(c.name);
+            if (n.startsWith(want)) return n.length - want.length <= PREFIX_SLACK;
+            if (want.startsWith(n)) return want.length - n.length <= PREFIX_SLACK;
+            return false;
+          })) ||
         null;
     }
+    /* The extractor named a raiser and none of the companies on this
+       article is it. That is information, not a gap: it means the company
+       that raised is not in the index for this story, and guessing by
+       position will pick one that is — the wrong one.
+
+       "Pie Insurance co-founder raises $7.5M for new insurtech startup"
+       names exactly one company, and it isn't the raiser. Both the prefix
+       rule above and the positional fallback below land on Pie Insurance,
+       putting another company's round on its page and its ranking total.
+       Rule 3c-vi already says an unlinked descriptor beats a wrong link;
+       this is the same principle one step earlier. */
+    if (!picked && d.raiser) return { ...d, company: null };
+
     if (!picked) {
       /* Position, but not before ruling out the two entities we can
          positively identify as the wrong side of the round: the lead

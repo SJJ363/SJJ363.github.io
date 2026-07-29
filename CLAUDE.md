@@ -467,6 +467,18 @@ produce all of that consistently — **route new pages through them.**
    the only company named is the backer. Falling back to the full
    candidate list there put £950k on Aviva's page and on its ranking total.
 
+   Two corollaries, both learned the same way. **An extractor answer that
+   doesn't resolve is information, not a gap** — it says the raiser isn't
+   in the index for this story, so position would pick a company that is,
+   and that company is wrong. "Pie Insurance co-founder raises $7.5M for
+   new insurtech startup" names one company and it isn't the raiser; both
+   the prefix match and the positional fallback landed on Pie Insurance.
+   And **the prefix match is capped at `PREFIX_SLACK`**, because the
+   extractor sometimes answers with a descriptor that begins with a real
+   name ("Pie Insurance co-founder's new startup"). A corporate suffix is
+   short — "Health", "Insurance", "Technologies"; a descriptive phrase is
+   not, and that length is the whole distinction.
+
 3c-vii. **`SPLIT_LIST` in `companies.js` is the inverse of `CANON_LIST`,
    and merging two real companies is the worse error.** `/company/nirvana/`
    held eight stories about two unrelated firms — Nirvana Insurance, the
