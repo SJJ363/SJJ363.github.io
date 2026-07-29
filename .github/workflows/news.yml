@@ -56,8 +56,13 @@ jobs:
       date: ${{ steps.plan.outputs.date }}
       slot: ${{ steps.plan.outputs.slot }}
     steps:
+      # The tip, not the triggering SHA: the whole decision is "has the
+      # published wire served this slot yet", so it has to read what is
+      # actually published. See the note on the refresh checkout below.
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
 
       - name: Set up Node
         uses: actions/setup-node@v5
@@ -83,13 +88,49 @@ jobs:
       group: site-write
       cancel-in-progress: false
     steps:
+      # `ref` is load-bearing, and the lock above is what makes it so. By
+      # default actions/checkout takes github.sha — the commit that *triggered*
+      # the run — while this job by design starts only once whoever held
+      # site-write has finished, i.e. after they pushed. So the default hands
+      # the second writer a base it is already behind, its push is rejected as
+      # a non-fast-forward, and the run fails having thrown its work away.
+      # Checking out the tip of the branch instead is what completes the lock:
+      # serialised writers that each build on the previous one's commit.
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
 
       - name: Set up Node
         uses: actions/setup-node@v5
         with:
           node-version: "22"
+
+      # Re-decide, now that we hold the lock and have the real tip.
+      #
+      # The gate may have held its runner up to 100 minutes for this slot
+      # (3b-iii), and GitHub delivers firings in waves — so two firings can
+      # both land inside that window and wake within seconds of each other,
+      # too close for either's refetchWire() to see the other. That happened
+      # on both 2026-07-28 and 2026-07-29 at the 18:00 CT slot. The gate
+      # cannot resolve it, because at wake time neither run has published
+      # anything yet; here, one of them has.
+      #
+      # Bare schedule.js, no --wait: same code as the gate, so the two can't
+      # drift, and a dispatch still forces through on FORCE_RUN. Cheap, and it
+      # is also the honest answer for the log — a duplicate exits saying the
+      # slot was already served rather than rebuilding the same site.
+      #
+      # Everything below hangs off this rather than off the gate: on the
+      # morning slot both runs' gates say the brief is due, and without the
+      # recheck the loser would spend a second day's brief budget rewriting
+      # prose the winner already published.
+      - name: Still needed?
+        id: plan
+        env:
+          FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
+          FORCE_BRIEF: ${{ inputs.brief }}
+        run: node scripts/schedule.js
 
       # KEEP_BRIEF carries the day's brief across the two later weekday
       # refreshes. fetch-news.js always builds a deterministic briefing, so
@@ -97,15 +138,17 @@ jobs:
       # prose with a stand-in — a downgrade nobody asked for and nobody sees
       # until it is on the homepage.
       - name: Fetch latest news
+        if: steps.plan.outputs.run == 'true'
         env:
-          KEEP_BRIEF: ${{ needs.gate.outputs.brief == 'true' && '0' || '1' }}
-          BRIEF_DATE: ${{ needs.gate.outputs.date }}
+          KEEP_BRIEF: ${{ steps.plan.outputs.brief == 'true' && '0' || '1' }}
+          BRIEF_DATE: ${{ steps.plan.outputs.date }}
         run: node scripts/fetch-news.js
 
       # Install the Claude CLI once (used by both company extraction and the
       # brief). Authenticated by a Claude subscription via the OAuth token —
       # no metered API key. Skipped cleanly when the secret isn't set.
       - name: Install Claude CLI
+        if: steps.plan.outputs.run == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
@@ -130,7 +173,7 @@ jobs:
       # brief) and only then keeps the deterministic one, stamping a
       # retryAfter that brief-retry.yml picks up.
       - name: Write brief with Claude
-        if: needs.gate.outputs.brief == 'true'
+        if: steps.plan.outputs.run == 'true' && steps.plan.outputs.brief == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           # Separate quota from the subscription — the rung that survives a
@@ -146,6 +189,7 @@ jobs:
       # Extract companies with Claude (heuristic fallback), tag each article,
       # and update the persistent company index (accumulates across batches).
       - name: Update company index
+        if: steps.plan.outputs.run == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: node scripts/companies.js || echo "Company index step failed — keeping previous."
@@ -161,6 +205,7 @@ jobs:
       # thinner tracker for a run, not a broken one. Same shared
       # subscription budget, so the order is the priority order.
       - name: Extract funding rounds
+        if: steps.plan.outputs.run == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: node scripts/funding-extract.js || echo "Funding extraction failed — regex fallback stands."
@@ -169,7 +214,7 @@ jobs:
       # and the guard that rejected it — the evidence that shouldn't ship to
       # the site. The short reason code is also committed into news.json.
       - name: Upload brief fallback diagnostics
-        if: always() && needs.gate.outputs.brief == 'true'
+        if: always() && steps.plan.outputs.run == 'true' && steps.plan.outputs.brief == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: brief-fallback-${{ github.run_number }}
@@ -182,9 +227,11 @@ jobs:
       # permanent archive under /brief/), sitemap.xml, robots.txt, and
       # the structured data injected into index.html / companies.html.
       - name: Build SEO (pages, sitemap, structured data)
+        if: steps.plan.outputs.run == 'true'
         run: node scripts/seo.js
 
       - name: Commit if changed
+        if: steps.plan.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -195,7 +242,7 @@ jobs:
           # covers the month pages too, once collectMonths() starts returning any.
           git add -A data/ company/ brief/ topic/ funding/ sitemap.xml robots.txt index.html companies.html
           if ! git diff --cached --quiet; then
-            git commit -m "chore: refresh insurtech news (${{ needs.gate.outputs.slot }} CT ${{ needs.gate.outputs.date }})"
+            git commit -m "chore: refresh insurtech news (${{ steps.plan.outputs.slot }} CT ${{ steps.plan.outputs.date }})"
             git push
             echo "News + SEO updated and pushed."
           else

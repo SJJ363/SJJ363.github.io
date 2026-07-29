@@ -170,7 +170,7 @@ produce all of that consistently — **route new pages through them.**
    observed wave distribution, that moves average lateness from 75 to 10
    minutes and slots landing within a quarter-hour from 12% to 81%, for
    ~1.6 h/day of idle runner (free on a public repo; the curve is steep past
-   here — 130 min buys 4 min average for 2.7 h/day). Three things this
+   here — 130 min buys 4 min average for 2.7 h/day). Four things this
    depends on:
    • **The gate must not hold the `site-write` lock.** That group is claimed
      by the `refresh` job, not the workflow, or a gate sleeping 100 minutes
@@ -181,9 +181,35 @@ produce all of that consistently — **route new pages through them.**
      checkout would never know. Skipping that buys duplicate refreshes.
    • **A dispatch never waits** — `FORCE_RUN` is applied before the hold is
      considered, since a manual run means *now* by definition.
+   • **Two firings can hold for the same slot, so the decision is taken
+     twice — once by the gate, once inside the lock.** The window is 100
+     minutes wide and GitHub delivers in waves, so two firings landing in it
+     both wake at the slot, seconds apart, too close for either's
+     `refetchWire()` to see the other: at wake time *neither* has published.
+     This failed the 18:00 CT slot on both 2026-07-28 and 2026-07-29. Hence
+     the `Still needed?` step — bare `schedule.js`, no `--wait`, after the
+     `refresh` job's checkout — which re-decides against a tip one of them
+     has by then pushed, and which every later step's `if` hangs off
+     **instead of the gate's outputs**. That last part is the load-bearing
+     half: on the morning slot both gates say the brief is due, and the
+     loser would otherwise spend a second day's brief budget rewriting prose
+     the winner already published. Keep the two decisions in one file so
+     they cannot drift.
    None of this makes a run punctual; it only shortens the wait. Real
    punctuality needs an external trigger on the `workflow_dispatch` API,
    which bypasses the schedule queue altogether.
+3b-iv. **Every workflow that pushes checks out `ref: github.ref`, not the
+   triggering SHA.** `news.yml`, `brief-retry.yml` and `backfill.yml` all take
+   the `site-write` lock, so each starts only *after* the previous writer
+   pushed — which means `actions/checkout`'s default (`github.sha`, the commit
+   that triggered the run) hands the second writer a base it is guaranteed to
+   be behind. It then rebuilds the whole site on that base and has its push
+   rejected as a non-fast-forward, failing the run and discarding the work: a
+   recovered brief in `brief-retry.yml` (rule 3b — the difference between a
+   delay and a permanent gap in `/brief/`), a metered extract pass in
+   `backfill.yml`. Serialising writers is only useful if each one builds on the
+   last one's commit, so **the lock and the `ref` are one mechanism, not two** —
+   a new workflow that commits `data/` needs both or neither.
 3c. **Topic hubs live at `/topic/` + `/topic/<slug>/`,** one per taxonomy
    category, built by `collectTopics()` from the **persistent store**
    (`companies-store.json`) rather than the current batch — the archive is

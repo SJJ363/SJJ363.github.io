@@ -29,8 +29,18 @@ jobs:
   retry:
     runs-on: ubuntu-latest
     steps:
+      # The tip, not the triggering SHA. This job starts only once whoever held
+      # site-write has finished — i.e. after they pushed — so the default
+      # checkout would hand it a base it is already behind, and the push at the
+      # end would be rejected as a non-fast-forward. Here that costs more than
+      # a failed run: the brief this workflow just recovered is the only thing
+      # standing between a fallback and a permanent gap in /brief/ (3b), and a
+      # rejected push throws it away. It would also gate on a stale
+      # news.json, so it could retry a brief a refresh has already replaced.
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
 
       - name: Set up Node
         uses: actions/setup-node@v5

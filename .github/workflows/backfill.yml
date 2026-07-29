@@ -38,8 +38,16 @@ jobs:
   backfill:
     runs-on: ubuntu-latest
     steps:
+      # The tip, not the triggering SHA — the other half of the lock above.
+      # Serialising the writers is only useful if each one then builds on the
+      # previous one's commit; the default checkout pins github.sha, so a
+      # backfill that queued behind a refresh would be rejected on push and
+      # lose exactly the articles this note says the lock protects. Costliest
+      # here of the three: a rejected push discards a metered extract pass.
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
 
       - name: Set up Node
         uses: actions/setup-node@v6
