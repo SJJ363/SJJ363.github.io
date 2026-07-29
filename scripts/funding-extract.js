@@ -58,7 +58,7 @@ const { isFundingCandidate, RATES } = require("./funding");
 const STORE = path.join(__dirname, "..", "data", "companies-store.json");
 
 // Bump when the prompt changes so cached verdicts re-extract.
-const PROMPT_VERSION = 2;
+const PROMPT_VERSION = 3;
 
 /* How far a round's real announcement may sit behind the article's date
    before the record is treated as a republished archive item.
@@ -117,6 +117,7 @@ Answer {"round": false} when the headline is anything else. In particular:
 - a sector tally, market-size forecast or periodic roundup ("InsurTech funding reaches $420m in January", "Over $2bn raised across this week's 22 FinTech deals")
 - an INVESTOR raising a fund to deploy ("3IF Ventures closes USD 12M fund to back insurtech startups", "Northwestern Mutual announces $150 million Fund III")
 - an acquisition, merger, stake purchase, IPO, public placing or share offering
+- a private-equity recapitalisation or control investment in a brokerage, agency or agency rollup. These are real disclosed raises by insurance companies, and they are still not rounds for this table: they are balance-sheet deals for consolidators, an order of magnitude larger than the venture rounds around them, and one of them dominates a whole year of the tracker. Acrisure's $2.1bn led by Bain Capital, HUB International's $1.6bn at a $29bn valuation and Highstreet Insurance's "$550 million in new capital" are all excluded. Judge this on the KIND of deal, not the size — a large growth round into an insurtech is still a round even when a private-equity firm leads it, and a small recapitalisation of a brokerage rollup is still not one.
 - a company SPENDING money — buying something, investing in its own R&D, or committing capital to a partner, a joint venture or another company ("CGC commits $200m to GreenieRE to expand clean energy insurance" is a commitment by CGC, not a round raised by GreenieRE)
 - underwriting capacity, a lending facility, a debt refinancing, an earnings or revenue figure, a claims payout, a fine, a settlement, a prize or a grant competition
 - a round that has NOT closed: rumoured, planned, "in talks", "could raise", "seeks", "targets", "eyes", "set to raise"

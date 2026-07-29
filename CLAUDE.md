@@ -232,9 +232,14 @@ produce all of that consistently — **route new pages through them.**
      the largest genuine venture round in the archive is Alan's $518.4M
      Series G. Note what a size cap cannot do — Highstreet Insurance's
      "$550 million in new capital" is the same species of deal and passes
-     on size alone. Excluding that needs the deal *type* read (a job for
-     3c-v's prompt); a cap low enough to catch it would land $30M from
-     Alan's Series G.
+     on size alone. Excluding that needs the deal *type* read, which is
+     the extractor's job and **not** the regexes' — a cap low enough to
+     catch it would land $30M from Alan's Series G, and the archive holds
+     exactly one such row, which is no basis at all for a pattern. So
+     "private-equity recapitalisation or control investment in a
+     brokerage or agency rollup" is a rule in 3c-v's prompt and has no
+     deterministic counterpart. `CAP_M` stays as the backstop for the
+     aggregates that get past `MARKET_NOISE`, not as the recap guard.
    • **Amounts are US dollars, converted, and the row shows the original.**
      `amountOf()` reads a currency off every figure — symbol, `US$`/`C$`
      prefix, `EUR`/`Rs` code, a trailing "CAD"/"euros", or `crore`/`lakh`
