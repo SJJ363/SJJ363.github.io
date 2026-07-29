@@ -219,6 +219,22 @@ produce all of that consistently — **route new pages through them.**
      gate for free, which is what keeps Finextra's clearing banks and
      game-commerce startups out of it. The *verdicts* are cached (3c-v);
      the rows built from them are not.
+   • **`CAP_M` is the venture-scale line, and it excludes a KIND of deal
+     using size as the proxy.** Private-equity recapitalisations of
+     brokerage rollups are genuine, disclosed raises by insurance
+     companies — Acrisure's $2.1bn led by Bain Capital, HUB
+     International's $1.6bn at a $29bn valuation — and they are not what
+     this table is read for. On a page whose median row is $13.6M, one
+     $2.1bn recap is a third of the disclosed total and buries everything
+     the tracker exists to show. So the cap came down from $2000M to
+     **$1000M**. Set it where the archive is *empty*, not next to a real
+     row: nothing sits between Highstreet's $550M and HUB's $1.6bn, and
+     the largest genuine venture round in the archive is Alan's $518.4M
+     Series G. Note what a size cap cannot do — Highstreet Insurance's
+     "$550 million in new capital" is the same species of deal and passes
+     on size alone. Excluding that needs the deal *type* read (a job for
+     3c-v's prompt); a cap low enough to catch it would land $30M from
+     Alan's Series G.
    • **Amounts are US dollars, converted, and the row shows the original.**
      `amountOf()` reads a currency off every figure — symbol, `US$`/`C$`
      prefix, `EUR`/`Rs` code, a trailing "CAD"/"euros", or `crore`/`lakh`
@@ -399,8 +415,9 @@ produce all of that consistently — **route new pages through them.**
      than `STALE_YEARS` behind the filed date. Acrisure's 2021 $2.1bn and
      HUB International's 2023 $1.6bn both arrived filed 2025 and would
      have been the largest rows on the tracker by 3x; Acrisure escaped
-     only because `CAP_M` happens to sit at $2000M, which is luck rather
-     than a guard. Rejected, never re-dated — the archive is organised by
+     only because `CAP_M` then sat at $2000M, which was luck rather than
+     a guard — and `CAP_M` is now $1000M, so it would not catch even
+     that. Rejected, never re-dated — the archive is organised by
      month and quarter, and moving a row to a date no cited source
      published puts an unsupported claim on a period page.
    • **`companies.js` must carry the `funding` key through its own

@@ -73,8 +73,9 @@ const PROMPT_VERSION = 2;
       valuation" filed 2025-05-14 — the round was 2023
 
    Both would have been the largest row on the tracker by a factor of
-   three. Acrisure escaped only because CAP_M happens to sit at $2000M,
-   which is luck, not a guard.
+   three. Acrisure escaped only because CAP_M then sat at $2000M, which
+   was luck rather than a guard — and CAP_M has since come down to
+   venture scale, so it no longer catches even that much.
 
    Nothing in either headline says the date is wrong, so this cannot be
    read off the text — it needs to be recognised. That is a fair question

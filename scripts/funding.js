@@ -312,9 +312,29 @@ const MARKET_NOISE = new RegExp(
    must not be one the model can overrule. */
 const STALE_RECORD = /(?:digital (?:insurance|wealth)|cx tech)\s+forum/i;
 
-// A single disclosed insurtech round is realistically well under this.
-// Anything larger is almost certainly a market-size or aggregate figure.
-const CAP_M = 2000;
+/* The tracker counts venture-scale rounds, and this is where that scale
+   ends. Anything larger is either an aggregate figure that got past
+   MARKET_NOISE or a deal of a different kind entirely.
+
+   It sat at $2000M and the difference mattered. Private-equity
+   recapitalisations of brokerage rollups are real, disclosed raises by
+   insurance companies — Acrisure's $2.1bn led by Bain Capital, HUB
+   International's $1.6bn at a $29bn valuation — and they are not what
+   anyone reads this table for. On a page whose median row is $13.6M and
+   whose largest genuine venture round is Alan's $518.4M Series G, a
+   single $2.1bn recap is a third of the disclosed total and buries
+   everything the tracker exists to show.
+
+   $1000M rather than something tighter because the job is to exclude a
+   different *kind* of deal, and size is a blunt proxy for kind: the cut
+   should fall in empty space, not next to a real row. It leaves ~1.8x
+   headroom over the largest survivor and nothing in the archive lands
+   between $550M and $1.6bn. Note what this does NOT do — Highstreet
+   Insurance's $550M "in new capital" is the same species of deal and
+   passes on size alone. Excluding that one needs the deal type read, not
+   a lower number; lowering the cap far enough to catch it would sit
+   $30M from Alan's Series G. */
+const CAP_M = 1000;
 
 // Generic funding vocabulary — ignored when deciding whether two headlines
 // describe the SAME raise, so only distinctive tokens (company names) count.
