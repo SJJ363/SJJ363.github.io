@@ -86,16 +86,50 @@ const url = (p = "/") => SITE.origin + (p.startsWith("/") ? p : "/" + p);
    to a page carrying data the tracker assembled. So funded companies
    pass on their funding block alone.
 
-   FUNDED_SLUGS is set once per build by setFundedSlugs(), the same way
-   NAV_TOPICS is, because every reader of the gate — the page builder,
-   the sitemap and the companies index — has to agree about it. */
+   There is a third door, and it closes the gate's original argument
+   rather than loosening it. The stated reason to withhold a one-story
+   page is that it *restates one outlet's headline*. A page carrying an
+   original profile — what the company does, which side of the market
+   it sits on, where it is (rule 3a-ii) — is no longer doing that. The
+   profile is the thing whose absence the gate was describing.
+
+   Two conditions, not one. The profile must be `known` (the writer
+   declines rather than guessing, so a decline is real evidence there
+   was nothing to say), and its `kind` must be set and not "Other".
+   `kind` is the model's answer to "which side of the insurance market
+   is this", so a blank means it couldn't place the company at all, and
+   "Other" means it placed it *outside* the market: measured against
+   the first profiled batch, "Other" caught exactly the pages for a
+   grocery-delivery company, an asset-financing lender and an electric
+   utility — all honest pages, none of them insurtech content that
+   should compete in search. They stay built and linked, as thin pages
+   always have.
+
+   PAGE_MIN_STORIES itself does NOT move. Lowering it globally would
+   admit the pages that have no profile too, which is the exact
+   mass-produced-stub failure this whole gate exists to prevent.
+
+   FUNDED_SLUGS and PROFILED_SLUGS are both set once per build, the
+   same way NAV_TOPICS is, because every reader of the gate — the page
+   builder, the sitemap and the companies index — has to agree about
+   it. */
 const PAGE_MIN_STORIES = 3;
 let FUNDED_SLUGS = new Set();
 function setFundedSlugs(deals) {
   FUNDED_SLUGS = new Set(deals.filter((d) => d.company).map((d) => d.company.slug));
 }
+let PROFILED_SLUGS = new Set();
+function setProfiledSlugs(profiles = {}) {
+  PROFILED_SLUGS = new Set(
+    Object.entries(profiles)
+      .filter(([, p]) => p && p.known && p.kind && p.kind !== "Other")
+      .map(([slug]) => slug)
+  );
+}
 const indexable = (c) =>
-  (c.count || (c.articles || []).length) >= PAGE_MIN_STORIES || FUNDED_SLUGS.has(c.slug);
+  (c.count || (c.articles || []).length) >= PAGE_MIN_STORIES ||
+  FUNDED_SLUGS.has(c.slug) ||
+  PROFILED_SLUGS.has(c.slug);
 
 /* ── Escaping ───────────────────────────────────────────────── */
 const escHtml = (s = "") =>
@@ -163,7 +197,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=26" />
+  <link rel="stylesheet" href="/style.css?v=27" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -405,7 +439,48 @@ function companyArticleLi(a) {
       </li>`;
 }
 
-function companyPageHtml(c, deals = []) {
+/* ── The profile block ──────────────────────────────────────────
+   Written by scripts/profile.js, cached in companies-store.json, and
+   the only sentence on a company page that isn't a label or someone
+   else's headline. It goes first because it is the page's lede: a
+   reader who lands here from a search wants to know what the company
+   is before they read what it did last Tuesday.
+
+   The attribution line is one short sentence repeated across ~1,300
+   pages, and it stays. This site's credibility rests on saying where
+   a claim came from — the funding tracker carries METHOD_NOTE for
+   exactly that reason — and a synthesised paragraph with no
+   provenance reads as a fact we're asserting rather than a summary we
+   assembled. Sixty characters is a cheap price for that distinction.
+
+   No profile renders nothing, which is what makes the whole step
+   fail-soft (see profile.js). */
+/* A profile is written to be read on the page (up to 320 chars, one or
+   two sentences); a description is written to be shown in a result
+   (~158 before it is cut). Handing the whole paragraph to clamp() gives
+   a sentence that stops mid-clause on an ellipsis, which is both worse
+   to read and likelier to get replaced by a snippet Google picks
+   itself. The first sentence is a complete thought and almost always
+   the "what it does" one, since the prompt asks for name-first. Fall
+   back to the clamped paragraph when even that won't fit. */
+function descFromProfile(summary) {
+  const first = /^[\s\S]*?[.!?](?=\s|$)/.exec(summary);
+  if (first && first[0].trim().length >= 60 && first[0].trim().length <= 158) {
+    return first[0].trim();
+  }
+  return summary;
+}
+
+function companyProfileBlock(c, profile) {
+  if (!profile || !profile.known || !profile.summary) return "";
+  const meta = [profile.kind, profile.place].filter(Boolean);
+  return `    <section class="co-profile">
+      <p class="co-desc">${escHtml(profile.summary)}</p>
+${meta.length ? `      <p class="co-tags">${meta.map((m) => `<span class="co-tag">${escHtml(m)}</span>`).join("")}</p>\n` : ""}      <p class="co-attrib">Profile compiled by ${escHtml(SITE.name)} from the coverage below.</p>
+    </section>`;
+}
+
+function companyPageHtml(c, deals = [], profile = null) {
   const canonical = `/company/${c.slug}/`;
   const storyWord = c.count === 1 ? "story" : "stories";
   const sources = (c.sources || []).slice(0, 6).join(", ");
@@ -432,9 +507,17 @@ function companyPageHtml(c, deals = []) {
             latest.stage ? ` (${latest.stage})` : ""
           } on ${fullDate(latest.publishedAt)}.`) +
       ` Amount, stage, lead investor and source for each.`
-    : `${c.count} insurtech ${storyWord} on ${c.name}` +
-      (sources ? `, reported by ${sources}` : "") +
-      ". Funding, launches, partnerships and platform moves, tracked by Insurtech Daily.";
+    /* Without rounds, the profile is the best description this page
+       has: it is specific to the company and unique across the site,
+       where the count-and-sources fallback is a template ~945 pages
+       shared almost verbatim. Funded pages keep the money-led version
+       above — "<name> funding" is the query they can win, and no
+       description beats the number in a result snippet. */
+    : profile && profile.known && profile.summary
+      ? descFromProfile(profile.summary)
+      : `${c.count} insurtech ${storyWord} on ${c.name}` +
+        (sources ? `, reported by ${sources}` : "") +
+        ". Funding, launches, partnerships and platform moves, tracked by Insurtech Daily.";
 
   const articles = c.articles || [];
   const thin = !indexable(c);
@@ -448,7 +531,17 @@ function companyPageHtml(c, deals = []) {
     url: url(canonical),
     description: clamp(description),
     isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
-    about: { "@type": "Organization", name: c.name },
+    /* The profile is the only thing we can say about the Organization
+       itself rather than about our coverage of it, so it belongs on
+       the `about` node. Clamped longer than a meta description: this
+       is machine-read, not shown in a result snippet. */
+    about: {
+      "@type": "Organization",
+      name: c.name,
+      ...(profile && profile.known && profile.summary
+        ? { description: clamp(profile.summary, 320) }
+        : {}),
+    },
     mainEntity: itemListLd(`${c.name} coverage`, articles, 50),
   };
   const crumbLd = breadcrumbLd([
@@ -559,6 +652,7 @@ ${header("companies")}
       <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
     </div>
 
+${companyProfileBlock(c, profile)}
 ${facts}
 
 ${companyFundingBlock(c, deals)}
@@ -930,6 +1024,18 @@ function buildBriefPages(briefs) {
 function fundingFacts() {
   try {
     return JSON.parse(fs.readFileSync(STORE, "utf8")).funding || {};
+  } catch {
+    return {};
+  }
+}
+
+/* Claude's per-company profiles, written by profile.js and keyed by
+   slug. Empty is a valid state — no credentials, a rate-limited run, a
+   fresh clone — and it means every company page renders exactly as it
+   did before profiles existed. */
+function companyProfiles() {
+  try {
+    return JSON.parse(fs.readFileSync(STORE, "utf8")).profiles || {};
   } catch {
     return {};
   }
@@ -3262,7 +3368,7 @@ Sitemap: ${url("/sitemap.xml")}
 /* ══════════════════════════════════════════════════════════════
    Company page directory management
    ══════════════════════════════════════════════════════════════ */
-function buildCompanyPages(db, deals = []) {
+function buildCompanyPages(db, deals = [], profiles = {}) {
   const outRoot = path.join(ROOT, "company");
   fs.mkdirSync(outRoot, { recursive: true });
 
@@ -3288,13 +3394,15 @@ function buildCompanyPages(db, deals = []) {
     }
   }
 
-  let funded = 0;
+  let funded = 0, profiled = 0;
   for (const c of companies) {
     const cd = bySlug.get(c.slug) || [];
     if (cd.length) funded++;
+    const profile = profiles[c.slug] && profiles[c.slug].known ? profiles[c.slug] : null;
+    if (profile) profiled++;
     const dir = path.join(outRoot, c.slug);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, "index.html"), companyPageHtml(c, cd));
+    fs.writeFileSync(path.join(dir, "index.html"), companyPageHtml(c, cd, profile));
   }
   const n = companies.filter(indexable).length;
   // The second number is the point of the funding door: pages that carry
@@ -3302,11 +3410,21 @@ function buildCompanyPages(db, deals = []) {
   const onFunding = companies.filter(
     (c) => (c.count || 0) < PAGE_MIN_STORIES && FUNDED_SLUGS.has(c.slug)
   ).length;
+  // Pages that clear the gate on the profile ALONE — too thin on stories
+  // and carrying no round. This is the number the profile work exists to
+  // move, so it gets its own line rather than being folded into the total.
+  const onProfile = companies.filter(
+    (c) =>
+      (c.count || 0) < PAGE_MIN_STORIES &&
+      !FUNDED_SLUGS.has(c.slug) &&
+      PROFILED_SLUGS.has(c.slug)
+  ).length;
   console.log(
     `  ✓ ${companies.length} company pages under /company/ — ` +
-      `${n} indexable, ${companies.length - n} noindex (under ${PAGE_MIN_STORIES} stories` +
-      ` and no disclosed round)\n` +
-      `    ${funded} carry a funding block; ${onFunding} of those are indexable on it alone`
+      `${n} indexable, ${companies.length - n} noindex (under ${PAGE_MIN_STORIES} stories,` +
+      ` no disclosed round, no profile)\n` +
+      `    ${funded} carry a funding block; ${onFunding} of those are indexable on it alone\n` +
+      `    ${profiled} carry an original profile; ${onProfile} of those are indexable on it alone`
   );
 }
 
@@ -3325,13 +3443,15 @@ function main() {
   const quarters = collectQuarters(deals);
   const years = collectYears(deals);
   const ranked = collectFundedCompanies(deals);
+  const profiles = companyProfiles();
   // Every page's nav lists the hubs, so the list has to exist before
   // the first page is written — and so must the funded-company set,
   // which the company pages, the companies index and the sitemap all
   // consult through indexable().
   setNavTopics(topics);
   setFundedSlugs(deals);
-  buildCompanyPages(db, deals);
+  setProfiledSlugs(profiles);
+  buildCompanyPages(db, deals, profiles);
   buildBriefPages(briefs);
   buildTopicPages(topics, db, deals);
   buildFundingPages(deals, months, quarters, years, ranked);
@@ -3353,4 +3473,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { head, SITE, companyPageHtml, briefPageHtml, clamp, isoDate };
+module.exports = { head, SITE, companyPageHtml, briefPageHtml, clamp, isoDate, descFromProfile };

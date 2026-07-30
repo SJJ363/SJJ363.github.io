@@ -596,6 +596,30 @@ main {
 .co-head { padding: 18px 0 20px; }
 .co-kicker { margin: 0 0 10px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.13em; color: var(--accent); }
 
+/* The profile — the page's lede, and the only prose on it. Set at
+   reading size in the serif face rather than at the 0.88rem the
+   metadata blocks use: it is a paragraph to be read, not a field to be
+   scanned, and sizing it like the labels around it buried it. */
+/* The bottom padding is load-bearing: .co-facts opens with a border-top,
+   and without a gap the attribution line sits directly on that rule and
+   reads as a caption for the themes block below it rather than as a note
+   on the profile above. */
+.co-profile { padding: 4px 0 14px; }
+.co-desc {
+  margin: 0; max-width: 62ch;
+  font-family: var(--serif); font-size: 1.06rem; line-height: 1.55; color: var(--ink);
+}
+.co-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 13px 0 0; }
+.co-tag {
+  padding: 3px 9px; border: 1px solid var(--rule); border-radius: 2px;
+  font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.03em; color: var(--ink-2);
+}
+.co-attrib {
+  margin: 11px 0 0; font-family: var(--sans); font-size: 0.72rem;
+  color: var(--ink-3);
+}
+
 .co-facts {
   display: flex; flex-wrap: wrap; gap: 26px 44px;
   padding: 22px 0 6px; border-top: 1px solid var(--rule);
@@ -965,6 +989,10 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
 @media (max-width: 620px) {
   .result-count { display: none; }
   .status { display: none; }
+  /* At 1.06rem the profile ran to five lines on a 375px viewport and
+     started competing with the headline for weight. A notch down keeps
+     it as body copy without giving up the serif reading size. */
+  .co-desc { font-size: 1rem; line-height: 1.5; }
   /* All four sections have to be legible at a glance. The nav used to
      sit beside the masthead and scroll sideways, which parked
      Companies off-screen where nobody found it; on a phone it now

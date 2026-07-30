@@ -199,16 +199,43 @@ jobs:
       # link in the same store, so this is a handful of calls on a normal
       # run and only re-reads the archive when the prompt version changes.
       #
-      # Last of the three Claude steps on purpose. The brief is the page
-      # nobody else wrote, the company index feeds every page on the site,
-      # and this one degrades to the regexes in funding.js — which is a
-      # thinner tracker for a run, not a broken one. Same shared
-      # subscription budget, so the order is the priority order.
+      # Third of the four Claude steps. The brief is the page nobody else
+      # wrote, the company index feeds every page on the site, and this one
+      # degrades to the regexes in funding.js — which is a thinner tracker
+      # for a run, not a broken one. Same shared subscription budget, so
+      # the order is the priority order.
       - name: Extract funding rounds
         if: steps.plan.outputs.run == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: node scripts/funding-extract.js || echo "Funding extraction failed — regex fallback stands."
+
+      # Write the short factual profile that leads each company page —
+      # the only original sentence on the site's biggest page type.
+      # Cached per slug, rewritten only when the company gains newer
+      # coverage, so a normal run is ~one call and a prompt-version bump
+      # is a full backfill.
+      #
+      # LAST of the four Claude steps, because it has the softest failure
+      # of any of them: no profile means the page renders exactly as it
+      # did before this step existed. It also self-gates — nothing
+      # downstream needs a profile to exist.
+      #
+      # --limit is what keeps a backfill from becoming an outage. Unbounded,
+      # the first run after this shipped (or after any PROMPT_VERSION bump)
+      # would ask for ~1,300 profiles in one job: ~111 CLI calls, most of a
+      # day's session budget, and a job that runs long enough to collide
+      # with the next scheduled refresh — all to fill a cache that has no
+      # deadline. At 120 per run the archive fills over ~11 runs, roughly
+      # four days at three slots a day, while the steady state (~15 a day,
+      # rule 3a-ii) still clears in a single run every time. The cap is
+      # per run, not per day, and the script does the most-covered
+      # companies first, so the pages that matter get theirs on run one.
+      - name: Write company profiles
+        if: steps.plan.outputs.run == 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: node scripts/profile.js --limit 120 || echo "Profile writer failed — pages render without a profile."
 
       # Only exists when the enhancement fell back. Holds the raw model reply
       # and the guard that rejected it — the evidence that shouldn't ship to

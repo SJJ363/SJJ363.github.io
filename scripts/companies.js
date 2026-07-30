@@ -636,16 +636,18 @@ function main() {
   for (const e of Object.values(store.extracted)) if (e.by) byCount[e.by] = (byCount[e.by] || 0) + 1;
 
   fs.writeFileSync(NEWS, JSON.stringify(news, null, 2));
-  /* `funding` belongs to funding-extract.js, which runs after this and
-     writes the same file. Carry it through untouched — a write that
-     names only its own keys silently truncates the other script's cache,
-     and the symptom is a funding tracker that quietly re-extracts its
-     whole archive on every run. */
+  /* `funding` belongs to funding-extract.js and `profiles` to
+     profile.js, both of which run after this and write the same file.
+     Carry them through untouched — a write that names only its own keys
+     silently truncates the other script's cache, and the symptom is a
+     funding tracker (or a set of company profiles) that quietly
+     re-extracts its whole archive on every run. */
   fs.writeFileSync(STORE, JSON.stringify({
     updatedAt: new Date().toISOString(),
     seen: store.seen,
     extracted: store.extracted,
     funding: store.funding || {},
+    profiles: store.profiles || {},
   }, null, 2));
   fs.writeFileSync(DB, JSON.stringify({ updatedAt: new Date().toISOString(), count: companies.length, companies }, null, 2));
   console.log(`Companies: ${companies.length} tracked · extraction cache ${byCount.claude} claude / ${byCount.heuristic} heuristic.`);
