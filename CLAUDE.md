@@ -210,6 +210,48 @@ produce all of that consistently — **route new pages through them.**
    `backfill.yml`. Serialising writers is only useful if each one builds on the
    last one's commit, so **the lock and the `ref` are one mechanism, not two** —
    a new workflow that commits `data/` needs both or neither.
+3b-v. **A brief is written from what landed since the last brief, not from
+   the batch.** `news.json` carries 45 days of stories (`MAX_AGE_DAYS`), so a
+   digest built over all of it reports six weeks of themes every day and the
+   brief circles the same ground — four consecutive briefs led on AI because
+   the same 44 AI stories were in front of the writer each time.
+   `scripts/brief-window.js` narrows the batch, and `buildDigest()` counts
+   themes, outlets, money and corroboration **over the window, never over
+   `data.taxonomy`** (which is whole-batch) — a heading that says "since
+   yesterday" above six weeks of totals is worse than no heading. Five things
+   this rests on:
+   • **The cutoff is the previous *published* brief**, taken from
+     `data/briefs.json` — the newest entry dated before this brief's own
+     Central date (rule 3b-ii), so a `brief-retry.yml` run later the same day
+     still measures from yesterday rather than from the brief it is replacing.
+     The archive holds only Claude's writing (rule 3b), so a day that fell
+     back has no entry and the window reaches back through it — correct, not a
+     bug: nothing was published that day.
+   • **"Landed" is `store.seen[link].firstSeen`, not `publishedAt`.** Feeds
+     re-serve and re-date their back catalogue (rule 3c-v), and a story can
+     arrive days after it was written; arrival is the only honest measure of
+     what is new *to this wire*. A link the store has never seen arrived on
+     this run — which works because the brief step runs **before**
+     `companies.js` (rule 3b-i), so the store still describes the previous run.
+   • **`firstSeen` is stamped once, only on links whose arrival was
+     witnessed.** `companies.js` writes it for a link it has not stored
+     before and never rewrites it; an entry predating the field, or one
+     `backfill.js` inserted months after the fact, gets **nothing** and falls
+     back to `publishedAt`. Stamping those `now` would date the whole archive
+     to today and put all 140 stories in the next brief's window — the exact
+     failure the window exists to prevent.
+   • **Too thin widens, and says so.** Under `MIN_STORIES` new stories, or no
+     usable cutoff, or a cutoff older than `MAX_LOOKBACK_DAYS`, and the window
+     falls back to the newest `FLOOR_STORIES` with the reason carried into the
+     prompt, so the model knows some of what it is reading may already have
+     been covered. A quiet cycle must still produce a brief.
+   • **Narrowing the stories is half of it.** A theme can stay dominant for a
+     week on genuinely new stories, so `recentBriefs()` puts the last three
+     headlines in the prompt as ground already covered. The window stops the
+     brief re-reading old news; that list stops it re-writing old prose.
+   The deterministic brief (`build-brief.js`) is deliberately left on the
+   whole batch: it describes "this cycle", it is rebuilt at every refresh, and
+   it is a safety net rather than something anyone reads twice.
 3c. **Topic hubs live at `/topic/` + `/topic/<slug>/`,** one per taxonomy
    category, built by `collectTopics()` from the **persistent store**
    (`companies-store.json`) rather than the current batch — the archive is

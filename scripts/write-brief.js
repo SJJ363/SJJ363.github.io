@@ -6,6 +6,12 @@
    deterministic brief into data/news.json. This step replaces that
    brief with one Claude actually wrote.
 
+   What it writes *from* is not the whole batch: brief-window.js narrows
+   news.json to the stories that landed since the last published
+   briefing, and the last few briefings' headlines go into the prompt as
+   ground already covered. The wire holds 45 days, so writing from all
+   of it produced a brief that restated the same themes daily.
+
    The deterministic brief is the safety net, not a coin flip: it is
    the only page on the site nobody wrote, so shipping it is a visible
    failure. Everything here exists to make that outcome rare enough to
@@ -43,9 +49,11 @@ const path = require("path");
 const { spawnSync } = require("child_process");
 const { fundingStats } = require("./funding");
 const { localDate } = require("./schedule");
+const { briefWindow } = require("./brief-window");
 
 const FILE = path.join(__dirname, "..", "data", "news.json");
 const BRIEFS = path.join(__dirname, "..", "data", "briefs.json");
+const STORE = path.join(__dirname, "..", "data", "companies-store.json");
 // Fallback forensics: not committed (see .gitignore) — CI uploads it as a
 // build artifact so a failed enhancement can be diagnosed after the fact.
 const DIAG = path.join(__dirname, "..", "brief-fallback.json");
@@ -70,6 +78,9 @@ function money(mm) {
 }
 const clean = (s) => (s || "").replace(/\s+/g, " ").trim();
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const readJson = (file, fallback) => {
+  try { return JSON.parse(fs.readFileSync(file, "utf8")); } catch { return fallback; }
+};
 
 /* Quote a headline with curly quotes, and neutralise any straight quote
    inside it. The reply has to be JSON whose strings are delimited by ",
@@ -78,31 +89,66 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
    2026-07-25 (run #16). Curly quotes read the same and can't do that. */
 const quoted = (s) => `“${clean(s).replace(/"/g, "'")}”`;
 
-/* ---- turn a batch into a compact digest for the prompt ---- */
-function buildDigest(data) {
-  const articles = data.articles || [];
+/* ---- turn a batch into a compact digest for the prompt ----
+   `window` (from brief-window.js) narrows the batch to the stories that
+   landed since the previous briefing. Everything counted here — themes,
+   money, corroboration, outlets — is counted over that window and not
+   over the 45-day batch, or the digest would report six weeks of totals
+   under a heading that says "since yesterday". */
+function buildDigest(data, window) {
+  const articles = (window && window.articles) || data.articles || [];
   const total = articles.length;
-  const sources = (data.sources || []).length;
+  const sources = new Set(articles.map((a) => a.source).filter(Boolean)).size;
 
-  const themes = (data.taxonomy || [])
-    .filter((t) => t.name !== "Industry")
-    .slice()
+  const counts = new Map();
+  for (const a of articles) {
+    for (const t of a.tags || []) counts.set(t, (counts.get(t) || 0) + 1);
+  }
+  const themes = [...counts]
+    .filter(([name]) => name !== "Industry")
+    .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count);
 
   const funding = fundingStats(articles);
 
-  const byCluster = articles
+  // One entry per story, not per re-report: a cluster's members are all in the
+  // window, so listing each of them made three widely-covered stories look
+  // like six and spent the prompt on the same headline twice.
+  const seenCluster = new Set();
+  const mostCovered = articles
     .slice()
-    .sort((a, b) => (b.cluster || 1) - (a.cluster || 1) || (b.score || 0) - (a.score || 0));
-  const mostCovered = byCluster.filter((a) => (a.cluster || 1) >= 2).slice(0, 6);
+    .sort((a, b) => (b.cluster || 1) - (a.cluster || 1) || (b.score || 0) - (a.score || 0))
+    .filter((a) => (a.cluster || 1) >= 2)
+    .filter((a) => {
+      const key = a.clusterId || a.link;
+      if (seenCluster.has(key)) return false;
+      seenCluster.add(key);
+      return true;
+    })
+    .slice(0, 6);
 
+  // Same reason, and it matters more here: 14 slots spent three times on the
+  // same acquisition is three themes the writer never sees.
+  const seenSample = new Set();
   const topStories = articles
     .slice()
     .sort((a, b) => (b.score || 0) - (a.score || 0))
+    .filter((a) => {
+      const key = a.clusterId || a.link;
+      if (seenSample.has(key)) return false;
+      seenSample.add(key);
+      return true;
+    })
     .slice(0, 14);
 
   const lines = [];
-  lines.push(`BATCH: ${total} stories from ${sources} outlets.`);
+  if (window && window.since && !window.widened) {
+    lines.push(`NEW SINCE THE LAST BRIEFING: ${total} stories from ${sources} outlets, all of which reached the wire after the ${window.priorDate} briefing was published (${window.since}). The wire's full archive is larger; these are the ones that are new.`);
+  } else if (window && window.widened) {
+    lines.push(`RECENT STORIES: the ${total} most recent stories on the wire, from ${sources} outlets. (Intended window: everything new since the last briefing — widened because ${window.widened}, so some of this may already have been covered.)`);
+  } else {
+    lines.push(`BATCH: ${total} stories from ${sources} outlets.`);
+  }
   lines.push("");
   lines.push("DOMINANT THEMES (by number of stories):");
   themes.slice(0, 8).forEach((t) => lines.push(`- ${t.name}: ${t.count}`));
@@ -123,23 +169,40 @@ function buildDigest(data) {
 
 const FIELDS = ["headline", "teaser", "whatsHappening", "whyItMatters"];
 
-function buildPrompt(digest) {
+/* What the site has already told this reader. The digest is narrowed to new
+   stories, but a theme can stay dominant for a week on genuinely new
+   stories — so the model also needs to see the framing it has already used,
+   or it writes "AI moves from pilot to plumbing" four days running. */
+function recentBriefs(briefs, date, n = 3) {
+  const prior = (briefs || [])
+    .filter((b) => b && b.date && b.headline && (!date || b.date < date))
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, n);
+  if (!prior.length) return "";
+  const lines = ["ALREADY PUBLISHED (this site's own recent briefings — do not re-tell these):"];
+  prior.forEach((b) => lines.push(`- ${b.date}: ${quoted(b.headline)}${b.teaser ? ` — ${clean(b.teaser)}` : ""}`));
+  return lines.join("\n");
+}
+
+function buildPrompt(digest, recent = "") {
   return `You are the editor of a respected insurtech news wire, writing a short briefing for busy insurance and fintech professionals.
 
-Below is a digest of the latest batch of aggregated stories. Write a briefing that captures what is happening across the batch and why it matters.
+Below is a digest of the stories that have come in since your last briefing. Write a briefing that captures what is happening in them and why it matters.
 
 ${digest}
-
+${recent ? `\n${recent}\n` : ""}
 Write the briefing as a single JSON object with exactly these fields:
 {
-  "headline": "a punchy 5-9 word headline capturing the single biggest current in this batch (no trailing period)",
+  "headline": "a punchy 5-9 word headline capturing the single biggest current in these new stories (no trailing period)",
   "teaser": "one short fragment (~8-12 words) for a collapsed preview, e.g. 'AI moves into underwriting, funding rebounds, and what follows'",
-  "whatsHappening": "2 to 4 sentences describing the THEMES across the batch in plain, engaging language",
+  "whatsHappening": "2 to 4 sentences describing the THEMES across these new stories in plain, engaging language",
   "whyItMatters": "2 to 3 sentences on the second-order effects and what to watch next"
 }
 
 Rules:
 - Capture themes and their implications. Do NOT just list individual stories. You may anchor with at most one representative story if it genuinely helps.
+- This is today's briefing, not a standing summary of the industry. Write about what has moved since the last one. Where a theme also appears in ALREADY PUBLISHED above, either leave it out or say specifically what is new about it — never restate it in fresh words.
+- Reuse none of the headlines or framings listed under ALREADY PUBLISHED.
 - Write for a smart reader in a hurry: concrete, easy to understand, no jargon, no hype, no emojis.
 - Ground claims in the digest above; do not invent specific numbers or company names that aren't there.
 - Never use a double quote (") inside a field value — it ends the JSON string and breaks the parse. If you need to quote a phrase or a headline, use single quotes.
@@ -638,11 +701,36 @@ async function main() {
       return;
     }
 
-    const prompt = buildPrompt(buildDigest(data));
+    // Narrow the 45-day batch to what has landed since the last published
+    // briefing. Measured against the brief's own Central date, so a retry
+    // later the same day still measures from yesterday's briefing rather
+    // than from the one it is itself replacing.
+    const date = briefDate(data);
+    const archive = readJson(BRIEFS, {}).briefs || [];
+    const window = briefWindow(data.articles, {
+      briefs: archive,
+      seen: readJson(STORE, {}).seen || {},
+      date,
+    });
+    console.log(
+      window.widened
+        ? `Window widened to the ${window.articles.length} most recent of ${window.batchCount} stories — ${window.widened}.`
+        : `Window: ${window.articles.length} of ${window.batchCount} stories landed since the ${window.priorDate} briefing (${window.since}).`
+    );
+
+    const prompt = buildPrompt(buildDigest(data, window), recentBriefs(archive, date));
     const state = { attempts: 0, resetAt: null, waited: false, trail: [], cause: null };
     const result = await produceBrief(prompt, state);
 
     if (result && result.brief) {
+      // Committed with the brief so `git log` shows what it was written from.
+      result.brief.window = {
+        since: window.since,
+        stories: window.articles.length,
+        of: window.batchCount,
+        ...(window.priorDate ? { after: window.priorDate } : {}),
+        ...(window.widened ? { widened: window.widened } : {}),
+      };
       publish(data, result.brief, `Brief written by Claude via ${result.brief.via}${state.attempts > 1 ? ` (${state.attempts} attempts)` : ""}`);
       return;
     }
@@ -690,4 +778,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { buildDigest, buildPrompt, extractBrief, judgeReply, classify, parseResetAt };
+module.exports = { buildDigest, buildPrompt, recentBriefs, extractBrief, judgeReply, classify, parseResetAt };

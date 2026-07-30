@@ -483,7 +483,9 @@ function main() {
   const exclude = new Set();
   for (const s of (news.sources || [])) exclude.add(slugify(s));
 
+  const runAt = new Date().toISOString();
   for (const a of news.articles) {
+    const prior = store.seen[a.link];
     // summary carries the publisher's own sentence about the story — kept
     // so company pages can render it. Absent for items that only reached
     // us via Google News, and for anything stored before it was tracked.
@@ -493,6 +495,16 @@ function main() {
       publishedAt: a.publishedAt,
       tags: a.tags || [],
       summary: a.summary || "",
+      // When this story first reached the wire — not its publish date, which
+      // feeds re-serve and re-date. brief-window.js measures the briefing
+      // window off it, so it is written once, on the run that first carried
+      // the link, and never rewritten. A link already in the store from
+      // before this field existed deliberately gets *nothing*: stamping it
+      // now would date a three-week-old story to today and drop the entire
+      // archive into the next briefing's window. The window falls back to the
+      // publish date for those, which is also why backfill.js — inserting
+      // articles months after the fact — never writes this field either.
+      ...(prior ? (prior.firstSeen ? { firstSeen: prior.firstSeen } : {}) : { firstSeen: runAt }),
       // Came from a feed confined to insurtech. seo.js needs it to know
       // whether a story may qualify on technology wording alone.
       ...(a.native ? { native: true } : {}),
