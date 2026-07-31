@@ -969,6 +969,15 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
 }
 .method-text + .method-text { margin-top: 13px; }
 
+/* The standing explainer at the top of a topic hub. Deliberately built
+   out of .co-desc and .co-attrib rather than its own type styles: it is
+   the same kind of thing as a company profile — our prose above someone
+   else's headlines — and the two should not read as different features.
+   All this adds is the stacking and the lede's slight lift. */
+.topic-brief { padding: 4px 0 16px; max-width: 62ch; }
+.topic-brief .co-desc + .co-desc { margin-top: 13px; }
+.topic-lede { font-size: 1.14rem; line-height: 1.5; color: var(--ink); }
+
 /* Pointer from the funding hub across to the tracker. */
 .topic-cue {
   margin: 20px 0 0; padding: 13px 16px;
@@ -993,6 +1002,9 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
      started competing with the headline for weight. A notch down keeps
      it as body copy without giving up the serif reading size. */
   .co-desc { font-size: 1rem; line-height: 1.5; }
+  /* Same reasoning one notch up: at 1.14rem the lede was competing with
+     the h1 above it on a 375px viewport. */
+  .topic-lede { font-size: 1.06rem; }
   /* All four sections have to be legible at a glance. The nav used to
      sit beside the masthead and scroll sideways, which parked
      Companies off-screen where nobody found it; on a phone it now

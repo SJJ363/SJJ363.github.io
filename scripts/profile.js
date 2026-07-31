@@ -361,14 +361,15 @@ function main() {
 
   /* Every writer of this file names every key. funding-extract.js
      carries `profiles` through for the same reason this carries
-     `funding` through — a write that names only its own keys silently
-     truncates the other's cache (rule 3c-v). */
+     `funding` and `topics` through — a write that names only its own
+     keys silently truncates the others' caches (rule 3c-v). */
   fs.writeFileSync(STORE, JSON.stringify({
     updatedAt: new Date().toISOString(),
     seen: store.seen,
     extracted: store.extracted || {},
     funding: store.funding || {},
     profiles: store.profiles,
+    topics: store.topics || {},
   }, null, 2));
 
   const total = Object.values(store.profiles).filter((p) => p.known).length;

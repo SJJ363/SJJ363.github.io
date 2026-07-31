@@ -262,15 +262,16 @@ function main() {
     if (!store.seen[link]) delete store.funding[link];
   }
 
-  /* `profiles` belongs to profile.js, which runs after this and writes
-     the same file — carry it through for the same reason companies.js
-     carries `funding` through. */
+  /* `profiles` and `topics` belong to profile.js and topic-brief.js,
+     which both run after this and write the same file — carry them
+     through for the same reason companies.js carries `funding` through. */
   fs.writeFileSync(STORE, JSON.stringify({
     updatedAt: new Date().toISOString(),
     seen: store.seen,
     extracted: store.extracted || {},
     funding: store.funding,
     profiles: store.profiles || {},
+    topics: store.topics || {},
   }, null, 2));
 
   const total = Object.values(store.funding).filter((f) => f.round).length;

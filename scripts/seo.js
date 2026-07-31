@@ -197,7 +197,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=27" />
+  <link rel="stylesheet" href="/style.css?v=28" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -1041,6 +1041,18 @@ function companyProfiles() {
   }
 }
 
+/* Claude's per-topic explainers, written by topic-brief.js and keyed by
+   topic slug. Empty is a valid state for the same reasons as the two
+   caches above, and it means every hub renders exactly as it did before
+   briefs existed — a statline, three badge lists and borrowed headlines. */
+function topicBriefs() {
+  try {
+    return JSON.parse(fs.readFileSync(STORE, "utf8")).topics || {};
+  } catch {
+    return {};
+  }
+}
+
 function storeArticles() {
   try {
     const raw = JSON.parse(fs.readFileSync(STORE, "utf8"));
@@ -1085,7 +1097,24 @@ function collectTopics(news) {
 
 const STORY_CAP = 60; // page weight guard; the count in the statline is the true total
 
-function topicPageHtml(topic, allTopics, db, deals = []) {
+/* The standing explainer at the top of a hub — the only prose on the
+   page nobody else wrote. Reuses .co-desc from the company profile so
+   the two original blocks on this site read as one thing and share the
+   phone breakpoint, rather than forking a near-identical paragraph
+   style the way the funding tables nearly did (rule 3a-i). */
+function topicBriefBlock(topic, brief) {
+  if (!brief || !brief.known || !brief.summary) return "";
+  const paras = (brief.body || [])
+    .map((p) => `      <p class="co-desc">${escHtml(p)}</p>`)
+    .join("\n");
+  return `    <section class="topic-brief">
+      <p class="co-desc topic-lede">${escHtml(brief.summary)}</p>
+${paras}
+      <p class="co-attrib">Written by ${escHtml(SITE.name)} from the coverage below.</p>
+    </section>`;
+}
+
+function topicPageHtml(topic, allTopics, db, deals = [], brief = null) {
   const canonical = `/topic/${topic.slug}/`;
   const n = topic.articles.length;
   const word = n === 1 ? "story" : "stories";
@@ -1117,10 +1146,20 @@ function topicPageHtml(topic, allTopics, db, deals = []) {
   const sources = [...srcMap.entries()].sort((x, y) => y[1] - x[1]).slice(0, 10);
 
   const title = `${topic.name} — insurtech news & coverage | ${SITE.name}`;
+  /* The brief's opening sentence is a definition of the subject, which
+     is both what the evergreen query for this page is asking for and the
+     only description here that isn't the same template as the other
+     thirteen hubs — "N insurtech stories tagged X, from A, B and C" said
+     nothing about X and said it identically everywhere. Same substitution
+     descFromProfile() makes on an unfunded company page, and the same
+     helper, since both want one complete sentence inside the ~158 a
+     result shows. */
   const description =
-    `${n} insurtech ${word} tagged ${topic.name}` +
-    (sources.length ? `, from ${sources.slice(0, 3).map(([s]) => s).join(", ")} and others` : "") +
-    ". Tracked continuously by Insurtech Daily.";
+    brief && brief.known && brief.summary
+      ? descFromProfile(brief.summary)
+      : `${n} insurtech ${word} tagged ${topic.name}` +
+        (sources.length ? `, from ${sources.slice(0, 3).map(([s]) => s).join(", ")} and others` : "") +
+        ". Tracked continuously by Insurtech Daily.";
 
   const collectionLd = {
     "@context": "https://schema.org",
@@ -1129,7 +1168,15 @@ function topicPageHtml(topic, allTopics, db, deals = []) {
     url: url(canonical),
     description: clamp(description),
     isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
-    about: { "@type": "Thing", name: topic.name },
+    // The brief's definition describes the *subject*, so it belongs on
+    // the Thing rather than only on the page — that is the difference
+    // between "a page about embedded insurance" and "what embedded
+    // insurance is", and the latter is what this hub is for.
+    about: {
+      "@type": "Thing",
+      name: topic.name,
+      ...(brief && brief.known && brief.summary ? { description: clamp(brief.summary, 300) } : {}),
+    },
     mainEntity: itemListLd(`${topic.name} coverage`, topic.articles, 50),
   };
   const crumbLd = breadcrumbLd([
@@ -1217,6 +1264,8 @@ ${header("topics", topic.slug)}
       <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
     </div>
 
+${topicBriefBlock(topic, brief)}
+
 ${trackerCue}
 
 ${facts}
@@ -1234,7 +1283,7 @@ ${FOOTER}
 `;
 }
 
-function topicIndexHtml(topics) {
+function topicIndexHtml(topics, briefs = {}) {
   const canonical = "/topic/";
   const total = topics.reduce((s, t) => s + t.articles.length, 0);
   const title = `Topics — every insurtech theme we track | ${SITE.name}`;
@@ -1269,6 +1318,18 @@ function topicIndexHtml(topics) {
   const rows = topics
     .map((t) => {
       const latest = t.articles[0];
+      /* Prefer the brief's definition over the latest headline. This
+         index is a reader asking what the themes *are* — a directory,
+         not a wire — and a row reading "Embedded: cover sold inside
+         another company's checkout" answers that where "Bolttech ties up
+         with…" answers a question nobody on this page asked. The
+         headline stays as the fallback, and the freshness it carried is
+         already in the date beside it. */
+      const brief = briefs[t.slug];
+      const blurb =
+        brief && brief.known && brief.summary
+          ? descFromProfile(brief.summary)
+          : latest && latest.title;
       return `      <li class="story">
         <a class="story-main" href="/topic/${escAttr(t.slug)}/">
           <div class="meta"><span class="src">${t.articles.length} ${
@@ -1281,7 +1342,7 @@ function topicIndexHtml(topics) {
           : ""
       }</div>
           <h2>${escHtml(t.name)}</h2>
-          ${latest ? `<p class="summary">${escHtml(latest.title)}</p>` : ""}
+          ${blurb ? `<p class="summary">${escHtml(blurb)}</p>` : ""}
         </a>
       </li>`;
     })
@@ -1318,7 +1379,7 @@ ${FOOTER}
 `;
 }
 
-function buildTopicPages(topics, db, deals = []) {
+function buildTopicPages(topics, db, deals = [], briefs = {}) {
   const outRoot = path.join(ROOT, "topic");
   fs.mkdirSync(outRoot, { recursive: true });
 
@@ -1335,10 +1396,16 @@ function buildTopicPages(topics, db, deals = []) {
   for (const t of topics) {
     const dir = path.join(outRoot, t.slug);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, "index.html"), topicPageHtml(t, topics, db, deals));
+    fs.writeFileSync(
+      path.join(dir, "index.html"),
+      topicPageHtml(t, topics, db, deals, briefs[t.slug] || null)
+    );
   }
-  fs.writeFileSync(path.join(outRoot, "index.html"), topicIndexHtml(topics));
-  console.log(`  ✓ ${topics.length} topic pages under /topic/ + index`);
+  fs.writeFileSync(path.join(outRoot, "index.html"), topicIndexHtml(topics, briefs));
+  const written = topics.filter((t) => briefs[t.slug] && briefs[t.slug].known).length;
+  console.log(
+    `  ✓ ${topics.length} topic pages under /topic/ + index (${written} with a brief)`
+  );
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -3444,6 +3511,9 @@ function main() {
   const years = collectYears(deals);
   const ranked = collectFundedCompanies(deals);
   const profiles = companyProfiles();
+  // `briefs` above is the daily-brief archive; these are the standing
+  // topic explainers. Two different things called a brief on this site.
+  const hubBriefs = topicBriefs();
   // Every page's nav lists the hubs, so the list has to exist before
   // the first page is written — and so must the funded-company set,
   // which the company pages, the companies index and the sitemap all
@@ -3453,7 +3523,7 @@ function main() {
   setProfiledSlugs(profiles);
   buildCompanyPages(db, deals, profiles);
   buildBriefPages(briefs);
-  buildTopicPages(topics, db, deals);
+  buildTopicPages(topics, db, deals, hubBriefs);
   buildFundingPages(deals, months, quarters, years, ranked);
   injectAnalytics();
   injectSocial();

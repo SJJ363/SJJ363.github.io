@@ -237,6 +237,28 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: node scripts/profile.js --limit 120 || echo "Profile writer failed — pages render without a profile."
 
+      # Write the standing explainer at the top of each topic hub — the
+      # last page type here that carried no sentence anybody wrote, and
+      # the one pointed at evergreen definitional queries ("what is
+      # embedded insurance") rather than at this week's news.
+      #
+      # LAST of the five Claude steps, on the same reasoning that put
+      # profile.js fourth: no brief means the hub renders exactly as it
+      # did before this step existed, and nothing downstream needs one.
+      #
+      # No --limit, unlike every other step here, because there is
+      # nothing to bound. There are fourteen hubs and one call each, so a
+      # full rebuild after a PROMPT_VERSION bump is fourteen calls — and
+      # a normal day is zero, since a brief is only rewritten once its
+      # topic has grown materially (rule 3d-i), not whenever it gains a
+      # story. Every hub gains stories daily; none of them changes what
+      # the subject *is* daily.
+      - name: Write topic briefs
+        if: steps.plan.outputs.run == 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: node scripts/topic-brief.js || echo "Topic brief writer failed — hubs render without a brief."
+
       # Only exists when the enhancement fell back. Holds the raw model reply
       # and the guard that rejected it — the evidence that shouldn't ship to
       # the site. The short reason code is also committed into news.json.
