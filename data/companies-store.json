@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T18:41:36.817Z",
+  "updatedAt": "2026-07-31T18:48:15.381Z",
   "seen": {
     "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZV9JU0NKallDc3lJazZCV05wMmRqbEsyZDZQR2c0eDV2RExvaWRQUHNONldZZl8xVV9qLVFQb1ZJNUFZcnAtN24zNnJzcnhrVGpHUk1oOGVNT2ZSSzJFWDFaclRXMnhhUkJJcUhncktPOVctTzZwSFVBaHVHZ2NaOXgyQllfUQ?oc=5": {
       "title": "QuoteCheck wins Insurance Business 5-star tech nod",
@@ -63703,7 +63703,7 @@
       "reason": "lede",
       "pv": 1,
       "n": 554,
-      "tries": 1
+      "tries": 2
     },
     "ai-and-automation": {
       "known": true,
@@ -63761,11 +63761,15 @@
       "n": 195
     },
     "claims-and-underwriting": {
-      "known": false,
-      "reason": "lede",
+      "known": true,
+      "summary": "Underwriting sets which risks an insurer accepts and at what price; claims handling is what happens after a loss is reported and paid. Together they sit at the center of an insurer's underwriting margin and loss experience, and much of the recent activity here is about using AI and data to speed up or sharpen both steps.",
+      "body": [
+        "Underwriting turns information about an applicant and the asset being insured — property details, driving history, financials, catastrophe exposure — into a price and a set of policy terms, set by an actuary, underwriting rules, or a model trained on past claims. Claims handling runs the same relationship in reverse: a policyholder reports a loss, an adjuster or an automated system checks it against the policy and estimates what is owed.",
+        "A bad underwriting decision shows up later as a bad claim, and a bad claims decision erodes the trust the pricing depended on, so insurers increasingly treat the two as one loop rather than separate departments. Recent activity leans toward automation on both ends: models that price and place risk faster, and AI systems that triage, verify, or flag claims for fraud, particularly after large weather and catastrophe losses.",
+        "Coverage here spans established carriers and reinsurers alongside newer claims platforms and MGAs, split between underwriting tools such as risk data and catastrophe analytics and claims tools such as fraud detection and automated settlement. It overlaps heavily with AI & Automation and Property & Cat, since much of this news is a new model or dataset applied to an old process, and with Partnerships, since insurers tend to add this capability through a vendor deal rather than build it alone."
+      ],
       "pv": 1,
-      "n": 172,
-      "tries": 1
+      "n": 172
     },
     "property-and-cat": {
       "known": true,
@@ -63790,11 +63794,15 @@
       "n": 125
     },
     "embedded": {
-      "known": false,
-      "reason": "shape",
+      "known": true,
+      "summary": "Embedded insurance is a policy sold inside another company's checkout, bought from a retailer or platform instead of an insurer directly. The insurer or an MGA underwrites it behind the scenes while the host brand keeps the customer relationship.",
+      "body": [
+        "The mechanics run through an API rather than a sales conversation: the host platform passes a transaction to an insurer or MGA at the moment a customer buys a car, rents an apartment, ships freight or signs up for a gig job, and a quote and bind happen in the background without the customer leaving that flow. The technology and compliance layer connecting the two sides is usually built by a specialist intermediary rather than the carrier itself.",
+        "For carriers and MGAs the appeal is distribution without the cost of acquiring a customer directly, since the host brand already has the audience and the trigger moment. The hard parts sit on the other side: getting licensed and compliant across every market a platform operates in, keeping the underwriting current as the host's product changes, and proving the cover is actually useful rather than an add-on nobody reads before checkout.",
+        "Coverage here sits mostly with specialist platforms and MGAs that plug carriers into a host's checkout, and the same handful of underwriters and technology providers keep recurring across very different hosts, from banks to freight brokers to gig platforms. The activity leans heavily on partnership announcements between a carrier, an intermediary and a distribution partner, and it overlaps constantly with product launches, M&A and AI-driven underwriting rather than standing apart as its own lane."
+      ],
       "pv": 1,
-      "n": 110,
-      "tries": 1
+      "n": 110
     },
     "leadership": {
       "known": true,
@@ -63819,11 +63827,15 @@
       "n": 70
     },
     "cyber": {
-      "known": false,
-      "reason": "lede",
+      "known": true,
+      "summary": "Cyber insurance covers the costs of a data breach or ransomware attack, for the company hit and for the people it harmed. Policies pay first-party costs like incident response and ransom negotiation, plus third-party liability such as lawsuits and regulatory fines.",
+      "body": [
+        "An insurer or specialist MGA writes the policy against a mix of first-party costs — forensics, ransom negotiation and payment, notification, business interruption — and third-party liability from lawsuits or regulatory fines that follow a breach. Underwriting increasingly leans on continuous external scans of a company's exposed systems rather than a paper questionnaire alone, which is what platforms built by insurtechs in this category are selling to carriers and brokers.",
+        "Ransomware and, increasingly, AI-driven intrusions are the main claims drivers, and attribution is one of the hardest parts of the line: whether a hack counts as a hostile act for exclusion purposes has reached courts on both sides of the Atlantic. Aggregation is the other hard part — a single vendor's outage can trigger claims across many policyholders at once, unlike how a storm or a fire spreads risk, which is why reinsurers watch this line closely.",
+        "Coverage here mixes specialist cyber MGAs and insurtechs — Coalition, BOXX, Stoïk, Cowbell, Mitigata — building AI-native underwriting and monitoring tools, alongside large carriers such as Allianz, Liberty Mutual and SBI Life that partner with or buy into those platforms rather than build in-house. The category overlaps heavily with AI & Automation and Claims & Underwriting, as insurers add affirmative AI cover and dispute claims like the CrowdStrike outage."
+      ],
       "pv": 1,
-      "n": 57,
-      "tries": 1
+      "n": 57
     }
   }
 }
