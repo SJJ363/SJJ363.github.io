@@ -486,19 +486,43 @@ function main() {
       console.warn(`  ✗ ${t.name}: unparseable — hub keeps its previous brief`);
       continue;
     }
-    const brief = { ...normalise(parsed), n: t.n };
-    // Count attempts across runs so a decline can't sit on a hub until
-    // the next growth window; a good answer clears the counter with it.
-    if (!brief.known) brief.tries = ((store.topics[t.slug] || {}).tries || 0) + 1;
-    store.topics[t.slug] = brief;
-    if (brief.known) {
+    const fresh = normalise(parsed);
+    const prev = store.topics[t.slug];
+
+    if (fresh.known) {
+      // A good answer replaces whatever was there and clears the counter.
+      store.topics[t.slug] = { ...fresh, n: t.n };
       wrote++;
       console.log(`  ✓ ${t.name} (${t.n} stories)`);
-    } else {
-      declined++;
+      continue;
+    }
+
+    /* A decline must never take down a brief that is already published.
+       Every refresh after the first is a *rewrite* of live prose, and
+       roughly a quarter of answers decline — so overwriting on decline
+       would mean a hub that has carried a good explainer for months
+       silently loses it because one rewrite came back too long. That is
+       rule 3b's downgrade guard, one level down: the fallback may not
+       replace what has already shipped.
+
+       So keep the published brief and take the new count with it, which
+       resets the growth window — the hub simply carries slightly older
+       prose until it next grows into a rewrite. `tries` is kept as a
+       record of the failed attempt. Only a topic that has never had a
+       brief caches the decline itself, which is what MAX_TRIES bounds. */
+    declined++;
+    const tries = ((prev || {}).tries || 0) + 1;
+    if (prev && prev.known) {
+      store.topics[t.slug] = { ...prev, n: t.n, tries };
       console.log(
-        `  – ${t.name}: declined${brief.reason ? ` (${brief.reason})` : ""}` +
-          ` — attempt ${brief.tries} of ${MAX_TRIES}`
+        `  – ${t.name}: rewrite declined${fresh.reason ? ` (${fresh.reason})` : ""}` +
+          ` — keeping the published brief`
+      );
+    } else {
+      store.topics[t.slug] = { ...fresh, n: t.n, tries };
+      console.log(
+        `  – ${t.name}: declined${fresh.reason ? ` (${fresh.reason})` : ""}` +
+          ` — attempt ${tries} of ${MAX_TRIES}`
       );
     }
   }
