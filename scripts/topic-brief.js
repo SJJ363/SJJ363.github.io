@@ -425,6 +425,13 @@ function main() {
     const i = process.argv.indexOf("--topic");
     return i > -1 ? process.argv[i + 1] : null;
   })();
+  /* Rewrite regardless of the growth window. Once the cache is full,
+     `stale()` is false for months by design, which makes a manual run a
+     no-op — fine for the scheduled step and useless for the dispatch
+     button in topic-briefs.yml, whose whole purpose is "rewrite these
+     now". Costs the full fourteen calls, which is the entire budget for
+     this step anyway; pair it with --topic while iterating on a prompt. */
+  const force = process.argv.includes("--force");
 
   const store = loadJSON(STORE, null);
   if (!store || !store.seen) {
@@ -445,7 +452,7 @@ function main() {
 
   const topics = collectTopics(store, db);
   const need = topics.filter(
-    (t) => (!only || t.slug === only) && stale(store.topics[t.slug], t.n)
+    (t) => (!only || t.slug === only) && (force || stale(store.topics[t.slug], t.n))
   );
 
   /* Busiest first. Unlike the taxonomy order the hubs are listed in,
@@ -457,6 +464,7 @@ function main() {
 
   console.log(
     `Topic briefs: ${need.length} of ${topics.length} need writing` +
+      `${force ? " (forced)" : ""}` +
       `${batch.length < need.length ? `, doing ${batch.length}` : ""}.`
   );
   if (!batch.length) { console.log("Nothing to do."); return; }

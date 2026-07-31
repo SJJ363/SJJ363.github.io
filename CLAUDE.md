@@ -769,6 +769,18 @@ produce all of that consistently — **route new pages through them.**
    Unlike every other Claude step this needs **no `--limit`**: fourteen
    topics, one call each, so a full `PROMPT_VERSION` backfill is
    fourteen calls. Iterate with `--topic <slug>` instead.
+   **It also has its own dispatch-only workflow, `topic-briefs.yml`,**
+   because the scheduled step is normally a no-op — the growth window is
+   months wide, so there is otherwise no way to fill an empty cache,
+   re-ask a hub that declined, or see a prompt change take effect
+   without waiting for a slot or firing `news.yml`, which would refresh
+   the wire and spend the day's brief budget alongside it. `--force`
+   exists for the same reason and only that reason: it skips the growth
+   check so the button does something on a full cache. It takes
+   `site-write` and checks out `github.ref` like every other writer
+   (rule 3b-iv), and it fails hard without credentials rather than
+   degrading, since a workflow that does one thing should not report
+   success for doing nothing.
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may

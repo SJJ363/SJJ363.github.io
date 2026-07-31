@@ -1,0 +1,106 @@
+# Write the topic-hub explainers — manual only.
+#
+# The same step news.yml runs last on every refresh, on its own button. It
+# exists because that step is normally a no-op: a brief is rewritten only
+# once its topic has grown materially (CLAUDE.md 3d-i), which is months
+# apart, so there is otherwise no way to fill an empty cache, re-ask a hub
+# that declined, or see the result of a prompt change without waiting for a
+# scheduled slot — or firing news.yml, which would refresh the wire, spend
+# the day's brief budget and run every other Claude step alongside it.
+#
+# Never scheduled: the scheduled path already exists inside news.yml, and a
+# second clock writing the same cache would only race it.
+#
+# Cheap by construction — fourteen topics, one call each, so a full rewrite
+# is fourteen calls. It still draws on the SAME subscription budget as the
+# daily brief (CLAUDE.md 3b-i, which is why the brief runs first in
+# news.yml), so run it after the day's brief has landed.
+name: Write topic briefs
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Single topic slug to write (blank = all of them)"
+        required: false
+        default: ""
+      force:
+        description: "Rewrite even if the growth window hasn't opened"
+        type: boolean
+        required: false
+        default: false
+
+concurrency:
+  # news.yml, brief-retry.yml and backfill.yml all commit data/ and the
+  # generated pages. Two writers in flight means the loser's push is
+  # rejected and its work is discarded; the group name is the resource.
+  group: site-write
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  briefs:
+    runs-on: ubuntu-latest
+    steps:
+      # The tip, not the triggering SHA — the other half of the lock above
+      # (CLAUDE.md 3b-iv). This job starts only once whoever held site-write
+      # has pushed, so the default checkout would hand it a base it is
+      # already behind and the push would be rejected as a non-fast-forward.
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      # Hard failure rather than a fallback: this workflow does exactly one
+      # thing, so a run without credentials would silently be a no-op that
+      # reports success. The step inside news.yml keeps its `|| echo` — there
+      # a missing token should degrade the run, not fail it.
+      - name: Install Claude CLI
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "::error::No CLAUDE_CODE_OAUTH_TOKEN secret — topic briefs cannot be written."
+            exit 1
+          fi
+          npm install -g @anthropic-ai/claude-code
+
+      # ANTHROPIC_API_KEY is deliberately absent from this env: the CLI bills
+      # the metered key whenever it is present, and this step is meant to run
+      # on the subscription (CLAUDE.md 3b-i).
+      - name: Write topic briefs
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          node scripts/topic-brief.js \
+            ${{ inputs.topic != '' && format('--topic {0}', inputs.topic) || '' }} \
+            ${{ inputs.force && '--force' || '' }}
+
+      # Renders the briefs into the hubs. No news is fetched and no other
+      # cache is touched, so this rebuilds the site from data already
+      # committed — idempotent, and the only pages that change are the ones
+      # whose brief just landed.
+      - name: Build SEO (pages, sitemap, structured data)
+        run: node scripts/seo.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Same pathspec as news.yml: a generated directory missing here is
+          # rebuilt every run, left dirty in the runner and never pushed.
+          git add -A data/ company/ brief/ topic/ funding/ sitemap.xml robots.txt index.html companies.html
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: write topic briefs${{ inputs.topic != '' && format(' ({0})', inputs.topic) || '' }}"
+            git push
+            echo "Topic briefs committed."
+          else
+            echo "No changes to publish."
+          fi
