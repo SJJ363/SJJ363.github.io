@@ -173,6 +173,15 @@ const MAX_PARAS = 3;
    overruns is declined and re-asked. */
 const FIRST_SENTENCE_MAX = 155;
 
+/* What the prompt actually asks for, well under the hard cap above.
+   The first live run declined 3 of 14 on the lede guard, and the ten
+   that passed came in at 141, 141, 143, 144, 144, 145, 145, 149, 134,
+   116 — the model aims at whatever ceiling it is given, so a bare
+   "at most 155" puts the whole distribution against the limit and
+   everything that misjudges by a word is discarded. Asking for ~135
+   moves the target, not the guard. */
+const FIRST_SENTENCE_TARGET = 135;
+
 /* How many times a declined topic is re-asked before it is left alone.
 
    profile.js needs no such counter: a profile refreshes whenever the
@@ -207,8 +216,8 @@ The page is ${JSON.stringify(topic.name)}. Below it, the page lists the stories 
 Answer with:
   "known": true or false — see below
   "summary": 1-2 plain sentences, at most ${MAX_SUMMARY} characters total, present tense.
-      The FIRST sentence must define the subject plainly for someone who has never heard of it, and stand on its own in at most ${FIRST_SENTENCE_MAX} characters — it is used by itself as the page's search-result description, so it has to be a complete thought and must not run over.
-  "body": an array of ${MIN_PARAS}-${MAX_PARAS} paragraphs, each ${MIN_PARA}-${MAX_PARA} characters. Suggested shape:
+      The FIRST sentence must define the subject plainly for someone who has never heard of it and stand on its own, because it is used by itself as the page's search-result description. Aim for about ${FIRST_SENTENCE_TARGET} characters. It is DISCARDED if it exceeds ${FIRST_SENTENCE_MAX}, so leave yourself room — write the short version of the definition and put the qualifications in the second sentence.
+  "body": an array of ${MIN_PARAS}-${MAX_PARAS} paragraphs — no more than ${MAX_PARAS}, and each one between ${MIN_PARA} and ${MAX_PARA} characters. The whole answer is discarded if it has too many paragraphs or if any one of them runs long, so keep them tight. Suggested shape:
       1. how it actually works — the mechanics, who the parties are, what changes hands
       2. why it matters in insurance right now, and what the hard parts are
       3. what our coverage of it shows: the kinds of companies active, how the activity has shifted over the period, which neighbouring categories it keeps landing in
