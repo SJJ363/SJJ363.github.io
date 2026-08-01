@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T00:53:07.660Z",
+  "updatedAt": "2026-08-01T01:27:13.188Z",
   "seen": {
     "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZV9JU0NKallDc3lJazZCV05wMmRqbEsyZDZQR2c0eDV2RExvaWRQUHNONldZZl8xVV9qLVFQb1ZJNUFZcnAtN24zNnJzcnhrVGpHUk1oOGVNT2ZSSzJFWDFaclRXMnhhUkJJcUhncktPOVctTzZwSFVBaHVHZ2NaOXgyQllfUQ?oc=5": {
       "title": "QuoteCheck wins Insurance Business 5-star tech nod",
@@ -65044,6 +65044,38 @@
       ],
       "pv": 2,
       "n": 57
+    }
+  },
+  "glossary": {
+    "insurance-broker": {
+      "known": true,
+      "summary": "An insurance broker arranges coverage for a policyholder, shopping terms across insurers rather than representing just one carrier. It acts for the client, unlike an agent who represents an insurer, and is usually paid a commission by the insurer it places business with.",
+      "body": [
+        "The broker sits between a policyholder and the insurers who might cover the risk. Rather than selling one company's policies, it collects quotes from several carriers, compares coverage terms and price, and recommends or places the policy that fits the client's risk. Once bound, the broker typically continues handling renewals, mid-term changes and claims advocacy, acting as the client's point of contact rather than the insurer's.",
+        "Brokerage exists because insurance terms are hard to compare unassisted, especially in commercial and specialty lines where policies are individually negotiated rather than off-the-shelf. The common confusion is with an agent: an agent is appointed by and represents an insurer, while a broker's duty runs to the client even though its commission usually comes from the insurer whose policy is sold. The business itself has been consolidating, with larger brokerages acquiring smaller regional ones.",
+        "In insurance technology, brokerage is what much of the plumbing is built around: broker management systems that store client and policy data, comparison and quoting tools that pull rates from several carriers at once, and newer AI systems that draft submissions, summarize policy wording or recommend coverage during a renewal conversation. Some tools aim to replace the broker's shopping function outright; most are built to make an existing broker faster rather than remove the role."
+      ],
+      "pv": 1
+    },
+    "reinsurance": {
+      "known": true,
+      "summary": "Reinsurance is insurance that insurers buy to shift part of the risk they have underwritten onto another carrier, for a share of the premium. It lets the primary insurer write more business than its own capital could otherwise support, while spreading catastrophic losses across the market.",
+      "body": [
+        "In a reinsurance deal the primary insurer, called the cedent, transfers a defined slice of its policy risk to a reinsurer and pays part of the premium in exchange. The split can be proportional, where the reinsurer takes a fixed share of every policy and its premium, or excess-of-loss, where the reinsurer only pays once losses on a book of business cross an agreed threshold. The original policyholder deals only with the cedent, which keeps handling claims and stays liable to its own customer.",
+        "The purpose is to let an insurer write more business, or riskier business, than its own capital alone could safely support, and to smooth out the effect of a single large event or a bad year. Regulators watch this closely, since a policy that is nominally reinsured but structured so the risk never really leaves the cedent's books can flatter a balance sheet without actually reducing exposure. Solvency II and equivalent regimes exist partly to police that boundary.",
+        "In insurtech, reinsurance shows up as software and data platforms that price treaties, model catastrophe exposure, and automate the flow of premium and claims data between cedent and reinsurer, plus newer capacity vehicles that let alternative capital, not just traditional reinsurers, sit behind a program."
+      ],
+      "pv": 1
+    },
+    "mga": {
+      "known": true,
+      "summary": "A managing general agent, or MGA, is a specialist firm an insurer authorizes to underwrite and bind policies on its behalf. It sits in the chain between the policyholder and the carrier that ultimately carries the risk, usually in a niche line the carrier cannot staff for on its own.",
+      "body": [
+        "A managing general agent takes on underwriting authority normally kept in-house at an insurer: it can quote, price, bind coverage and often handle claims for a defined book of business, under a delegated-authority agreement with the carrier that backs it. The carrier supplies the capacity and remains liable for the risk; the MGA supplies underwriting judgment, distribution relationships and the systems that run daily operations. A policyholder or broker typically deals only with the MGA and may never interact with the carrier standing behind it.",
+        "MGAs exist because a carrier cannot economically build deep expertise and distribution for every specialty line it wants to write, from niche property exposures to narrow liability classes; delegating that work to a focused specialist is often cheaper and faster than doing it in-house. The arrangement is easy to misread as simple brokering, but an MGA carries underwriting authority a broker never holds, and that authority is what makes carrier oversight, audit rights and clear binder terms essential rather than optional.",
+        "In insurance technology, the MGA layer is where a lot of building happens: platforms for submission intake, data interchange with carriers and brokers, and AI tools aimed at pricing and workflow automation are commonly built for or around MGAs rather than for carriers directly. The structure also draws new entrants and consolidation alike, as specialty underwriters launch their own MGAs, established players acquire smaller ones to widen distribution, and some pull back or wind down when a niche does not scale as hoped."
+      ],
+      "pv": 1
     }
   }
 }
