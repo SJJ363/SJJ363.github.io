@@ -81,6 +81,44 @@ const TAXONOMY = [
 
 const FALLBACK_TAG = "Industry";
 
+/* ── The subject a category is *about* ──────────────────────────
+   A category name is a navigation label: it has to be short enough
+   for a chip, a nav row and a badge, so it is "Embedded", "Cyber",
+   "M&A". The subject is the same thing said the way a search for it
+   is typed — "embedded insurance", "cyber insurance", "insurance
+   M&A" — and that is what the hub's <title>, <h1> and JSON-LD
+   `about` need, because a page whose largest heading is the single
+   word "Embedded" gives a definitional query nothing to match.
+
+   Curated and hand-verified rather than derived, on the reasoning
+   CANON_LIST carries in companies.js: fourteen entries, each one a
+   phrase that has to read naturally in a page title, and no rule
+   turns "M&A" into "insurance M&A" without also turning "Cyber"
+   into "insurance cyber". Stability matters as much as accuracy —
+   these strings are the titles crawlers have already filed, so they
+   should change when the subject does and not otherwise.
+
+   Anything missing falls back to the category name, so a new
+   category renders exactly as every hub did before this existed. */
+const SUBJECTS = {
+  "Funding": "Insurtech funding",
+  "M&A": "Insurance M&A",
+  "Partnerships": "Insurance partnerships",
+  "Product & Launches": "Insurance product launches",
+  "AI & Automation": "AI in insurance",
+  "Embedded": "Embedded insurance",
+  "Cyber": "Cyber insurance",
+  "Claims & Underwriting": "Insurance claims and underwriting",
+  "Health & Life": "Health and life insurance",
+  "Auto & Mobility": "Auto insurance and mobility",
+  "Property & Cat": "Property and catastrophe insurance",
+  "Regulation": "Insurance regulation",
+  "Leadership": "Insurance leadership moves",
+  "Industry": "Insurtech",
+};
+
+const subjectOf = (name) => SUBJECTS[name] || String(name);
+
 function tagArticle(text) {
   const tags = TAXONOMY.filter(([, re]) => re.test(text)).map(([name]) => name);
   return tags.length ? tags : [FALLBACK_TAG];
@@ -99,4 +137,4 @@ const topicSlug = (name) =>
     .trim()
     .replace(/\s+/g, "-");
 
-module.exports = { TAXONOMY, FALLBACK_TAG, tagArticle, topicSlug };
+module.exports = { TAXONOMY, FALLBACK_TAG, SUBJECTS, subjectOf, tagArticle, topicSlug };

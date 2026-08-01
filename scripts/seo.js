@@ -24,7 +24,7 @@
 const fs = require("fs");
 const path = require("path");
 const { admits } = require("./relevance");
-const { TAXONOMY, FALLBACK_TAG, tagArticle, topicSlug } = require("./taxonomy");
+const { TAXONOMY, FALLBACK_TAG, tagArticle, topicSlug, subjectOf } = require("./taxonomy");
 const { fundingDeals } = require("./funding");
 const { cardFor, W: OG_W, H: OG_H } = require("./og");
 
@@ -197,7 +197,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=28" />
+  <link rel="stylesheet" href="/style.css?v=29" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -1102,14 +1102,32 @@ const STORY_CAP = 60; // page weight guard; the count in the statline is the tru
    the two original blocks on this site read as one thing and share the
    phone breakpoint, rather than forking a near-identical paragraph
    style the way the funding tables nearly did (rule 3a-i). */
+/* The explainer that leads a hub.
+
+   Two cached shapes render here and both must keep working. v2 briefs
+   are `sections` — a heading and a paragraph each, written as real h2s
+   so the page reads as a reference article rather than a lede above a
+   wire. v1 briefs are a flat `body` array of paragraphs with no
+   headings, and they do not disappear on the version bump: a topic
+   whose rewrite is declined deliberately keeps its published v1 prose
+   (see the loop in topic-brief.js), which may be months. Dropping the
+   `body` branch would blank those hubs, which is the outcome the
+   decline guard exists to prevent. */
 function topicBriefBlock(topic, brief) {
   if (!brief || !brief.known || !brief.summary) return "";
-  const paras = (brief.body || [])
-    .map((p) => `      <p class="co-desc">${escHtml(p)}</p>`)
-    .join("\n");
+
+  const blocks = Array.isArray(brief.sections) && brief.sections.length
+    ? brief.sections
+        .map(
+          (s) => `      <h2 class="brief-h">${escHtml(s.heading)}</h2>
+      <p class="co-desc">${escHtml(s.text)}</p>`
+        )
+        .join("\n")
+    : (brief.body || []).map((p) => `      <p class="co-desc">${escHtml(p)}</p>`).join("\n");
+
   return `    <section class="topic-brief">
       <p class="co-desc topic-lede">${escHtml(brief.summary)}</p>
-${paras}
+${blocks}
       <p class="co-attrib">Written by ${escHtml(SITE.name)} from the coverage below.</p>
     </section>`;
 }
@@ -1145,7 +1163,19 @@ function topicPageHtml(topic, allTopics, db, deals = [], brief = null) {
   for (const a of topic.articles) if (a.source) srcMap.set(a.source, (srcMap.get(a.source) || 0) + 1);
   const sources = [...srcMap.entries()].sort((x, y) => y[1] - x[1]).slice(0, 10);
 
-  const title = `${topic.name} — insurtech news & coverage | ${SITE.name}`;
+  /* Title and h1 name the *subject*, not the category label. "Embedded"
+     is a nav chip; "Embedded insurance" is what the query says, and a
+     page whose h1 is one word and whose title says "news & coverage"
+     reads as a wire to a reader looking for a definition — which is the
+     query these hubs are actually placed on (rule 3d-i). "Explained"
+     only appears once there is an explainer to justify it; without a
+     brief the page falls back to what it always said, so the title can
+     never over-promise prose the page does not carry. */
+  const subject = subjectOf(topic.name);
+  const explained = !!(brief && brief.known && brief.summary);
+  const title = explained
+    ? `${subject} explained — companies, deals and latest news | ${SITE.name}`
+    : `${subject} — insurtech news & coverage | ${SITE.name}`;
   /* The brief's opening sentence is a definition of the subject, which
      is both what the evergreen query for this page is asking for and the
      only description here that isn't the same template as the other
@@ -1164,7 +1194,7 @@ function topicPageHtml(topic, allTopics, db, deals = [], brief = null) {
   const collectionLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: `${topic.name} — insurtech coverage`,
+    name: `${subject} — insurtech coverage`,
     url: url(canonical),
     description: clamp(description),
     isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
@@ -1174,10 +1204,12 @@ function topicPageHtml(topic, allTopics, db, deals = [], brief = null) {
     // insurance is", and the latter is what this hub is for.
     about: {
       "@type": "Thing",
-      name: topic.name,
-      ...(brief && brief.known && brief.summary ? { description: clamp(brief.summary, 300) } : {}),
+      // The subject, for the same reason the h1 uses it: "Embedded" is
+      // this site's filing label, "Embedded insurance" is the thing.
+      name: subject,
+      ...(explained ? { description: clamp(brief.summary, 300) } : {}),
     },
-    mainEntity: itemListLd(`${topic.name} coverage`, topic.articles, 50),
+    mainEntity: itemListLd(`${subject} coverage`, topic.articles, 50),
   };
   const crumbLd = breadcrumbLd([
     { name: "Home", path: "/" },
@@ -1249,7 +1281,7 @@ function topicPageHtml(topic, allTopics, db, deals = [], brief = null) {
     canonical,
     // One card per hub, keyed on the same slug that built the URL.
     ogImage: cardFor(`topic-${topic.slug}`),
-    imageAlt: `${topic.name} — insurtech coverage on ${SITE.name}`,
+    imageAlt: `${subject} — insurtech coverage on ${SITE.name}`,
     jsonld: [collectionLd, crumbLd],
   })}
 <body>
@@ -1260,7 +1292,7 @@ ${header("topics", topic.slug)}
 
     <div class="intro co-head">
       <p class="co-kicker">Topic</p>
-      <h1 class="tagline">${escHtml(topic.name)}</h1>
+      <h1 class="tagline">${escHtml(subject)}</h1>
       <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
     </div>
 
@@ -1271,7 +1303,7 @@ ${trackerCue}
 ${facts}
 
     <h2 class="section-label">Coverage</h2>
-    <ol class="feed" aria-label="${escAttr(topic.name)} coverage">
+    <ol class="feed" aria-label="${escAttr(subject)} coverage">
 ${shown.map(companyArticleLi).join("\n")}
     </ol>
 ${more}
@@ -1341,7 +1373,7 @@ function topicIndexHtml(topics, briefs = {}) {
             )}</span>`
           : ""
       }</div>
-          <h2>${escHtml(t.name)}</h2>
+          <h2>${escHtml(subjectOf(t.name))}</h2>
           ${blurb ? `<p class="summary">${escHtml(blurb)}</p>` : ""}
         </a>
       </li>`;

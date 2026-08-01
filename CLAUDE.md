@@ -715,7 +715,43 @@ produce all of that consistently — **route new pages through them.**
    queries that don't depend on this week's news. All fourteen also
    shared one meta-description template, the same near-duplication the
    profiles removed from ~945 company pages.
-   Five rules:
+   Seven rules:
+   • **The page is named for its subject, not for its filing label.**
+     `SUBJECTS` in `taxonomy.js` maps each category to the phrase the
+     query is typed as — Embedded → "Embedded insurance", M&A →
+     "Insurance M&A" — and `seo.js` uses it for the `<title>`, the
+     `h1`, the JSON-LD `about.name`, the OG alt text and the row
+     headings on `/topic/`. A category name has to fit a nav chip and a
+     badge, so it is one or two words; an `h1` reading "Embedded" over
+     a title reading "news & coverage" offers a definitional query
+     nothing to match, and no amount of prose underneath fixes the
+     largest heading on the page. Curated and hand-verified for the
+     reason `CANON_LIST` is (rule 3c-i): no rule turns "M&A" into
+     "insurance M&A" without turning "Cyber" into "insurance cyber",
+     and these strings are titles crawlers have already filed, so they
+     should move when the subject does and not otherwise. Anything
+     missing falls back to the category name. The title only says
+     "explained" when a brief actually exists — the fallback title is
+     the old one, so the page can never promise prose it isn't
+     carrying.
+   • **The brief is sectioned, and the headings are the model's.** The
+     answer is a `sections` array — a heading and a paragraph each,
+     `MIN_SECTIONS`–`MAX_SECTIONS` of them, rendered as real `h2`s —
+     which roughly doubles the prose (~250 words to ~400–600) and
+     gives the page the shape of a reference article rather than a
+     lede above a wire. The headings are written per topic rather than
+     fixed here, because a fixed set ("How it works", "Why it
+     matters") is a template on fourteen pages, which is the
+     near-duplication this whole step exists to remove; `normalise()`
+     rejects a heading that duplicates another or collides with one of
+     the page's own (`Coverage`, the three fact labels), since two
+     identical `h2`s with different content under them is the one
+     structural error a reader sees immediately.
+     **`topicBriefBlock()` renders the older flat `body` shape too, and
+     must keep doing so** — a declined rewrite deliberately keeps the
+     published brief, so a v1 entry can outlive the bump that
+     introduced sections by a whole growth window. Dropping that branch
+     blanks exactly the hubs the decline guard exists to protect.
    • **Definition from knowledge, activity from the archive.** Same
      split as rule 3a-ii and for the same reason. The model explains
      the concept from what it knows — that is what the page is *for*,
@@ -750,6 +786,18 @@ produce all of that consistently — **route new pages through them.**
      `stale()` also re-asks a declined topic until `MAX_TRIES` (3)
      attempts, bounded because three runs a day times fourteen topics is
      a lot of re-asking a question already answered.
+     **`MAX_TRIES` has to bound the kept-brief path as well, and only a
+     version bump makes that visible.** `stale()` asks about
+     `PROMPT_VERSION` first, so a brief kept after a declined rewrite —
+     still stamped with the *old* version — is due again on every run,
+     and the try counter never stops it because that counter is only
+     consulted for a topic which has never had a brief. Under one
+     prompt version this is invisible; under a bump whose new shape an
+     answer keeps missing it is fourteen calls a run, indefinitely. So
+     after `MAX_TRIES` the kept brief takes the **current** version
+     stamp: the prose stays exactly as published, and the stamp records
+     which prompt last had a go at it rather than what wrote it. Shape
+     is therefore read from the entry, never inferred from `pv`.
    • **The lede budget is enforced here, not just requested.** The
      opening sentence is both the page's definition and its meta
      description, and `descFromProfile()` hands back the raw summary

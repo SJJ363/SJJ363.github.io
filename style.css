@@ -978,6 +978,20 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
 .topic-brief .co-desc + .co-desc { margin-top: 13px; }
 .topic-lede { font-size: 1.14rem; line-height: 1.5; color: var(--ink); }
 
+/* Section headings inside the explainer. Sized *below* .section-label
+   ("Coverage") on purpose: these are subheads within one article, and
+   the page's real divisions are still the explainer, the facts and the
+   coverage list. Left as ordinary sentence case rather than the tracked
+   uppercase used for a section label, since these are written sentences
+   and small caps make a written heading read like a form field. */
+.brief-h {
+  margin: 22px 0 7px; max-width: 62ch;
+  font-family: var(--sans);
+  font-size: 0.98rem; font-weight: 650; line-height: 1.35;
+  letter-spacing: -0.005em; color: var(--ink);
+}
+.topic-brief .co-desc + .brief-h { margin-top: 22px; }
+
 /* Pointer from the funding hub across to the tracker. */
 .topic-cue {
   margin: 20px 0 0; padding: 13px 16px;

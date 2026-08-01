@@ -31,6 +31,29 @@
    is the same near-duplication the profile work removed from ~945
    company pages.
 
+   WHY IT IS SECTIONED, AND WHY IT IS LONGER THAN A LEDE
+
+   The first version wrote a summary and three flat paragraphs — about
+   250 words with no internal structure, sitting above sixty headlines
+   under an h1 reading "Embedded" and a title reading "Embedded —
+   insurtech news & coverage". Every signal on that page except the
+   prose said *news index*, which is the wrong page for the query it is
+   pointed at: someone searching "what is embedded insurance" is offered
+   a taxonomy label and a wire.
+
+   So the answer is now a `sections` array — a heading and a paragraph
+   each, MIN_SECTIONS to MAX_SECTIONS of them — rendered as real h2s,
+   which roughly doubles the prose and gives the page the shape of a
+   reference article rather than an intro paragraph. The headings are
+   written by the model rather than fixed here, because a fixed set
+   ("How it works", "Why it matters") is a template on fourteen pages,
+   which is the near-duplication this whole step exists to remove.
+
+   The other half of the fix is not in this file: seo.js now titles and
+   headlines the page with the *subject* rather than the category label
+   (taxonomy.js's SUBJECTS). Prose alone could not fix an h1 reading
+   "Cyber", and the h1 was doing more damage than the word count.
+
    WHAT THE MODEL MAY AND MAY NOT SAY
 
    The split is profile.js's, for the same reason: a wrong sentence in
@@ -75,6 +98,14 @@
    `funding` and `profiles` are, plus `n` — the story count the brief
    was written from.
 
+   Two shapes live in this cache at once, and that is not a migration
+   waiting to happen. A PROMPT_VERSION bump rewrites every topic, but
+   only as each one is asked and only if it answers — and a declined
+   rewrite deliberately keeps the published brief (see the loop in
+   main()), which may be v1 for another season. So topicBriefBlock() in
+   seo.js renders `sections` and the older flat `body` both, and will
+   keep doing so as long as one hub is still carrying the old shape.
+
    The refresh rule is the one real departure from profile.js. A
    profile is rewritten when the company gains *any* newer coverage,
    which is affordable because ~15 companies move in a day. A topic
@@ -104,7 +135,7 @@ const fs = require("fs");
 const path = require("path");
 const { claudeAvailable, callClaude, parseJsonObject } = require("./claude");
 const { admits } = require("./relevance");
-const { tagArticle, topicSlug, TAXONOMY } = require("./taxonomy");
+const { tagArticle, topicSlug, subjectOf, TAXONOMY } = require("./taxonomy");
 
 const ROOT = path.join(__dirname, "..");
 const STORE = path.join(ROOT, "data", "companies-store.json");
@@ -113,7 +144,7 @@ const DB = path.join(ROOT, "data", "companies.json");
 // Bump when the prompt changes so cached briefs are rewritten. A bump
 // re-runs all fifteen topics — one call each, so the whole backfill is
 // fifteen calls and needs no --limit.
-const PROMPT_VERSION = 1;
+const PROMPT_VERSION = 2;
 
 /* Rewrite when the topic has grown to GROWTH times the count the brief
    was written from AND by at least MIN_GROWTH stories — whichever
@@ -134,7 +165,7 @@ const GROWTH = 1.25;
 const MIN_GROWTH = 8;
 
 /* One topic per call, against profile.js's twelve companies. Each answer
-   here is three paragraphs rather than two sentences and each question
+   here is a sectioned article rather than two sentences and each question
    carries EVIDENCE_MAX headlines rather than twelve, so a chunk of even
    two would be a long enough reply to risk truncation — and a truncated
    reply is thrown away whole, taking the other topic with it. Fifteen
@@ -152,10 +183,30 @@ const EVIDENCE_MAX = 28;
 const RECENT_SHARE = 0.5;
 
 const MAX_SUMMARY = 340;
-const MAX_PARA = 520;
-const MIN_PARA = 90;
-const MIN_PARAS = 2;
-const MAX_PARAS = 3;
+
+/* One heading and one paragraph per section. Three sections is a
+   complete explainer — what it is, how it works, what is happening —
+   and four is the most this page can carry before the coverage list it
+   introduces is pushed off the screen entirely.
+
+   The paragraph floor is what makes a section worth a heading: under
+   MIN_SECTION a heading introduces two sentences and the page reads as
+   a form rather than an article. The ceiling is the same judgement the
+   first version made at 520, loosened because a section now has a
+   heading carrying part of its work.
+
+   Together: roughly 400-600 words of prose, against ~250 before. */
+const MIN_SECTIONS = 3;
+const MAX_SECTIONS = 4;
+const MIN_SECTION = 260;
+const MAX_SECTION = 760;
+
+/* Long enough for "How embedded insurance is actually sold", short
+   enough that it cannot be a sentence with a claim in it. A heading is
+   rendered as an h2 and is the part of this page most likely to be
+   lifted into a search result on its own. */
+const MAX_HEADING = 62;
+const MIN_HEADING = 8;
 
 /* Same budget and same reason as profile.js: the first sentence is used
    by itself as the meta description, a result cuts at ~158 characters,
@@ -211,16 +262,24 @@ function buildPrompt(topic) {
 
   return `You write the standing explainer that leads a topic page on an insurtech news archive.
 
-The page is ${JSON.stringify(topic.name)}. Below it, the page lists the stories we hold in this category. Your text sits at the top and answers "what is this, and what is actually happening in it" for a reader who arrived from a search engine and may know nothing about the subject.
+The subject is ${JSON.stringify(topic.subject)}. Below your text, the page lists the ${topic.n} stories we hold on it. Your text is the top half of the page and answers "what is this, and what is actually happening in it" for a reader who arrived from a search engine and may know nothing about the subject.
+
+Write it as a short reference article, not an introduction to a list.
 
 Answer with:
   "known": true or false — see below
   "summary": 1-2 plain sentences, at most ${MAX_SUMMARY} characters total, present tense.
-      The FIRST sentence must define the subject plainly for someone who has never heard of it and stand on its own, because it is used by itself as the page's search-result description. Aim for about ${FIRST_SENTENCE_TARGET} characters. It is DISCARDED if it exceeds ${FIRST_SENTENCE_MAX}, so leave yourself room — write the short version of the definition and put the qualifications in the second sentence.
-  "body": an array of ${MIN_PARAS}-${MAX_PARAS} paragraphs — no more than ${MAX_PARAS}, and each one between ${MIN_PARA} and ${MAX_PARA} characters. The whole answer is discarded if it has too many paragraphs or if any one of them runs long, so keep them tight. Suggested shape:
-      1. how it actually works — the mechanics, who the parties are, what changes hands
-      2. why it matters in insurance right now, and what the hard parts are
-      3. what our coverage of it shows: the kinds of companies active, how the activity has shifted over the period, which neighbouring categories it keeps landing in
+      The FIRST sentence must define ${JSON.stringify(topic.subject)} plainly for someone who has never heard of it and stand on its own, because it is used by itself as the page's search-result description. Aim for about ${FIRST_SENTENCE_TARGET} characters. It is DISCARDED if it exceeds ${FIRST_SENTENCE_MAX}, so leave yourself room — write the short version of the definition and put the qualifications in the second sentence.
+  "sections": an array of ${MIN_SECTIONS}-${MAX_SECTIONS} objects, each with:
+      "heading": ${MIN_HEADING}-${MAX_HEADING} characters, sentence case, no full stop. It is rendered as a real heading, so make it say what the section answers — "How a policy actually gets sold at checkout", "What makes it hard to underwrite", "Where the activity sits today". Write your own; do not reuse a generic set.
+      "text": one paragraph, between ${MIN_SECTION} and ${MAX_SECTION} characters.
+    The whole answer is discarded if there are too many sections or if any paragraph falls outside that range, so count before you answer.
+
+    Cover this ground, in this order, one section each — merge or split as the subject needs:
+      1. how it actually works — the mechanics, who the parties are, what changes hands, the vocabulary a reader will meet elsewhere
+      2. why it matters in insurance now, and what the genuinely hard parts are
+      3. what the coverage below shows: the kinds of companies active, how the activity has shifted over the period, which neighbouring subjects it keeps landing in
+    A fourth is worth using when the subject has a real division inside it — the main varieties, the difference between two things readers confuse, or how it differs by market.
 
 WHAT YOU MAY USE
 
@@ -254,7 +313,7 @@ Headlines we hold, newest first then spread across the whole period:
 ${headlines}
 
 Respond with ONLY a JSON object. No commentary. Example:
-{"known": true, "summary": "Embedded insurance is cover sold inside another company's product or checkout, so the customer buys it from a retailer, bank or travel site rather than from an insurer.", "body": ["The insurer or MGA supplies the underwriting and an API; the host brand supplies the customer and the moment of sale...", "For carriers the appeal is distribution without acquisition spend...", "Activity here sits mostly with intermediaries rather than balance-sheet carriers..."]}`;
+{"known": true, "summary": "Embedded insurance is cover sold inside another company's product or checkout, so the customer buys it from a retailer, bank or travel site rather than from an insurer.", "sections": [{"heading": "How a policy gets sold at checkout", "text": "The insurer or MGA supplies the underwriting and an API; the host brand supplies the customer and the moment of sale..."}, {"heading": "Why carriers want the distribution", "text": "For carriers the appeal is reach without acquisition spend..."}, {"heading": "Where the activity sits today", "text": "Most of it runs through intermediaries rather than balance-sheet carriers..."}]}`;
 }
 
 const MARKETING =
@@ -299,18 +358,34 @@ function normalise(raw) {
   if (summary.length < 60 || summary.length > MAX_SUMMARY) return { known: false, ...base };
   if (ledeLength(summary) > FIRST_SENTENCE_MAX) return { known: false, reason: "lede", ...base };
 
-  const body = (Array.isArray(raw.body) ? raw.body : [])
-    .map((p) => String(p || "").replace(/\s+/g, " ").trim())
-    .filter(Boolean);
-  if (body.length < MIN_PARAS || body.length > MAX_PARAS) return { known: false, reason: "shape", ...base };
-  if (body.some((p) => p.length < MIN_PARA || p.length > MAX_PARA))
+  const sections = (Array.isArray(raw.sections) ? raw.sections : [])
+    .map((s) => ({
+      heading: String((s && s.heading) || "").replace(/\s+/g, " ").trim().replace(/[.:]$/, ""),
+      text: String((s && s.text) || "").replace(/\s+/g, " ").trim(),
+    }))
+    .filter((s) => s.heading && s.text);
+  if (sections.length < MIN_SECTIONS || sections.length > MAX_SECTIONS)
+    return { known: false, reason: "shape", ...base };
+  if (sections.some((s) => s.heading.length < MIN_HEADING || s.heading.length > MAX_HEADING))
+    return { known: false, reason: "heading", ...base };
+  if (sections.some((s) => s.text.length < MIN_SECTION || s.text.length > MAX_SECTION))
     return { known: false, reason: "shape", ...base };
 
-  const all = [summary, ...body].join(" ");
+  /* Headings are checked for duplication against each other because a
+     repeated h2 is the one structural error a reader sees immediately,
+     and the page already owns "Coverage" and the three fact labels — a
+     brief heading colliding with one of those puts two identical h2s on
+     the page with different content under them. */
+  const taken = new Set(["coverage", "most active here", "often alongside", "reported by"]);
+  const keys = sections.map((s) => s.heading.toLowerCase());
+  if (keys.some((k, i) => taken.has(k) || keys.indexOf(k) !== i))
+    return { known: false, reason: "heading", ...base };
+
+  const all = [summary, ...sections.flatMap((s) => [s.heading, s.text])].join(" ");
   if (STATISTIC.test(all)) return { known: false, reason: "statistic", ...base };
   if (MARKETING.test(all)) return { known: false, reason: "marketing", ...base };
 
-  return { known: true, summary, body, ...base };
+  return { known: true, summary, sections, ...base };
 }
 
 function loadJSON(file, fallback) {
@@ -403,6 +478,9 @@ function collectTopics(store, db) {
 
       return {
         name,
+        // What the page is titled and headlined with, and therefore what
+        // the brief must define — "Embedded insurance", not "Embedded".
+        subject: subjectOf(name),
         slug: topicSlug(name),
         n: articles.length,
         companies,
@@ -493,7 +571,12 @@ function main() {
       // A good answer replaces whatever was there and clears the counter.
       store.topics[t.slug] = { ...fresh, n: t.n };
       wrote++;
-      console.log(`  ✓ ${t.name} (${t.n} stories)`);
+      const words = [fresh.summary, ...fresh.sections.map((s) => s.text)]
+        .join(" ")
+        .split(/\s+/).length;
+      console.log(
+        `  ✓ ${t.subject} — ${fresh.sections.length} sections, ~${words} words (${t.n} stories)`
+      );
       continue;
     }
 
@@ -513,10 +596,28 @@ function main() {
     declined++;
     const tries = ((prev || {}).tries || 0) + 1;
     if (prev && prev.known) {
-      store.topics[t.slug] = { ...prev, n: t.n, tries };
+      /* MAX_TRIES has to bound this path too, and only a version bump
+         makes that visible. `stale()` asks about the prompt version
+         first, so a kept brief still stamped with the *old* version is
+         due for a rewrite on every run — and the try counter, which is
+         only consulted for a topic that has never had a brief, never
+         stops it. Under a single prompt version that is invisible;
+         under a bump whose new shape an answer keeps missing it is
+         fourteen calls a run, three runs a day, indefinitely.
+
+         So after MAX_TRIES the kept brief takes the *current* version
+         stamp: we asked at this version, we did not get an answer worth
+         publishing, and we stop asking until the topic grows or the
+         prompt moves again. The prose stays exactly as published — the
+         stamp records which prompt last had a go at it, not what wrote
+         it, and the shape is read from the entry rather than the
+         version (topicBriefBlock() renders both). */
+      const spent = tries >= MAX_TRIES;
+      store.topics[t.slug] = { ...prev, n: t.n, tries, ...(spent ? { pv: PROMPT_VERSION } : {}) };
       console.log(
         `  – ${t.name}: rewrite declined${fresh.reason ? ` (${fresh.reason})` : ""}` +
-          ` — keeping the published brief`
+          ` — keeping the published brief` +
+          (spent ? ` (attempt ${tries} of ${MAX_TRIES} — no more rewrites at this prompt)` : "")
       );
     } else {
       store.topics[t.slug] = { ...fresh, n: t.n, tries };
