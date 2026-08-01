@@ -259,6 +259,19 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: node scripts/topic-brief.js || echo "Topic brief writer failed — hubs render without a brief."
 
+      # Last, and the cheapest step here by some distance: a definition is
+      # written once and never refreshed on growth, since what a term means
+      # does not change when eleven more headlines mention it. Steady state
+      # is zero calls — this fires only for a term newly over the coverage
+      # floor, or after a TERMS/prompt change. Softest failure of the six
+      # too: no definition simply means no page, and nothing that already
+      # existed is removed.
+      - name: Write glossary definitions
+        if: steps.plan.outputs.run == 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: node scripts/glossary-write.js || echo "Glossary writer failed — unwritten terms get no page."
+
       # Only exists when the enhancement fell back. Holds the raw model reply
       # and the guard that rejected it — the evidence that shouldn't ship to
       # the site. The short reason code is also committed into news.json.
@@ -289,7 +302,7 @@ jobs:
           # dirty in the runner and never pushed, so the live page silently
           # freezes while sitemap.xml keeps advertising it as fresh. `funding/`
           # covers the month pages too, once collectMonths() starts returning any.
-          git add -A data/ company/ brief/ topic/ funding/ sitemap.xml robots.txt index.html companies.html
+          git add -A data/ company/ brief/ topic/ funding/ glossary/ sitemap.xml robots.txt index.html companies.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh insurtech news (${{ steps.plan.outputs.slot }} CT ${{ steps.plan.outputs.date }})"
             git push

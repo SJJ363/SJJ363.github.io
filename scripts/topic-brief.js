@@ -646,6 +646,7 @@ function main() {
     funding: store.funding || {},
     profiles: store.profiles || {},
     topics: store.topics,
+    glossary: store.glossary || {},
   }, null, 2));
 
   const total = Object.values(store.topics).filter((t) => t.known).length;
@@ -657,4 +658,12 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { normalise, buildPrompt, collectTopics, sampleEvidence, stale, PROMPT_VERSION };
+/* STATISTIC and MARKETING are exported for glossary-write.js, which
+   guards the same kind of prose against the same two failures. Shared
+   rather than copied for taxonomy.js's reason: two regexes with one
+   job drift, and the drift is silent — the looser copy simply starts
+   publishing what the stricter one rejects. */
+module.exports = {
+  normalise, buildPrompt, collectTopics, sampleEvidence, stale,
+  STATISTIC, MARKETING, PROMPT_VERSION,
+};

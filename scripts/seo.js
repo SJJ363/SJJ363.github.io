@@ -26,6 +26,12 @@ const path = require("path");
 const { admits } = require("./relevance");
 const { TAXONOMY, FALLBACK_TAG, tagArticle, topicSlug, subjectOf } = require("./taxonomy");
 const { fundingDeals } = require("./funding");
+const {
+  collectTerms: collectGlossaryTerms,
+  indexableTerm,
+  MIN_STORIES: GLOSSARY_MIN_STORIES,
+  STORY_CAP: GLOSSARY_STORY_CAP,
+} = require("./glossary");
 const { cardFor, W: OG_W, H: OG_H } = require("./og");
 
 const ROOT = path.join(__dirname, "..");
@@ -197,7 +203,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=29" />
+  <link rel="stylesheet" href="/style.css?v=30" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -351,11 +357,22 @@ ${navMarkup(active, currentTopic)}
   </header>`;
 }
 
+/* The glossary is linked from here rather than from the nav, and that
+   is a constraint rather than a preference: five items is what the
+   375px and 360px rows in style.css are measured for (rule 2b), and a
+   sixth needs those breakpoints re-measured, not assumed. The footer
+   is on every generated page, so one link here is a route from
+   everywhere — which is what a hub with no nav slot needs to be
+   crawlable at all. Same reasoning as /funding/companies/, which is
+   reached from the tracker index and the company blocks. */
 const FOOTER = `  <footer class="site-footer">
     <p class="foot-desc">
       <b>Insurtech Daily</b> is an aggregator of publicly available insurtech headlines.
       Every story links to its original source.
     </p>
+    <p class="foot-links"><a href="/glossary/">Insurance glossary</a> ·
+      <a href="/funding/companies/">Most funded companies</a> ·
+      <a href="/topic/">All topics</a></p>
     <p class="foot-meta">© ${new Date().getFullYear()}</p>
   </footer>`;
 
@@ -1438,6 +1455,295 @@ function buildTopicPages(topics, db, deals = [], briefs = {}) {
   console.log(
     `  ✓ ${topics.length} topic pages under /topic/ + index (${written} with a brief)`
   );
+}
+
+/* ══════════════════════════════════════════════════════════════
+   THE GLOSSARY — /glossary/ + /glossary/<term>/
+
+   The only page type here aimed squarely at a question that has
+   nothing to do with this week. A company page can win "<name>
+   funding", a month page "insurtech funding August 2025", a hub
+   "what is embedded insurance" — this one answers "what is an MGA",
+   which is asked at the same rate every month of every year.
+
+   What makes it more than a dictionary entry is the pair: a
+   definition nobody else wrote, above the archive's own coverage of
+   the term. Reference sites define an MGA better than this site ever
+   will and have a decade of authority doing it; none of them can put
+   twenty-five MGA headlines from the last two years underneath. That
+   pairing is also why the page is gated on coverage rather than on
+   having a definition — see indexableTerm() in glossary.js, and the
+   measurement in its header for why the term list is short.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Claude's per-term definitions, written by glossary-write.js. Empty
+   is valid and means no term pages are built at all — the same
+   fail-soft contract topicBriefs() and companyProfiles() have. */
+function glossaryDefs() {
+  try {
+    return JSON.parse(fs.readFileSync(STORE, "utf8")).glossary || {};
+  } catch {
+    return {};
+  }
+}
+
+/* The whole store, for collectTerms() — which does its own relevance
+   filtering (rule 3c-ii) and needs the raw `seen` map, not the shaped
+   article list storeArticles() returns here. */
+function rawStore() {
+  try {
+    return JSON.parse(fs.readFileSync(STORE, "utf8"));
+  } catch {
+    return { seen: {} };
+  }
+}
+
+function glossaryPageHtml(t, def, allTerms, db) {
+  const canonical = `/glossary/${t.slug}/`;
+  const heading = t.full && t.full.toLowerCase() !== t.term.toLowerCase()
+    ? `${t.term} (${t.full})`
+    : t.term;
+  const n = t.n;
+  const word = n === 1 ? "story" : "stories";
+  const indexed = indexableTerm(t);
+
+  /* "X explained", the same formula the hubs use, rather than "What is
+     X?" — which needs an article the term list does not carry and
+     produces "What is MGA?" for every initialism in it. Deriving the
+     article is not worth 28 hand-written strings when the phrasing
+     below matches the same intent and reads correctly for all of
+     them. */
+  const title = `${t.term} explained — definition and insurtech coverage | ${SITE.name}`;
+  const description = descFromProfile(def.summary);
+
+  /* The companies named in the stories that matched, resolved against
+     the finished index the way every company link on this site must be
+     (rule 3c-iv) — a raw extraction name skips canonicalisation and
+     JUNK, and seo.js prunes any /company/<slug>/ without a record, so
+     trusting it puts dead links on the page. */
+  const bySlug = new Map((db.companies || []).map((c) => [c.slug, c]));
+  const links = new Set(t.articles.map((a) => a.link));
+  const counts = new Map();
+  for (const c of db.companies || []) {
+    const hits = (c.articles || []).filter((a) => links.has(a.link)).length;
+    if (hits) counts.set(c.slug, hits);
+  }
+  const companies = [...counts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 12)
+    .map(([slug]) => bySlug.get(slug))
+    .filter(Boolean);
+
+  const hub = t.topic ? { name: t.topic, slug: topicSlug(t.topic) } : null;
+  const shown = t.articles.slice(0, GLOSSARY_STORY_CAP);
+
+  const defLd = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: t.term,
+    ...(t.full ? { alternateName: t.full } : {}),
+    description: clamp(def.summary, 300),
+    url: url(canonical),
+    inDefinedTermSet: { "@type": "DefinedTermSet", name: `${SITE.name} insurance glossary`, url: url("/glossary/") },
+  };
+  const pageLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: `${t.term} — definition and coverage`,
+    url: url(canonical),
+    description: clamp(description),
+    isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
+    ...(shown.length ? { mainEntity: itemListLd(`${t.term} coverage`, t.articles, 30) } : {}),
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Glossary", path: "/glossary/" },
+    { name: t.term, path: canonical },
+  ]);
+
+  const paras = (def.body || [])
+    .map((p) => `      <p class="co-desc">${escHtml(p)}</p>`)
+    .join("\n");
+
+  const related = allTerms
+    .filter((o) => o.slug !== t.slug && o.topic === t.topic && (o.def || {}).known)
+    .slice(0, 6);
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    // Thin terms are built and linked but kept out of the index, the
+    // same split rule 3a makes for company pages.
+    robots: indexed
+      ? "index, follow, max-image-preview:large, max-snippet:-1"
+      : "noindex, follow",
+    ogImage: cardFor("glossary"),
+    imageAlt: `${t.term} — insurance glossary on ${SITE.name}`,
+    jsonld: [defLd, pageLd, crumbLd],
+  })}
+<body>
+${header("glossary")}
+
+  <main id="top">
+    <p class="crumb"><a href="/glossary/">← Glossary</a></p>
+
+    <div class="intro co-head">
+      <p class="co-kicker">Term</p>
+      <h1 class="tagline">${escHtml(heading)}</h1>
+      <p class="statline">${escHtml(
+        n ? `${n} ${word} in our archive mention it` : "Definition · no coverage in our archive yet"
+      )}</p>
+    </div>
+
+    <section class="topic-brief">
+      <p class="co-desc topic-lede">${escHtml(def.summary)}</p>
+${paras}
+      <p class="co-attrib">Written by ${escHtml(SITE.name)}.</p>
+    </section>
+
+${hub ? `    <p class="topic-cue">For the running coverage rather than the definition, see the
+      <a href="/topic/${escAttr(hub.slug)}/">${escHtml(subjectOf(hub.name))} hub</a>.</p>` : ""}
+
+${companies.length ? `    <section class="co-facts">
+      <div class="co-fact">
+        <h2 class="fact-label">Companies in these stories</h2>
+        <div class="badges">${companies
+          .map((c) => `<a class="company-badge" href="/company/${escAttr(c.slug)}/">${escHtml(c.name)}</a>`)
+          .join("")}</div>
+      </div>${related.length ? `
+      <div class="co-fact">
+        <h2 class="fact-label">Related terms</h2>
+        <div class="badges">${related
+          .map((o) => `<a class="company-badge" href="/glossary/${escAttr(o.slug)}/">${escHtml(o.term)}</a>`)
+          .join("")}</div>
+      </div>` : ""}
+    </section>` : ""}
+
+${shown.length ? `    <h2 class="section-label">${escHtml(t.term)} in the news</h2>
+    <ol class="feed" aria-label="${escAttr(t.term)} coverage">
+${shown.map(companyArticleLi).join("\n")}
+    </ol>${
+      n > shown.length
+        ? `\n    <p class="topic-more">Showing the ${shown.length} most recent of ${n}.</p>`
+        : ""
+    }` : ""}
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function glossaryIndexHtml(rows) {
+  const canonical = "/glossary/";
+  const title = `Insurance and insurtech glossary — plain definitions | ${SITE.name}`;
+  const description =
+    "Plain definitions of the insurance terms that turn up in insurtech news — MGA, reinsurance, parametric cover, E&S, takaful and more, each with the stories we hold on it.";
+
+  const setLd = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    name: `${SITE.name} insurance glossary`,
+    url: url(canonical),
+    description: clamp(description),
+    hasDefinedTerm: rows.map((r) => ({
+      "@type": "DefinedTerm",
+      name: r.term,
+      description: clamp(r.def.summary, 300),
+      url: url(`/glossary/${r.slug}/`),
+    })),
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Glossary", path: canonical },
+  ]);
+
+  const items = rows
+    .map((r) => {
+      const blurb = descFromProfile(r.def.summary);
+      return `      <li class="story">
+        <a class="story-main" href="/glossary/${escAttr(r.slug)}/">
+          <div class="meta"><span class="src">${
+            r.n ? `${r.n} ${r.n === 1 ? "story" : "stories"}` : "definition"
+          }</span></div>
+          <h2>${escHtml(r.term)}</h2>
+          <p class="summary">${escHtml(blurb)}</p>
+        </a>
+      </li>`;
+    })
+    .join("\n");
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("glossary"),
+    imageAlt: `Insurance glossary on ${SITE.name}`,
+    jsonld: [setLd, crumbLd],
+  })}
+<body>
+${header("glossary")}
+
+  <main id="top">
+    <div class="intro">
+      <p class="co-kicker">Glossary</p>
+      <h1 class="tagline">Insurance terms, defined plainly</h1>
+      <p class="statline">${rows.length} terms · each with the coverage we hold on it</p>
+    </div>
+
+    <p class="method-text">The vocabulary that turns up in insurtech headlines, written out in
+      plain language. Every term links to the stories in our archive that mention it, so a
+      definition sits next to what it looks like in practice.</p>
+
+    <ol class="feed" aria-label="Glossary terms">
+${items}
+    </ol>
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+/* Terms are built only where a definition exists — the definition IS
+   the page, so a term without one has nothing to render and is left
+   out of the index rather than shipped empty. Coverage then decides
+   indexing, not existence. */
+function buildGlossaryPages(store, db) {
+  const defs = glossaryDefs();
+  const terms = collectGlossaryTerms(store).map((t) => ({ ...t, def: defs[t.slug] || null }));
+  const live = terms.filter((t) => t.def && t.def.known);
+
+  const outRoot = path.join(ROOT, "glossary");
+  fs.mkdirSync(outRoot, { recursive: true });
+  const wanted = new Set(live.map((t) => t.slug));
+  for (const name of fs.readdirSync(outRoot)) {
+    const dir = path.join(outRoot, name);
+    if (fs.statSync(dir).isDirectory() && !wanted.has(name)) {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
+  }
+
+  for (const t of live) {
+    const dir = path.join(outRoot, t.slug);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, "index.html"), glossaryPageHtml(t, t.def, live, db));
+  }
+
+  // Busiest first: the index is a directory, and the terms with the
+  // most behind them are the ones worth landing on.
+  const rows = live.slice().sort((a, b) => b.n - a.n || a.term.localeCompare(b.term));
+  fs.writeFileSync(path.join(outRoot, "index.html"), glossaryIndexHtml(rows));
+
+  const indexed = live.filter(indexableTerm).length;
+  console.log(
+    `  ✓ ${live.length} glossary pages under /glossary/ + index ` +
+      `(${indexed} indexable, ${live.length - indexed} noindex under ${GLOSSARY_MIN_STORIES} stories)`
+  );
+  return live;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -3343,7 +3649,8 @@ function buildSitemap(
   deals = [],
   quarters = [],
   years = [],
-  ranked = []
+  ranked = [],
+  terms = []
 ) {
   const now = isoDate(new Date().toISOString());
   const entries = [
@@ -3372,6 +3679,24 @@ function buildSitemap(
         changefreq: i === 0 ? "daily" : "yearly",
       });
     });
+  }
+  /* Glossary terms, gated on coverage exactly as company pages are
+     (indexableTerm()). A definition with nothing behind it is the page
+     a reference site already has and has ranked for years; the
+     crawler-facing list holds only the terms where this archive
+     supplies the second half. Deliberately outside the deals block
+     below — the glossary does not depend on the funding data. */
+  const indexedTerms = terms.filter(indexableTerm);
+  if (indexedTerms.length) {
+    entries.push({ loc: "/glossary/", lastmod: now, priority: "0.7", changefreq: "weekly" });
+    for (const t of indexedTerms) {
+      entries.push({
+        loc: `/glossary/${t.slug}/`,
+        lastmod: isoDate((t.articles[0] || {}).publishedAt) || now,
+        priority: "0.6",
+        changefreq: "weekly",
+      });
+    }
   }
   if (deals.length) {
     // Ranked with the brief, above the aggregated hubs: it's the other page
@@ -3557,11 +3882,14 @@ function main() {
   buildBriefPages(briefs);
   buildTopicPages(topics, db, deals, hubBriefs);
   buildFundingPages(deals, months, quarters, years, ranked);
+  // Reads the persistent store rather than this run's batch, like the
+  // hubs do — a term's coverage is the whole archive, not today's wire.
+  const terms = buildGlossaryPages(rawStore(), db);
   injectAnalytics();
   injectSocial();
   injectHomepage(news);
   injectCompaniesIndex(db);
-  buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked);
+  buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked, terms);
   buildRobots();
   console.log("SEO build complete.");
 }

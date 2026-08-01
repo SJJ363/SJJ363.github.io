@@ -370,6 +370,7 @@ function main() {
     funding: store.funding || {},
     profiles: store.profiles,
     topics: store.topics || {},
+    glossary: store.glossary || {},
   }, null, 2));
 
   const total = Object.values(store.profiles).filter((p) => p.known).length;

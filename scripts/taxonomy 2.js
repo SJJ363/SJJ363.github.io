@@ -1,0 +1,140 @@
+/* ============================================================
+   The category taxonomy — one definition, two readers.
+
+   fetch-news.js tags each article as it arrives; seo.js re-tags the
+   persistent store when building the topic hubs, because stored tags
+   are frozen at fetch time and would otherwise keep whatever the
+   rules said months ago. Order here is the order chips appear.
+   ============================================================ */
+
+const TAXONOMY = [
+  /* Funding deliberately does NOT match a bare money figure. It used to
+     (`\$[\d.]+\s?(m|bn|million|billion)`), which tagged every earnings
+     report, acquisition price, catastrophe loss and fraud sentence as a
+     funding round: 23 of 57 matches were false, and none of the real
+     ones needed it. A raise now has to be a raise — a funding verb, a
+     round name, or money that a funding verb is actually reaching for.
+     Note "nets? $" is absent on purpose: it matches "net income of $".
+
+     This tag is also the funding tracker's fallback gate, which is why
+     the verb list below is longer than a topic hub strictly needs. It was
+     once nine verbs, and every headline using a tenth was invisible to
+     /funding/ entirely: "Prosus pours $460M into Alan", "Tokio Marine
+     invests $5m in Igloo", "General Magic Nabs $7.2M", "Chapter pockets
+     $75M", "LightSpun chomps $13M", "Investors bet $10M that Laka…",
+     "Bestow gets $120M capital boost". English has more verbs for this
+     than a list can hold, which is why funding-extract.js reads the
+     headline properly — but a story this regex never tags is a story the
+     extractor is never shown, so the net here is cast wide and the
+     precision is recovered downstream.
+
+     Three shapes beyond the verbs, all of them previously missed:
+       · MONEY is its own atom, so "US$60 million" works. The old pattern
+         wanted whitespace before the symbol and "Roojai Raises US$60
+         Million" therefore didn't match — nor did PolicyStreet's or
+         Koltin's US$ rounds.
+       · money BEFORE the verb: "Fulcrum: $25 Million Raised To…",
+         "$50 Million Growth Equity Raise From SEP", "after $45M raise".
+       · `series [a-z]`, not `[a-e]`. Alan's Series G was the first round
+         past E in the archive and simply fell out. */
+  ["Funding", (() => {
+    const MONEY = "(?:(?:US|C|CA|A|AU|NZ|S|HK)?[$€£₹¥]|\\b(?:USD|EUR|GBP|INR|CAD|AUD|SGD|Rs|RM)\\b|\\b\\d[\\d,.]*\\s?(?:million|billion|thousand|mn|bn|crore|lakh|[kmb])\\b)";
+    const VERB = "(?:rais(?:e|es|ed|ing)|secur(?:e|es|ed)|land(?:s|ed)?|clos(?:e|es|ed)|bag(?:s|ged)?|nab(?:s|bed)?|pour(?:s|ed)?|pocket(?:s|ed)?|chomp(?:s|ed)?|scoop(?:s|ed)?|score(?:s|d)?|haul(?:s|ed)?|draw(?:s|n)?|attract(?:s|ed)?|receiv(?:e|es|ed)|get(?:s)?|invest(?:s|ed)?|bet(?:s)?|back(?:s|ed)|commit(?:s|ted)?|extend(?:s|ed)?|snag(?:s|ged)?|pull(?:s|ed)? in|picks? up|brings? in)";
+    return new RegExp(
+      "(" + [
+        VERB + "\\s+(?:\\S+\\s+){0,3}" + MONEY,
+        MONEY + "[^.;]{0,30}?\\b(?:rais(?:e|ed)|round|funding|financing|seed|series [a-z]\\b)\\b",
+        "fundrais", "funding round", "seed funding", "seed round", "seed capital",
+        "series [a-z]\\b", "pre-?seed", "in funding", "funding from", "funding led",
+        "funding to", "funding round", "growth (?:funding|financing|equity|capital)",
+        "venture (?:capital|round|funding|debt)", "\\bVC round\\b", "valuation",
+        "investment round", "capital raise", "backed by", "led by",
+        "financing round", "\\bfunding\\b", "oversubscribed",
+      ].join("|") + ")",
+      "i"
+    );
+  })()],
+  ["M&A", /(acquir|acquisition|merg(e|es|er|ing)|buyout|takeover|to buy|snaps up|buys )/i],
+  ["Partnerships", /(partner|partnership|teams? up|collaborat|joins forces|alliance|tie-?up|taps |selects |integrat|to distribute|distribution deal|powers )/i],
+  ["Product & Launches", /(launch|unveil|rolls? out|introduc|debut|releases?|goes live|new (product|platform|tool|app|solution|feature)|expands? (in)?to|now available)/i],
+  ["AI & Automation", /(\bAI\b|artificial intelligence|machine learning|\bML\b|gen(erative)?[ -]?ai|\bLLM\b|automat|chatbot|algorithm|predictive|\bGPT\b|agentic|copilot|no-code)/i],
+  /* No bare \bAPI\b: in this industry API is as often Annual Premium
+     Income ("API hits £42.4 million") as it is an interface, and the
+     category doesn't need it — 18 of 21 matches say "embedded insurance"
+     outright. */
+  ["Embedded", /(embedded insurance|embedded finance|insurance as a service|api-first|point[- ]of[- ]sale insurance|bancassurance|at checkout)/i],
+  ["Cyber", /(cyber|ransomware|data breach|malware|phishing|cyberattack|cyber risk)/i],
+  ["Claims & Underwriting", /(claims?\b|underwrit|pricing|risk assessment|loss adjust|actuar|fraud|\bfnol\b|first notice of loss)/i],
+  ["Health & Life", /(health ?insur|life insur|health ?tech|healthcare|medicare|medicaid|employee benefits|group health|disability insur|dental|telehealth|wellness)/i],
+  /* "autonomous" needs something to be autonomous *about*. Bare, it
+     files AI-agent stories under motor — Klaimee insuring "autonomous AI
+     agents" — and catches the research house literally called Autonomous. */
+  ["Auto & Mobility", /(auto insur|motor insur|car insur|telematics|usage-based|\bUBI\b|fleet|\bEV\b|autonomous (?:vehicle|driving|car|truck|fleet|taxi|ride|mobility)|robotaxi|self-driving|mobility|driver|vehicle)/i],
+  ["Property & Cat", /(property insur|homeowners?|property.and.casualty|\bP&C\b|catastrophe|\bcat bond\b|reinsur|climate|flood|wildfire|hurricane|natural disaster|parametric|commercial property)/i],
+  ["Regulation", /(regulat|complian|lawsuit|\bcourt\b|department of insurance|licens|sanction|fined|penalty|legislat|\bNAIC\b|policyholder protection)/i],
+  /* "promot" bare matches "financial promotions", a UK conduct term with
+     nothing to do with who got the job. Guard that one collision rather
+     than demanding a following to/across/of, which loses the ordinary
+     phrasings — "three internal promotions", "a wave of promotions". */
+  ["Leadership", /(appoint|names? (new )?(ceo|cfo|cto|coo|chair|president|head|chief)|hires?\b|joins as|steps down|resign|(?<!financial )promot(?:e|es|ed|ion|ions)\b|new ceo|board of directors|expands leadership)/i],
+];
+
+const FALLBACK_TAG = "Industry";
+
+/* ── The subject a category is *about* ──────────────────────────
+   A category name is a navigation label: it has to be short enough
+   for a chip, a nav row and a badge, so it is "Embedded", "Cyber",
+   "M&A". The subject is the same thing said the way a search for it
+   is typed — "embedded insurance", "cyber insurance", "insurance
+   M&A" — and that is what the hub's <title>, <h1> and JSON-LD
+   `about` need, because a page whose largest heading is the single
+   word "Embedded" gives a definitional query nothing to match.
+
+   Curated and hand-verified rather than derived, on the reasoning
+   CANON_LIST carries in companies.js: fourteen entries, each one a
+   phrase that has to read naturally in a page title, and no rule
+   turns "M&A" into "insurance M&A" without also turning "Cyber"
+   into "insurance cyber". Stability matters as much as accuracy —
+   these strings are the titles crawlers have already filed, so they
+   should change when the subject does and not otherwise.
+
+   Anything missing falls back to the category name, so a new
+   category renders exactly as every hub did before this existed. */
+const SUBJECTS = {
+  "Funding": "Insurtech funding",
+  "M&A": "Insurance M&A",
+  "Partnerships": "Insurance partnerships",
+  "Product & Launches": "Insurance product launches",
+  "AI & Automation": "AI in insurance",
+  "Embedded": "Embedded insurance",
+  "Cyber": "Cyber insurance",
+  "Claims & Underwriting": "Insurance claims and underwriting",
+  "Health & Life": "Health and life insurance",
+  "Auto & Mobility": "Auto insurance and mobility",
+  "Property & Cat": "Property and catastrophe insurance",
+  "Regulation": "Insurance regulation",
+  "Leadership": "Insurance leadership moves",
+  "Industry": "Insurtech",
+};
+
+const subjectOf = (name) => SUBJECTS[name] || String(name);
+
+function tagArticle(text) {
+  const tags = TAXONOMY.filter(([, re]) => re.test(text)).map(([name]) => name);
+  return tags.length ? tags : [FALLBACK_TAG];
+}
+
+/* A category name → its URL segment. Lives here rather than in seo.js
+   because it is now read from two places: seo.js builds /topic/<slug>/
+   from it and og.js names that hub's share card after it. Two copies
+   drift the day a category is renamed, and the failure is silent — the
+   hub keeps working and its card 404s. */
+const topicSlug = (name) =>
+  String(name)
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .replace(/\s+/g, "-");
+
+module.exports = { TAXONOMY, FALLBACK_TAG, SUBJECTS, subjectOf, tagArticle, topicSlug };

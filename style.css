@@ -556,6 +556,13 @@ main {
 }
 .foot-desc { margin: 0; max-width: 62ch; color: var(--ink-3); font-size: 0.86rem; line-height: 1.55; }
 .foot-desc b { color: var(--ink-2); font-weight: 600; }
+/* The routes that have no nav slot — the glossary, the funded-company
+   ranking — reachable from every generated page. Accent ink and
+   underlined at rest, never a hover-only cue: a link that announces
+   itself only to a pointer does not exist on a phone (the rule the
+   period-page links are built on). */
+.foot-links { margin: 10px 0 0; font-size: 0.86rem; line-height: 1.6; color: var(--ink-3); }
+.foot-links a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 .foot-meta {
   margin: 14px 0 0; font-size: 0.7rem; font-weight: 500; color: var(--ink-4);
   text-transform: uppercase; letter-spacing: 0.06em;

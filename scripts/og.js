@@ -118,6 +118,16 @@ const BASE_CARDS = [
     sub: "Insurtech coverage sorted into the categories that move it.",
     kicker: "Fourteen hubs · built from the archive",
   },
+  {
+    // One card for the glossary index and every term page, the way
+    // ~1,300 company pages share the "company" card — the per-page half
+    // of a preview is og:title/og:description, which head() writes.
+    id: "glossary",
+    eyebrow: "Glossary",
+    title: "Insurance Terms",
+    sub: "What the vocabulary in insurtech headlines actually means.",
+    kicker: `${DOMAIN}/glossary`,
+  },
 ];
 
 /* One card per topic hub, named for the same slug that builds the URL,

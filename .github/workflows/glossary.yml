@@ -1,0 +1,107 @@
+# Write the glossary definitions — manual only.
+#
+# The same step news.yml runs last on every refresh, on its own button,
+# for topic-briefs.yml's reason: the scheduled path is normally a no-op.
+# A definition is written once and never refreshed on growth (what an MGA
+# *is* does not change), so once the cache is full this step does nothing
+# at all until TERMS or the prompt moves — and there is otherwise no way
+# to fill an empty cache, re-ask a term that declined, or see a prompt
+# change take effect without firing news.yml and spending the day's brief
+# budget alongside it.
+#
+# Never scheduled: the scheduled path already exists inside news.yml, and
+# a second clock writing the same cache would only race it.
+#
+# Cheap by construction — 28 terms, one call each, and by default only
+# the ones already over the coverage floor. It still draws on the SAME
+# subscription budget as the daily brief (CLAUDE.md 3b-i), so run it
+# after the day's brief has landed.
+name: Write glossary definitions
+
+on:
+  workflow_dispatch:
+    inputs:
+      term:
+        description: "Single term slug to write (blank = all that need it)"
+        required: false
+        default: ""
+      all:
+        description: "Include terms below the coverage floor (they get noindex pages until the archive catches up)"
+        type: boolean
+        required: false
+        default: false
+      force:
+        description: "Rewrite definitions that are already cached"
+        type: boolean
+        required: false
+        default: false
+
+concurrency:
+  # news.yml, brief-retry.yml, topic-briefs.yml and backfill.yml all commit
+  # data/ and the generated pages. Two writers in flight means the loser's
+  # push is rejected and its work is discarded; the group is the resource.
+  group: site-write
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  glossary:
+    runs-on: ubuntu-latest
+    steps:
+      # The tip, not the triggering SHA — the other half of the lock above
+      # (CLAUDE.md 3b-iv).
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      # Hard failure rather than a fallback: this workflow does exactly one
+      # thing, so a run without credentials would silently be a no-op that
+      # reports success. The step inside news.yml keeps its `|| echo`.
+      - name: Install Claude CLI
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "::error::No CLAUDE_CODE_OAUTH_TOKEN secret — glossary definitions cannot be written."
+            exit 1
+          fi
+          npm install -g @anthropic-ai/claude-code
+
+      # ANTHROPIC_API_KEY is deliberately absent: the CLI bills the metered
+      # key whenever it is present, and this runs on the subscription.
+      - name: Write glossary definitions
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          node scripts/glossary-write.js \
+            ${{ inputs.term != '' && format('--term {0}', inputs.term) || '' }} \
+            ${{ inputs.all && '--all' || '' }} \
+            ${{ inputs.force && '--force' || '' }}
+
+      # Renders the definitions into pages. No news is fetched and no other
+      # cache is touched, so this rebuilds from data already committed.
+      - name: Build SEO (pages, sitemap, structured data)
+        run: node scripts/seo.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Same pathspec as news.yml plus glossary/ — a generated directory
+          # missing here is rebuilt every run, left dirty and never pushed.
+          git add -A data/ company/ brief/ topic/ funding/ glossary/ sitemap.xml robots.txt index.html companies.html
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: write glossary definitions${{ inputs.term != '' && format(' ({0})', inputs.term) || '' }}"
+            git push
+            echo "Glossary definitions committed."
+          else
+            echo "No changes to publish."
+          fi

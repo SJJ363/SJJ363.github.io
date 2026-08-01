@@ -829,6 +829,72 @@ produce all of that consistently — **route new pages through them.**
    (rule 3b-iv), and it fails hard without credentials rather than
    degrading, since a workflow that does one thing should not report
    success for doing nothing.
+3e. **The glossary lives at `/glossary/` + `/glossary/<term>/`, and its
+   term list is short because it was measured, not guessed.**
+   `scripts/glossary.js` holds `TERMS` (curated, hand-checked patterns)
+   and `collectTerms()`; `scripts/glossary-write.js` runs last of the
+   six Claude steps and caches a definition per term in
+   `companies-store.json` under **`glossary`**; `seo.js` builds the
+   pages from both. It is the only page type here aimed at a question
+   that has nothing to do with this week — "what is an MGA" is asked at
+   the same rate every month of every year, where even a hub's
+   definitional query decays a little and a month page's decays a lot.
+   Six rules:
+   • **The pair is the product, not the definition.** Reference sites
+     define an MGA better than this one will and have a decade of
+     authority doing it; none of them can put twenty-five MGA headlines
+     from the last two years underneath. So a term earns a *crawlable*
+     page on its coverage — `indexableTerm()`, `MIN_STORIES` = 3 — and
+     a definition alone is built, linked and `noindex, follow`, the
+     same visible-list-complete / crawler-list-gated split rule 3a
+     makes for company pages. The gate self-scales: a term crosses it
+     as the archive deepens, on the next build, with no migration.
+   • **The list is short because the measurement said so, and
+     re-measure before growing it.** The obvious version of this
+     feature is 100+ terms. Against this archive that version does not
+     survive: only ~7% of stored articles carry a summary, so a term
+     matches on the **headline** — and trade headlines say "Acme raises
+     $10M", not "quota share". Of 86 candidates, 37 had zero coverage
+     in 3,068 stories and 61 had fewer than three. Worse, the
+     best-covered terms are the ones a hub already owns (embedded
+     insurance, 104 headlines, *is* `/topic/embedded/`), so a page for
+     them competes with the hub for one query — the duplication
+     `collectMonths()` and `PERIOD_DEAL_CAP` exist to prevent one
+     directory over. `TERMS` therefore holds only terms **no hub owns**,
+     and the ~100 definition-only pages that were the rest of the idea
+     are exactly the mass-produced thin pages rule 3a calls a *sitewide*
+     liability.
+   • **Matching is on the headline only, on purpose.** A term page does
+     not merely list stories, it asserts they are examples of the term,
+     so a match must be what the story is *about*. Reading the summaries
+     too — free recall, and tempting — filed a Travelers quarterly
+     earnings report under "surety bond" (a line in a segment table) and
+     an executive appointment under "annuity". Both are fine for a
+     search index and wrong for a page making that claim.
+   • **The patterns are curated and hand-checked**, like `CANON_LIST`
+     and `SPLIT_LIST`. Two traps already hit: a bare `/\bmarine\b/`
+     matches Tokio Marine on every one of its stories, and a bare
+     `/\bcaptive\b/` matches "captive market". Neither is findable
+     except by reading the matches — so read them when adding a term.
+   • **A definition is written once and never refreshed on growth.**
+     This is the one refresh rule that departs from every other Claude
+     step here, and the subject is why: a profile goes stale because
+     the company does things and a topic brief because the subject's
+     centre of gravity moves, but what an MGA *is* does not change
+     because eleven more MGA headlines arrived. `stale()` asks only
+     whether the prompt moved or the last attempt failed, and the
+     coverage list under the prose is rebuilt every build regardless.
+     That makes this the cheapest step on the site — zero calls a day
+     once the cache is full, not merely few.
+   • **It is reached from the footer, not the nav** (rule 2b — five
+     items is what the phone breakpoints are measured for), which is
+     one link from every generated page and the same solution
+     `/funding/companies/` uses. **`glossary/` must also be in the
+     `git add` pathspec of every workflow that commits pages** — a
+     generated directory missing there is rebuilt each run, left dirty
+     in the runner and never pushed. It has its own dispatch workflow,
+     `glossary.yml`, for `topic-briefs.yml`'s reason, plus `--all` to
+     pre-write terms still under the floor.
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may
