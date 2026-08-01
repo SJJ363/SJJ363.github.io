@@ -1592,7 +1592,7 @@ ${header("glossary")}
       <p class="co-kicker">Term</p>
       <h1 class="tagline">${escHtml(heading)}</h1>
       <p class="statline">${escHtml(
-        n ? `${n} ${word} in our archive mention it` : "Definition · no coverage in our archive yet"
+        n ? `${n} ${word} mention it` : "Definition only · no coverage yet"
       )}</p>
     </div>
 
@@ -1638,9 +1638,12 @@ ${FOOTER}
 
 function glossaryIndexHtml(rows) {
   const canonical = "/glossary/";
-  const title = `Insurance and insurtech glossary — plain definitions | ${SITE.name}`;
+  const title = `Insurance and insurtech glossary | ${SITE.name}`;
+  // Leads with the terms themselves, which is what gets typed into a
+  // search box — and says what the page holds rather than advertising
+  // how plainly it says it.
   const description =
-    "Plain definitions of the insurance terms that turn up in insurtech news — MGA, reinsurance, parametric cover, E&S, takaful and more, each with the stories we hold on it.";
+    "What MGA, reinsurance, parametric cover, takaful, excess and surplus lines and other insurance terms mean, with recent stories on each.";
 
   const setLd = {
     "@context": "https://schema.org",
@@ -1675,6 +1678,18 @@ function glossaryIndexHtml(rows) {
     })
     .join("\n");
 
+  /* Kicker / h1 / factual statline, the shape every other index here
+     uses ("Browse · Topics · 14 themes"). No standing paragraph under
+     it: the funding index carries one because the tracker makes
+     derived claims that need a method note, and a list of defined
+     terms makes none. A page that explains that a glossary contains
+     definitions is explaining itself to nobody. */
+  const stories = rows.reduce((s, r) => s + r.n, 0);
+  const statline = [
+    `${rows.length} ${rows.length === 1 ? "term" : "terms"}`,
+    `${stories} ${stories === 1 ? "story" : "stories"} mentioning them`,
+  ].join("  ·  ");
+
   return `${head({
     title,
     description,
@@ -1688,14 +1703,10 @@ ${header("glossary")}
 
   <main id="top">
     <div class="intro">
-      <p class="co-kicker">Glossary</p>
-      <h1 class="tagline">Insurance terms, defined plainly</h1>
-      <p class="statline">${rows.length} terms · each with the coverage we hold on it</p>
+      <p class="co-kicker">Reference</p>
+      <h1 class="tagline">Insurance glossary</h1>
+      <p class="statline">${escHtml(statline)}</p>
     </div>
-
-    <p class="method-text">The vocabulary that turns up in insurtech headlines, written out in
-      plain language. Every term links to the stories in our archive that mention it, so a
-      definition sits next to what it looks like in practice.</p>
 
     <ol class="feed" aria-label="Glossary terms">
 ${items}
@@ -1733,9 +1744,15 @@ function buildGlossaryPages(store, db) {
     fs.writeFileSync(path.join(dir, "index.html"), glossaryPageHtml(t, t.def, live, db));
   }
 
-  // Busiest first: the index is a directory, and the terms with the
-  // most behind them are the ones worth landing on.
-  const rows = live.slice().sort((a, b) => b.n - a.n || a.term.localeCompare(b.term));
+  /* A to Z. This is a reference list, and a reader arriving at a
+     glossary is looking up a term they already have in mind rather
+     than browsing what we cover most — story count is the wrong axis
+     for that, and it also reshuffles the whole page as coverage
+     shifts. `sensitivity: "base"` so an initialism like MGA files
+     under M with the words rather than ahead of them all. */
+  const rows = live
+    .slice()
+    .sort((a, b) => a.term.localeCompare(b.term, "en", { sensitivity: "base" }));
   fs.writeFileSync(path.join(outRoot, "index.html"), glossaryIndexHtml(rows));
 
   const indexed = live.filter(indexableTerm).length;
