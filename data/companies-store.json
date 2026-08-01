@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T23:09:40.176Z",
+  "updatedAt": "2026-08-01T00:53:07.660Z",
   "seen": {
     "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZV9JU0NKallDc3lJazZCV05wMmRqbEsyZDZQR2c0eDV2RExvaWRQUHNONldZZl8xVV9qLVFQb1ZJNUFZcnAtN24zNnJzcnhrVGpHUk1oOGVNT2ZSSzJFWDFaclRXMnhhUkJJcUhncktPOVctTzZwSFVBaHVHZ2NaOXgyQllfUQ?oc=5": {
       "title": "QuoteCheck wins Insurance Business 5-star tech nod",
@@ -64723,101 +64723,218 @@
   "topics": {
     "industry": {
       "known": true,
-      "summary": "Insurtech is the use of software and data to build, sell and administer insurance, from underwriting through claims.",
-      "body": [
-        "The subject covers the whole population of companies applying technology to insurance rather than any one product: underwriting engines, claims automation, distribution platforms and policy administration systems, built either as standalone startups or as new lines inside established carriers and brokers. Capital moves in through venture rounds, acquisitions and strategic equity stakes, and increasingly through public listings, rather than one standard deal shape.",
-        "What matters now is less whether the technology works and more whether it can be run at a profit: technology-native insurers report combined ratios and net income like any carrier, and the modernization spend behind that shift is itself a recurring cost line, not a one-off project. Incumbents are responding by taking equity stakes in insurtechs rather than only partnering with them, folding distribution or underwriting technology directly onto the balance sheet.",
-        "Coverage here spans technology-native carriers publishing quarterly results alongside pure infrastructure vendors, agency and MGA financing, and inclusion-focused initiatives in emerging markets, rather than settling on one business model. The centre of gravity has moved from headline funding rounds toward earnings, IPOs and strategic stakes, and this category overlaps heavily with funding, claims and distribution coverage rather than standing apart from them."
+      "summary": "Insurtech is the application of software, data and automation to insurance: selling policies, pricing risk, underwriting and paying claims. It spans new entrants building products from scratch and established insurers modernizing legacy systems, with brokers, reinsurers and investors involved throughout.",
+      "sections": [
+        {
+          "heading": "How technology plugs into a policy's lifecycle",
+          "text": "An insurance policy still needs the same functions it always has, pricing risk, collecting premium, handling a claim, and insurtech is the layer of software that sits on top of or inside those functions. A carrier or a managing general agent supplies the balance sheet and the underwriting rules; a technology company supplies the interface, the data pipes or the automation that speeds a quote, a bind or a payout. Some insurtechs sell policies directly to consumers or businesses; others sell software to carriers and brokers who keep doing the selling themselves; a growing group embeds cover inside another company's checkout or app so the policy is bought without the buyer visiting an insurer's own website."
+        },
+        {
+          "heading": "Why insurers are under pressure to adopt it",
+          "text": "Insurance is a regulated, capital-intensive business built on decades-old policy administration systems, which makes it slower to change than most industries software has already reshaped. The hard part is not the interface; it is the underwriting math underneath it, a model that prices risk badly loses money quietly, sometimes for a long stretch, before anyone notices. That is why the sector's failures tend to look alike: fast growth built on underpriced risk, followed by a painful correction once the claims arrive. The pressure to modernize anyway comes from cost, since legacy claims and policy systems are expensive to run, and from customers who expect a quote and a claim to move at the pace of any other digital purchase."
+        },
+        {
+          "heading": "What the coverage here actually shows",
+          "text": "The companies active span the range the definition implies: consumer-facing carriers reporting results alongside software providers selling into incumbents, and insurers taking stakes in or partnering with technology platforms rather than building in-house. Coverage keeps landing on neighbouring subjects rather than staying self-contained: funding and public-market results for the insurtechs that have gone public, embedded distribution deals with banks and retailers, and steady activity in Asian and African markets where digital-first insurance is still being built out. The overall tone leans toward profitability and underwriting discipline over growth, with investors and incumbents watching claims performance as closely as customer counts."
+        },
+        {
+          "heading": "The different shapes an insurtech takes",
+          "text": "Insurtech companies fall into a few shapes that are easy to conflate. A full-stack carrier takes on underwriting risk itself and answers to insurance regulators directly. A managing general agent underwrites on behalf of a carrier's balance sheet without holding the risk itself, letting it move faster with less capital. A software vendor never touches risk at all and instead sells claims, underwriting or policy administration tools to carriers and brokers who remain the insurer of record. A distribution or embedded player focuses on the point of sale, arranging cover inside someone else's product rather than building either the risk or the software beneath it."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 967
     },
     "funding": {
       "known": true,
-      "summary": "Funding is the capital insurance-technology companies raise from investors, in exchange for equity, debt or a share of future revenue. Rounds run from small seed checks to large late-stage raises, and are often labeled Series A, B, C and beyond as a company matures.",
-      "body": [
-        "An investor, usually a venture or growth-equity fund and sometimes an insurer investing strategically, wires cash to the company in return for newly issued shares. A term sheet sets the valuation, how much of the company is sold, and what control the investor gets, such as a board seat or a say in a future sale.",
-        "It matters because building underwriting models, claims automation or a distribution platform takes years of losses before it pays for itself, and insurance itself is capital-intensive and regulated in ways that make outside capital harder to deploy directly into risk-bearing. Much of what gets funded here is the technology and brokerage layer around insurance rather than an insurer's own balance sheet.",
-        "Coverage here spans far beyond any one market, with rounds landing in Indonesia, Nigeria, the Balkans, Egypt and France alongside the more familiar US and UK names, and it sits most often alongside AI & Automation and Health & Life, as claims and underwriting tools draw much of the recent attention. Some companies return for a second or third round within a short stretch as their valuation climbs."
+      "summary": "Insurtech funding is the venture capital and private investment that insurance-technology startups raise to build and grow their businesses. Rounds range from small seed checks to late-stage growth rounds, spanning distribution apps, brokers and full-stack carriers that hold underwriting risk themselves.",
+      "sections": [
+        {
+          "heading": "How a funding round actually works",
+          "text": "A startup pitches investors on its market and technology, and those that agree negotiate a term sheet setting a valuation, the size of the stake being sold and who sits on the board afterward. One investor usually leads the round and sets its terms, with others following on the same terms as a syndicate. Rounds are named in sequence — seed, then Series A, B, C and beyond — and the amount raised typically funds product development, hiring, marketing and, for a company that underwrites risk itself, the reserve capital regulators require it to hold."
+        },
+        {
+          "heading": "Why insurance makes it harder than typical fintech",
+          "text": "Insurance is capital-intensive and heavily regulated in ways most software categories are not: a company that wants to actually carry risk needs licenses in every jurisdiction it sells in and enough reserve capital to satisfy regulators, which is why many funded startups choose to distribute or underwrite on behalf of an existing carrier instead of becoming one. Pricing risk accurately requires claims history that incumbents have built up over decades, so investors weigh a startup's access to data and distribution as heavily as its software. The recent wave of investment leans toward companies applying AI to claims handling and underwriting rather than simply digitizing a paper process."
+        },
+        {
+          "heading": "Which parts of insurance draw the money",
+          "text": "Money moves toward companies that combine an insurance license or partnership with a clear technology angle: AI-driven claims and underwriting tools, brokers and marketplaces that sell health and life cover online, and platforms that embed protection inside another product's checkout. Investors outside the traditional venture world take part too, including corporate insurers backing a startup as a strategic partner rather than a pure financial bet, and private equity funds buying into brokerage platforms. The activity clusters with automation and claims technology on one side and with partnerships and catastrophe-exposed property lines on the other, reflecting where insurers most want outside help."
+        },
+        {
+          "heading": "How the geography of investment differs",
+          "text": "In established insurance markets such as the United States, the United Kingdom and Western Europe, investors increasingly back companies applying artificial intelligence to underwriting and claims rather than simply building a new way to buy a policy, since basic digital distribution already exists there. In markets across South Asia, Southeast Asia, Central Europe and Africa, by contrast, a larger share of the money still goes toward building first-time digital access to insurance itself — comparison platforms, mobile-first brokers and partnerships that bring cover to people an incumbent insurer's branch network never reached."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 554
     },
     "ai-and-automation": {
       "known": true,
-      "summary": "AI and automation in insurance use software and machine learning to handle tasks a person used to do, from pricing a policy to settling a claim. It spans everything from chatbots that answer policyholder questions to models that flag fraudulent claims and price risk in real time.",
-      "body": [
-        "Insurers, brokers and MGAs apply machine learning models, built in-house or bought from vendors, to tasks that used to run through a human step: reading an application, flagging a suspicious claim, routing a customer query, or drafting correspondence. The model doesn't replace the policy or the payout; it changes who or what makes the intermediate decision, with a person typically still signing off on anything that touches price or coverage.",
-        "The appeal is speed and lower per-transaction cost in a business built on high transaction volume and thin margins on any one policy. The hard parts are trust and accountability: a broker relationship built on judgment doesn't automatically survive a chatbot, a wrongful denial from an opaque model is a liability problem as much as a technology one, and buying a discrete AI feature is different from redesigning the workflow it sits inside.",
-        "Coverage here runs from large brokers and carriers speaking publicly, often skeptically, about where AI actually changes their business, alongside newer firms selling AI-native underwriting, claims and fraud tools directly. The conversation has shifted from announcing AI features toward asking whether the underlying workflow changed, and this category overlaps constantly with funding, product launches, claims and underwriting, and partnerships."
+      "summary": "AI in insurance is the use of machine-learning and generative-AI systems by carriers, brokers and MGAs to underwrite, sell and settle claims. The activity ranges from narrow scoring models embedded in existing systems to newer agentic tools that handle a task, such as a claims review or an underwriting decision, largely on their own.",
+      "sections": [
+        {
+          "heading": "How AI actually enters an insurer's workflow",
+          "text": "Three layers do most of the work. Machine-learning scoring models, trained on historical claims and third-party data, price risk and flag fraud inside underwriting systems that already existed. Generative AI, built on large language models, drafts claims correspondence, summarizes policy documents and answers customer questions. Agentic AI goes further, chaining several steps together so a system can review a claim, request more information and reach a decision with only occasional human sign-off. Carriers, brokers, MGAs and specialist software vendors all build or buy some combination of the three."
+        },
+        {
+          "heading": "Why the hard part isn't the model itself",
+          "text": "Adoption is easier than deployment. An insurer's core systems and claims workflows are old and were not built to receive an external model's output automatically, so a model that scores risk well can still fail to change how a policy is priced or a claim is closed. Regulators are also starting to ask how these systems are supervised: US state regulators are drafting frameworks for reviewing how carriers use AI in decisions that affect a policyholder, and conduct risk, an AI agent misleading a customer or denying a claim without a clear reason, is now a named concern."
+        },
+        {
+          "heading": "Who is active and how the emphasis has shifted",
+          "text": "The largest global brokers, Aon, Willis Towers Watson, Gallagher and Marsh, show up repeatedly, both as users of AI internally and as advisers helping clients weigh the risk AI creates. Carriers such as Zurich and Chubb appear alongside AI-native startups, including Corgi, Pace, Qumis, mea, Outmarket AI and NeuralKart, built specifically around automating underwriting, claims or distribution rather than adding AI to an existing product line. Coverage has moved from describing AI as a product feature toward describing it as a decision-maker, and it now overlaps most with funding news, product launches, claims and underwriting, and partnerships."
+        },
+        {
+          "heading": "Insuring AI, not just using it",
+          "text": "A second, separate story runs alongside the first: AI as something insurance must cover rather than something it uses. Data centers built to train and run AI models are large, capital-intensive and hard to price, and brokers now structure bespoke property and casualty programs for them. Professional-liability and technology-errors coverage is being reworked too, since an AI system that gives a customer bad advice or makes a flawed decision creates a liability exposure that existing policy wording was not written to address. The two threads, AI as a tool and AI as a risk, increasingly involve the same brokers and carriers at the same time."
+        }
       ],
-      "pv": 1,
-      "n": 551
+      "pv": 2,
+      "n": 553
     },
     "product-and-launches": {
       "known": true,
-      "summary": "A product launch in insurance is the public introduction of a new policy, coverage line, app, or business unit by a carrier, broker, MGA, or startup. Most of what counts as news here is the announcement itself, since the product's actual performance rarely gets reported afterward.",
-      "body": [
-        "A product launch in this category takes several shapes: an insurer adds a new coverage line, an MGA opens with underwriting authority delegated from a carrier, a broker stands up a specialist practice, or a company releases a new app, portal, or AI tool that changes how a policy is quoted, bound, or serviced. Announcements come from the company itself, so the story is usually the pitch rather than independent verification.",
-        "What gets launched has shifted toward software layered on top of an existing business rather than a wholly new kind of policy: claims platforms, underwriting copilots, and quoting tools built around AI sit alongside more traditional specialty MGA lines and niche coverage for narrow risks. A launch announcement rarely says whether the product works as described, only that it exists and who is behind it.",
-        "The mix here runs from established carriers and brokers — Chubb, Aon, Zurich, Willis Towers Watson, Lockton — adding AI-branded units or new practices, to younger platforms such as Lemonade, Insurify, Igloo, and InsuranceDekho shipping standalone apps, alongside MGAs opening narrow specialty lines. These stories land almost as often under AI & Automation, Partnerships, and Claims & Underwriting, since most new products extend an existing business rather than stand apart from it."
+      "summary": "Insurance product launches are announcements that a new policy, coverage line, app or underwriting tool has gone live and is ready to sell or use. They range from a single new coverage line at an existing carrier to a standalone digital brand, and most describe a distribution or underwriting change rather than a new legal entity.",
+      "sections": [
+        {
+          "heading": "What actually counts as a launch",
+          "text": "A product launch in this category can mean several different things bundled under one word: an insurer or MGA opening a genuinely new coverage line, a broker standing up a new practice group to place existing types of risk, or a technology vendor releasing a platform or AI tool aimed at underwriters and brokers. The party issuing the risk is not always the party making the announcement, since a managing general agent or coverholder often designs and distributes a product while a separate carrier or Lloyd's syndicate provides the underwriting capacity behind it, and a launch notice rarely spells out which role each name plays."
+        },
+        {
+          "heading": "Why insurers keep announcing new products",
+          "text": "A launch signals that a carrier or broker is chasing a specific pocket of risk that existing policies do not cover cleanly: a new technology, a new asset class, a change in regulation, or a customer segment a competitor has already claimed. The hard part is rarely the idea; it is lining up underwriting capacity willing to back an unproven line, pricing a risk with little historical loss data, and getting the product through the compliance and filing process in every market it is meant to sell in. Announcements often describe intent to launch before a product is actually available to buy, which is one reason the same product can surface in coverage more than once."
+        },
+        {
+          "heading": "Who is active and where it clusters",
+          "text": "The busiest names span the largest global brokers and carriers alongside much smaller digital-first insurers and MGAs, which shows this is not a market limited to incumbents or startups but one both operate in at once, from different directions. A large share of recent activity is framed around artificial intelligence, such as claims tools, underwriting copilots and risk diagnostics, rather than a conventional new insurance policy, so a launch increasingly means new software for brokers and underwriters as often as new cover for a buyer. Activity overlaps heavily with partnerships, since many launches pair an insurer with a technology company or distribution partner, and it lands often in auto, health and claims."
+        },
+        {
+          "heading": "Product launch versus tool launch",
+          "text": "It is worth separating two things reported under the same word. One is an actual insurance product: a new policy a customer or business can buy, sold through a broker, an app or embedded at the point of sale. The other is an internal tool or platform, such as an AI claims assistant, a pricing engine or a broker portal, that a carrier or vendor releases to its own staff or trading partners rather than to the public. Both get called a launch and both come from the same kinds of companies, so working out which one a given announcement describes is usually the first thing worth checking before assuming a new policy has gone on sale."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 428
     },
     "partnerships": {
       "known": true,
-      "summary": "A partnership pairs an insurer, broker, reinsurer or MGA with another company to share technology, distribution, capital or expertise. In practice it covers everything from a carrier licensing another firm's software to a retailer offering cover at checkout under someone else's paper.",
-      "body": [
-        "The two sides can be an insurer and a technology vendor, a carrier and a broker, a reinsurer and an insurer, or an insurer and a brand outside insurance entirely. What changes hands varies: a software licence or claims platform, an API that lets a retailer or bank sell cover at checkout, a reinsurer's data and models feeding a client's process, or simply a brand and a distribution channel, as when an insurer ties into a retailer or a sports team.",
-        "Partnering lets a carrier reach customers or capabilities it would otherwise have to build, and lets a smaller platform reach underwriting capacity or a distribution network it cannot get alone. The friction sits in integration and accountability: connecting two companies' systems and compliance regimes, and being clear about which side owns pricing, service and the customer relationship once the deal is running rather than only at signing.",
-        "Coverage here spans reinsurers pairing their models with an insurer's claims process, carriers licensing AI and cloud platforms from technology vendors, brokers and MGAs plugging into embedded quoting APIs, and brand-side tie-ups where an insurer attaches to an airline, retailer or sports team. The mix leans toward distribution and technology deals over capital deals, and the same stories keep turning up alongside AI tools, embedded quoting and claims handling rather than standing apart."
+      "summary": "An insurance partnership is a formal tie-up in which a carrier, reinsurer or MGA shares distribution, data or underwriting with another company. The arrangement can run from a single co-branded product to a multi-year technology or reinsurance agreement.",
+      "sections": [
+        {
+          "heading": "Who the parties are and what changes hands",
+          "text": "One side, usually a carrier, reinsurer or managing general agent, supplies underwriting capacity, a licence to write business, or claims expertise. The other supplies something the insurer lacks on its own: a retailer, bank, airline or sports franchise brings customers and a point of sale; a software vendor brings a claims, pricing or AI platform; a reinsurer brings capital and risk analytics. The vocabulary that recurs is program business, white-label underwriting, embedded distribution, technology licensing and reinsurance treaties, and a single deal often mixes more than one of these at once."
+        },
+        {
+          "heading": "Why insurers do this, and what makes it hard",
+          "text": "Building a new distribution channel, a claims engine or an actuarial model from scratch is slow and expensive, so a partnership is usually the faster route to a capability the insurer would otherwise take years to grow internally. The difficulty sits in the details rather than the concept: two companies' systems have to integrate, regulators in each market have to approve the arrangement separately, and the commercial terms have to hold together over a multi-year contract even as the partner's business changes. A partner's reputation also becomes the insurer's own, so a misstep on the other side of the deal is a risk the insurer cannot fully control."
+        },
+        {
+          "heading": "What the coverage below shows",
+          "text": "The companies named most often split between large composite insurers and reinsurers striking technology or claims-platform agreements, and smaller or regional carriers signing distribution deals with a bank, retailer, mortgage lender or affinity brand. Activity keeps landing in product launches, embedded insurance, claims and underwriting, and health and life, which reflects how broad the term is rather than any one trend: an AI-vendor tie-up, a travel-booking integration and a sports-sponsorship deal are all filed here because each changes who an insurer works with, not what it sells."
+        },
+        {
+          "heading": "Distribution deals versus technology and affinity deals",
+          "text": "Two recurring shapes are worth telling apart. A distribution partnership puts an insurer's product inside another company's checkout or sales channel, so a bank, retailer or travel platform sells the cover alongside its own product. A technology or reinsurance partnership instead changes how the insurer operates internally, supplying a claims system, an AI tool or risk capacity without necessarily reaching a new customer at all. Affinity and sponsorship deals, such as an insurer's tie-up with a sports team, sit closer to the distribution side but trade mainly on brand visibility rather than a direct sales integration."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 323
     },
     "health-and-life": {
       "known": true,
-      "summary": "Health and life insurance protect against medical costs and death, sold by carriers directly or through brokers, employers and embedded partners. The category also spans claims handling, underwriting technology and the platforms distributors use to administer these policies.",
-      "body": [
-        "A life policy pays a sum on death or another triggering event in exchange for premiums; a health policy reimburses or covers medical costs, often administered through an employer's benefits plan rather than bought individually. Carriers underwrite the risk, brokers and agents place it, and a technology platform or embedded partner increasingly sits between the two, handling quoting, enrollment or claims.",
-        "Health insurance carries an added strain: medical costs rise faster than most other insured risks, so insurers and employers keep testing wellness incentives, care navigation and digital claims tools to slow the increase rather than only repricing it. Life insurance faces a slower but steady problem, a widening gap between how many people could use coverage and how many actually hold a policy, which is why so much of the activity below is about distribution rather than the product itself.",
-        "Coverage here mixes established composite insurers such as Ageas Federal Life and Aditya Birla Sun Life with digital-first insurers like Alan, Ethos and Plum, and platform vendors such as Duck Creek and Boltech that carriers and brokers embed into their own products. These stories cluster with Partnerships and Product & Launches as often as with plain claims news, and AI & Automation tends to appear around underwriting and benefits administration rather than the policy itself."
+      "summary": "Health and life insurance covers medical costs or pays a sum on death or disability, sold directly, through employers, or via brokers and agents. The two lines are often bundled together in employee benefits packages even though they are priced and regulated separately.",
+      "sections": [
+        {
+          "heading": "How a policy is priced, sold and paid out",
+          "text": "Life insurance pays a lump sum on death or a defined disability event; health insurance reimburses medical costs or pays cash benefits during treatment. Carriers set premiums using actuarial mortality and morbidity tables, then distribute through brokers, agents, employer group plans, or embedded partnerships inside another company's product. A policy administration system holds the contract, a third-party administrator or claims platform processes what is owed, and a broker or benefits consultant usually sits between the carrier and the person buying cover."
+        },
+        {
+          "heading": "What makes underwriting and distribution hard",
+          "text": "Health and life underwriting depends on medical and lifestyle data scattered across providers, pharmacies and prior insurers, so carriers and brokers spend heavily on connecting records rather than pricing risk. Distribution is layered too: an employer chooses a benefits plan, a broker negotiates it, and an employee picks among options during a short enrollment window, which makes onboarding speed and clear plan comparison as important as underwriting. Claims handling for chronic and long-tail health conditions adds another layer of manual review that automation has only begun to touch."
+        },
+        {
+          "heading": "What the activity below shows",
+          "text": "Coverage here mixes established carriers such as Ageas Federal Life, SBI Life and FWD Life with dedicated health insurers such as Jubilee and Galaxy Health Insurance, and a layer of technology vendors, from policy platforms like Duck Creek and Vertafore to distribution tools like Luma and iPipeline, that sell into both. Much of the recent activity is partnership and embedded distribution, a health insurer teaming with a digital platform to reach new customers, alongside leadership moves at established carriers. The nearest neighbouring subjects are funding, partnerships, and claims and underwriting, reflecting how often a health or life story is really a distribution story."
+        },
+        {
+          "heading": "How health and life differ by market",
+          "text": "The two lines diverge by geography as much as by product. In the United States and Canada, life insurance is largely sold through agents and employer group benefits, with health insurance bound up in a separate, heavily regulated employer and government system. In India, life insurers such as Aditya Birla Sun Life, Bajaj Life and SBI Life sell retail savings-linked policies alongside pure protection, while health cover moves increasingly through digital brokers and embedded partnerships. In Africa, health insurers such as Jubilee lean on mobile and embedded channels to reach customers carriers could not otherwise afford to serve."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 203
     },
     "m-and-a": {
       "known": true,
-      "summary": "M&A in insurance is the buying and selling of insurers, brokers, MGAs and insurtech platforms rather than building those capabilities in-house. Buyers range from large carriers absorbing insurtechs for their technology and distribution to private-equity-backed platforms rolling up brokerages one agency at a time.",
-      "body": [
-        "A deal here can mean a full purchase of a company, a majority or minority stake, or an acquisition of a specific book of business or technology license. The acquirer might be a competing carrier, a brokerage assembling a larger platform, or a private-equity firm buying insurance distribution as a standalone asset class. What changes hands is usually some mix of a customer book, a distribution relationship, underwriting capacity and a technology stack.",
-        "Consolidation is attractive because building distribution or a claims platform from nothing is slow, while buying it is immediate, and because carriers see insurtechs as a shortcut to AI and digital capabilities they would otherwise build internally. The hard parts are integration afterward, regulatory approval where the target holds a license, and agreeing on a price for a business whose future retention and loss ratios are uncertain.",
-        "Coverage here leans toward large European and North American carriers taking stakes in insurtech platforms to add AI-driven underwriting or distribution, alongside brokerages and MGA platforms assembled through repeated bolt-on purchases rather than one large deal. These stories overlap heavily with AI & Automation and Claims & Underwriting, since the stated rationale is almost always a technology or product capability rather than scale alone."
+      "summary": "Insurance M&A is the buying, selling and merging of insurers, brokerages, agencies and insurtech companies. Deals range from partial stake purchases and small agency roll-ups to full acquisitions of one insurer by another, often by a larger rival or a private equity investor.",
+      "sections": [
+        {
+          "heading": "Who buys whom, and what changes hands",
+          "text": "In an insurance acquisition, the acquirer buys the target outright, taking on its policies, capital reserves, staff and regulatory licenses. Buying a brokerage or agency is usually simpler: the buyer absorbs a book of business and client relationships without inheriting underwriting risk, which is why brokerages and agencies change hands far more often than carriers. Between those two sits the minority stake, where a larger company buys a slice of a smaller one, often an insurtech, to lock in a commercial partnership ahead of a possible full buyout later. Roll-up strategies string together many small agency purchases into one larger distribution platform."
+        },
+        {
+          "heading": "Why the pace has picked up, and where it gets hard",
+          "text": "Carriers increasingly buy distribution and technology rather than build them, brokers look to add scale and specialty expertise, and private equity backs roll-ups that consolidate a fragmented agency market. The hard parts sit after signing: merging legacy policy administration systems without disrupting live policyholders, retaining staff and client relationships through the transition, clearing regulatory approval where a carrier's capital and licenses are involved, and agreeing a price when buyer and seller read the target's growth prospects differently."
+        },
+        {
+          "heading": "What shows up here, and how the mix has shifted",
+          "text": "The activity spans composite insurers buying each other outright, brokerages absorbing smaller agencies, and carriers taking stakes in insurtechs rather than acquiring them whole. Over the period covered, insurtechs appear more often as the target or stake partner in deals aimed at digital distribution and AI-driven underwriting, alongside the older pattern of carrier-to-carrier consolidation. These deals cluster with AI & Automation, Claims & Underwriting and Product & Launches coverage more than with pure scale plays, suggesting technology capability is as often the point of a deal as market share."
+        },
+        {
+          "heading": "Buying a company outright versus buying into one",
+          "text": "A full acquisition transfers ownership, balance sheet and regulatory standing completely, and for a licensed carrier it needs regulator sign-off before it can close. A minority stake is lighter: the buyer gains influence, data access or a right of first refusal on a future full purchase, while the target keeps running independently and keeps its own license. Insurers use the stake route often when the target is an insurtech whose value lies in its technology or distribution reach rather than in a back book of policies worth absorbing wholesale."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 195
     },
     "claims-and-underwriting": {
       "known": true,
-      "summary": "Underwriting sets which risks an insurer accepts and at what price; claims handling is what happens after a loss is reported and paid. Together they sit at the center of an insurer's underwriting margin and loss experience, and much of the recent activity here is about using AI and data to speed up or sharpen both steps.",
-      "body": [
-        "Underwriting turns information about an applicant and the asset being insured — property details, driving history, financials, catastrophe exposure — into a price and a set of policy terms, set by an actuary, underwriting rules, or a model trained on past claims. Claims handling runs the same relationship in reverse: a policyholder reports a loss, an adjuster or an automated system checks it against the policy and estimates what is owed.",
-        "A bad underwriting decision shows up later as a bad claim, and a bad claims decision erodes the trust the pricing depended on, so insurers increasingly treat the two as one loop rather than separate departments. Recent activity leans toward automation on both ends: models that price and place risk faster, and AI systems that triage, verify, or flag claims for fraud, particularly after large weather and catastrophe losses.",
-        "Coverage here spans established carriers and reinsurers alongside newer claims platforms and MGAs, split between underwriting tools such as risk data and catastrophe analytics and claims tools such as fraud detection and automated settlement. It overlaps heavily with AI & Automation and Property & Cat, since much of this news is a new model or dataset applied to an old process, and with Partnerships, since insurers tend to add this capability through a vendor deal rather than build it alone."
+      "summary": "Underwriting is how an insurer decides whether to accept a risk and what to charge for it; claims is how it pays out once a loss happens. The two functions sit on either side of every policy, and are handled by different teams, tools and, increasingly, different vendors.",
+      "sections": [
+        {
+          "heading": "What underwriting and claims actually do",
+          "text": "An underwriter reviews an application, weighs the exposure against actuarial data, and prices, declines or refers the risk before a policy is bound; the premiums collected across that book of business fund the payouts. A claim begins when a policyholder reports a loss, known as first notice of loss or FNOL, then moves through investigation and adjusting toward a settlement, a denial, or subrogation against a third party responsible for the loss. Combined ratio and loss ratio are the scorecards insurers publish for how well both sides performed over a period."
+        },
+        {
+          "heading": "Why both sides are getting harder to run",
+          "text": "Underwriting is getting harder because the risks themselves are shifting faster than historical data can describe them: cyber exposure changes with the attacker's tools, not the calendar, and supply chains and climate patterns move in ways a static rating table cannot anticipate. Claims are under separate pressure, from fraud that increasingly uses the same automation tools insurers are adopting to detect it, and from policyholders who expect a settlement on the timeline of a retail transaction rather than a paper file. Regulators are also pushing back on pricing that gets too individual, wary of eroding the risk pooling that makes insurance work at all."
+        },
+        {
+          "heading": "Where the technology is actually landing",
+          "text": "Most of the visible activity sits with specialist underwriting agencies and claims platforms rather than the largest carriers rebuilding from scratch: managing general agents launching narrow, well-defined products, and standalone claims and fraud-detection tools that carriers then license or partner with instead of building in house. Large insurers and reinsurers show up mostly as partners and acquirers, buying analytics capability or pairing with an outside AI vendor rather than announcing their own platform. The activity overlaps heavily with property and catastrophe risk, where better modeling changes both what gets underwritten and how a loss gets adjusted afterward."
+        },
+        {
+          "heading": "Underwriting risk versus underwriting fraud",
+          "text": "Two distinct problems get called underwriting in practice. One is pricing risk correctly at the point of sale, using better data to judge an individual applicant rather than a broad rating class. The other is catching bad actors after the fact, whether a fraudulent claim or a policy obtained on false information, which is a detection problem rather than a pricing one. The tools and the vendors involved differ even when both get described as AI for insurance."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 172
     },
     "property-and-cat": {
       "known": true,
-      "summary": "Property insurance covers damage to buildings and contents; catastrophe (cat) risk is the share driven by hurricanes, wildfires and earthquakes. Insurers hold capital against it and pass much of it on to reinsurers and, increasingly, to catastrophe bonds sold to capital markets.",
-      "body": [
-        "A property insurer sells cover on homes, businesses and their contents, then cedes part of that risk to reinsurers through quota-share or excess-of-loss treaties and, increasingly, to capital markets through catastrophe bonds. Specialist analytics firms model what a hurricane, earthquake, wildfire or flood would cost across a portfolio, and that estimate prices both the original policy and the reinsurance behind it.",
-        "Parametric policies pay a fixed sum once a measured trigger, such as wind speed, is crossed, rather than after an adjuster inspects damage — useful when an event damages a whole region at once. The harder part is that climate-driven losses are getting harder to model, and in the highest-risk wildfire and flood zones private insurers are pulling back, pushing homeowners toward state-backed insurers of last resort.",
-        "Activity here spans large balance-sheet carriers and reinsurers — Arch, Chubb, Liberty Mutual, Mapfre — alongside more specialized entrants: Kettle, Sola and Blink Parametric among the parametric and MGA players, and McKenzie Intelligence Services, whose geospatial catastrophe analytics were folded into Verisk. It sits closest to AI & Automation, Funding and Claims & Underwriting, and has been moving from plain risk transfer toward better data and faster, trigger-based payouts."
+      "summary": "Property and catastrophe insurance covers physical damage to buildings and contents, including losses from major natural disasters. The catastrophe side deals with correlated, large-scale peril risk that insurers spread through reinsurance and capital markets rather than absorb alone.",
+      "sections": [
+        {
+          "heading": "How a claim moves from a homeowner to global capital",
+          "text": "A primary insurer sells a policy on a building and its contents and prices the premium to the peril involved — wind, fire, flood, earthquake. When a loss is large enough to threaten many policies at once, the insurer cedes part of that risk to a reinsurer, who may pass a further slice through retrocession or into the capital markets as a catastrophe bond. A parametric policy skips the claims process, paying out once a measured trigger, such as wind speed or an earthquake's magnitude, crosses an agreed threshold, rather than waiting on an adjuster to assess the damage."
+        },
+        {
+          "heading": "Why the pricing keeps getting harder",
+          "text": "The central difficulty is correlation: an earthquake or hurricane does not damage one policyholder, it damages thousands at once, so insurers cannot simply average losses across a large enough pool the way they can with car crashes or burglaries. Wildfire and flood mapping has grown more precise, but the underlying risk keeps shifting as weather patterns change and as development pushes further into fire- and flood-prone land, so a model built on last decade's losses can understate this decade's. In the costliest regions, insurers have pulled back or raised prices sharply enough that governments have stepped in with backstop programs to keep coverage available at all."
+        },
+        {
+          "heading": "Who is active and where the work is going",
+          "text": "The coverage spans large reinsurers and carriers — Swiss Re, Munich Re, Arch, Chubb, Liberty Mutual — alongside newer, narrower entrants: parametric specialists building index-based wildfire and flood cover, and catastrophe-modeling and geospatial-analytics firms feeding faster damage estimates into claims and underwriting. A recurring thread is data and automation reshaping how a loss gets assessed and priced, and consolidation as larger analytics and data firms acquire the specialists that built this capability. The activity overlaps most with claims and underwriting, funding rounds for the newer entrants, and product launches for parametric and AI-driven tools."
+        },
+        {
+          "heading": "Property insurance versus catastrophe reinsurance",
+          "text": "The two terms describe adjacent but distinct layers. Property insurance is the retail-facing policy a homeowner or business buys to cover its own building and contents against everyday and large-scale perils alike. Catastrophe reinsurance and catastrophe bonds sit behind that, insuring the insurer against the tail risk of many claims arriving simultaneously; buyers of that protection are insurance and reinsurance companies, not individual policyholders. A parametric product can appear at either layer — sold directly to a business or government, or used by an insurer to manage its own concentrated exposure."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 153
     },
     "auto-and-mobility": {
@@ -64829,50 +64946,103 @@
         "Coverage here spans telematics-led insurers, digital brokers rebuilding the buying process online, and specialist underwriters serving fleets and emerging vehicle categories, alongside established carriers extending existing books into new markets. The activity overlaps often with product launches and partnerships, and with claims and underwriting as paying out draws as much attention as the initial sale."
       ],
       "pv": 1,
-      "n": 125
+      "n": 125,
+      "tries": 1
     },
     "embedded": {
       "known": true,
-      "summary": "Embedded insurance is a policy sold inside another company's checkout, bought from a retailer or platform instead of an insurer directly. The insurer or an MGA underwrites it behind the scenes while the host brand keeps the customer relationship.",
-      "body": [
-        "The mechanics run through an API rather than a sales conversation: the host platform passes a transaction to an insurer or MGA at the moment a customer buys a car, rents an apartment, ships freight or signs up for a gig job, and a quote and bind happen in the background without the customer leaving that flow. The technology and compliance layer connecting the two sides is usually built by a specialist intermediary rather than the carrier itself.",
-        "For carriers and MGAs the appeal is distribution without the cost of acquiring a customer directly, since the host brand already has the audience and the trigger moment. The hard parts sit on the other side: getting licensed and compliant across every market a platform operates in, keeping the underwriting current as the host's product changes, and proving the cover is actually useful rather than an add-on nobody reads before checkout.",
-        "Coverage here sits mostly with specialist platforms and MGAs that plug carriers into a host's checkout, and the same handful of underwriters and technology providers keep recurring across very different hosts, from banks to freight brokers to gig platforms. The activity leans heavily on partnership announcements between a carrier, an intermediary and a distribution partner, and it overlaps constantly with product launches, M&A and AI-driven underwriting rather than standing apart as its own lane."
+      "summary": "Embedded insurance is cover sold inside another company's product or checkout, bought from that company rather than from an insurer directly. An insurer or MGA underwrites behind the scenes while the host brand supplies the customer, the moment of sale, and often the interface.",
+      "sections": [
+        {
+          "heading": "How the policy actually reaches the checkout",
+          "text": "An insurer or managing general agent builds the product and carries the underwriting risk, then exposes it through an API that a distribution partner - a retailer, bank, airline, car marketplace or software platform - plugs into its own checkout or app. The partner supplies the customer relationship and the moment of sale; the insurer or MGA supplies the paper, the pricing and the claims handling behind it. The policy is usually bundled with or attached to a purchase already underway rather than sold as a standalone decision, which is what separates it from a comparison site or a broker's storefront."
+        },
+        {
+          "heading": "Why insurers are chasing this distribution route",
+          "text": "The appeal for an insurer or MGA is reach without building a brand or running its own acquisition funnel: the retailer, lender or platform already has the customer's attention at the moment a related risk becomes obvious, whether that is a phone, a rental car, a shipment or a subcontractor's tools. The hard part sits on the technology and compliance side rather than the product side: underwriting has to run in real time inside someone else's flow, pricing has to update from data the partner holds, and every jurisdiction the partner operates in brings its own rules about who may sell insurance at the point of sale."
+        },
+        {
+          "heading": "Who is active and how the mix has shifted",
+          "text": "The companies most visible here split between distribution platforms that connect insurers to partners - plugging cover into banking apps, freight bookings, short-term rental listings and gig-economy apps - and the carriers and brokers supplying the underwriting behind those connections. Recent activity leans toward established insurers and technology firms partnering with specialist embedded platforms on narrow, occupational programs, such as construction subcontractors or delivery robots, rather than the broad consumer point-of-sale deals that once defined the category. Consolidation has picked up too, with platforms acquiring bancassurance capability rather than building it themselves."
+        },
+        {
+          "heading": "Embedded insurance versus affinity and bancassurance",
+          "text": "Affinity insurance and bancassurance are older cousins of the same idea - a bank or membership group co-brands and cross-sells a policy - but the sale still happens as a separate step, often after a call or a follow-up email. What marks a program as embedded rather than affinity is that the purchase happens inside the same transaction as the underlying product, priced and bound automatically with no human handoff. In practice the two blur: several bank and retailer partnerships in this category are described both ways, and a bancassurance platform that adds real-time binding is, functionally, becoming an embedded one."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 110
     },
     "leadership": {
       "known": true,
-      "summary": "Leadership coverage tracks who insurers, reinsurers, brokers and insurtechs put in charge, from board seats to newly created executive roles. It ranges from routine promotions to appointments that signal strategic shifts, such as new technology or underwriting leadership.",
-      "body": [
-        "A leadership move can be an external hire, an internal promotion, or a board appointment, and each signals something different: an outside hire often brings a skill an insurer lacks internally, such as AI strategy or catastrophe modeling, while an internal promotion usually reflects succession planning already underway.",
-        "These moves matter because a small team runs most insurers, reinsurers and insurtechs, so one appointment can redirect strategy: a head of technology and AI strategy, a chief underwriting officer for a product line, a board seat built around AI expertise. The hard part is separating a genuine strategic signal from the routine turnover any company of scale produces continuously.",
-        "Coverage here spans large carriers and reinsurers alongside brokers, MGAs and smaller insurtechs, with a noticeable share of hires aimed at technology and AI strategy roles rather than traditional underwriting or distribution posts. It sits close to AI & Automation and Claims & Underwriting, and it often overlaps with Partnerships coverage when a hire accompanies a new sponsorship or alliance."
+      "summary": "Insurance leadership moves are the appointments, promotions and board changes that insurers, reinsurers, brokers and insurtechs announce publicly. Recent appointments cluster around underwriting, claims and newly created technology and AI roles, spanning large composite carriers, specialty MGAs and insurtech startups.",
+      "sections": [
+        {
+          "heading": "How an appointment becomes a leadership move",
+          "text": "A leadership move is any change in who runs a function at an insurer, reinsurer, broker, MGA or insurtech: an external hire, an internal promotion, a newly created role, or an appointment to a board. Titles cluster around underwriting, claims, technology and distribution — chief underwriting officer, head of AI strategy, chief operating officer — and a single announcement can cover one executive or a wave of promotions across a division. Coverage is driven by company press releases and trade-press writeups rather than any regulatory filing, except where a public insurer must disclose changes to its named officers."
+        },
+        {
+          "heading": "Why the reshuffle matters beyond the press release",
+          "text": "Underwriting and claims authority in insurance runs through named individuals rather than committees, so who holds a title determines what business a company will write and at what price. A new chief underwriting officer or head of claims can shift an insurer's risk appetite within months, and a newly created role — a head of AI strategy, say — signals where a board expects the next investment to land. The hard part for an outside reader is telling a genuine strategic pivot from routine churn: specialty insurers, MGAs and reinsurers replace senior underwriters constantly as books of business move between carriers, and a title change does not always mean the underlying authority or team has changed with it."
+        },
+        {
+          "heading": "What the mix of companies here shows",
+          "text": "The companies making these moves range from large composite insurers and reinsurers — Zurich, Aviva, AXIS Capital, Willis Towers Watson — down to specialty MGAs, program administrators and catastrophe-risk specialists such as KatRisk and Aeolus, alongside insurtechs spanning life, cyber and motor insurance in markets from the United States to India. The clearest shift is the appearance of roles that did not previously exist — head of AI strategy, head of technology — beside the traditional underwriting and claims titles. These moves land most often alongside AI & Automation, Property & Cat and Claims & Underwriting coverage, since a leadership change usually tracks where a company is investing."
+        },
+        {
+          "heading": "Internal promotion versus outside hire",
+          "text": "Two distinct patterns sit inside this category. Established carriers and reinsurers tend to promote from within along a visible succession chain — a wave of promotions across underwriting, finance and legal at one company, or a string of internal appointments at another — which reads as continuity rather than change. Smaller specialty insurers, MGAs and insurtechs more often hire from outside or invent a role that did not exist before, which is usually the louder signal of a strategic shift. Board appointments are a separate thread again: they add governance oversight rather than day-to-day operating authority, and are worth reading differently from an operating appointment even when the company is the same one."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 82
     },
     "regulation": {
       "known": true,
-      "summary": "Insurance regulation is the set of rules that decide who may sell cover, how much capital insurers must hold, and how claims must be handled. It sits behind almost everything else here, since a new product, funding round or AI claims tool still must clear the same licensing and conduct rules first.",
-      "body": [
-        "A country's insurance regulator sets who may act as an insurer, agent, broker or managing general agent, how much capital and reserves a carrier must hold against its policies, and what disclosures and conduct standards apply when a policy is sold or a claim is paid. Insurtechs typically enter through a lighter door than a full carrier license, as an agent, an MGA underwriting on a partner's paper, or through a regulatory sandbox, before applying for fuller authority.",
-        "The hard part now is that regulators are being asked to approve tools rather than just entities: pricing models that use far more individual data than a traditional rating class, and AI systems used in underwriting, claims handling and fraud detection. Supervisors are building frameworks to examine those systems without precedent to draw on, while insurers still have to satisfy older rules on solvency, licensing and fair treatment of customers.",
-        "Coverage here centers on national and state regulators, Nigeria's NAICOM, India's IRDAI, Lloyd's and the NAIC among them, acting as licensors and, increasingly, evaluators of AI used by carriers and their technology partners. It regularly overlaps with AI & Automation and Claims & Underwriting, since much of the activity is regulators responding to tools built there, and with Funding and Product & Launches when a newly licensed insurtech's launch depends on the license it just received."
+      "summary": "Insurance regulation is the body of rules, set by government authorities, that governs how insurers are licensed, priced, and made to pay claims. Enforcement now ranges from routine licensing and fraud prosecution to fresh scrutiny over algorithmic pricing and AI-driven claims tools.",
+      "sections": [
+        {
+          "heading": "Who sets the rules and what they check",
+          "text": "In most markets a dedicated authority licenses insurers and intermediaries before they can sell policies at all, from state regulators coordinated through the NAIC in the US to IRDAI in India and NAICOM in Nigeria. Regulators approve policy wording and pricing methods, monitor insurer solvency so claims can actually be paid, run market conduct exams, and prosecute fraud. Licensing extends to intermediaries too, covering brokers, managing general agents, and newer digital and embedded-insurance partners."
+        },
+        {
+          "heading": "Why algorithmic pricing is the hard part now",
+          "text": "Insurers can now price individual risk far more precisely than the broad rating classes regulation was originally built around, and that precision is what worries supervisors: a model that prices someone out entirely looks less like fair, risk-based pricing and more like exclusion by algorithm. Regulators are also trying to supervise claims and underwriting tools built by outside AI vendors rather than the insurer itself, and to work out how existing fraud, sanctions, and consumer-protection law applies to AI-native carriers and embedded partnerships nobody anticipated when the rules were written."
+        },
+        {
+          "heading": "Where the activity actually sits",
+          "text": "The coverage skews toward regulators extending their frameworks to new entrants: Indian and Nigerian authorities feature repeatedly, licensing insurtech agents and digital-first carriers and setting out how far a venture-backed firm can go before it needs a full insurer licence rather than a distribution one. Alongside that sits routine state-level enforcement, such as fraud prosecutions and staffing moves inside workers' compensation divisions, plus growing scrutiny of how artificial intelligence gets used in underwriting and claims. The subject overlaps constantly with AI & automation, claims & underwriting, and product launches, since a new rule usually follows a new kind of product."
+        },
+        {
+          "heading": "How the rules differ from one market to the next",
+          "text": "Regulation is not one system. The US splits authority across individual states loosely coordinated through the NAIC, so a product can be approved in one state while still awaiting sign-off in another. India and Nigeria instead centralise authority in a single national regulator, IRDAI and NAICOM respectively, which can move faster on licensing decisions but also draws a harder line around who counts as a genuine insurer rather than a technology partner riding on someone else's licence."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 70
     },
     "cyber": {
       "known": true,
-      "summary": "Cyber insurance covers the costs of a data breach or ransomware attack, for the company hit and for the people it harmed. Policies pay first-party costs like incident response and ransom negotiation, plus third-party liability such as lawsuits and regulatory fines.",
-      "body": [
-        "An insurer or specialist MGA writes the policy against a mix of first-party costs — forensics, ransom negotiation and payment, notification, business interruption — and third-party liability from lawsuits or regulatory fines that follow a breach. Underwriting increasingly leans on continuous external scans of a company's exposed systems rather than a paper questionnaire alone, which is what platforms built by insurtechs in this category are selling to carriers and brokers.",
-        "Ransomware and, increasingly, AI-driven intrusions are the main claims drivers, and attribution is one of the hardest parts of the line: whether a hack counts as a hostile act for exclusion purposes has reached courts on both sides of the Atlantic. Aggregation is the other hard part — a single vendor's outage can trigger claims across many policyholders at once, unlike how a storm or a fire spreads risk, which is why reinsurers watch this line closely.",
-        "Coverage here mixes specialist cyber MGAs and insurtechs — Coalition, BOXX, Stoïk, Cowbell, Mitigata — building AI-native underwriting and monitoring tools, alongside large carriers such as Allianz, Liberty Mutual and SBI Life that partner with or buy into those platforms rather than build in-house. The category overlaps heavily with AI & Automation and Claims & Underwriting, as insurers add affirmative AI cover and dispute claims like the CrowdStrike outage."
+      "summary": "Cyber insurance pays a company's costs when its computer systems are hacked, breached or knocked offline, from ransom demands to legal liability. It sits mainly with specialist insurers and brokers rather than the big composite carriers, and pricing depends heavily on how well a policyholder's own defences hold up.",
+      "sections": [
+        {
+          "heading": "How a policy actually responds when something goes wrong",
+          "text": "A cyber policy is usually sold as a package rather than a single line: first-party cover for the policyholder's own losses (ransom payment, forensics, system rebuild, lost income while systems are down) sits alongside third-party liability for claims brought by customers or partners whose data was exposed. Most insurers also bundle in an incident-response panel of forensics firms, negotiators and lawyers, so the policy is as much a hotline to specialists as it is a payout. That panel matters because the insurer is underwriting a process, not just a number."
+        },
+        {
+          "heading": "Why underwriting it is unusually hard",
+          "text": "Other lines price risk against decades of loss history for a fairly stable hazard. Cyber risk changes shape faster than that: a single vulnerability in one widely used piece of software can generate simultaneous claims across many unrelated policyholders, which is the kind of correlated, systemic loss property insurers spend most of their effort trying to avoid. Attribution adds a second layer of difficulty, since policies routinely exclude acts of war or state-sponsored attacks, and telling a criminal ransomware gang from a state proxy after the fact is often genuinely unclear, which is now being tested in court."
+        },
+        {
+          "heading": "Where the activity sits today",
+          "text": "Among the companies covered here, specialist cyber underwriters and brokers show up more often than the large multi-line insurers, and the coverage keeps drifting into how artificial intelligence changes the picture: insurers extending policies to cover AI-specific harms, attackers using AI tools to scale ransomware and phishing, and questions about whether a rogue autonomous software agent counts as a covered incident at all. Claims handling and underwriting technology come up almost as often as new products, reflecting how much of the recent activity is about processing and pricing risk rather than just launching new policies."
+        },
+        {
+          "heading": "Cover for the business versus cover for everyone it touches",
+          "text": "A useful distinction inside the category is between cover for the policyholder's own losses and cover that follows data or systems once they leave the policyholder's hands, through suppliers, cloud platforms or software vendors. A company can run a tight security programme itself and still face a claim because a vendor it depends on was breached, which is why questions about vendor contracts and fourth-party exposure keep surfacing alongside the more familiar ransomware and data-breach stories."
+        }
       ],
-      "pv": 1,
+      "pv": 2,
       "n": 57
     }
   }
