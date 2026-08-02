@@ -66,6 +66,27 @@ produce all of that consistently — **route new pages through them.**
    means changing `GA_ID` and re-running `seo.js`, nothing else; setting
    `GA_ID=""` builds a tag-free copy, which is what a fork or a local
    check should use rather than sending hits to the real property.
+2d. **The footer's hub links are generated too, for the same reason the
+   nav and the tag are.** `FOOT_LINKS` in `seo.js` holds the only copy:
+   generated pages get it inside `FOOTER`, and `index.html` /
+   `companies.html` take the identical markup through their
+   `<!-- SEO:FOOTLINKS -->…<!-- /SEO:FOOTLINKS -->` markers, refreshed
+   every build. It is the **only** route to the hubs with no nav slot —
+   `/glossary/`, `/funding/companies/` and `/market/`, which are kept
+   out of the nav because five items is what the phone breakpoints are
+   measured for (rule 2b).
+   Those two pages carried no footer links at all until this existed,
+   which is the version of the problem that matters most: they are the
+   site's highest-authority pages and the three hubs that most need
+   links were getting nothing from either. The row also has a history of
+   changing — the glossary, then the markets — and a hand-typed second
+   copy would have gone stale on both occasions with nothing failing to
+   announce it, exactly as the OG block did before rule 8 put it behind
+   a marker. **A new hand-authored page needs the marker pair and its
+   filename in `FOOTLINK_PAGES`**; a generated page needs nothing.
+   `company.html` is deliberately excluded, as it is from `SOCIAL_PAGES`
+   and for the same reason: a `noindex` redirect shim titled
+   "Redirecting…" should not be handing out links.
 3. **Company pages live at `/company/<slug>/`** as real static HTML — fully
    server-rendered (work without JS) and regenerated each run. Never link
    companies via `company.html?c=…`; use `/company/<slug>/`. `company.html` is a

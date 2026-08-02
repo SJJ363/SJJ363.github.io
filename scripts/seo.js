@@ -398,15 +398,23 @@ ${navMarkup(active, currentTopic)}
    everywhere — which is what a hub with no nav slot needs to be
    crawlable at all. Same reasoning as /funding/companies/, which is
    reached from the tracker index and the company blocks. */
+/* The hubs with no nav slot, written here and nowhere else. Generated
+   pages take it through FOOTER; index.html and companies.html take the
+   identical markup through their <!-- SEO:FOOTLINKS --> markers, every
+   build (rule 2d) — because those two are the highest-authority pages
+   on the site and had no footer links at all, so /glossary/,
+   /funding/companies/ and /market/ got nothing from either. */
+const FOOT_LINKS = `    <p class="foot-links"><a href="/glossary/">Insurance glossary</a> ·
+      <a href="/funding/companies/">Most funded companies</a> ·
+      <a href="/market/">Markets</a> ·
+      <a href="/topic/">All topics</a></p>`;
+
 const FOOTER = `  <footer class="site-footer">
     <p class="foot-desc">
       <b>Insurtech Daily</b> is an aggregator of publicly available insurtech headlines.
       Every story links to its original source.
     </p>
-    <p class="foot-links"><a href="/glossary/">Insurance glossary</a> ·
-      <a href="/funding/companies/">Most funded companies</a> ·
-      <a href="/market/">Markets</a> ·
-      <a href="/topic/">All topics</a></p>
+${FOOT_LINKS}
     <p class="foot-meta">© ${new Date().getFullYear()}</p>
   </footer>`;
 
@@ -4171,6 +4179,32 @@ function injectSocial() {
   console.log(`  ✓ social cards on ${n} hand-authored page${n === 1 ? "" : "s"}`);
 }
 
+/* ── The footer's hub links on the hand-authored pages ──────────
+   The third thing to reach these two files through a marker, after
+   the nav (rule 2b) and the Google tag (rule 2c), and it is here for
+   the reason both of those are: this row is the only route to the
+   hubs that have no nav slot, it has already changed twice — the
+   glossary, then the markets — and a hand-typed copy would have gone
+   stale on both occasions with nothing failing to say so.
+
+   company.html is deliberately out of the list, exactly as it is for
+   the social tags: a noindex redirect shim titled "Redirecting…"
+   should not be handing out links. ── */
+const FOOTLINK_PAGES = ["index.html", "companies.html"];
+
+function injectFootLinks() {
+  let n = 0;
+  for (const file of FOOTLINK_PAGES) {
+    const p = path.join(ROOT, file);
+    if (!fs.existsSync(p)) continue;
+    const html = fs.readFileSync(p, "utf8");
+    const next = replaceBlock(html, "FOOTLINKS", FOOT_LINKS);
+    if (next !== html) fs.writeFileSync(p, next);
+    n++;
+  }
+  console.log(`  ✓ footer hub links on ${n} hand-authored page${n === 1 ? "" : "s"}`);
+}
+
 function injectHomepage(news) {
   const p = path.join(ROOT, "index.html");
   let html = fs.readFileSync(p, "utf8");
@@ -4544,6 +4578,7 @@ function main() {
   buildMarketPages(markets);
   injectAnalytics();
   injectSocial();
+  injectFootLinks();
   injectHomepage(news);
   injectCompaniesIndex(db);
   buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked, terms, markets);
