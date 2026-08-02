@@ -75,6 +75,75 @@
    is capped at one by construction. */
 const PAGE_MAX = 5;
 
+/* Companies are capped looser than terms, because they are a different
+   kind of link. A glossary term is an aside — the reader probably knows
+   what a broker is and the link is there for the one who doesn't — so
+   one per paragraph is generous. A company named in a brief is the
+   SUBJECT of the sentence, and the daily brief's "What's happening"
+   paragraph routinely names five or six; capping that at one would
+   link Mapfre and leave Tuio, Gallagher and Arch as dead text in the
+   same clause, which reads like a bug rather than restraint.
+
+   Six rather than four because four was measured against a real brief
+   and cut one: the 2026-08-01 "What's happening" names Meta, Mapfre,
+   Tuio, Gallagher and Arch, and stopping at four dropped Arch alone
+   for no reason a reader could see. The page cap is what actually
+   bounds this — a brief is two paragraphs — so the paragraph cap only
+   has to stop a pathological one, not ration a normal one. */
+const CO_PARA_MAX = 6;
+const CO_PAGE_MAX = 8;
+
+/* Company names that are ordinary English words, hand-checked against
+   the index. Case-sensitive matching already rejects "chapter" and
+   "income" in mid-sentence, but not a sentence that OPENS with one —
+   "Today's insurers…", "Root causes remain…", "Stand-alone cyber…" —
+   and a brief that links the first word of a sentence to a company
+   page nobody was talking about is exactly the failure this whole
+   file's caps and gates exist to prevent.
+
+   Curated and hand-verified, on the same reasoning CANON_LIST and
+   SPLIT_LIST carry: any rule general enough to derive this set from
+   the names alone would eventually reject a real company. The cost of
+   a miss is one unlinked mention; the cost of a false link is a reader
+   sent to the wrong company's page from our own prose.
+
+   Names NOT on this list on purpose: Arch, Marsh, Meta, Chase, Mercury,
+   Guardian, Nirvana. Each is a word, but not one that opens an
+   insurance sentence, and each is a real company the briefs do name —
+   "Arch saying it prefers buybacks" is the link a reader wants. */
+const AMBIGUOUS = new Set([
+  "Today", "Sure", "Stand", "Advance", "Root", "Covered", "Income",
+  "Chapter", "United", "Mission", "Pace", "Loop", "Brace", "Grace",
+  "Honey", "Leaf", "Tree", "Neat", "Ripe", "Slide", "Blend", "Beam",
+  "Pit", "Terminal", "Foundry", "Fabric", "Ledger", "Haven", "Carrot",
+  "Rainbow", "Emerald", "Indigo", "Kiwi", "Bolt", "Digit", "Epic",
+  "Gamma", "Owen", "Victor", "Swan", "Integrity", "Momentum",
+  "Landmark", "Radiant", "Assured", "Vigil", "Sentry", "Naked",
+  "Pineapple", "Wave", "Flock", "Jerry", "Kettle",
+]);
+
+/* A name has to be distinctive enough that a whole-word, case-sensitive
+   hit is evidence rather than coincidence. Two rules, both about how
+   much signal the string itself carries:
+
+     · under 3 characters is an initialism a sentence can produce by
+       accident, and
+     · an all-lowercase one-word name under 5 characters ("mea",
+       "itel", "arqu") reads as a typo of an ordinary word, and
+       case-sensitivity buys nothing when there is no case to match.
+
+   bolttech, wefox and easypaisa clear the second rule on length, which
+   is the intent — they are brands a reader would recognise. */
+function linkableName(name) {
+  if (!name || name.length < 3) return false;
+  if (AMBIGUOUS.has(name)) return false;
+  if (!/[A-Z]/.test(name) && !/\s/.test(name) && name.length < 5) return false;
+  return true;
+}
+
+const RE_META = /[.*+?^${}()|[\]\\]/g;
+const escRe = (s) => s.replace(RE_META, "\\$&");
+
 /* Characters that continue a word for the purposes of growing a match
    out to its whole word. Deliberately excludes the hyphen: several
    patterns already span one ("pay-as-you-drive", "non-admitted"), and
@@ -112,50 +181,149 @@ function expand(s, start, end) {
    site swaps `esc(text)` for `link(text)` rather than nesting the two —
    nesting would either escape the anchor we just inserted or match
    patterns against text with entities already in it. */
-function linker({ terms = [], self = null, esc }) {
-  const targets = terms.filter((t) => t && t.slug && t.slug !== self && t.re);
+/* The engine both linkers are built on.
+
+   targets  — [{ key, re, href, grow }]. `key` is what "first mention
+              only" is keyed on, `grow` says whether a match should be
+              expanded to whole words (true for the glossary's stem
+              patterns, false for exact company names).
+   paraMax  — anchors per call, i.e. per paragraph.
+   pageMax  — anchors per linker, i.e. per page.
+   cls      — the anchor's class, so the two link kinds can be styled
+              and counted apart.
+   esc      — the caller's HTML escaper. Passed in rather than
+              duplicated so there is one escaping rule on the site, and
+              so this file never has to require seo.js back.
+
+   Returns link(text) -> html. It escapes as well as links, so a call
+   site swaps `esc(text)` for `link(text)` rather than nesting the two —
+   nesting would either escape the anchor we just inserted or match
+   patterns against text with entities already in it. */
+function makeLinker({ targets, paraMax, pageMax, cls, esc }) {
   const used = new Set();
-  let budget = PAGE_MAX;
+  let budget = pageMax;
 
   return function link(text) {
     const s = String(text == null ? "" : text);
     if (!s || budget <= 0) return esc(s);
 
-    /* Earliest match wins, longest breaks a tie. Earliest because the
-       first mention is the one a reader meets while still deciding
-       what the paragraph is about; longest because where two patterns
-       start together the more specific one is the better anchor. */
-    let best = null;
-    for (const t of targets) {
-      if (used.has(t.slug)) continue;
-      // Strip g/y: a sticky or global regex carries lastIndex between
-      // calls, so the same pattern would silently stop matching on the
-      // second paragraph of a page.
-      const re = new RegExp(t.re.source, t.re.flags.replace(/[gy]/g, ""));
-      const m = re.exec(s);
-      if (!m) continue;
-      const [a, b] = expand(s, m.index, m.index + m[0].length);
-      if (!best || a < best.a || (a === best.a && b - a > best.b - best.a)) {
-        best = { t, a, b };
+    /* Collect non-overlapping hits left to right. Earliest match wins,
+       longest breaks a tie: earliest because the first mention is the
+       one a reader meets while still deciding what the paragraph is
+       about, longest because where two patterns start together the
+       more specific one is the better anchor ("Wave Claims" over
+       "Wave"). */
+    const hits = [];
+    let cursor = 0;
+    let room = Math.min(paraMax, budget);
+    while (room > 0) {
+      let best = null;
+      for (const t of targets) {
+        if (used.has(t.key)) continue;
+        // Strip g/y: a sticky or global regex carries lastIndex between
+        // calls, so the same pattern would silently stop matching on
+        // the second paragraph of a page.
+        const re = new RegExp(t.re.source, t.re.flags.replace(/[gy]/g, ""));
+        const m = re.exec(s.slice(cursor));
+        if (!m) continue;
+        const from = cursor + m.index;
+        const [a, b] = t.grow
+          ? expand(s, from, from + m[0].length)
+          : [from, from + m[0].length];
+        if (!best || a < best.a || (a === best.a && b - a > best.b - best.a)) {
+          best = { t, a, b };
+        }
       }
+      if (!best) break;
+      hits.push(best);
+      used.add(best.t.key);
+      budget--;
+      room--;
+      cursor = best.b;
     }
-    if (!best) return esc(s);
+    if (!hits.length) return esc(s);
 
-    used.add(best.t.slug);
-    budget--;
-    return (
-      esc(s.slice(0, best.a)) +
-      `<a class="gl-link" href="/glossary/${best.t.slug}/">` +
-      esc(s.slice(best.a, best.b)) +
-      `</a>` +
-      esc(s.slice(best.b))
-    );
+    let out = "";
+    let at = 0;
+    for (const h of hits) {
+      out +=
+        esc(s.slice(at, h.a)) +
+        `<a class="${cls}" href="${h.t.href}">` +
+        esc(s.slice(h.a, h.b)) +
+        `</a>`;
+      at = h.b;
+    }
+    return out + esc(s.slice(at));
   };
 }
 
-/* A linker that does nothing, for the paths where no glossary exists
-   yet (a fresh checkout, or a store with no definitions cached). The
-   call sites then need no `if` — they always hold a linker. */
+/* terms — the LIVE glossary terms, i.e. the ones a page was actually
+            built for (see glossaryLive() in seo.js). Linking a term
+            with no definition is a link to a 404: pages are built only
+            where a definition exists.
+   self   — slug of the term whose page this is, or null. A page must
+            not link to itself; the anchor goes nowhere and reads as a
+            mistake. */
+function linker({ terms = [], self = null, esc }) {
+  return makeLinker({
+    targets: terms
+      .filter((t) => t && t.slug && t.slug !== self && t.re)
+      .map((t) => ({ key: t.slug, re: t.re, href: `/glossary/${t.slug}/`, grow: true })),
+    paraMax: 1,
+    pageMax: PAGE_MAX,
+    cls: "gl-link",
+    esc,
+  });
+}
+
+/* companies — [{ slug, name }], ALREADY resolved against the finished
+                company index by the caller (rule 3c-iv) and already
+                gated to the ones this brief was written from (rule
+                3b-vi). This function does not decide which companies a
+                brief may link; it only finds their names in the prose.
+
+   Matching is case-SENSITIVE and whole-word, and longer names are
+   tried first so "Wave Claims" wins over "Wave". Case-sensitivity is
+   the cheap half of the ambiguity guard (it rejects "brokerage chapter"
+   for the company Chapter); AMBIGUOUS and linkableName() are the half
+   that catches a sentence opening on one. */
+function companyLinker({ companies = [], esc }) {
+  const targets = companies
+    .filter((c) => c && c.slug && linkableName(c.name))
+    .slice()
+    .sort((a, b) => b.name.length - a.name.length)
+    .map((c) => ({
+      key: c.slug,
+      // No `i` flag, deliberately. Lookaround rather than \b so a name
+      // ending in punctuation ("Zurich's", "AXA.") still matches while
+      // "Rootstock" does not.
+      re: new RegExp(`(?<![A-Za-z0-9])${escRe(c.name)}(?![A-Za-z0-9])`),
+      href: `/company/${c.slug}/`,
+      grow: false,
+    }));
+  return makeLinker({
+    targets,
+    paraMax: CO_PARA_MAX,
+    pageMax: CO_PAGE_MAX,
+    cls: "co-inline",
+    esc,
+  });
+}
+
+/* A linker that does nothing, for the paths where there is nothing to
+   link — a fresh checkout with no glossary cached, or a brief with no
+   stamped companies. The call sites then need no `if`: they always
+   hold a linker. */
 const plainLinker = (esc) => (text) => esc(text == null ? "" : String(text));
 
-module.exports = { linker, plainLinker, expand, PAGE_MAX };
+module.exports = {
+  linker,
+  companyLinker,
+  plainLinker,
+  expand,
+  linkableName,
+  AMBIGUOUS,
+  PAGE_MAX,
+  CO_PARA_MAX,
+  CO_PAGE_MAX,
+};

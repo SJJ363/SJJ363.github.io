@@ -54,6 +54,7 @@ const { briefWindow } = require("./brief-window");
 const FILE = path.join(__dirname, "..", "data", "news.json");
 const BRIEFS = path.join(__dirname, "..", "data", "briefs.json");
 const STORE = path.join(__dirname, "..", "data", "companies-store.json");
+const DB = path.join(__dirname, "..", "data", "companies.json");
 // Fallback forensics: not committed (see .gitignore) — CI uploads it as a
 // build artifact so a failed enhancement can be diagnosed after the fact.
 const DIAG = path.join(__dirname, "..", "brief-fallback.json");
@@ -165,6 +166,46 @@ function buildDigest(data, window) {
   lines.push("A SAMPLE OF HEADLINES:");
   topStories.forEach((a) => lines.push(`- ${quoted(a.title)} (${a.source}) [${(a.tags || []).join(", ")}]`));
   return lines.join("\n");
+}
+
+/* ------------------------------------------------------------
+   Provenance for the brief's company links (rule 3b-vi)
+
+   The brief names ten to fifteen companies and used to link none of
+   them, which made it the only original prose on the site pointing at
+   nothing. The obvious fix — match every index name against the text —
+   is the heuristic CANON_LIST and SPLIT_LIST exist to refuse: the index
+   holds Chapter, Income, Sure, Root, Covered, Stand, Today and Arch,
+   and a brief that links the word "chapter" to a company page is worse
+   than a brief that links nothing.
+
+   So the gate is provenance rather than pattern. These are the
+   companies attributed to the stories this brief was actually written
+   from — the window, not the 45-day batch and not the whole index — so
+   a name only becomes linkable by having been in front of the writer.
+   seo.js then finds those names in the prose (see companyLinker in
+   autolink.js) and links no others.
+
+   Two things follow from where this runs. The brief step runs BEFORE
+   companies.js (rule 3b-i), so `companies.json` here is the previous
+   run's index: a company appearing for the very first time today is
+   not yet in it and goes unlinked until its next mention. That is the
+   right way round — a missing link costs nothing, and resolving
+   against a finished index is what rule 3c-iv requires. And slugs are
+   stored WITHOUT names, because seo.js must re-read the name from the
+   index at render time; a name cached here would survive a
+   canonicalisation that renamed the company underneath it.
+   ------------------------------------------------------------ */
+function windowCompanies(articles) {
+  const links = new Set((articles || []).map((a) => a && a.link).filter(Boolean));
+  if (!links.size) return [];
+  const db = readJson(DB, {});
+  const out = new Set();
+  for (const c of db.companies || []) {
+    if (!c || !c.slug) continue;
+    if ((c.articles || []).some((a) => a && links.has(a.link))) out.add(c.slug);
+  }
+  return [...out].sort();
 }
 
 const FIELDS = ["headline", "teaser", "whatsHappening", "whyItMatters"];
@@ -731,6 +772,7 @@ async function main() {
         ...(window.priorDate ? { after: window.priorDate } : {}),
         ...(window.widened ? { widened: window.widened } : {}),
       };
+      result.brief.companies = windowCompanies(window.articles);
       publish(data, result.brief, `Brief written by Claude via ${result.brief.via}${state.attempts > 1 ? ` (${state.attempts} attempts)` : ""}`);
       return;
     }
@@ -778,4 +820,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { buildDigest, buildPrompt, recentBriefs, extractBrief, judgeReply, classify, parseResetAt };
+module.exports = { buildDigest, buildPrompt, recentBriefs, windowCompanies, extractBrief, judgeReply, classify, parseResetAt };

@@ -342,6 +342,52 @@ produce all of that consistently — **route new pages through them.**
    The deterministic brief (`build-brief.js`) is deliberately left on the
    whole batch: it describes "this cycle", it is rebuilt at every refresh, and
    it is a safety net rather than something anyone reads twice.
+3b-vi. **A brief links the companies it was written from, and that set is
+   stamped at write time — it is provenance, not pattern matching.**
+   The brief names ten to fifteen companies and used to link none, which
+   made the site's best prose the one page type pointing nowhere. The
+   obvious fix is matching every index name against the text, and that is
+   precisely the heuristic `CANON_LIST` and `SPLIT_LIST` exist to refuse:
+   the index holds `Chapter`, `Income`, `Sure`, `Root`, `Covered`,
+   `Stand`, `Today` and `Arch`, and linking the word "chapter" to a
+   company page is worse than linking nothing.
+   So `windowCompanies()` in `write-brief.js` records the slugs attributed
+   to the **window's** articles (rule 3b-v) onto `briefing.companies`;
+   `recordBrief()` carries them into `briefs.json`; `briefCompanies()` +
+   `companyLinker()` find those names, and no others, in the prose.
+   Five rules:
+   • **Slugs are stored, names are not.** `seo.js` re-reads the name from
+     the finished index at render time (rule 3c-iv) and drops a slug with
+     no record, so a canonicalisation reaches old briefs on the next
+     build and a pruned company can never leave a dead link behind.
+   • **The gate is the window, not the batch and not the index.** A name
+     becomes linkable by having been in front of the writer. The 45-day
+     batch would re-admit six weeks of companies, which is the same
+     failure rule 3b-v fixed for themes.
+   • **The stamp happens before `companies.js` runs** (rule 3b-i), so the
+     index it resolves against is the *previous* run's. A company
+     appearing for the first time today is not in it and goes unlinked
+     until its next mention — the right way round, since a missing link
+     costs nothing and a wrong one costs trust.
+   • **Case-sensitive whole-word matching, plus `AMBIGUOUS` and
+     `linkableName()` in `autolink.js`.** Case alone rejects "brokerage
+     chapter"; it does not reject a sentence that *opens* with one, hence
+     the curated list. Names deliberately left off it — Arch, Marsh,
+     Meta, Chase, Mercury, Guardian, Nirvana — are words, but not ones
+     that open an insurance sentence, and each is a company the briefs
+     really do name.
+   • **`CO_PARA_MAX` is 6, not the glossary's 1.** A term is an aside; a
+     company is the subject of the sentence. Four was measured against
+     the 2026-08-01 brief and cut Arch alone out of five in one
+     paragraph, which reads as a bug. `CO_PAGE_MAX` (8) is what actually
+     bounds a two-paragraph brief.
+   **Entries written before the stamp existed carry none and render
+   exactly as they did** — the same treatment rule 3b-v gives a store
+   entry with no `firstSeen`, and for the same reason: the window they
+   were written from is gone, so any set derived now would be a
+   reconstruction wearing provenance's clothes. Only 2026-08-01 was
+   stamped retroactively, because its batch was still in `news.json` and
+   the real `briefWindow()` + `windowCompanies()` could be run over it.
 3c. **Topic hubs live at `/topic/` + `/topic/<slug>/`,** one per taxonomy
    category, built by `collectTopics()` from the **persistent store**
    (`companies-store.json`) rather than the current batch — the archive is
@@ -945,15 +991,12 @@ produce all of that consistently — **route new pages through them.**
      `escHtml(text)` for `link(text)` rather than nesting them. Nesting
      either escapes the anchor just inserted or matches patterns
      against text that already holds entities.
-   **Company names in brief prose are deliberately NOT linked.** The
-   obvious companion — briefs name ~14 companies each and link none —
-   needs bare-name matching against an index holding `Chapter`,
-   `Income`, `Sure`, `Root`, `Covered`, `Stand`, `Today` and `Arch`,
-   which is exactly the heuristic `CANON_LIST` and `SPLIT_LIST` exist
-   to refuse. `briefs.json` entries carry no article links, so there is
-   no attributed company set to gate on either. The fix is provenance,
-   not pattern matching: stamp the window's company slugs into the
-   entry at write time in `write-brief.js`, then link only those.
+   **Company names in brief prose are linked too, but on provenance
+   rather than pattern — see rule 3b-vi.** The class there is
+   `co-inline`, **not `co-link`**: `.co-link` was already the
+   companies-index row, which is `display: flex`, so reusing the name
+   put every company mention in the brief on its own line. A new prose
+   link needs a class grep-checked against `style.css` first.
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may

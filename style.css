@@ -981,7 +981,12 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
    the same kind of thing as a company profile — our prose above someone
    else's headlines — and the two should not read as different features.
    All this adds is the stacking and the lede's slight lift. */
-/* Glossary links inside our own prose (autolink.js).
+/* Links inside our own prose (autolink.js) — glossary terms in
+   profiles, hub briefs and definitions (.gl-link), and company names
+   in the daily brief (.co-inline). One rule for both on purpose: they
+   are the same gesture to a reader ("this phrase has a page"), and
+   giving them different colours would make the brief look like it had
+   two kinds of link when it has one.
 
    Accent ink and underlined AT REST, not on hover — the same rule the
    funding month links and the period chart had to be fixed to follow:
@@ -992,14 +997,16 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
 
    currentColor on the underline rather than a fixed value so the
    hover state carries the rule with the text. */
-.gl-link {
+.gl-link,
+.co-inline {
   color: var(--accent);
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
-.gl-link:hover {
+.gl-link:hover,
+.co-inline:hover {
   color: var(--accent-deep);
   text-decoration-color: currentColor;
 }

@@ -33,7 +33,7 @@ const {
   STORY_CAP: GLOSSARY_STORY_CAP,
 } = require("./glossary");
 const { cardFor, W: OG_W, H: OG_H } = require("./og");
-const { linker, plainLinker } = require("./autolink");
+const { linker, companyLinker, plainLinker } = require("./autolink");
 
 const ROOT = path.join(__dirname, "..");
 const NEWS = path.join(ROOT, "data", "news.json");
@@ -226,7 +226,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=31" />
+  <link rel="stylesheet" href="/style.css?v=32" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -780,6 +780,15 @@ function recordBrief(news) {
     by: b.by || "",
     storyCount: news.count || (news.articles || []).length,
     sourceCount: (news.sources || []).length,
+    /* Provenance for the company links, stamped by write-brief.js from
+       the window this brief was written from (rule 3b-vi). Carried
+       through here because briefs.json is the durable store and the
+       source for every brief page — an entry that loses it can never
+       get it back, since the window is gone by the next run.
+       Entries written before the field existed simply have none and
+       render exactly as they did, the same way rule 3b-v treats a
+       store entry with no `firstSeen`. */
+    companies: Array.isArray(b.companies) ? b.companies : [],
     topics: (news.taxonomy || [])
       .slice()
       .sort((x, y) => (y.count || 0) - (x.count || 0))
@@ -801,17 +810,49 @@ function recordBrief(news) {
   return briefs;
 }
 
-function briefBlocks(b) {
+/* The brief's company links, resolved against the FINISHED index — the
+   slugs stamped by write-brief.js are provenance, not addresses (rule
+   3c-iv). A slug with no record is dropped rather than linked: seo.js
+   prunes every /company/<slug>/ without one, so the alternative is a
+   dead link in the site's best prose. The name comes from the record
+   too, so a canonicalisation applies to old briefs on the next build.
+
+   `linkCompanies` is passed in rather than read from a module global
+   because briefBlocks() is called once per page and the linker it
+   builds is stateful. */
+function briefCompanies(b, db) {
+  const slugs = Array.isArray(b.companies) ? b.companies : [];
+  if (!slugs.length) return [];
+  const bySlug = new Map((db.companies || []).map((c) => [c.slug, c]));
+  return slugs
+    .map((s) => bySlug.get(s))
+    .filter((c) => c && c.name)
+    .map((c) => ({ slug: c.slug, name: c.name }));
+}
+
+/* One linker per brief page — stateful (first mention only, page
+   budget), so it must not be shared across pages. Falls back to plain
+   escaping for the entries written before the stamp existed, which is
+   every brief archived before 2026-08-02. */
+function briefLinker(b, db) {
+  const companies = briefCompanies(b, db);
+  return companies.length
+    ? companyLinker({ companies, esc: escHtml })
+    : plainLinker(escHtml);
+}
+
+function briefBlocks(b, link = null) {
+  const text = link || ((s) => escHtml(s));
   const blocks = [
     `      <div class="brief-block">
         <h2 class="brief-label">What's happening</h2>
-        <p class="brief-text">${escHtml(b.whatsHappening)}</p>
+        <p class="brief-text">${text(b.whatsHappening)}</p>
       </div>`,
   ];
   if (b.whyItMatters) {
     blocks.push(`      <div class="brief-block">
         <h2 class="brief-label">Why it matters</h2>
-        <p class="brief-text">${escHtml(b.whyItMatters)}</p>
+        <p class="brief-text">${text(b.whyItMatters)}</p>
       </div>`);
   }
   return blocks.join("\n");
@@ -819,7 +860,7 @@ function briefBlocks(b) {
 
 /* newer/older are the adjacent archive entries — the prev/next pair
    gives crawlers a path through every brief without the index. */
-function briefPageHtml(b, newer, older) {
+function briefPageHtml(b, newer, older, db = {}) {
   const canonical = `/brief/${b.date}/`;
   const day = fullDate(b.date || b.generatedAt);
   const title = `${b.headline} — insurtech brief, ${day} | ${SITE.name}`;
@@ -918,7 +959,7 @@ ${header("brief")}
     </div>
 
     <article class="brief-article">
-${briefBlocks(b)}
+${briefBlocks(b, briefLinker(b, db))}
     </article>
 
 ${topics}
@@ -1020,7 +1061,7 @@ ${FOOTER}
 `;
 }
 
-function buildBriefPages(briefs) {
+function buildBriefPages(briefs, db = {}) {
   const outRoot = path.join(ROOT, "brief");
   fs.mkdirSync(outRoot, { recursive: true });
 
@@ -1032,7 +1073,7 @@ function buildBriefPages(briefs) {
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(
       path.join(dir, "index.html"),
-      briefPageHtml(b, briefs[i - 1], briefs[i + 1])
+      briefPageHtml(b, briefs[i - 1], briefs[i + 1], db)
     );
   });
   fs.writeFileSync(path.join(outRoot, "index.html"), briefIndexHtml(briefs));
@@ -3952,7 +3993,7 @@ function main() {
   const terms = glossaryLive(rawStore());
   setLinkTerms(terms);
   buildCompanyPages(db, deals, profiles);
-  buildBriefPages(briefs);
+  buildBriefPages(briefs, db);
   buildTopicPages(topics, db, deals, hubBriefs);
   buildFundingPages(deals, months, quarters, years, ranked);
   buildGlossaryPages(terms, db);
