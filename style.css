@@ -981,6 +981,29 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
    the same kind of thing as a company profile — our prose above someone
    else's headlines — and the two should not read as different features.
    All this adds is the stacking and the lede's slight lift. */
+/* Glossary links inside our own prose (autolink.js).
+
+   Accent ink and underlined AT REST, not on hover — the same rule the
+   funding month links and the period chart had to be fixed to follow:
+   a cue that needs a pointer arrives after you have found the link,
+   and never arrives at all on a touch screen. The underline is offset
+   and thin so a serif paragraph still reads as a paragraph; it is one
+   link per paragraph, so it can afford to be visible.
+
+   currentColor on the underline rather than a fixed value so the
+   hover state carries the rule with the text. */
+.gl-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.gl-link:hover {
+  color: var(--accent-deep);
+  text-decoration-color: currentColor;
+}
+
 .topic-brief { padding: 4px 0 16px; max-width: 62ch; }
 .topic-brief .co-desc + .co-desc { margin-top: 13px; }
 .topic-lede { font-size: 1.14rem; line-height: 1.5; color: var(--ink); }

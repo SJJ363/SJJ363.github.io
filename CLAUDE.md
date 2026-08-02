@@ -895,6 +895,65 @@ produce all of that consistently — **route new pages through them.**
      in the runner and never pushed. It has its own dispatch workflow,
      `glossary.yml`, for `topic-briefs.yml`'s reason, plus `--all` to
      pre-write terms still under the floor.
+3f. **Our own prose links to the glossary; quoted headlines never do.**
+   `scripts/autolink.js` renders a page's original paragraphs through a
+   `linker()` that turns the first mention of a glossary term into
+   `/glossary/<slug>/`. Three call sites, all of them prose this site
+   wrote: `companyProfileBlock()`, `topicBriefBlock()` and the glossary
+   bodies in `glossaryPageHtml()`.
+   It exists because the two page types aimed at queries that don't
+   decay — 16 glossary terms and 14 hubs — were 30 of ~774 indexable
+   URLs and were starved: `/glossary/mga/` had **9 inbound internal
+   links sitewide**, because all 1,358 company pages linked the footer
+   index `/glossary/` and all fourteen hubs, and no term. So ~90% of
+   internal link equity pooled in company pages, the weakest thing
+   here. The anchors were already written and thrown away: 269 term
+   mentions across 684 profiles, 32 across the hub briefs. The first
+   build produced **259 links** (broker 99, reinsurance 48, MGA 37).
+   Five rules:
+   • **The patterns are `TERMS[].re` from `glossary.js`, not a second
+     set.** Those are hand-checked and already decide which stories a
+     term page claims as examples (rule 3e); a looser set for linking
+     would drift, and the page would link a term it lists no coverage
+     for. One pattern set, two readers — the same argument
+     `relevance.js` carries for the wire and the hubs.
+   • **The caps are the design, not a safety margin.** One link per
+     paragraph, `PAGE_MAX` (5) per page, first mention only, never to
+     the page you are on. `insurance-broker` matches
+     `/\bbrokers?\b|brokerage/i` and fires on 94 profiles and several
+     times within some — a paragraph peppered with one anchor reads as
+     a doorway, and the second link to a URL passes nothing the first
+     did. A linker is **stateful and built once per page**
+     (`proseLinker()`); sharing one across pages silently stops linking
+     after the first few.
+   • **A match is grown out to its whole word** (`expand()`). The
+     patterns decide whether a story is *about* a term, so several
+     match a stem: `/\breinsur/` is enough to file a headline but would
+     anchor the text "reinsur". Anchor text is the strongest signal a
+     link carries. The expansion excludes the hyphen deliberately —
+     including it lets a match on "parametric" swallow the "non-" in
+     "non-parametric" and assert the opposite of the sentence.
+   • **`LINK_TERMS` is set once per build, before the first page is
+     written** — the `setNavTopics()` / `setFundedSlugs()` pattern, for
+     the identical reason: company pages, hubs and the glossary are
+     built in three passes and must agree on which terms have a page.
+     Pages are built only where a definition exists, so linking a term
+     without one is a link to a 404; hence `main()` computes
+     `glossaryLive()` up front and hands it to `buildGlossaryPages()`
+     rather than that function collecting its own.
+   • **`link()` escapes as well as links,** so a call site swaps
+     `escHtml(text)` for `link(text)` rather than nesting them. Nesting
+     either escapes the anchor just inserted or matches patterns
+     against text that already holds entities.
+   **Company names in brief prose are deliberately NOT linked.** The
+   obvious companion — briefs name ~14 companies each and link none —
+   needs bare-name matching against an index holding `Chapter`,
+   `Income`, `Sure`, `Root`, `Covered`, `Stand`, `Today` and `Arch`,
+   which is exactly the heuristic `CANON_LIST` and `SPLIT_LIST` exist
+   to refuse. `briefs.json` entries carry no article links, so there is
+   no attributed company set to gate on either. The fix is provenance,
+   not pattern matching: stamp the window's company slugs into the
+   entry at write time in `write-brief.js`, then link only those.
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may

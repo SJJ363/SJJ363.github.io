@@ -33,6 +33,7 @@ const {
   STORY_CAP: GLOSSARY_STORY_CAP,
 } = require("./glossary");
 const { cardFor, W: OG_W, H: OG_H } = require("./og");
+const { linker, plainLinker } = require("./autolink");
 
 const ROOT = path.join(__dirname, "..");
 const NEWS = path.join(ROOT, "data", "news.json");
@@ -143,6 +144,28 @@ const escHtml = (s = "") =>
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
+
+/* The live glossary terms, for the contextual links autolink.js puts
+   into our own prose. Set once per build like NAV_TOPICS and
+   FUNDED_SLUGS above, and for the same reason: the company pages, the
+   topic hubs and the glossary itself all link against this list, they
+   are built in three different passes, and a list that differed
+   between them would link terms some pages have a page for and others
+   do not.
+
+   It has to be set BEFORE buildCompanyPages(), which is why main()
+   computes the terms up front and hands them to buildGlossaryPages()
+   later, rather than that function collecting them itself. */
+let LINK_TERMS = [];
+function setLinkTerms(terms) {
+  LINK_TERMS = terms || [];
+}
+/* One linker per page — it is stateful (first mention only, page
+   budget), so sharing one across pages would silently stop linking
+   after the first few. */
+const proseLinker = (self = null) =>
+  LINK_TERMS.length ? linker({ terms: LINK_TERMS, self, esc: escHtml }) : plainLinker(escHtml);
+
 const escAttr = (s = "") =>
   String(s)
     .replace(/&/g, "&amp;")
@@ -203,7 +226,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=30" />
+  <link rel="stylesheet" href="/style.css?v=31" />
   <link rel="icon" href="${FAVICON}" />
   <script src="/nav.js?v=1" defer></script>`;
 
@@ -491,8 +514,14 @@ function descFromProfile(summary) {
 function companyProfileBlock(c, profile) {
   if (!profile || !profile.known || !profile.summary) return "";
   const meta = [profile.kind, profile.place].filter(Boolean);
+  /* The profile is the only sentence on this page nobody else wrote
+     (rule 3a-ii), which is exactly why it is the right place to link
+     from: the anchor sits in our own prose rather than in a quoted
+     headline. One paragraph, so the per-paragraph cap makes this at
+     most one link — 269 of the 684 profiles carry a term mention. */
+  const link = proseLinker();
   return `    <section class="co-profile">
-      <p class="co-desc">${escHtml(profile.summary)}</p>
+      <p class="co-desc">${link(profile.summary)}</p>
 ${meta.length ? `      <p class="co-tags">${meta.map((m) => `<span class="co-tag">${escHtml(m)}</span>`).join("")}</p>\n` : ""}      <p class="co-attrib">Profile compiled by ${escHtml(SITE.name)} from the coverage below.</p>
     </section>`;
 }
@@ -1133,17 +1162,27 @@ const STORY_CAP = 60; // page weight guard; the count in the statline is the tru
 function topicBriefBlock(topic, brief) {
   if (!brief || !brief.known || !brief.summary) return "";
 
+  /* The longest original prose on the site — ~400–600 words across the
+     lede and MIN_SECTIONS–MAX_SECTIONS sections — so this is the one
+     surface where the page budget rather than the paragraph cap binds.
+     Headings are NOT linked: an h2 is the page's own structure, and a
+     link inside one competes with the heading it is supposed to be. */
+  const link = proseLinker();
+  const lede = link(brief.summary);
+
   const blocks = Array.isArray(brief.sections) && brief.sections.length
     ? brief.sections
         .map(
           (s) => `      <h2 class="brief-h">${escHtml(s.heading)}</h2>
-      <p class="co-desc">${escHtml(s.text)}</p>`
+      <p class="co-desc">${link(s.text)}</p>`
         )
         .join("\n")
-    : (brief.body || []).map((p) => `      <p class="co-desc">${escHtml(p)}</p>`).join("\n");
+    /* The older flat shape, still rendered because a declined rewrite
+       deliberately keeps the published brief (rule 3d-i). */
+    : (brief.body || []).map((p) => `      <p class="co-desc">${link(p)}</p>`).join("\n");
 
   return `    <section class="topic-brief">
-      <p class="co-desc topic-lede">${escHtml(brief.summary)}</p>
+      <p class="co-desc topic-lede">${lede}</p>
 ${blocks}
       <p class="co-attrib">Written by ${escHtml(SITE.name)} from the coverage below.</p>
     </section>`;
@@ -1561,8 +1600,14 @@ function glossaryPageHtml(t, def, allTerms, db) {
     { name: t.term, path: canonical },
   ]);
 
+  /* Terms explain each other — a reinsurance definition says "cedes",
+     a fronting one says "MGA" — so the glossary is the densest source
+     of these links on the site as well as their destination. `self`
+     keeps the page from linking its own term back to itself. */
+  const link = proseLinker(t.slug);
+  const lede = link(def.summary);
   const paras = (def.body || [])
-    .map((p) => `      <p class="co-desc">${escHtml(p)}</p>`)
+    .map((p) => `      <p class="co-desc">${link(p)}</p>`)
     .join("\n");
 
   const related = allTerms
@@ -1597,7 +1642,7 @@ ${header("glossary")}
     </div>
 
     <section class="topic-brief">
-      <p class="co-desc topic-lede">${escHtml(def.summary)}</p>
+      <p class="co-desc topic-lede">${lede}</p>
 ${paras}
       <p class="co-attrib">Written by ${escHtml(SITE.name)}.</p>
     </section>
@@ -1723,11 +1768,14 @@ ${FOOTER}
    the page, so a term without one has nothing to render and is left
    out of the index rather than shipped empty. Coverage then decides
    indexing, not existence. */
-function buildGlossaryPages(store, db) {
+function glossaryLive(store) {
   const defs = glossaryDefs();
-  const terms = collectGlossaryTerms(store).map((t) => ({ ...t, def: defs[t.slug] || null }));
-  const live = terms.filter((t) => t.def && t.def.known);
+  return collectGlossaryTerms(store)
+    .map((t) => ({ ...t, def: defs[t.slug] || null }))
+    .filter((t) => t.def && t.def.known);
+}
 
+function buildGlossaryPages(live, db) {
   const outRoot = path.join(ROOT, "glossary");
   fs.mkdirSync(outRoot, { recursive: true });
   const wanted = new Set(live.map((t) => t.slug));
@@ -3895,13 +3943,19 @@ function main() {
   setNavTopics(topics);
   setFundedSlugs(deals);
   setProfiledSlugs(profiles);
+  /* Reads the persistent store rather than this run's batch, like the
+     hubs do — a term's coverage is the whole archive, not today's wire.
+     Collected here rather than inside buildGlossaryPages() because the
+     company pages and the topic hubs link glossary terms out of their
+     own prose (autolink.js) and are built first, so the list has to
+     exist before the first page is written. */
+  const terms = glossaryLive(rawStore());
+  setLinkTerms(terms);
   buildCompanyPages(db, deals, profiles);
   buildBriefPages(briefs);
   buildTopicPages(topics, db, deals, hubBriefs);
   buildFundingPages(deals, months, quarters, years, ranked);
-  // Reads the persistent store rather than this run's batch, like the
-  // hubs do — a term's coverage is the whole archive, not today's wire.
-  const terms = buildGlossaryPages(rawStore(), db);
+  buildGlossaryPages(terms, db);
   injectAnalytics();
   injectSocial();
   injectHomepage(news);
