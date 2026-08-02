@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T18:02:41.220Z",
+  "updatedAt": "2026-08-02T02:35:07.943Z",
   "seen": {
     "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZV9JU0NKallDc3lJazZCV05wMmRqbEsyZDZQR2c0eDV2RExvaWRQUHNONldZZl8xVV9qLVFQb1ZJNUFZcnAtN24zNnJzcnhrVGpHUk1oOGVNT2ZSSzJFWDFaclRXMnhhUkJJcUhncktPOVctTzZwSFVBaHVHZ2NaOXgyQllfUQ?oc=5": {
       "title": "QuoteCheck wins Insurance Business 5-star tech nod",
@@ -65146,6 +65146,124 @@
         "A managing general agent takes on underwriting authority normally kept in-house at an insurer: it can quote, price, bind coverage and often handle claims for a defined book of business, under a delegated-authority agreement with the carrier that backs it. The carrier supplies the capacity and remains liable for the risk; the MGA supplies underwriting judgment, distribution relationships and the systems that run daily operations. A policyholder or broker typically deals only with the MGA and may never interact with the carrier standing behind it.",
         "MGAs exist because a carrier cannot economically build deep expertise and distribution for every specialty line it wants to write, from niche property exposures to narrow liability classes; delegating that work to a focused specialist is often cheaper and faster than doing it in-house. The arrangement is easy to misread as simple brokering, but an MGA carries underwriting authority a broker never holds, and that authority is what makes carrier oversight, audit rights and clear binder terms essential rather than optional.",
         "In insurance technology, the MGA layer is where a lot of building happens: platforms for submission intake, data interchange with carriers and brokers, and AI tools aimed at pricing and workflow automation are commonly built for or around MGAs rather than for carriers directly. The structure also draws new entrants and consolidation alike, as specialty underwriters launch their own MGAs, established players acquire smaller ones to widen distribution, and some pull back or wind down when a niche does not scale as hoped."
+      ],
+      "pv": 1
+    },
+    "parametric-insurance": {
+      "known": true,
+      "summary": "Parametric insurance pays a fixed sum when a measurable event, such as a quake or storm, crosses an agreed threshold. It settles on the trigger itself, not on inspected damage, so payment can arrive before a loss assessment even begins.",
+      "body": [
+        "A policyholder, which may be a government, an insurer, or a farmer or business directly, buys cover linked to an index such as wind speed, rainfall, or seismic intensity rather than to its own property. A carrier or specialty reinsurer prices that index and agrees to pay a set amount the moment it crosses a defined level; catastrophe bonds and other capital-markets instruments often stand behind the carrier, passing the risk further along the chain to investors.",
+        "It exists because traditional indemnity insurance depends on an adjuster inspecting damage, which is slow, costly, and sometimes impossible across a wide disaster zone or in a place with thin infrastructure. The trade-off is basis risk: the trigger can fire without matching the policyholder loss exactly, or a real loss can occur without crossing the line, so the design of the index and threshold matters as much as the price.",
+        "In insurance technology this shows up as products built around live data feeds: satellite imagery, weather-station networks, and seismic sensors that verify a trigger automatically, cutting the claims process down to a payout notice rather than a loss investigation. It also fits embedded distribution, bundled into a loan, a mobile wallet, or a cooperative membership so cover reaches customers a traditional broker network would not economically reach."
+      ],
+      "pv": 1
+    },
+    "insurance-fraud": {
+      "known": true,
+      "summary": "Insurance fraud is any deliberate deception used to obtain a payout or coverage from an insurer that the claimant is not entitled to.",
+      "body": [
+        "In practice it happens at two points: when someone applies for a policy and misstates the risk to secure cheaper or broader cover, or when someone files a claim and misstates what happened, inflates the loss, or manufactures it outright, such as staging a collision or setting a deliberate fire. The claims team weighs the account against evidence — repair estimates, medical records, prior claims history — before paying out, and the cost of whatever slips through is spread across other policyholders' premiums.",
+        "The hard part is that most claims involve genuine uncertainty and honest people round in their own favor, so an insurer has to separate ordinary exaggeration from deliberate deception without treating legitimate claimants as suspects. Organized fraud is harder still, because a staged collision or a fabricated invoice is built to resemble a real one, and it often runs through a network of complicit intermediaries — repair shops, clinics, brokers — rather than one claimant acting alone.",
+        "Detection is a distinct product category built around this problem: software that flags edited or inconsistent photos, tools that cross-reference claims and policy data across insurers to surface patterns no single carrier would see alone, identity and document verification at quote or claim stage, and open-source and network analysis aimed at tracing rings rather than judging individual claims."
+      ],
+      "pv": 1
+    },
+    "takaful": {
+      "known": true,
+      "summary": "Takaful is an Islamic form of cooperative insurance, where participants pool contributions into a shared fund to cover one another's losses. An operator manages the fund for a fee, and surplus or shortfall is shared among participants rather than kept by shareholders.",
+      "body": [
+        "In practice, participants pay contributions that are treated as donations into a common fund rather than premiums paid to an insurer. A takaful operator manages underwriting, claims and investment of that fund, typically for a fee or a share of any profit, an arrangement known as wakala or mudaraba. Claims are paid out of the pooled fund itself, and retakaful is the equivalent of reinsurance, spreading risk across the pool.",
+        "Conventional insurance involves elements considered impermissible in Islamic law: interest-bearing investment, excessive uncertainty in the contract, and an element of gambling in how risk is transferred for profit. Takaful restructures the relationship as mutual risk-sharing among participants rather than a sale of protection to a for-profit insurer, with a Shariah board overseeing the fund's investments and contracts. A common misunderstanding is that takaful is conventional insurance under an Islamic label; the real difference is who owns any surplus and how the money behind it is invested.",
+        "In insurance technology, takaful mainly shows up in digital distribution: motor and family protection sold through embedded checkout flows, telecom and e-commerce partnerships, and apps run by takaful operators themselves. Behind the interface, platforms must handle wakala or mudaraba fee structures and keep participant-fund accounting separate, which conventional policy administration systems are not built for, so that integration and fund administration are common areas for dedicated tooling."
+      ],
+      "pv": 1
+    },
+    "insurance-linked-securities": {
+      "known": false,
+      "reason": "lede",
+      "pv": 1,
+      "tries": 1
+    },
+    "annuity": {
+      "known": true,
+      "summary": "An annuity is an insurance contract that pays out a stream of income, often for life, in exchange for a lump sum or series of premiums paid in.",
+      "body": [
+        "A policyholder hands premium to an insurer, which invests it and later returns it as scheduled payments—monthly income in retirement, a lump sum at a set date, or a payout tied to how an underlying investment performs. The insurer is the party bearing the risk that the policyholder outlives their savings, since a lifetime annuity keeps paying no matter how long the holder lives.",
+        "Annuities exist to convert savings into guaranteed income, which is a different job from life insurance's job of protecting dependents against an early death. The hard part is structure: fixed, variable and indexed annuities split up how much investment risk and upside the policyholder keeps versus hands to the insurer, and riders for guaranteed withdrawals or death benefits add further layers that are easy for a buyer to misread as simple savings products.",
+        "In insurance technology, annuities are notoriously paper-heavy and slow to issue and service compared with other product lines, so vendors build platforms around illustration and quoting, e-application and straight-through processing, and administration systems that let advisors and carriers move sales and in-force business off manual, form-based workflows."
+      ],
+      "pv": 1
+    },
+    "marine-insurance": {
+      "known": true,
+      "summary": "Marine insurance covers physical loss or damage to ships and cargo, and the liabilities that arise while goods move by sea. The modern market is dominated by cargo cover, which typically follows a shipment door-to-door across sea, rail and road legs.",
+      "body": [
+        "A shipper or cargo owner buys a policy, usually through a broker, that pays out if goods are lost, damaged or delayed between origin and destination. Hull and machinery cover insures the vessel itself, while protection and indemnity clubs, mutual associations owned by shipowners, cover liability to third parties such as crew injury or pollution. Claims are checked by surveyors before payment.",
+        "Marine insurance is one of the oldest branches of the trade, developed to spread the risk of a single vessel or cargo lost at sea across many underwriters. A common source of confusion is exactly when cover attaches and ends, since responsibility for goods shifts between buyer and seller mid-journey under trade terms such as Incoterms, and a policy must be read against those terms rather than assumed. General average, where all parties to a voyage share an extraordinary loss, has no real equivalent in other insurance lines.",
+        "In insurance technology, marine cargo cover is a frequent target for embedding: shipping platforms, freight forwarders and trade-finance apps offer coverage at the point of booking through an API rather than a separate policy purchase. Automation also extends to digital certificates of insurance, compliance checks against sanctioned parties or restricted routes, and underwriting or claims tools built specifically for cargo rather than adapted from general property lines."
+      ],
+      "pv": 1
+    },
+    "microinsurance": {
+      "known": true,
+      "summary": "Microinsurance is insurance scaled down in premium and payout size for people with low, irregular incomes who conventional coverage overlooks. It is distributed through mobile networks, cooperatives and other channels that reach customers a traditional agent force cannot.",
+      "body": [
+        "A policyholder pays a small, often irregular premium — sometimes folded into a mobile airtime top-up, a loan instalment or a cooperative membership fee — in exchange for cover against one narrow risk, such as a hospital stay, a crop failure or a death in the family. An insurer or reinsurer still carries the underlying risk; what differs from ordinary retail insurance is the distribution layer between them, typically a mobile network, a microfinance lender or a community group that already reaches the customer and can collect premiums an agent network could not profitably handle.",
+        "It exists because these customers are otherwise priced out or ignored: premiums and claims are too small and incomes too irregular for products built around annual premiums and in-person underwriting. The hard part is arithmetic, not concept — administrative cost per policy must fall close to zero, and claims must be verified and paid quickly without the paperwork a conventional claim assumes. A common misunderstanding is that microinsurance means thin coverage; the pooling and capital behind it work like any other insurance, only the unit size and delivery channel differ.",
+        "In insurance technology, microinsurance is mostly a distribution and claims-automation problem. Companies build embedded products sold at the point of a loan, a phone purchase or a delivery, parametric triggers that pay out automatically against a measured event such as rainfall or flight delay rather than a filed claim, and mobile-first onboarding and payment rails that let a premium be collected and a claim settled entirely on a handset."
+      ],
+      "pv": 1
+    },
+    "protection-gap": {
+      "known": false,
+      "reason": "shape",
+      "pv": 1,
+      "tries": 1
+    },
+    "excess-and-surplus-lines": {
+      "known": true,
+      "summary": "Excess and surplus lines insurance covers risks a standard insurer won't write, sold through carriers not licensed in that state.",
+      "body": [
+        "A property or casualty risk that an admitted insurer's filed rates and forms cannot price — a coastal property in a hurricane zone, a niche liability class, a habitational risk with a spotty claims history — moves instead to the excess and surplus lines market. A wholesale or surplus lines broker, licensed separately from a retail agent, shops the risk to non-admitted carriers, negotiates bespoke terms, and certifies that admitted markets were tried first before binding coverage.",
+        "E&S exists because rate and form regulation, built for predictable personal lines, makes admitted insurers slow to reprice or withdraw as conditions change. Freed from filing rates in advance, non-admitted carriers move faster, which is why the market grows whenever catastrophe losses push standard insurers to retreat from a class. Non-admitted does not mean unlicensed or unregulated: the insurer still holds a home-state license and sits on an eligibility list, and its policyholders lose the guaranty-fund backstop if the carrier fails.",
+        "In insurance technology, E&S is where underwriting automation is spreading fastest, because bespoke non-admitted risks otherwise require a person to check every submission against a program's guidelines by hand. AI tools now read submissions and flag guideline exceptions for E&S underwriters, and new AI-native carriers and MGAs are launching programs aimed squarely at catastrophe-exposed property classes that admitted insurers have been leaving."
+      ],
+      "pv": 1
+    },
+    "workers-compensation": {
+      "known": true,
+      "summary": "Workers' compensation insurance pays medical costs and lost wages for employees hurt on the job, regardless of who was at fault. It is compulsory for most employers and administered under separate rules in each jurisdiction.",
+      "body": [
+        "An employer buys a policy, or in some jurisdictions self-insures, with the premium set by payroll and the riskiness of the work performed. When a worker is injured or falls ill because of the job, the claim goes to the insurer or fund rather than to court, and it pays for medical treatment, a share of lost wages while the worker recovers, and compensation for any lasting impairment.",
+        "The arrangement is often called the grand bargain: an injured worker gets benefits without having to prove the employer was negligent, and in exchange gives up the right to sue the employer over the injury. The friction sits in the edges the trade-off does not settle cleanly: whether an injury or illness is really work-related, how a job should be classified for pricing, and how long a partial disability should be paid for.",
+        "In insurance technology the work clusters around classifying employers into the correct risk category, pricing and issuing policies for small businesses that a large carrier would otherwise find too costly to underwrite individually, and moving claims through medical treatment and back to work with less paperwork and fewer disputes along the way."
+      ],
+      "pv": 1
+    },
+    "telematics": {
+      "known": true,
+      "summary": "Telematics insurance is motor coverage priced from data collected on how, when and how far a vehicle is actually driven. Insurers gather it from a phone app, a plug-in device or the car's built-in sensors and use it to set or adjust premiums.",
+      "body": [
+        "A telematics policy draws its price from data captured while the car is being driven — speed, braking, cornering, mileage and the time of day trips happen — rather than from static factors like a driver's age or postcode alone. The data comes from a smartphone app, a small plug-in device fitted to the car, or sensors built into the vehicle itself, and is sent back to the insurer or an intermediary that scores it before the policy is priced or renewed.",
+        "The approach exists because conventional rating factors are proxies for risk, while driving behavior is the risk itself, so insurers can reward safer driving directly instead of guessing from demographics. The hard parts are less about collecting the data than about doing something fair with it: deciding which behaviors actually predict claims, protecting driver privacy, and preventing a policyholder from driving carefully only while a test period is being scored.",
+        "In insurance technology this is where a lot of the plumbing lives: crash-detection algorithms that trigger a claim before the driver calls anyone, scoring engines that turn raw sensor streams into a premium adjustment, and integration layers that let telematics data providers plug their feeds into a carrier's underwriting and claims systems without a rebuild on either side."
+      ],
+      "pv": 1
+    },
+    "bancassurance": {
+      "known": false,
+      "reason": "shape",
+      "pv": 1,
+      "tries": 1
+    },
+    "premium-finance": {
+      "known": true,
+      "summary": "Premium finance is a loan that lets a policyholder pay an annual premium in installments instead of one lump sum.",
+      "body": [
+        "A third-party lender, sometimes an arm of the insurer or broker, pays the insurer the full premium upfront and the policyholder repays the lender over the policy term with interest, usually through automated debits. The financed policy itself typically secures the loan: if the borrower stops paying, the lender can cancel the policy and recover the unearned premium.",
+        "It exists because many commercial premiums, and some personal ones, are too large to pay in one instalment without straining cash flow, while insurers generally want payment upfront rather than carrying instalment risk themselves. The friction lies in what happens on cancellation and default, and in the fact that the finance carries its own interest cost layered on top of the premium, which buyers can overlook.",
+        "In insurance technology, this shows up as point-of-sale financing built into quoting and checkout flows, automated eligibility and rate calculation, integration with premium billing and cancellation systems, and EMI-style repayment plans offered directly through digital insurance platforms rather than a separate finance company."
       ],
       "pv": 1
     }
