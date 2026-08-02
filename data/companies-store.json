@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T02:37:49.220Z",
+  "updatedAt": "2026-08-02T02:41:58.911Z",
   "seen": {
     "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZV9JU0NKallDc3lJazZCV05wMmRqbEsyZDZQR2c0eDV2RExvaWRQUHNONldZZl8xVV9qLVFQb1ZJNUFZcnAtN24zNnJzcnhrVGpHUk1oOGVNT2ZSSzJFWDFaclRXMnhhUkJJcUhncktPOVctTzZwSFVBaHVHZ2NaOXgyQllfUQ?oc=5": {
       "title": "QuoteCheck wins Insurance Business 5-star tech nod",
@@ -65180,10 +65180,14 @@
       "pv": 1
     },
     "insurance-linked-securities": {
-      "known": false,
-      "reason": "lede",
-      "pv": 1,
-      "tries": 2
+      "known": true,
+      "summary": "Insurance-linked securities are securities whose payouts are tied to insurance losses, shifting catastrophe and other risk from insurers to investors. Catastrophe bonds are the best-known form, but the structure now also covers casualty and other liability lines.",
+      "body": [
+        "An insurer or reinsurer sponsoring a deal sets up a special-purpose vehicle, which sells notes to investors and holds the proceeds as collateral. Investors earn a premium-linked coupon; if a defined trigger event occurs, some or all of the principal is paid out to cover the sponsor's losses instead of being returned at maturity. Triggers can be indemnity-based, tied to an index, or parametric, keyed to a measurable event like windspeed rather than actual claims.",
+        "The structure exists because traditional reinsurance capacity is cyclical and tightens sharply after large losses, so sponsors use ILS to reach pension funds, hedge funds and dedicated ILS funds directly. The common confusion is treating ILS as synonymous with catastrophe bonds; the category also includes collateralized reinsurance, sidecars and industry loss warranties, and has broadened well beyond property catastrophe risk. Parametric triggers introduce basis risk, where the payout and the sponsor's actual loss diverge.",
+        "Insurtech activity around ILS centers on catastrophe and exposure modeling, the data feeds and sensors that support parametric triggers, and platforms that handle placement, collateral tracking and fund administration for ILS managers, replacing what was a slow, spreadsheet-heavy corner of the reinsurance market."
+      ],
+      "pv": 1
     },
     "annuity": {
       "known": true,
@@ -65256,10 +65260,14 @@
       "pv": 1
     },
     "bancassurance": {
-      "known": false,
-      "reason": "lede",
-      "pv": 1,
-      "tries": 2
+      "known": true,
+      "summary": "Bancassurance is the sale of insurance products through a bank's branches, staff and digital channels, rather than through independent agents. The bank may simply refer customers to a partner insurer, or the arrangement may run deeper, up to a joint venture or a bank-owned insurer.",
+      "body": [
+        "In a bancassurance arrangement, a bank sells or refers insurance policies to its own customers, using its branch network, call centers, online banking or a sales team embedded in its retail operations. The insurer named on the policy underwrites the risk and pays claims; the bank earns a commission or fee for originating the business and, in more integrated models, shares in the underwriting profit through part ownership of the insurer or a joint-venture structure.",
+        "The arrangement exists because banks already hold a trusted relationship with customers who need insurance anyway - a mortgage buyer needs home cover, a car-loan borrower needs motor cover, a savings customer may want life or health protection - and reaching them through a bank's existing channel is cheaper for an insurer than building its own sales force. A common misunderstanding is that the product is the bank's own; it is not. The insurer behind it carries the risk and owes the claim.",
+        "In insurance technology, bancassurance is what gets built when an insurer's quote-and-bind flow is embedded directly inside a bank's mobile app or online banking portal, instead of sending the customer to a separate insurer website. The work is mostly integration: connecting a bank's core banking and customer-data systems to an insurer's underwriting and policy-administration APIs, so a policy can be quoted, bound and serviced without the customer leaving the banking experience."
+      ],
+      "pv": 1
     },
     "premium-finance": {
       "known": true,
