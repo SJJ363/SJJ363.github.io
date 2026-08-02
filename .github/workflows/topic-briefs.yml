@@ -96,7 +96,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Same pathspec as news.yml: a generated directory missing here is
           # rebuilt every run, left dirty in the runner and never pushed.
-          git add -A data/ company/ brief/ topic/ funding/ glossary/ sitemap.xml robots.txt index.html companies.html
+          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sitemap.xml robots.txt index.html companies.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: write topic briefs${{ inputs.topic != '' && format(' ({0})', inputs.topic) || '' }}"
             git push

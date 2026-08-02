@@ -32,6 +32,16 @@ const {
   MIN_STORIES: GLOSSARY_MIN_STORIES,
   STORY_CAP: GLOSSARY_STORY_CAP,
 } = require("./glossary");
+const {
+  countryOf,
+  inMarket,
+  indexableMarket,
+  MIN_COMPANIES: MARKET_MIN_COMPANIES,
+  MIN_STORIES: MARKET_MIN_STORIES,
+  COMPANY_CAP: MARKET_COMPANY_CAP,
+  STORY_CAP: MARKET_STORY_CAP,
+  DEAL_CAP: MARKET_DEAL_CAP,
+} = require("./markets");
 const { cardFor, W: OG_W, H: OG_H } = require("./og");
 const { linker, companyLinker, plainLinker } = require("./autolink");
 
@@ -395,6 +405,7 @@ const FOOTER = `  <footer class="site-footer">
     </p>
     <p class="foot-links"><a href="/glossary/">Insurance glossary</a> ·
       <a href="/funding/companies/">Most funded companies</a> ·
+      <a href="/market/">Markets</a> ·
       <a href="/topic/">All topics</a></p>
     <p class="foot-meta">© ${new Date().getFullYear()}</p>
   </footer>`;
@@ -511,9 +522,42 @@ function descFromProfile(summary) {
   return summary;
 }
 
+/* The kind and the headquarters, under the profile. The place is a
+   link wherever its market has a page (rule 3g) — which is what
+   makes /market/<country>/ reachable at all, ~1,100 pages pointing
+   at ~15 hubs, the same shape /funding/companies/ is reached by.
+
+   It is a .company-badge rather than a neutral .co-tag, and that is
+   the chart lesson from rule 3c-i applied one page down: anything
+   that navigates is accent ink at rest. A grey chip that happens to
+   be clickable is a link nobody finds. The kind, which navigates
+   nowhere, keeps the neutral chip — so the two now read as what
+   they are rather than as one undifferentiated row. */
+function companyMetaTags(profile) {
+  const tags = [];
+  if (profile.kind) tags.push(`<span class="co-tag">${escHtml(profile.kind)}</span>`);
+  if (profile.place) {
+    /* Linked only when this company is actually in the set that page
+       lists — inMarketSet() as well as a built page. An investor or an
+       "Other" keeps its place as plain text: sending a fund to a page
+       headed "insurance and insurtech companies in the United States"
+       that correctly does not list it is a link that lies about where
+       it goes. */
+    const market = inMarketSet(profile) ? countryOf(profile.place) : null;
+    tags.push(
+      market && MARKET_SLUGS.has(market.slug)
+        ? `<a class="company-badge" href="/market/${escAttr(market.slug)}/">${escHtml(
+            profile.place
+          )}</a>`
+        : `<span class="co-tag">${escHtml(profile.place)}</span>`
+    );
+  }
+  return tags;
+}
+
 function companyProfileBlock(c, profile) {
   if (!profile || !profile.known || !profile.summary) return "";
-  const meta = [profile.kind, profile.place].filter(Boolean);
+  const meta = companyMetaTags(profile);
   /* The profile is the only sentence on this page nobody else wrote
      (rule 3a-ii), which is exactly why it is the right place to link
      from: the anchor sits in our own prose rather than in a quoted
@@ -522,7 +566,7 @@ function companyProfileBlock(c, profile) {
   const link = proseLinker();
   return `    <section class="co-profile">
       <p class="co-desc">${link(profile.summary)}</p>
-${meta.length ? `      <p class="co-tags">${meta.map((m) => `<span class="co-tag">${escHtml(m)}</span>`).join("")}</p>\n` : ""}      <p class="co-attrib">Profile compiled by ${escHtml(SITE.name)} from the coverage below.</p>
+${meta.length ? `      <p class="co-tags">${meta.join("")}</p>\n` : ""}      <p class="co-attrib">Profile compiled by ${escHtml(SITE.name)} from the coverage below.</p>
     </section>`;
 }
 
@@ -3552,6 +3596,484 @@ function buildFundingPages(deals, months, quarters, years, ranked = []) {
 }
 
 /* ══════════════════════════════════════════════════════════════
+   MARKETS — /market/ + /market/<country>/
+
+   The geography axis. Every other URL here slices the archive by
+   company, by subject or by date; none of those is how the sector
+   gets asked about geographically, and "insurtech companies India"
+   is evergreen in the way a quarter page is not.
+
+   The data was already being collected and thrown away: profile.js
+   has asked for `place` on every company since profiles existed and
+   seo.js rendered it as one grey badge. See scripts/markets.js for
+   the alias curation and the gate — including why a market below
+   the floor is not built at all, where a thin company page is
+   (nothing but this site's own markup links a market page, so there
+   is no dead-end to protect against).
+
+   What makes it a page rather than a re-cut of the same rows is the
+   same thing that makes /funding/2025-q2/ one: it leads with an
+   aggregate — company count, kind mix, disclosed capital across all
+   of them — that appears in no round table and in nobody else's
+   reporting. The company table under it is the other half: ~470
+   internal links onto company pages, arranged by the one attribute
+   the companies index cannot show.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Kinds are singular nouns in the cache because they label one
+   company; the market lede counts them. */
+const KIND_PLURAL = {
+  Insurtech: "insurtechs",
+  Insurer: "insurers",
+  Broker: "brokers",
+  Reinsurer: "reinsurers",
+  MGA: "MGAs",
+  "Technology vendor": "technology vendors",
+  "Industry body": "industry bodies",
+};
+const kindPlural = (k, n) =>
+  n === 1 ? k.toLowerCase() : KIND_PLURAL[k] || `${k.toLowerCase()}s`;
+
+/* Set once per build, before the first company page is written —
+   the setFundedSlugs()/setNavTopics() pattern, for the identical
+   reason. A company page turns its place badge into a link to its
+   market, and it must not link one that was never built. */
+let MARKET_SLUGS = new Set();
+function setMarketSlugs(markets) {
+  MARKET_SLUGS = new Set(markets.map((m) => m.slug));
+}
+
+/* Membership is decided by the profile, and it applies the same
+   judgment indexable()'s third door does: `known`, with a `kind`
+   that is set and is not "Other". A blank kind means the writer
+   couldn't place the company in the market at all and "Other" means
+   it placed it outside — a grocery-delivery company on a page
+   headed "Insurtech in India" is a worse error here than on its own
+   page, because this page asserts a set.
+   Investors go too, and that is this page's own rule rather than a
+   borrowed one: a fund that led a round is on the other side of the
+   market this page is describing (rule 3c-iii). They keep their own
+   pages and their place in the tracker's lead column. */
+const inMarketSet = (p) =>
+  p && p.known && p.place && p.kind && p.kind !== "Other" && p.kind !== "Investor";
+
+function collectMarkets(db, profiles, deals) {
+  const bySlug = new Map();
+  for (const d of deals) {
+    if (!d.company) continue;
+    if (!bySlug.has(d.company.slug)) bySlug.set(d.company.slug, []);
+    bySlug.get(d.company.slug).push(d);
+  }
+
+  const by = new Map();
+  for (const c of db.companies || []) {
+    const p = profiles[c.slug];
+    if (!inMarketSet(p)) continue;
+    const country = countryOf(p.place);
+    if (!country) continue;
+    if (!by.has(country.slug)) by.set(country.slug, { ...country, companies: [] });
+    const cd = bySlug.get(c.slug) || [];
+    // Everything before the final comma — "Gurugram" out of "Gurugram,
+    // India". Blank when the profile answered with the country alone,
+    // which is a little over half of them.
+    const city = String(p.place).split(",").slice(0, -1).join(",").trim();
+    by.get(country.slug).companies.push({
+      slug: c.slug,
+      name: c.name,
+      kind: p.kind,
+      city,
+      n: c.count || (c.articles || []).length || 0,
+      rounds: cd.length,
+      total: totalOf(cd),
+      deals: cd,
+      articles: c.articles || [],
+    });
+  }
+
+  const markets = [...by.values()].map((m) => {
+    // Coverage, not the union of every mention: a story naming three
+    // Indian companies is one story on the market page.
+    const seen = new Set();
+    const articles = [];
+    for (const c of m.companies) {
+      for (const a of c.articles) {
+        if (!a || !a.link || seen.has(a.link)) continue;
+        seen.add(a.link);
+        articles.push(a);
+      }
+    }
+    articles.sort((x, y) => new Date(y.publishedAt) - new Date(x.publishedAt));
+
+    const kinds = new Map();
+    for (const c of m.companies) kinds.set(c.kind, (kinds.get(c.kind) || 0) + 1);
+
+    const mDeals = m.companies
+      .flatMap((c) => c.deals)
+      .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+
+    /* Coverage first, then capital, then name. Coverage is what this
+       archive actually knows about a company, and it keeps the order
+       stable across builds where sorting on capital would leave the
+       ~70% with no disclosed round in an arbitrary tail. */
+    m.companies.sort((a, b) => b.n - a.n || b.total - a.total || a.name.localeCompare(b.name));
+
+    return {
+      ...m,
+      articles,
+      stories: articles.length,
+      deals: mDeals,
+      rounds: mDeals.length,
+      total: totalOf(mDeals),
+      kinds: [...kinds.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])),
+    };
+  });
+
+  return markets
+    .filter(indexableMarket)
+    .sort((a, b) => b.companies.length - a.companies.length || a.name.localeCompare(b.name));
+}
+
+/* The company directory — the page's payload. Reuses the tracker's
+   cell classes rather than forking a near-identical table, which is
+   what keeps the phone breakpoints shared (rule 3a-i): .deal-lead
+   drops the city at 600px and .deal-stage drops the type at 360,
+   leaving company, coverage and capital, which are the spine. */
+function marketCompanyTable(m) {
+  const rows = m.companies.slice(0, MARKET_COMPANY_CAP);
+  return `    <div class="table-wrap">
+      <table class="deal-table">
+        <caption class="sr-only">Insurance and insurtech companies tracked in ${escHtml(
+          m.name
+        )} — company, type, base, stories in this archive and disclosed funding</caption>
+        <thead>
+          <tr>
+            <th scope="col">Company</th>
+            <th scope="col" class="deal-stage">Type</th>
+            <th scope="col" class="deal-lead">Based</th>
+            <th scope="col" class="rank-rounds">Stories</th>
+            <th scope="col">Disclosed</th>
+          </tr>
+        </thead>
+        <tbody>
+${rows
+  .map(
+    (c) => `          <tr>
+            <td class="deal-co"><a class="deal-link" href="/company/${escAttr(
+              c.slug
+            )}/">${escHtml(c.name)}</a></td>
+            <td class="deal-stage">${escHtml(c.kind)}</td>
+            <td class="deal-lead">${
+              c.city ? escHtml(c.city) : '<span class="deal-blank">—</span>'
+            }</td>
+            <td class="rank-rounds">${c.n}</td>
+            <td class="deal-amt">${
+              c.total ? escHtml(money(c.total)) : '<span class="deal-blank">—</span>'
+            }</td>
+          </tr>`
+  )
+  .join("\n")}
+        </tbody>
+      </table>
+    </div>`;
+}
+
+function marketPageHtml(m, all) {
+  const canonical = `/market/${m.slug}/`;
+  const where = inMarket(m);
+  const nCo = m.companies.length;
+  const oldest = m.articles[m.articles.length - 1];
+
+  /* The kind mix in words. Three at most: past that it stops being a
+     characterisation of the market and becomes the table below it. */
+  const mix = m.kinds
+    .slice(0, 3)
+    .map(([k, n]) => `${n} ${kindPlural(k, n)}`)
+    .join(", ")
+    .replace(/, ([^,]*)$/, " and $1");
+
+  const title = `Insurtech in ${where} — companies, funding and news | ${SITE.name}`;
+  /* Two kinds here where the dek carries three: a description is cut at
+     158 with an ellipsis, and the half-sentence that survives should be
+     the funding clause rather than a third of the kind list. */
+  const descMix = m.kinds
+    .slice(0, 2)
+    .map(([k, n]) => `${n} ${kindPlural(k, n)}`)
+    .join(" and ");
+  const description =
+    `${nCo} insurance and insurtech companies tracked in ${where}` +
+    (descMix ? ` — ${descMix}` : "") +
+    (m.total
+      ? ` — with ${money(m.total)} disclosed across ${m.rounds} funding round${
+          m.rounds === 1 ? "" : "s"
+        }.`
+      : `, and ${m.stories} stories naming them.`);
+
+  /* CollectionPage about a Place, with the companies as the list.
+     The Dataset markup stays on /funding/ — the rounds shown here are
+     a slice of it, not a second dataset. */
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `Insurtech in ${where}`,
+    url: url(canonical),
+    description: clamp(description, 300),
+    isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
+    about: { "@type": "Place", name: m.name },
+    mainEntity: {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `Insurtech and insurance companies in ${where}`,
+      numberOfItems: nCo,
+      itemListElement: m.companies.slice(0, MARKET_COMPANY_CAP).map((c, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: url(`/company/${c.slug}/`),
+        name: c.name,
+      })),
+    },
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Markets", path: "/market/" },
+    { name: m.name, path: canonical },
+  ]);
+
+  const statBits = [
+    `${nCo} ${nCo === 1 ? "company" : "companies"}`,
+    `${m.stories} ${m.stories === 1 ? "story" : "stories"}`,
+  ];
+  if (m.total) statBits.push(`${money(m.total)} disclosed`);
+
+  const biggest = m.deals.slice().sort((a, b) => b.amountM - a.amountM)[0];
+  /* The standing paragraph. Derived rather than written — the numbers
+     in it are the reason this URL exists, and no sentence anyone else
+     publishes states them for a market this small. */
+  const dek =
+    `${SITE.name} tracks ${nCo} insurance and insurtech ${
+      nCo === 1 ? "company" : "companies"
+    } headquartered in ${where}` +
+    (mix ? ` — ${mix}` : "") +
+    (oldest ? `, across ${m.stories} stories going back to ${fullDate(oldest.publishedAt)}` : "") +
+    ". " +
+    (m.rounds
+      ? `Between them they have disclosed ${money(m.total)} across ${m.rounds} funding round${
+          m.rounds === 1 ? "" : "s"
+        }` +
+        (biggest && biggest.company
+          ? `, the largest ${biggest.company.name}'s ${money(biggest.amountM)}`
+          : "") +
+        ". "
+      : "") +
+    "Every figure is compiled from the coverage on this page.";
+
+  const others = all
+    .filter((x) => x.slug !== m.slug)
+    .slice(0, 12)
+    .map(
+      (x) =>
+        `<a class="company-badge" href="/market/${escAttr(x.slug)}/">${escHtml(
+          x.name
+        )} <span class="cnt">${x.companies.length}</span></a>`
+    )
+    .join("");
+
+  const shownDeals = m.deals.slice(0, MARKET_DEAL_CAP);
+  const fundingBlock = m.rounds
+    ? `    <h2 class="section-label">Funding</h2>
+${dealTable(
+  shownDeals.slice().sort((a, b) => b.amountM - a.amountM),
+  `Disclosed insurtech funding rounds by companies in ${m.name}`
+)}
+    <p class="topic-more">${
+      m.rounds > shownDeals.length
+        ? `The ${shownDeals.length} largest of ${m.rounds} disclosed rounds. `
+        : ""
+    }Every round is listed with its reporting in the
+      <a href="/funding/">funding tracker</a>, and totals across all markets in the
+      <a href="/funding/companies/">company ranking</a>.</p>
+`
+    : "";
+
+  const shownArticles = m.articles.slice(0, MARKET_STORY_CAP);
+  const moreCo =
+    nCo > MARKET_COMPANY_CAP
+      ? `    <p class="topic-more">Showing the ${MARKET_COMPANY_CAP} most covered of ${nCo}.</p>`
+      : "";
+  const moreArticles =
+    m.stories > shownArticles.length
+      ? `    <p class="topic-more">The ${shownArticles.length} most recent of ${m.stories} stories naming a company based in ${escHtml(
+          where
+        )}.</p>`
+      : "";
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("market"),
+    imageAlt: `Insurtech in ${where} — ${SITE.name}`,
+    jsonld: [collectionLd, crumbLd],
+    // The funding table sorts, the same as everywhere else it appears.
+    scripts: m.rounds ? [FUNDING_JS] : [],
+  })}
+<body>
+${header("markets")}
+
+  <main id="top">
+    <p class="crumb"><a href="/market/">← All markets</a></p>
+
+    <div class="intro co-head">
+      <p class="co-kicker">Market</p>
+      <h1 class="tagline">Insurtech in ${escHtml(where)}</h1>
+      <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
+      <p class="dek">${escHtml(dek)}</p>
+    </div>
+
+${fundingBlock}
+    <h2 class="section-label">Companies</h2>
+${marketCompanyTable(m)}
+${moreCo}
+${
+  others
+    ? `    <section class="co-facts">
+      <div class="co-fact">
+        <h2 class="fact-label">Other markets</h2>
+        <div class="badges">${others}</div>
+      </div>
+    </section>`
+    : ""
+}
+
+    <h2 class="section-label">Coverage</h2>
+    <ol class="feed" aria-label="Insurtech coverage in ${escAttr(m.name)}">
+${shownArticles.map(companyArticleLi).join("\n")}
+    </ol>
+${moreArticles}
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function marketIndexHtml(markets) {
+  const canonical = "/market/";
+  const companies = markets.reduce((s, m) => s + m.companies.length, 0);
+  const capital = markets.reduce((s, m) => s + m.total, 0);
+  const title = `Insurtech by market — companies and funding by country | ${SITE.name}`;
+  const description =
+    `Insurtech and insurance companies tracked in ${markets.length} markets — ` +
+    `${companies} companies with their coverage, headquarters and disclosed funding, country by country.`;
+
+  const listLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Insurtech markets",
+    url: url(canonical),
+    description: clamp(description, 300),
+    numberOfItems: markets.length,
+    itemListElement: markets.map((m, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: url(`/market/${m.slug}/`),
+      name: `Insurtech in ${inMarket(m)}`,
+    })),
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Markets", path: canonical },
+  ]);
+
+  const rows = markets
+    .map((m) => {
+      const bits = [
+        `${m.companies.length} ${m.companies.length === 1 ? "company" : "companies"}`,
+        `${m.stories} ${m.stories === 1 ? "story" : "stories"}`,
+      ];
+      if (m.total) bits.push(`${money(m.total)} disclosed`);
+      const lead = m.companies
+        .slice(0, 4)
+        .map((c) => c.name)
+        .join(", ");
+      return `      <li class="story">
+        <a class="story-main" href="/market/${escAttr(m.slug)}/">
+          <div class="meta"><span class="src">${escHtml(bits.join(" · "))}</span></div>
+          <h2>Insurtech in ${escHtml(inMarket(m))}</h2>
+          ${lead ? `<p class="summary">Most covered: ${escHtml(lead)}.</p>` : ""}
+        </a>
+      </li>`;
+    })
+    .join("\n");
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("market"),
+    imageAlt: `Insurtech by market on ${SITE.name}`,
+    jsonld: [listLd, crumbLd],
+  })}
+<body>
+${header("markets")}
+
+  <main id="top">
+    <div class="intro">
+      <p class="co-kicker">Browse</p>
+      <h1 class="tagline">Markets</h1>
+      <p class="statline">${markets.length} markets  ·  ${companies} companies  ·  ${escHtml(
+    money(capital)
+  )} disclosed</p>
+      <p class="dek">
+        Where the companies in this archive are headquartered, taken from
+        ${SITE.name}'s own company profiles. A market appears once it holds
+        ${MARKET_MIN_COMPANIES} companies and ${MARKET_MIN_STORIES} stories,
+        so the list grows as the archive does.
+      </p>
+    </div>
+
+    <ol class="feed" aria-label="Markets">
+${rows}
+    </ol>
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function buildMarketPages(markets) {
+  const outRoot = path.join(ROOT, "market");
+  fs.mkdirSync(outRoot, { recursive: true });
+
+  // A market that falls back below the floor (a company merged away, a
+  // profile rewritten) has its directory removed, the way a renamed
+  // topic's does — the sitemap and the filesystem must not drift.
+  const wanted = new Set(markets.map((m) => m.slug));
+  for (const name of fs.readdirSync(outRoot)) {
+    const dir = path.join(outRoot, name);
+    if (fs.statSync(dir).isDirectory() && !wanted.has(name)) {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
+  }
+
+  for (const m of markets) {
+    const dir = path.join(outRoot, m.slug);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, "index.html"), marketPageHtml(m, markets));
+  }
+  fs.writeFileSync(path.join(outRoot, "index.html"), marketIndexHtml(markets));
+
+  const links = markets.reduce((s, m) => s + Math.min(m.companies.length, MARKET_COMPANY_CAP), 0);
+  console.log(
+    `  ✓ ${markets.length} market pages under /market/ + index ` +
+      `(floor: ${MARKET_MIN_COMPANIES} companies and ${MARKET_MIN_STORIES} stories) — ` +
+      `${links} links onto company pages`
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
    INJECTION into hand-authored pages (between HTML markers)
    ══════════════════════════════════════════════════════════════ */
 function replaceBlock(html, marker, content) {
@@ -3756,7 +4278,8 @@ function buildSitemap(
   quarters = [],
   years = [],
   ranked = [],
-  terms = []
+  terms = [],
+  markets = []
 ) {
   const now = isoDate(new Date().toISOString());
   const entries = [
@@ -3843,6 +4366,22 @@ function buildSitemap(
     // Thin months are noindex — listing them would only ask Google to crawl
     // what it has been told not to index (same rule as company pages).
     period(months, MONTH_MIN_DEALS, "0.7");
+  }
+  /* Markets carry no separate gate here: collectMarkets() returns only
+     the ones that cleared the floor, and a market below it has no page
+     to list (see scripts/markets.js on why this differs from rule 3a).
+     Ranked with the hubs — a market page is an aggregate over companies,
+     the way a hub is one over a theme. */
+  if (markets.length) {
+    entries.push({ loc: "/market/", lastmod: now, priority: "0.8", changefreq: "daily" });
+    markets.forEach((m) => {
+      entries.push({
+        loc: `/market/${m.slug}/`,
+        lastmod: isoDate(m.articles[0] && m.articles[0].publishedAt) || now,
+        priority: "0.7",
+        changefreq: "weekly",
+      });
+    });
   }
   if (topics.length) {
     entries.push({ loc: "/topic/", lastmod: now, priority: "0.8", changefreq: "daily" });
@@ -3984,6 +4523,11 @@ function main() {
   setNavTopics(topics);
   setFundedSlugs(deals);
   setProfiledSlugs(profiles);
+  /* Same contract as the two above: the company pages turn a profile's
+     place into a link to its market, so the set of markets that HAVE a
+     page has to exist before the first company page is written. */
+  const markets = collectMarkets(db, profiles, deals);
+  setMarketSlugs(markets);
   /* Reads the persistent store rather than this run's batch, like the
      hubs do — a term's coverage is the whole archive, not today's wire.
      Collected here rather than inside buildGlossaryPages() because the
@@ -3997,11 +4541,12 @@ function main() {
   buildTopicPages(topics, db, deals, hubBriefs);
   buildFundingPages(deals, months, quarters, years, ranked);
   buildGlossaryPages(terms, db);
+  buildMarketPages(markets);
   injectAnalytics();
   injectSocial();
   injectHomepage(news);
   injectCompaniesIndex(db);
-  buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked, terms);
+  buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked, terms, markets);
   buildRobots();
   console.log("SEO build complete.");
 }

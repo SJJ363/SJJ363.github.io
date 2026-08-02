@@ -128,6 +128,15 @@ const BASE_CARDS = [
     sub: "What the vocabulary in insurtech headlines actually means.",
     kicker: `${DOMAIN}/glossary`,
   },
+  {
+    // One card for the market index and every country page — the same
+    // per-type sharing the company and glossary cards use.
+    id: "market",
+    eyebrow: "By market",
+    title: "Insurtech Markets",
+    sub: "Who is building insurance where, and what they have raised.",
+    kicker: `${DOMAIN}/market`,
+  },
 ];
 
 /* One card per topic hub, named for the same slug that builds the URL,
