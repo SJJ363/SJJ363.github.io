@@ -316,8 +316,20 @@ function renderBrief(brief) {
   currentBrief = brief;
   document.getElementById("briefHeadline").textContent = brief.headline || "The Brief";
   document.getElementById("briefTeaser").textContent = brief.teaser || "";
-  document.getElementById("briefWhat").textContent = brief.whatsHappening;
-  document.getElementById("briefWhy").textContent = brief.whyItMatters;
+
+  /* seo.js pre-renders this brief's prose with its company links
+     already in it (rule 3b-vi), and data-date says which brief that
+     markup is for. When the fetched payload is the same one — the
+     normal case, since seo.js runs after write-brief.js in the same
+     job — leave the prose alone: setting textContent here would
+     flatten those links back to plain text on every load, so the
+     reader running JS would get strictly less than the crawler.
+     A newer brief in the payload overwrites it, correctly. */
+  const prerendered = briefEl && brief.date && briefEl.dataset.date === brief.date;
+  if (!prerendered) {
+    document.getElementById("briefWhat").textContent = brief.whatsHappening;
+    document.getElementById("briefWhy").textContent = brief.whyItMatters;
+  }
 
   const foot = document.getElementById("briefFoot");
   const gen = brief.generatedAt ? timeAgo(brief.generatedAt) : "";
@@ -353,7 +365,14 @@ function showError(msg) {
 }
 
 function loadFeed() {
-  if (loadingEl) { loadingEl.hidden = false; loadingEl.textContent = "Loading the latest insurtech news…"; }
+  /* Only announce a load the reader is actually waiting on. seo.js
+     pre-renders the wire, so on first paint there are already rows on
+     the page and a "Loading…" line under them is a lie that flashes.
+     A retry after an empty render still gets it. */
+  if (loadingEl && !feedEl.children.length && !leadEl.children.length) {
+    loadingEl.hidden = false;
+    loadingEl.textContent = "Loading the latest insurtech news…";
+  }
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 15000);
 

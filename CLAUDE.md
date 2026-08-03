@@ -1150,6 +1150,61 @@ produce all of that consistently — **route new pages through them.**
    *enhance* (search, live times) but the meaningful content and internal links
    must exist in the served HTML first — see the `SEO:COLIST` block in
    `companies.html`.
+5a. **The homepage is pre-rendered through `SEO:BRIEF`, `SEO:WIRE` and
+   `SEO:STATS`, and it is the page rule 5 was being broken on.**
+   `index.html` is client-rendered — `script.js` fetches `news.json` and
+   fills `#brief`, `#lead` and `#feed` — so what it *served* was an `h1`,
+   a dek and six links: the nav and the footer. No story, no company
+   link, no route to `/brief/<date>/`, and none of the brief's prose,
+   which rule 3b calls the only original writing here and rule 3h built
+   a feed around. `companies.html` had done this correctly since it was
+   written; the homepage simply never got a marker. After: 135 links in
+   `<main>`, 71 of them onto company pages, and the brief with the
+   company links `windowCompanies()` stamped (rule 3b-vi).
+   It matters most on this page for three reasons — Google renders JS on
+   a deferred second pass and on a young domain that budget is the
+   scarcest thing there is; 89% of the sitemap is company pages and rule
+   3f already documents equity pooling in the weakest thing here, so the
+   root page passing equity to five hubs and nothing else was the worst
+   version of that; and the brief led a page it was invisible on.
+   Six rules:
+   • **The static markup is a SUBSET of what the client draws, never a
+     different page.** Same rows in the same order, same classes, same
+     `rel` on outbound links. `wireThreads()` and `wireLead()` are
+     `script.js`'s `groupThreads()`/`pickLead()` ported, not
+     approximated: a served wire of 140 articles against a rendered one
+     folded into 128 rows is two pages at one URL. **Keep the two in
+     step** — a change to either belongs in both.
+   • **It omits only the thread disclosures,** which are an interactive
+     control, and shows the outlet count in the meta instead — which is
+     exactly what `metaEl()` does for a row carrying no thread.
+   • **`WIRE_ROWS` is 60, not the whole wire.** 128 groups is 128
+     outbound links to other domains from the root page, and the
+     fifth-oldest day of a 45-day batch is not why the homepage ranks.
+     The client still draws all of them for readers.
+   • **Hydration must not take anything away from the reader.**
+     `render()` clears `#lead`/`#feed` and redraws, which is fine. The
+     brief is not: `renderBrief()` sets `textContent`, which would
+     flatten the server-rendered company links back to plain text on
+     every load and leave the crawler with strictly more than the
+     human. Hence `data-date` on `#brief` — the prose is left alone when
+     the payload describes the same brief the markup was built from
+     (the normal case, `seo.js` runs after `write-brief.js` in one job),
+     and a newer brief overwrites it. The archive links sit **outside**
+     `#briefFoot` for the same reason: that node's text is rewritten.
+   • **`#loading` starts hidden and `loadFeed()` only shows it when the
+     wire is empty.** A "Loading…" line under 60 rendered rows is a lie
+     that flashes on every visit. A retry after an empty render still
+     gets it.
+   • **`.no-js` opens the brief, and the inline `<head>` script that
+     removes it must stay before first paint.** The brief is a JS
+     accordion, so pre-rendering prose into it hands a no-JS reader a
+     collapsed bar whose toggle does nothing — a dead control over
+     content already in the DOM. The class is dropped in `<head>` so a
+     JS reader never sees the open state flash. It sits after
+     `<meta charset>`, not before, so it can't push charset out of the
+     1024-byte sniff window the Google tag is measured against
+     (rule 2c).
 6. **After changing data shape or page structure, run `node scripts/seo.js`** and
    confirm it reports the expected page/URL counts. It's idempotent — safe to
    re-run; markers are replaced, not appended.

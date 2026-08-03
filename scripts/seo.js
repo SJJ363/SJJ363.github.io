@@ -236,7 +236,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=32" />
+  <link rel="stylesheet" href="/style.css?v=33" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="alternate" type="application/rss+xml" title="Insurtech Daily — The Brief" href="/feed.xml" />
   <script src="/nav.js?v=1" defer></script>`;
@@ -4207,7 +4207,315 @@ function injectFootLinks() {
   console.log(`  ✓ footer hub links on ${n} hand-authored page${n === 1 ? "" : "s"}`);
 }
 
-function injectHomepage(news) {
+/* ══════════════════════════════════════════════════════════════
+   The homepage, pre-rendered (rule 5, on the page that needed it)
+
+   index.html is client-rendered: script.js fetches news.json and fills
+   #brief, #lead and #feed. Served, the page carried an <h1>, a dek and
+   six links — the nav and the footer — and nothing else. Not one story,
+   not one company link, no route to /brief/<date>/, and none of the
+   brief's prose, which rule 3b calls the only original writing here and
+   rule 3h built a whole feed around.
+
+   That is rule 5 unfollowed on the one page it matters most on.
+   companies.html has done this correctly since it was written (the
+   COLIST block below); the homepage simply never got a marker. Three
+   things it costs:
+
+   • Google renders JS on a second, deferred pass. On a young domain
+     that budget is the scarcest thing there is, so for weeks the
+     highest-authority page on the site reads, to a crawler, as an
+     empty template.
+   • 89% of the sitemap is company pages, and rule 3f already documents
+     internal equity pooling in the weakest thing here. The root page —
+     where every external link and the feed land — passed equity to five
+     hubs and nothing else. Sixty wire rows put ~130 resolved company
+     links and today's brief on it.
+   • The brief was invisible without rendering, on the page it leads.
+
+   The static markup is a faithful SUBSET of what script.js renders,
+   never a different page — same rows in the same order with the same
+   classes and the same rel on outbound links. It omits only the thread
+   disclosures, which are an interactive control, and shows the outlet
+   count in the meta instead (which is what metaEl() does when a row
+   carries no thread). Rendering something the client then contradicts
+   is the one way this becomes a liability rather than a fix.
+
+   Hydration overwrites all of it: render() clears #lead and #feed
+   before drawing, and renderBrief() rewrites the brief's spans — with
+   one exception it makes deliberately, see the data-date guard in
+   script.js, which keeps the server-rendered company links in the
+   brief prose rather than flattening them back to text.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Not the whole wire. 128 thread groups is 128 outbound links to other
+   domains from the root page, and the fifth-oldest day on a 45-day
+   batch is not why the homepage ranks — the freshest slice is. Sixty
+   covers ~5 days, and the client still draws all of them for readers. */
+const WIRE_ROWS = 60;
+
+/* Month + day, UTC-pinned for fullDate()'s reason. Matches the format
+   script.js's timeAgo() falls back to past a week, so the swap at
+   hydration is a format the page already uses. */
+function shortDate(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (isNaN(d)) return "";
+  return d.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
+/* script.js's groupThreads() and pickLead(), server-side. Ported rather
+   than approximated: a static wire that showed all 140 articles while
+   the client folds them into 128 rows would be two different pages at
+   the same URL. Keep the two in step. */
+function wireThreads(list) {
+  const byId = new Map();
+  const groups = [];
+  list.forEach((a) => {
+    if (!a.clusterId) {
+      groups.push({ members: [a] });
+      return;
+    }
+    let g = byId.get(a.clusterId);
+    if (!g) {
+      g = { members: [] };
+      byId.set(a.clusterId, g);
+      groups.push(g);
+    }
+    g.members.push(a);
+  });
+  groups.forEach((g) => {
+    let head = g.members[0];
+    for (const m of g.members) if ((m.score || 0) > (head.score || 0)) head = m;
+    g.head = head;
+    g.others = g.members.filter((m) => m !== head);
+  });
+  return groups;
+}
+
+const LEAD_WINDOWS_H = [24, 48, 72];
+function wireLead(list) {
+  const now = Date.now();
+  let pool = list;
+  for (const hours of LEAD_WINDOWS_H) {
+    const fresh = list.filter(
+      (a) => a.timestamp && now - a.timestamp <= hours * 3.6e6
+    );
+    if (fresh.length) {
+      pool = fresh;
+      break;
+    }
+  }
+  let best = pool[0];
+  for (const a of pool) if ((a.score || 0) > (best.score || 0)) best = a;
+  return best;
+}
+
+/* Company badges are already resolved against the finished index by
+   companies.js (rule 3c-iv), but seo.js prunes every /company/<slug>/
+   without a record — so the slug set is checked here too. A badge the
+   client would draw and this drops is one dead link fewer in served
+   HTML, which is the right side to err on. */
+function wireBadges(a, maxTags, live) {
+  const badges = (a.companies || [])
+    .filter((c) => c && c.slug && live.has(c.slug))
+    .map(
+      (c) =>
+        `<a class="company-badge" href="/company/${escAttr(
+          c.slug
+        )}/">${escHtml(c.name)}</a>`
+    );
+  const tags = (a.tags || [])
+    .filter((t) => t !== "Industry")
+    .slice(0, maxTags)
+    .map((t) => `<span class="tag-pill">${escHtml(t)}</span>`);
+  if (!badges.length && !tags.length) return "";
+  return `<div class="card-tags">${badges.join("")}${tags.join("")}</div>`;
+}
+
+function wireMeta(a) {
+  let m =
+    `<span class="src">${escHtml(a.source)}</span>` +
+    `<span class="dot"> · </span>` +
+    `<span class="time">${escHtml(shortDate(a.publishedAt))}</span>`;
+  if (a.cluster > 1) {
+    m += `<span class="dot"> · </span><span class="outlets">${a.cluster} outlets</span>`;
+  }
+  return `<div class="meta">${m}</div>`;
+}
+
+/* rel and target match what script.js writes. The stories are other
+   outlets' and the links say so; making the served copy nofollow while
+   the rendered one is not would be a difference for its own sake. */
+const STORY_REL = ' target="_blank" rel="noopener noreferrer"';
+
+function wireLeadCard(g, live) {
+  const a = g.head;
+  return `      <div class="lead-card">
+        <a class="lead-main" href="${escAttr(a.link)}"${STORY_REL}>
+          <div class="lead-badge-row"><span class="lead-badge">Lead story</span></div>
+          ${wireMeta(a)}
+          <h2>${escHtml(a.title)}</h2>
+${a.summary ? `          <p class="summary">${escHtml(a.summary)}</p>\n` : ""}        </a>
+        ${wireBadges(a, 4, live)}
+      </div>`;
+}
+
+function wireRow(g, live) {
+  const a = g.head;
+  return `      <li class="story">
+        <a class="story-main" href="${escAttr(a.link)}"${STORY_REL}>
+          ${wireMeta(a)}
+          <h3>${escHtml(a.title)}</h3>
+${a.summary ? `          <p class="summary">${escHtml(a.summary)}</p>\n` : ""}        </a>
+        ${wireBadges(a, 3, live)}
+      </li>`;
+}
+
+function homeWire(news, db) {
+  const articles = news.articles || [];
+  const live = new Set((db.companies || []).map((c) => c.slug));
+  if (!articles.length) {
+    return `    <section class="lead" id="lead" aria-label="Lead story"></section>
+    <ol class="feed" id="feed" aria-label="Latest stories"></ol>`;
+  }
+  const groups = wireThreads(articles);
+  const lead = wireLead(articles);
+  const leadGroup = groups.find((g) => g.members.includes(lead));
+  if (leadGroup) {
+    leadGroup.head = lead;
+    leadGroup.others = leadGroup.members.filter((m) => m !== lead);
+  }
+  const rows = groups
+    .filter((g) => g !== leadGroup)
+    .slice(0, WIRE_ROWS)
+    .map((g) => wireRow(g, live))
+    .join("\n");
+  return `    <section class="lead" id="lead" aria-label="Lead story">
+${wireLeadCard(leadGroup || { head: lead, members: [lead], others: [] }, live)}
+    </section>
+    <ol class="feed" id="feed" aria-label="Latest stories">
+${rows}
+    </ol>`;
+}
+
+/* The chevron script.js's markup carries — kept in one place so the
+   two branches of homeBrief() can't drift from each other. */
+const CHEVRON =
+  '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+
+/* The brief section in full, `hidden` attribute included — the marker
+   has to own that attribute, or a served brief sits inside a section
+   the browser is told not to display until JS clears it.
+
+   data-date is the hydration guard: script.js leaves the prose alone
+   when news.json is describing the same brief this markup was built
+   from, which is the normal case (seo.js runs after write-brief.js in
+   the same job) and is what keeps the company links below. A newer
+   brief in a fetched payload overwrites it with plain text, correctly.
+
+   The links to /brief/<date>/ and /brief/ sit OUTSIDE #briefFoot on
+   purpose: renderBrief() sets that node's textContent, so anything
+   inside it is text the moment JS runs. */
+function homeBrief(news, db) {
+  const b = news.briefing || {};
+  if (!b.whatsHappening) {
+    return `    <section class="brief" id="brief" hidden>
+      <button class="brief-head" id="briefToggle" type="button" aria-expanded="false" aria-controls="briefBody">
+        <span class="brief-kicker"><span class="brief-spark" aria-hidden="true"></span>The Brief</span>
+        <span class="brief-lede">
+          <span class="brief-headline" id="briefHeadline"></span>
+          <span class="brief-teaser" id="briefTeaser"></span>
+        </span>
+        <span class="brief-actions">
+          <span class="brief-cue">
+            <span class="brief-cue-label" id="briefCueLabel">Read the brief</span>
+            <span class="brief-chevron" aria-hidden="true">${CHEVRON}</span>
+          </span>
+        </span>
+      </button>
+      <div class="brief-body" id="briefBody" role="region" aria-label="Editor's brief">
+        <div class="brief-body-inner">
+          <div class="brief-block"><h3 class="brief-label">What's happening</h3><p class="brief-text" id="briefWhat"></p></div>
+          <div class="brief-block"><h3 class="brief-label">Why it matters</h3><p class="brief-text" id="briefWhy"></p></div>
+          <p class="brief-foot" id="briefFoot"></p>
+        </div>
+      </div>
+    </section>`;
+  }
+
+  // One linker for this block — stateful (first mention only, page
+  // budget), so it is built here and not shared (rule 3b-vi).
+  const link = briefLinker(b, db);
+  const author = b.by === "claude" ? "Written" : "Generated";
+  const day = fullDate(b.date || b.generatedAt);
+  const foot = `${author} from this batch's themes${
+    day ? " · " + day : ""
+  }. A read of the wire, not investment advice.`;
+
+  // The archive link the homepage never had. Only offered for a brief
+  // that is actually in the archive — recordBrief() files Claude's
+  // writing and nothing else (rule 3b), so a fallback brief has no
+  // page to point at and gets the index alone.
+  const archived = b.by === "claude" && b.date;
+  const more = archived
+    ? `<a class="brief-more" href="/brief/${escAttr(
+        b.date
+      )}/">Read this brief on its own page</a> · <a class="brief-more" href="/brief/">Brief archive</a>`
+    : `<a class="brief-more" href="/brief/">Brief archive</a>`;
+
+  return `    <section class="brief" id="brief" data-date="${escAttr(
+    b.date || ""
+  )}">
+      <button class="brief-head" id="briefToggle" type="button" aria-expanded="false" aria-controls="briefBody">
+        <span class="brief-kicker"><span class="brief-spark" aria-hidden="true"></span>The Brief</span>
+        <span class="brief-lede">
+          <span class="brief-headline" id="briefHeadline">${escHtml(
+            b.headline || "The Brief"
+          )}</span>
+          <span class="brief-teaser" id="briefTeaser">${escHtml(
+            b.teaser || ""
+          )}</span>
+        </span>
+        <span class="brief-actions">
+          <span class="brief-cue">
+            <span class="brief-cue-label" id="briefCueLabel">Read the brief</span>
+            <span class="brief-chevron" aria-hidden="true">${CHEVRON}</span>
+          </span>
+        </span>
+      </button>
+      <div class="brief-body" id="briefBody" role="region" aria-label="Editor's brief">
+        <div class="brief-body-inner">
+          <div class="brief-block">
+            <h3 class="brief-label">What's happening</h3>
+            <p class="brief-text" id="briefWhat">${link(b.whatsHappening)}</p>
+          </div>
+          <div class="brief-block">
+            <h3 class="brief-label">Why it matters</h3>
+            <p class="brief-text" id="briefWhy">${link(b.whyItMatters)}</p>
+          </div>
+          <p class="brief-foot" id="briefFoot">${escHtml(foot)}</p>
+          <p class="brief-foot brief-links">${more}</p>
+        </div>
+      </div>
+    </section>`;
+}
+
+/* The statline read "— stories · — sources · updated —" until JS ran. */
+function homeStats(news) {
+  const upd = fullDate(news.updatedAt);
+  return `        <b id="statCount">${(news.articles || []).length}</b> stories <span class="sep">·</span>
+        <b id="statSources">${
+          (news.sources || []).length
+        }</b> sources <span class="sep">·</span>
+        updated <b id="statUpdated">${escHtml(upd)}</b>`;
+}
+
+function injectHomepage(news, db) {
   const p = path.join(ROOT, "index.html");
   let html = fs.readFileSync(p, "utf8");
   const articles = news.articles || [];
@@ -4224,8 +4532,17 @@ function injectHomepage(news) {
     .join("\n");
   html = replaceBlock(html, "JSONLD", block);
   html = replaceBlock(html, "NAV", navMarkup("wire"));
+  html = replaceBlock(html, "STATS", homeStats(news));
+  html = replaceBlock(html, "BRIEF", homeBrief(news, db));
+  html = replaceBlock(html, "WIRE", homeWire(news, db));
   fs.writeFileSync(p, html);
-  console.log("  ✓ index.html structured data + nav");
+  const rows = Math.min(
+    WIRE_ROWS,
+    Math.max(0, wireThreads(articles).length - 1)
+  );
+  console.log(
+    `  ✓ index.html — brief + ${rows} wire rows pre-rendered, structured data + nav`
+  );
 }
 
 function injectCompaniesIndex(db) {
@@ -4717,7 +5034,7 @@ function main() {
   injectAnalytics();
   injectSocial();
   injectFootLinks();
-  injectHomepage(news);
+  injectHomepage(news, db);
   injectCompaniesIndex(db);
   buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked, terms, markets);
   buildRobots();
