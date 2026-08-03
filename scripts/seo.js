@@ -238,6 +238,7 @@ const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css?v=32" />
   <link rel="icon" href="${FAVICON}" />
+  <link rel="alternate" type="application/rss+xml" title="Insurtech Daily — The Brief" href="/feed.xml" />
   <script src="/nav.js?v=1" defer></script>`;
 
 /* ── The social card block ──────────────────────────────────────
@@ -407,7 +408,8 @@ ${navMarkup(active, currentTopic)}
 const FOOT_LINKS = `    <p class="foot-links"><a href="/glossary/">Insurance glossary</a> ·
       <a href="/funding/companies/">Most funded companies</a> ·
       <a href="/market/">Markets</a> ·
-      <a href="/topic/">All topics</a></p>`;
+      <a href="/topic/">All topics</a> ·
+      <a href="/feed.xml">RSS</a></p>`;
 
 const FOOTER = `  <footer class="site-footer">
     <p class="foot-desc">
@@ -4469,6 +4471,142 @@ Sitemap: ${url("/sitemap.xml")}
 }
 
 /* ══════════════════════════════════════════════════════════════
+   The feed
+
+   /feed.xml carries the BRIEF ARCHIVE, and nothing else. That is the
+   whole design decision, so it is worth writing down.
+
+   The obvious feed for a news aggregator is the wire, and the wire is
+   exactly the wrong thing to syndicate: every item on it is another
+   outlet's headline pointing at another outlet's URL. A feed of those
+   sends a subscriber away from this site on every item, hands them
+   content we did not write, and gives us nothing back. The brief is
+   the inverse — it is the one thing here nobody else wrote (rule 3b),
+   each item links to a /brief/<date>/ page of ours, and the prose
+   carries the company links windowCompanies() stamped (rule 3b-vi),
+   so a copy of this feed republished anywhere is a copy full of links
+   home. One item a day is thin next to a wire feed; it is also the
+   only version of this that is worth a subscriber having.
+
+   Three rules:
+   • Hrefs are absolutised on the way out. The linkers emit
+     root-relative paths, which is right for a page (rule 4) and
+     broken in a feed — the reader resolves against ITS own origin, or
+     nothing at all. Anything rendered into an item body has to be
+     rewritten to SITE.origin, so the rewrite lives here rather than
+     at the call sites and covers whatever a body picks up later.
+   • It is not in sitemap.xml. A sitemap lists pages a crawler should
+     index; feed.xml is a transport, and listing it asks Google to
+     index a document that renders as markup. Discovery is the
+     <link rel="alternate"> in HEAD_ASSETS, which is the mechanism
+     every reader and aggregator actually looks for.
+   • Full prose in content:encoded, teaser in description. Readers
+     that show only the summary get the teaser; readers that show the
+     body get the whole brief. Truncating both is how a feed becomes a
+     thing people unsubscribe from.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ~a month of dailies. The archive is append-only (rule 3b) and every
+   entry keeps its page, so the feed is a window on it, not a mirror. */
+const FEED_MAX = 30;
+
+/* RSS 2.0 wants RFC-822, which Date has no formatter for. Pinned to
+   GMT for the reason fullDate() is pinned to UTC: a local build and a
+   CI build must not disagree about an item's date. */
+const RFC822_DAY = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const RFC822_MON = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+function rfc822(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return "";
+  const p = (n) => String(n).padStart(2, "0");
+  return (
+    `${RFC822_DAY[d.getUTCDay()]}, ${p(d.getUTCDate())} ` +
+    `${RFC822_MON[d.getUTCMonth()]} ${d.getUTCFullYear()} ` +
+    `${p(d.getUTCHours())}:${p(d.getUTCMinutes())}:${p(d.getUTCSeconds())} GMT`
+  );
+}
+
+/* Root-relative → absolute. See the rule above: a feed body is read
+   somewhere else, so /company/foo/ resolves against the reader's
+   origin and lands nowhere. */
+const absolutise = (html) =>
+  String(html).replace(/(href|src)="\/(?!\/)/g, `$1="${SITE.origin}/`);
+
+/* CDATA is the readable way to carry HTML through XML, and it has
+   exactly one failure mode: a literal `]]>` inside the payload ends
+   the section early and corrupts the document. Prose never contains
+   one — but "never" is what the OG block said too, so split it. */
+const cdata = (s) => `<![CDATA[${String(s).replace(/\]\]>/g, "]]]]><![CDATA[>")}]]>`;
+
+function feedItemHtml(b, db) {
+  const link = briefLinker(b, db);
+  const parts = [`<h2>What's happening</h2>`, `<p>${link(b.whatsHappening)}</p>`];
+  if (b.whyItMatters) {
+    parts.push(`<h2>Why it matters</h2>`, `<p>${link(b.whyItMatters)}</p>`);
+  }
+  parts.push(
+    `<p><a href="${escAttr(url(`/brief/${b.date}/`))}">Read this brief on ${escHtml(SITE.name)}</a></p>`
+  );
+  return absolutise(parts.join("\n"));
+}
+
+function buildFeed(briefs = [], db = {}) {
+  const items = briefs.slice(0, FEED_MAX);
+  const self = url("/feed.xml");
+  const built = rfc822(new Date().toISOString());
+
+  const body = items
+    .map((b) => {
+      const loc = url(`/brief/${b.date}/`);
+      const day = fullDate(b.date || b.generatedAt);
+      return `    <item>
+      <title>${escHtml(b.headline)}</title>
+      <link>${escHtml(loc)}</link>
+      <guid isPermaLink="true">${escHtml(loc)}</guid>
+      <pubDate>${rfc822(b.generatedAt || b.date)}</pubDate>
+      <description>${escHtml(b.teaser || clamp(b.whatsHappening))}</description>
+      <content:encoded>${cdata(feedItemHtml(b, db))}</content:encoded>
+      <dc:creator>${escHtml(SITE.name)}</dc:creator>
+      <category>Insurtech</category>
+      <source url="${escAttr(self)}">${escHtml(SITE.name)}</source>
+      <!-- ${escHtml(day)} -->
+    </item>`;
+    })
+    .join("\n");
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>${escHtml(SITE.name)} — The Brief</title>
+    <link>${escHtml(url("/brief/"))}</link>
+    <atom:link href="${escAttr(self)}" rel="self" type="application/rss+xml" />
+    <description>${escHtml(
+      "A daily written brief on what moved in insurtech — funding, launches, " +
+        "partnerships and platform moves, read across hundreds of outlets."
+    )}</description>
+    <language>${escHtml(SITE.lang)}</language>
+    <lastBuildDate>${built}</lastBuildDate>
+    <generator>scripts/seo.js</generator>
+    <image>
+      <url>${escHtml(url(SITE.logo))}</url>
+      <title>${escHtml(SITE.name)}</title>
+      <link>${escHtml(url("/brief/"))}</link>
+    </image>
+${body}
+  </channel>
+</rss>
+`;
+  fs.writeFileSync(path.join(ROOT, "feed.xml"), xml);
+  console.log(`  ✓ feed.xml — ${items.length} briefs`);
+}
+
+/* ══════════════════════════════════════════════════════════════
    Company page directory management
    ══════════════════════════════════════════════════════════════ */
 function buildCompanyPages(db, deals = [], profiles = {}) {
@@ -4583,6 +4721,7 @@ function main() {
   injectCompaniesIndex(db);
   buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked, terms, markets);
   buildRobots();
+  buildFeed(briefs, db);
   console.log("SEO build complete.");
 }
 
