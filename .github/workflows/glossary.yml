@@ -92,16 +92,23 @@ jobs:
         run: node scripts/seo.js
 
       - name: Commit if changed
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Same pathspec as news.yml plus glossary/ — a generated directory
           # missing here is rebuilt every run, left dirty and never pushed.
-          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sitemap.xml robots.txt feed.xml funding.csv funding.json index.html companies.html
+          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sitemap.xml robots.txt feed.xml funding-feed.xml funding.csv funding.json index.html companies.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: write glossary definitions${{ inputs.term != '' && format(' ({0})', inputs.term) || '' }}"
             git push
             echo "Glossary definitions committed."
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           else
             echo "No changes to publish."
           fi
+
+      # Same ping news.yml sends after a push (see the note there).
+      - name: Ping IndexNow
+        if: steps.commit.outputs.pushed == 'true'
+        run: node scripts/indexnow.js

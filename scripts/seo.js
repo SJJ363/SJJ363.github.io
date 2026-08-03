@@ -241,6 +241,15 @@ const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com
   <link rel="alternate" type="application/rss+xml" title="Insurtech Daily — The Brief" href="/feed.xml" />
   <script src="/nav.js?v=1" defer></script>`;
 
+/* The site's second feed, declared here beside the first so the two are
+   read together. It is NOT in HEAD_ASSETS: the brief feed is the
+   site-wide one (rule 3h) and belongs on every page, while this one is
+   offered only by the pages it describes — see head()'s `feeds`. */
+const FUNDING_FEED = {
+  href: "/funding-feed.xml",
+  title: "Insurtech Daily — Funding Rounds",
+};
+
 /* ── The social card block ──────────────────────────────────────
    Written here and nowhere else, so every page — generated or
    hand-authored — carries an identical, complete set.
@@ -293,6 +302,12 @@ function head({
   // Page-specific enhancement scripts (deferred, additive). The page must
   // still be complete without them — see rule 5 in CLAUDE.md.
   scripts = [],
+  /* Feeds this page offers on top of the site-wide brief feed, which is
+     in HEAD_ASSETS and stays there (rule 3h). Emitted BEFORE it, because
+     a reader's "subscribe" button and most aggregators take the first
+     rel=alternate they find — and on /funding/ the right answer to that
+     is the funding feed, not the brief. */
+  feeds = [],
 }) {
   const desc = clamp(description);
   const cUrl = url(canonical);
@@ -317,7 +332,14 @@ ${ANALYTICS ? ANALYTICS + "\n" : ""}  <meta charset="UTF-8" />
 
 ${socialTags({ title, desc, cUrl, ogType, ogImage, imageAlt })}
 
-${HEAD_ASSETS}${scripts
+${feeds
+    .map(
+      (f) =>
+        `  <link rel="alternate" type="application/rss+xml" title="${escAttr(
+          f.title
+        )}" href="${escAttr(f.href)}" />\n`
+    )
+    .join("")}${HEAD_ASSETS}${scripts
     .map((s) => `\n  <script src="${escAttr(s)}" defer></script>`)
     .join("")}
 ${ld ? "\n" + ld + "\n" : ""}</head>`;
@@ -2975,6 +2997,7 @@ function fundingIndexHtml(deals, months, quarters = [], years = [], ranked = [])
     canonical,
     ogImage: cardFor("funding"),
     imageAlt: `Insurtech funding tracker — ${SITE.name}`,
+    feeds: [FUNDING_FEED],
     jsonld: [datasetLd, crumbLd],
     scripts: [FUNDING_JS],
   })}
@@ -3160,6 +3183,7 @@ function fundingCompaniesHtml(rows, deals) {
     canonical,
     ogImage: cardFor("funding"),
     imageAlt: `Most-funded insurtech companies — ${SITE.name}`,
+    feeds: [FUNDING_FEED],
     jsonld: [listLd, crumbLd],
     // Only the largest-rounds table below wants sorting; the ranking
     // above is already in its one meaningful order.
@@ -3249,6 +3273,7 @@ function fundingMonthHtml(m, newer, older, quarterKeys = new Set()) {
     canonical,
     ogImage: cardFor("funding"),
     imageAlt: `Insurtech funding, ${label} — ${SITE.name}`,
+    feeds: [FUNDING_FEED],
     jsonld: thin ? [crumbLd] : [datasetLd, crumbLd],
     robots: thin ? "noindex, follow" : undefined,
     // No stage filters on a month page (there's no facts block), but the
@@ -3389,6 +3414,7 @@ function periodPageHtml({
     canonical,
     ogImage: cardFor("funding"),
     imageAlt: `Insurtech funding, ${label} — ${SITE.name}`,
+    feeds: [FUNDING_FEED],
     jsonld: thin ? [crumbLd] : [datasetLd, crumbLd],
     robots: thin ? "noindex, follow" : undefined,
     scripts: [FUNDING_JS],
@@ -4980,6 +5006,7 @@ function downloadBlock(n) {
         so a download is never older than what is shown above.
       </p>
       <p class="method-text">
+        New rounds as they are found: <a href="${escAttr(FUNDING_FEED.href)}">RSS feed</a>.
         Free to use with attribution to Insurtech Daily and a link back to
         <a href="/funding/">${escHtml(url("/funding/").replace(/^https?:\/\//, ""))}</a>.
         Please read how the numbers are compiled below before citing them.
@@ -5124,6 +5151,190 @@ ${body}
 }
 
 /* ══════════════════════════════════════════════════════════════
+   The funding feed
+
+   /funding-feed.xml carries NEW ROUNDS. Rule 3h named this as the
+   obvious second feed and deliberately did not build it, on the
+   grounds that one feed which works beats two that split the
+   subscribers. That reason holds only while the two feeds have the
+   same audience, and these do not: the brief is a daily editorial
+   column that gets read, and this is a deal wire that gets *worked
+   from* — by newsletter writers, analysts and trade journalists who
+   want the round and not the commentary. Nobody subscribes to one
+   as a substitute for the other, so neither is splitting anything.
+
+   It syndicates the site's other original asset, on the same
+   argument rule 3c-i makes for the tracker existing at all: no
+   outlet covers more than its own rounds, so a stream deduplicated
+   across all of them is information that exists nowhere else. The
+   people most likely to republish it are exactly the people whose
+   republication is worth having.
+
+   Five rules:
+   • Items link HOME, sources are cited in the body. This is rule
+     3h's whole design decision applied to a different payload: a
+     feed of outbound headlines sends the subscriber away on every
+     item and gives us nothing back. The company page is also
+     genuinely the better destination — it carries the round table
+     plus every outlet that covered the company, where the source
+     link carries one report.
+   • A round with no nameable raiser is left out. unlinkedCompany()
+     returns an em dash when the headline named only the investor
+     (rule 3c-vi); that is a fine table cell and it ships blank in
+     the export (rule 3i), but "— raises $45M" is not an item. Three
+     of 204 rounds today. They keep their row on the page and their
+     line in the download, where an unnamed round is still a true one.
+   • pubDate is when the round was ANNOUNCED, not when this build
+     first saw it. A feed that re-dates its items to build time is
+     one that claims a two-week-old round as today's news, and the
+     tracker's own method note promises the opposite.
+   • Hrefs are absolutised (rule 3h) and the guid is derived, not
+     borrowed — see dealGuid() for why that is the hard part.
+   • Discovery is a page-local <link rel="alternate"> on the funding
+     pages plus the line in downloadBlock(). The site-wide alternate
+     in HEAD_ASSETS still points at the brief feed, which is rule 3h's
+     instruction and stays that way: that one is the site's feed, this
+     one belongs to the section it describes. Like feed.xml it is a
+     transport and is NOT in sitemap.xml, and like feed.xml it must be
+     in the `git add` pathspec of every workflow that commits pages.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ~4 months at the archive's ~10 rounds a month. The tracker keeps
+   every round; a feed is a window on it, not a mirror. */
+const FUNDING_FEED_MAX = 40;
+
+/* An item's identity, and the one decision in here worth arguing over.
+
+   It cannot be the source link. resolveRound() adopts the earliest
+   report of the *winning* figure whole — link, source, date and title
+   together (rule 3c-i) — so a later outlet that tips the vote to a
+   different number silently rewrites all four on a round subscribers
+   were already sent. The guid has to describe what a round IS: who
+   raised it, how much, and when.
+
+   The amount is in it deliberately, and it is the half that can churn:
+   an outlet restating $160M as $106M three weeks later (Corgi, really)
+   re-emits the round as a second item. That is the right way to be
+   wrong. Leaving the amount out would collapse two genuinely different
+   rounds by one company in one month onto a single guid, and the
+   second would never be delivered at all — and a duplicate is visible
+   and dismissable where a miss is silent. Rule 3c-v makes the same
+   trade for the extractor's pre-filter, in the same direction.
+
+   isPermaLink="false": this is an identity, not an address. */
+const guidKey = (s) =>
+  String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+
+function dealGuid(d, name) {
+  const who = d.company ? d.company.slug : guidKey(name);
+  const month = isoDate(d.publishedAt).slice(0, 7);
+  return `${SITE.origin}/funding/#${who}-${round3(d.amountM)}m-${month}`;
+}
+
+/* The subject of the item's sentence, or "" for a round that has none.
+   See the rule above — this is the gate, not a display fallback. */
+function dealSubject(d) {
+  if (d.company) return d.company.name;
+  const n = unlinkedCompany(d);
+  return n === "—" ? "" : n;
+}
+
+function fundingItemHtml(d, name) {
+  const native = nativeMoney(d.nativeM, d.currency);
+  const outlets = [d.source, ...(d.alsoReportedBy || [])].filter(Boolean);
+
+  const lede =
+    `<p><strong>${escHtml(name)}</strong> raised <strong>${escHtml(money(d.amountM))}</strong>` +
+    (native ? ` (${escHtml(native)} as reported)` : "") +
+    (d.stage ? `, ${escHtml(d.stage)}` : "") +
+    (d.lead ? `, led by ${escHtml(d.lead)}` : "") +
+    `, reported ${escHtml(fullDate(d.publishedAt))}.</p>`;
+
+  const src =
+    `<p>Reported by <a href="${escAttr(d.link)}">${escHtml(d.source || "source")}</a>` +
+    (outlets.length > 1 ? `, and covered by ${escHtml(outlets.slice(1).join(", "))}` : "") +
+    `.</p>`;
+
+  const links =
+    `<p>` +
+    (d.company
+      ? `<a href="/company/${escAttr(d.company.slug)}/">${escHtml(name)} on ${escHtml(
+          SITE.name
+        )}</a> &middot; `
+      : "") +
+    `<a href="/funding/">Every disclosed insurtech round</a> &middot; ` +
+    `<a href="/funding.csv">Download the tracker</a></p>`;
+
+  return absolutise([lede, src, links].join("\n"));
+}
+
+function buildFundingFeed(deals = []) {
+  const items = [];
+  for (const d of deals) {
+    const name = dealSubject(d);
+    if (!name) continue;
+    items.push([d, name]);
+    if (items.length >= FUNDING_FEED_MAX) break;
+  }
+
+  const self = url(FUNDING_FEED.href);
+  const built = rfc822(new Date().toISOString());
+
+  const body = items
+    .map(([d, name]) => {
+      // Home, never the source — see the rules above.
+      const loc = url(d.company ? `/company/${d.company.slug}/` : "/funding/");
+      const title = `${name} raises ${money(d.amountM)}${d.stage ? ` — ${d.stage}` : ""}`;
+      return `    <item>
+      <title>${escHtml(title)}</title>
+      <link>${escHtml(loc)}</link>
+      <guid isPermaLink="false">${escHtml(dealGuid(d, name))}</guid>
+      <pubDate>${rfc822(d.publishedAt)}</pubDate>
+      <description>${escHtml(
+        `${name} raised ${money(d.amountM)}${d.stage ? `, ${d.stage}` : ""}${
+          d.lead ? `, led by ${d.lead}` : ""
+        }, reported ${fullDate(d.publishedAt)} by ${d.source || "the trade press"}.`
+      )}</description>
+      <content:encoded>${cdata(fundingItemHtml(d, name))}</content:encoded>
+      <dc:creator>${escHtml(SITE.name)}</dc:creator>
+      <category>Insurtech funding</category>${
+        d.stage ? `\n      <category>${escHtml(d.stage)}</category>` : ""
+      }
+      <source url="${escAttr(self)}">${escHtml(SITE.name)}</source>
+    </item>`;
+    })
+    .join("\n");
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>${escHtml(SITE.name)} — Funding Rounds</title>
+    <link>${escHtml(url("/funding/"))}</link>
+    <atom:link href="${escAttr(self)}" rel="self" type="application/rss+xml" />
+    <description>${escHtml(
+      "Every insurtech funding round with a disclosed figure — company, amount, stage, lead " +
+        "investor and the reporting behind it, deduplicated across the trade press."
+    )}</description>
+    <language>${escHtml(SITE.lang)}</language>
+    <lastBuildDate>${built}</lastBuildDate>
+    <generator>scripts/seo.js</generator>
+    <image>
+      <url>${escHtml(url(SITE.logo))}</url>
+      <title>${escHtml(SITE.name)}</title>
+      <link>${escHtml(url("/funding/"))}</link>
+    </image>
+${body}
+  </channel>
+</rss>
+`;
+  fs.writeFileSync(path.join(ROOT, path.basename(FUNDING_FEED.href)), xml);
+  console.log(`  ✓ funding-feed.xml — ${items.length} rounds`);
+}
+
+/* ══════════════════════════════════════════════════════════════
    Company page directory management
    ══════════════════════════════════════════════════════════════ */
 function buildCompanyPages(db, deals = [], profiles = {}) {
@@ -5240,6 +5451,7 @@ function main() {
   buildRobots();
   buildFeed(briefs, db);
   buildFundingExport(deals);
+  buildFundingFeed(deals);
   console.log("SEO build complete.");
 }
 

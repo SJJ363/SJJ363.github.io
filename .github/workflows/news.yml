@@ -293,6 +293,7 @@ jobs:
         run: node scripts/seo.js
 
       - name: Commit if changed
+        id: commit
         if: steps.plan.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
@@ -302,11 +303,21 @@ jobs:
           # dirty in the runner and never pushed, so the live page silently
           # freezes while sitemap.xml keeps advertising it as fresh. `funding/`
           # covers the month pages too, once collectMonths() starts returning any.
-          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sitemap.xml robots.txt feed.xml funding.csv funding.json index.html companies.html
+          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sitemap.xml robots.txt feed.xml funding-feed.xml funding.csv funding.json index.html companies.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh insurtech news (${{ steps.plan.outputs.slot }} CT ${{ steps.plan.outputs.date }})"
             git push
             echo "News + SEO updated and pushed."
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           else
             echo "No changes to publish."
           fi
+
+      # Tell the engines that support IndexNow what just changed, instead
+      # of waiting for them to re-crawl 925 sitemap URLs and find out. Runs
+      # only after a push actually landed, reads the changed set out of that
+      # commit, and never fails the run — the site is already live by here.
+      # Google does not participate; Bing, Yandex, Seznam and Naver do.
+      - name: Ping IndexNow
+        if: steps.commit.outputs.pushed == 'true'
+        run: node scripts/indexnow.js

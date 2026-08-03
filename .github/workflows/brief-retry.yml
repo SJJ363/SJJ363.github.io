@@ -90,17 +90,27 @@ jobs:
         run: node scripts/seo.js
 
       - name: Commit if changed
+        id: commit
         if: steps.gate.outputs.retry == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Kept identical to news.yml's pathspec — this workflow runs the same
           # seo.js build, so anything missing here freezes the same way.
-          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sitemap.xml robots.txt feed.xml funding.csv funding.json index.html companies.html
+          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sitemap.xml robots.txt feed.xml funding-feed.xml funding.csv funding.json index.html companies.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: rewrite brief with Claude ($(date -u +'%Y-%m-%d %H:%M UTC'))"
             git push
             echo "Brief recovered and pushed."
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           else
             echo "No changes to publish."
           fi
+
+      # Same ping news.yml sends, and this is the run that most wants it: a
+      # recovered brief is the day's only original writing arriving hours
+      # late, so the gap between publishing it and anything fetching it is
+      # exactly what there is to close.
+      - name: Ping IndexNow
+        if: steps.commit.outputs.pushed == 'true'
+        run: node scripts/indexnow.js
