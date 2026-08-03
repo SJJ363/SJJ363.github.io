@@ -1268,9 +1268,26 @@ produce all of that consistently — **route new pages through them.**
      commits pages** (rules 3e, 3g, 3h, 3i). `lastBuildDate` moves
      every build, so it is always dirty — the churn `sitemap.xml`
      already has, not a signal.
-   The visible half is one line in `downloadBlock()`, so it inherits
-   `/funding/` and `/funding/companies/` and adds no CSS (no `?v=`
-   bump, rule 3c-i).
+   **The visible half is three placements, and two of them were an
+   afterthought that had to be fixed.** It shipped on the strength of
+   `downloadBlock()` alone — `/funding/` and `/funding/companies/`,
+   below a 60-row table, i.e. the two pages that hold the whole
+   archive but the part of them a subscriber-shaped reader reaches
+   last. The other 36 funding pages carried only the `rel=alternate`,
+   which no current browser surfaces to a human, and the rest of the
+   site carried nothing. So:
+   • **The dek links it** on both tracker pages, above the fold.
+   • **`FOOT_LINKS` names both feeds** — "Brief RSS · Funding RSS",
+     never a bare "RSS". That label was unambiguous with one feed and
+     stopped being so the moment this one shipped: a reader who wants
+     deal flow clicks it and subscribes to an editorial column. This
+     is also the funding feed's only route from outside `/funding/`,
+     and it reaches ~1,470 pages through the marker (rule 2d).
+   • A **sixth footer item needs no re-measuring**, unlike a sixth nav
+     item (rule 2b): `.foot-links` is a wrapping `<p>` with a
+     line-height, not a flex row tuned to the 375px and 360px
+     breakpoints. Verified at both — two lines, no overflow. Still no
+     CSS and no `?v=` bump (rule 3c-i).
 
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.

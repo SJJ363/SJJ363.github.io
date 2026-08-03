@@ -427,11 +427,23 @@ ${navMarkup(active, currentTopic)}
    build (rule 2d) — because those two are the highest-authority pages
    on the site and had no footer links at all, so /glossary/,
    /funding/companies/ and /market/ got nothing from either. */
+/* Both feeds are named, and neither is called just "RSS".
+   That label was unambiguous while there was one feed and stopped being
+   so the moment funding-feed.xml shipped (rule 3j): a reader who wants
+   deal flow clicks "RSS" and subscribes to an editorial column instead.
+   This is also the funding feed's ONLY route from outside /funding/ —
+   the rel=alternate is invisible to humans in every current browser, and
+   the visible line in downloadBlock() reaches two pages.
+
+   Unlike the nav (rule 2b), a sixth item here needs no re-measuring:
+   .foot-links is a plain wrapping <p> with a line-height, not a flex row
+   tuned to the 375px and 360px breakpoints. */
 const FOOT_LINKS = `    <p class="foot-links"><a href="/glossary/">Insurance glossary</a> ·
       <a href="/funding/companies/">Most funded companies</a> ·
       <a href="/market/">Markets</a> ·
       <a href="/topic/">All topics</a> ·
-      <a href="/feed.xml">RSS</a></p>`;
+      <a href="/feed.xml">Brief RSS</a> ·
+      <a href="${FUNDING_FEED.href}">Funding RSS</a></p>`;
 
 const FOOTER = `  <footer class="site-footer">
     <p class="foot-desc">
@@ -3012,7 +3024,8 @@ ${header("funding")}
       <p class="dek">
         Compiles insurtech raises with disclosed dollar figures, pulled from
         across the trade press and deduplicated into one table. For the
-        reporting behind the numbers, see <a href="/topic/funding/">funding coverage</a>.
+        reporting behind the numbers, see <a href="/topic/funding/">funding coverage</a>,
+        or follow new rounds by <a href="${escAttr(FUNDING_FEED.href)}">RSS</a>.
       </p>
     </div>
 
@@ -3204,7 +3217,8 @@ ${header("funding")}
         capital raised across all of them. Totals count only rounds a
         publication stated in US dollars, so they are a floor — the
         <a href="/funding/">full tracker</a> lists each round with the
-        reporting it came from.
+        reporting it came from, and new rounds land in the
+        <a href="${escAttr(FUNDING_FEED.href)}">RSS feed</a>.
       </p>
     </div>
 
