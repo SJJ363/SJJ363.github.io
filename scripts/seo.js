@@ -2903,6 +2903,26 @@ function fundingIndexHtml(deals, months, quarters = [], years = [], ranked = [])
       ? { temporalCoverage: `${isoDate(oldest.publishedAt)}/${isoDate(deals[0].publishedAt)}` }
       : {}),
     variableMeasured: ["Company", "Amount raised (USD)", "Round stage", "Lead investor", "Announcement date"],
+    /* A Dataset with nothing to distribute is a claim the surfaces that
+       read this markup can't act on — the download is what makes the
+       @type true rather than aspirational. Declared only here: the
+       month, quarter and year pages are isPartOf this dataset and the
+       file is the whole of it, so pointing every period page at it
+       would advertise one archive from a dozen URLs. */
+    distribution: [
+      {
+        "@type": "DataDownload",
+        name: "Insurtech funding rounds (CSV)",
+        encodingFormat: "text/csv",
+        contentUrl: url("/funding.csv"),
+      },
+      {
+        "@type": "DataDownload",
+        name: "Insurtech funding rounds (JSON)",
+        encodingFormat: "application/json",
+        contentUrl: url("/funding.json"),
+      },
+    ],
   };
   const crumbLd = breadcrumbLd([
     { name: "Home", path: "/" },
@@ -2982,6 +3002,8 @@ ${
     ? `    <p class="topic-more">Showing the ${shown.length} most recent of ${n}. Earlier rounds are on the monthly pages above.</p>`
     : ""
 }
+
+${downloadBlock(n)}
 
 ${METHOD_NOTE}
   </main>
@@ -3171,6 +3193,8 @@ ${
     ? `    <p class="topic-more">The ${biggest.length} largest of ${deals.length}, by amount. Every round is listed in date order in the <a href="/funding/">full tracker</a>.</p>`
     : ""
 }
+
+${downloadBlock(deals.length)}
 
 ${METHOD_NOTE}
   </main>
@@ -4788,6 +4812,182 @@ Sitemap: ${url("/sitemap.xml")}
 }
 
 /* ══════════════════════════════════════════════════════════════
+   The data export — /funding.csv and /funding.json
+
+   The tracker is the one thing on this site that is not a restatement
+   of someone else's reporting (rule 3c-i): no outlet covers more than
+   its own rounds, so a table deduplicated across all of them exists
+   nowhere else. Until now it existed only as HTML, which is the wrong
+   shape for the people who would link to it. An analyst, a newsletter
+   writer or a journalist writing "the state of insurtech funding"
+   cites a file they can open and check; nobody scrapes a table to
+   cite it, they use whatever they can download, and if that is not
+   here it is someone else's.
+
+   It is also the markup half of the same argument. /funding/ has
+   carried Dataset JSON-LD for a while, and a Dataset with no
+   distribution.contentUrl is close to invisible to the surfaces that
+   read it — Google Dataset Search among them — because there is
+   nothing to distribute. Declaring the two downloads is what turns
+   the existing claim into an indexable one.
+
+   Six rules:
+   • Both files are built from ONE row builder (exportRow), the way
+     fundingStats() is a thin wrapper over fundingDeals(). A CSV and a
+     JSON that disagree about a round are worse than either alone.
+   • Rows are derived on every build, never persisted — the same
+     contract collectDeals() has (rule 3c-i), so a regex or extractor
+     fix retroactively corrects the download along with the pages.
+   • The source column is what makes the file citable rather than
+     merely downloadable. Every row carries the outlet, the URL it was
+     reported at and the other outlets that ran it, so a reader can
+     check any figure without coming back here first. That is also why
+     amounts ship BOTH ways: converted USD and the figure the outlet
+     actually printed, which is rule 3c-i's "a converted row prints
+     what the outlet printed", carried into the file.
+   • Neither file is in sitemap.xml, for feed.xml's reason: a sitemap
+     lists pages to index, and these are transports. Discovery is the
+     Dataset distribution and the visible block on /funding/.
+   • Text cells are guarded against spreadsheet formula injection. A
+     field opening = + - or @ is executed on open by Excel and Sheets,
+     and every text cell here is derived from a headline written by
+     someone else. No row in the archive triggers it today; publishing
+     a file for strangers to open in a spreadsheet is not the place to
+     rely on that holding.
+   • They must be in the `git add` pathspec of every workflow that
+     commits pages — the hazard rules 3e, 3g and 3h all carry. Both
+     files change whenever the archive does, and funding.json stamps
+     generatedAt, so they are dirty on most builds. That is the churn
+     sitemap.xml already has, not a signal.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Amounts are millions, converted through funding.js's fixed rate
+   table. Three decimals is $1,000 of precision — enough that a €250k
+   round survives the conversion, short of exposing float noise. */
+const round3 = (n) => Math.round((Number(n) || 0) * 1000) / 1000;
+
+/* One round, flat. Both files serialise exactly this, so the column
+   set is declared once and the two can never drift apart. */
+function exportRow(d) {
+  const slug = d.company ? d.company.slug : "";
+  // unlinkedCompany() is a DISPLAY fallback and returns an em dash when
+  // the headline named no raiser (rule 3c-vi). An em dash is a fine
+  // table cell and a terrible data value — it reads as a name to
+  // anything that groups on this column, so an unattributed round
+  // ships blank.
+  const raw = unlinkedCompany(d);
+  return {
+    company: d.company ? d.company.name : raw === "—" ? "" : raw,
+    company_url: slug ? url(`/company/${slug}/`) : "",
+    amount_usd_millions: round3(d.amountM),
+    amount_reported_millions: round3(d.nativeM || d.amountM),
+    reported_currency: d.currency || "USD",
+    stage: d.stage || "",
+    lead_investor: d.lead || "",
+    announced: isoDate(d.publishedAt),
+    source: d.source || "",
+    source_url: d.link || "",
+    also_reported_by: (d.alsoReportedBy || []).join("; "),
+  };
+}
+
+const EXPORT_COLUMNS = Object.keys(exportRow({}));
+
+/* What each column means, carried inside funding.json so the file
+   explains itself to someone who arrives at it without the page. */
+const EXPORT_FIELDS = {
+  company: "Company that raised the round, as canonicalised by this site. Blank where the headline named no raiser.",
+  company_url: "That company's page here. Blank where no company was attributed.",
+  amount_usd_millions: "Amount raised, in millions of US dollars, converted at a fixed reference rate.",
+  amount_reported_millions: "The same amount in millions of the currency the outlet printed.",
+  reported_currency: "ISO code of the currency the outlet printed.",
+  stage: "Round stage, only where a headline states it outright. Blank otherwise.",
+  lead_investor: "Lead investor, only where a headline states it outright. Blank otherwise.",
+  announced: "Date the round was reported, YYYY-MM-DD.",
+  source: "Outlet the figure in this row was taken from.",
+  source_url: "The report that figure comes from — check it before citing.",
+  also_reported_by: "Other outlets that covered the same round, semicolon-separated.",
+};
+
+/* A leading = + - or @ makes Excel and Google Sheets treat a cell as a
+   formula. Every text value here came out of somebody else's headline,
+   so it is escaped rather than trusted. Numbers are exempt: they are
+   written unquoted and a negative amount is not a thing this data has. */
+const CSV_FORMULA = /^[=+\-@\t\r]/;
+function csvCell(v) {
+  if (typeof v === "number") return String(v);
+  let s = v === null || v === undefined ? "" : String(v);
+  if (CSV_FORMULA.test(s)) s = "'" + s;
+  return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+
+function buildFundingExport(deals = []) {
+  const rows = deals.map(exportRow);
+
+  // RFC 4180: CRLF between records. No byte-order mark — it would help
+  // one Excel path and put a stray ﻿ on the first column name in
+  // every plain UTF-8 reader, which is the audience that matters here.
+  const csv = [
+    EXPORT_COLUMNS.join(","),
+    ...rows.map((r) => EXPORT_COLUMNS.map((k) => csvCell(r[k])).join(",")),
+  ].join("\r\n") + "\r\n";
+  fs.writeFileSync(path.join(ROOT, "funding.csv"), csv);
+
+  const json = {
+    name: "Insurtech funding rounds",
+    description:
+      "Every insurtech funding round with a disclosed figure, aggregated from across the trade " +
+      "press and deduplicated into one row per round. A floor on real activity, not a market estimate.",
+    publisher: SITE.name,
+    url: url("/funding/"),
+    method: url("/funding/"),
+    terms: "Free to use with attribution to " + SITE.name + " and a link to " + url("/funding/") + ".",
+    generatedAt: new Date().toISOString(),
+    count: rows.length,
+    totalDisclosedUsdMillions: round3(totalOf(deals)),
+    // The archive runs newest-first (collectDeals sorts it), so the
+    // coverage bounds read off the two ends.
+    coverage: rows.length
+      ? { from: rows[rows.length - 1].announced, to: rows[0].announced }
+      : null,
+    fields: EXPORT_FIELDS,
+    rounds: rows,
+  };
+  fs.writeFileSync(path.join(ROOT, "funding.json"), JSON.stringify(json, null, 2) + "\n");
+
+  console.log(`  ✓ funding.csv + funding.json — ${rows.length} rounds`);
+}
+
+/* The visible half. A download nobody can see is a download nobody
+   links to, and the Dataset markup alone only reaches machines.
+   Built from .method/.method-text, which are already the tracker's
+   "how to use this" voice — so this adds no CSS and needs no
+   stylesheet cache-bust (rule 3c-i).
+
+   The attribution line spells the URL out as its own anchor text
+   rather than saying "this tracker": the block's job is to tell a
+   citing reader what to link to, and the other phrasing links to the
+   page it is printed on. */
+function downloadBlock(n) {
+  return `    <section class="method">
+      <h2 class="fact-label">Download the data</h2>
+      <p class="method-text">
+        All ${n} round${n === 1 ? "" : "s"} as
+        <a href="/funding.csv" download>CSV</a> or
+        <a href="/funding.json">JSON</a> — company, amount in US dollars,
+        the figure as originally printed, stage, lead investor, date and
+        a link to the reporting behind every row. Rebuilt with this page,
+        so a download is never older than what is shown above.
+      </p>
+      <p class="method-text">
+        Free to use with attribution to Insurtech Daily and a link back to
+        <a href="/funding/">${escHtml(url("/funding/").replace(/^https?:\/\//, ""))}</a>.
+        Please read how the numbers are compiled below before citing them.
+      </p>
+    </section>`;
+}
+
+/* ══════════════════════════════════════════════════════════════
    The feed
 
    /feed.xml carries the BRIEF ARCHIVE, and nothing else. That is the
@@ -5039,6 +5239,7 @@ function main() {
   buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked, terms, markets);
   buildRobots();
   buildFeed(briefs, db);
+  buildFundingExport(deals);
   console.log("SEO build complete.");
 }
 

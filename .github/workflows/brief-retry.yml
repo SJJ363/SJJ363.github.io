@@ -96,7 +96,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Kept identical to news.yml's pathspec — this workflow runs the same
           # seo.js build, so anything missing here freezes the same way.
-          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sitemap.xml robots.txt feed.xml index.html companies.html
+          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sitemap.xml robots.txt feed.xml funding.csv funding.json index.html companies.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: rewrite brief with Claude ($(date -u +'%Y-%m-%d %H:%M UTC'))"
             git push

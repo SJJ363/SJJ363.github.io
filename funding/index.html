@@ -73,6 +73,20 @@
     "Round stage",
     "Lead investor",
     "Announcement date"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "Insurtech funding rounds (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://insurtechdaily.io/funding.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Insurtech funding rounds (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://insurtechdaily.io/funding.json"
+    }
   ]
 }
   </script>
@@ -1677,6 +1691,23 @@
       </table>
     </div>
     <p class="topic-more">Showing the 150 most recent of 204. Earlier rounds are on the monthly pages above.</p>
+
+    <section class="method">
+      <h2 class="fact-label">Download the data</h2>
+      <p class="method-text">
+        All 204 rounds as
+        <a href="/funding.csv" download>CSV</a> or
+        <a href="/funding.json">JSON</a> — company, amount in US dollars,
+        the figure as originally printed, stage, lead investor, date and
+        a link to the reporting behind every row. Rebuilt with this page,
+        so a download is never older than what is shown above.
+      </p>
+      <p class="method-text">
+        Free to use with attribution to Insurtech Daily and a link back to
+        <a href="/funding/">insurtechdaily.io/funding/</a>.
+        Please read how the numbers are compiled below before citing them.
+      </p>
+    </section>
 
     <section class="method">
       <h2 class="fact-label">How this is compiled</h2>

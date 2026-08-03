@@ -1144,6 +1144,73 @@ produce all of that consistently — **route new pages through them.**
    newsletter would actually subscribe to. It is deliberately not built
    yet: one feed that works beats two that split the subscribers, and
    the brief feed is the one the `rel="alternate"` should point at.
+3i. **`/funding.csv` and `/funding.json` are the tracker as a file, and
+   they exist because a table nobody can download is a table nobody
+   cites.** `buildFundingExport()` in `seo.js` writes them beside
+   `sitemap.xml`, `robots.txt` and `feed.xml`, being a build artifact
+   of the same kind (rule 3h).
+   The tracker is the one asset here that isn't a restatement of
+   someone else's reporting (rule 3c-i), and until this it existed only
+   as HTML — the wrong shape for the people who would link to it. An
+   analyst, a newsletter writer or a journalist writing "the state of
+   insurtech funding" cites a file they can open and check; nobody
+   scrapes a table to cite it, they use whatever they can download, and
+   if that isn't here it is someone else's. On a young domain the
+   binding constraint is inbound links, not page count — the same
+   argument rule 3h makes for the feed, applied to the other original
+   dataset.
+   It is also the markup half of a claim already being made. `/funding/`
+   has carried `Dataset` JSON-LD for a while, and a Dataset with no
+   `distribution.contentUrl` is close to invisible to the surfaces that
+   read it, Google Dataset Search among them, because there is nothing
+   to distribute.
+   Seven rules:
+   • **One row builder, two files.** `exportRow()` is the only place a
+     column set is declared, and `EXPORT_COLUMNS` is derived from it —
+     the `fundingStats()`-over-`fundingDeals()` pattern (rule 3c-i). A
+     CSV and a JSON that disagree about a round are worse than either
+     alone.
+   • **Derived every build, never persisted** — `collectDeals()`'s
+     contract, so a regex or extractor fix retroactively corrects the
+     download along with the pages, and the file inherits the relevance
+     gate and both dedup passes for free.
+   • **The source column is what makes it citable rather than merely
+     downloadable.** Every row carries the outlet, the URL the figure
+     was reported at, and the other outlets that ran it, so a figure
+     can be checked without coming back here. Amounts ship **both**
+     ways — converted USD and the figure the outlet printed — which is
+     rule 3c-i's "a converted row prints what the outlet printed"
+     carried into the file.
+   • **An unattributed round ships blank, not an em dash.**
+     `unlinkedCompany()` is a *display* fallback and returns "—" when
+     the headline named no raiser (rule 3c-vi). That is a fine table
+     cell and a terrible data value: it reads as a name to anything
+     grouping on the column.
+   • **Text cells are guarded against spreadsheet formula injection.**
+     A field opening `=`, `+`, `-` or `@` is executed on open by Excel
+     and Sheets, and every text cell here comes from a headline
+     somebody else wrote. Zero rows in the archive trigger it today;
+     publishing a file for strangers to open in a spreadsheet is not
+     where you rely on that holding. Numbers are exempt — they are
+     written unquoted and no amount here is negative.
+   • **No BOM.** It would help one Excel path and put a stray `﻿`
+     on the first column name in every plain UTF-8 reader, which is the
+     audience that matters. RFC 4180 CRLF between records.
+   • **Neither file is in `sitemap.xml`** (rule 3h's reason — a sitemap
+     lists pages to index, these are transports), and **both must be in
+     the `git add` pathspec of every workflow that commits pages**
+     (rules 3e, 3g, 3h). `funding.json` stamps `generatedAt`, so it is
+     dirty on most builds — the churn `sitemap.xml` already has, not a
+     signal that anything changed.
+   The visible half is `downloadBlock()`, on `/funding/` and
+   `/funding/companies/` only — the two pages that hold the whole
+   archive. It is built from `.method`/`.method-text`, so it **adds no
+   CSS and needs no `?v=` bump** (rule 3c-i), and its links are accent
+   ink underlined at rest because anything that navigates is. The
+   period and month pages are deliberately left out: they are slices,
+   and a download labelled with a slice's row count next to a file
+   holding all of them is the kind of mismatch a citing reader is right
+   not to trust.
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may
