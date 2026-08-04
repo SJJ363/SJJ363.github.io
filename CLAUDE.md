@@ -1519,6 +1519,22 @@ produce all of that consistently — **route new pages through them.**
      and a mail client has no `<meta charset>` to correct a wrong
      guess the way a browser does. Entities carry no charset
      dependency, so they survive whatever the client decides.
+   • **The mail is set like `/brief/<date>/`, not like a newsletter
+     template.** Section markers are `.brief-label` — small,
+     uppercase, accent, tracked — rather than serif headings, which
+     also makes them and "Today's top headlines" one device instead
+     of two; the body is **serif** at 18px/1.6, matching
+     `.brief-text`. The first pass used sans body and serif headings,
+     i.e. the exact inverse, and read as a different publication
+     wearing the same masthead.
+     **The measure is capped at 600px**, standing in for
+     `.brief-text`'s `max-width:64ch` since `ch` doesn't survive into
+     mail clients. Uncapped it inherited whatever width the client
+     gave it — measured at ~95 characters a line against a
+     comfortable 60–75, now 72. It is a `<table width="100%">` rather
+     than a div because Outlook's Word renderer ignores `max-width`
+     on a div, and the percentage keeps it fluid below 600 so nothing
+     overflows on a phone.
    • **Styling is inline, and the fonts are stacks.** Mail clients
      strip `<style>` blocks and Gmail strips `@font-face`, so the
      palette is `style.css`'s `:root` written inline and the faces

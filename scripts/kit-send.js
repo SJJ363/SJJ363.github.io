@@ -239,11 +239,19 @@ const rule = (m = "26px") =>
 const kicker = (t) =>
   `<div style="font-family:${SANS};font-size:11px;font-weight:bold;letter-spacing:0.14em;text-transform:uppercase;color:${C.accent};margin:0 0 14px;">${escHtml(t)}</div>`;
 
+/* A section LABEL, not a heading — this is `.brief-label` on
+   /brief/<date>/: small, uppercase, accent, tracked. It reads as
+   editorial furniture rather than a document outline, and it makes
+   the section markers and "Today's top headlines" one consistent
+   device instead of two competing ones. */
 const h2 = (t) =>
-  `<h2 style="font-family:${SERIF};font-weight:normal;font-size:21px;line-height:1.25;color:${C.ink};margin:28px 0 10px;">${escHtml(t)}</h2>`;
+  `<div style="font-family:${SANS};font-size:11px;font-weight:bold;letter-spacing:0.12em;text-transform:uppercase;color:${C.accent};margin:30px 0 9px;">${escHtml(t)}</div>`;
 
+/* SERIF, matching `.brief-text`. The site sets the brief in Newsreader
+   at 1.12rem/1.6 and the sans-serif version here was a different
+   publication wearing the same masthead. */
 const para = (t) =>
-  `<p style="font-family:${SANS};font-size:16px;line-height:1.62;color:${C.ink2};margin:0 0 16px;">${escHtml(t)}</p>`;
+  `<p style="font-family:${SERIF};font-size:18px;line-height:1.6;color:${C.ink2};margin:0 0 16px;">${escHtml(t)}</p>`;
 
 function longDate(d) {
   const dt = new Date(`${d}T12:00:00Z`);
@@ -307,7 +315,12 @@ function emailHtml(b, stories = []) {
 
   if (b.teaser) {
     p.push(
-      `<p style="font-family:${SERIF};font-style:italic;font-size:20px;line-height:1.45;color:${C.ink};margin:0 0 4px;">${escHtml(b.teaser)}</p>`
+      /* `.brief-lede-text`: serif italic, a step up from the body.
+         Kept at ink rather than the site's ink-2 deliberately — on
+         the page this sits under a large h1, but in the mail the
+         headline is the subject line, so the standfirst is the first
+         thing on screen and has to carry that weight itself. */
+      `<p style="font-family:${SERIF};font-style:italic;font-size:20px;line-height:1.5;color:${C.ink};margin:0 0 4px;">${escHtml(b.teaser)}</p>`
     );
   }
 
@@ -334,7 +347,19 @@ function emailHtml(b, stories = []) {
     spacer(18)
   );
 
-  return p.filter(Boolean).join("\n");
+  /* Cap the measure. `.brief-text` is max-width:64ch on the site and
+     this had no cap at all, so however wide the recipient's window
+     or Kit's template happened to be, the lines ran that wide — the
+     screenshot that prompted this was ~95 characters a line against
+     a comfortable 60–75. ch units don't survive into mail clients, so
+     600px stands in for 64ch of 18px Georgia.
+     A table rather than a div because Outlook's Word renderer
+     ignores max-width on a div; width="100%" keeps it fluid below
+     600 so nothing overflows on a phone. If Kit's own column is
+     already narrower this is simply a no-op. */
+  return `<table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:600px;margin:0 auto;"><tr><td>
+${p.filter(Boolean).join("\n")}
+</td></tr></table>`;
 }
 
 function broadcastPayload(b, { draft = false } = {}) {
