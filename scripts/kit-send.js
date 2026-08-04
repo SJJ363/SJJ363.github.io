@@ -224,6 +224,15 @@ const SANS = "Helvetica, Arial, sans-serif";
    buried under a second newsletter. */
 const WIRE_ITEMS = 5;
 
+/* The bulletproof email spacer: a div whose height, line-height and
+   font-size all match. Top margin or padding on the FIRST element is
+   the obvious way to do this and is unreliable — several clients
+   collapse or drop it, and Kit's template supplies no top padding of
+   its own, so the masthead ends up flush against the subject header.
+   A spacer is a real box and survives everywhere, Outlook included. */
+const spacer = (h) =>
+  `<div style="height:${h}px;line-height:${h}px;font-size:${h}px;">&nbsp;</div>`;
+
 const rule = (m = "26px") =>
   `<div style="border-top:1px solid ${C.rule};font-size:0;line-height:0;margin:${m} 0;">&nbsp;</div>`;
 
@@ -290,6 +299,7 @@ function emailHtml(b, stories = []) {
      /brief/<date>/ — the CTA now points at the wire, so this is what
      keeps the brief's own page one tap away. */
   p.push(
+    spacer(26),
     `<div style="font-family:${SANS};font-size:11px;font-weight:bold;letter-spacing:0.16em;text-transform:uppercase;color:${C.accent};margin:0 0 7px;">Insurtech Daily &middot; The Brief</div>`,
     `<div style="font-family:${SANS};font-size:13px;color:${C.ink3};margin:0;"><a href="${escHtml(briefUrl)}" style="color:${C.ink3};text-decoration:none;">${escHtml(longDate(b.date))}</a></div>`,
     rule("20px")
@@ -318,7 +328,10 @@ function emailHtml(b, stories = []) {
   p.push(
     `<p style="${small}">${escHtml(counts)}` +
       `<a href="${escHtml(ORIGIN)}/funding/" style="${a}">Funding tracker</a> &middot; ` +
-      `<a href="${escHtml(ORIGIN)}/brief/" style="${a}">Brief archive</a></p>`
+      `<a href="${escHtml(ORIGIN)}/brief/" style="${a}">Brief archive</a></p>`,
+    /* Symmetry with the top, and it keeps the sign-off from touching
+       Kit's own unsubscribe footer. */
+    spacer(18)
   );
 
   return p.filter(Boolean).join("\n");

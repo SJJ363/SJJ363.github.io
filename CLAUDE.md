@@ -1525,7 +1525,10 @@ produce all of that consistently — **route new pages through them.**
      are the Georgia/Helvetica fallbacks that stylesheet already
      declares. The CTA is the table-cell button pattern, since
      padding on an `<a>` does not survive Outlook's Word renderer.
-     Kit's template still owns the outer wrapper and the footer.
+     Kit's template still owns the outer wrapper and the footer — and
+     supplies **no top padding**, so the mail opens and closes with a
+     `spacer()` div rather than a margin on the first element, which
+     several clients collapse or drop outright.
    • **The form is one block per page, written in `seo.js` and nowhere
      else.** Generated pages take `SUBSCRIBE` through `FOOTER`;
      `index.html` and `companies.html` take the identical markup
