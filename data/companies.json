@@ -1,54 +1,438 @@
 {
-  "updatedAt": "2026-08-04T13:43:59.746Z",
-  "count": 1395,
+  "updatedAt": "2026-08-04T18:21:57.832Z",
+  "count": 1399,
   "companies": [
     {
-      "slug": "orion180",
-      "name": "Orion180",
+      "slug": "unest",
+      "name": "UNest",
       "count": 1,
-      "firstSeen": "2026-08-04T13:40:01.000Z",
-      "lastSeen": "2026-08-04T13:40:01.000Z",
+      "firstSeen": "2026-08-04T15:50:27.000Z",
+      "lastSeen": "2026-08-04T15:50:27.000Z",
       "topics": [
         {
-          "name": "Property & Cat",
+          "name": "Health & Life",
           "count": 1
         }
       ],
       "sources": [
         "Coverager"
       ],
+      "related": [
+        {
+          "slug": "ladder",
+          "name": "Ladder",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "UNest adds Ladder life insurance offering",
+          "link": "https://coverager.com/unest-adds-ladder-life-insurance-offering/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T15:50:27.000Z",
+          "tags": [
+            "Health & Life"
+          ],
+          "summary": "Life insurance is not new to UNest.",
+          "co": [
+            "ladder"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ladder",
+      "name": "Ladder",
+      "count": 1,
+      "firstSeen": "2026-08-04T15:50:27.000Z",
+      "lastSeen": "2026-08-04T15:50:27.000Z",
+      "topics": [
+        {
+          "name": "Health & Life",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "unest",
+          "name": "UNest",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "UNest adds Ladder life insurance offering",
+          "link": "https://coverager.com/unest-adds-ladder-life-insurance-offering/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T15:50:27.000Z",
+          "tags": [
+            "Health & Life"
+          ],
+          "summary": "Life insurance is not new to UNest.",
+          "co": [
+            "unest"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "federato",
+      "name": "Federato",
+      "count": 4,
+      "firstSeen": "2025-10-22T07:00:00.000Z",
+      "lastSeen": "2026-08-04T15:49:00.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 4
+        },
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Finextra",
+        "Digital Insurance",
+        "FinTech Global",
+        "FF News"
+      ],
       "related": [],
       "articles": [
         {
-          "title": "Orion180 expands private flood insurance to California",
-          "link": "https://coverager.com/orion180-expands-private-flood-insurance-to-california/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-04T13:40:01.000Z",
+          "title": "Federato launches AI-native claims platform",
+          "link": "https://www.finextra.com/pressarticle/110568/federato-launches-ai-native-claims-platform?utm_medium=rssfinextra&utm_source=finextrafeed",
+          "source": "Finextra",
+          "publishedAt": "2026-08-04T15:49:00.000Z",
           "tags": [
-            "Property & Cat"
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
           ],
-          "summary": "The product offers up to $1 million in building coverage.",
+          "summary": "Federato, the AI-native platform for the full policy lifecycle, today launched Federato Claims, an end-to-end claims management system built on the same foundation as underwriting, policy administration, and billing.",
+          "co": []
+        },
+        {
+          "title": "Why AI spend is increasing but full integration lags: Federato",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNUWZQVFRLc2Q5RS1xb2pYT25UUGVKRzUyZDN0X3RoVDNMODRFQ2l4SW8tMU5QM1RCa0NnZWVET2stdmFrOElVRHdTWFl3TkNMMFBHWFFyQ2p1RS1MelV6TFo4MG4wdUlMcmhpRENPS3RFYlhReDlVVTJwSFMwTVlXbm9NbnVad1ZNanROSndjXy13WTA?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-07-23T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Federato secures $100m to expand AI-native insurance platform",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQV0ZZbXhzY2MydS1YckJBMXM2Ym10WmZ5aDFIcUlOd3lUNzdjdnZMY3lDZTV1bDNQMkVlaWZQdUFwcENiVmw2WDBXUUhUcDE0eXBRWkppRUd5N2tJLTBFRk9vcE5zeW44enphTVZwaTRfQzY3QWZzd3JQbjBuSVE4S0ZtQm9DVnNfWG1ndW1WbmhIVE9wM011LWdPWQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-11-18T08:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Federato Launches the First Enterprise-grade Agentic AI for the Insurance Industry",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPUmNUMDRYQzJxYlJVV2pxbEFCMUZaZldZRmxJc2xERnd1cVg1VWZMNmU0NDRlRVAxLTBuMlNMWmVsRGNCV3RHUXlheHc1WXBSaGZQQkNTc3Nfd1dIUzNLSEtZZXpUNkRnVmJmUHRxNXg5OEFNdkFCc3JkempWN0JsNl85RkZEX0d4dlJqOGIwbGFLdXByMnVoM2drSGpwR0JLMG1PSE1FT3BMQ0dlNU1MWV9nTU9sR2NJdDc4aENvaUZLZw?oc=5",
+          "source": "FF News",
+          "publishedAt": "2025-10-22T07:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
           "co": []
         }
       ]
     },
     {
-      "slug": "lockton",
-      "name": "Lockton",
-      "count": 7,
-      "firstSeen": "2026-03-06T08:00:00.000Z",
-      "lastSeen": "2026-08-04T13:30:41.000Z",
+      "slug": "trucordia",
+      "name": "Trucordia",
+      "count": 2,
+      "firstSeen": "2026-07-29T22:01:41.000Z",
+      "lastSeen": "2026-08-04T15:22:09.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "shipley-and-pease-insurance",
+          "name": "Shipley & Pease Insurance",
+          "count": 1
+        },
+        {
+          "slug": "dominion-insurance-services",
+          "name": "Dominion Insurance Services",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Trucordia acquires Shipley & Pease Insurance",
+          "link": "https://coverager.com/trucordia-acquires-shipley-pease-insurance/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T15:22:09.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "The acquisition expands Trucordia's specialty capabilities in professional liability.",
+          "co": [
+            "shipley-and-pease-insurance"
+          ]
+        },
+        {
+          "title": "Trucordia acquires the assets of Dominion Insurance Services",
+          "link": "https://coverager.com/trucordia-acquires-the-assets-of-dominion-insurance-services/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-29T22:01:41.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Financial terms were not disclosed.",
+          "co": [
+            "dominion-insurance-services"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "shipley-and-pease-insurance",
+      "name": "Shipley & Pease Insurance",
+      "count": 1,
+      "firstSeen": "2026-08-04T15:22:09.000Z",
+      "lastSeen": "2026-08-04T15:22:09.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "trucordia",
+          "name": "Trucordia",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Trucordia acquires Shipley & Pease Insurance",
+          "link": "https://coverager.com/trucordia-acquires-shipley-pease-insurance/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T15:22:09.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "The acquisition expands Trucordia's specialty capabilities in professional liability.",
+          "co": [
+            "trucordia"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "intx",
+      "name": "INTX",
+      "count": 4,
+      "firstSeen": "2025-08-06T07:00:00.000Z",
+      "lastSeen": "2026-08-04T15:17:28.000Z",
       "topics": [
         {
           "name": "Product & Launches",
-          "count": 4
-        },
-        {
-          "name": "AI & Automation",
           "count": 2
         },
         {
-          "name": "Cyber",
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurtech Insights",
+        "Pulse 2.0",
+        "FinTech Global",
+        "Business Wire"
+      ],
+      "related": [
+        {
+          "slug": "tranzpay",
+          "name": "Tranzpay",
+          "count": 1
+        },
+        {
+          "slug": "one",
+          "name": "One Inc",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "INTX launches native AI intelligence layer across (re)insurance operating platform",
+          "link": "https://www.insurtechinsights.com/intx-launches-native-ai-intelligence-layer-across-reinsurance-operating-platform/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-04T15:17:28.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "INTX Insurance Software has launched Tenet, which it describes as the insurance industry's first native intelligence layer embedded directly into a unified (re)insurance operating system, as insurers increasingly look…",
+          "co": []
+        },
+        {
+          "title": "INTX Insurance Software: Interview With CEO Robert Lewis About The Insurance Platform Company",
+          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0xLUlubGQ1c0xkY3l4bXRET0xSWHFITkZzR2Fia0hiRHQ1X3gyNDF6TlhoTmVKV3Q1RDdOQzh4WUNWQmhRME5wRWFpUkNpcjNZcGU1T0dDMkdnVy15MFVvRmk4UWJ2ZGNPUXBSajhaX1JzOUVLNGVLTXNuOG1RcjjSAYQBQVVfeXFMTnVtMUhwaGdfN2NiSmxCRGliVU1lSEdsZHZxWGE2X0k2bGd3TU5CcmFqdDRnaXoyTlRGb19ob3RsaUdkUDZtN1RmUk02bEtRUTNMWl9lVWx4ckd5bmZUd0VVdnNic1VZcXhsbjJkNXVMZWNEck43UmU4b1JLeXhJM0V6WlVx?oc=5",
+          "source": "Pulse 2.0",
+          "publishedAt": "2026-01-28T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Tranzpay and INTX unveil unified payments for insurers",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOanVmRUxMNW1QTFRaNmJmV2FUSWV3VTRIdG9hSGtoVzBjZHh3MW1lSHB3ZU5MdWlkWHdfVzJ6ZnlpZDdjQ0ltZHYwVk1kMHpEd25vOFV0LVVJdVJuM2huYXI3eWZMQ3RhOEhrSDBRTng0UHJsWHpkUHpzalFlQ2szcURqa3hSTzNXYUdkVjdaN0p6NWM?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-12-31T08:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "tranzpay"
+          ]
+        },
+        {
+          "title": "One Inc and INTX Partner to Advance Digital Insurance Workflows with Seamless Payment Innovation",
+          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPbWdDSjVLZlZXU21WcXNGZFRORFRQWXNKbVRpWm5RUmdMU2tfZGZYenQzaHpwT0NuMXFuejBDSUZNeWJyS0VZU0ZObmlRTkVsbXh3cHo3YVFQNTVfNEZiMm56eTVNb1U5WVlfUFdaMXRHcEktTW81U2E4X0Zhd2RaTTlveGdfQnF2OVIwU2pHbzlKSW93Q1dGZ1JlMnNQUEJLN251aFlNLXFjOGtTTVhLZHdOenRoWV80YUx5aUlIdzVMT3RzcVREcUZWZGFRbVYyRGtKV1lxUUxNczBlWFBJdEwxMmZ5cmNJ?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2025-08-06T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "one"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "vertical-insure",
+      "name": "Vertical Insure",
+      "count": 3,
+      "firstSeen": "2025-06-16T07:00:00.000Z",
+      "lastSeen": "2026-08-04T15:00:00.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Embedded",
+          "count": 1
+        },
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "EIN News",
+        "TipRanks",
+        "FinTech Global"
+      ],
+      "related": [
+        {
+          "slug": "stripe",
+          "name": "Stripe",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Vertical Insure Secures Investment from Updata Partners to Expand Embedded Insurance Infrastructure for SaaS Platforms",
+          "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPVExCaHBJZUswVFhERGx0cHZOeHR1dFVxbGpTMzB0MllZYWdjVm9DV1FRS3NtdE1Vb0l6bWhsek0xU1EzZkNVMVJpM2dyWnRyaVJWX3JMRlRwcWJMbTFoaWFraENFa0wxbnN3NEwza09udGFUdm9QWHFidE55N3JoektHQmlmS3JMYzBBdV9QV18zR21vcllGaWgwd0NvS3RSNThZaGNremZtQzdMcXhidjI2RXdwNDZ0eldUMmJDUklTMVh0NW12a0FxQlV6Nnk0VWxIend1QWxxQ09YcmZlcGtMR3czeDEzTUpsYmZQdFdEZw?oc=5",
+          "source": "EIN News",
+          "publishedAt": "2026-08-04T15:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Vertical Insure Highlights Stripe Partnership and Insurtech Visibility at Stripe Sessions 2026",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNd2wxYlQzVVg3aW8zMUJaZG9ENVZnQTRNT1dPR01UTnRzZFZvV0cwUU1PRjFxZEpVWHZmLTNuMFF0eGNPdWVvQXZYYjRHNDI2NFFtbFl2amxzVjM5WGVVZXMwTExUV2FfN1F1R3hxbXAyb0wzYnJDeXM1REdraWNGTnByZWpETjJlVjRReWZ5QTJHVUxsYWJmU0UzUWRlei1ORlhIQmIzTWtaZnZRdWxEcWstX0psSjZOd2ZuVHVGSHZZVVZTQzRKdDd1enVVa0UzX3ZGQXNTYTdBQQ?oc=5",
+          "source": "TipRanks",
+          "publishedAt": "2026-05-04T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "stripe"
+          ]
+        },
+        {
+          "title": "Vertical Insure lands $8.5m raise",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE92NXp2bHdRWUtqdmV5QXU1a3RfN3ZHTWFkYzhDcUdBSHNCLTlRay1EeWtQWEJfRUE3dzBzZ0RxRzNZeElCR1VualNNUGVaYl9LbF9IYnZjTTJmeXFFZE1FRURFOWhkNDRLOVY1bm93THBzZDZaMGc?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-06-16T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "marsh",
+      "name": "Marsh",
+      "count": 5,
+      "firstSeen": "2026-07-24T07:00:26.000Z",
+      "lastSeen": "2026-08-04T14:57:15.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Leadership",
           "count": 1
         },
         {
@@ -58,127 +442,84 @@
       ],
       "sources": [
         "Reinsurance News",
+        "ffnews.com",
         "Insurance Business",
-        "Insurance Business UK",
-        "Insurance Journal",
-        "InsuranceAsia News"
+        "Artemis"
       ],
       "related": [
         {
-          "slug": "cfc",
-          "name": "CFC",
-          "count": 1
-        },
-        {
-          "slug": "bhsi",
-          "name": "BHSI",
-          "count": 1
-        },
-        {
-          "slug": "howden",
-          "name": "Howden",
-          "count": 1
-        },
-        {
-          "slug": "starr",
-          "name": "Starr",
+          "slug": "meta",
+          "name": "Meta",
           "count": 1
         }
       ],
       "articles": [
         {
-          "title": "Lockton expands availability of AI-enabled intelligence platform across US business",
-          "link": "https://www.reinsurancene.ws/lockton-expands-availability-of-ai-enabled-intelligence-platform-across-us-business/",
+          "title": "Jessica Fields to lead Marsh Risk’s US Semiconductor and AI Compute Practice",
+          "link": "https://www.reinsurancene.ws/jessica-fields-to-lead-marsh-risks-us-semiconductor-and-ai-compute-practice/",
           "source": "Reinsurance News",
-          "publishedAt": "2026-08-04T13:30:41.000Z",
+          "publishedAt": "2026-08-04T14:57:15.000Z",
           "tags": [
-            "AI & Automation"
+            "AI & Automation",
+            "Leadership"
           ],
-          "summary": "Lockton, a privately held insurance brokerage and risk management firm, has announced that its Lockton SAGE enterprise intelligence platform is now being made available more widely across its US business. The platform…",
+          "summary": "Marsh, the global insurance broker and risk advisory business, has announced the appointment of Jessica Fields to lead Marsh Risk’s US Semiconductor and AI Compute Practice. In this newly created role, Fields will be…",
           "co": []
         },
         {
-          "title": "Lockton Re executes ‘first’ ILW transaction combining property cat & cyber risk",
-          "link": "https://www.reinsurancene.ws/lockton-re-executes-first-ilw-transaction-combining-property-cat-cyber-risk/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-04T12:00:55.000Z",
-          "tags": [
-            "Cyber",
-            "Property & Cat"
-          ],
-          "summary": "Lockton Re, the reinsurance division of global insurance brokerage and risk management company Lockton, has executed what is believed to be the first Industry Loss Warranty (ILW) transaction combining property…",
-          "co": []
-        },
-        {
-          "title": "Lockton launches global Data Centers & Digital Infrastructure Practice",
-          "link": "https://www.insurancebusinessmag.com/us/news/technology/lockton-launches-global-data-centers-and-digital-infrastructure-practice-584289.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-07-30T05:20:55.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The brokerage's new global practice arrives as insurers race to keep pace with soaring project values and constrained capacity",
-          "co": []
-        },
-        {
-          "title": "Lockton launches global Data Centres & Digital Infrastructure Practice",
-          "link": "https://www.insurancebusinessmag.com/uk/news/technology/lockton-launches-global-data-centres-and-digital-infrastructure-practice-584290.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-07-30T05:20:55.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The brokerage's new global practice arrives as insurers race to keep pace with soaring project values and constrained capacity",
-          "co": []
-        },
-        {
-          "title": "Lockton launches global Data Centres & Digital Infrastructure Practice",
-          "link": "https://www.reinsurancene.ws/lockton-launches-global-data-centres-digital-infrastructure-practice/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-29T16:00:54.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Lockton, an independent insurance broker, has announced the launch of its global Data Centres & Digital Infrastructure Practice, a consultative practice helping organisations navigate the risks associated with the…",
-          "co": []
-        },
-        {
-          "title": "Markets/Coverages: CFC Brings Affirmative AI Cover to Media Companies; Lockton Launches Global Data Centers & Digital Infrastructure Practice",
-          "link": "https://www.insurancejournal.com/news/national/2026/07/29/879529.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-29T13:28:25.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "CFC, the specialist insurance provider, announced the introduction of affirmative AI coverage within its media policy, effective July 30. The update forms part of CFC’s wider program to embed affirmative AI coverage…",
-          "co": [
-            "cfc"
-          ]
-        },
-        {
-          "title": "BHSI, Howden, Lockton, Starr, Marsh: 16 APAC insurance people moves of the week",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOW4ySnJoYjd4UkR6dlUwdUd1STM0aVdkMWlKYy1QcTZNc0NvTlFtNjNnMlE0YW1hNlRZd2J3QlozaURyZUVVN2p0VnZVaFhFcVU5VTlHT0JEaXo1eENwTGFtZE11M1BERzZnRzBvajhRSW1TMzhLUDRJUFM0bjJtMXN2M1dxcXRqamdWeGhhV1k5VjJTYWNzeU1iZTdLOFhiSWl2RTVmVlk?oc=5",
-          "source": "InsuranceAsia News",
-          "publishedAt": "2026-03-06T08:00:00.000Z",
+          "title": "Global Commercial Insurance Rates Drop 6% as Marsh Reports Eighth Consecutive Quarterly Decline",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOaElPcUoxRDN4N0wyZ3RLSUU0M3VBWW40T0lra1NIbnFHVlowYmlJcGlkbWdxczhqaDBjcWRKdXVOU0poaWd2ZThCcFdBYnlIc0FnNzROd0lHT0V2Y2w5UTJKcmdYOEo5a2ctZnh3WUtIbjF0T05BOThRZG1WUTNaMHcwdEpPUmptTE9ITUxQM3pXdlVJVGx5SmZyaUhSXzB3bDRCNEplYnowVzlRcXBsdXhKOXJrX1FwMnc?oc=5",
+          "source": "ffnews.com",
+          "publishedAt": "2026-08-04T09:33:51.000Z",
           "tags": [
             "Industry"
           ],
           "summary": "",
+          "co": []
+        },
+        {
+          "title": "Marsh provides risk and insurance services for Meta’s Texas AI data centre project",
+          "link": "https://www.reinsurancene.ws/marsh-provides-risk-and-insurance-services-for-metas-texas-ai-data-centre-project/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-31T13:00:12.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "Marsh, the global insurance broker and risk advisory business, has provided Meta with project risk analysis and insurance services for a new data centre development in Texas, supporting the technology company’s…",
           "co": [
-            "bhsi",
-            "howden",
-            "starr"
+            "meta"
           ]
+        },
+        {
+          "title": "$14 billion El Paso data center puts Marsh on both sides of the table",
+          "link": "https://www.insurancebusinessmag.com/us/news/technology/14-billion-el-paso-data-center-puts-marsh-on-both-sides-of-the-table-584424.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-31T05:51:01.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "A $13 billion guarantee, an isolated power grid, and a broker advising both Meta and BlackRock - inside insurance's biggest AI infrastructure bet yet",
+          "co": []
+        },
+        {
+          "title": "Global property insurance rates fall 12% in Q2 2026, as soft market broadens: Marsh Risk",
+          "link": "https://www.artemis.bm/news/global-property-insurance-rates-fall-12-in-q2-2026-as-soft-market-broadens-marsh-risk/?utm_source=rss&utm_medium=rss&utm_campaign=global-property-insurance-rates-fall-12-in-q2-2026-as-soft-market-broadens-marsh-risk",
+          "source": "Artemis",
+          "publishedAt": "2026-07-24T07:00:26.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
     {
       "slug": "goldman-sachs",
       "name": "Goldman Sachs",
-      "count": 4,
+      "count": 5,
       "firstSeen": "2024-11-11T08:00:00.000Z",
-      "lastSeen": "2026-08-04T13:12:51.000Z",
+      "lastSeen": "2026-08-04T14:30:58.000Z",
       "topics": [
         {
           "name": "Funding",
@@ -186,14 +527,18 @@
         },
         {
           "name": "Product & Launches",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Health & Life",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Property & Cat",
+          "count": 2
+        },
+        {
+          "name": "Partnerships",
           "count": 1
         },
         {
@@ -202,6 +547,7 @@
         }
       ],
       "sources": [
+        "Reinsurance News",
         "Insurance Journal",
         "MediaNama",
         "TechCrunch",
@@ -209,14 +555,14 @@
       ],
       "related": [
         {
-          "slug": "insurancedekho",
-          "name": "InsuranceDekho",
+          "slug": "talcott",
+          "name": "Talcott",
           "count": 2
         },
         {
-          "slug": "talcott",
-          "name": "Talcott",
-          "count": 1
+          "slug": "insurancedekho",
+          "name": "InsuranceDekho",
+          "count": 2
         },
         {
           "slug": "bestow",
@@ -230,6 +576,22 @@
         }
       ],
       "articles": [
+        {
+          "title": "Talcott partners with Goldman Sachs to launch $1bn West Grove Re sidecar",
+          "link": "https://www.reinsurancene.ws/talcott-partners-with-goldman-sachs-to-launch-1bn-west-grove-re-sidecar/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-04T14:30:58.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "Health & Life",
+            "Property & Cat"
+          ],
+          "summary": "Talcott Financial Group, a life insurance provider specialising in risk solutions, in partnership with Goldman Sachs, has established a Bermuda-domiciled reinsurance sidecar called West Grove Re, Ltd, which has closed…",
+          "co": [
+            "talcott"
+          ]
+        },
         {
           "title": "Goldman Sachs, Talcott Launch $1 Billion Bermuda Reinsurance Sidecar",
           "link": "https://www.insurancejournal.com/news/international/2026/08/04/880173.htm",
@@ -291,38 +653,59 @@
     {
       "slug": "talcott",
       "name": "Talcott",
-      "count": 1,
+      "count": 2,
       "firstSeen": "2026-08-04T13:12:51.000Z",
-      "lastSeen": "2026-08-04T13:12:51.000Z",
+      "lastSeen": "2026-08-04T14:30:58.000Z",
       "topics": [
         {
-          "name": "Funding",
-          "count": 1
-        },
-        {
           "name": "Product & Launches",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Health & Life",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Property & Cat",
+          "count": 2
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Funding",
           "count": 1
         }
       ],
       "sources": [
+        "Reinsurance News",
         "Insurance Journal"
       ],
       "related": [
         {
           "slug": "goldman-sachs",
           "name": "Goldman Sachs",
-          "count": 1
+          "count": 2
         }
       ],
       "articles": [
+        {
+          "title": "Talcott partners with Goldman Sachs to launch $1bn West Grove Re sidecar",
+          "link": "https://www.reinsurancene.ws/talcott-partners-with-goldman-sachs-to-launch-1bn-west-grove-re-sidecar/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-04T14:30:58.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "Health & Life",
+            "Property & Cat"
+          ],
+          "summary": "Talcott Financial Group, a life insurance provider specialising in risk solutions, in partnership with Goldman Sachs, has established a Bermuda-domiciled reinsurance sidecar called West Grove Re, Ltd, which has closed…",
+          "co": [
+            "goldman-sachs"
+          ]
+        },
         {
           "title": "Goldman Sachs, Talcott Launch $1 Billion Bermuda Reinsurance Sidecar",
           "link": "https://www.insurancejournal.com/news/international/2026/08/04/880173.htm",
@@ -342,231 +725,63 @@
       ]
     },
     {
-      "slug": "ceres",
-      "name": "Ceres",
-      "count": 1,
-      "firstSeen": "2026-08-04T13:00:49.000Z",
-      "lastSeen": "2026-08-04T13:00:49.000Z",
-      "topics": [
-        {
-          "name": "Property & Cat",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Reinsurance News"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Ceres supports California proposal on long-term insurance solvency planning",
-          "link": "https://www.reinsurancene.ws/ceres-supports-california-proposal-on-long-term-insurance-solvency-planning/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-04T13:00:49.000Z",
-          "tags": [
-            "Property & Cat"
-          ],
-          "summary": "Ceres, a US-based non-profit organisation that works with investors, companies and policymakers to advance sustainable business practices and improve the management of climate-related financial risks, has voiced its…",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "relation-insurance-services",
-      "name": "Relation Insurance Services",
+      "slug": "vertafore",
+      "name": "Vertafore",
       "count": 3,
-      "firstSeen": "2026-07-29T12:40:54.000Z",
-      "lastSeen": "2026-08-04T12:21:37.000Z",
+      "firstSeen": "2026-07-15T07:00:00.000Z",
+      "lastSeen": "2026-08-04T14:14:58.000Z",
       "topics": [
         {
-          "name": "M&A",
+          "name": "AI & Automation",
           "count": 3
+        },
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "Health & Life",
+          "count": 1
         }
       ],
       "sources": [
         "Coverager",
-        "Insurance Journal",
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "mid-state-insurance",
-          "name": "Mid-State Insurance",
-          "count": 2
-        }
-      ],
-      "articles": [
-        {
-          "title": "Relation acquires California agricultural insurance agency",
-          "link": "https://coverager.com/relation-acquires-california-agricultural-insurance-agency/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-04T12:21:37.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Terms were not disclosed.",
-          "co": []
-        },
-        {
-          "title": "Relation Acquires Wisconsin’s Mid-State Insurance",
-          "link": "https://www.insurancejournal.com/news/midwest/2026/07/29/879559.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-29T15:48:35.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Relation Insurance Services announced their acquisition of the assets of Mid-State Insurance. The transaction went into effect on March 31, 2026; terms of the transaction were not disclosed. Founded in 1986 as an…",
-          "co": [
-            "mid-state-insurance"
-          ]
-        },
-        {
-          "title": "Relation acquires Mid-State Insurance to deepen Wisconsin presence",
-          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/relation-acquires-midstate-insurance-to-deepen-wisconsin-presence-584161.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-07-29T12:40:54.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "The Mequon firm adds commercial and benefits coverage as Relation accelerates deals under new owner BayPine",
-          "co": [
-            "mid-state-insurance"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "viu-by-hub",
-      "name": "VIU by HUB",
-      "count": 1,
-      "firstSeen": "2026-08-04T12:17:48.000Z",
-      "lastSeen": "2026-08-04T12:17:48.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager"
-      ],
-      "related": [
-        {
-          "slug": "spero-financial",
-          "name": "Spero Financial",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "VIU by HUB launches insurance agency with Spero Financial",
-          "link": "https://coverager.com/viu-by-hub-launches-insurance-agency-with-spero-financial/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-04T12:17:48.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Spero Financial serves more than 45,000 members and manages over $700 million in assets.",
-          "co": [
-            "spero-financial"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "spero-financial",
-      "name": "Spero Financial",
-      "count": 1,
-      "firstSeen": "2026-08-04T12:17:48.000Z",
-      "lastSeen": "2026-08-04T12:17:48.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager"
-      ],
-      "related": [
-        {
-          "slug": "viu-by-hub",
-          "name": "VIU by HUB",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "VIU by HUB launches insurance agency with Spero Financial",
-          "link": "https://coverager.com/viu-by-hub-launches-insurance-agency-with-spero-financial/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-04T12:17:48.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Spero Financial serves more than 45,000 members and manages over $700 million in assets.",
-          "co": [
-            "viu-by-hub"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "reliance-global",
-      "name": "Reliance Global",
-      "count": 3,
-      "firstSeen": "2026-04-13T07:00:00.000Z",
-      "lastSeen": "2026-08-04T11:52:57.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Leadership",
-          "count": 1
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurance Business",
-        "Reinsurance News"
+        "Beinsure"
       ],
       "related": [],
       "articles": [
         {
-          "title": "Reliance Global to sell third Michigan benefits firm of 2026 for $11 million",
-          "link": "https://www.insurancebusinessmag.com/us/news/benefits/reliance-global-to-sell-third-michigan-benefits-firm-of-2026-for-11-million-584815.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-04T11:52:57.000Z",
+          "title": "Vertafore named a 5-Star Technology and Software Provider for core digital systems and specialized AI built for the way agencies, MGAs and carriers work",
+          "link": "https://coverager.com/vertafore-named-a-5-star-technology-and-software-provider-for-core-digital-systems-and-specialized-ai-built-for-the-way-agencies-mgas-and-carriers-work/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T14:14:58.000Z",
           "tags": [
             "AI & Automation"
           ],
-          "summary": "The insurtech company is exiting traditional benefits distribution to fund its AI platform, and the buyer is unnamed",
+          "summary": "Insurance Business recognized InsurTech leader for the fifth consecutive year for helping insurance distribution move from friction to flow",
           "co": []
         },
         {
-          "title": "Reliance Global Group appoints COO, CTO and EVP to lead AI-native insurance push",
-          "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOd0NjNHRPbXdscWRVN0l2ZzdxQ0lZd3VhZXVyNnpVdDhwcm9wczBRNEpUUzNNai1vMy1ZSElRTWpFQjJTaURMUWFZTUdWTjJoMVpEcUtkcEpZWnd5d2VHQ0tDckVwTnVZRm1WRWR4X0ZGMDFzVi01OW1JTVRYV1pib1FmRDlxRkdiRHR4dGt4Z0lnTUhTMHRodzBSVHliYTF2NXBPa2NpeXlUZThva2I5X0stNWxPVzJmcF9xbnk1RmI0WEpON2FpeXAxX3d5YVdyd1JYZXhxWXo0NEpwZVB0ZDF0QQ?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2026-06-22T07:00:00.000Z",
+          "title": "Vertafore launches Velocity AI Benefit Plan Agent inside the market-leading employee benefits solution, BenefitPoint",
+          "link": "https://coverager.com/vertafore-launches-velocity-ai-benefit-plan-agent-inside-the-market-leading-employee-benefits-solution-benefitpoint/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-27T14:05:02.000Z",
           "tags": [
+            "Product & Launches",
             "AI & Automation",
-            "Leadership"
+            "Health & Life"
           ],
-          "summary": "",
+          "summary": "New Velocity AI Benefit Plan Agent cuts benefit plan setup time by up to 70%, automating one of the most manual workflows ahead of benefits season",
           "co": []
         },
         {
-          "title": "Reliance Global launches updated insurtech platform, RELI Exchange 2.0",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQVFZ1aXJpM0ZtcmJ5NFVKSFpraFkxMm0xZkU2djAtMnBkQnFGUDlDMHdOVktDTFFRaDFiUlFRVWNtZm9ZcTJob3pRSjVkcXB1VjRFbEZleThsMWttQWhIRFIzSWl1RUJqTENnejBHUFEydjFHbEdjeUNlYkpNSEhVUEtsRElsN1I2bTJpU3MxMHEzeVJwWllfMEJ3WFpNcTdk?oc=5",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-04-13T07:00:00.000Z",
+          "title": "Insurtech Vertafore launches Velocity AI agent for MGA submission intake",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5vUTNvRVlfVzJwa194SVlHTEZUYl9JQ19pelk2dHZIOFByMkFwVjg2dTJSdUtaR1Z3VDlWYWZTb3pvellYQS02RlhJOW81dFJDNEc0aHZNcHJfZkIzVVE4WDV1a1lYRkktSjVhb3NzSQ?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-07-15T07:00:00.000Z",
           "tags": [
-            "Product & Launches"
+            "Product & Launches",
+            "AI & Automation"
           ],
           "summary": "",
           "co": []
@@ -578,7 +793,7 @@
       "name": "Cover Genius",
       "count": 19,
       "firstSeen": "2024-12-04T08:00:00.000Z",
-      "lastSeen": "2026-08-04T11:27:54.000Z",
+      "lastSeen": "2026-08-04T14:06:12.000Z",
       "topics": [
         {
           "name": "Embedded",
@@ -657,7 +872,7 @@
           "title": "Insurtech Cover Genius acquires Friendsurance for Europe bancassurance",
           "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1tMk1SNDhVaWMzNU5oWTc4UERHcEhKaHZNbC1FUGFTZWp0U2NzZVVpc1lqQ2NKU0pibVAtTjhMLU84Nkp6Q1ROMk9LMXV4Si1HSFR4WDUwYXRmLWtuOHd0T01rZ1pRdE1jY29Rc3gybw?oc=5",
           "source": "Beinsure",
-          "publishedAt": "2026-08-04T11:27:54.000Z",
+          "publishedAt": "2026-08-04T14:06:12.000Z",
           "tags": [
             "M&A",
             "Embedded"
@@ -903,7 +1118,7 @@
       "name": "Friendsurance",
       "count": 5,
       "firstSeen": "2026-07-28T06:00:00.000Z",
-      "lastSeen": "2026-08-04T11:27:54.000Z",
+      "lastSeen": "2026-08-04T14:06:12.000Z",
       "topics": [
         {
           "name": "M&A",
@@ -933,7 +1148,7 @@
           "title": "Insurtech Cover Genius acquires Friendsurance for Europe bancassurance",
           "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1tMk1SNDhVaWMzNU5oWTc4UERHcEhKaHZNbC1FUGFTZWp0U2NzZVVpc1lqQ2NKU0pibVAtTjhMLU84Nkp6Q1ROMk9LMXV4Si1HSFR4WDUwYXRmLWtuOHd0T01rZ1pRdE1jY29Rc3gybw?oc=5",
           "source": "Beinsure",
-          "publishedAt": "2026-08-04T11:27:54.000Z",
+          "publishedAt": "2026-08-04T14:06:12.000Z",
           "tags": [
             "M&A",
             "Embedded"
@@ -997,6 +1212,1160 @@
           "co": [
             "cover-genius"
           ]
+        }
+      ]
+    },
+    {
+      "slug": "sapiens",
+      "name": "Sapiens",
+      "count": 4,
+      "firstSeen": "2026-06-02T07:00:00.000Z",
+      "lastSeen": "2026-08-04T14:00:15.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "Leadership",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Reinsurance News",
+        "Ad-hoc-news.de",
+        "(Re)in Asia",
+        "EnterpriseAM"
+      ],
+      "related": [
+        {
+          "slug": "adia",
+          "name": "Adia",
+          "count": 1
+        },
+        {
+          "slug": "positron-ai",
+          "name": "Positron AI",
+          "count": 1
+        },
+        {
+          "slug": "dp-world",
+          "name": "DP World",
+          "count": 1
+        },
+        {
+          "slug": "adnoc",
+          "name": "Adnoc",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Sapiens names Paul Wheeler as CEO",
+          "link": "https://www.reinsurancene.ws/sapiens-names-paul-wheeler-as-ceo/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-04T14:00:15.000Z",
+          "tags": [
+            "AI & Automation",
+            "Leadership"
+          ],
+          "summary": "Sapiens International Corporation N.V. (Sapiens), a provider of AI-centric, SaaS-based insurance software, has announced the appointment of Paul Wheeler, its current Chief Financial Officer, as its new Chief Executive…",
+          "co": []
+        },
+        {
+          "title": "Sapiens stock trades steady as insurance software group builds on 2025 earnings growth",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcDJIaE1McTdxVGdLeUZkOHVPWEhEdVpRajB5OXR0c2pnbndLYXNmcW1ZX1JIR2xONHdJVVNsQzdWcVE4ZjdOanhEZjk3NHBFRkZXMmpIa245QzItVkVCVEs1RUJXajF6cWZ6X084NDhmeUhpcHVfUC0wZEMyUzJJc0tveDV2d1lzMkxlY18wVGRIWGU5Q29LY2E5YWVGcENCRTUxMU5MT3N1MnhEX1QyLXRVRVhXdmlQX0dQOEQ0ekd6MTRwZlF0cg?oc=5",
+          "source": "Ad-hoc-news.de",
+          "publishedAt": "2026-07-19T16:49:45.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech Sapiens appoints Krish Datta as EVP for APAC",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPQkZpb013UVVva0lVR2FIUkNMYWhGQ1gxa1RGVkRGZzRTaFpJUXhtU0FGbXJaOElOYlRkR2NTemRLcTM4YUw4TTZIN0ZfVFRnMFRRQm5rNlVVc0UzSDlJaUs0TEdrbW5ZNnYzS2xYTkpaNjhDRzBXX3BkcVFPVE5VZW13?oc=5",
+          "source": "(Re)in Asia",
+          "publishedAt": "2026-06-24T07:00:00.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Adia backs insurtech Sapiens, Positron AI comes to DIFC, DP World invests more in Dominican Republic freezone, Adnoc secures gas supply from Azerbaijan - UAE",
+          "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPd1V0c05zWEhJYzRNSDI1U2FWclFDRFdVazVyZUZ4dEtEYVFhV0tEZmkzaEJ6RE0yeGpWcklNWDlERlQ4WmFOZW1oMFhCWGE1aG9rbDN1YzRTVHZPbUxySTNqb1NIbUhka0phOTNPV3ZuWHh3MVRkbExLQ1N3SGhrR0RaRWItWHZXZFdkOXFpUFZJRllDVWd4TlRfNFJjUWE4MUhzTXlQTFBGQmlWNDZHMDNBMFlrSmlEVkttVGx3dUh5SjVPVHNJQ3NRMmNCRFVzbjdhQjNENTZHdjExVWp5amJLODhJS2cxVkZCLWg2dEFHazZYVld1WWFPcmFjeF82ZHVSMzVLM0g0Mmx3S1l2RmNuT3E5YnNZ?oc=5",
+          "source": "EnterpriseAM",
+          "publishedAt": "2026-06-02T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "adia",
+            "positron-ai",
+            "dp-world",
+            "adnoc"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "orion180",
+      "name": "Orion180",
+      "count": 1,
+      "firstSeen": "2026-08-04T13:40:01.000Z",
+      "lastSeen": "2026-08-04T13:40:01.000Z",
+      "topics": [
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Orion180 expands private flood insurance to California",
+          "link": "https://coverager.com/orion180-expands-private-flood-insurance-to-california/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T13:40:01.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "The product offers up to $1 million in building coverage.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "lockton",
+      "name": "Lockton",
+      "count": 7,
+      "firstSeen": "2026-03-06T08:00:00.000Z",
+      "lastSeen": "2026-08-04T13:30:41.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 4
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News",
+        "Insurance Business",
+        "Insurance Business UK",
+        "Insurance Journal",
+        "InsuranceAsia News"
+      ],
+      "related": [
+        {
+          "slug": "cfc",
+          "name": "CFC",
+          "count": 1
+        },
+        {
+          "slug": "bhsi",
+          "name": "BHSI",
+          "count": 1
+        },
+        {
+          "slug": "howden",
+          "name": "Howden",
+          "count": 1
+        },
+        {
+          "slug": "starr",
+          "name": "Starr",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Lockton expands availability of AI-enabled intelligence platform across US business",
+          "link": "https://www.reinsurancene.ws/lockton-expands-availability-of-ai-enabled-intelligence-platform-across-us-business/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-04T13:30:41.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "Lockton, a privately held insurance brokerage and risk management firm, has announced that its Lockton SAGE enterprise intelligence platform is now being made available more widely across its US business. The platform…",
+          "co": []
+        },
+        {
+          "title": "Lockton Re executes ‘first’ ILW transaction combining property cat & cyber risk",
+          "link": "https://www.reinsurancene.ws/lockton-re-executes-first-ilw-transaction-combining-property-cat-cyber-risk/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-04T12:00:55.000Z",
+          "tags": [
+            "Cyber",
+            "Property & Cat"
+          ],
+          "summary": "Lockton Re, the reinsurance division of global insurance brokerage and risk management company Lockton, has executed what is believed to be the first Industry Loss Warranty (ILW) transaction combining property…",
+          "co": []
+        },
+        {
+          "title": "Lockton launches global Data Centers & Digital Infrastructure Practice",
+          "link": "https://www.insurancebusinessmag.com/us/news/technology/lockton-launches-global-data-centers-and-digital-infrastructure-practice-584289.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-30T05:20:55.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The brokerage's new global practice arrives as insurers race to keep pace with soaring project values and constrained capacity",
+          "co": []
+        },
+        {
+          "title": "Lockton launches global Data Centres & Digital Infrastructure Practice",
+          "link": "https://www.insurancebusinessmag.com/uk/news/technology/lockton-launches-global-data-centres-and-digital-infrastructure-practice-584290.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-30T05:20:55.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The brokerage's new global practice arrives as insurers race to keep pace with soaring project values and constrained capacity",
+          "co": []
+        },
+        {
+          "title": "Lockton launches global Data Centres & Digital Infrastructure Practice",
+          "link": "https://www.reinsurancene.ws/lockton-launches-global-data-centres-digital-infrastructure-practice/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-29T16:00:54.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Lockton, an independent insurance broker, has announced the launch of its global Data Centres & Digital Infrastructure Practice, a consultative practice helping organisations navigate the risks associated with the…",
+          "co": []
+        },
+        {
+          "title": "Markets/Coverages: CFC Brings Affirmative AI Cover to Media Companies; Lockton Launches Global Data Centers & Digital Infrastructure Practice",
+          "link": "https://www.insurancejournal.com/news/national/2026/07/29/879529.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-29T13:28:25.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "CFC, the specialist insurance provider, announced the introduction of affirmative AI coverage within its media policy, effective July 30. The update forms part of CFC’s wider program to embed affirmative AI coverage…",
+          "co": [
+            "cfc"
+          ]
+        },
+        {
+          "title": "BHSI, Howden, Lockton, Starr, Marsh: 16 APAC insurance people moves of the week",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOW4ySnJoYjd4UkR6dlUwdUd1STM0aVdkMWlKYy1QcTZNc0NvTlFtNjNnMlE0YW1hNlRZd2J3QlozaURyZUVVN2p0VnZVaFhFcVU5VTlHT0JEaXo1eENwTGFtZE11M1BERzZnRzBvajhRSW1TMzhLUDRJUFM0bjJtMXN2M1dxcXRqamdWeGhhV1k5VjJTYWNzeU1iZTdLOFhiSWl2RTVmVlk?oc=5",
+          "source": "InsuranceAsia News",
+          "publishedAt": "2026-03-06T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "bhsi",
+            "howden",
+            "starr"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ceres",
+      "name": "Ceres",
+      "count": 1,
+      "firstSeen": "2026-08-04T13:00:49.000Z",
+      "lastSeen": "2026-08-04T13:00:49.000Z",
+      "topics": [
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Ceres supports California proposal on long-term insurance solvency planning",
+          "link": "https://www.reinsurancene.ws/ceres-supports-california-proposal-on-long-term-insurance-solvency-planning/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-04T13:00:49.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "Ceres, a US-based non-profit organisation that works with investors, companies and policymakers to advance sustainable business practices and improve the management of climate-related financial risks, has voiced its…",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "relation-insurance-services",
+      "name": "Relation Insurance Services",
+      "count": 3,
+      "firstSeen": "2026-07-29T12:40:54.000Z",
+      "lastSeen": "2026-08-04T12:21:37.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 3
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurance Journal",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "mid-state-insurance",
+          "name": "Mid-State Insurance",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "Relation acquires California agricultural insurance agency",
+          "link": "https://coverager.com/relation-acquires-california-agricultural-insurance-agency/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T12:21:37.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Terms were not disclosed.",
+          "co": []
+        },
+        {
+          "title": "Relation Acquires Wisconsin’s Mid-State Insurance",
+          "link": "https://www.insurancejournal.com/news/midwest/2026/07/29/879559.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-29T15:48:35.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Relation Insurance Services announced their acquisition of the assets of Mid-State Insurance. The transaction went into effect on March 31, 2026; terms of the transaction were not disclosed. Founded in 1986 as an…",
+          "co": [
+            "mid-state-insurance"
+          ]
+        },
+        {
+          "title": "Relation acquires Mid-State Insurance to deepen Wisconsin presence",
+          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/relation-acquires-midstate-insurance-to-deepen-wisconsin-presence-584161.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-29T12:40:54.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "The Mequon firm adds commercial and benefits coverage as Relation accelerates deals under new owner BayPine",
+          "co": [
+            "mid-state-insurance"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "viu-by-hub",
+      "name": "VIU by HUB",
+      "count": 1,
+      "firstSeen": "2026-08-04T12:17:48.000Z",
+      "lastSeen": "2026-08-04T12:17:48.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "spero-financial",
+          "name": "Spero Financial",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "VIU by HUB launches insurance agency with Spero Financial",
+          "link": "https://coverager.com/viu-by-hub-launches-insurance-agency-with-spero-financial/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T12:17:48.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Spero Financial serves more than 45,000 members and manages over $700 million in assets.",
+          "co": [
+            "spero-financial"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "spero-financial",
+      "name": "Spero Financial",
+      "count": 1,
+      "firstSeen": "2026-08-04T12:17:48.000Z",
+      "lastSeen": "2026-08-04T12:17:48.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "viu-by-hub",
+          "name": "VIU by HUB",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "VIU by HUB launches insurance agency with Spero Financial",
+          "link": "https://coverager.com/viu-by-hub-launches-insurance-agency-with-spero-financial/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T12:17:48.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Spero Financial serves more than 45,000 members and manages over $700 million in assets.",
+          "co": [
+            "viu-by-hub"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "reliance-global",
+      "name": "Reliance Global",
+      "count": 3,
+      "firstSeen": "2026-04-13T07:00:00.000Z",
+      "lastSeen": "2026-08-04T11:52:57.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "Leadership",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business",
+        "Reinsurance News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Reliance Global to sell third Michigan benefits firm of 2026 for $11 million",
+          "link": "https://www.insurancebusinessmag.com/us/news/benefits/reliance-global-to-sell-third-michigan-benefits-firm-of-2026-for-11-million-584815.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-04T11:52:57.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "The insurtech company is exiting traditional benefits distribution to fund its AI platform, and the buyer is unnamed",
+          "co": []
+        },
+        {
+          "title": "Reliance Global Group appoints COO, CTO and EVP to lead AI-native insurance push",
+          "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOd0NjNHRPbXdscWRVN0l2ZzdxQ0lZd3VhZXVyNnpVdDhwcm9wczBRNEpUUzNNai1vMy1ZSElRTWpFQjJTaURMUWFZTUdWTjJoMVpEcUtkcEpZWnd5d2VHQ0tDckVwTnVZRm1WRWR4X0ZGMDFzVi01OW1JTVRYV1pib1FmRDlxRkdiRHR4dGt4Z0lnTUhTMHRodzBSVHliYTF2NXBPa2NpeXlUZThva2I5X0stNWxPVzJmcF9xbnk1RmI0WEpON2FpeXAxX3d5YVdyd1JYZXhxWXo0NEpwZVB0ZDF0QQ?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2026-06-22T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Reliance Global launches updated insurtech platform, RELI Exchange 2.0",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQVFZ1aXJpM0ZtcmJ5NFVKSFpraFkxMm0xZkU2djAtMnBkQnFGUDlDMHdOVktDTFFRaDFiUlFRVWNtZm9ZcTJob3pRSjVkcXB1VjRFbEZleThsMWttQWhIRFIzSWl1RUJqTENnejBHUFEydjFHbEdjeUNlYkpNSEhVUEtsRElsN1I2bTJpU3MxMHEzeVJwWllfMEJ3WFpNcTdk?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-04-13T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "mapfre",
+      "name": "Mapfre",
+      "count": 25,
+      "firstSeen": "2026-02-06T08:00:00.000Z",
+      "lastSeen": "2026-08-04T11:37:49.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 20
+        },
+        {
+          "name": "AI & Automation",
+          "count": 4
+        },
+        {
+          "name": "Property & Cat",
+          "count": 3
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Beinsure",
+        "FinTech Global",
+        "Life Insurance International",
+        "Insurance Day",
+        "Insurance Journal",
+        "marketscreener.com",
+        "Capital Riesgo",
+        "Carrier Management",
+        "Insurtech Insights",
+        "Reinsurance News",
+        "theinsurer.com",
+        "Web corporativa - Mapfre",
+        "FF News",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "tuio",
+          "name": "Tuio",
+          "count": 14
+        },
+        {
+          "slug": "safety-insurance-group",
+          "name": "Safety Insurance Group",
+          "count": 7
+        },
+        {
+          "slug": "fitch",
+          "name": "Fitch",
+          "count": 2
+        },
+        {
+          "slug": "am-best",
+          "name": "AM Best",
+          "count": 1
+        },
+        {
+          "slug": "blue-marble",
+          "name": "Blue Marble",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Mapfre buys 38.9% stake in Spanish insurtech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1BWnVsUTQ4eGpSbmttTjlJWVlFLXpkQ250cnh6Ri13d21CWGJ2MnJrZXhIcVdGdUhFZ3NHaEZlQTZ5Q2hsd0xtRG5xQ1hwSklYSndxbzlvUDBsbERoOU5XbVlDVW5nSFpQeU5mUGVHQQ?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-08-04T11:37:49.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre acquires 38.9% stake in InsurTech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSFN4MHVoeXRQdHQ2dXlRYmdMRXdlRTZ1TFZSUFVKMnFkY3lxYjAxMS1id3VPUUJsdC1QTzdvMGhodXdGRF80ZGwtY2FKY3AzQWs1Y1lHVF83bzZiRTdEbnFRVkdYY0EwTTF3by1MdlVSWnhwTVJCT2xpR1ltUDhuSUx3RW9Qdw?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-07-31T15:46:08.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre to take 38.9% stake in Spanish insurtech operator Tuio",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBxZWtXWm5NZHROQ1ZSVEU1RGM2aGtWUjlnXzFaY1oyWDh4YVhnX0RiZFBzY0x2dl9vU1pmNGFoc2dyQThGbGNVa3NjalBLaXRMSWhyTVhzNTkzMkNpRnF0ODJiV1dJakUzem1hRW1ZM0JYcloybzNpNXJkMA?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2026-07-31T13:51:35.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre acquires 38.9% stake in insurtech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOUkZ6UU54ZUt5b29nRHRnUTNCelJUSXZ5a0xzb09HNUNsZkZEcHBzLXRvSGdERmhYSENncFFLN1RIWjdVUExZV3Q0ZE51bHM2WmpzRk9jSW5ucXliandzUnZiTnRhNlYxOHlQSGlDOGVEeDlQNE1EaWl6WVR4UmdpWDNUQlFFNFFmakE?oc=5",
+          "source": "Insurance Day",
+          "publishedAt": "2026-07-31T11:01:27.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre Acquires Stake in Insurtech Tuio; Bolsters Commitment to AI, Digital Innovation",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBDbEpUTjUyRXNqbFhNZFJFeGhxT290WVltdUFIV2FZZV9sMW9odWtkcF9wTW5sUG43ZGs2VHNQMlhrUTM2ZDI5X1dyY203NHY0SE9wcU5GT0I0X3RYTmdZa3Fhak1oY3RQejdsekFPSDhHaUlYdnFkc1c4X1AzZw?oc=5",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-31T08:43:55.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre Acquires Stake in Insurtech Tuio; Bolsters Commitment to AI, Digital Innovation",
+          "link": "https://www.insurancejournal.com/news/international/2026/07/31/879754.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-31T08:41:54.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "Just a week after revealing a $1.5 billion deal to acquire U.S.-based Safety Insurance Group, Spain’s Mapfre has announced a deal closer to its European roots—taking a 38.9% stake in the Spanish insurtech Tuio. The Tuio…",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre to buy a 38.9% stake in Spanish insurtech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcTRTa2dKNnpHWFhDUTBjb25WNTNwT0VKcjNyQnNiaFZjSWlmbUxnbV8xZG90MTFQcmtLZEg2MmtFdTRTcjlMU3NSRHNZZ0lZa1hQajNPYW9iR3RXekRVSzNxTERCMG96OG9VMzh1dDloMjZ3b3BaYlFuNnU0SlE1SUpnYVA1SmRoeS1mSGpQWlFzcjNmek5ZNUxDMVR3QTFfcHpkY2R3ZDU?oc=5",
+          "source": "marketscreener.com",
+          "publishedAt": "2026-07-31T06:22:34.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre strengthens its commitment to innovation and digital business development by acquiring stake in Tuio",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMWJUbnB5SzJyLUtrMXdoMlowRl9LUmtYS1ZzUlQxMnE1bVphZ3BXbmJkQWcwZW5RLWVkaUlqNV9QUkotTnFjLUQtMzAxY3dZZ3pFbUt1MTBaV20wbWNlSGJSRlprcTFQTmZuTmZnYmF0S3NjalktazdRQ3lJWDV1cHlvT3FEcG02QTNGTWJ0WENYUm1idHQ3NEstRGlpMXo0bnJLcXNfbi1MS2kzbFllbmFZTDdrcjZERDN1SnIyWGRKaXgyUFlnSDNaWFpLX2JoYXpEYndOR1FibjlBcmJv?oc=5",
+          "source": "Capital Riesgo",
+          "publishedAt": "2026-07-30T17:23:59.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre Acquiring Tuio Stake; Bolsters Commitment to AI, Digital Innovation",
+          "link": "https://www.carriermanagement.com/news/2026/07/30/290571.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-07-30T16:47:02.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "Just a week after revealing a $1.5 billion deal to acquire U.S.-based Safety Insurance Group, Spain’s Mapfre has announced a deal closer to its European roots—taking a 38.9% stake in the Spanish InsurTech Tuio. The Tuio…",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "MAPFRE acquires 38.9% stake in insurtech Tuio to expand AI-powered digital insurance",
+          "link": "https://www.insurtechinsights.com/mapfre-acquires-38-9-stake-in-insurtech-tuio-to-expand-ai-powered-digital-insurance/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-07-30T16:14:50.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "MAPFRE has agreed to acquire a 38.9% stake in Spanish insurtech Tuio, strengthening its investment in digital insurance distribution and artificial intelligence as it seeks to expand across Europe and Latin America.",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre agrees to acquire 38.9% stake in Spanish insurtech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOYWRCbEo3RlFHRHhuTTZHWXI2emx0ellKM2tzZjdoWXlHQ2xtZmVNcGNZV0pBbWZXaXV0SGNudU5nV01EaWhtVTQwN2F5eGI4bGprX2tkYnhDRldxajVuT2dBX19jaF9QbzRBSldLMlI3b1hOdGpYd2xONjRxelU4azNsUllVdmUyVWtQbl9heElLQzBBTUE?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-30T15:38:21.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre agrees to acquire 38.9% stake in Spanish insurtech Tuio",
+          "link": "https://www.reinsurancene.ws/mapfre-agrees-to-acquire-38-9-stake-in-spanish-insurtech-tuio/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-30T15:30:31.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Mapfre, an international insurance company, has reached an agreement to acquire a 38.9% stake in Spanish insurtech Tuio, the specialist digital insurance distributor that leverages advanced technological capabilities…",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre to acquire 38.9% stake in Spanish insurtech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQS3AtbnRLUklMSFlSTVduVldMdnZuelM5Q0V4SWxqSFBmckRwOC16TTZ2Nk1UYURRZzM2SnVxRWpqcUlicm9wRzFRUktVa2dNMFBZUVlORWxUZkJxRXlLcEtuYWUyTEJfbzdXdWZTMG5vb1hMQzZSUEVWbjdNY0tCYUFkUFNsQW1nMUNUTklxU3FfVWJycDlFdHYydFRGOXJlYmc?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2026-07-30T13:11:28.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "Mapfre strengthens its commitment to innovation and digital business development by acquiring stake in Tuio - Web corporativa",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNEhXcTQyZnIwZVlrOWVXc2hzSnhzVGZvVXh4NXdHMmdoek90VHE0NGpiT0plcGc1QmdUVzgtbTctcV93M0J6TGNSLXl6RGQ4aEE0TWthZ0ItZGJLSVk4Y09LOWxfR2IzbkNqN0p4aGlSaXVUTGV1REdSQXowNkRnRzNuTnNUeU5GMUtKTjJRbk5qUHpjejlKRlJRbW1jc0lCLXRBYm5oLXA?oc=5",
+          "source": "Web corporativa - Mapfre",
+          "publishedAt": "2026-07-30T12:07:25.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "tuio"
+          ]
+        },
+        {
+          "title": "AM Best Calls $1.54 Billion Mapfre-Safety Marriage ‘Strategically Compelling’",
+          "link": "https://www.carriermanagement.com/news/2026/07/29/290500.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-07-29T12:07:03.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Ratings analysts at AM Best see the pending acquisition of Safety Insurance Group by Mapfre as “strategically compelling” as the carriers have complementary geographic and product profiles. Last week Safety, a…",
+          "co": [
+            "am-best",
+            "safety-insurance-group"
+          ]
+        },
+        {
+          "title": "AM Best Calls $1.54 Billion Mapfre-Safety Marriage ‘Strategically Compelling’",
+          "link": "https://www.insurancejournal.com/news/east/2026/07/28/879316.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-28T13:34:26.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Ratings analysts at AM Best see the pending acquisition of Safety Insurance Group by Mapfre as “strategically compelling” as the carriers have complementary geographic and product profiles. Last week Safety, a…",
+          "co": [
+            "safety-insurance-group",
+            "fitch"
+          ]
+        },
+        {
+          "title": "AM Best says MAPFRE’s Safety Insurance acquisition is strategically compelling",
+          "link": "https://www.reinsurancene.ws/am-best-says-mapfres-safety-insurance-acquisition-is-strategically-compelling/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-28T13:00:16.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Credit rating agency AM Best has described Spain-based multinational insurance group MAPFRE S.A.’s planned acquisition of Safety Insurance Group, Inc. as strategically compelling, saying the transaction brings together…",
+          "co": [
+            "safety-insurance-group",
+            "fitch"
+          ]
+        },
+        {
+          "title": "Mapfre Re’s net profit climbs 24.6% to €186m in H1’26",
+          "link": "https://www.reinsurancene.ws/mapfre-res-net-profit-climbs-24-6-to-e186m-in-h126/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-24T14:30:30.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "Mapfre Re, the reinsurance arm of Mapfre, has reported net earnings of €186 million in the first half of 2026, up 24.6% compared to the same period a year earlier. The performance was driven by the strong results of the…",
+          "co": []
+        },
+        {
+          "title": "Insurer Mapfre Estimates Venezuela Quake Losses at €25 Million",
+          "link": "https://www.insurancejournal.com/news/international/2026/07/24/878940.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-24T13:33:23.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "Spanish insurer Mapfre said on Thursday that losses from the June 24 earthquakes in Venezuela would be up to €25 million ($28.5 million), after its first-half net profit grew 9.4% despite storm-related claims in Spain…",
+          "co": []
+        },
+        {
+          "title": "Mapfre Expands US Footprint with Strategic Acquisition of Safety Insurance Group",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZkpYNHFZTzNCSW9qRENST3RHOWlNODJjOFk1cWFNQThobmEtNW9XOVlDc1FTeXNCOVFBUnpqU2NORnZtdWRNSzVsOUMwdGtVSklKclltOUZvakQ1S1gwYjAyQU9qVGNoU0FBQW8wVzd4WE5tbEdWS0xVZ0kzZVRqTFZWUno2SkF3ajd2azRYeEhwZWhmSFJ2al9IWFd0NXUtVVlZdEMtcw?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-07-24T09:03:50.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "safety-insurance-group"
+          ]
+        },
+        {
+          "title": "MAPFRE to acquire Safety Insurance for $1.54 billion amid shareholder probe",
+          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/mapfre-to-acquire-safety-insurance-for-1-54-billion-amid-shareholder-probe-583605.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-24T08:21:47.000Z",
+          "tags": [
+            "M&A",
+            "Property & Cat"
+          ],
+          "summary": "As company reveals financials, deal creates an auto and homeowners giant, but a law firm is already investigating whether board got shareholders a fair price",
+          "co": [
+            "safety-insurance-group"
+          ]
+        },
+        {
+          "title": "Mapfre to Acquire Safety Insurance for $1.54 Billion in Cash Deal",
+          "link": "https://www.insurancejournal.com/news/east/2026/07/24/878870.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-24T05:00:01.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Safety Insurance Group Inc,, a property/casualty insurer in Massachusetts and New England, has agreed to be acquired by Spain’s Mapfre S.A. in an all-cash transaction valued at approximately $1.54 billion. Under the…",
+          "co": [
+            "safety-insurance-group"
+          ]
+        },
+        {
+          "title": "Mapfre to Acquire Safety Insurance in $1.5B in Cash Deal",
+          "link": "https://www.carriermanagement.com/news/2026/07/23/290386.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-07-24T02:05:58.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Safety Insurance Group Inc,, a property/casualty insurer in Massachusetts and New England, has agreed to be acquired by Spain’s Mapfre S.A. in an all-cash transaction valued at approximately $1.54 billion. Under the…",
+          "co": [
+            "safety-insurance-group"
+          ]
+        },
+        {
+          "title": "Blue Marble and MAPFRE partner to expand parametric climate insurance",
+          "link": "https://www.insurtechinsights.com/blue-marble-and-mapfre-partner-to-expand-parametric-climate-insurance/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-07-21T17:24:35.000Z",
+          "tags": [
+            "Partnerships",
+            "Property & Cat"
+          ],
+          "summary": "Blue Marble Microinsurance has partnered with MAPFRE to expand access to parametric insurance solutions in markets with significant protection gaps.",
+          "co": [
+            "blue-marble"
+          ]
+        },
+        {
+          "title": "LatAm insurtech investment surges 117% in 2025: Mapfre",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQaFZTUGNxRlp5bHFMTUdzSDJoSkV3LUZjYlRpaWEyVWgxcjBJSmR5bkRMRjNTQWRZOVU1d296SWc0ZU53cG1pZ1ZXRGN2clFIS0RlMmx6MjFfZmZFb2MwLXlfd18tSHM1Rnd5R3R0NGJWMkVyUUpTQkhpREZUNUNkQ3RLQndBMmQtU3c?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-02-06T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "tuio",
+      "name": "Tuio",
+      "count": 16,
+      "firstSeen": "2024-09-20T07:00:00.000Z",
+      "lastSeen": "2026-08-04T11:37:49.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 13
+        },
+        {
+          "name": "AI & Automation",
+          "count": 4
+        },
+        {
+          "name": "Funding",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Beinsure",
+        "FinTech Global",
+        "Life Insurance International",
+        "Insurance Day",
+        "Insurance Journal",
+        "marketscreener.com",
+        "Capital Riesgo",
+        "Carrier Management",
+        "Insurtech Insights",
+        "Reinsurance News",
+        "theinsurer.com",
+        "Web corporativa - Mapfre"
+      ],
+      "related": [
+        {
+          "slug": "mapfre",
+          "name": "Mapfre",
+          "count": 14
+        }
+      ],
+      "articles": [
+        {
+          "title": "Mapfre buys 38.9% stake in Spanish insurtech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1BWnVsUTQ4eGpSbmttTjlJWVlFLXpkQ250cnh6Ri13d21CWGJ2MnJrZXhIcVdGdUhFZ3NHaEZlQTZ5Q2hsd0xtRG5xQ1hwSklYSndxbzlvUDBsbERoOU5XbVlDVW5nSFpQeU5mUGVHQQ?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-08-04T11:37:49.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre acquires 38.9% stake in InsurTech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSFN4MHVoeXRQdHQ2dXlRYmdMRXdlRTZ1TFZSUFVKMnFkY3lxYjAxMS1id3VPUUJsdC1QTzdvMGhodXdGRF80ZGwtY2FKY3AzQWs1Y1lHVF83bzZiRTdEbnFRVkdYY0EwTTF3by1MdlVSWnhwTVJCT2xpR1ltUDhuSUx3RW9Qdw?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-07-31T15:46:08.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre to take 38.9% stake in Spanish insurtech operator Tuio",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBxZWtXWm5NZHROQ1ZSVEU1RGM2aGtWUjlnXzFaY1oyWDh4YVhnX0RiZFBzY0x2dl9vU1pmNGFoc2dyQThGbGNVa3NjalBLaXRMSWhyTVhzNTkzMkNpRnF0ODJiV1dJakUzem1hRW1ZM0JYcloybzNpNXJkMA?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2026-07-31T13:51:35.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre acquires 38.9% stake in insurtech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOUkZ6UU54ZUt5b29nRHRnUTNCelJUSXZ5a0xzb09HNUNsZkZEcHBzLXRvSGdERmhYSENncFFLN1RIWjdVUExZV3Q0ZE51bHM2WmpzRk9jSW5ucXliandzUnZiTnRhNlYxOHlQSGlDOGVEeDlQNE1EaWl6WVR4UmdpWDNUQlFFNFFmakE?oc=5",
+          "source": "Insurance Day",
+          "publishedAt": "2026-07-31T11:01:27.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre Acquires Stake in Insurtech Tuio; Bolsters Commitment to AI, Digital Innovation",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBDbEpUTjUyRXNqbFhNZFJFeGhxT290WVltdUFIV2FZZV9sMW9odWtkcF9wTW5sUG43ZGs2VHNQMlhrUTM2ZDI5X1dyY203NHY0SE9wcU5GT0I0X3RYTmdZa3Fhak1oY3RQejdsekFPSDhHaUlYdnFkc1c4X1AzZw?oc=5",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-31T08:43:55.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre Acquires Stake in Insurtech Tuio; Bolsters Commitment to AI, Digital Innovation",
+          "link": "https://www.insurancejournal.com/news/international/2026/07/31/879754.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-31T08:41:54.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "Just a week after revealing a $1.5 billion deal to acquire U.S.-based Safety Insurance Group, Spain’s Mapfre has announced a deal closer to its European roots—taking a 38.9% stake in the Spanish insurtech Tuio. The Tuio…",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre to buy a 38.9% stake in Spanish insurtech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcTRTa2dKNnpHWFhDUTBjb25WNTNwT0VKcjNyQnNiaFZjSWlmbUxnbV8xZG90MTFQcmtLZEg2MmtFdTRTcjlMU3NSRHNZZ0lZa1hQajNPYW9iR3RXekRVSzNxTERCMG96OG9VMzh1dDloMjZ3b3BaYlFuNnU0SlE1SUpnYVA1SmRoeS1mSGpQWlFzcjNmek5ZNUxDMVR3QTFfcHpkY2R3ZDU?oc=5",
+          "source": "marketscreener.com",
+          "publishedAt": "2026-07-31T06:22:34.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre strengthens its commitment to innovation and digital business development by acquiring stake in Tuio",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMWJUbnB5SzJyLUtrMXdoMlowRl9LUmtYS1ZzUlQxMnE1bVphZ3BXbmJkQWcwZW5RLWVkaUlqNV9QUkotTnFjLUQtMzAxY3dZZ3pFbUt1MTBaV20wbWNlSGJSRlprcTFQTmZuTmZnYmF0S3NjalktazdRQ3lJWDV1cHlvT3FEcG02QTNGTWJ0WENYUm1idHQ3NEstRGlpMXo0bnJLcXNfbi1MS2kzbFllbmFZTDdrcjZERDN1SnIyWGRKaXgyUFlnSDNaWFpLX2JoYXpEYndOR1FibjlBcmJv?oc=5",
+          "source": "Capital Riesgo",
+          "publishedAt": "2026-07-30T17:23:59.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre Acquiring Tuio Stake; Bolsters Commitment to AI, Digital Innovation",
+          "link": "https://www.carriermanagement.com/news/2026/07/30/290571.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-07-30T16:47:02.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "Just a week after revealing a $1.5 billion deal to acquire U.S.-based Safety Insurance Group, Spain’s Mapfre has announced a deal closer to its European roots—taking a 38.9% stake in the Spanish InsurTech Tuio. The Tuio…",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "MAPFRE acquires 38.9% stake in insurtech Tuio to expand AI-powered digital insurance",
+          "link": "https://www.insurtechinsights.com/mapfre-acquires-38-9-stake-in-insurtech-tuio-to-expand-ai-powered-digital-insurance/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-07-30T16:14:50.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "MAPFRE has agreed to acquire a 38.9% stake in Spanish insurtech Tuio, strengthening its investment in digital insurance distribution and artificial intelligence as it seeks to expand across Europe and Latin America.",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre agrees to acquire 38.9% stake in Spanish insurtech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOYWRCbEo3RlFHRHhuTTZHWXI2emx0ellKM2tzZjdoWXlHQ2xtZmVNcGNZV0pBbWZXaXV0SGNudU5nV01EaWhtVTQwN2F5eGI4bGprX2tkYnhDRldxajVuT2dBX19jaF9QbzRBSldLMlI3b1hOdGpYd2xONjRxelU4azNsUllVdmUyVWtQbl9heElLQzBBTUE?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-30T15:38:21.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre agrees to acquire 38.9% stake in Spanish insurtech Tuio",
+          "link": "https://www.reinsurancene.ws/mapfre-agrees-to-acquire-38-9-stake-in-spanish-insurtech-tuio/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-30T15:30:31.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Mapfre, an international insurance company, has reached an agreement to acquire a 38.9% stake in Spanish insurtech Tuio, the specialist digital insurance distributor that leverages advanced technological capabilities…",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre to acquire 38.9% stake in Spanish insurtech Tuio",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQS3AtbnRLUklMSFlSTVduVldMdnZuelM5Q0V4SWxqSFBmckRwOC16TTZ2Nk1UYURRZzM2SnVxRWpqcUlicm9wRzFRUktVa2dNMFBZUVlORWxUZkJxRXlLcEtuYWUyTEJfbzdXdWZTMG5vb1hMQzZSUEVWbjdNY0tCYUFkUFNsQW1nMUNUTklxU3FfVWJycDlFdHYydFRGOXJlYmc?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2026-07-30T13:11:28.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Mapfre strengthens its commitment to innovation and digital business development by acquiring stake in Tuio - Web corporativa",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNEhXcTQyZnIwZVlrOWVXc2hzSnhzVGZvVXh4NXdHMmdoek90VHE0NGpiT0plcGc1QmdUVzgtbTctcV93M0J6TGNSLXl6RGQ4aEE0TWthZ0ItZGJLSVk4Y09LOWxfR2IzbkNqN0p4aGlSaXVUTGV1REdSQXowNkRnRzNuTnNUeU5GMUtKTjJRbk5qUHpjejlKRlJRbW1jc0lCLXRBYm5oLXA?oc=5",
+          "source": "Web corporativa - Mapfre",
+          "publishedAt": "2026-07-30T12:07:25.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "mapfre"
+          ]
+        },
+        {
+          "title": "Spanish InsurTech startup Tuio raises $16.7m to accelerate growth",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNUo4VVJOWk5fNTNOb2xqcXRzM2dvek5lenJDb0xxTHZZMTFRMlpFTWNTRlVBb05lNjcxT2tEbzlOMDYtc3VtQW1abGhnc0syeVlEZEM5R25aenZxNXJka1BUOUU4Z3J5ZTd4NGZpaWJWZ0xKc3RLOWhxUnRCM0NNRVRDYS04Tm1iWUd5Tk9Kdm4tZUk2NHQ5eXdYbVdtUFdRVGZfLTBrNV9hRHBaOGxHcTVZOA?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2024-09-23T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Tuio closes a financing round of 15 million euros to continue transforming insurance",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPMk4yTS1KR0tMdHRoQndSZlhGNEtYLUxPcFc3MndkR25BRGJNcE1UZUFqNE9kcGw4ZGNXRXJlSURQYTY1VVJEUEtGSE5jQjlwV3VqZGdTMHFLMHZ3eERROUFDRG5WLUttYi1CRUtjLS1BcEF2RDZXdUY4Tzh1d0hwcUJ4dTVOb0NTQWtLSXdXamNxMGlQb2V5d1dKM0YyMDVBRVpJR2pjM3MtWFhlcm10eGt5dTBDNFdPQWZfcjVnd2s?oc=5",
+          "source": "Capital Riesgo",
+          "publishedAt": "2024-09-20T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -1959,77 +3328,29 @@
       ]
     },
     {
-      "slug": "marsh",
-      "name": "Marsh",
-      "count": 4,
-      "firstSeen": "2026-07-24T07:00:26.000Z",
-      "lastSeen": "2026-08-04T09:33:51.000Z",
+      "slug": "green-shield",
+      "name": "Green Shield",
+      "count": 1,
+      "firstSeen": "2026-08-04T09:37:48.000Z",
+      "lastSeen": "2026-08-04T09:37:48.000Z",
       "topics": [
         {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Property & Cat",
+          "name": "Product & Launches",
           "count": 1
         }
       ],
       "sources": [
-        "FF News",
-        "Reinsurance News",
-        "Insurance Business",
-        "Artemis"
+        "Beinsure"
       ],
-      "related": [
-        {
-          "slug": "meta",
-          "name": "Meta",
-          "count": 1
-        }
-      ],
+      "related": [],
       "articles": [
         {
-          "title": "Global Commercial Insurance Rates Drop 6% as Marsh Reports Eighth Consecutive Quarterly Decline",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOaElPcUoxRDN4N0wyZ3RLSUU0M3VBWW40T0lra1NIbnFHVlowYmlJcGlkbWdxczhqaDBjcWRKdXVOU0poaWd2ZThCcFdBYnlIc0FnNzROd0lHT0V2Y2w5UTJKcmdYOEo5a2ctZnh3WUtIbjF0T05BOThRZG1WUTNaMHcwdEpPUmptTE9ITUxQM3pXdlVJVGx5SmZyaUhSXzB3bDRCNEplYnowVzlRcXBsdXhKOXJrX1FwMnc?oc=5",
-          "source": "FF News",
-          "publishedAt": "2026-08-04T09:33:51.000Z",
+          "title": "Green Shield expands home insurance program and launches Compass agent portal",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5fM0NNTFR5QnhMcFNZbnhJeE1oMnl0S1YtTkZuMVFxbjlCem5sWFZRbmdMb0F0SlhTcl9DTTdranpXaWxaWEpHdUdEODlNczR6SWNYNzFZa0N2T3c4RlJNNE9TYzc2dkM0Z0dkT0c0cGNVQkpFN25EdFd3?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-08-04T09:37:48.000Z",
           "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Marsh provides risk and insurance services for Meta’s Texas AI data centre project",
-          "link": "https://www.reinsurancene.ws/marsh-provides-risk-and-insurance-services-for-metas-texas-ai-data-centre-project/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-31T13:00:12.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "Marsh, the global insurance broker and risk advisory business, has provided Meta with project risk analysis and insurance services for a new data centre development in Texas, supporting the technology company’s…",
-          "co": [
-            "meta"
-          ]
-        },
-        {
-          "title": "$14 billion El Paso data center puts Marsh on both sides of the table",
-          "link": "https://www.insurancebusinessmag.com/us/news/technology/14-billion-el-paso-data-center-puts-marsh-on-both-sides-of-the-table-584424.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-07-31T05:51:01.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "A $13 billion guarantee, an isolated power grid, and a broker advising both Meta and BlackRock - inside insurance's biggest AI infrastructure bet yet",
-          "co": []
-        },
-        {
-          "title": "Global property insurance rates fall 12% in Q2 2026, as soft market broadens: Marsh Risk",
-          "link": "https://www.artemis.bm/news/global-property-insurance-rates-fall-12-in-q2-2026-as-soft-market-broadens-marsh-risk/?utm_source=rss&utm_medium=rss&utm_campaign=global-property-insurance-rates-fall-12-in-q2-2026-as-soft-market-broadens-marsh-risk",
-          "source": "Artemis",
-          "publishedAt": "2026-07-24T07:00:26.000Z",
-          "tags": [
-            "Property & Cat"
+            "Product & Launches"
           ],
           "summary": "",
           "co": []
@@ -2609,6 +3930,163 @@
       ]
     },
     {
+      "slug": "american-family",
+      "name": "American Family",
+      "count": 4,
+      "firstSeen": "2025-01-03T08:00:00.000Z",
+      "lastSeen": "2026-08-04T03:01:52.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 4
+        }
+      ],
+      "sources": [
+        "Carrier Management",
+        "Insurance Journal",
+        "Reinsurance News",
+        "Digital Insurance"
+      ],
+      "related": [
+        {
+          "slug": "bowhead-specialty",
+          "name": "Bowhead Specialty",
+          "count": 3
+        },
+        {
+          "slug": "sentry",
+          "name": "Sentry",
+          "count": 1
+        },
+        {
+          "slug": "the-general",
+          "name": "The General",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "American Family to Acquire Bowhead Specialty in $1.2B Cash Deal",
+          "link": "https://www.carriermanagement.com/news/2026/08/03/290705.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-08-04T03:01:52.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "American Family Mutual Insurance Co. has agreed to buy all outstanding shares of specialty insurer Bowhead Specialty Holdings Inc. for about $1.2 billion in cash. Under the terms of the transaction, each Bowhead…",
+          "co": [
+            "bowhead-specialty"
+          ]
+        },
+        {
+          "title": "American Family to Acquire Bowhead Specialty in $1.2B Cash Deal",
+          "link": "https://www.insurancejournal.com/news/national/2026/08/03/879954.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-03T12:49:44.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "American Family Mutual Insurance Co. has agreed to buy all outstanding shares of specialty insurer Bowhead Specialty Holdings Inc. for about $1.2 billion in cash. Under the terms of the transaction, each Bowhead…",
+          "co": [
+            "bowhead-specialty"
+          ]
+        },
+        {
+          "title": "American Family to acquire Bowhead Specialty in $1.2bn cash deal",
+          "link": "https://www.reinsurancene.ws/american-family-to-acquire-bowhead-specialty-in-1-2bn-cash-deal/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-03T12:45:07.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "American Family Mutual Insurance Company, S.I. and its affiliates have entered into a definitive agreement to acquire all remaining issued and outstanding common stock of Bowhead Specialty Holdings Inc., in an all-cash…",
+          "co": [
+            "bowhead-specialty"
+          ]
+        },
+        {
+          "title": "Sentry acquires The General for $1.7B from American Family Insurance",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQYlNWa0FSMGsyWnBZdmxfTW5TeTRUa0NyeVFCVXFmNXNXTWpGRVhHaHdmQlBuWG5STGRsM1JXMjQtR3BhN09PMnVhZTNRU2wwSEV0VG9uNzF5LWpMbzY3S25FNjBnMi05b3BQVHpQSU83ZTEtdW8teVVlOGZlNWdxLTBxUWwtc01RQ3l2ZENUYw?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2025-01-03T08:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "sentry",
+            "the-general"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bowhead-specialty",
+      "name": "Bowhead Specialty",
+      "count": 3,
+      "firstSeen": "2026-08-03T12:45:07.000Z",
+      "lastSeen": "2026-08-04T03:01:52.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 3
+        }
+      ],
+      "sources": [
+        "Carrier Management",
+        "Insurance Journal",
+        "Reinsurance News"
+      ],
+      "related": [
+        {
+          "slug": "american-family",
+          "name": "American Family",
+          "count": 3
+        }
+      ],
+      "articles": [
+        {
+          "title": "American Family to Acquire Bowhead Specialty in $1.2B Cash Deal",
+          "link": "https://www.carriermanagement.com/news/2026/08/03/290705.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-08-04T03:01:52.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "American Family Mutual Insurance Co. has agreed to buy all outstanding shares of specialty insurer Bowhead Specialty Holdings Inc. for about $1.2 billion in cash. Under the terms of the transaction, each Bowhead…",
+          "co": [
+            "american-family"
+          ]
+        },
+        {
+          "title": "American Family to Acquire Bowhead Specialty in $1.2B Cash Deal",
+          "link": "https://www.insurancejournal.com/news/national/2026/08/03/879954.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-03T12:49:44.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "American Family Mutual Insurance Co. has agreed to buy all outstanding shares of specialty insurer Bowhead Specialty Holdings Inc. for about $1.2 billion in cash. Under the terms of the transaction, each Bowhead…",
+          "co": [
+            "american-family"
+          ]
+        },
+        {
+          "title": "American Family to acquire Bowhead Specialty in $1.2bn cash deal",
+          "link": "https://www.reinsurancene.ws/american-family-to-acquire-bowhead-specialty-in-1-2bn-cash-deal/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-03T12:45:07.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "American Family Mutual Insurance Company, S.I. and its affiliates have entered into a definitive agreement to acquire all remaining issued and outstanding common stock of Bowhead Specialty Holdings Inc., in an all-cash…",
+          "co": [
+            "american-family"
+          ]
+        }
+      ]
+    },
+    {
       "slug": "uinsure",
       "name": "Uinsure",
       "count": 5,
@@ -2832,7 +4310,7 @@
         }
       ],
       "sources": [
-        "asiainsurancereview.com",
+        "Asia Insurance Review",
         "Coverager"
       ],
       "related": [],
@@ -2840,7 +4318,7 @@
         {
           "title": "Japan: MS&AD insurers deploy AI image detection to combat fraud",
           "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPS2hBcFU5eVZsZjBLbjQ5eTNvd3ZDX0NEdXFhQnQ4dkV3TDJ3eE1IcVBZLVBfUDY5alpMZXowMmx2SGlneGN1SDdJTkpyWmVTMmxjbUVBc2RSV0c0WEs2V2xMQjZ5VURobXlwc0pVZ215WGJWMkh5cUE5bFFaRnVONHF5RUZwaTFlb1Z0d0xDNnZsbmxKN1dQaHVlUlNwT3BOalUyQVZfNGtneGRDbjZxbmpmaGtZUTJrNnVuaURGMEpRbjQwMkszcW14ZWxaRGJ2ZXMtTVozTVh3T1Z4Vm5J?oc=5",
-          "source": "asiainsurancereview.com",
+          "source": "Asia Insurance Review",
           "publishedAt": "2026-08-04T00:00:17.000Z",
           "tags": [
             "AI & Automation",
@@ -3888,135 +5366,6 @@
       ]
     },
     {
-      "slug": "american-family",
-      "name": "American Family",
-      "count": 3,
-      "firstSeen": "2025-01-03T08:00:00.000Z",
-      "lastSeen": "2026-08-03T12:49:44.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 3
-        }
-      ],
-      "sources": [
-        "Insurance Journal",
-        "Reinsurance News",
-        "Digital Insurance"
-      ],
-      "related": [
-        {
-          "slug": "bowhead-specialty",
-          "name": "Bowhead Specialty",
-          "count": 2
-        },
-        {
-          "slug": "sentry",
-          "name": "Sentry",
-          "count": 1
-        },
-        {
-          "slug": "the-general",
-          "name": "The General",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "American Family to Acquire Bowhead Specialty in $1.2B Cash Deal",
-          "link": "https://www.insurancejournal.com/news/national/2026/08/03/879954.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-03T12:49:44.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "American Family Mutual Insurance Co. has agreed to buy all outstanding shares of specialty insurer Bowhead Specialty Holdings Inc. for about $1.2 billion in cash. Under the terms of the transaction, each Bowhead…",
-          "co": [
-            "bowhead-specialty"
-          ]
-        },
-        {
-          "title": "American Family to acquire Bowhead Specialty in $1.2bn cash deal",
-          "link": "https://www.reinsurancene.ws/american-family-to-acquire-bowhead-specialty-in-1-2bn-cash-deal/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-03T12:45:07.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "American Family Mutual Insurance Company, S.I. and its affiliates have entered into a definitive agreement to acquire all remaining issued and outstanding common stock of Bowhead Specialty Holdings Inc., in an all-cash…",
-          "co": [
-            "bowhead-specialty"
-          ]
-        },
-        {
-          "title": "Sentry acquires The General for $1.7B from American Family Insurance",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQYlNWa0FSMGsyWnBZdmxfTW5TeTRUa0NyeVFCVXFmNXNXTWpGRVhHaHdmQlBuWG5STGRsM1JXMjQtR3BhN09PMnVhZTNRU2wwSEV0VG9uNzF5LWpMbzY3S25FNjBnMi05b3BQVHpQSU83ZTEtdW8teVVlOGZlNWdxLTBxUWwtc01RQ3l2ZENUYw?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2025-01-03T08:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "sentry",
-            "the-general"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "bowhead-specialty",
-      "name": "Bowhead Specialty",
-      "count": 2,
-      "firstSeen": "2026-08-03T12:45:07.000Z",
-      "lastSeen": "2026-08-03T12:49:44.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Insurance Journal",
-        "Reinsurance News"
-      ],
-      "related": [
-        {
-          "slug": "american-family",
-          "name": "American Family",
-          "count": 2
-        }
-      ],
-      "articles": [
-        {
-          "title": "American Family to Acquire Bowhead Specialty in $1.2B Cash Deal",
-          "link": "https://www.insurancejournal.com/news/national/2026/08/03/879954.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-03T12:49:44.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "American Family Mutual Insurance Co. has agreed to buy all outstanding shares of specialty insurer Bowhead Specialty Holdings Inc. for about $1.2 billion in cash. Under the terms of the transaction, each Bowhead…",
-          "co": [
-            "american-family"
-          ]
-        },
-        {
-          "title": "American Family to acquire Bowhead Specialty in $1.2bn cash deal",
-          "link": "https://www.reinsurancene.ws/american-family-to-acquire-bowhead-specialty-in-1-2bn-cash-deal/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-03T12:45:07.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "American Family Mutual Insurance Company, S.I. and its affiliates have entered into a definitive agreement to acquire all remaining issued and outstanding common stock of Bowhead Specialty Holdings Inc., in an all-cash…",
-          "co": [
-            "american-family"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "allianz",
       "name": "Allianz",
       "count": 15,
@@ -4317,7 +5666,7 @@
         }
       ],
       "sources": [
-        "Business Review"
+        "business-review.eu"
       ],
       "related": [
         {
@@ -4330,7 +5679,7 @@
         {
           "title": "Anytime Romania and BRD Groupe Société Générale bring motor insurance directly into the YOU BRD app",
           "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQMmUwQUxrbkc4aFlOeG1tQURGemN1dVBZczFKNUpoLXlxTnFUaUh6VzNkUEYxcnpBUFMyMlFwbE9zMGJfNXVaN0RxeENJamVxVkQxemUwOWNfRzJ3YkZTaGNVU0lyZjJVTjlaRDJIaEdDdFBja0ZnVWtqeERDVXduZk1vZERrQ01SNjJUVGkyeHhCRExPTFJaam5mX0Q4WjhkeVh5di1IOUo5NHJ5Y2R4bnZjR2xrU2J0eHlPS1B4T3E0UXZKMWViWnItU3BMaXAxR3NpSUNva1YxM0QtU19lT3ZMQQ?oc=5",
-          "source": "Business Review",
+          "source": "business-review.eu",
           "publishedAt": "2026-08-03T12:38:03.000Z",
           "tags": [
             "Auto & Mobility"
@@ -4355,7 +5704,7 @@
         }
       ],
       "sources": [
-        "Business Review"
+        "business-review.eu"
       ],
       "related": [
         {
@@ -4368,7 +5717,7 @@
         {
           "title": "Anytime Romania and BRD Groupe Société Générale bring motor insurance directly into the YOU BRD app",
           "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQMmUwQUxrbkc4aFlOeG1tQURGemN1dVBZczFKNUpoLXlxTnFUaUh6VzNkUEYxcnpBUFMyMlFwbE9zMGJfNXVaN0RxeENJamVxVkQxemUwOWNfRzJ3YkZTaGNVU0lyZjJVTjlaRDJIaEdDdFBja0ZnVWtqeERDVXduZk1vZERrQ01SNjJUVGkyeHhCRExPTFJaam5mX0Q4WjhkeVh5di1IOUo5NHJ5Y2R4bnZjR2xrU2J0eHlPS1B4T3E0UXZKMWViWnItU3BMaXAxR3NpSUNva1YxM0QtU19lT3ZMQQ?oc=5",
-          "source": "Business Review",
+          "source": "business-review.eu",
           "publishedAt": "2026-08-03T12:38:03.000Z",
           "tags": [
             "Auto & Mobility"
@@ -5414,14 +6763,14 @@
       "lastSeen": "2026-08-03T07:10:00.000Z",
       "topics": [],
       "sources": [
-        "EIN Presswire"
+        "einpresswire.com"
       ],
       "related": [],
       "articles": [
         {
           "title": "CAN Sigorta strengthens island-wide digital insurance access after 68 years in North Cyprus",
           "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOX3VvTHNadXNWUFI2d2JWd3Q5NkxTMmg1OWJOaHVpZUFKOC1LbVY1OXFQMXJSU1EwbW1MMHY2QlNJUGVtTTZoTVM4SW1qTy1BRzAzMTRGbFIxZi1aZU5MZWVBZjZuM2hSbnBMZmtFYUcwSDkyQVRFaW13QmVzNjMwSWplWlN6Wi0zaW9sdnZlRUFWeFdWb29QblhteURzQ09reEdpNjVMLWNHLU9USnp6QTlvazVuTEVlaWV0WXRZUFVQZl9lbVJ1aGJHdEJobFh2ZHpZUA?oc=5",
-          "source": "EIN Presswire",
+          "source": "einpresswire.com",
           "publishedAt": "2026-08-03T07:10:00.000Z",
           "tags": [
             "Industry"
@@ -6855,632 +8204,6 @@
       ]
     },
     {
-      "slug": "mapfre",
-      "name": "Mapfre",
-      "count": 24,
-      "firstSeen": "2026-02-06T08:00:00.000Z",
-      "lastSeen": "2026-07-31T15:46:08.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 19
-        },
-        {
-          "name": "AI & Automation",
-          "count": 4
-        },
-        {
-          "name": "Property & Cat",
-          "count": 3
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "FinTech Global",
-        "Life Insurance International",
-        "Insurance Day",
-        "Insurance Journal",
-        "marketscreener.com",
-        "Capital Riesgo",
-        "Carrier Management",
-        "Insurtech Insights",
-        "Reinsurance News",
-        "theinsurer.com",
-        "Web corporativa - Mapfre",
-        "FF News",
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "tuio",
-          "name": "Tuio",
-          "count": 13
-        },
-        {
-          "slug": "safety-insurance-group",
-          "name": "Safety Insurance Group",
-          "count": 7
-        },
-        {
-          "slug": "fitch",
-          "name": "Fitch",
-          "count": 2
-        },
-        {
-          "slug": "am-best",
-          "name": "AM Best",
-          "count": 1
-        },
-        {
-          "slug": "blue-marble",
-          "name": "Blue Marble",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Mapfre acquires 38.9% stake in InsurTech Tuio",
-          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSFN4MHVoeXRQdHQ2dXlRYmdMRXdlRTZ1TFZSUFVKMnFkY3lxYjAxMS1id3VPUUJsdC1QTzdvMGhodXdGRF80ZGwtY2FKY3AzQWs1Y1lHVF83bzZiRTdEbnFRVkdYY0EwTTF3by1MdlVSWnhwTVJCT2xpR1ltUDhuSUx3RW9Qdw?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-07-31T15:46:08.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre to take 38.9% stake in Spanish insurtech operator Tuio",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBxZWtXWm5NZHROQ1ZSVEU1RGM2aGtWUjlnXzFaY1oyWDh4YVhnX0RiZFBzY0x2dl9vU1pmNGFoc2dyQThGbGNVa3NjalBLaXRMSWhyTVhzNTkzMkNpRnF0ODJiV1dJakUzem1hRW1ZM0JYcloybzNpNXJkMA?oc=5",
-          "source": "Life Insurance International",
-          "publishedAt": "2026-07-31T13:51:35.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre acquires 38.9% stake in insurtech Tuio",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOUkZ6UU54ZUt5b29nRHRnUTNCelJUSXZ5a0xzb09HNUNsZkZEcHBzLXRvSGdERmhYSENncFFLN1RIWjdVUExZV3Q0ZE51bHM2WmpzRk9jSW5ucXliandzUnZiTnRhNlYxOHlQSGlDOGVEeDlQNE1EaWl6WVR4UmdpWDNUQlFFNFFmakE?oc=5",
-          "source": "Insurance Day",
-          "publishedAt": "2026-07-31T11:01:27.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre Acquires Stake in Insurtech Tuio; Bolsters Commitment to AI, Digital Innovation",
-          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBDbEpUTjUyRXNqbFhNZFJFeGhxT290WVltdUFIV2FZZV9sMW9odWtkcF9wTW5sUG43ZGs2VHNQMlhrUTM2ZDI5X1dyY203NHY0SE9wcU5GT0I0X3RYTmdZa3Fhak1oY3RQejdsekFPSDhHaUlYdnFkc1c4X1AzZw?oc=5",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-31T08:43:55.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre Acquires Stake in Insurtech Tuio; Bolsters Commitment to AI, Digital Innovation",
-          "link": "https://www.insurancejournal.com/news/international/2026/07/31/879754.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-31T08:41:54.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "Just a week after revealing a $1.5 billion deal to acquire U.S.-based Safety Insurance Group, Spain’s Mapfre has announced a deal closer to its European roots—taking a 38.9% stake in the Spanish insurtech Tuio. The Tuio…",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre to buy a 38.9% stake in Spanish insurtech Tuio",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcTRTa2dKNnpHWFhDUTBjb25WNTNwT0VKcjNyQnNiaFZjSWlmbUxnbV8xZG90MTFQcmtLZEg2MmtFdTRTcjlMU3NSRHNZZ0lZa1hQajNPYW9iR3RXekRVSzNxTERCMG96OG9VMzh1dDloMjZ3b3BaYlFuNnU0SlE1SUpnYVA1SmRoeS1mSGpQWlFzcjNmek5ZNUxDMVR3QTFfcHpkY2R3ZDU?oc=5",
-          "source": "marketscreener.com",
-          "publishedAt": "2026-07-31T06:22:34.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre strengthens its commitment to innovation and digital business development by acquiring stake in Tuio",
-          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMWJUbnB5SzJyLUtrMXdoMlowRl9LUmtYS1ZzUlQxMnE1bVphZ3BXbmJkQWcwZW5RLWVkaUlqNV9QUkotTnFjLUQtMzAxY3dZZ3pFbUt1MTBaV20wbWNlSGJSRlprcTFQTmZuTmZnYmF0S3NjalktazdRQ3lJWDV1cHlvT3FEcG02QTNGTWJ0WENYUm1idHQ3NEstRGlpMXo0bnJLcXNfbi1MS2kzbFllbmFZTDdrcjZERDN1SnIyWGRKaXgyUFlnSDNaWFpLX2JoYXpEYndOR1FibjlBcmJv?oc=5",
-          "source": "Capital Riesgo",
-          "publishedAt": "2026-07-30T17:23:59.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre Acquiring Tuio Stake; Bolsters Commitment to AI, Digital Innovation",
-          "link": "https://www.carriermanagement.com/news/2026/07/30/290571.htm",
-          "source": "Carrier Management",
-          "publishedAt": "2026-07-30T16:47:02.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "Just a week after revealing a $1.5 billion deal to acquire U.S.-based Safety Insurance Group, Spain’s Mapfre has announced a deal closer to its European roots—taking a 38.9% stake in the Spanish InsurTech Tuio. The Tuio…",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "MAPFRE acquires 38.9% stake in insurtech Tuio to expand AI-powered digital insurance",
-          "link": "https://www.insurtechinsights.com/mapfre-acquires-38-9-stake-in-insurtech-tuio-to-expand-ai-powered-digital-insurance/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-07-30T16:14:50.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "MAPFRE has agreed to acquire a 38.9% stake in Spanish insurtech Tuio, strengthening its investment in digital insurance distribution and artificial intelligence as it seeks to expand across Europe and Latin America.",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre agrees to acquire 38.9% stake in Spanish insurtech Tuio",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOYWRCbEo3RlFHRHhuTTZHWXI2emx0ellKM2tzZjdoWXlHQ2xtZmVNcGNZV0pBbWZXaXV0SGNudU5nV01EaWhtVTQwN2F5eGI4bGprX2tkYnhDRldxajVuT2dBX19jaF9QbzRBSldLMlI3b1hOdGpYd2xONjRxelU4azNsUllVdmUyVWtQbl9heElLQzBBTUE?oc=5",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-30T15:38:21.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre agrees to acquire 38.9% stake in Spanish insurtech Tuio",
-          "link": "https://www.reinsurancene.ws/mapfre-agrees-to-acquire-38-9-stake-in-spanish-insurtech-tuio/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-30T15:30:31.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Mapfre, an international insurance company, has reached an agreement to acquire a 38.9% stake in Spanish insurtech Tuio, the specialist digital insurance distributor that leverages advanced technological capabilities…",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre to acquire 38.9% stake in Spanish insurtech Tuio",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQS3AtbnRLUklMSFlSTVduVldMdnZuelM5Q0V4SWxqSFBmckRwOC16TTZ2Nk1UYURRZzM2SnVxRWpqcUlicm9wRzFRUktVa2dNMFBZUVlORWxUZkJxRXlLcEtuYWUyTEJfbzdXdWZTMG5vb1hMQzZSUEVWbjdNY0tCYUFkUFNsQW1nMUNUTklxU3FfVWJycDlFdHYydFRGOXJlYmc?oc=5",
-          "source": "theinsurer.com",
-          "publishedAt": "2026-07-30T13:11:28.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "Mapfre strengthens its commitment to innovation and digital business development by acquiring stake in Tuio - Web corporativa",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNEhXcTQyZnIwZVlrOWVXc2hzSnhzVGZvVXh4NXdHMmdoek90VHE0NGpiT0plcGc1QmdUVzgtbTctcV93M0J6TGNSLXl6RGQ4aEE0TWthZ0ItZGJLSVk4Y09LOWxfR2IzbkNqN0p4aGlSaXVUTGV1REdSQXowNkRnRzNuTnNUeU5GMUtKTjJRbk5qUHpjejlKRlJRbW1jc0lCLXRBYm5oLXA?oc=5",
-          "source": "Web corporativa - Mapfre",
-          "publishedAt": "2026-07-30T12:07:25.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "tuio"
-          ]
-        },
-        {
-          "title": "AM Best Calls $1.54 Billion Mapfre-Safety Marriage ‘Strategically Compelling’",
-          "link": "https://www.carriermanagement.com/news/2026/07/29/290500.htm",
-          "source": "Carrier Management",
-          "publishedAt": "2026-07-29T12:07:03.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Ratings analysts at AM Best see the pending acquisition of Safety Insurance Group by Mapfre as “strategically compelling” as the carriers have complementary geographic and product profiles. Last week Safety, a…",
-          "co": [
-            "am-best",
-            "safety-insurance-group"
-          ]
-        },
-        {
-          "title": "AM Best Calls $1.54 Billion Mapfre-Safety Marriage ‘Strategically Compelling’",
-          "link": "https://www.insurancejournal.com/news/east/2026/07/28/879316.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-28T13:34:26.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Ratings analysts at AM Best see the pending acquisition of Safety Insurance Group by Mapfre as “strategically compelling” as the carriers have complementary geographic and product profiles. Last week Safety, a…",
-          "co": [
-            "safety-insurance-group",
-            "fitch"
-          ]
-        },
-        {
-          "title": "AM Best says MAPFRE’s Safety Insurance acquisition is strategically compelling",
-          "link": "https://www.reinsurancene.ws/am-best-says-mapfres-safety-insurance-acquisition-is-strategically-compelling/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-28T13:00:16.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Credit rating agency AM Best has described Spain-based multinational insurance group MAPFRE S.A.’s planned acquisition of Safety Insurance Group, Inc. as strategically compelling, saying the transaction brings together…",
-          "co": [
-            "safety-insurance-group",
-            "fitch"
-          ]
-        },
-        {
-          "title": "Mapfre Re’s net profit climbs 24.6% to €186m in H1’26",
-          "link": "https://www.reinsurancene.ws/mapfre-res-net-profit-climbs-24-6-to-e186m-in-h126/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-24T14:30:30.000Z",
-          "tags": [
-            "Property & Cat"
-          ],
-          "summary": "Mapfre Re, the reinsurance arm of Mapfre, has reported net earnings of €186 million in the first half of 2026, up 24.6% compared to the same period a year earlier. The performance was driven by the strong results of the…",
-          "co": []
-        },
-        {
-          "title": "Insurer Mapfre Estimates Venezuela Quake Losses at €25 Million",
-          "link": "https://www.insurancejournal.com/news/international/2026/07/24/878940.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-24T13:33:23.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "Spanish insurer Mapfre said on Thursday that losses from the June 24 earthquakes in Venezuela would be up to €25 million ($28.5 million), after its first-half net profit grew 9.4% despite storm-related claims in Spain…",
-          "co": []
-        },
-        {
-          "title": "Mapfre Expands US Footprint with Strategic Acquisition of Safety Insurance Group",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZkpYNHFZTzNCSW9qRENST3RHOWlNODJjOFk1cWFNQThobmEtNW9XOVlDc1FTeXNCOVFBUnpqU2NORnZtdWRNSzVsOUMwdGtVSklKclltOUZvakQ1S1gwYjAyQU9qVGNoU0FBQW8wVzd4WE5tbEdWS0xVZ0kzZVRqTFZWUno2SkF3ajd2azRYeEhwZWhmSFJ2al9IWFd0NXUtVVlZdEMtcw?oc=5",
-          "source": "FF News",
-          "publishedAt": "2026-07-24T09:03:50.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "safety-insurance-group"
-          ]
-        },
-        {
-          "title": "MAPFRE to acquire Safety Insurance for $1.54 billion amid shareholder probe",
-          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/mapfre-to-acquire-safety-insurance-for-1-54-billion-amid-shareholder-probe-583605.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-07-24T08:21:47.000Z",
-          "tags": [
-            "M&A",
-            "Property & Cat"
-          ],
-          "summary": "As company reveals financials, deal creates an auto and homeowners giant, but a law firm is already investigating whether board got shareholders a fair price",
-          "co": [
-            "safety-insurance-group"
-          ]
-        },
-        {
-          "title": "Mapfre to Acquire Safety Insurance for $1.54 Billion in Cash Deal",
-          "link": "https://www.insurancejournal.com/news/east/2026/07/24/878870.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-24T05:00:01.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Safety Insurance Group Inc,, a property/casualty insurer in Massachusetts and New England, has agreed to be acquired by Spain’s Mapfre S.A. in an all-cash transaction valued at approximately $1.54 billion. Under the…",
-          "co": [
-            "safety-insurance-group"
-          ]
-        },
-        {
-          "title": "Mapfre to Acquire Safety Insurance in $1.5B in Cash Deal",
-          "link": "https://www.carriermanagement.com/news/2026/07/23/290386.htm",
-          "source": "Carrier Management",
-          "publishedAt": "2026-07-24T02:05:58.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Safety Insurance Group Inc,, a property/casualty insurer in Massachusetts and New England, has agreed to be acquired by Spain’s Mapfre S.A. in an all-cash transaction valued at approximately $1.54 billion. Under the…",
-          "co": [
-            "safety-insurance-group"
-          ]
-        },
-        {
-          "title": "Blue Marble and MAPFRE partner to expand parametric climate insurance",
-          "link": "https://www.insurtechinsights.com/blue-marble-and-mapfre-partner-to-expand-parametric-climate-insurance/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-07-21T17:24:35.000Z",
-          "tags": [
-            "Partnerships",
-            "Property & Cat"
-          ],
-          "summary": "Blue Marble Microinsurance has partnered with MAPFRE to expand access to parametric insurance solutions in markets with significant protection gaps.",
-          "co": [
-            "blue-marble"
-          ]
-        },
-        {
-          "title": "LatAm insurtech investment surges 117% in 2025: Mapfre",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQaFZTUGNxRlp5bHFMTUdzSDJoSkV3LUZjYlRpaWEyVWgxcjBJSmR5bkRMRjNTQWRZOVU1d296SWc0ZU53cG1pZ1ZXRGN2clFIS0RlMmx6MjFfZmZFb2MwLXlfd18tSHM1Rnd5R3R0NGJWMkVyUUpTQkhpREZUNUNkQ3RLQndBMmQtU3c?oc=5",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-02-06T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "tuio",
-      "name": "Tuio",
-      "count": 15,
-      "firstSeen": "2024-09-20T07:00:00.000Z",
-      "lastSeen": "2026-07-31T15:46:08.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 12
-        },
-        {
-          "name": "AI & Automation",
-          "count": 4
-        },
-        {
-          "name": "Funding",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "FinTech Global",
-        "Life Insurance International",
-        "Insurance Day",
-        "Insurance Journal",
-        "marketscreener.com",
-        "Capital Riesgo",
-        "Carrier Management",
-        "Insurtech Insights",
-        "Reinsurance News",
-        "theinsurer.com",
-        "Web corporativa - Mapfre"
-      ],
-      "related": [
-        {
-          "slug": "mapfre",
-          "name": "Mapfre",
-          "count": 13
-        }
-      ],
-      "articles": [
-        {
-          "title": "Mapfre acquires 38.9% stake in InsurTech Tuio",
-          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSFN4MHVoeXRQdHQ2dXlRYmdMRXdlRTZ1TFZSUFVKMnFkY3lxYjAxMS1id3VPUUJsdC1QTzdvMGhodXdGRF80ZGwtY2FKY3AzQWs1Y1lHVF83bzZiRTdEbnFRVkdYY0EwTTF3by1MdlVSWnhwTVJCT2xpR1ltUDhuSUx3RW9Qdw?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-07-31T15:46:08.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre to take 38.9% stake in Spanish insurtech operator Tuio",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBxZWtXWm5NZHROQ1ZSVEU1RGM2aGtWUjlnXzFaY1oyWDh4YVhnX0RiZFBzY0x2dl9vU1pmNGFoc2dyQThGbGNVa3NjalBLaXRMSWhyTVhzNTkzMkNpRnF0ODJiV1dJakUzem1hRW1ZM0JYcloybzNpNXJkMA?oc=5",
-          "source": "Life Insurance International",
-          "publishedAt": "2026-07-31T13:51:35.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre acquires 38.9% stake in insurtech Tuio",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOUkZ6UU54ZUt5b29nRHRnUTNCelJUSXZ5a0xzb09HNUNsZkZEcHBzLXRvSGdERmhYSENncFFLN1RIWjdVUExZV3Q0ZE51bHM2WmpzRk9jSW5ucXliandzUnZiTnRhNlYxOHlQSGlDOGVEeDlQNE1EaWl6WVR4UmdpWDNUQlFFNFFmakE?oc=5",
-          "source": "Insurance Day",
-          "publishedAt": "2026-07-31T11:01:27.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre Acquires Stake in Insurtech Tuio; Bolsters Commitment to AI, Digital Innovation",
-          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBDbEpUTjUyRXNqbFhNZFJFeGhxT290WVltdUFIV2FZZV9sMW9odWtkcF9wTW5sUG43ZGs2VHNQMlhrUTM2ZDI5X1dyY203NHY0SE9wcU5GT0I0X3RYTmdZa3Fhak1oY3RQejdsekFPSDhHaUlYdnFkc1c4X1AzZw?oc=5",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-31T08:43:55.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre Acquires Stake in Insurtech Tuio; Bolsters Commitment to AI, Digital Innovation",
-          "link": "https://www.insurancejournal.com/news/international/2026/07/31/879754.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-31T08:41:54.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "Just a week after revealing a $1.5 billion deal to acquire U.S.-based Safety Insurance Group, Spain’s Mapfre has announced a deal closer to its European roots—taking a 38.9% stake in the Spanish insurtech Tuio. The Tuio…",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre to buy a 38.9% stake in Spanish insurtech Tuio",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcTRTa2dKNnpHWFhDUTBjb25WNTNwT0VKcjNyQnNiaFZjSWlmbUxnbV8xZG90MTFQcmtLZEg2MmtFdTRTcjlMU3NSRHNZZ0lZa1hQajNPYW9iR3RXekRVSzNxTERCMG96OG9VMzh1dDloMjZ3b3BaYlFuNnU0SlE1SUpnYVA1SmRoeS1mSGpQWlFzcjNmek5ZNUxDMVR3QTFfcHpkY2R3ZDU?oc=5",
-          "source": "marketscreener.com",
-          "publishedAt": "2026-07-31T06:22:34.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre strengthens its commitment to innovation and digital business development by acquiring stake in Tuio",
-          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMWJUbnB5SzJyLUtrMXdoMlowRl9LUmtYS1ZzUlQxMnE1bVphZ3BXbmJkQWcwZW5RLWVkaUlqNV9QUkotTnFjLUQtMzAxY3dZZ3pFbUt1MTBaV20wbWNlSGJSRlprcTFQTmZuTmZnYmF0S3NjalktazdRQ3lJWDV1cHlvT3FEcG02QTNGTWJ0WENYUm1idHQ3NEstRGlpMXo0bnJLcXNfbi1MS2kzbFllbmFZTDdrcjZERDN1SnIyWGRKaXgyUFlnSDNaWFpLX2JoYXpEYndOR1FibjlBcmJv?oc=5",
-          "source": "Capital Riesgo",
-          "publishedAt": "2026-07-30T17:23:59.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre Acquiring Tuio Stake; Bolsters Commitment to AI, Digital Innovation",
-          "link": "https://www.carriermanagement.com/news/2026/07/30/290571.htm",
-          "source": "Carrier Management",
-          "publishedAt": "2026-07-30T16:47:02.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "Just a week after revealing a $1.5 billion deal to acquire U.S.-based Safety Insurance Group, Spain’s Mapfre has announced a deal closer to its European roots—taking a 38.9% stake in the Spanish InsurTech Tuio. The Tuio…",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "MAPFRE acquires 38.9% stake in insurtech Tuio to expand AI-powered digital insurance",
-          "link": "https://www.insurtechinsights.com/mapfre-acquires-38-9-stake-in-insurtech-tuio-to-expand-ai-powered-digital-insurance/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-07-30T16:14:50.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "MAPFRE has agreed to acquire a 38.9% stake in Spanish insurtech Tuio, strengthening its investment in digital insurance distribution and artificial intelligence as it seeks to expand across Europe and Latin America.",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre agrees to acquire 38.9% stake in Spanish insurtech Tuio",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOYWRCbEo3RlFHRHhuTTZHWXI2emx0ellKM2tzZjdoWXlHQ2xtZmVNcGNZV0pBbWZXaXV0SGNudU5nV01EaWhtVTQwN2F5eGI4bGprX2tkYnhDRldxajVuT2dBX19jaF9QbzRBSldLMlI3b1hOdGpYd2xONjRxelU4azNsUllVdmUyVWtQbl9heElLQzBBTUE?oc=5",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-30T15:38:21.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre agrees to acquire 38.9% stake in Spanish insurtech Tuio",
-          "link": "https://www.reinsurancene.ws/mapfre-agrees-to-acquire-38-9-stake-in-spanish-insurtech-tuio/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-30T15:30:31.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Mapfre, an international insurance company, has reached an agreement to acquire a 38.9% stake in Spanish insurtech Tuio, the specialist digital insurance distributor that leverages advanced technological capabilities…",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre to acquire 38.9% stake in Spanish insurtech Tuio",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQS3AtbnRLUklMSFlSTVduVldMdnZuelM5Q0V4SWxqSFBmckRwOC16TTZ2Nk1UYURRZzM2SnVxRWpqcUlicm9wRzFRUktVa2dNMFBZUVlORWxUZkJxRXlLcEtuYWUyTEJfbzdXdWZTMG5vb1hMQzZSUEVWbjdNY0tCYUFkUFNsQW1nMUNUTklxU3FfVWJycDlFdHYydFRGOXJlYmc?oc=5",
-          "source": "theinsurer.com",
-          "publishedAt": "2026-07-30T13:11:28.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Mapfre strengthens its commitment to innovation and digital business development by acquiring stake in Tuio - Web corporativa",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNEhXcTQyZnIwZVlrOWVXc2hzSnhzVGZvVXh4NXdHMmdoek90VHE0NGpiT0plcGc1QmdUVzgtbTctcV93M0J6TGNSLXl6RGQ4aEE0TWthZ0ItZGJLSVk4Y09LOWxfR2IzbkNqN0p4aGlSaXVUTGV1REdSQXowNkRnRzNuTnNUeU5GMUtKTjJRbk5qUHpjejlKRlJRbW1jc0lCLXRBYm5oLXA?oc=5",
-          "source": "Web corporativa - Mapfre",
-          "publishedAt": "2026-07-30T12:07:25.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "mapfre"
-          ]
-        },
-        {
-          "title": "Spanish InsurTech startup Tuio raises $16.7m to accelerate growth",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNUo4VVJOWk5fNTNOb2xqcXRzM2dvek5lenJDb0xxTHZZMTFRMlpFTWNTRlVBb05lNjcxT2tEbzlOMDYtc3VtQW1abGhnc0syeVlEZEM5R25aenZxNXJka1BUOUU4Z3J5ZTd4NGZpaWJWZ0xKc3RLOWhxUnRCM0NNRVRDYS04Tm1iWUd5Tk9Kdm4tZUk2NHQ5eXdYbVdtUFdRVGZfLTBrNV9hRHBaOGxHcTVZOA?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2024-09-23T07:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Tuio closes a financing round of 15 million euros to continue transforming insurance",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPMk4yTS1KR0tMdHRoQndSZlhGNEtYLUxPcFc3MndkR25BRGJNcE1UZUFqNE9kcGw4ZGNXRXJlSURQYTY1VVJEUEtGSE5jQjlwV3VqZGdTMHFLMHZ3eERROUFDRG5WLUttYi1CRUtjLS1BcEF2RDZXdUY4Tzh1d0hwcUJ4dTVOb0NTQWtLSXdXamNxMGlQb2V5d1dKM0YyMDVBRVpJR2pjM3MtWFhlcm10eGt5dTBDNFdPQWZfcjVnd2s?oc=5",
-          "source": "Capital Riesgo",
-          "publishedAt": "2024-09-20T07:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "globaldata",
       "name": "GlobalData",
       "count": 1,
@@ -8573,9 +9296,10 @@
         }
       ],
       "sources": [
-        "TMX Newsfile",
+        "newsfilecorp.com",
         "Bitcoin Magazine",
         "TradingView",
+        "TMX Newsfile",
         "Pluang",
         "Insurance Business"
       ],
@@ -8595,7 +9319,7 @@
         {
           "title": "Zhibao Technology Inc. Announces Signing of Definitive Securities Purchase Agreement for PIPE Financing Payable in Bitcoin",
           "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNV3lkd3JUOUMtSEZ6TTJZMnNEa3lrcDk0VURqM0ZESDZqUVlEcElBcmtULXBpbDNtZGUzLVRnVzVtQ002cmtuc21qeFQxX2NKc0VJVURjMFB4MWtzMXNrX01nclV3T3ZxemMtTkNxbGs0MnFEN3JyZlRrWktVOEhHZUJOc2VUUGJGV1pJcjR0aWtNejcwLS1jbGF2NVBFejBRMU9tRUpPdElXdE56RUZ2cFFsUWxrZzB6U0lQZnlMRlhxN1d3dGxRMER0S2pUdkROS2JILUVTQXVDTURlZmV0N0ktNy1BTUNVU1dYTGtPZzg3ekNJVU1CU09n?oc=5",
-          "source": "TMX Newsfile",
+          "source": "newsfilecorp.com",
           "publishedAt": "2026-07-31T12:30:00.000Z",
           "tags": [
             "Industry"
@@ -9039,7 +9763,7 @@
       ],
       "sources": [
         "connectingtravel.com",
-        "indexbox.io",
+        "IndexBox",
         "itij.com"
       ],
       "related": [
@@ -9074,7 +9798,7 @@
         {
           "title": "Oman Air Partners with Insurte, ISA Assist, and Takaful Oman for Embedded Travel Insurance",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaUxhRzl6b3h3dldkaE5MTjZOVm0yYi1FYWZSZjczZXNtaXFIM0dRRGZQRDdJM3BweGRaUllrcWFZU0psV2NjZEMwUDZMQURfN0xrWWFzWU9mNVFWZ0pqekN3eHVZVjI2OWhPcGZrYkN4U2laTHNFVkVDTTZIVlVHbDZhT1NjOGdxQ012ZVo3amJDOUVlRDlQSjRKdU9ORFVPY2tUUDhqd0FsNXBRWi1sR2tNTDFhb0gzZEE?oc=5",
-          "source": "indexbox.io",
+          "source": "IndexBox",
           "publishedAt": "2026-07-29T15:11:00.000Z",
           "tags": [
             "Partnerships"
@@ -11707,44 +12431,6 @@
       ]
     },
     {
-      "slug": "trucordia",
-      "name": "Trucordia",
-      "count": 1,
-      "firstSeen": "2026-07-29T22:01:41.000Z",
-      "lastSeen": "2026-07-29T22:01:41.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager"
-      ],
-      "related": [
-        {
-          "slug": "dominion-insurance-services",
-          "name": "Dominion Insurance Services",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Trucordia acquires the assets of Dominion Insurance Services",
-          "link": "https://coverager.com/trucordia-acquires-the-assets-of-dominion-insurance-services/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-29T22:01:41.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Financial terms were not disclosed.",
-          "co": [
-            "dominion-insurance-services"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "dominion-insurance-services",
       "name": "Dominion Insurance Services",
       "count": 1,
@@ -12134,7 +12820,7 @@
         }
       ],
       "sources": [
-        "indexbox.io",
+        "IndexBox",
         "itij.com",
         "Muscat Daily"
       ],
@@ -12159,7 +12845,7 @@
         {
           "title": "Oman Air Partners with Insurte, ISA Assist, and Takaful Oman for Embedded Travel Insurance",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaUxhRzl6b3h3dldkaE5MTjZOVm0yYi1FYWZSZjczZXNtaXFIM0dRRGZQRDdJM3BweGRaUllrcWFZU0psV2NjZEMwUDZMQURfN0xrWWFzWU9mNVFWZ0pqekN3eHVZVjI2OWhPcGZrYkN4U2laTHNFVkVDTTZIVlVHbDZhT1NjOGdxQ012ZVo3amJDOUVlRDlQSjRKdU9ORFVPY2tUUDhqd0FsNXBRWi1sR2tNTDFhb0gzZEE?oc=5",
-          "source": "indexbox.io",
+          "source": "IndexBox",
           "publishedAt": "2026-07-29T15:11:00.000Z",
           "tags": [
             "Partnerships"
@@ -12210,7 +12896,7 @@
         }
       ],
       "sources": [
-        "indexbox.io"
+        "IndexBox"
       ],
       "related": [
         {
@@ -12233,7 +12919,7 @@
         {
           "title": "Oman Air Partners with Insurte, ISA Assist, and Takaful Oman for Embedded Travel Insurance",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaUxhRzl6b3h3dldkaE5MTjZOVm0yYi1FYWZSZjczZXNtaXFIM0dRRGZQRDdJM3BweGRaUllrcWFZU0psV2NjZEMwUDZMQURfN0xrWWFzWU9mNVFWZ0pqekN3eHVZVjI2OWhPcGZrYkN4U2laTHNFVkVDTTZIVlVHbDZhT1NjOGdxQ012ZVo3amJDOUVlRDlQSjRKdU9ORFVPY2tUUDhqd0FsNXBRWi1sR2tNTDFhb0gzZEE?oc=5",
-          "source": "indexbox.io",
+          "source": "IndexBox",
           "publishedAt": "2026-07-29T15:11:00.000Z",
           "tags": [
             "Partnerships"
@@ -12260,7 +12946,7 @@
         }
       ],
       "sources": [
-        "indexbox.io"
+        "IndexBox"
       ],
       "related": [
         {
@@ -12283,7 +12969,7 @@
         {
           "title": "Oman Air Partners with Insurte, ISA Assist, and Takaful Oman for Embedded Travel Insurance",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaUxhRzl6b3h3dldkaE5MTjZOVm0yYi1FYWZSZjczZXNtaXFIM0dRRGZQRDdJM3BweGRaUllrcWFZU0psV2NjZEMwUDZMQURfN0xrWWFzWU9mNVFWZ0pqekN3eHVZVjI2OWhPcGZrYkN4U2laTHNFVkVDTTZIVlVHbDZhT1NjOGdxQ012ZVo3amJDOUVlRDlQSjRKdU9ORFVPY2tUUDhqd0FsNXBRWi1sR2tNTDFhb0gzZEE?oc=5",
-          "source": "indexbox.io",
+          "source": "IndexBox",
           "publishedAt": "2026-07-29T15:11:00.000Z",
           "tags": [
             "Partnerships"
@@ -15239,59 +15925,6 @@
       ]
     },
     {
-      "slug": "vertafore",
-      "name": "Vertafore",
-      "count": 2,
-      "firstSeen": "2026-07-15T07:00:00.000Z",
-      "lastSeen": "2026-07-27T14:05:02.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 2
-        },
-        {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Health & Life",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Beinsure"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Vertafore launches Velocity AI Benefit Plan Agent inside the market-leading employee benefits solution, BenefitPoint",
-          "link": "https://coverager.com/vertafore-launches-velocity-ai-benefit-plan-agent-inside-the-market-leading-employee-benefits-solution-benefitpoint/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-27T14:05:02.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Health & Life"
-          ],
-          "summary": "New Velocity AI Benefit Plan Agent cuts benefit plan setup time by up to 70%, automating one of the most manual workflows ahead of benefits season",
-          "co": []
-        },
-        {
-          "title": "Insurtech Vertafore launches Velocity AI agent for MGA submission intake",
-          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5vUTNvRVlfVzJwa194SVlHTEZUYl9JQ19pelk2dHZIOFByMkFwVjg2dTJSdUtaR1Z3VDlWYWZTb3pvellYQS02RlhJOW81dFJDNEc0aHZNcHJfZkIzVVE4WDV1a1lYRkktSjVhb3NzSQ?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-07-15T07:00:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "pb-fintech",
       "name": "PB Fintech",
       "count": 3,
@@ -16329,7 +16962,7 @@
         }
       ],
       "sources": [
-        "thefastmode.com",
+        "The Fast Mode",
         "Adaderana Biz English"
       ],
       "related": [],
@@ -16337,7 +16970,7 @@
         {
           "title": "HUTCH Enterprise Powers Sri Lanka's Nationwide Digital Vehicle Insurance Verification Platform",
           "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQTUlmNzhnOFViY3owakZRYXNYdDRYa3p4a2JGSHZqd1hwYVc2b2xNZndRSlVZemVuRVp3dGc2a3RwYUl0VEtCU0xHMnU3Z2JHNGxpVktVV1RjNFN2bEVHZ2NTNk5RRmgyUTJNV182c1VzT09FSHA1azBjZVhPYVBFRWdjNlJnQ3dqRVlvVUVZcGc5b3lySGY4Uy1nVG5pQlJ1bV9VSkVTVTUtZm84c19BR2ZhNmUxT3JvNlh2NGZQUG9hOU9VUDZ2bzdLRnpUejRzWVVqMVh4RGkxWFVVTGpkdEp4czVUVmc?oc=5",
-          "source": "thefastmode.com",
+          "source": "The Fast Mode",
           "publishedAt": "2026-07-26T23:31:55.000Z",
           "tags": [
             "Partnerships",
@@ -18007,7 +18640,7 @@
       "topics": [],
       "sources": [
         "巴士的報",
-        "Business Wire",
+        "businesswire.com",
         "Insurance Business"
       ],
       "related": [
@@ -18042,7 +18675,7 @@
         {
           "title": "Cotality recognized in Insurance Business's Global 5-Star Technology and Software Providers 2026",
           "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNTmJmVmN2RHJsdW9EWlJ1dUJwdGoyYVpKMWpoSlBmWFFWLVA2UFM5dDdHcklYWXkxdkdRX2F0RFpTdWhSblBCV1ZIdDVBZEhBS3lUTTVjc2YyX1dsYnZHb2pPV0JRMnZWY0pHQlBMaUJMNmlWQnAxWkVtY3ljNVBiU3JUdnJqcXhHN1lsZjNhSEFlR1QxZkt1TTR3Q1dHUEpCMHVZdk9QODVmaTVhZWk1NW5adE9oajZqS3o5c3VNcE45NmNxUUVuTjRIVFpRNHdKLTRVb01rb2xZQkY2UHpNNUxDbmZ1a3c?oc=5",
-          "source": "Business Wire",
+          "source": "businesswire.com",
           "publishedAt": "2026-07-24T07:00:00.000Z",
           "tags": [
             "Industry"
@@ -18311,7 +18944,7 @@
       "topics": [],
       "sources": [
         "Insurance Edge",
-        "atlas-mag.net",
+        "Atlas Magazine",
         "FF News",
         "Zawya",
         "Qatar Tribune"
@@ -18332,7 +18965,7 @@
         {
           "title": "QIC named “Digital Insurance Initiative of the Year in Qatar”",
           "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOakgzQlpMTU85VXBlZW5rTy0wUGpwbExxbjdSMW1EaGR5blFLWmtEeXlVdUtqOUlkY1dKa2ktU2dOYmRmLTJBZERNRnR2UEw2SHhiMlRtZDhpcE4yRXNwZ2FNVllkZ0NoYWQxUmpVQUxkaGNOSVg3bV9FS2MxQ0I2WV9vNUFETzkzX2hCeUFScUg?oc=5",
-          "source": "atlas-mag.net",
+          "source": "Atlas Magazine",
           "publishedAt": "2026-07-24T10:50:48.000Z",
           "tags": [
             "Industry"
@@ -21051,75 +21684,6 @@
           "publishedAt": "2026-07-23T07:00:00.000Z",
           "tags": [
             "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "federato",
-      "name": "Federato",
-      "count": 3,
-      "firstSeen": "2025-10-22T07:00:00.000Z",
-      "lastSeen": "2026-07-23T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 3
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "Funding",
-          "count": 1
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Digital Insurance",
-        "FinTech Global",
-        "FF News"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Why AI spend is increasing but full integration lags: Federato",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNUWZQVFRLc2Q5RS1xb2pYT25UUGVKRzUyZDN0X3RoVDNMODRFQ2l4SW8tMU5QM1RCa0NnZWVET2stdmFrOElVRHdTWFl3TkNMMFBHWFFyQ2p1RS1MelV6TFo4MG4wdUlMcmhpRENPS3RFYlhReDlVVTJwSFMwTVlXbm9NbnVad1ZNanROSndjXy13WTA?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-07-23T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Federato secures $100m to expand AI-native insurance platform",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQV0ZZbXhzY2MydS1YckJBMXM2Ym10WmZ5aDFIcUlOd3lUNzdjdnZMY3lDZTV1bDNQMkVlaWZQdUFwcENiVmw2WDBXUUhUcDE0eXBRWkppRUd5N2tJLTBFRk9vcE5zeW44enphTVZwaTRfQzY3QWZzd3JQbjBuSVE4S0ZtQm9DVnNfWG1ndW1WbmhIVE9wM011LWdPWQ?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2025-11-18T08:00:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Federato Launches the First Enterprise-grade Agentic AI for the Insurance Industry",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPUmNUMDRYQzJxYlJVV2pxbEFCMUZaZldZRmxJc2xERnd1cVg1VWZMNmU0NDRlRVAxLTBuMlNMWmVsRGNCV3RHUXlheHc1WXBSaGZQQkNTc3Nfd1dIUzNLSEtZZXpUNkRnVmJmUHRxNXg5OEFNdkFCc3JkempWN0JsNl85RkZEX0d4dlJqOGIwbGFLdXByMnVoM2drSGpwR0JLMG1PSE1FT3BMQ0dlNU1MWV9nTU9sR2NJdDc4aENvaUZLZw?oc=5",
-          "source": "FF News",
-          "publishedAt": "2025-10-22T07:00:00.000Z",
-          "tags": [
-            "Product & Launches",
             "AI & Automation"
           ],
           "summary": "",
@@ -24313,90 +24877,6 @@
           ],
           "summary": "New data shows how proximity to Ukraine and Iran is feeding through into UK travel insurance pricing",
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "sapiens",
-      "name": "Sapiens",
-      "count": 3,
-      "firstSeen": "2026-06-02T07:00:00.000Z",
-      "lastSeen": "2026-07-19T16:49:45.000Z",
-      "topics": [
-        {
-          "name": "Leadership",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Ad-hoc-news.de",
-        "(Re)in Asia",
-        "EnterpriseAM"
-      ],
-      "related": [
-        {
-          "slug": "adia",
-          "name": "Adia",
-          "count": 1
-        },
-        {
-          "slug": "positron-ai",
-          "name": "Positron AI",
-          "count": 1
-        },
-        {
-          "slug": "dp-world",
-          "name": "DP World",
-          "count": 1
-        },
-        {
-          "slug": "adnoc",
-          "name": "Adnoc",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Sapiens stock trades steady as insurance software group builds on 2025 earnings growth",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcDJIaE1McTdxVGdLeUZkOHVPWEhEdVpRajB5OXR0c2pnbndLYXNmcW1ZX1JIR2xONHdJVVNsQzdWcVE4ZjdOanhEZjk3NHBFRkZXMmpIa245QzItVkVCVEs1RUJXajF6cWZ6X084NDhmeUhpcHVfUC0wZEMyUzJJc0tveDV2d1lzMkxlY18wVGRIWGU5Q29LY2E5YWVGcENCRTUxMU5MT3N1MnhEX1QyLXRVRVhXdmlQX0dQOEQ0ekd6MTRwZlF0cg?oc=5",
-          "source": "Ad-hoc-news.de",
-          "publishedAt": "2026-07-19T16:49:45.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Insurtech Sapiens appoints Krish Datta as EVP for APAC",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPQkZpb013UVVva0lVR2FIUkNMYWhGQ1gxa1RGVkRGZzRTaFpJUXhtU0FGbXJaOElOYlRkR2NTemRLcTM4YUw4TTZIN0ZfVFRnMFRRQm5rNlVVc0UzSDlJaUs0TEdrbW5ZNnYzS2xYTkpaNjhDRzBXX3BkcVFPVE5VZW13?oc=5",
-          "source": "(Re)in Asia",
-          "publishedAt": "2026-06-24T07:00:00.000Z",
-          "tags": [
-            "Leadership"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Adia backs insurtech Sapiens, Positron AI comes to DIFC, DP World invests more in Dominican Republic freezone, Adnoc secures gas supply from Azerbaijan - UAE",
-          "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPd1V0c05zWEhJYzRNSDI1U2FWclFDRFdVazVyZUZ4dEtEYVFhV0tEZmkzaEJ6RE0yeGpWcklNWDlERlQ4WmFOZW1oMFhCWGE1aG9rbDN1YzRTVHZPbUxySTNqb1NIbUhka0phOTNPV3ZuWHh3MVRkbExLQ1N3SGhrR0RaRWItWHZXZFdkOXFpUFZJRllDVWd4TlRfNFJjUWE4MUhzTXlQTFBGQmlWNDZHMDNBMFlrSmlEVkttVGx3dUh5SjVPVHNJQ3NRMmNCRFVzbjdhQjNENTZHdjExVWp5amJLODhJS2cxVkZCLWg2dEFHazZYVld1WWFPcmFjeF82ZHVSMzVLM0g0Mmx3S1l2RmNuT3E5YnNZ?oc=5",
-          "source": "EnterpriseAM",
-          "publishedAt": "2026-06-02T07:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "adia",
-            "positron-ai",
-            "dp-world",
-            "adnoc"
-          ]
         }
       ]
     },
@@ -38515,60 +38995,6 @@
       ]
     },
     {
-      "slug": "vertical-insure",
-      "name": "Vertical Insure",
-      "count": 2,
-      "firstSeen": "2025-06-16T07:00:00.000Z",
-      "lastSeen": "2026-05-04T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "Funding",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "TipRanks",
-        "FinTech Global"
-      ],
-      "related": [
-        {
-          "slug": "stripe",
-          "name": "Stripe",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Vertical Insure Highlights Stripe Partnership and Insurtech Visibility at Stripe Sessions 2026",
-          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNd2wxYlQzVVg3aW8zMUJaZG9ENVZnQTRNT1dPR01UTnRzZFZvV0cwUU1PRjFxZEpVWHZmLTNuMFF0eGNPdWVvQXZYYjRHNDI2NFFtbFl2amxzVjM5WGVVZXMwTExUV2FfN1F1R3hxbXAyb0wzYnJDeXM1REdraWNGTnByZWpETjJlVjRReWZ5QTJHVUxsYWJmU0UzUWRlei1ORlhIQmIzTWtaZnZRdWxEcWstX0psSjZOd2ZuVHVGSHZZVVZTQzRKdDd1enVVa0UzX3ZGQXNTYTdBQQ?oc=5",
-          "source": "TipRanks",
-          "publishedAt": "2026-05-04T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "stripe"
-          ]
-        },
-        {
-          "title": "Vertical Insure lands $8.5m raise",
-          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE92NXp2bHdRWUtqdmV5QXU1a3RfN3ZHTWFkYzhDcUdBSHNCLTlRay1EeWtQWEJfRUE3dzBzZ0RxRzNZeElCR1VualNNUGVaYl9LbF9IYnZjTTJmeXFFZE1FRURFOWhkNDRLOVY1bm93THBzZDZaMGc?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2025-06-16T07:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "stripe",
       "name": "Stripe",
       "count": 1,
@@ -48882,79 +49308,6 @@
           ],
           "summary": "",
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "intx",
-      "name": "INTX",
-      "count": 3,
-      "firstSeen": "2025-08-06T07:00:00.000Z",
-      "lastSeen": "2026-01-28T08:00:00.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 1
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Pulse 2.0",
-        "FinTech Global",
-        "Business Wire"
-      ],
-      "related": [
-        {
-          "slug": "tranzpay",
-          "name": "Tranzpay",
-          "count": 1
-        },
-        {
-          "slug": "one",
-          "name": "One Inc",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "INTX Insurance Software: Interview With CEO Robert Lewis About The Insurance Platform Company",
-          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0xLUlubGQ1c0xkY3l4bXRET0xSWHFITkZzR2Fia0hiRHQ1X3gyNDF6TlhoTmVKV3Q1RDdOQzh4WUNWQmhRME5wRWFpUkNpcjNZcGU1T0dDMkdnVy15MFVvRmk4UWJ2ZGNPUXBSajhaX1JzOUVLNGVLTXNuOG1RcjjSAYQBQVVfeXFMTnVtMUhwaGdfN2NiSmxCRGliVU1lSEdsZHZxWGE2X0k2bGd3TU5CcmFqdDRnaXoyTlRGb19ob3RsaUdkUDZtN1RmUk02bEtRUTNMWl9lVWx4ckd5bmZUd0VVdnNic1VZcXhsbjJkNXVMZWNEck43UmU4b1JLeXhJM0V6WlVx?oc=5",
-          "source": "Pulse 2.0",
-          "publishedAt": "2026-01-28T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Tranzpay and INTX unveil unified payments for insurers",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOanVmRUxMNW1QTFRaNmJmV2FUSWV3VTRIdG9hSGtoVzBjZHh3MW1lSHB3ZU5MdWlkWHdfVzJ6ZnlpZDdjQ0ltZHYwVk1kMHpEd25vOFV0LVVJdVJuM2huYXI3eWZMQ3RhOEhrSDBRTng0UHJsWHpkUHpzalFlQ2szcURqa3hSTzNXYUdkVjdaN0p6NWM?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2025-12-31T08:00:00.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": [
-            "tranzpay"
-          ]
-        },
-        {
-          "title": "One Inc and INTX Partner to Advance Digital Insurance Workflows with Seamless Payment Innovation",
-          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPbWdDSjVLZlZXU21WcXNGZFRORFRQWXNKbVRpWm5RUmdMU2tfZGZYenQzaHpwT0NuMXFuejBDSUZNeWJyS0VZU0ZObmlRTkVsbXh3cHo3YVFQNTVfNEZiMm56eTVNb1U5WVlfUFdaMXRHcEktTW81U2E4X0Zhd2RaTTlveGdfQnF2OVIwU2pHbzlKSW93Q1dGZ1JlMnNQUEJLN251aFlNLXFjOGtTTVhLZHdOenRoWV80YUx5aUlIdzVMT3RzcVREcUZWZGFRbVYyRGtKV1lxUUxNczBlWFBJdEwxMmZ5cmNJ?oc=5",
-          "source": "Business Wire",
-          "publishedAt": "2025-08-06T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "one"
-          ]
         }
       ]
     },
