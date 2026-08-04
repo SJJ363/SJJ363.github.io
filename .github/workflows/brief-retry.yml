@@ -114,3 +114,16 @@ jobs:
       - name: Ping IndexNow
         if: steps.commit.outputs.pushed == 'true'
         run: node scripts/indexnow.js
+
+      # And the same send (rule 10) — this workflow is HALF of what makes
+      # "a fallback costs a late email, never a stand-in one" true. news.yml
+      # mails nothing on a day that fell back, because briefs.json holds only
+      # Claude's writing and there is no entry to mail; without this step the
+      # recovered brief would publish to the site and never reach a single
+      # subscriber. alreadySent() keeps it safe either way: if news.yml did
+      # send today's, this exits quietly rather than mailing it twice.
+      - name: Email the brief
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+        run: node scripts/kit-send.js

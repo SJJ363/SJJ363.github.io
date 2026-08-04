@@ -1480,7 +1480,18 @@ produce all of that consistently — **route new pages through them.**
      link to a page that isn't live. It hangs off
      `steps.commit.outputs.pushed` like the IndexNow ping and fails
      soft for rule 9's reason: the site is already published by then,
-     so a refused broadcast must not redden a good run.
+     so a refused broadcast must not redden a good run. Pages still
+     takes 30–90s to publish that commit, which is why
+     `SEND_DELAY_MIN` is 5 rather than 2 — a daily digest loses
+     nothing to the wait and it removes the race outright.
+     **BOTH writers that can publish a brief carry the step** —
+     `news.yml` and `brief-retry.yml`. That pairing is what makes "a
+     fallback costs a late email, never a stand-in one" true rather
+     than aspirational: on a day that fell back, `news.yml` mails
+     nothing because `briefs.json` has no entry to mail, so a retry
+     without the step would publish the recovered brief to the site
+     and reach not one subscriber. `alreadySent()` is what keeps the
+     pair safe — whichever runs second exits quietly.
    • **Kit records what was sent — this step keeps no local state.**
      The obvious design stamps `emailed` onto the brief entry, and it
      is broken by the ordering above: anything written here lands after

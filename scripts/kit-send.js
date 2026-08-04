@@ -78,9 +78,15 @@ const KEY = process.env.KIT_API_KEY || "";
 const TAG = "insurtech-daily-brief";
 
 /* Kit rejects a send scheduled in the past, and "now" is in the past
-   by the time the request lands. Two minutes is effectively immediate
-   and never trips that. */
-const SEND_DELAY_MIN = 2;
+   by the time the request lands, so this can't be zero.
+   Five rather than two because of what happens either side of it: the
+   mail links to /brief/<date>/, and GitHub Pages takes roughly 30-90
+   seconds to publish the commit this step runs after. At two minutes
+   the margin was thin enough that a slow deploy could put a 404 in
+   front of whoever opens fastest. Nothing here is breaking news —
+   it's a daily digest — so the delay costs nothing and removes the
+   race outright. */
+const SEND_DELAY_MIN = 5;
 
 /* Escapes, then forces the result to pure ASCII by turning every
    non-ASCII code point into a numeric entity.
