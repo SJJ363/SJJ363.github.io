@@ -179,18 +179,24 @@ function emailHtml(b) {
   return parts.join("\n");
 }
 
-function broadcastPayload(b) {
+function broadcastPayload(b, { draft = false } = {}) {
   const sendAt = new Date(Date.now() + SEND_DELAY_MIN * 60 * 1000).toISOString();
   return {
     subject: b.headline,
     preview_text: b.teaser || "",
-    /* Internal label, and the idempotency key alreadySent() reads. */
-    description: `${TAG}-${b.date}`,
+    /* Internal label, and the idempotency key alreadySent() reads.
+       A draft MUST NOT carry the real key: alreadySent() matches on
+       exact equality, so a preview filed under it would convince the
+       next scheduled run that the day's brief had already gone out
+       and suppress the only real send. The `-preview-` infix can
+       never collide with it. */
+    description: draft ? `${TAG}-preview-${b.date}` : `${TAG}-${b.date}`,
     content: emailHtml(b),
     /* Never published to Kit's web feed — see the header. */
     public: false,
     published_at: b.generatedAt || new Date().toISOString(),
-    send_at: sendAt,
+    /* null is what makes it a draft rather than a scheduled send. */
+    send_at: draft ? null : sendAt,
     /* "If nothing is provided, will default to all of your
        subscribers" — the field is required, so an empty array is how
        you provide nothing. */
@@ -200,6 +206,12 @@ function broadcastPayload(b) {
 
 async function main() {
   const dry = process.argv.includes("--dry-run");
+  /* --draft files the brief in Kit as an unsent draft, so it can be
+     read in Kit's own editor and test-mailed from there. That is the
+     ONLY accurate preview: --dry-run prints the HTML this file
+     generates, but a subscriber sees it wrapped in the account's
+     email template, and nothing local can render that. */
+  const draft = process.argv.includes("--draft");
 
   if (!KEY && !dry) {
     console.log("Kit: no KIT_API_KEY set — skipping the email.");
@@ -212,7 +224,7 @@ async function main() {
     return;
   }
 
-  const payload = broadcastPayload(brief);
+  const payload = broadcastPayload(brief, { draft });
 
   if (dry) {
     console.log(`Kit (dry run): would send "${brief.headline}" for ${brief.date}`);
@@ -224,10 +236,16 @@ async function main() {
     return;
   }
 
-  const sent = await alreadySent(brief.date);
-  if (sent) {
-    console.log(`Kit: brief for ${brief.date} already sent (broadcast ${sent.id}).`);
-    return;
+  /* Drafts skip the check deliberately: re-previewing after a prompt
+     or template change is the whole point, and a draft is filed under
+     a description the check can't match anyway. Repeat runs leave
+     repeat drafts — delete them in Kit, they send to nobody. */
+  if (!draft) {
+    const sent = await alreadySent(brief.date);
+    if (sent) {
+      console.log(`Kit: brief for ${brief.date} already sent (broadcast ${sent.id}).`);
+      return;
+    }
   }
 
   const { ok, status, body, text } = await kit("/broadcasts", {
@@ -241,6 +259,12 @@ async function main() {
   }
 
   const id = body?.broadcast?.id ?? body?.id ?? "?";
+  if (draft) {
+    console.log(`Kit: filed brief for ${brief.date} as DRAFT — broadcast ${id}. Nothing was sent.`);
+    console.log("     Open it in Kit → Broadcasts to read it in the real template,");
+    console.log("     and use Kit's own preview/test send to mail yourself a copy.");
+    return;
+  }
   console.log(`Kit: queued brief for ${brief.date} — broadcast ${id}, sending ${payload.send_at}.`);
 }
 

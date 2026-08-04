@@ -1,0 +1,71 @@
+name: Email the brief (manual)
+
+# Dispatch-only, for the reason topic-briefs.yml and glossary.yml are
+# (rule 3d-i): the scheduled send lives inside news.yml and only fires
+# after a refresh actually pushes, so there is otherwise no way to
+# preview a change to the mail, or to re-send a brief whose send was
+# refused, without firing the whole refresh — which would spend the
+# day's brief budget alongside it.
+#
+# It writes nothing, so unlike every other workflow here it needs no
+# site-write lock, no git add pathspec and no IndexNow ping (rule 9's
+# "a new workflow that commits pages needs all three" — this one
+# commits nothing, so it needs none of them). It still checks out
+# github.ref rather than the triggering SHA, so a preview is built
+# from the brief that is actually published (rule 3b-iv).
+#
+#   draft — files the brief in Kit as an unsent draft. Nothing is
+#           mailed to anybody. Open it in Kit → Broadcasts to see it
+#           in the real email template and test-send it to yourself.
+#           This is the only accurate preview: --dry-run prints the
+#           HTML we generate, not what a subscriber receives.
+#   send  — the real thing. Idempotent: if the day's brief has already
+#           gone out, alreadySent() finds it and this exits quietly.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "draft = file a preview in Kit, send = mail it for real"
+        type: choice
+        options: [draft, send]
+        default: draft
+
+permissions:
+  contents: read
+
+jobs:
+  email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      # Fails loudly without the secret rather than degrading, for the
+      # reason topic-briefs.yml does: a workflow that does exactly one
+      # thing should not report success for doing nothing.
+      - name: Check credentials
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+        run: |
+          if [ -z "$KIT_API_KEY" ]; then
+            echo "No KIT_API_KEY secret set — nothing to send with."
+            exit 1
+          fi
+
+      - name: Send
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+        run: |
+          if [ "${{ inputs.mode }}" = "draft" ]; then
+            node scripts/kit-send.js --draft
+          else
+            node scripts/kit-send.js
+          fi

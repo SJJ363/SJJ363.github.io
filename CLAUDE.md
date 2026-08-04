@@ -1521,6 +1521,28 @@ produce all of that consistently — **route new pages through them.**
      It also uses `aria-label` rather than an id/label pair, because
      ids must be unique per page and this markup is emitted from three
      places.
+   **It has a dispatch-only workflow, `email.yml`, for the reason
+   `topic-briefs.yml` and `glossary.yml` do (rule 3d-i):** the
+   scheduled send is buried inside `news.yml` and only fires after a
+   refresh pushes, so there is otherwise no way to preview a change to
+   the mail, or re-send a brief whose send was refused, without firing
+   the whole refresh and spending the day's brief budget alongside it.
+   It commits nothing, so it is the one writer-adjacent workflow that
+   needs neither the `site-write` lock, the `git add` pathspec, nor
+   the IndexNow ping — rule 9's trio applies to workflows that commit
+   pages, and this one doesn't. It still checks out `github.ref`
+   (rule 3b-iv), so a preview is built from the published brief.
+   Its `draft` mode is the **only accurate preview**, and that is
+   worth stating because the obvious one isn't: `--dry-run` prints the
+   HTML this script generates, but a subscriber sees that HTML wrapped
+   in the account's email template, and nothing local can render it.
+   `--draft` files the brief in Kit unsent, to be read in Kit's own
+   editor and test-mailed from there. **A draft must never carry the
+   real `description`** — `alreadySent()` matches on exact equality,
+   so a preview filed under the live key would convince the next
+   scheduled run that the day's brief had gone out and suppress the
+   only real send; hence the `-preview-` infix, and hence drafts
+   skipping the check rather than being blocked by it.
    `KIT_API_KEY` is a repo secret. Without it the step logs and skips,
    so a fork does nothing rather than mailing under someone else's
    account — the same posture `indexnow.js` takes toward a missing key.
