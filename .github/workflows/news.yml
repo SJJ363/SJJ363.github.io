@@ -321,3 +321,17 @@ jobs:
       - name: Ping IndexNow
         if: steps.commit.outputs.pushed == 'true'
         run: node scripts/indexnow.js
+
+      # Mail the day's brief to Kit subscribers (rule 10). Last step of
+      # the job, and after the push for a reason: the mail links to
+      # /brief/<date>/, so sending earlier would deliver a link to a
+      # page that isn't live yet. Kit itself records what has already
+      # gone out — this step keeps no local state, because anything it
+      # wrote here would land after `Commit if changed` and never be
+      # pushed. Fails soft: the site is already published by here, so a
+      # refused broadcast must not turn a good publish into a red run.
+      - name: Email the brief
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+        run: node scripts/kit-send.js

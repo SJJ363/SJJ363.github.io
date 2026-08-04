@@ -236,7 +236,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=33" />
+  <link rel="stylesheet" href="/style.css?v=34" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="alternate" type="application/rss+xml" title="Insurtech Daily — The Brief" href="/feed.xml" />
   <script src="/nav.js?v=1" defer></script>`;
@@ -445,7 +445,44 @@ const FOOT_LINKS = `    <p class="foot-links"><a href="/glossary/">Insurance glo
       <a href="/feed.xml">Brief RSS</a> ·
       <a href="${FUNDING_FEED.href}">Funding RSS</a></p>`;
 
-const FOOTER = `  <footer class="site-footer">
+/* ── The email signup, written here and nowhere else (rule 10) ──
+
+   Every other asset on this site waits to be found: a page waits for
+   a crawler, a feed waits for someone who already runs a reader. This
+   is the only surface that brings a reader back without either, which
+   is why it sits on every generated page rather than only on the two
+   that hold the brief.
+
+   The form posts straight to Kit's own endpoint, so it works with no
+   JavaScript at all — rule 5's requirement applied to the one control
+   here that isn't an enhancement. There is no backend to add, which
+   is what makes it viable on GitHub Pages.
+
+   target="_blank" is deliberate and is the whole reason a plain HTML
+   form is acceptable: without it, subscribing NAVIGATES THE READER
+   OFF THE SITE to Kit's confirmation page, so the cost of a signup
+   is the session. The confirmation opens beside us instead.
+
+   No id/label pair, an aria-label instead: ids must be unique per
+   page and this block is emitted from three places (FOOTER here,
+   plus the two markers). An aria-label cannot collide. */
+const SUBSCRIBE_FORM_ACTION = "https://app.kit.com/forms/9761525/subscriptions";
+
+const SUBSCRIBE = `  <section class="subscribe">
+    <h2 class="subscribe-h">Get the brief by email</h2>
+    <p class="subscribe-dek">One email a day: what moved in insurtech, and why it matters.</p>
+    <form class="subscribe-form" action="${SUBSCRIBE_FORM_ACTION}" method="post" target="_blank" rel="noopener">
+      <input class="subscribe-input" type="email" name="email_address"
+             aria-label="Your email address" placeholder="you@example.com"
+             required autocomplete="email" />
+      <button class="subscribe-btn" type="submit">Subscribe</button>
+    </form>
+    <p class="subscribe-fine">Free. Unsubscribe any time.</p>
+  </section>`;
+
+const FOOTER = `${SUBSCRIBE}
+
+  <footer class="site-footer">
     <p class="foot-desc">
       <b>Insurtech Daily</b> is an aggregator of publicly available insurtech headlines.
       Every story links to its original source.
@@ -4271,6 +4308,36 @@ function injectFootLinks() {
   console.log(`  ✓ footer hub links on ${n} hand-authored page${n === 1 ? "" : "s"}`);
 }
 
+/* ── The signup form on the two hand-authored pages (rule 10) ──
+
+   Generated pages take SUBSCRIBE through FOOTER; these two don't go
+   through it, so they take the identical markup through a marker,
+   refreshed every build — the rule 2d pattern, for the rule 2d
+   reason. A hand-typed second copy would hold a stale form id the
+   day the form is rebuilt, and a signup form that silently posts
+   into a dead endpoint fails in the one direction nobody notices:
+   the reader sees a success page and never hears from us again.
+
+   index.html places its marker directly under the brief rather than
+   in the footer, because that is where a reader who just finished
+   the thing they'd be subscribing to actually is. companies.html has
+   no brief, so its marker sits in the footer like everywhere else.
+   One block per page either way — never both. ── */
+const SUBSCRIBE_PAGES = ["index.html", "companies.html"];
+
+function injectSubscribe() {
+  let n = 0;
+  for (const file of SUBSCRIBE_PAGES) {
+    const p = path.join(ROOT, file);
+    if (!fs.existsSync(p)) continue;
+    const html = fs.readFileSync(p, "utf8");
+    const next = replaceBlock(html, "SUBSCRIBE", SUBSCRIBE);
+    if (next !== html) fs.writeFileSync(p, next);
+    n++;
+  }
+  console.log(`  ✓ email signup on ${n} hand-authored page${n === 1 ? "" : "s"}`);
+}
+
 /* ══════════════════════════════════════════════════════════════
    The homepage, pre-rendered (rule 5, on the page that needed it)
 
@@ -5459,6 +5526,7 @@ function main() {
   injectAnalytics();
   injectSocial();
   injectFootLinks();
+  injectSubscribe();
   injectHomepage(news, db);
   injectCompaniesIndex(db);
   buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked, terms, markets);

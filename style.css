@@ -572,6 +572,73 @@ main {
    Footer
    ============================================================ */
 
+/* ── Email signup (rule 10) ───────────────────────────────────
+   The only surface here that brings a reader back without a crawler
+   or an RSS reader, which is why it is on every generated page and
+   not just the two that carry the brief. An accent rule above it
+   rather than the footer's ink rule: this is something to act on,
+   not the end of the document.
+   No new component vocabulary — the field reuses .search-wrap's
+   recessed-paper treatment and the button is the one accent block on
+   the page, so the phone breakpoints have nothing new to measure. */
+.subscribe {
+  max-width: var(--maxw); margin: 48px auto 0;
+  padding: 24px var(--gutter) 0;
+  border-top: 2px solid var(--accent);
+}
+.subscribe-h {
+  margin: 0; font-family: var(--serif); font-weight: 600;
+  font-size: 1.12rem; color: var(--ink); letter-spacing: -0.01em;
+}
+.subscribe-dek {
+  margin: 5px 0 0; max-width: 56ch;
+  color: var(--ink-3); font-size: 0.88rem; line-height: 1.55;
+}
+.subscribe-form { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+.subscribe-input {
+  flex: 1 1 240px; min-width: 0;
+  padding: 10px 13px;
+  background: var(--paper-2);
+  border: 1px solid var(--rule); border-radius: 2px;
+  color: var(--ink); font-family: var(--sans); font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.subscribe-input::placeholder { color: var(--ink-3); }
+.subscribe-input:focus { border-color: var(--accent); background: var(--paper); }
+.subscribe-btn {
+  flex: 0 0 auto;
+  padding: 10px 20px;
+  background: var(--accent); color: var(--paper);
+  border: 1px solid var(--accent); border-radius: 2px;
+  font-family: var(--sans); font-size: 0.86rem; font-weight: 600;
+  letter-spacing: 0.02em; cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.subscribe-btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+.subscribe-fine {
+  margin: 9px 0 0; font-size: 0.72rem; color: var(--ink-4);
+  text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500;
+}
+/* The button drops to its own row before the field gets too narrow to
+   show a whole address — measured at 360px, the narrowest row the
+   phone breakpoints cover (rule 2b). */
+@media (max-width: 620px) { .subscribe-btn { flex: 1 1 100%; } }
+/* index.html places the block INSIDE <main>, directly under the brief,
+   because that is where a reader who just finished the thing they'd be
+   subscribing to actually is. main already owns the column and the
+   gutter, so don't apply either a second time. Everywhere else the
+   block is a sibling of <footer> and keeps the rules above. */
+main > .subscribe {
+  max-width: none;
+  margin-left: 0; margin-right: 0;
+  padding-left: 0; padding-right: 0;
+  /* Sibling-of-footer placement gets its gap from .site-footer's own
+     margin; in-main there is nothing below to provide one, so the
+     fine print would sit on top of the toolbar. */
+  margin-bottom: 30px;
+}
+
 .site-footer {
   max-width: var(--maxw); margin: 48px auto 0;
   padding: 28px var(--gutter) 52px;

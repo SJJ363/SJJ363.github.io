@@ -53,7 +53,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/style.css?v=33" />
+  <link rel="stylesheet" href="/style.css?v=34" />
   <!-- Static and root-relative on purpose, so unlike the OG block this
        cannot drift out of sync with seo.js — see HEAD_ASSETS there. -->
   <link rel="alternate" type="application/rss+xml" title="Insurtech Daily — The Brief" href="/feed.xml" />
@@ -374,6 +374,24 @@
       </div>
     </section>
 <!-- /SEO:BRIEF -->
+
+    <!-- Email signup, written by seo.js (rule 10). Directly under the
+         brief on purpose: this is the one page where the reader has
+         just finished the thing they'd be subscribing to. Never
+         hand-edit inside the marker — the next build overwrites it. -->
+    <!-- SEO:SUBSCRIBE -->
+  <section class="subscribe">
+    <h2 class="subscribe-h">Get the brief by email</h2>
+    <p class="subscribe-dek">One email a day: what moved in insurtech, and why it matters.</p>
+    <form class="subscribe-form" action="https://app.kit.com/forms/9761525/subscriptions" method="post" target="_blank" rel="noopener">
+      <input class="subscribe-input" type="email" name="email_address"
+             aria-label="Your email address" placeholder="you@example.com"
+             required autocomplete="email" />
+      <button class="subscribe-btn" type="submit">Subscribe</button>
+    </form>
+    <p class="subscribe-fine">Free. Unsubscribe any time.</p>
+  </section>
+<!-- /SEO:SUBSCRIBE -->
 
     <!-- Toolbar -->
     <div class="controls" id="controls">

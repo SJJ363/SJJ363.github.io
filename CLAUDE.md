@@ -1450,6 +1450,83 @@ produce all of that consistently — **route new pages through them.**
    the step — for the reason rule 3b-iv gives about the lock and the
    `ref`: these are one mechanism, not three.
 
+10. **The brief goes out by email, and that is the first surface here
+   that doesn't wait to be found.** `scripts/kit-send.js` posts the
+   day's brief to Kit as a broadcast; the signup form is written by
+   `seo.js` and reaches every page.
+   Everything else on this site depends on someone else's machinery
+   deciding to show up. A page waits for a crawler, and rule 9 is a
+   whole file written because that wait is the scarcest resource on a
+   young domain. A feed waits for someone who already runs a reader,
+   which is a shrinking audience. Email is the only channel that
+   compounds on its own: a subscriber is a returning reader who costs
+   nothing to reach twice and is immune to a ranking change. It also
+   fixes an omission — the site had **no retention mechanism at all**,
+   so every visitor was drive-by, and the one asset worth coming back
+   for (rule 3b's brief, the only original writing here) had no way to
+   ask.
+   Kit is the provider because its free tier is the only one whose
+   limits a *daily* send doesn't immediately break: 10,000 subscribers
+   and unlimited sends, where Mailchimp's free plan is 1,000 sends a
+   month and Brevo's 300 a day cap the list at 300. API access is not
+   plan-gated, so the automation is free too. The ceiling is real but
+   distant, and the exit is cheap — Kit exports subscribers as CSV on
+   any plan, so **portability is the guarantee here, not perpetuity**;
+   if the terms move, the list moves and only the one API call is
+   rebuilt.
+   Six rules:
+   • **The mail goes out AFTER the push, as the last step of the job.**
+     It links to `/brief/<date>/`, so sending any earlier delivers a
+     link to a page that isn't live. It hangs off
+     `steps.commit.outputs.pushed` like the IndexNow ping and fails
+     soft for rule 9's reason: the site is already published by then,
+     so a refused broadcast must not redden a good run.
+   • **Kit records what was sent — this step keeps no local state.**
+     The obvious design stamps `emailed` onto the brief entry, and it
+     is broken by the ordering above: anything written here lands after
+     `Commit if changed` and is never pushed (rule 3e's dirty-directory
+     failure, in a costlier direction), so the next run mails the same
+     brief to everyone again. So the broadcast's `description` carries
+     `insurtech-daily-brief-<date>` and `alreadySent()` looks for it.
+     The record then lives in the same system as the send, and survives
+     a failed push, a re-run, or a checkout elsewhere.
+   • **Only Claude's briefs are sent, and only the newest one.** The
+     first falls out of rule 3b for free — `briefs.json` holds nothing
+     else — so a fallback day mails nothing and `brief-retry.yml` mails
+     it when a real brief lands: a late email, never a stand-in one.
+     The second is not "every unsent brief", which reads a ten-entry
+     archive on the first run and sends ten times.
+   • **`public: false`.** Kit will publish a broadcast to its own web
+     feed and creator profile, putting a second copy of the brief on
+     kit.com competing with `/brief/<date>/` for the same query — the
+     duplication `collectMonths()` and `PERIOD_DEAL_CAP` exist to
+     prevent (rule 3c-i), one domain over.
+   • **The form is one block per page, written in `seo.js` and nowhere
+     else.** Generated pages take `SUBSCRIBE` through `FOOTER`;
+     `index.html` and `companies.html` take the identical markup
+     through `<!-- SEO:SUBSCRIBE -->` markers (rule 2d's pattern, for
+     rule 2d's reason — a hand-typed copy holds a stale form id the day
+     the form is rebuilt, and a signup posting into a dead endpoint
+     fails in the one direction nobody notices: the reader sees success
+     and never hears from us). `index.html` places its marker **inside
+     `<main>`, under the brief**, because that is where a reader who
+     just finished the thing they'd subscribe to actually is; hence the
+     `main > .subscribe` reset, since `main` already owns the column
+     and the gutter. Everywhere else it is a sibling of `<footer>`.
+   • **`target="_blank"` is load-bearing, not a flourish.** The form
+     posts straight to Kit, so it works with no JS at all (rule 5) and
+     needs no backend, which is what makes it possible on GitHub Pages.
+     But a plain post *navigates the reader off the site* to Kit's
+     confirmation page, so the cost of a signup would be the session.
+     It also uses `aria-label` rather than an id/label pair, because
+     ids must be unique per page and this markup is emitted from three
+     places.
+   `KIT_API_KEY` is a repo secret. Without it the step logs and skips,
+   so a fork does nothing rather than mailing under someone else's
+   account — the same posture `indexnow.js` takes toward a missing key.
+   The stylesheet gained `.subscribe-*`, so this **did** need a `?v=`
+   bump in all three places (rule 3c-i).
+
 ### Local check
 
 ```bash
@@ -1457,6 +1534,7 @@ node scripts/schedule.js       # what the workflow would decide right now
 node scripts/og.js             # redraw the social cards (needs Chrome; only after a design change)
 node scripts/seo.js            # regenerate pages, sitemap, robots, structured data
 node scripts/indexnow.js --dry-run   # which URLs the last commit would submit
+node scripts/kit-send.js --dry-run   # the email that would go out, rendered
 python3 -m http.server 8099    # serve root; visit /company/<slug>/ to spot-check
 ```
 
