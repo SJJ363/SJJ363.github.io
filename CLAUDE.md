@@ -1501,6 +1501,31 @@ produce all of that consistently — **route new pages through them.**
      kit.com competing with `/brief/<date>/` for the same query — the
      duplication `collectMonths()` and `PERIOD_DEAL_CAP` exist to
      prevent (rule 3c-i), one domain over.
+   • **The headline block under the brief is TEXT, not links, and
+     that is the whole point of it.** Rule 3h calls syndicating the
+     wire "the whole mistake" — every item is another outlet's
+     headline pointing at another outlet's URL, so a subscriber is
+     sent off this site on every one. Naming the outlet without
+     linking it keeps the scannable substance a reader wants (is
+     today worth my time?) while every click in the mail still lands
+     on our own pages, which is what the CTA underneath is for.
+     `topStories()` imports **`wireThreads()` from `seo.js`** rather
+     than regrouping: re-reports must collapse here exactly as they
+     do on the homepage, or the mail advertises five stories that are
+     one story five outlets ran (rule 5a, one surface further out).
+   • **The payload is forced to pure ASCII.** `escHtml()` turns every
+     non-ASCII code point into a numeric entity, because trade
+     headlines are full of curly quotes, em dashes and accented names
+     and a mail client has no `<meta charset>` to correct a wrong
+     guess the way a browser does. Entities carry no charset
+     dependency, so they survive whatever the client decides.
+   • **Styling is inline, and the fonts are stacks.** Mail clients
+     strip `<style>` blocks and Gmail strips `@font-face`, so the
+     palette is `style.css`'s `:root` written inline and the faces
+     are the Georgia/Helvetica fallbacks that stylesheet already
+     declares. The CTA is the table-cell button pattern, since
+     padding on an `<a>` does not survive Outlook's Word renderer.
+     Kit's template still owns the outer wrapper and the footer.
    • **The form is one block per page, written in `seo.js` and nowhere
      else.** Generated pages take `SUBSCRIBE` through `FOOTER`;
      `index.html` and `companies.html` take the identical markup

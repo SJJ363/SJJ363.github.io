@@ -5546,4 +5546,19 @@ if (require.main === module) {
   }
 }
 
-module.exports = { head, SITE, companyPageHtml, briefPageHtml, clamp, isoDate, descFromProfile };
+/* wireThreads/wireLead are exported for kit-send.js, so the email's
+   "on the wire" section groups re-reports exactly the way the site
+   does. Rule 5a's "keep the two in step" applied to a third reader:
+   an email that counts 140 stories where the page shows 128 threads
+   is the same bug one surface further out. */
+module.exports = {
+  head,
+  SITE,
+  companyPageHtml,
+  briefPageHtml,
+  clamp,
+  isoDate,
+  descFromProfile,
+  wireThreads,
+  wireLead,
+};

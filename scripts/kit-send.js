@@ -82,12 +82,24 @@ const TAG = "insurtech-daily-brief";
    and never trips that. */
 const SEND_DELAY_MIN = 2;
 
+/* Escapes, then forces the result to pure ASCII by turning every
+   non-ASCII code point into a numeric entity.
+   The second half matters more than it looks. Trade headlines are
+   full of curly quotes, em dashes and accented company names —
+   "It's How We've Always Done It", Münchener, Peña — and unlike a
+   browser, a mail client that guesses the wrong charset has no
+   <meta> to correct it and renders them as â€œ mojibake. Entities
+   carry no charset dependency at all, so they survive whatever the
+   client decides. The /u flag makes the class match whole code
+   points, so an astral character (an emoji in a headline) encodes as
+   one entity rather than two broken surrogate halves. */
 const escHtml = (s) =>
   String(s == null ? "" : s)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+    .replace(/"/g, "&quot;")
+    .replace(/[^\x20-\x7E\n\t]/gu, (c) => `&#${c.codePointAt(0)};`);
 
 function loadBriefs() {
   const p = path.join(ROOT, "data", "briefs.json");
@@ -100,6 +112,46 @@ function loadBriefs() {
     console.log(`Kit: could not read briefs.json — ${err.message}`);
     return [];
   }
+}
+
+/* The wire's own thread grouping, imported rather than reimplemented
+   (rule 5a): re-reports of one story must collapse here exactly as
+   they do on the homepage, or the email advertises five "stories"
+   that are one story five outlets ran. seo.js is guarded by
+   require.main, so importing it builds nothing. */
+function topStories(n = WIRE_ITEMS) {
+  let wireThreads;
+  try {
+    ({ wireThreads } = require("./seo.js"));
+  } catch (err) {
+    console.log(`Kit: wire section skipped — ${err.message}`);
+    return [];
+  }
+
+  const p = path.join(ROOT, "data", "news.json");
+  if (!fs.existsSync(p)) return [];
+  let articles = [];
+  try {
+    articles = JSON.parse(fs.readFileSync(p, "utf8")).articles || [];
+  } catch (err) {
+    console.log(`Kit: could not read news.json — ${err.message}`);
+    return [];
+  }
+
+  /* Widen until something is there, the way wireLead() does: a quiet
+     night must still produce a section rather than an empty heading. */
+  const now = Date.now();
+  let pool = [];
+  for (const hours of [24, 48, 72]) {
+    pool = articles.filter((a) => a.timestamp && now - a.timestamp <= hours * 3.6e6);
+    if (pool.length >= n) break;
+  }
+  if (!pool.length) pool = articles;
+
+  return wireThreads(pool)
+    .map((g) => g.head)
+    .sort((a, b) => (b.score || 0) - (a.score || 0))
+    .slice(0, n);
 }
 
 /* The newest brief by Central date (rule 3b-ii stamps `date`, so no
@@ -146,37 +198,130 @@ async function alreadySent(date) {
   return hit || null;
 }
 
-/* Kit wraps this in the account's template, so it wants article
-   markup and not a document: no <html>, no <style>, nothing that
-   assumes a stylesheet survives the trip into a mail client. */
-function emailHtml(b) {
-  const briefUrl = `${ORIGIN}/brief/${b.date}/`;
-  const parts = [];
+/* ── Styling ──────────────────────────────────────────────────
+   Kit wraps this in the account's template, so it wants article
+   markup and not a document: no <html>, no <style>. Mail clients
+   strip <style> blocks (and Gmail strips @font-face), so everything
+   here is INLINE and every font is a stack that resolves on the
+   recipient's machine — Georgia standing in for Newsreader and
+   Helvetica for Libre Franklin, which is exactly what style.css
+   already falls back to. The palette is style.css's :root, with the
+   rule colour flattened from rgba onto paper because email clients
+   can't be relied on to composite alpha. */
+const C = {
+  paper: "#f7f4ee",
+  ink: "#1c1a15",
+  ink2: "#45413a",
+  ink3: "#837d70",
+  accent: "#9a2b1e",
+  rule: "#d9d5cc",
+};
+const SERIF = "Georgia, 'Times New Roman', Times, serif";
+const SANS = "Helvetica, Arial, sans-serif";
 
-  if (b.teaser) parts.push(`<p><em>${escHtml(b.teaser)}</em></p>`);
-  parts.push(`<h2>What's happening</h2>`, `<p>${escHtml(b.whatsHappening)}</p>`);
-  if (b.whyItMatters) {
-    parts.push(`<h2>Why it matters</h2>`, `<p>${escHtml(b.whyItMatters)}</p>`);
+/* How many wire headlines ride along under the brief. Enough to show
+   what kind of day it was, few enough that the call to action isn't
+   buried under a second newsletter. */
+const WIRE_ITEMS = 5;
+
+const rule = (m = "26px") =>
+  `<div style="border-top:1px solid ${C.rule};font-size:0;line-height:0;margin:${m} 0;">&nbsp;</div>`;
+
+const kicker = (t) =>
+  `<div style="font-family:${SANS};font-size:11px;font-weight:bold;letter-spacing:0.14em;text-transform:uppercase;color:${C.accent};margin:0 0 14px;">${escHtml(t)}</div>`;
+
+const h2 = (t) =>
+  `<h2 style="font-family:${SERIF};font-weight:normal;font-size:21px;line-height:1.25;color:${C.ink};margin:28px 0 10px;">${escHtml(t)}</h2>`;
+
+const para = (t) =>
+  `<p style="font-family:${SANS};font-size:16px;line-height:1.62;color:${C.ink2};margin:0 0 16px;">${escHtml(t)}</p>`;
+
+function longDate(d) {
+  const dt = new Date(`${d}T12:00:00Z`);
+  if (isNaN(dt)) return "";
+  return dt.toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
+/* The bulletproof-button pattern: a table cell carries the fill, so
+   it survives Outlook's Word renderer, where padding on an <a> does
+   not. */
+function cta(href, label) {
+  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:24px 0 4px;"><tr><td bgcolor="${C.accent}" style="border-radius:2px;">
+  <a href="${escHtml(href)}" style="display:inline-block;padding:13px 24px;font-family:${SANS};font-size:15px;font-weight:bold;color:${C.paper};text-decoration:none;">${escHtml(label)} &rarr;</a>
+</td></tr></table>`;
+}
+
+/* Headlines ride along as TEXT, not links, and that is the whole
+   design decision here. Rule 3h calls syndicating the wire "the
+   whole mistake": every item on it is another outlet's headline
+   pointing at another outlet's URL, so a subscriber is sent off this
+   site on every one and we get nothing back. Naming the outlet
+   without linking it keeps the scannable substance — a reader can
+   see whether today matters to them — while every actual click in
+   this email still lands on our own pages. */
+function wireBlock(stories) {
+  if (!stories.length) return "";
+  const rows = stories
+    .map(
+      (a) =>
+        `<div style="margin:0 0 15px;">
+  <div style="font-family:${SERIF};font-size:17px;line-height:1.35;color:${C.ink};">${escHtml(a.title)}</div>
+  <div style="font-family:${SANS};font-size:11px;font-weight:bold;letter-spacing:0.08em;text-transform:uppercase;color:${C.ink3};margin-top:4px;">${escHtml(a.source || "")}</div>
+</div>`
+    )
+    .join("\n");
+  /* Not "Also on the wire": the brief's lead story is usually the
+     wire's top story too, so a heading promising *other* news would
+     be wrong on most days. */
+  return `${rule()}\n${kicker("Today's top headlines")}\n${rows}`;
+}
+
+function emailHtml(b, stories = []) {
+  const briefUrl = `${ORIGIN}/brief/${b.date}/`;
+  const p = [];
+
+  /* Masthead, then the date. The date carries the permalink to
+     /brief/<date>/ — the CTA now points at the wire, so this is what
+     keeps the brief's own page one tap away. */
+  p.push(
+    `<div style="font-family:${SANS};font-size:11px;font-weight:bold;letter-spacing:0.16em;text-transform:uppercase;color:${C.accent};margin:0 0 7px;">Insurtech Daily &middot; The Brief</div>`,
+    `<div style="font-family:${SANS};font-size:13px;color:${C.ink3};margin:0;"><a href="${escHtml(briefUrl)}" style="color:${C.ink3};text-decoration:none;">${escHtml(longDate(b.date))}</a></div>`,
+    rule("20px")
+  );
+
+  if (b.teaser) {
+    p.push(
+      `<p style="font-family:${SERIF};font-style:italic;font-size:20px;line-height:1.45;color:${C.ink};margin:0 0 4px;">${escHtml(b.teaser)}</p>`
+    );
   }
 
-  parts.push(
-    `<p><a href="${escHtml(briefUrl)}"><strong>Read this brief on Insurtech Daily &rarr;</strong></a></p>`,
-    `<hr />`
-  );
+  p.push(h2("What's happening"), para(b.whatsHappening));
+  if (b.whyItMatters) p.push(h2("Why it matters"), para(b.whyItMatters));
+
+  p.push(wireBlock(stories));
+  p.push(cta(`${ORIGIN}/`, "See the rest of today's stories on The Wire"));
+  p.push(rule());
 
   const counts =
     b.storyCount && b.sourceCount
       ? `Written from ${b.storyCount} stories across ${b.sourceCount} sources. `
       : "";
+  const small = `font-family:${SANS};font-size:12px;line-height:1.6;color:${C.ink3};margin:0;`;
+  const a = `color:${C.accent};text-decoration:underline;`;
 
-  parts.push(
-    `<p><small>${escHtml(counts)}` +
-      `<a href="${escHtml(ORIGIN)}/">The wire</a> &middot; ` +
-      `<a href="${escHtml(ORIGIN)}/funding/">Funding tracker</a> &middot; ` +
-      `<a href="${escHtml(ORIGIN)}/brief/">Brief archive</a></small></p>`
+  p.push(
+    `<p style="${small}">${escHtml(counts)}` +
+      `<a href="${escHtml(ORIGIN)}/funding/" style="${a}">Funding tracker</a> &middot; ` +
+      `<a href="${escHtml(ORIGIN)}/brief/" style="${a}">Brief archive</a></p>`
   );
 
-  return parts.join("\n");
+  return p.filter(Boolean).join("\n");
 }
 
 function broadcastPayload(b, { draft = false } = {}) {
@@ -191,7 +336,7 @@ function broadcastPayload(b, { draft = false } = {}) {
        and suppress the only real send. The `-preview-` infix can
        never collide with it. */
     description: draft ? `${TAG}-preview-${b.date}` : `${TAG}-${b.date}`,
-    content: emailHtml(b),
+    content: emailHtml(b, topStories()),
     /* Never published to Kit's web feed — see the header. */
     public: false,
     published_at: b.generatedAt || new Date().toISOString(),
