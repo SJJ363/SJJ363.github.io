@@ -1474,7 +1474,34 @@ produce all of that consistently — **route new pages through them.**
    any plan, so **portability is the guarantee here, not perpetuity**;
    if the terms move, the list moves and only the one API call is
    rebuilt.
-   Six rules:
+   Seven rules:
+   • **The mail is Monday–Friday; the site is still seven days.** The
+     weekend slot in `schedule.js` is untouched — Saturday and Sunday
+     get a brief, publish it to `/brief/<date>/` and carry it in
+     `feed.xml` exactly as before. Only the send is gated, in
+     `kit-send.js` and **not** as an `if:` on the two workflow steps,
+     so the rule lives in one file and `brief-retry.yml`'s weekend
+     recovery can't slip a send out the side door. An inbox is the one
+     surface here with a cost to the reader: a page waits to be
+     visited and a feed waits to be opened, but a weekend email
+     arrives whether it is wanted or not, and a daily digest of a
+     sector that doesn't trade at weekends is the easiest kind of mail
+     to unsubscribe from. Nothing is lost, because rule 3b-v measures
+     the window from the last *published* brief — Monday's covers back
+     to Friday's by construction, and the skipped days are on the site.
+     **The gate is the brief's own Central date (`mailable()`), never
+     the clock at send time.** Sending is deliberately detached from
+     writing: this step runs after a push that may be hours late (rule
+     3b-iii) and `email.yml` can re-send by hand days later, so a
+     clock test would refuse a legitimate late send of Friday's brief
+     on a Saturday, and would file an 18:00 CT Friday run under
+     Saturday in UTC. `date` is stamped in Central terms by rule
+     3b-ii, so `weekdayOf()` reads the weekday off the calendar string
+     through `Date.UTC` and needs no timezone arithmetic and no DST
+     reasoning at all. **`--dry-run` and `--draft` are exempt** — they
+     reach nobody, and blocking them would kill the preview path on
+     precisely the days there is time to iterate on the template
+     (drafts already skip `alreadySent()` for the same reason).
    • **The mail goes out AFTER the push, as the last step of the job.**
      It links to `/brief/<date>/`, so sending any earlier delivers a
      link to a page that isn't live. It hangs off

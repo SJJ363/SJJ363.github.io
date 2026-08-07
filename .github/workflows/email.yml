@@ -21,6 +21,13 @@ name: Email the brief (manual)
 #           HTML we generate, not what a subscriber receives.
 #   send  — the real thing. Idempotent: if the day's brief has already
 #           gone out, alreadySent() finds it and this exits quietly.
+#
+# The weekday gate (rule 10) applies to `send` here exactly as it does
+# to the scheduled path, and it reads the BRIEF's Central date rather
+# than today's — so re-sending Friday's brief on a Saturday works,
+# while a brief dated Saturday or Sunday is refused whenever it is
+# dispatched. `draft` is exempt, being a preview that reaches nobody:
+# it is the way to check the template on a weekend.
 
 on:
   workflow_dispatch:

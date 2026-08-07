@@ -17,7 +17,31 @@
    exist before the mail goes out. Sending before the push would
    deliver a link to a 404 the moment a subscriber is quick.
 
-   Six rules:
+   Seven rules:
+
+   • THE MAIL IS WEEKDAYS ONLY, THE SITE IS NOT. Saturday and Sunday
+     still get a brief, still publish it to /brief/<date>/ and still
+     carry it in feed.xml — the weekend slot in schedule.js is
+     untouched. Only the send is gated, because an inbox is the one
+     surface here with a cost to the reader: a page waits to be
+     visited and a feed waits to be opened, but a weekend email
+     arrives whether it is wanted or not, and the daily digest of a
+     sector that does not trade at weekends is the easiest kind of
+     mail to unsubscribe from. Nothing is lost — the archive is on
+     the site, and Monday's brief covers the window back to Friday's
+     by construction (rule 3b-v measures from the last *published*
+     brief, so a weekend the mail skipped is a weekend the prose
+     already covered).
+
+     THE GATE IS THE BRIEF'S OWN CENTRAL DATE, NOT THE CLOCK AT SEND
+     TIME, and the difference is not pedantic. Sending is deliberately
+     detached from writing — this step runs after a push that may have
+     been hours late (rule 3b-iii), and email.yml can re-send by hand
+     days later — so a clock test would refuse a legitimate late send
+     of Friday's brief on a Saturday, and would file an 18:00 CT
+     Friday run under Saturday in UTC. `date` is stamped in Central
+     terms by rule 3b-ii, so reading the weekday off the calendar
+     string needs no timezone arithmetic and no DST reasoning at all.
 
    • ONLY CLAUDE'S BRIEFS ARE SENT. This falls out of rule 3b for
      free: briefs.json holds only prose Claude wrote, so a day that
@@ -87,6 +111,10 @@ const TAG = "insurtech-daily-brief";
    it's a daily digest — so the delay costs nothing and removes the
    race outright. */
 const SEND_DELAY_MIN = 5;
+
+/* Which days a brief may be mailed on, as JS weekday numbers — see
+   the header. Monday to Friday; the site still publishes seven. */
+const SEND_DAYS = new Set([1, 2, 3, 4, 5]);
 
 /* Escapes, then forces the result to pure ASCII by turning every
    non-ASCII code point into a numeric entity.
@@ -169,6 +197,30 @@ function newestBrief(briefs) {
     .filter((b) => b && b.date && b.headline && b.by === "claude")
     .sort((a, b) => String(b.date).localeCompare(String(a.date)))[0];
 }
+
+/* The weekday a `YYYY-MM-DD` brief date falls on, read as a plain
+   calendar date. Built through Date.UTC so the answer can't be moved
+   by the runner's timezone: `new Date("2026-08-08")` is midnight UTC,
+   which is still the 7th anywhere west of Greenwich, and this file
+   runs on a UTC runner and a Central laptop both. Returns null for a
+   malformed date, which mailable() reads as "don't send" — the same
+   direction every other guard here fails in. */
+function weekdayOf(date) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(date || ""));
+  if (!m) return null;
+  const [, y, mo, d] = m.map(Number);
+  const t = Date.UTC(y, mo - 1, d);
+  const dt = new Date(t);
+  // Reject a date that doesn't exist (2026-02-31 rolls forward).
+  if (dt.getUTCMonth() !== mo - 1 || dt.getUTCDate() !== d) return null;
+  return dt.getUTCDay();
+}
+
+/* Is this brief one the list should receive? Weekday-only, gated on
+   the brief's own Central date rather than on now — see the header. */
+const mailable = (brief) => SEND_DAYS.has(weekdayOf(brief && brief.date));
+
+const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 async function kit(pathname, init = {}) {
   const res = await fetch(`${API}${pathname}`, {
@@ -413,10 +465,25 @@ async function main() {
     return;
   }
 
+  /* Weekends publish but don't mail (see the header). Checked before
+     the payload is built so a Saturday run does no work at all, and
+     exempting the two paths that reach nobody: --dry-run prints
+     locally and --draft files an unsent draft in Kit. Blocking those
+     would make the preview button dead on exactly the days someone
+     has time to iterate on the template, and neither can leak a
+     weekend send — a draft has no send_at and carries the -preview-
+     description that alreadySent() can never match. */
+  if (!mailable(brief) && !dry && !draft) {
+    const day = DAY_NAMES[weekdayOf(brief.date)] || "an unreadable date";
+    console.log(`Kit: brief for ${brief.date} falls on ${day} — weekends are not mailed.`);
+    return;
+  }
+
   const payload = broadcastPayload(brief, { draft });
 
   if (dry) {
-    console.log(`Kit (dry run): would send "${brief.headline}" for ${brief.date}`);
+    const verb = mailable(brief) ? "would send" : "would SKIP (weekend)";
+    console.log(`Kit (dry run): ${verb} "${brief.headline}" for ${brief.date}`);
     console.log(`  description : ${payload.description}`);
     console.log(`  send_at     : ${payload.send_at}`);
     console.log(`  preview     : ${payload.preview_text}`);
@@ -463,4 +530,4 @@ if (require.main === module) {
   main().catch((err) => console.log(`Kit: ${err.message}`));
 }
 
-module.exports = { emailHtml, newestBrief, broadcastPayload, TAG };
+module.exports = { emailHtml, newestBrief, broadcastPayload, mailable, weekdayOf, TAG };
