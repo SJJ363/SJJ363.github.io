@@ -1615,33 +1615,54 @@ produce all of that consistently — **route new pages through them.**
    faster than Google, and it is what DuckDuckGo and the assistant
    surfaces answer from, which is where the pages built for questions
    rather than news (rules 3e, 3d-i) are actually asked.
-   Six rules:
+   Eight rules:
    • **One endpoint per push, chosen by walking `ENDPOINTS` until one
      accepts.** The protocol has participants share what they receive,
      so a second POST of the same list buys nothing and reads as
      duplicate submission. It is a ladder in the shape
-     `write-brief.js`'s model ladder already uses, and it exists
-     because **the aggregator refuses this host**: every run from at
-     least 2026-08-06 came back `403
+     `write-brief.js`'s model ladder already uses, and it earned its
+     place: from at least 2026-08-06 to 2026-08-08 **the aggregator
+     refused this host**, every run coming back `403
      {"errorCode":"UserForbiddedToAccessSite"}` from
      `api.indexnow.org` *and* from `www.bing.com/indexnow`, while
-     Yandex accepted the byte-identical payload with a 202. The
-     credential is sound — the key file is live at the root, returns
-     200 and contains exactly its own name — so the refusal is Bing's
-     alone, almost certainly because the host is not verified in **Bing
-     Webmaster Tools** (separate from Search Console, which is set up).
-     **The aggregator stays first**, which is the point of ordering
-     rather than replacing: it reaches every participant in one call,
-     so the day Bing verification lands this file needs no edit and
-     goes back to the better route by itself. Until then it costs one
-     failed request per push. A network error advances the ladder too,
-     not just a refusal — one run died on `fetch failed` reaching the
-     aggregator, which a second endpoint would have survived.
+     Yandex accepted the byte-identical payload with a 202. **The
+     aggregator stays first** — the point of ordering rather than
+     replacing, since it reaches every participant in one call — and
+     that is what let the fix land with no edit to this file at all.
+     A network error advances the ladder too, not just a refusal: one
+     run died on `fetch failed` reaching the aggregator, which a
+     second endpoint would have survived.
      **This was invisible for as long as the file existed**, because
      fail-soft keeps the step green and only the log dissents. So the
-     log now names every endpoint it fell past *even on success* — that
-     line is the only evidence the aggregator is still refusing, and it
-     should be read rather than assumed.
+     log names every endpoint it fell past *even on success* — that
+     line is the only evidence of a chronic refusal, and it should be
+     read rather than assumed.
+   • **The key must be minted by Bing, and nothing documents that.**
+     Resolved 2026-08-08 by rotating to a key generated from the
+     **Generate** button on `bing.com/indexnow/getstarted` while
+     signed in against the verified property; the aggregator went to
+     202 and Bing itself to 200 on the same payload that had 403'd
+     minutes earlier. Only the key's provenance changed — same host,
+     same `keyLocation`, same file shape.
+     **Record the dead ends, because every one of them is documented
+     behaviour and all of them are wrong here.** The old key was
+     spec-conformant on every axis: 32 hex characters inside the
+     8–128 range, live at the root, 200 with contents matching its own
+     name exactly, one LF and no BOM, `text/plain; charset=utf-8`,
+     `robots.txt` open, 200 to a bingbot UA. The property *was*
+     verified in **Bing Webmaster Tools** — as `https://insurtechdaily.io/`,
+     the apex matching `/CNAME`, imported from Search Console — and
+     that did not fix it. Both `indexnow.org/documentation` and
+     Bing's own get-started page define 403 as "key not valid (key not
+     found, file found but key not in the file)" and state **no**
+     pre-registration requirement, so the observed behaviour
+     contradicts the published spec in both places.
+     The forward-looking half: **a key rotation must use a
+     Bing-minted key** or this silently reverts to 403 on the
+     aggregator and quietly publishes to Yandex alone. Note also that
+     Yandex's 202 is defined as "received, key validation *pending*" —
+     it is not proof of acceptance, which is why the diagnosis leaned
+     on Bing's 200 rather than on anyone's 202.
    • **The changed set comes from `git diff`, never from the
      filesystem.** `seo.js` rewrites all ~1,400 pages every run and
      git is the only thing here that knows which of them differ.
