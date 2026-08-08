@@ -5363,10 +5363,7 @@ ${header("sectors")}
   )} disclosed</p>
       <p class="dek">
         What the companies in this archive actually sell, taken from
-        ${SITE.name}'s own company profiles. A company appears in every line
-        of business its profile describes, so many appear in more than one. A
-        sector gets a page once it holds ${SECTOR_MIN_COMPANIES} companies and
-        ${SECTOR_MIN_STORIES} stories, so the list grows as the archive does.
+        ${SITE.name}'s own company profiles.
       </p>
     </div>
 
