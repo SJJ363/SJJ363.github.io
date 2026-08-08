@@ -1601,8 +1601,9 @@ produce all of that consistently — **route new pages through them.**
 
 9. **Publishing tells the engines; it doesn't wait to be crawled.**
    `scripts/indexnow.js` runs as the last step of every workflow that
-   pushes, and submits the URLs *that commit* changed to the IndexNow
-   endpoint. Everything here is otherwise discovered by crawl —
+   pushes, and submits the URLs *that commit* changed to the first
+   IndexNow endpoint that accepts them. Everything here is otherwise
+   discovered by crawl —
    `sitemap.xml` lists 925 URLs and then we wait — and on a domain
    this young the crawl budget is the scarcest thing there is, which
    is rule 5a's argument about Google's JS-render pass applied to
@@ -1615,6 +1616,32 @@ produce all of that consistently — **route new pages through them.**
    surfaces answer from, which is where the pages built for questions
    rather than news (rules 3e, 3d-i) are actually asked.
    Six rules:
+   • **One endpoint per push, chosen by walking `ENDPOINTS` until one
+     accepts.** The protocol has participants share what they receive,
+     so a second POST of the same list buys nothing and reads as
+     duplicate submission. It is a ladder in the shape
+     `write-brief.js`'s model ladder already uses, and it exists
+     because **the aggregator refuses this host**: every run from at
+     least 2026-08-06 came back `403
+     {"errorCode":"UserForbiddedToAccessSite"}` from
+     `api.indexnow.org` *and* from `www.bing.com/indexnow`, while
+     Yandex accepted the byte-identical payload with a 202. The
+     credential is sound — the key file is live at the root, returns
+     200 and contains exactly its own name — so the refusal is Bing's
+     alone, almost certainly because the host is not verified in **Bing
+     Webmaster Tools** (separate from Search Console, which is set up).
+     **The aggregator stays first**, which is the point of ordering
+     rather than replacing: it reaches every participant in one call,
+     so the day Bing verification lands this file needs no edit and
+     goes back to the better route by itself. Until then it costs one
+     failed request per push. A network error advances the ladder too,
+     not just a refusal — one run died on `fetch failed` reaching the
+     aggregator, which a second endpoint would have survived.
+     **This was invisible for as long as the file existed**, because
+     fail-soft keeps the step green and only the log dissents. So the
+     log now names every endpoint it fell past *even on success* — that
+     line is the only evidence the aggregator is still refusing, and it
+     should be read rather than assumed.
    • **The changed set comes from `git diff`, never from the
      filesystem.** `seo.js` rewrites all ~1,400 pages every run and
      git is the only thing here that knows which of them differ.

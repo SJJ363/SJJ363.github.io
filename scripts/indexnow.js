@@ -46,10 +46,17 @@
      the host — so rotating it is swapping one committed file, and
      a fork that removes it gets a clean skip rather than a run
      that submits somebody else's URLs under our key.
+   • It submits to ONE endpoint, walking ENDPOINTS until one accepts.
+     The protocol has participants share what they receive, so a
+     second POST of the same list buys nothing. The aggregator is
+     first and currently refuses this host — see ENDPOINTS below for
+     the evidence and for why it is still first.
    • It fails soft, always. This runs after the push has already
      succeeded; the site is live either way, and a search-engine
      ping that 500s must not turn a good publish into a red run.
-     It says so loudly in the log instead.
+     It says so loudly in the log instead — which is exactly how a
+     chronic 403 went unnoticed for as long as this file existed, so
+     the log now names every endpoint it fell past even on success.
 
    Usage:
      node scripts/indexnow.js                # HEAD~1..HEAD
@@ -62,8 +69,48 @@ const path = require("path");
 const { execFileSync } = require("child_process");
 
 const ROOT = path.join(__dirname, "..");
-const ENDPOINT = "https://api.indexnow.org/indexnow";
 const ORIGIN = (process.env.SITE_URL || "https://insurtechdaily.io").replace(/\/+$/, "");
+
+/* ── The endpoints, in preference order ────────────────────────
+   ONE endpoint is submitted to, not all of them: the protocol has
+   participants share what they receive, so a second POST of the same
+   list is redundant at best and looks like duplicate submission at
+   worst. This is a ladder — first 2xx wins and the rest are never
+   called — in the shape write-brief.js's model ladder already uses.
+
+   It exists because the aggregator refuses this host. Every run from
+   at least 2026-08-06 to 2026-08-08 came back
+
+     403 {"errorCode":"UserForbiddedToAccessSite"}
+
+   from api.indexnow.org AND from www.bing.com/indexnow, while Yandex
+   accepted the byte-identical payload with a 202. So the credential is
+   sound — the key file is live at the root, returns 200 and contains
+   exactly its own name — and the refusal is Bing's alone, almost
+   certainly because the host is not verified in Bing Webmaster Tools
+   (which is separate from Search Console).
+
+   The failure was invisible for the reason the fail-soft rule below
+   makes it invisible: the step stays green and only the log says
+   otherwise, so a mechanism written to shorten crawl wait on a young
+   domain submitted nothing for as long as it has existed.
+
+   THE AGGREGATOR STAYS FIRST, and that is the point of ordering rather
+   than replacing. It reaches every participant in one call, so it is
+   the right target the moment it works; leaving it at the head means
+   the day Bing verification lands this file needs no edit and quietly
+   goes back to the better route. Until then it costs one failed
+   request per push, which is nothing against a push that has already
+   rebuilt ~1,400 pages.
+
+   A network error advances the ladder too, not just a refusal — one
+   2026-08-08 run died on `fetch failed` reaching the aggregator, which
+   a second endpoint would have survived. */
+const ENDPOINTS = [
+  "https://api.indexnow.org/indexnow",
+  "https://yandex.com/indexnow",
+  "https://www.bing.com/indexnow",
+];
 
 /* The protocol's own ceiling per request. Nothing here approaches it —
    a full-site rebuild is ~1,400 pages — but a run that somehow exceeded
@@ -144,19 +191,43 @@ function changedUrls(since) {
   return [...urls];
 }
 
-async function submit(key, file, urlList) {
+async function submit(endpoint, key, file, urlList) {
   const body = {
     host: new URL(ORIGIN).host,
     key,
     keyLocation: `${ORIGIN}/${file}`,
     urlList,
   };
-  const res = await fetch(ENDPOINT, {
+  const res = await fetch(endpoint, {
     method: "POST",
     headers: { "Content-Type": "application/json; charset=utf-8" },
     body: JSON.stringify(body),
   });
   return { status: res.status, text: (await res.text().catch(() => "")).slice(0, 300) };
+}
+
+/* 200 accepted; 202 accepted with the key still being validated — both
+   are successes and the second is normal on a first submission. */
+const accepted = (status) => status === 200 || status === 202;
+
+/* Walk the ladder, stopping at the first endpoint that accepts. Returns
+   the endpoint that took it, or null with every attempt for the log —
+   a run that reached nobody should say what each one said rather than
+   only the last, since "403 then fetch failed" and "403 then 403" are
+   different problems. */
+async function submitSomewhere(key, file, urls) {
+  const tried = [];
+  for (const endpoint of ENDPOINTS) {
+    const host = new URL(endpoint).host;
+    try {
+      const { status, text } = await submit(endpoint, key, file, urls);
+      if (accepted(status)) return { endpoint: host, status, tried };
+      tried.push(`${host} HTTP ${status}${text ? ` ${text}` : ""}`);
+    } catch (err) {
+      tried.push(`${host} ${err.message}`);
+    }
+  }
+  return { endpoint: null, tried };
 }
 
 async function main() {
@@ -184,23 +255,26 @@ async function main() {
   }
 
   if (dry) {
-    console.log(`IndexNow (dry run): would submit ${urls.length} URL(s) with key ${file}`);
+    console.log(
+      `IndexNow (dry run): would submit ${urls.length} URL(s) with key ${file}, ` +
+        `trying ${ENDPOINTS.map((e) => new URL(e).host).join(" → ")}`
+    );
     for (const u of urls.slice(0, 20)) console.log("  " + u);
     if (urls.length > 20) console.log(`  … and ${urls.length - 20} more`);
     return;
   }
 
-  try {
-    const { status, text } = await submit(key, file, urls);
-    // 200 accepted; 202 accepted with the key still being validated —
-    // both are successes and the second is normal on the first ever run.
-    if (status === 200 || status === 202) {
-      console.log(`IndexNow: submitted ${urls.length} URL(s) — HTTP ${status}.`);
-    } else {
-      console.log(`IndexNow: submission refused — HTTP ${status}. ${text}`);
-    }
-  } catch (err) {
-    console.log(`IndexNow: submission failed — ${err.message}`);
+  const { endpoint, status, tried } = await submitSomewhere(key, file, urls);
+  if (endpoint) {
+    console.log(`IndexNow: submitted ${urls.length} URL(s) to ${endpoint} — HTTP ${status}.`);
+    // Name what was skipped rather than swallowing it. A run that had to
+    // fall past the aggregator still worked, but it is also the only
+    // evidence that the aggregator is still refusing the host, and that
+    // is a thing worth being able to see from a green step.
+    for (const t of tried) console.log(`  (fell past ${t})`);
+  } else {
+    console.log(`IndexNow: no endpoint accepted ${urls.length} URL(s).`);
+    for (const t of tried) console.log(`  ${t}`);
   }
 }
 
