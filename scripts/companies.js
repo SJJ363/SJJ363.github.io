@@ -131,6 +131,67 @@ const CANON_LIST = {
   // which is a different industry. One verified alias beats a heuristic
   // that is right once and wrong once.
   "American Growth Insurance": ["AGI"],
+  /* One company, two pages: "Faye" (5 stories, the $50M Series C) and
+     "Faye Travel Insurance" (1 story), both the US travel insurtech with
+     app-based claims. It split the coverage, split the funding total and
+     listed the company twice on /sector/travel-insurance/.
+
+     mergePrefixes() cannot reach this one and should not be taught to.
+     It folds "<Name> <type words>" only when EVERY trailing token sits
+     in COMPANY_TYPE, and "travel" is not there — correctly, because it
+     is a line of business rather than a corporate suffix. Adding it
+     would fold any "<Name> Travel" into "<Name>" everywhere, which is
+     the general heuristic rule 3c-i and rule 3c-vii both refuse: a rule
+     broad enough to fix this pair would eventually merge two genuinely
+     different companies, and merging is the worse error. One verified
+     alias instead. */
+  "Faye": ["Faye Travel Insurance"],
+  /* The rest of the same sweep. Each was verified against the ARTICLE
+     TITLES on both records, not the profiles — two model-written
+     summaries of one company agree by construction, so they are the
+     weaker evidence. Leadway is the clearest case in the set: the two
+     records hold the same partnership announcement written up by two
+     outlets, one of which used the short name.
+
+       Leadway   "Leadway, CubeCover, Vitse Partner Insurance meet Tech 5.0"
+       Leadway Assurance
+                 "Leadway Assurance, CubeCover, Vitse Technologies Sign
+                  On As Official Partners For IMT 5.0"
+
+     Go Digit / HDFC ERGO / Shory are a company against its own legal
+     name (…General Insurance, …Insurance Brokers). Tree is "Tree" and
+     "tree DIGITAL INSURANCE AGENCY", one Gulf pet-insurance brand.
+
+     Direction is chosen so the surviving slug KEEPS ITS PROFILE —
+     profiles are keyed by slug (rule 3a-ii), so folding the profiled
+     record into an unprofiled one silently drops the page's only
+     original sentence and, with it, the sector membership that sentence
+     earns. That is why Breeze and Kiwi fold the short name INTO the
+     long one and the rest go the other way. */
+  "Leadway": ["Leadway Assurance"],
+  "Go Digit": ["Go Digit General Insurance"],
+  "HDFC ERGO": ["HDFC ERGO General Insurance"],
+  "Shory": ["Shory Insurance Brokers"],
+  "Tree": ["Tree Digital Insurance Agency"],
+  /* One company either side of a licence: "Kiwi's General Insurance
+     application clears R1 stage", then "Kiwi General Insurance Enters
+     India with Motor Insurance". The long name is canonical here
+     because it holds the coverage and because "Kiwi" alone is a word —
+     mapping the generic form onto the specific one is the safer
+     direction only in a corpus already filtered to insurance, which
+     relevance.js guarantees. Same caveat for Breeze, which is also a
+     US disability insurtech elsewhere but only ever cargo here. */
+  "Kiwi General Insurance": ["Kiwi"],
+  "Breeze Cargo Insurance": ["Breeze"],
+  /* The weakest entry in this block, recorded as such. Both stories are
+     about the Romanian operation — the parent record's only story IS
+     "Digital insurer Anytime launches full commercial rollout in
+     Romania" — so there is no independent parent coverage to keep
+     apart, and merging loses nothing today. But structurally this is
+     the country-arm shape (Ageas UK, MetLife Nepal, Generali Hong
+     Kong), which is deliberately NOT merged elsewhere. Revisit if
+     Anytime picks up coverage outside Romania. */
+  "Anytime": ["Anytime Romania"],
 };
 
 /* ---- Curated splits: one name, two companies ----
