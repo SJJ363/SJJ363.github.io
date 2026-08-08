@@ -236,7 +236,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=34" />
+  <link rel="stylesheet" href="/style.css?v=35" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="alternate" type="application/rss+xml" title="Insurtech Daily — The Brief" href="/feed.xml" />
   <script src="/nav.js?v=1" defer></script>`;
@@ -438,12 +438,30 @@ ${navMarkup(active, currentTopic)}
    Unlike the nav (rule 2b), a sixth item here needs no re-measuring:
    .foot-links is a plain wrapping <p> with a line-height, not a flex row
    tuned to the 375px and 360px breakpoints. */
+/* /funding/statistics/ is here for precisely the reason the funding feed
+   is, and the reason is a mistake this file has already made once. That
+   feed shipped reachable from downloadBlock() alone — two pages, below a
+   60-row table — and had to be given this line afterwards. The
+   statistics page arrived the same shape: linked from the deks of
+   /funding/ and /funding/companies/ and from nowhere else on ~1,470
+   pages. It is one of the two or three things here nobody else
+   publishes, so it gets the route from everywhere rather than earning
+   one later.
+
+   /about/ is the other addition and is the opposite case: nothing links
+   it, it will never rank for anything, and it is the page a reader
+   checks before citing a figure and a crawler looks for before trusting
+   a young domain that publishes numbers daily. It goes last because it
+   is the least likely to be clicked and the most conspicuous by its
+   absence. */
 const FOOT_LINKS = `    <p class="foot-links"><a href="/glossary/">Insurance glossary</a> ·
+      <a href="/funding/statistics/">Funding statistics</a> ·
       <a href="/funding/companies/">Most funded companies</a> ·
       <a href="/market/">Markets</a> ·
       <a href="/topic/">All topics</a> ·
       <a href="/feed.xml">Brief RSS</a> ·
-      <a href="${FUNDING_FEED.href}">Funding RSS</a></p>`;
+      <a href="${FUNDING_FEED.href}">Funding RSS</a> ·
+      <a href="/about/">About</a></p>`;
 
 /* ── The email signup, written here and nowhere else (rule 10) ──
 
@@ -2944,7 +2962,7 @@ ${shown
       </div>`;
 }
 
-function fundingIndexHtml(deals, months, quarters = [], years = [], ranked = []) {
+function fundingIndexHtml(deals, months, quarters = [], years = [], ranked = [], stats = false) {
   const canonical = "/funding/";
   const { total, median, stages, biggest } = fundingSummary(deals);
   const n = deals.length;
@@ -3060,7 +3078,13 @@ ${header("funding")}
       <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
       <p class="dek">
         Compiles insurtech raises with disclosed dollar figures, pulled from
-        across the trade press and deduplicated into one table. For the
+        across the trade press and deduplicated into one table.${
+          stats
+            ? ` For the summary figures — median round by stage, where capital
+        concentrates, this year against last — see the
+        <a href="/funding/statistics/">funding statistics</a>.`
+            : ""
+        } For the
         reporting behind the numbers, see <a href="/topic/funding/">funding coverage</a>,
         or follow new rounds by <a href="${escAttr(FUNDING_FEED.href)}">RSS</a>.
       </p>
@@ -3254,7 +3278,9 @@ ${header("funding")}
         capital raised across all of them. Totals count only rounds a
         publication stated in US dollars, so they are a floor — the
         <a href="/funding/">full tracker</a> lists each round with the
-        reporting it came from, and new rounds land in the
+        reporting it came from, the
+        <a href="/funding/statistics/">funding statistics</a> summarise the
+        archive, and new rounds land in the
         <a href="${escAttr(FUNDING_FEED.href)}">RSS feed</a>.
       </p>
     </div>
@@ -3270,6 +3296,606 @@ ${
 }
 
 ${downloadBlock(deals.length)}
+
+${METHOD_NOTE}
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   /funding/statistics/ — the tracker as findings, not as rows
+
+   Every other funding URL here is a table of rounds, cut by date or
+   by company. This page holds no round table at all, and that is the
+   whole design: it is the only page on the site whose payload is the
+   numbers you get by reading DOWN the archive rather than across a
+   row — the median seed round, what share of capital lands in the
+   handful of rounds over $100M, how this year compares with the same
+   weeks of last year.
+
+   WHY IT IS A PAGE AND NOT A SECTION OF /funding/
+
+   The test these URLs have to pass is collectQuarters()' one: it
+   earns its place on an aggregate that exists nowhere else, or not
+   at all. /funding/ already carries the total, the median and the
+   stage counts, so those are the page's header and not its reason.
+   Its reason is the six blocks below, none of which appears on any
+   other page here, in any period table, or — for insurtech at this
+   size — in anybody else's free reporting.
+
+   It is also the shape of the query. "Insurtech funding statistics"
+   and "average insurtech seed round" are asked constantly and are
+   evergreen the way /glossary/ is; "insurtech funding August 2025"
+   is nobody's search and decays the week after. The tracker was
+   answering the second and had nothing to serve the first.
+
+   THREE RULES
+
+   • No round table, and no link list dressed as one. The moment
+     this page lists rounds it is a fourth copy of /funding/, which
+     is the duplication PERIOD_DEAL_CAP and collectMonths() exist to
+     prevent. Rounds are reachable from every block by their period,
+     stage band or market — one click, not one scroll.
+   • Every derived figure states its own sample. A median over four
+     rounds is arithmetic on noise, so the stage table shows n and
+     drops any stage below STAT_STAGE_MIN rather than printing a
+     number the page can't stand behind. Same for the year-on-year.
+   • The page discloses what it doesn't know, in a block of its own.
+     45% of these rounds carry a stated stage and 16% a named lead —
+     an analyst deciding whether to cite this needs that number more
+     than another aggregate, and stating it up front is the
+     difference between a source and a scrape. It is the same
+     promise METHOD_NOTE makes in prose, made countable.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Below this the page is arithmetic on noise rather than a summary
+   of anything, so it isn't built — the collectMonths() gate applied
+   to a page whose whole content is derived figures. */
+const STAT_MIN_DEALS = 40;
+/* A median needs a sample. Four Series D rounds have a midpoint and
+   it isn't a market rate, and printing it beside Seed's 27 invites
+   exactly the comparison it can't support. */
+const STAT_STAGE_MIN = 8;
+/* Per side of the year-on-year — a comparison drawn from ten rounds
+   a side moves on one outlier. */
+const STAT_YTD_MIN = 12;
+const STAT_MARKET_ROWS = 12;
+
+/* The distribution the tracker's own shape argues for: the archive's
+   median round is ~$13M and its largest is $518M, so a linear axis
+   would put 90% of rounds in one bar. These bands are where the
+   market's own vocabulary sits — a sub-$10M round is early, $100M+
+   is a growth round — and they are round numbers rather than
+   quantiles so the figures survive the next hundred rounds landing. */
+const SIZE_BANDS = [
+  { lo: 0, hi: 10, label: "Under $10M" },
+  { lo: 10, hi: 50, label: "$10M to $50M" },
+  { lo: 50, hi: 100, label: "$50M to $100M" },
+  { lo: 100, hi: Infinity, label: "$100M and above" },
+];
+
+const pct = (part, whole) => (whole ? Math.round((part / whole) * 100) : 0);
+
+/* Year to date against the same calendar window a year earlier.
+
+   This is the one comparison on the site that spans an OPEN period,
+   which partialWhy() forbids everywhere else — and the reason it is
+   allowed here is that the windows are cut to the same month and day
+   at both ends, so neither is short of the other. "2026 so far vs all
+   of 2025" is the comparison that would be dishonest, and it is
+   exactly what a reader does in their head if the page doesn't do it
+   for them.
+
+   The guard that remains is the archive's own start. A prior-year
+   window that begins before collection does is truncated by where
+   this tracker starts rather than by the calendar, which is
+   partialWhy()'s "truncated" case and would report the tracker
+   growing as the market growing. */
+function ytdCompare(deals, archiveStart) {
+  const today = isoDate(new Date().toISOString());
+  const year = +today.slice(0, 4);
+  const md = today.slice(5);
+  if (!archiveStart || archiveStart > `${year - 1}-01-01`) return null;
+  const window = (y) =>
+    deals.filter((d) => {
+      const iso = isoDate(d.publishedAt);
+      return iso.slice(0, 4) === String(y) && iso.slice(5) <= md;
+    });
+  const cur = window(year);
+  const prev = window(year - 1);
+  if (cur.length < STAT_YTD_MIN || prev.length < STAT_YTD_MIN) return null;
+  return { year, through: today, cur, prev };
+}
+
+/* One block builder for the two-column stat tables, so the distribution,
+   the stage table and the quarter table can't drift apart in markup.
+   Reuses .deal-table for the rules and the tabular figures; .stat-table
+   only right-aligns the numeric cells, which a table of amounts wants
+   and a table of headlines does not. */
+function statTable({ caption, head: cols, rows }) {
+  return `    <div class="table-wrap">
+      <table class="deal-table stat-table">
+        <caption class="sr-only">${escHtml(caption)}</caption>
+        <thead>
+          <tr>
+${cols
+  .map((c) => {
+    // `drop` marks a column the phone breakpoint hides. Keyed to the
+    // cell class rather than nth-child for the reason rule 3a-i gives:
+    // these tables run at four and five columns and a positional
+    // selector would hide a different column in each.
+    const cls = [c.num ? "stat-num" : "", c.drop ? "stat-drop" : ""]
+      .filter(Boolean)
+      .join(" ");
+    return `            <th scope="col"${cls ? ` class="${cls}"` : ""}>${escHtml(c.label)}</th>`;
+  })
+  .join("\n")}
+          </tr>
+        </thead>
+        <tbody>
+${rows.join("\n")}
+        </tbody>
+      </table>
+    </div>`;
+}
+
+/* The share bar. Drawn inside the cell rather than as a chart of its
+   own because the number is the point and the bar is the ranking cue —
+   the inverse of monthChart(), where the shape carries a series the
+   numbers alone couldn't. aria-hidden: the figure beside it already
+   says everything the bar does. */
+function shareBar(share) {
+  return `<span class="stat-bar" aria-hidden="true"><i style="width:${Math.max(
+    1,
+    Math.round(share)
+  )}%"></i></span>`;
+}
+
+function statHeadline(cells) {
+  return `    <section class="stat-row">
+${cells
+  .map(
+    (c) =>
+      `      <div class="stat-cell">
+        <span class="stat-n">${escHtml(c.n)}</span>
+        <span class="stat-k">${escHtml(c.k)}</span>${
+        c.sub ? `\n        <span class="stat-sub">${escHtml(c.sub)}</span>` : ""
+      }
+      </div>`
+  )
+  .join("\n")}
+    </section>`;
+}
+
+function fundingStatsHtml(deals, quarters, markets, archiveStart) {
+  const canonical = "/funding/statistics/";
+  const n = deals.length;
+  const total = totalOf(deals);
+  const median = medianOf(deals);
+  const mean = n ? total / n : 0;
+
+  const withStage = deals.filter((d) => d.stage).length;
+  const withLead = deals.filter((d) => d.lead).length;
+  const converted = deals.filter((d) => d.currency && d.currency !== "USD").length;
+
+  // Bands first: the concentration figure out of it is the page's
+  // headline stat and has to be computed before the header is written.
+  const bands = SIZE_BANDS.map((b) => {
+    const list = deals.filter((d) => d.amountM >= b.lo && d.amountM < b.hi);
+    return { ...b, n: list.length, cap: totalOf(list) };
+  }).filter((b) => b.n);
+  const megaBand = bands[bands.length - 1];
+  const megaShare = megaBand && megaBand.lo === 100 ? pct(megaBand.cap, total) : 0;
+
+  const ytd = ytdCompare(deals, archiveStart);
+
+  const stages = new Map();
+  for (const d of deals) {
+    if (!d.stage) continue;
+    if (!stages.has(d.stage)) stages.set(d.stage, []);
+    stages.get(d.stage).push(d);
+  }
+  /* Stage order is the funding ladder, not the count: a table that
+     runs Seed, Series A, Series B, Series C reads as a progression
+     and the reader compares adjacent rows, which is the comparison
+     the medians are for. Sorted by count it reads as a ranking of
+     nothing. Anything the ladder doesn't name falls to the end. */
+  const LADDER = [
+    "Pre-seed", "Seed", "Pre-Series A", "Series A", "Pre-Series B", "Series B",
+    "Series C", "Series D", "Series E", "Series F", "Series G", "Growth",
+  ];
+  const stageRows = [...stages.entries()]
+    .filter(([, list]) => list.length >= STAT_STAGE_MIN)
+    .sort((a, b) => {
+      const ia = LADDER.indexOf(a[0]);
+      const ib = LADDER.indexOf(b[0]);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a[0].localeCompare(b[0]);
+    });
+
+  const marketRows = (markets || [])
+    .filter((m) => m.rounds && m.total)
+    .sort((a, b) => b.total - a.total || b.rounds - a.rounds)
+    .slice(0, STAT_MARKET_ROWS);
+
+  const title =
+    `Insurtech funding statistics — ${money(median)} median round across ` +
+    `${n} tracked rounds | ${SITE.name}`;
+  const description =
+    `Insurtech funding statistics from ${n} disclosed rounds worth ${money(total)}: ` +
+    `${money(median)} median round size, median by stage` +
+    (stageRows.length
+      ? ` (${stageRows
+          .slice(0, 3)
+          .map(([s, l]) => `${s} ${money(medianOf(l))}`)
+          .join(", ")})`
+      : "") +
+    `, round-size distribution, capital by quarter and by market. Free to download.`;
+
+  const datasetLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "Insurtech funding statistics",
+    description: clamp(description, 300),
+    url: url(canonical),
+    isAccessibleForFree: true,
+    creator: { "@type": "Organization", name: SITE.name, url: url("/") },
+    inLanguage: SITE.lang,
+    dateModified: isoDate(new Date().toISOString()),
+    keywords: [
+      "insurtech funding statistics",
+      "insurtech venture capital",
+      "median round size",
+      "insurance technology investment",
+    ],
+    isPartOf: { "@type": "Dataset", name: "Insurtech funding rounds", url: url("/funding/") },
+    variableMeasured: [
+      { "@type": "PropertyValue", name: "Disclosed rounds tracked", value: n },
+      { "@type": "PropertyValue", name: "Disclosed capital (USD)", value: Math.round(total * 1e6) },
+      { "@type": "PropertyValue", name: "Median round size (USD)", value: Math.round(median * 1e6) },
+      ...stageRows.map(([s, list]) => ({
+        "@type": "PropertyValue",
+        name: `Median ${s} round (USD)`,
+        value: Math.round(medianOf(list) * 1e6),
+      })),
+    ],
+    distribution: [
+      {
+        "@type": "DataDownload",
+        name: "Insurtech funding rounds (CSV)",
+        encodingFormat: "text/csv",
+        contentUrl: url("/funding.csv"),
+      },
+      {
+        "@type": "DataDownload",
+        name: "Insurtech funding rounds (JSON)",
+        encodingFormat: "application/json",
+        contentUrl: url("/funding.json"),
+      },
+    ],
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Funding tracker", path: "/funding/" },
+    { name: "Statistics", path: canonical },
+  ]);
+
+  const statBits = [
+    `${n} rounds`,
+    `${money(total)} disclosed`,
+    `${money(median)} median`,
+  ];
+  if (archiveStart) statBits.push(`since ${fullDate(archiveStart)}`);
+
+  const headline = statHeadline(
+    [
+      { n: money(total), k: "Disclosed capital", sub: `across ${n} rounds` },
+      { n: money(median), k: "Median round", sub: `${money(mean)} average` },
+      megaShare
+        ? {
+            n: `${megaShare}%`,
+            k: "Capital in $100M+ rounds",
+            sub: `${megaBand.n} of ${n} rounds`,
+          }
+        : null,
+      ytd
+        ? {
+            n: money(totalOf(ytd.cur)),
+            k: `Raised in ${ytd.year} to date`,
+            sub: `${ytd.cur.length} rounds`,
+          }
+        : null,
+    ].filter(Boolean)
+  );
+
+  /* ── Year on year ─────────────────────────────────────────── */
+  let ytdBlock = "";
+  if (ytd) {
+    const capA = totalOf(ytd.prev);
+    const capB = totalOf(ytd.cur);
+    const dCap = capA ? Math.round(((capB - capA) / capA) * 100) : 0;
+    const medA = medianOf(ytd.prev);
+    const medB = medianOf(ytd.cur);
+    const dMed = medA ? Math.round(((medB - medA) / medA) * 100) : 0;
+    const dN = ytd.cur.length - ytd.prev.length;
+    const arrow = (v) => (v > 0 ? `+${v}%` : v < 0 ? `${v}%` : "level");
+    const cls = (v) => (v > 0 ? "delta-up" : v < 0 ? "delta-down" : "");
+    /* The day and month without a year: each column runs to this date
+       in ITS OWN year, and naming one year in the sentence describes
+       the wrong column half the time. */
+    const through = fullDate(ytd.through).replace(/,\s*\d{4}$/, "");
+    ytdBlock = `    <h2 class="section-label">Year to date, against the same weeks of ${
+      ytd.year - 1
+    }</h2>
+    <p class="stat-lede">
+      Each column runs from 1 January to ${escHtml(through)} of its own
+      year, so the comparison is like for like — the open year is not
+      being measured against a whole one.
+    </p>
+${statTable({
+  caption: `Insurtech funding year to date, ${ytd.year} against ${
+    ytd.year - 1
+  }, each through ${through}`,
+  head: [
+    { label: "" },
+    { label: `${ytd.year - 1} to date`, num: true },
+    { label: `${ytd.year} to date`, num: true },
+    { label: "Change", num: true },
+  ],
+  rows: [
+    `          <tr>
+            <td class="stat-key">Disclosed capital</td>
+            <td class="stat-num">${escHtml(money(capA))}</td>
+            <td class="stat-num stat-strong">${escHtml(money(capB))}</td>
+            <td class="stat-num ${cls(dCap)}"><b>${escHtml(arrow(dCap))}</b></td>
+          </tr>`,
+    `          <tr>
+            <td class="stat-key">Disclosed rounds</td>
+            <td class="stat-num">${ytd.prev.length}</td>
+            <td class="stat-num stat-strong">${ytd.cur.length}</td>
+            <td class="stat-num ${cls(dN)}"><b>${
+              dN === 0 ? "level" : `${dN > 0 ? "+" : "−"}${Math.abs(dN)}`
+            }</b></td>
+          </tr>`,
+    `          <tr>
+            <td class="stat-key">Median round</td>
+            <td class="stat-num">${escHtml(money(medA))}</td>
+            <td class="stat-num stat-strong">${escHtml(money(medB))}</td>
+            <td class="stat-num ${cls(dMed)}"><b>${escHtml(arrow(dMed))}</b></td>
+          </tr>`,
+  ],
+})}
+    <p class="topic-more">
+      Capital and round count move together only when the market is doing
+      the same thing at every size — where they diverge, the median row is
+      the one to read. Round-by-round tables:
+      <a href="/funding/${ytd.year}/">${ytd.year}</a> ·
+      <a href="/funding/${ytd.year - 1}/">${ytd.year - 1}</a>.
+    </p>`;
+  }
+
+  /* ── Round size distribution ──────────────────────────────── */
+  const bandBlock = `    <h2 class="section-label">How big an insurtech round is</h2>
+    <p class="stat-lede">
+      The median round is ${escHtml(money(median))} and the average is
+      ${escHtml(money(mean))} — a gap that is the whole story of this
+      table. Capital concentrates in a handful of large rounds while
+      most rounds are small.
+    </p>
+${statTable({
+  caption: "Insurtech funding rounds by size band — number of rounds, share of rounds, capital and share of capital",
+  head: [
+    { label: "Round size" },
+    { label: "Rounds", num: true },
+    { label: "Share of rounds", num: true, drop: true },
+    { label: "Capital", num: true },
+    { label: "Share of capital", num: true },
+  ],
+  rows: bands.map(
+    (b) => `          <tr>
+            <td class="stat-key">${escHtml(b.label)}</td>
+            <td class="stat-num">${b.n}</td>
+            <td class="stat-num stat-muted stat-drop">${pct(b.n, n)}%</td>
+            <td class="stat-num">${escHtml(money(b.cap))}</td>
+            <td class="stat-num stat-share">${pct(b.cap, total)}%${shareBar(
+      pct(b.cap, total)
+    )}</td>
+          </tr>`
+  ),
+})}`;
+
+  /* ── Median by stage ──────────────────────────────────────── */
+  const stageBlockHtml = stageRows.length
+    ? `    <h2 class="section-label">Median round size by stage</h2>
+    <p class="stat-lede">
+      What a round at each stage is worth in this market, from the
+      ${withStage} round${withStage === 1 ? "" : "s"} whose stage a
+      publication stated outright. Stages with fewer than
+      ${STAT_STAGE_MIN} rounds are left out rather than shown with a
+      median their sample can't carry.
+    </p>
+${statTable({
+  caption: "Median insurtech round size by stage — rounds, median, average and total capital",
+  head: [
+    { label: "Stage" },
+    { label: "Rounds", num: true },
+    { label: "Median", num: true },
+    { label: "Average", num: true, drop: true },
+    { label: "Total", num: true },
+  ],
+  rows: stageRows.map(([s, list]) => {
+    const cap = totalOf(list);
+    return `          <tr>
+            <td class="stat-key">${escHtml(s)}</td>
+            <td class="stat-num stat-muted">${list.length}</td>
+            <td class="stat-num stat-strong">${escHtml(money(medianOf(list)))}</td>
+            <td class="stat-num stat-drop">${escHtml(money(cap / list.length))}</td>
+            <td class="stat-num">${escHtml(money(cap))}</td>
+          </tr>`;
+  }),
+})}`
+    : "";
+
+  /* ── Capital by quarter ───────────────────────────────────── */
+  const nowQuarter = quarterKey(new Date().toISOString());
+  const quarterBlock = quarters.length
+    ? `    <h2 class="section-label">Capital and round count by quarter</h2>
+    <p class="stat-lede">
+      The median column is what a single quarter's total cannot show: a
+      quarter carried by one very large round and a quarter with broad
+      activity read the same on capital alone.
+    </p>
+${statTable({
+  caption: "Insurtech funding by quarter — disclosed capital, round count and median round size",
+  head: [
+    { label: "Quarter" },
+    { label: "Capital", num: true },
+    { label: "Rounds", num: true },
+    { label: "Median", num: true },
+  ],
+  rows: quarters.map((q) => {
+    const open = q.key === nowQuarter;
+    const label = quarterLabel(q.key) + (open ? " (in progress)" : "");
+    const cell = `${escHtml(label)}`;
+    return `          <tr${open ? ' class="stat-open"' : ""}>
+            <td class="stat-key">${
+              q.deals.length >= QUARTER_MIN_DEALS
+                ? `<a class="deal-link" href="/funding/${escAttr(q.key)}/">${cell}</a>`
+                : cell
+            }</td>
+            <td class="stat-num stat-strong">${escHtml(money(totalOf(q.deals)))}</td>
+            <td class="stat-num stat-muted">${q.deals.length}</td>
+            <td class="stat-num">${escHtml(money(medianOf(q.deals)))}</td>
+          </tr>`;
+  }),
+})}
+    <p class="topic-more">
+      The earliest quarters are thinner because the archive was
+      backfilled from dated searches, which surface less the further
+      back they reach — read a rise across the first few as this
+      tracker seeing more, not necessarily the market doing more.
+    </p>`
+    : "";
+
+  /* ── Capital by market ────────────────────────────────────── */
+  const marketBlock = marketRows.length
+    ? `    <h2 class="section-label">Capital by market</h2>
+    <p class="stat-lede">
+      Where the disclosed money went, by the home market of the company
+      that raised it. Company locations come from the
+      <a href="/market/">market pages</a>, so this covers the countries
+      this archive tracks in enough depth to name.
+    </p>
+${statTable({
+  caption: "Insurtech funding by market — disclosed capital, rounds and companies tracked",
+  head: [
+    { label: "Market" },
+    { label: "Capital", num: true },
+    { label: "Rounds", num: true },
+    // "Companies tracked" is the accurate label and 20px too wide next
+    // to "United Arab Emirates" on a 375px screen; the caption carries
+    // the full wording for anyone who needs it.
+    { label: "Companies", num: true },
+  ],
+  rows: marketRows.map(
+    (m) => `          <tr>
+            <td class="stat-key"><a class="deal-link" href="/market/${escAttr(
+              m.slug
+            )}/">${escHtml(m.name)}</a></td>
+            <td class="stat-num stat-strong">${escHtml(money(m.total))}</td>
+            <td class="stat-num stat-muted">${m.rounds}</td>
+            <td class="stat-num stat-muted">${m.companies.length}</td>
+          </tr>`
+  ),
+})}`
+    : "";
+
+  /* ── What is and isn't in the data ────────────────────────── */
+  const coverageBlock = `    <h2 class="section-label">What is in the data</h2>
+    <p class="stat-lede">
+      Anyone citing a figure above should know how complete the field
+      behind it is. These are the disclosure rates across all ${n}
+      rounds, counted rather than described.
+    </p>
+${statTable({
+  caption: "Field coverage across the tracked rounds",
+  head: [
+    { label: "Field" },
+    { label: "Rounds", num: true },
+    { label: "Coverage", num: true },
+  ],
+  rows: [
+    ["Amount in US dollars", n],
+    ["Company attributed to the round", deals.filter((d) => d.company).length],
+    ["Stage stated by a publication", withStage],
+    ["Lead investor stated by a publication", withLead],
+    ["Reported in a currency other than USD, converted", converted],
+    [
+      "Corroborated by more than one outlet",
+      deals.filter((d) => (d.alsoReportedBy || []).length).length,
+    ],
+  ].map(
+    ([label, v]) => `          <tr>
+            <td class="stat-key">${escHtml(label)}</td>
+            <td class="stat-num">${v}</td>
+            <td class="stat-num stat-share">${pct(v, n)}%${shareBar(pct(v, n))}</td>
+          </tr>`
+  ),
+})}
+    <p class="topic-more">
+      Blank beats guessed: stage and lead investor are filled in only
+      where a headline states them outright, which is why those two rows
+      are the low ones. Every figure links to the reporting it came from
+      in the <a href="/funding/">full tracker</a>.
+    </p>`;
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("funding"),
+    imageAlt: `Insurtech funding statistics — ${SITE.name}`,
+    feeds: [FUNDING_FEED],
+    jsonld: [datasetLd, crumbLd],
+  })}
+<body>
+${header("funding")}
+
+  <main id="top">
+    <p class="crumb"><a href="/funding/">← Full funding tracker</a></p>
+
+    <div class="intro co-head">
+      <p class="co-kicker">Tracker</p>
+      <h1 class="tagline">Insurtech funding statistics</h1>
+      <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
+      <p class="dek">
+        The summary figures behind the
+        <a href="/funding/">round-by-round tracker</a> — how big a round
+        is at each stage, where capital concentrates, how this year
+        compares with last, and how much of the underlying data is
+        complete. Rebuilt every time the tracker is, and free to
+        download and cite.
+      </p>
+    </div>
+
+${headline}
+
+${ytdBlock}
+
+${bandBlock}
+
+${stageBlockHtml}
+
+${quarterBlock}
+
+${marketBlock}
+
+${coverageBlock}
+
+${downloadBlock(n)}
 
 ${METHOD_NOTE}
   </main>
@@ -3635,19 +4261,22 @@ function collectYears(deals) {
   return years.length > 1 ? years : [];
 }
 
-function buildFundingPages(deals, months, quarters, years, ranked = []) {
+function buildFundingPages(deals, months, quarters, years, ranked = [], markets = []) {
   const outRoot = path.join(ROOT, "funding");
   fs.mkdirSync(outRoot, { recursive: true });
 
   // Every period type shares one directory, so the prune set has to know
   // about all three — a year page left out of it would be deleted on the
-  // run after the one that wrote it. /funding/companies/ lives in the
-  // same directory and is not a period at all, so it has to be named
-  // here explicitly or the next run deletes the page this one wrote.
+  // run after the one that wrote it. /funding/companies/ and
+  // /funding/statistics/ live in the same directory and are not periods
+  // at all, so each has to be named here explicitly or the next run
+  // deletes the page this one wrote.
   const monthKeys = new Set(months.map((m) => m.key));
   const quarterKeys = new Set(quarters.map((q) => q.key));
   const wanted = new Set([...monthKeys, ...quarterKeys, ...years.map((y) => y.key)]);
   if (ranked.length) wanted.add("companies");
+  const stats = deals.length >= STAT_MIN_DEALS;
+  if (stats) wanted.add("statistics");
   for (const name of fs.readdirSync(outRoot)) {
     const dir = path.join(outRoot, name);
     if (fs.statSync(dir).isDirectory() && !wanted.has(name)) {
@@ -3687,9 +4316,10 @@ function buildFundingPages(deals, months, quarters, years, ranked = []) {
     write(y.key, fundingYearHtml(y, years[i - 1], years[i + 1], quarters, archiveStart));
   });
   if (ranked.length) write("companies", fundingCompaniesHtml(ranked, deals));
+  if (stats) write("statistics", fundingStatsHtml(deals, quarters, markets, archiveStart));
   fs.writeFileSync(
     path.join(outRoot, "index.html"),
-    fundingIndexHtml(deals, months, quarters, years, ranked)
+    fundingIndexHtml(deals, months, quarters, years, ranked, stats)
   );
 
   const count = (list, min) => list.filter((p) => p.deals.length >= min).length;
@@ -3702,6 +4332,7 @@ function buildFundingPages(deals, months, quarters, years, ranked = []) {
         line("quarter pages", quarters, QUARTER_MIN_DEALS),
         line("month pages", months, MONTH_MIN_DEALS),
         ranked.length ? `${ranked.length} companies ranked` : "company ranking held (too few)",
+        stats ? "statistics page" : "statistics held (too few deals)",
       ].join(", ")
   );
 }
@@ -4181,6 +4812,222 @@ function buildMarketPages(markets) {
     `  ✓ ${markets.length} market pages under /market/ + index ` +
       `(floor: ${MARKET_MIN_COMPANIES} companies and ${MARKET_MIN_STORIES} stories) — ` +
       `${links} links onto company pages`
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
+   /about/ — who publishes this, and how it is made
+
+   The site had no about page, no methodology page and no contact
+   route, which is a gap of a different kind from a missing hub: the
+   others are pages that would rank, and this is the page that makes
+   the rest of them worth trusting.
+
+   Three readers need it, and none of them is served by anything else
+   here. A journalist or analyst deciding whether to cite the funding
+   tracker wants to know who compiled it and how before they put a
+   figure in print — METHOD_NOTE tells them how the rounds are
+   counted and nothing about who is counting. A search engine
+   assessing a young domain that publishes financial figures daily
+   looks for exactly this page, and its absence is conspicuous on a
+   site that otherwise looks like a publication. And a subscriber
+   handed a daily email (rule 10) has nowhere to find out what they
+   subscribed to.
+
+   TWO RULES
+
+   • It states that the prose is machine-written, in plain words and
+     without burying it. Six generated things on this site are
+     written by Claude — the brief, the company profiles, the topic
+     explainers, the glossary definitions, and the funding
+     extractor's verdicts — and a site that publishes daily under a
+     masthead owes the reader that fact before they cite it, not
+     after they discover it. Stating it also lets the page draw the
+     line that actually matters here, which is not human-vs-machine
+     but derived-vs-recalled: every funding figure comes from the
+     sourced archive and links to the reporting it came from, and
+     the writing is forbidden from supplying numbers of its own
+     (rules 3a-ii, 3d-i).
+   • It is generated, not hand-authored. A hand-authored page needs
+     five marker pairs and its filename added to five arrays
+     (GA_PAGES, SOCIAL_PAGES, FOOTLINK_PAGES, SUBSCRIBE_PAGES, and
+     the nav) to get what head() and FOOTER hand a generated page
+     for free — which is rule 2's whole argument, and the drift
+     rules 2b/2c/2d/8 were each written after.
+
+   ON THE CONTACT LINE
+
+   CONTACT_EMAIL is empty by default and the block renders only when
+   it is set. A corrections route is most of this page's value to a
+   citing reader, so it is worth filling in — but an address
+   published here is scraped within days, and that is the publisher's
+   call to make rather than a default to inherit. Set it in one place
+   and it appears in the prose and in the Organization markup
+   together.
+   ══════════════════════════════════════════════════════════════ */
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "hello@insurtechdaily.io";
+
+function aboutPageHtml({ db, deals, briefs, topics, terms, markets, stories, since }) {
+  const canonical = "/about/";
+  const nCo = (db.companies || []).length;
+  const nDeals = deals.length;
+  const capital = totalOf(deals);
+
+  const title = `About Insurtech Daily — how this site is compiled | ${SITE.name}`;
+  /* Describes only the sections the page actually carries. It named
+     "how the writing is produced" and "how to report a correction"
+     while both existed; a description promising a section a reader
+     can't find is the one kind of snippet that costs more than it
+     wins. Keep the two in step when the copy changes. */
+  const description =
+    `Insurtech Daily tracks insurance technology news, companies and funding: ` +
+    `${stories} stories, ${nCo} companies and ${nDeals} disclosed rounds worth ` +
+    `${money(capital)}. How the data is collected, how to use it, and how to ` +
+    `get in touch.`;
+
+  const aboutLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Insurtech Daily",
+    description: clamp(description, 300),
+    url: url(canonical),
+    inLanguage: SITE.lang,
+    isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
+    mainEntity: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: url("/"),
+      description: SITE.tagline,
+      logo: { "@type": "ImageObject", url: url("/assets/logo.png"), width: 512, height: 512 },
+      ...(CONTACT_EMAIL ? { email: CONTACT_EMAIL } : {}),
+      ...(CONTACT_EMAIL
+        ? {
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "editorial",
+              email: CONTACT_EMAIL,
+            },
+          }
+        : {}),
+    },
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "About", path: canonical },
+  ]);
+
+  /* The story archive's own start, not the oldest funding round —
+     the line counts stories first, and the two differ by a week. */
+  const statBits = [
+    `${stories} stories tracked`,
+    `${nCo} companies`,
+    `${nDeals} funding rounds`,
+  ];
+  if (since) statBits.push(`archive from ${fullDate(since)}`);
+
+  /* Renders nothing without an address, and that is the whole of the
+     conditional now. It used to fall back to a corrections promise that
+     stood on its own; the section is a plain contact line, so with no
+     address there is no section — a heading reading "Contact" above
+     nothing is worse than no heading. */
+  const contactBlock = CONTACT_EMAIL
+    ? `      <h2>Contact</h2>
+      <p>
+        If you'd like to get in touch, email
+        <a href="mailto:${escAttr(CONTACT_EMAIL)}">${escHtml(CONTACT_EMAIL)}</a>.
+      </p>
+`
+    : "";
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogType: "website",
+    jsonld: [aboutLd, crumbLd],
+  })}
+<body>
+${header("")}
+
+  <main id="top">
+    <div class="intro co-head">
+      <p class="co-kicker">About</p>
+      <h1 class="tagline">About Insurtech Daily</h1>
+      <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
+      <p class="dek">
+        A daily record of what happened in insurance technology — the
+        stories, the companies behind them, and the money going in.
+      </p>
+    </div>
+
+    <div class="page-prose">
+      <h2>What this is</h2>
+      <p>
+        Three main things are published here. The
+        <a href="/">wire</a> collects insurtech reporting from across the
+        trade press. <a href="/brief/">The Brief</a> is a short written
+        summary of what moved, published once a day and archived — and
+        sent out by email on weekdays, for anyone who would rather it came
+        to them. The <a href="/funding/">funding tracker</a> is a table of
+        every insurtech round with a disclosed figure, with the
+        <a href="/funding/statistics/">summary statistics</a> behind it and
+        a free <a href="/funding.csv">CSV</a> and
+        <a href="/funding.json">JSON</a> download.
+      </p>
+      <p>
+        Around those sit the reference pages: ${nCo} <a href="/companies.html">company
+        pages</a>, ${topics} <a href="/topic/">topic hubs</a>, a
+        <a href="/glossary/">glossary</a> of ${terms} insurance terms, and
+        ${markets} <a href="/market/">market pages</a> grouping companies by
+        country.
+      </p>
+
+      <h2>How the data is collected</h2>
+      <p>
+        We gather from a large list of insurance and insurtech feeds three
+        times each weekday and once at weekends.
+      </p>
+      <p>
+        Funding rounds are taken out of that archive. A round is counted
+        only when a publication states a figure, so rounds closed without a
+        number are absent and every total here is a floor rather than a
+        market estimate. Amounts reported in other currencies are converted
+        at fixed reference rates and the original figure is shown beside
+        the conversion, so any row can be checked against the reporting it
+        links to. The <a href="/funding/">tracker</a> sets out the full
+        method, including what is deliberately excluded.
+      </p>
+
+${contactBlock}
+
+      <h2>Using the data</h2>
+      <p>
+        The funding data is free to use, including commercially, with
+        attribution to Insurtech Daily and a link back to
+        <a href="/funding/">${escHtml(url("/funding/").replace(/^https?:\/\//, ""))}</a>.
+        Take it as <a href="/funding.csv">CSV</a> or
+        <a href="/funding.json">JSON</a>. New rounds are syndicated
+        at <a href="${escAttr(FUNDING_FEED.href)}">funding-feed.xml</a> and
+        the daily brief at <a href="/feed.xml">feed.xml</a>. Please read
+        how the numbers are compiled before citing them: they are a floor
+        on disclosed activity.
+      </p>
+    </div>
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function buildAboutPage(opts) {
+  const dir = path.join(ROOT, "about");
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, "index.html"), aboutPageHtml(opts));
+  console.log(
+    `  ✓ /about/ — what the site is, how it is collected, contact` +
+      (CONTACT_EMAIL ? "" : " (no CONTACT_EMAIL set, contact block omitted)")
   );
 }
 
@@ -4774,6 +5621,10 @@ function buildSitemap(
       priority: "0.8",
       changefreq: "daily",
     },
+    /* Low priority and rarely changing, but listed: it is the page a
+       crawler assessing the site looks for, and the one page here whose
+       value is not the traffic it draws itself. */
+    { loc: "/about/", lastmod: now, priority: "0.5", changefreq: "monthly" },
   ];
   if (briefs.length) {
     entries.push({
@@ -4825,6 +5676,17 @@ function buildSitemap(
     if (ranked.length) {
       entries.push({
         loc: "/funding/companies/",
+        lastmod: isoDate(deals[0].publishedAt) || now,
+        priority: "0.9",
+        changefreq: "daily",
+      });
+    }
+    // Same rank and the same reason: the statistics page is the archive
+    // read down rather than across, and every figure on it is one no
+    // round table here or anywhere else carries.
+    if (deals.length >= STAT_MIN_DEALS) {
+      entries.push({
+        loc: "/funding/statistics/",
         lastmod: isoDate(deals[0].publishedAt) || now,
         priority: "0.9",
         changefreq: "daily",
@@ -5520,9 +6382,23 @@ function main() {
   buildCompanyPages(db, deals, profiles);
   buildBriefPages(briefs, db);
   buildTopicPages(topics, db, deals, hubBriefs);
-  buildFundingPages(deals, months, quarters, years, ranked);
+  buildFundingPages(deals, months, quarters, years, ranked, markets);
   buildGlossaryPages(terms, db);
   buildMarketPages(markets);
+  const archive = storeArticles();
+  buildAboutPage({
+    db,
+    deals,
+    briefs,
+    topics: topics.length,
+    terms: terms.length,
+    markets: markets.length,
+    stories: archive.length,
+    since: archive.reduce(
+      (min, a) => (a.publishedAt && (!min || a.publishedAt < min) ? a.publishedAt : min),
+      ""
+    ),
+  });
   injectAnalytics();
   injectSocial();
   injectFootLinks();

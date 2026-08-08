@@ -1128,6 +1128,105 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
 .topic-cue a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 
 /* ============================================================
+   Funding statistics — /funding/statistics/
+   The one page here whose payload is derived figures rather
+   than rows, so the figures are set at reading size in the
+   serif face. Everything else on the page reuses .deal-table.
+   ============================================================ */
+
+/* The four headline numbers. A flex row rather than a grid: the
+   figures are different widths and a grid would leave "$5.98B"
+   and "42%" sharing a column measured for the longer one. */
+.stat-row {
+  display: flex; flex-wrap: wrap; gap: 24px 46px;
+  margin: 0; padding: 22px 0 4px; border-top: 1px solid var(--rule);
+}
+.stat-cell { min-width: 0; }
+.stat-n {
+  display: block;
+  font-family: var(--serif); font-size: 2.05rem; font-weight: 600;
+  line-height: 1.05; color: var(--ink);
+  font-feature-settings: "tnum" 1; letter-spacing: -0.015em;
+}
+.stat-k {
+  display: block; margin-top: 7px;
+  font-size: 0.66rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--ink-3);
+}
+.stat-sub { display: block; margin-top: 3px; font-size: 0.78rem; color: var(--ink-4); }
+
+/* The sentence above each table. Sized between .dek and .co-sources:
+   it is doing a caption's job — telling you what the table is for
+   before you read it — so it must not compete with the section rule
+   above it. */
+.stat-lede {
+  margin: 14px 0 0; max-width: 60ch;
+  font-size: 0.92rem; line-height: 1.55; color: var(--ink-2);
+}
+.stat-lede a {
+  color: var(--accent); font-weight: 500;
+  text-decoration: underline; text-underline-offset: 2px;
+  text-decoration-thickness: 1px; text-decoration-color: rgba(154, 43, 30, 0.35);
+}
+.stat-lede a:hover { text-decoration-color: var(--accent); }
+
+/* Numbers align right so the eye can compare down a column — the one
+   thing .deal-table doesn't do, because its amount column sits beside
+   a company name and reads as part of the row. Here the column IS the
+   comparison. */
+.stat-table .stat-num { text-align: right; white-space: nowrap; }
+.stat-table .stat-key { color: var(--ink); font-weight: 600; }
+.stat-table td { font-variant-numeric: tabular-nums; }
+/* The figure the row exists to report, one step up in the serif face —
+   the same treatment .deal-amt gets in a round table. */
+.stat-table .stat-strong {
+  font-family: var(--serif); font-size: 1.04rem; font-weight: 600; color: var(--ink);
+}
+.stat-table .stat-muted { color: var(--ink-3); font-size: 0.86rem; }
+/* An open period is still accruing, so it is marked rather than
+   silently compared with closed ones. */
+.stat-table tr.stat-open td { color: var(--ink-3); }
+.stat-table tr.stat-open .stat-strong { color: var(--ink-2); }
+
+/* The share cell: a percentage with its own bar underneath. The bar is
+   the ranking cue, not the datum — the figure above it is already
+   exact, so the bar carries no label and no axis. */
+.stat-share { min-width: 8ch; }
+.stat-bar {
+  display: block; width: 100%; height: 3px; margin-top: 6px;
+  background: var(--rule-soft);
+}
+.stat-bar i { display: block; height: 100%; background: var(--accent); opacity: 0.5; }
+
+/* ============================================================
+   About / methodology — /about/
+   Long-form prose, so it borrows the brief's measure and the
+   glossary's heading rhythm rather than inventing either.
+   ============================================================ */
+.page-prose { max-width: 64ch; }
+.page-prose h2 {
+  margin: 34px 0 0; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+  font-family: var(--sans); font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink);
+}
+.page-prose p {
+  margin: 14px 0 0;
+  font-family: var(--serif); font-size: 1.04rem; line-height: 1.6; color: var(--ink-2);
+}
+.page-prose a {
+  color: var(--accent); font-weight: 500;
+  text-decoration: underline; text-underline-offset: 2px;
+  text-decoration-thickness: 1px; text-decoration-color: rgba(154, 43, 30, 0.35);
+}
+.page-prose a:hover { text-decoration-color: var(--accent); }
+.page-prose ul { margin: 14px 0 0; padding-left: 1.1em; }
+.page-prose li {
+  margin: 8px 0 0;
+  font-family: var(--serif); font-size: 1.04rem; line-height: 1.55; color: var(--ink-2);
+}
+.page-prose li b { color: var(--ink); font-weight: 600; }
+
+/* ============================================================
    Responsive
    ============================================================ */
 
@@ -1188,6 +1287,26 @@ body[data-dealui="on"] .stage-filter[aria-pressed="true"] .cnt { color: rgba(247
      tracker. Scoped to .rank-table so the round tables, where Announced
      is a sort key, keep theirs. */
   .rank-table .deal-date { display: none; }
+
+  /* Four headline figures at 2.05rem wrap to four lines on a 375px
+     viewport and stop reading as a row. */
+  .stat-row { gap: 20px 32px; }
+  .stat-n { font-size: 1.72rem; }
+  /* Five columns don't fit, and .table-wrap would scroll them sideways
+     — fine for a table of rounds you scan, wrong for one you compare
+     down. The dropped column is the derived one in both tables (share
+     of rounds, average), which the neighbouring column implies. */
+  .stat-drop { display: none; }
+  .stat-table .stat-strong { font-size: 0.98rem; }
+  /* Dropping the fifth column is not enough on its own: .deal-table
+     sets th { white-space: nowrap }, which is right for "Lead investor"
+     in a round table and costs ~130px here for "Companies tracked".
+     Two-line headers over a four-column table still fit; a sideways
+     scroll on a table whose whole purpose is comparing down a column
+     does not. */
+  .stat-table th { white-space: normal; }
+  .stat-table td, .stat-table th { padding-right: 9px; }
+  .stat-table { font-size: 0.85rem; }
 
   /* A twelfth of a phone is ~25px: three letters won't fit, one will,
      and JFMAMJJASOND is a calendar convention anyway. */
