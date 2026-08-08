@@ -303,7 +303,7 @@ jobs:
           # dirty in the runner and never pushed, so the live page silently
           # freezes while sitemap.xml keeps advertising it as fresh. `funding/`
           # covers the month pages too, once collectMonths() starts returning any.
-          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ about/ sitemap.xml robots.txt feed.xml funding-feed.xml funding.csv funding.json index.html companies.html
+          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sector/ about/ sitemap.xml robots.txt feed.xml funding-feed.xml funding.csv funding.json index.html companies.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh insurtech news (${{ steps.plan.outputs.slot }} CT ${{ steps.plan.outputs.date }})"
             git push

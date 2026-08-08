@@ -137,6 +137,15 @@ const BASE_CARDS = [
     sub: "Who is building insurance where, and what they have raised.",
     kicker: `${DOMAIN}/market`,
   },
+  {
+    // One card for the sector index and every line-of-business page,
+    // the sibling axis to "market" and sharing its treatment.
+    id: "sector",
+    eyebrow: "By sector",
+    title: "Insurtech Sectors",
+    sub: "Who sells which kind of insurance, and what they have raised.",
+    kicker: `${DOMAIN}/sector`,
+  },
 ];
 
 /* One card per topic hub, named for the same slug that builds the URL,

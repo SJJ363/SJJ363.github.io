@@ -42,6 +42,16 @@ const {
   STORY_CAP: MARKET_STORY_CAP,
   DEAL_CAP: MARKET_DEAL_CAP,
 } = require("./markets");
+const {
+  SECTORS,
+  sectorsOf,
+  indexableSector,
+  MIN_COMPANIES: SECTOR_MIN_COMPANIES,
+  MIN_STORIES: SECTOR_MIN_STORIES,
+  COMPANY_CAP: SECTOR_COMPANY_CAP,
+  STORY_CAP: SECTOR_STORY_CAP,
+  DEAL_CAP: SECTOR_DEAL_CAP,
+} = require("./sectors");
 const { cardFor, W: OG_W, H: OG_H } = require("./og");
 const { linker, companyLinker, plainLinker } = require("./autolink");
 
@@ -457,6 +467,7 @@ ${navMarkup(active, currentTopic)}
 const FOOT_LINKS = `    <p class="foot-links"><a href="/glossary/">Insurance glossary</a> ·
       <a href="/funding/statistics/">Funding statistics</a> ·
       <a href="/funding/companies/">Most funded companies</a> ·
+      <a href="/sector/">Sectors</a> ·
       <a href="/market/">Markets</a> ·
       <a href="/topic/">All topics</a> ·
       <a href="/feed.xml">Brief RSS</a> ·
@@ -632,9 +643,35 @@ function descFromProfile(summary) {
    be clickable is a link nobody finds. The kind, which navigates
    nowhere, keeps the neutral chip — so the two now read as what
    they are rather than as one undifferentiated row. */
+/* At most three sector chips. A multiline insurer legitimately matches
+   five or six lines of business, and a row of six accent chips reads as
+   a tag cloud rather than as a fact about the company. Ordered by how
+   SMALL the sector is, so the specific one wins the slot: "Pet
+   insurance" tells a reader something, "Commercial insurance" on the
+   same company mostly doesn't. */
+const SECTOR_CHIP_MAX = 3;
+
 function companyMetaTags(profile) {
   const tags = [];
   if (profile.kind) tags.push(`<span class="co-tag">${escHtml(profile.kind)}</span>`);
+  /* Same gate the sector pages themselves apply (inSectorSet), so a
+     company can never carry a chip pointing at a page that correctly
+     does not list it — the rule the place badge already follows. */
+  if (inSectorSet(profile)) {
+    sectorsOf(profile.summary)
+      .filter((s) => SECTOR_INFO.has(s.slug))
+      .sort(
+        (a, b) =>
+          SECTOR_INFO.get(a.slug).n - SECTOR_INFO.get(b.slug).n ||
+          a.subject.localeCompare(b.subject)
+      )
+      .slice(0, SECTOR_CHIP_MAX)
+      .forEach((s) => {
+        tags.push(
+          `<a class="company-badge" href="/sector/${escAttr(s.slug)}/">${escHtml(s.subject)}</a>`
+        );
+      });
+  }
   if (profile.place) {
     /* Linked only when this company is actually in the set that page
        lists — inMarketSet() as well as a built page. An investor or an
@@ -1831,8 +1868,24 @@ ${paras}
       <p class="co-attrib">Written by ${escHtml(SITE.name)}.</p>
     </section>
 
-${hub ? `    <p class="topic-cue">For the running coverage rather than the definition, see the
-      <a href="/topic/${escAttr(hub.slug)}/">${escHtml(subjectOf(hub.name))} hub</a>.</p>` : ""}
+${hub || sectorForTerm(t.slug) ? `    <p class="topic-cue">${
+  hub
+    ? `For the running coverage rather than the definition, see the
+      <a href="/topic/${escAttr(hub.slug)}/">${escHtml(subjectOf(hub.name))} hub</a>.`
+    : ""
+}${
+  /* The other half of the pair sectors.js documents: that page is the
+     directory of companies in this line of business, this one is what
+     the line of business is. Linking only one way would have left the
+     claim half-built — and this is a link OUT of the glossary, which
+     rule 3f measured as the most starved page type here. */
+  sectorForTerm(t.slug)
+    ? `${hub ? " " : ""}For the companies in this business, see
+      <a href="/sector/${escAttr(sectorForTerm(t.slug).slug)}/">${escHtml(
+        sectorForTerm(t.slug).subject.toLowerCase()
+      )} companies</a>.`
+    : ""
+}</p>` : ""}
 
 ${companies.length ? `    <section class="co-facts">
       <div class="co-fact">
@@ -4816,6 +4869,549 @@ function buildMarketPages(markets) {
 }
 
 /* ══════════════════════════════════════════════════════════════
+   SECTORS — /sector/ + /sector/<slug>/
+
+   The line-of-business axis: what kind of insurance a company
+   actually sells. Every other URL here cuts the archive by company,
+   subject, date or country, and none of those answers "pet
+   insurance companies" or "workers comp insurtech" — directory
+   queries, evergreen the way /glossary/ is, and the largest class
+   of them the site did not serve.
+
+   Like /market/ this is built from data profile.js was already
+   collecting and seo.js was already throwing away — there the
+   `place`, here the profile sentence itself, which is the only
+   text on this site that says what a company does. See
+   scripts/sectors.js for the pattern curation, the non-life trap,
+   and why a sector under the floor is not built at all.
+
+   What makes it a page rather than a re-cut of the same rows is
+   what makes /funding/2025-q2/ one: it leads with an aggregate —
+   company count, kind mix, capital disclosed across the whole line
+   of business, and the countries it is written in — that appears
+   in no round table and in nobody else's free reporting.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Set once per build, before the first company page is written —
+   the setMarketSlugs()/setFundedSlugs()/setNavTopics() pattern, for
+   the identical reason: a company page turns its profile into
+   sector chips, and it must not link a sector that was never built.
+   A Map rather than a Set because the chips are ordered by how
+   specific the sector is, which is its size. */
+let SECTOR_INFO = new Map();
+/* Keyed by GLOSSARY slug, so a term page can find the directory for its
+   line of business. Set in the same place and at the same time as
+   SECTOR_INFO because the glossary is built BEFORE the sectors are —
+   both maps have to be populated before the first page of either. */
+let SECTOR_BY_TERM = new Map();
+function setSectorInfo(sectors) {
+  SECTOR_INFO = new Map(sectors.map((s) => [s.slug, { subject: s.subject, n: s.companies.length }]));
+  SECTOR_BY_TERM = new Map(sectors.filter((s) => s.term).map((s) => [s.term, s]));
+}
+
+/* The built sector defining this glossary term, or null. Only ever
+   returns a sector that cleared the floor, so the link cannot point at
+   a page that was never written. */
+function sectorForTerm(termSlug) {
+  return SECTOR_BY_TERM.get(termSlug) || null;
+}
+
+/* Membership is the profile's own verdict, and it applies the same
+   judgment inMarketSet() does — known, with a kind that is set and is
+   neither "Other" nor "Investor" (rule 3g) — MINUS the place.
+
+   That difference is the whole point and was worth 60 companies. A
+   market page cannot list a company whose headquarters it does not
+   know, because the headquarters IS the claim; a sector page can,
+   because where a company is has nothing to do with what it sells.
+   Reusing inMarketSet() wholesale looked like consistency and was
+   actually an unrelated requirement smuggled in — it silently cost
+   pet insurance three of its ten companies. The place is still used
+   where it exists, for the Market column and the geography
+   cross-section, and both already render a company without one. */
+const inSectorSet = (p) =>
+  p && p.known && p.summary && p.kind && p.kind !== "Other" && p.kind !== "Investor";
+function collectSectors(db, profiles, deals) {
+  const bySlug = new Map();
+  for (const d of deals) {
+    if (!d.company) continue;
+    if (!bySlug.has(d.company.slug)) bySlug.set(d.company.slug, []);
+    bySlug.get(d.company.slug).push(d);
+  }
+
+  const by = new Map(SECTORS.map((s) => [s.slug, { ...s, companies: [] }]));
+  for (const c of db.companies || []) {
+    const p = profiles[c.slug];
+    if (!inSectorSet(p)) continue;
+    const hits = sectorsOf(p.summary);
+    if (!hits.length) continue;
+    const cd = bySlug.get(c.slug) || [];
+    // The company's own market, so the page can say where the line of
+    // business is written — a cross-section that exists on no other
+    // page here, since /market/ cuts by country and knows no sectors.
+    const country = countryOf(p.place);
+    const entry = {
+      slug: c.slug,
+      name: c.name,
+      kind: p.kind,
+      country,
+      n: c.count || (c.articles || []).length || 0,
+      rounds: cd.length,
+      total: totalOf(cd),
+      deals: cd,
+      articles: c.articles || [],
+    };
+    for (const h of hits) by.get(h.slug).companies.push(entry);
+  }
+
+  const sectors = [...by.values()].map((s) => {
+    /* Coverage, not the union of every mention: one story naming three
+       pet insurers is one story on the pet page. Same de-duplication
+       collectMarkets() does, and for the same reason. */
+    const seen = new Set();
+    const articles = [];
+    for (const c of s.companies) {
+      for (const a of c.articles) {
+        if (!a || !a.link || seen.has(a.link)) continue;
+        seen.add(a.link);
+        articles.push(a);
+      }
+    }
+    articles.sort((x, y) => new Date(y.publishedAt) - new Date(x.publishedAt));
+
+    const kinds = new Map();
+    const places = new Map();
+    for (const c of s.companies) {
+      kinds.set(c.kind, (kinds.get(c.kind) || 0) + 1);
+      if (c.country) {
+        const prev = places.get(c.country.slug) || { ...c.country, n: 0 };
+        prev.n += 1;
+        places.set(c.country.slug, prev);
+      }
+    }
+
+    const sDeals = s.companies
+      .flatMap((c) => c.deals)
+      .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+
+    // Coverage first, then capital, then name — collectMarkets()'s order
+    // and its reasoning: coverage is what this archive actually knows,
+    // and it keeps the table stable across builds.
+    s.companies.sort((a, b) => b.n - a.n || b.total - a.total || a.name.localeCompare(b.name));
+
+    return {
+      ...s,
+      articles,
+      stories: articles.length,
+      deals: sDeals,
+      rounds: sDeals.length,
+      total: totalOf(sDeals),
+      kinds: [...kinds.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])),
+      places: [...places.values()].sort((a, b) => b.n - a.n || a.name.localeCompare(b.name)),
+    };
+  });
+
+  return sectors
+    .filter(indexableSector)
+    .sort((a, b) => b.companies.length - a.companies.length || a.subject.localeCompare(b.subject));
+}
+
+/* The company directory — the page's payload and its internal-link
+   value. Reuses the tracker's cell classes rather than forking a
+   near-identical table, which is what keeps the phone breakpoints
+   shared (rule 3a-i): .deal-lead drops the country at 600px and
+   .deal-stage drops the type at 360, leaving company, coverage and
+   capital, which are the spine. */
+function sectorCompanyTable(s) {
+  const rows = s.companies.slice(0, SECTOR_COMPANY_CAP);
+  return `    <div class="table-wrap">
+      <table class="deal-table">
+        <caption class="sr-only">${escHtml(
+          s.subject
+        )} companies tracked by ${escHtml(SITE.name)} — company, type, market, stories in this archive and disclosed funding</caption>
+        <thead>
+          <tr>
+            <th scope="col">Company</th>
+            <th scope="col" class="deal-stage">Type</th>
+            <th scope="col" class="deal-lead">Market</th>
+            <th scope="col" class="rank-rounds">Stories</th>
+            <th scope="col">Disclosed</th>
+          </tr>
+        </thead>
+        <tbody>
+${rows
+  .map(
+    (c) => `          <tr>
+            <td class="deal-co"><a class="deal-link" href="/company/${escAttr(
+              c.slug
+            )}/">${escHtml(c.name)}</a></td>
+            <td class="deal-stage">${escHtml(c.kind)}</td>
+            <td class="deal-lead">${
+              c.country
+                ? MARKET_SLUGS.has(c.country.slug)
+                  ? `<a class="deal-link" href="/market/${escAttr(c.country.slug)}/">${escHtml(
+                      c.country.name
+                    )}</a>`
+                  : escHtml(c.country.name)
+                : '<span class="deal-blank">—</span>'
+            }</td>
+            <td class="rank-rounds">${c.n}</td>
+            <td class="deal-amt">${
+              c.total ? escHtml(money(c.total)) : '<span class="deal-blank">—</span>'
+            }</td>
+          </tr>`
+  )
+  .join("\n")}
+        </tbody>
+      </table>
+    </div>`;
+}
+
+function sectorPageHtml(s, all, liveTerms) {
+  const canonical = `/sector/${s.slug}/`;
+  const nCo = s.companies.length;
+  const oldest = s.articles[s.articles.length - 1];
+  const heading = `${s.subject} companies`;
+
+  /* The kind mix in words, three at most — past that it stops being a
+     characterisation and becomes the table below it (collectMarkets()'s
+     rule, same helper). */
+  const mix = s.kinds
+    .slice(0, 3)
+    .map(([k, n]) => `${n} ${kindPlural(k, n)}`)
+    .join(", ")
+    .replace(/, ([^,]*)$/, " and $1");
+
+  const title = `${heading} — who they are and what they've raised | ${SITE.name}`;
+  const descMix = s.kinds
+    .slice(0, 2)
+    .map(([k, n]) => `${n} ${kindPlural(k, n)}`)
+    .join(" and ");
+  const description =
+    `${nCo} ${s.subject.toLowerCase()} companies tracked by ${SITE.name}` +
+    (descMix ? ` — ${descMix}` : "") +
+    (s.total
+      ? ` — with ${money(s.total)} disclosed across ${s.rounds} funding round${
+          s.rounds === 1 ? "" : "s"
+        }.`
+      : `, and ${s.stories} stories naming them.`);
+
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: heading,
+    url: url(canonical),
+    description: clamp(description, 300),
+    isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
+    // The blurb defines the line of business, so it belongs on the Thing
+    // rather than only on the page — the same split topicPageHtml() makes.
+    about: { "@type": "Thing", name: s.subject, description: clamp(s.blurb, 300) },
+    mainEntity: {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: heading,
+      numberOfItems: nCo,
+      itemListElement: s.companies.slice(0, SECTOR_COMPANY_CAP).map((c, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: url(`/company/${c.slug}/`),
+        name: c.name,
+      })),
+    },
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Sectors", path: "/sector/" },
+    { name: s.subject, path: canonical },
+  ]);
+
+  const statBits = [
+    `${nCo} ${nCo === 1 ? "company" : "companies"}`,
+    `${s.stories} ${s.stories === 1 ? "story" : "stories"}`,
+  ];
+  if (s.total) statBits.push(`${money(s.total)} disclosed`);
+
+  const biggest = s.deals.slice().sort((a, b) => b.amountM - a.amountM)[0];
+  /* Our own prose, so it links the glossary (rule 3f's fourth call
+     site). The blurb defines rather than names the line of business,
+     so this rarely spends the budget on the term the page is about
+     and usually spends it on a neighbouring one. */
+  const link = proseLinker();
+  const dek =
+    `${SITE.name} tracks ${nCo} ${
+      nCo === 1 ? "company" : "companies"
+    } working in ${s.subject.toLowerCase()}` +
+    (mix ? ` — ${mix}` : "") +
+    (oldest ? `, across ${s.stories} stories going back to ${fullDate(oldest.publishedAt)}` : "") +
+    ". " +
+    (s.rounds
+      ? `Between them they have disclosed ${money(s.total)} across ${s.rounds} funding round${
+          s.rounds === 1 ? "" : "s"
+        }` +
+        (biggest && biggest.company
+          ? `, the largest ${biggest.company.name}'s ${money(biggest.amountM)}`
+          : "") +
+        ". "
+      : "") +
+    "Every figure is compiled from the coverage on this page.";
+
+  /* Background and news, pointed at explicitly rather than left for a
+     reader to guess — rule 3c-i's fix for /topic/funding/ against
+     /funding/, applied to a page that overlaps two others. */
+  const term = s.term && liveTerms.has(s.term) ? s.term : null;
+  const hub = s.topic ? NAV_TOPICS.find((t) => t.slug === topicSlug(s.topic)) : null;
+  const cues = [];
+  if (term) {
+    cues.push(
+      `what <a href="/glossary/${escAttr(term)}/">${escHtml(
+        s.subject.toLowerCase()
+      )}</a> actually means`
+    );
+  }
+  if (hub) {
+    cues.push(
+      `the running coverage in <a href="/topic/${escAttr(hub.slug)}/">${escHtml(hub.name)}</a>`
+    );
+  }
+  const cueBlock = cues.length
+    ? `    <p class="topic-cue">This page is the companies. See ${cues
+        .join(", and ")
+        .replace(/, and ([^,]*)$/, " and $1")}.</p>`
+    : "";
+
+  const others = all
+    .filter((x) => x.slug !== s.slug)
+    .slice(0, 12)
+    .map(
+      (x) =>
+        `<a class="company-badge" href="/sector/${escAttr(x.slug)}/">${escHtml(
+          x.subject
+        )} <span class="cnt">${x.companies.length}</span></a>`
+    )
+    .join("");
+
+  /* The sector-by-geography cross-section, which is the aggregate no
+     other page here holds: /market/ cuts by country and knows nothing
+     about lines of business. Linked only where the market page exists. */
+  const placeBadges = s.places
+    .filter((p) => MARKET_SLUGS.has(p.slug))
+    .slice(0, 12)
+    .map(
+      (p) =>
+        `<a class="company-badge" href="/market/${escAttr(p.slug)}/">${escHtml(
+          p.name
+        )} <span class="cnt">${p.n}</span></a>`
+    )
+    .join("");
+
+  const shownDeals = s.deals.slice(0, SECTOR_DEAL_CAP);
+  const fundingBlock = s.rounds
+    ? `    <h2 class="section-label">Funding</h2>
+${dealTable(
+  shownDeals.slice().sort((a, b) => b.amountM - a.amountM),
+  `Disclosed funding rounds by ${s.subject.toLowerCase()} companies`
+)}
+    <p class="topic-more">${
+      s.rounds > shownDeals.length
+        ? `The ${shownDeals.length} largest of ${s.rounds} disclosed rounds. `
+        : ""
+    }Every round is listed with its reporting in the
+      <a href="/funding/">funding tracker</a>, and totals across every sector in the
+      <a href="/funding/companies/">company ranking</a>.</p>
+`
+    : "";
+
+  const shownArticles = s.articles.slice(0, SECTOR_STORY_CAP);
+  const moreCo =
+    nCo > SECTOR_COMPANY_CAP
+      ? `    <p class="topic-more">Showing the ${SECTOR_COMPANY_CAP} most covered of ${nCo}.</p>`
+      : "";
+  const moreArticles =
+    s.stories > shownArticles.length
+      ? `    <p class="topic-more">The ${shownArticles.length} most recent of ${s.stories} stories naming one of these companies.</p>`
+      : "";
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("sector"),
+    imageAlt: `${heading} — ${SITE.name}`,
+    jsonld: [collectionLd, crumbLd],
+    scripts: s.rounds ? [FUNDING_JS] : [],
+  })}
+<body>
+${header("sectors")}
+
+  <main id="top">
+    <p class="crumb"><a href="/sector/">← All sectors</a></p>
+
+    <div class="intro co-head">
+      <p class="co-kicker">Sector</p>
+      <h1 class="tagline">${escHtml(heading)}</h1>
+      <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
+      <p class="dek">${link(s.blurb)} ${escHtml(dek)}</p>
+    </div>
+
+${cueBlock}
+${fundingBlock}
+    <h2 class="section-label">Companies</h2>
+${sectorCompanyTable(s)}
+${moreCo}
+${
+  placeBadges || others
+    ? `    <section class="co-facts">
+${
+  placeBadges
+    ? `      <div class="co-fact">
+        <h2 class="fact-label">Where they are</h2>
+        <div class="badges">${placeBadges}</div>
+      </div>`
+    : ""
+}
+${
+  others
+    ? `      <div class="co-fact">
+        <h2 class="fact-label">Other sectors</h2>
+        <div class="badges">${others}</div>
+      </div>`
+    : ""
+}
+    </section>`
+    : ""
+}
+
+    <h2 class="section-label">Coverage</h2>
+    <ol class="feed" aria-label="${escAttr(s.subject)} coverage">
+${shownArticles.map(companyArticleLi).join("\n")}
+    </ol>
+${moreArticles}
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function sectorIndexHtml(sectors) {
+  const canonical = "/sector/";
+  const companies = sectors.reduce((s, x) => s + x.companies.length, 0);
+  const capital = sectors.reduce((s, x) => s + x.total, 0);
+  const title = `Insurtech by sector — companies by line of business | ${SITE.name}`;
+  const description =
+    `Insurance and insurtech companies grouped by what they sell, across ${sectors.length} ` +
+    `lines of business — who is in each, where they are and what they have raised.`;
+
+  const listLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Insurtech sectors",
+    url: url(canonical),
+    description: clamp(description, 300),
+    numberOfItems: sectors.length,
+    itemListElement: sectors.map((s, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: url(`/sector/${s.slug}/`),
+      name: `${s.subject} companies`,
+    })),
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Sectors", path: canonical },
+  ]);
+
+  /* One linker for the whole index: proseLinker() is stateful and
+     capped per page, so building it inside the row map would silently
+     restart the budget on every row (rule 3f). */
+  const link = proseLinker();
+  const rows = sectors
+    .map((s) => {
+      const bits = [
+        `${s.companies.length} ${s.companies.length === 1 ? "company" : "companies"}`,
+        `${s.stories} ${s.stories === 1 ? "story" : "stories"}`,
+      ];
+      if (s.total) bits.push(`${money(s.total)} disclosed`);
+      return `      <li class="story">
+        <a class="story-main" href="/sector/${escAttr(s.slug)}/">
+          <div class="meta"><span class="src">${escHtml(bits.join(" · "))}</span></div>
+          <h2>${escHtml(s.subject)} companies</h2>
+        </a>
+        <p class="summary">${link(s.blurb)}</p>
+      </li>`;
+    })
+    .join("\n");
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("sector"),
+    imageAlt: `Insurtech by sector on ${SITE.name}`,
+    jsonld: [listLd, crumbLd],
+  })}
+<body>
+${header("sectors")}
+
+  <main id="top">
+    <div class="intro">
+      <p class="co-kicker">Browse</p>
+      <h1 class="tagline">Sectors</h1>
+      <p class="statline">${sectors.length} sectors  ·  ${companies} companies  ·  ${escHtml(
+    money(capital)
+  )} disclosed</p>
+      <p class="dek">
+        What the companies in this archive actually sell, taken from
+        ${SITE.name}'s own company profiles. A company appears in every line
+        of business its profile describes, so many appear in more than one. A
+        sector gets a page once it holds ${SECTOR_MIN_COMPANIES} companies and
+        ${SECTOR_MIN_STORIES} stories, so the list grows as the archive does.
+      </p>
+    </div>
+
+    <ol class="feed" aria-label="Sectors">
+${rows}
+    </ol>
+  </main>
+
+${FOOTER}
+</body>
+</html>
+`;
+}
+
+function buildSectorPages(sectors, liveTerms) {
+  const outRoot = path.join(ROOT, "sector");
+  fs.mkdirSync(outRoot, { recursive: true });
+
+  // A sector that falls back below the floor has its directory removed,
+  // the way a market's and a renamed topic's do — the sitemap and the
+  // filesystem must not drift.
+  const wanted = new Set(sectors.map((s) => s.slug));
+  for (const name of fs.readdirSync(outRoot)) {
+    const dir = path.join(outRoot, name);
+    if (fs.statSync(dir).isDirectory() && !wanted.has(name)) {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
+  }
+
+  for (const s of sectors) {
+    const dir = path.join(outRoot, s.slug);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, "index.html"), sectorPageHtml(s, sectors, liveTerms));
+  }
+  fs.writeFileSync(path.join(outRoot, "index.html"), sectorIndexHtml(sectors));
+
+  const links = sectors.reduce((n, s) => n + Math.min(s.companies.length, SECTOR_COMPANY_CAP), 0);
+  console.log(
+    `  ✓ ${sectors.length} sector pages under /sector/ + index ` +
+      `(floor: ${SECTOR_MIN_COMPANIES} companies and ${SECTOR_MIN_STORIES} stories) — ` +
+      `${links} links onto company pages`
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
    /about/ — who publishes this, and how it is made
 
    The site had no about page, no methodology page and no contact
@@ -4867,7 +5463,7 @@ function buildMarketPages(markets) {
    ══════════════════════════════════════════════════════════════ */
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "hello@insurtechdaily.io";
 
-function aboutPageHtml({ db, deals, briefs, topics, terms, markets, stories, since }) {
+function aboutPageHtml({ db, deals, briefs, topics, terms, markets, sectors, stories, since }) {
   const canonical = "/about/";
   const nCo = (db.companies || []).length;
   const nDeals = deals.length;
@@ -4977,9 +5573,10 @@ ${header("")}
       <p>
         Around those sit the reference pages: ${nCo} <a href="/companies.html">company
         pages</a>, ${topics} <a href="/topic/">topic hubs</a>, a
-        <a href="/glossary/">glossary</a> of ${terms} insurance terms, and
+        <a href="/glossary/">glossary</a> of ${terms} insurance terms,
         ${markets} <a href="/market/">market pages</a> grouping companies by
-        country.
+        country, and ${sectors} <a href="/sector/">sector pages</a> grouping
+        them by what they sell.
       </p>
 
       <h2>How the data is collected</h2>
@@ -5610,7 +6207,8 @@ function buildSitemap(
   years = [],
   ranked = [],
   terms = [],
-  markets = []
+  markets = [],
+  sectors = []
 ) {
   const now = isoDate(new Date().toISOString());
   const entries = [
@@ -5724,6 +6322,21 @@ function buildSitemap(
       entries.push({
         loc: `/market/${m.slug}/`,
         lastmod: isoDate(m.articles[0] && m.articles[0].publishedAt) || now,
+        priority: "0.7",
+        changefreq: "weekly",
+      });
+    });
+  }
+  /* Sectors, like markets, carry no separate gate here: collectSectors()
+     returns only the ones that cleared the floor. Ranked with the
+     markets and the hubs — a sector page is an aggregate over companies
+     the way a hub is one over a theme. */
+  if (sectors.length) {
+    entries.push({ loc: "/sector/", lastmod: now, priority: "0.8", changefreq: "daily" });
+    sectors.forEach((s) => {
+      entries.push({
+        loc: `/sector/${s.slug}/`,
+        lastmod: isoDate(s.articles[0] && s.articles[0].publishedAt) || now,
         priority: "0.7",
         changefreq: "weekly",
       });
@@ -6371,6 +6984,12 @@ function main() {
      page has to exist before the first company page is written. */
   const markets = collectMarkets(db, profiles, deals);
   setMarketSlugs(markets);
+  /* Same contract, one axis over: the company pages turn a profile into
+     sector chips, so the set of sectors that HAVE a page has to exist
+     before the first company page is written. Collected after the
+     markets because the sector table links a company's market. */
+  const sectors = collectSectors(db, profiles, deals);
+  setSectorInfo(sectors);
   /* Reads the persistent store rather than this run's batch, like the
      hubs do — a term's coverage is the whole archive, not today's wire.
      Collected here rather than inside buildGlossaryPages() because the
@@ -6385,6 +7004,10 @@ function main() {
   buildFundingPages(deals, months, quarters, years, ranked, markets);
   buildGlossaryPages(terms, db);
   buildMarketPages(markets);
+  /* After the glossary, because a sector page links the term defining
+     its line of business and must not link one that wasn't built —
+     glossaryLive() is the same list buildGlossaryPages() writes from. */
+  buildSectorPages(sectors, new Set(terms.filter(indexableTerm).map((t) => t.slug)));
   const archive = storeArticles();
   buildAboutPage({
     db,
@@ -6393,6 +7016,7 @@ function main() {
     topics: topics.length,
     terms: terms.length,
     markets: markets.length,
+    sectors: sectors.length,
     stories: archive.length,
     since: archive.reduce(
       (min, a) => (a.publishedAt && (!min || a.publishedAt < min) ? a.publishedAt : min),
@@ -6405,7 +7029,9 @@ function main() {
   injectSubscribe();
   injectHomepage(news, db);
   injectCompaniesIndex(db);
-  buildSitemap(news, db, briefs, topics, months, deals, quarters, years, ranked, terms, markets);
+  buildSitemap(
+    news, db, briefs, topics, months, deals, quarters, years, ranked, terms, markets, sectors
+  );
   buildRobots();
   buildFeed(briefs, db);
   buildFundingExport(deals);
