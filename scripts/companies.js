@@ -711,6 +711,7 @@ function main() {
     profiles: store.profiles || {},
     topics: store.topics || {},
     glossary: store.glossary || {},
+    ma: store.ma || {},
   }, null, 2));
   fs.writeFileSync(DB, JSON.stringify({ updatedAt: new Date().toISOString(), count: companies.length, companies }, null, 2));
   console.log(`Companies: ${companies.length} tracked · extraction cache ${byCount.claude} claude / ${byCount.heuristic} heuristic.`);

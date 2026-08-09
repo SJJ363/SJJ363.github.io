@@ -273,6 +273,7 @@ function main() {
     profiles: store.profiles || {},
     topics: store.topics || {},
     glossary: store.glossary || {},
+    ma: store.ma || {},
   }, null, 2));
 
   const total = Object.values(store.funding).filter((f) => f.round).length;
