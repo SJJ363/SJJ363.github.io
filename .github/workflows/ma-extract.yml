@@ -1,0 +1,117 @@
+# Extract M&A deals — manual only.
+#
+# The same step news.yml runs last on every refresh, on its own button. It
+# exists for the reason topic-briefs.yml and glossary.yml do (CLAUDE.md
+# 3d-i): the scheduled path is buried inside news.yml and only fires on a
+# real slot, so there is otherwise no way to fill an empty cache, re-ask
+# the headlines a bad chunk lost, or see the result of a prompt change
+# without waiting for a slot — or firing news.yml, which would refresh the
+# wire, spend the day's brief budget and run every other Claude step
+# alongside it.
+#
+# It matters more here than for the other two, because /ma/ ships with an
+# EMPTY cache: every row on the tracker today is ma.js's regex fallback,
+# which is good enough to hold the page up and is not what the page should
+# be read from. Until this has run once, the ~2 bad rows in 82 that only a
+# reader can fix are live.
+#
+# Never scheduled: the scheduled path already exists inside news.yml, and a
+# second clock writing the same cache would only race it.
+#
+# Cheap by construction — ~290 candidate headlines at 30 per call is about
+# ten calls for a full backfill, and steady state is one or two. It still
+# draws on the SAME subscription budget as the daily brief (CLAUDE.md
+# 3b-i, which is why the brief runs first in news.yml), so run it after
+# the day's brief has landed.
+name: Extract M&A deals
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max headlines to ask about (blank = all outstanding)"
+        required: false
+        default: ""
+
+concurrency:
+  # news.yml, brief-retry.yml, backfill.yml and the other manual writers all
+  # commit data/ and the generated pages. Two writers in flight means the
+  # loser's push is rejected and its work is discarded; the group name is
+  # the resource.
+  group: site-write
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      # The tip, not the triggering SHA — the other half of the lock above
+      # (CLAUDE.md 3b-iv). This job starts only once whoever held site-write
+      # has pushed, so the default checkout would hand it a base it is
+      # already behind and the push would be rejected as a non-fast-forward.
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      # Hard failure rather than a fallback: this workflow does exactly one
+      # thing, so a run without credentials would silently be a no-op that
+      # reports success. The step inside news.yml keeps its `|| echo` —
+      # there a missing token should degrade the run, not fail it, because
+      # the regexes still produce a table.
+      - name: Install Claude CLI
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "::error::No CLAUDE_CODE_OAUTH_TOKEN secret — M&A deals cannot be extracted."
+            exit 1
+          fi
+          npm install -g @anthropic-ai/claude-code
+
+      # ANTHROPIC_API_KEY is deliberately absent from this env: the CLI bills
+      # the metered key whenever it is present, and this step is meant to run
+      # on the subscription (CLAUDE.md 3b-i).
+      - name: Extract M&A deals
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          node scripts/ma-extract.js \
+            ${{ inputs.limit != '' && format('--limit {0}', inputs.limit) || '' }}
+
+      # Rebuilds the tracker from the verdicts that just landed. No news is
+      # fetched and no other cache is touched, so this rebuilds the site from
+      # data already committed — idempotent, and the rows are re-derived from
+      # the cache on every build rather than persisted (CLAUDE.md 3l).
+      - name: Build SEO (pages, sitemap, structured data)
+        run: node scripts/seo.js
+
+      - name: Commit if changed
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Same pathspec as news.yml: a generated directory missing here is
+          # rebuilt every run, left dirty in the runner and never pushed.
+          git add -A data/ company/ brief/ topic/ funding/ glossary/ market/ sector/ about/ subscribe/ ma/ sitemap.xml robots.txt feed.xml funding-feed.xml funding.csv funding.json index.html companies.html
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: extract M&A deals"
+            git push
+            echo "M&A verdicts committed."
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No changes to publish."
+          fi
+
+      # Same ping news.yml sends after a push (see the note there).
+      - name: Ping IndexNow
+        if: steps.commit.outputs.pushed == 'true'
+        run: node scripts/indexnow.js
