@@ -435,6 +435,37 @@ function yearOf(iso) {
   return isNaN(d) ? null : d.getUTCFullYear();
 }
 
+/* A party that is a DESCRIPTION rather than a name.
+
+   The prompt already asks the reader to decline when the headline
+   never names a side, and on 164 verdicts it did so all but three
+   times: "Income sells digital insurance platform to Embed Financial"
+   came back with the target "digital insurance platform", and so did
+   "cyber book" and "reinsurance renewal rights". Those are unfileable
+   as rows — and the first is worse than unfileable, because the same
+   deal is reported elsewhere as Hive, so it published twice under two
+   names.
+
+   The test is a capital letter, and the single-word exemption is the
+   whole of the difficulty. A blanket "must contain a capital" is what
+   you reach for first and it is wrong here: `itel` and `bolttech` are
+   real companies in this archive that write themselves lowercase, and
+   itel is the target of a $1.3B deal. But a multi-word all-lowercase
+   run is never a company name in this corpus and always a noun phrase
+   the desk wrote. Measured across all 164 accepted verdicts: exactly
+   three multi-word lowercase names, all three descriptions, and
+   exactly two single-word ones, both real brands.
+
+   This runs on the CACHED path, so it corrects the archive on the next
+   build with no re-extraction — the derived-every-build contract doing
+   the work it exists for. */
+function namedParty(s) {
+  const name = String(s || "").trim();
+  if (!name) return false;
+  if (/[A-Z]/.test(name)) return true;
+  return name.split(/\s+/).length === 1;
+}
+
 function fromFact(article, fact) {
   if (!fact || !fact.deal) return null;
   if (STALE_RECORD.test(article.title || "")) return null;
@@ -445,6 +476,8 @@ function fromFact(article, fact) {
   // brokerage" cannot be filed under a target, linked to a company
   // page, or deduplicated against the outlet that names it.
   if (!acquirer || !target) return null;
+  // ...and both sides have to be NAMED, not described.
+  if (!namedParty(acquirer) || !namedParty(target)) return null;
 
   const filed = yearOf(article.publishedAt);
   if (fact.announcedYear && filed && filed - Number(fact.announcedYear) > STALE_YEARS) return null;
@@ -699,6 +732,7 @@ module.exports = {
   isDealCandidate,
   isMinorityDeal,
   stakePct,
+  namedParty,
   cachedFacts,
   readPair,
   typeOf,

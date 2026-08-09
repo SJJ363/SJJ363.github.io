@@ -12,13 +12,12 @@
    The same two failures, in the shapes an M&A tracker takes them.
 
    RECALL. The pair patterns in ma.js read "X acquires Y" and
-   little else. They cannot read "Income sells digital insurance
-   platform to Embed Financial" (a seller, an asset and a buyer, in
-   that order), "CCP approves Jazz-backed acquisition of TPL
+   little else. They cannot read "Ageas sells Etiqa stake to Maybank
+   for €1.1 billion" (a seller, a target and a buyer, in that
+   order), "Everest agrees to sell Mexico insurance business to
+   Fairfax", or "CCP approves Jazz-backed acquisition of TPL
    insurance in phase-I merger review" (a regulator, an acquirer
-   named as an adjective, a target), or "Rent costs: Gallagher
-   acquires tenant specialist Canadian digital broker and MGA"
-   (whose target is never named at all). Every miss is silent.
+   named as an adjective, a target). Every miss is silent.
 
    PRECISION. The noun "acquisition" is a marketing word and the
    verb "buy" is a stock-tip word. "How to rethink acquisition KPIs
@@ -64,7 +63,7 @@ const { RATES } = require("./funding");
 const STORE = path.join(__dirname, "..", "data", "companies-store.json");
 
 // Bump when the prompt changes so cached verdicts re-extract.
-const PROMPT_VERSION = 1;
+const PROMPT_VERSION = 2;
 
 /* funding-extract.js's STALE_YEARS, for its reason: FinTech Global
    re-serves its back catalogue stamped with today's date, and an
@@ -105,13 +104,13 @@ Answer {"deal": false} when the headline is anything else. In particular:
 - a MINORITY investment — a stake under 50%, or one described as a minority stake. "Tokio Marine takes minority stake in Igloo" and "Mapfre takes 38.9% stake in Spanish insurtech Tuio" are investments, not changes of ownership. A stake of 50% or more IS a deal even when the headline never says "majority": "Wipro to raise stake in Aggne Global to 80%" is one.
 - a deal that has NOT been agreed: rumoured, explored, "in talks", "eyes", "could acquire", "is said to be considering", "bids for". An ANNOUNCED or AGREED deal IS a deal, even before it closes — "Allianz to acquire HSBC Life Singapore" counts.
 - a partnership, joint venture, distribution agreement, investment round, IPO, share buyback, employee share plan or executive appointment
-- a deal outside insurance. Insurance means insurers, reinsurers, insurtechs, brokers, MGAs, TPAs, adjusters, and technology sold into underwriting, claims, distribution or employee benefits.
+- a deal outside insurance. THE TEST IS WHAT THE TARGET DOES, NOT WHO THE BUYER IS. Insurers buy things that have nothing to do with insurance, and those are not insurance M&A: "Wipro to Acquire Applied Value Technologies for $40 Million to Boost Application Services Capabilities" is an IT-services deal, "ColCap Acquires Digital Mortgage Lender Molo" is mortgage lending, and "Allianz expands Asia strategy with UOB Asset Management acquisition" is asset management. All three were wrongly counted before. Insurance means insurers, reinsurers, insurtechs, brokers, MGAs, TPAs, adjusters, and technology or services sold INTO underwriting, claims, distribution or employee benefits. A general IT consultancy, a bank, a lender, an asset manager, a payments firm or a generic AI vendor is not insurance merely because an insurer bought it.
 
 When it IS a deal, answer with:
   "deal": true
   "acquirer": the company DOING the buying, full common name. Never the seller, never the regulator, never the news outlet.
-  "target": the company or business BEING bought, full common name. Never a description — if the headline never names it ("Gallagher acquires tenant specialist Canadian digital broker"), answer {"deal": false}, because a row with no named target cannot be filed or checked.
-  "seller": the party disposing of it, when the headline names one separate from the target ("Income sells digital insurance platform to Embed Financial" -> seller "Income", target "digital insurance platform", acquirer "Embed Financial"); otherwise ""
+  "target": the company or business BEING bought, full common name. Never a description — if the headline never names it ("Gallagher acquires tenant specialist Canadian digital broker"), answer {"deal": false}, because a row with no named target cannot be filed or checked. This is the rule most often got wrong: "Income sells digital insurance platform to Embed Financial" came back with the target "digital insurance platform", "Allianz hands cyber book to Coalition" with "cyber book", and "Markel sells reinsurance renewal rights to Nationwide" with "reinsurance renewal rights". None of those is a name and all three should have been {"deal": false}. A target that is a proper noun attached to a named parent IS acceptable, because it can still be filed: "Everest's Mexico insurance business", "Allstate's employer benefits business", "Neodigital's insurance portfolio".
+  "seller": the party disposing of it, when the headline names one separate from the target ("Ageas sells Etiqa stake to Maybank for EUR 1.1 billion" -> seller "Ageas", target "Etiqa", acquirer "Maybank"); otherwise ""
   "type": one of ${[...VALID_TYPES].join(", ")}
   "amount": the price exactly as printed, or null if the headline states no price. MOST DEALS STATE NO PRICE — null is the normal answer and is not a failure.
   "currency": ISO code for that number — USD, EUR, GBP, INR, CAD, AUD, SGD, MYR, ZAR, BRL, CHF, JPY, HKD, NZD, AED, SAR
