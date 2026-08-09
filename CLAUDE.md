@@ -1833,17 +1833,84 @@ produce all of that consistently — **route new pages through them.**
      `spacer()` div rather than a margin on the first element, which
      several clients collapse or drop outright.
    • **The form is one block per page, written in `seo.js` and nowhere
-     else.** Generated pages take `SUBSCRIBE` through `FOOTER`;
-     `index.html` and `companies.html` take the identical markup
-     through `<!-- SEO:SUBSCRIBE -->` markers (rule 2d's pattern, for
-     rule 2d's reason — a hand-typed copy holds a stale form id the day
-     the form is rebuilt, and a signup posting into a dead endpoint
-     fails in the one direction nobody notices: the reader sees success
-     and never hears from us). `index.html` places its marker **inside
-     `<main>`, under the brief**, because that is where a reader who
-     just finished the thing they'd subscribe to actually is; hence the
-     `main > .subscribe` reset, since `main` already owns the column
-     and the gutter. Everywhere else it is a sibling of `<footer>`.
+     else.** Generated pages take `subscribeBlock()` through
+     `footer()`; `index.html` and `companies.html` take the identical
+     markup through `<!-- SEO:SUBSCRIBE -->` markers (rule 2d's
+     pattern, for rule 2d's reason — a hand-typed copy holds a stale
+     form id the day the form is rebuilt, and a signup posting into a
+     dead endpoint fails in the one direction nobody notices: the
+     reader sees success and never hears from us). `index.html` places
+     its marker **inside `<main>`, under the brief**, because that is
+     where a reader who just finished the thing they'd subscribe to
+     actually is; hence the `main > .subscribe` reset, since `main`
+     already owns the column and the gutter. Everywhere else it is a
+     sibling of `<footer>`.
+   • **The pitch is keyed to the surface; the form, the action and the
+     markup are not.** `PITCH` in `seo.js` varies only the heading and
+     the dek — four entries, not one per builder, because the
+     distinctions that pay are where the traffic and the intent are:
+     the brief pages, the funding tables, and the company pages that
+     are ~86% of the site. Hubs, the glossary, markets and sectors
+     take the general line. **The product is the same daily brief in
+     every case and the copy has to stay true to that** — a
+     funding-page pitch promising a deals-only email is a promise the
+     send does not keep, which is `aboutPageHtml()`'s stale-description
+     failure one surface out; so that variant names what the brief
+     *leads with* and points a reader who genuinely wants deals and no
+     commentary at the funding feed, which is the thing that actually
+     is that (rule 3j).
+   • **Every block carries a "See a sample" link to `/subscribe/`,
+     and suppressing it is a property of the pitch (`self`), not a
+     test on the variant name.** That page has two blocks, and a name
+     test written for the first silently misses the second — which is
+     what it did, putting a self-referential link in the closing
+     block. It is also that page's *only* inbound link, so the two
+     are one mechanism: ~1,559 pages reach it and nothing else does.
+10a. **`/subscribe/` is the one page here whose job is conversion, and
+   the brief pages ask where the reader actually is.** Both are the
+   same fix to the same gap: the form reached every page and had
+   nothing to show, and reached the highest-intent reader on the site
+   last.
+   • **A reader is being asked for an address in exchange for a
+     description.** "One email each weekday" is a description; the
+     brief is the thing. So `subscribePageHtml()` renders the
+     **newest brief in full**, through the same `briefBlocks()` +
+     `briefLinker()` the archive pages use — never a hand-written
+     example, which would drift from the real thing the first time
+     the brief's shape changed, and which is the one claim on that
+     page a reader can check by clicking through. The archive rows
+     underneath are the evidence it really does arrive daily.
+   • **It asks twice, and it is the only page here that does.** The
+     rule everywhere else is one block per page, because a second one
+     there would be the same ask duplicated by a *second mechanism* —
+     the drift `injectSubscribe()` exists to prevent. Here both come
+     from one builder deliberately, and the page runs to ~6 phone
+     screens: a reader who has just finished the sample is the most
+     likely subscriber on the site, and making them scroll back past
+     the whole brief to a form they have already read past is how
+     that reader is lost. The two carry different words (`page`,
+     `pageFoot`) so the second reads as a close, not a repeat.
+   • **It degrades to the pitch alone.** With no archive — a fresh
+     fork, or a store with no Claude brief in it yet — the sample and
+     the proof list are omitted rather than faked, and what is left
+     is a signup form that still works.
+   • **The brief pages put the block directly under the prose, and
+     build their footer with `footer(false)`.** It was reaching that
+     reader three blocks later, past the day's topic pills, the
+     prev/next pair and the provenance note — by which point they had
+     decided, and mostly decided to leave. In-main placement is
+     `index.html`'s precedent and takes the `main > .subscribe` reset
+     already written for it, so there is still exactly one form on
+     the page. **`footer(false)` and the `/subscribe/` exception are
+     the same knob** — a page that carries its own block higher up
+     must not also take one from the footer.
+   • Like `/about/` it is **footer-only, not nav** (rule 2b), in
+     `sitemap.xml` at 0.5, and needs `subscribe/` in the `git add`
+     pathspec of every workflow that commits pages (rules 3e, 3g).
+     It carries the newest brief, so unlike `/about/` it really does
+     change daily. `.subscribe-dek a` and `.sample-brief .tagline`
+     were added to the stylesheet, so this **did** need a `?v=` bump
+     in all three places (rule 3c-i).
    • **`target="_blank"` is load-bearing, not a flourish.** The form
      posts straight to Kit, so it works with no JS at all (rule 5) and
      needs no backend, which is what makes it possible on GitHub Pages.

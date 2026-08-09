@@ -594,6 +594,27 @@ main {
   margin: 5px 0 0; max-width: 56ch;
   color: var(--ink-3); font-size: 0.88rem; line-height: 1.55;
 }
+/* The "See a sample" route to /subscribe/, which is the only inbound
+   link that page has and the answer to the one objection this form
+   can't answer by itself. Base `a` is color: inherit with no underline,
+   so a link in here is invisible without this — accent ink, underlined
+   at rest, because anything that navigates is (the chart lesson in
+   rule 3c-i). */
+/* /subscribe/ renders a real brief as its sample, through the same
+   builders the archive pages use — which means the sample's headline
+   arrives wearing .tagline and lands at the same 3.4rem as the page's
+   own h1, two screens below it. Two titles that size read as two
+   pages. This keeps the brief's face and measure and steps the size
+   down, so it is plainly a specimen of the thing rather than the
+   subject of the page. */
+.sample-brief .tagline { font-size: clamp(1.5rem, 3vw, 1.95rem); line-height: 1.15; }
+
+.subscribe-dek a {
+  color: var(--accent); font-weight: 500;
+  text-decoration: underline; text-underline-offset: 2px;
+  text-decoration-thickness: 1px; text-decoration-color: rgba(154, 43, 30, 0.35);
+}
+.subscribe-dek a:hover { text-decoration-color: var(--accent); }
 .subscribe-form { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
 .subscribe-input {
   flex: 1 1 240px; min-width: 0;

@@ -246,7 +246,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=35" />
+  <link rel="stylesheet" href="/style.css?v=36" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="alternate" type="application/rss+xml" title="Insurtech Daily — The Brief" href="/feed.xml" />
   <script src="/nav.js?v=1" defer></script>`;
@@ -497,9 +497,92 @@ const FOOT_LINKS = `    <p class="foot-links"><a href="/glossary/">Insurance glo
    plus the two markers). An aria-label cannot collide. */
 const SUBSCRIBE_FORM_ACTION = "https://app.kit.com/forms/9761525/subscriptions";
 
-const SUBSCRIBE = `  <section class="subscribe">
-    <h2 class="subscribe-h">Get the brief by email</h2>
-    <p class="subscribe-dek">One email each weekday: what moved in insurtech, and why it matters.</p>
+/* ── The pitch, keyed by what the reader just finished ──────────
+   One form, one endpoint, one place it is written — only the
+   heading and the dek vary. That first line is the whole of what a
+   reader decides on, and a funding table and a glossary definition
+   are not read by the same person in the same mood; a single line
+   written for all of them is written for none.
+
+   The product is the SAME daily brief in every case and the copy
+   has to stay true to that. A funding-page pitch promising a
+   deals-only email is a promise the send does not keep — the
+   failure aboutPageHtml()'s description comment describes, one
+   surface out. So the funding variant names what the brief leads
+   with, and points a reader who genuinely wants deals and no
+   commentary at the funding feed, which is the thing that actually
+   is that (rule 3j).
+
+   Four variants, not one per page type. The distinctions that pay
+   are where the traffic and the intent are — the brief pages, the
+   funding tables, and the company pages that are ~86% of the site.
+   Hubs, the glossary, markets and sectors take the general line,
+   which is what a reader arriving on a definitional query needs
+   anyway. Adding a fifth is cheap; adding one per builder is a
+   table nobody keeps true. ── */
+const PITCH = {
+  default: {
+    h: "Get the brief by email",
+    dek: "One email each weekday: what moved in insurtech, and why it matters.",
+  },
+  brief: {
+    h: "Get the brief by email",
+    dek:
+      "This, every weekday morning — written once a day from the headlines " +
+      "that landed since the last one.",
+  },
+  funding: {
+    h: "Follow the money by email",
+    dek:
+      "The brief goes out each weekday and leads with what moved, new rounds included.",
+    /* Rendered after the sample link, so the block still ends on the
+       aside rather than interrupting the pitch with it. */
+    extra: `Rounds only, no commentary? <a href="${FUNDING_FEED.href}">Funding RSS</a>.`,
+  },
+  company: {
+    h: "Get the brief by email",
+    dek:
+      "One email each weekday on the companies raising, launching, partnering " +
+      "and being acquired.",
+  },
+  /* /subscribe/'s own hero. The h1 and the dek above it have already
+     made the pitch, so repeating it here would be the third time in
+     one screen; this one just asks. */
+  page: {
+    h: "Start tomorrow morning",
+    dek: "Enter your email address — that is the whole of the signup.",
+    self: true,
+  },
+  /* The same page's closing block. Different words for the same ask,
+     because the two are ~6 phone screens apart and a reader who has
+     just finished the sample should not have to scroll back up to a
+     heading they have already read. */
+  pageFoot: {
+    h: "Get tomorrow's brief",
+    dek: "It arrives each weekday morning. Nothing else.",
+    self: true,
+  },
+};
+
+/* The sample link is the answer to the only objection this form has
+   to overcome. A reader who hasn't subscribed doesn't know what
+   arrives, and "one email each weekday" is a description where
+   /subscribe/ is the thing itself — so every block carries a route
+   to it, which is also that page's only inbound link (it ranks for
+   nothing and is not in the nav).
+
+   `self` suppresses it on the variants /subscribe/ uses, where it
+   would point at the page it is already on. It is a property of the
+   pitch rather than a test on the variant name, because the page has
+   two blocks and a name test written for the first one silently
+   misses the second — which is exactly what it did. */
+function subscribeBlock(variant = "default") {
+  const p = PITCH[variant] || PITCH.default;
+  const sample = p.self ? "" : ` <a href="/subscribe/">See a sample</a>.`;
+  const extra = p.extra ? ` ${p.extra}` : "";
+  return `  <section class="subscribe">
+    <h2 class="subscribe-h">${p.h}</h2>
+    <p class="subscribe-dek">${p.dek}${sample}${extra}</p>
     <form class="subscribe-form" action="${SUBSCRIBE_FORM_ACTION}" method="post" target="_blank" rel="noopener">
       <input class="subscribe-input" type="email" name="email_address"
              aria-label="Your email address" placeholder="you@example.com"
@@ -508,10 +591,20 @@ const SUBSCRIBE = `  <section class="subscribe">
     </form>
     <p class="subscribe-fine">Free. Unsubscribe any time.</p>
   </section>`;
+}
 
-const FOOTER = `${SUBSCRIBE}
-
-  <footer class="site-footer">
+/* `variant: false` builds a footer with no signup block at all, for
+   a page that already carries one higher up the document — today
+   that is the brief pages, which put it directly under the prose a
+   reader has just finished. One block per page, never both: the
+   rule injectSubscribe() keeps for the hand-authored pair, and the
+   reason a second one would otherwise appear here is that it came
+   from a different mechanism than the first. /subscribe/ is the one
+   deliberate exception, and asks at both ends — see the block
+   comment on subscribePageHtml(). */
+function footer(variant = "default") {
+  const block = variant === false ? "" : `${subscribeBlock(variant)}\n\n`;
+  return `${block}  <footer class="site-footer">
     <p class="foot-desc">
       <b>Insurtech Daily</b> is an aggregator of publicly available insurtech headlines.
       Every story links to its original source.
@@ -519,6 +612,7 @@ const FOOTER = `${SUBSCRIBE}
 ${FOOT_LINKS}
     <p class="foot-meta">© ${new Date().getFullYear()}</p>
   </footer>`;
+}
 
 /* ── Structured-data fragments ──────────────────────────────── */
 function organizationLd() {
@@ -885,7 +979,7 @@ ${companyFundingBlock(c, deals)}
 ${coverage}
   </main>
 
-${FOOTER}
+${footer("company")}
 </body>
 </html>
 `;
@@ -1116,6 +1210,20 @@ function briefPageHtml(b, newer, older, db = {}) {
     ? `    <nav class="brief-nav" aria-label="More briefs">\n      ${nav.join("\n      ")}\n    </nav>`
     : "";
 
+  /* Directly under the prose, which is the highest-intent placement
+     on this site: a reader who has just finished a brief is being
+     asked whether they want tomorrow's at the moment the answer is
+     most obviously yes. The footer block was reaching them three
+     blocks later — past the day's topic pills, the prev/next pair
+     and the provenance note — by which point they had already
+     decided, and mostly decided to leave.
+
+     In-main placement is index.html's precedent and takes the
+     `main > .subscribe` reset written for it, so main's column and
+     gutter aren't applied a second time. This page's footer is built
+     with `variant: false`, so there is still exactly one form on it. */
+  const briefCta = subscribeBlock("brief");
+
   return `${head({
     title,
     description,
@@ -1142,6 +1250,8 @@ ${header("brief")}
 ${briefBlocks(b, briefLinker(b, db))}
     </article>
 
+${briefCta}
+
 ${topics}
 
 ${navHtml}
@@ -1153,7 +1263,7 @@ ${navHtml}
     </p>
   </main>
 
-${FOOTER}
+${footer(false)}
 </body>
 </html>
 `;
@@ -1235,7 +1345,7 @@ ${header("brief")}
 ${rows}
   </main>
 
-${FOOTER}
+${footer("brief")}
 </body>
 </html>
 `;
@@ -1586,7 +1696,7 @@ ${shown.map(companyArticleLi).join("\n")}
 ${more}
   </main>
 
-${FOOTER}
+${footer()}
 </body>
 </html>
 `;
@@ -1682,7 +1792,7 @@ ${rows}
     </ol>
   </main>
 
-${FOOTER}
+${footer()}
 </body>
 </html>
 `;
@@ -1912,7 +2022,7 @@ ${shown.map(companyArticleLi).join("\n")}
     }` : ""}
   </main>
 
-${FOOTER}
+${footer()}
 </body>
 </html>
 `;
@@ -1995,7 +2105,7 @@ ${items}
     </ol>
   </main>
 
-${FOOTER}
+${footer()}
 </body>
 </html>
 `;
@@ -3158,7 +3268,7 @@ ${downloadBlock(n)}
 ${METHOD_NOTE}
   </main>
 
-${FOOTER}
+${footer("funding")}
 </body>
 </html>
 `;
@@ -3353,7 +3463,7 @@ ${downloadBlock(deals.length)}
 ${METHOD_NOTE}
   </main>
 
-${FOOTER}
+${footer("funding")}
 </body>
 </html>
 `;
@@ -3953,7 +4063,7 @@ ${downloadBlock(n)}
 ${METHOD_NOTE}
   </main>
 
-${FOOTER}
+${footer("funding")}
 </body>
 </html>
 `;
@@ -4035,7 +4145,7 @@ ${navHtml}
 ${METHOD_NOTE}
   </main>
 
-${FOOTER}
+${footer("funding")}
 </body>
 </html>
 `;
@@ -4182,7 +4292,7 @@ ${navHtml}
 ${METHOD_NOTE}
   </main>
 
-${FOOTER}
+${footer("funding")}
 </body>
 </html>
 `;
@@ -4746,7 +4856,7 @@ ${shownArticles.map(companyArticleLi).join("\n")}
 ${moreArticles}
   </main>
 
-${FOOTER}
+${footer("company")}
 </body>
 </html>
 `;
@@ -4832,7 +4942,7 @@ ${rows}
     </ol>
   </main>
 
-${FOOTER}
+${footer("company")}
 </body>
 </html>
 `;
@@ -5288,7 +5398,7 @@ ${shownArticles.map(companyArticleLi).join("\n")}
 ${moreArticles}
   </main>
 
-${FOOTER}
+${footer("company")}
 </body>
 </html>
 `;
@@ -5372,7 +5482,7 @@ ${rows}
     </ol>
   </main>
 
-${FOOTER}
+${footer("company")}
 </body>
 </html>
 `;
@@ -5609,7 +5719,7 @@ ${contactBlock}
     </div>
   </main>
 
-${FOOTER}
+${footer()}
 </body>
 </html>
 `;
@@ -5622,6 +5732,193 @@ function buildAboutPage(opts) {
   console.log(
     `  ✓ /about/ — what the site is, how it is collected, contact` +
       (CONTACT_EMAIL ? "" : " (no CONTACT_EMAIL set, contact block omitted)")
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
+   /subscribe/ — the one page here whose job is conversion
+
+   Like /about/, its value is not the traffic it draws: it will
+   never rank for anything, it is not in the nav, and its only
+   inbound link is the line subscribeBlock() carries on ~1,500
+   other pages. What it does is answer the single objection the
+   form cannot answer from a footer — a reader is being asked for
+   an address in exchange for a description, and "one email each
+   weekday" is a description where the brief itself is the thing.
+   So this page shows them one, in full, with the company links
+   live, and the archive underneath as evidence it really does
+   arrive daily.
+
+   Three rules:
+
+   • It asks twice, and this is the ONE page here that does. The
+     rule everywhere else is one block per page, because a second
+     one there would be the same ask duplicated by a second
+     mechanism — the drift injectSubscribe() exists to prevent.
+     Here both come from this builder deliberately, and the page
+     runs to ~6 phone screens: a reader who has just finished the
+     sample is the most likely to subscribe of anyone on the site,
+     and making them scroll back past the whole brief to a form
+     they have already read past is how that reader is lost. The
+     two carry different words (`page`, `pageFoot`) so the second
+     reads as a close rather than a repeat.
+   • The sample is the NEWEST brief, rendered through the same
+     briefBlocks() + briefLinker() the archive pages use. A
+     hand-written "example" would drift from the real thing the
+     first time the brief's shape changed, and it is the one claim
+     on this page a reader can check by clicking through.
+   • It degrades to the pitch alone. With no archive — a fresh
+     fork, or a store with no Claude brief in it yet — the sample
+     and the proof list are omitted rather than faked, and what is
+     left is a signup form that still works.
+   ══════════════════════════════════════════════════════════════ */
+const SUBSCRIBE_PROOF_ROWS = 5;
+
+function subscribePageHtml(briefs = [], db = {}) {
+  const canonical = "/subscribe/";
+  const sample = briefs[0] || null;
+  const title = `Get the insurtech brief by email | ${SITE.name}`;
+  const description =
+    "A short daily read on what moved in insurance technology — funding " +
+    "rounds, deals, launches and regulation. One email each weekday, free.";
+
+  const pageLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Subscribe to the Insurtech Daily brief",
+    description: clamp(description, 300),
+    url: url(canonical),
+    inLanguage: SITE.lang,
+    isPartOf: { "@type": "WebSite", name: SITE.name, url: url("/") },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: url("/"),
+      logo: { "@type": "ImageObject", url: url(SITE.logo) },
+    },
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Subscribe", path: canonical },
+  ]);
+
+  const statBits = ["Weekday mornings", "Free"];
+  if (briefs.length)
+    statBits.push(`${briefs.length} brief${briefs.length === 1 ? "" : "s"} published`);
+
+  /* The real thing, not a mock-up — same builders the archive page
+     uses, so it cannot drift from what actually arrives. */
+  const sampleBlock = sample
+    ? `    <section class="page-prose">
+      <h2>Today's brief, in full</h2>
+    </section>
+
+    <div class="intro brief-head-page sample-brief">
+      <p class="co-kicker">${escHtml(fullDate(sample.date || sample.generatedAt))}</p>
+      <h2 class="tagline">${escHtml(sample.headline)}</h2>
+      ${sample.teaser ? `<p class="brief-lede-text">${escHtml(sample.teaser)}</p>` : ""}
+    </div>
+
+    <article class="brief-article">
+${briefBlocks(sample, briefLinker(sample, db))}
+    </article>
+
+    <p class="brief-provenance">
+      That is the whole of it — read it on
+      <a href="/brief/${escAttr(sample.date)}/">its own page</a>, or see
+      <a href="/brief/">every brief published so far</a>.
+    </p>
+`
+    : "";
+
+  const proof = briefs.slice(0, SUBSCRIBE_PROOF_ROWS);
+  const proofBlock = proof.length
+    ? `    <section class="page-prose">
+      <h2>Recently</h2>
+    </section>
+
+    <ol class="feed brief-archive" aria-label="Recent briefs">
+${proof
+  .map(
+    (b) => `      <li class="story">
+        <a class="story-main" href="/brief/${escAttr(b.date)}/">
+          <div class="meta"><span class="time">${escHtml(
+            fullDate(b.date || b.generatedAt)
+          )}</span>${
+      b.storyCount
+        ? `<span class="dot"> · </span><span class="src">${b.storyCount} stories</span>`
+        : ""
+    }</div>
+          <h3>${escHtml(b.headline)}</h3>
+        </a>
+      </li>`
+  )
+  .join("\n")}
+    </ol>
+`
+    : "";
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    ogImage: cardFor("brief"),
+    imageAlt: `The Brief by email — ${SITE.name}`,
+    jsonld: [pageLd, crumbLd],
+  })}
+<body>
+${header("")}
+
+  <main id="top">
+    <div class="intro co-head">
+      <p class="co-kicker">Newsletter</p>
+      <h1 class="tagline">The brief, by email</h1>
+      <p class="statline">${escHtml(statBits.join("  ·  "))}</p>
+      <p class="dek">
+        A short read on what moved in insurance technology — the funding
+        rounds, the deals, the launches and the regulation — written once a
+        day from the headlines that landed since the last one.
+      </p>
+    </div>
+
+${subscribeBlock("page")}
+
+    <section class="page-prose">
+      <h2>What arrives</h2>
+      <p>
+        One email, each weekday morning. It leads with what happened and why
+        it matters, then lists the day's top stories with the outlet that
+        reported each one. Nothing else — no sponsored placements, and no
+        second email asking why you didn't open the first.
+      </p>
+      <p>
+        The brief is published on the site as well, so you can read
+        <a href="/brief/">the archive</a> before deciding, and everything it
+        is written from stays free to browse: the
+        <a href="/funding/">funding tracker</a>, ${
+          (db.companies || []).length
+        } <a href="/companies.html">company pages</a> and the
+        <a href="/glossary/">glossary</a>.
+      </p>
+    </section>
+
+${sampleBlock}
+${proofBlock}  </main>
+
+${footer("pageFoot")}
+</body>
+</html>
+`;
+}
+
+function buildSubscribePage(briefs, db) {
+  const dir = path.join(ROOT, "subscribe");
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, "index.html"), subscribePageHtml(briefs, db));
+  console.log(
+    `  ✓ /subscribe/ — signup, sample brief${
+      briefs.length ? "" : " (none yet — pitch only)"
+    }, ${Math.min(briefs.length, SUBSCRIBE_PROOF_ROWS)} archive rows`
   );
 }
 
@@ -5751,7 +6048,7 @@ function injectFootLinks() {
 
 /* ── The signup form on the two hand-authored pages (rule 10) ──
 
-   Generated pages take SUBSCRIBE through FOOTER; these two don't go
+   Generated pages take subscribeBlock() through footer(); these two don't go
    through it, so they take the identical markup through a marker,
    refreshed every build — the rule 2d pattern, for the rule 2d
    reason. A hand-typed second copy would hold a stale form id the
@@ -5763,16 +6060,21 @@ function injectFootLinks() {
    in the footer, because that is where a reader who just finished
    the thing they'd be subscribing to actually is. companies.html has
    no brief, so its marker sits in the footer like everywhere else.
-   One block per page either way — never both. ── */
-const SUBSCRIBE_PAGES = ["index.html", "companies.html"];
+   One block per page either way — never both.
+
+   The value is the pitch variant, for the same reason: index.html's
+   marker sits under the brief, so its reader has just read one and
+   gets the line a brief page gets. companies.html is a directory of
+   1,400 names and takes the company line. ── */
+const SUBSCRIBE_PAGES = { "index.html": "brief", "companies.html": "company" };
 
 function injectSubscribe() {
   let n = 0;
-  for (const file of SUBSCRIBE_PAGES) {
+  for (const [file, variant] of Object.entries(SUBSCRIBE_PAGES)) {
     const p = path.join(ROOT, file);
     if (!fs.existsSync(p)) continue;
     const html = fs.readFileSync(p, "utf8");
-    const next = replaceBlock(html, "SUBSCRIBE", SUBSCRIBE);
+    const next = replaceBlock(html, "SUBSCRIBE", subscribeBlock(variant));
     if (next !== html) fs.writeFileSync(p, next);
     n++;
   }
@@ -6220,6 +6522,11 @@ function buildSitemap(
        crawler assessing the site looks for, and the one page here whose
        value is not the traffic it draws itself. */
     { loc: "/about/", lastmod: now, priority: "0.5", changefreq: "monthly" },
+    /* Same rank and the same argument as /about/ — it will not rank for
+       anything and is listed because it is a real page a reader is sent
+       to. It carries the newest brief as its sample, so unlike /about/
+       it genuinely changes daily. */
+    { loc: "/subscribe/", lastmod: (briefs[0] || {}).date || now, priority: "0.5", changefreq: "daily" },
   ];
   if (briefs.length) {
     entries.push({
@@ -7020,6 +7327,7 @@ function main() {
       ""
     ),
   });
+  buildSubscribePage(briefs, db);
   injectAnalytics();
   injectSocial();
   injectFootLinks();
