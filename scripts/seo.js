@@ -26,7 +26,8 @@ const path = require("path");
 const { admits } = require("./relevance");
 const { TAXONOMY, FALLBACK_TAG, tagArticle, topicSlug, subjectOf } = require("./taxonomy");
 const { fundingDeals } = require("./funding");
-const { maDeals, normName } = require("./ma");
+const { maDeals, normName, sameParty } = require("./ma");
+const { canonicalName } = require("./companies");
 const {
   collectTerms: collectGlossaryTerms,
   indexableTerm,
@@ -4585,11 +4586,52 @@ function maCompanyIndex(db) {
   return byName;
 }
 
+/* Canonicalised before lookup, so the hand-verified aliases in
+   companies.js reach this table too — "AGI" is American Growth
+   Insurance there and has to be here, or the same deal stands as two
+   rows under two names. One curated list, two readers: the argument
+   relevance.js carries for the wire and the hubs, and the reason this
+   does NOT grow an alias list of its own. */
 function resolveParty(name, index) {
-  const k = normName(name);
+  const k = normName(canonicalName(String(name || "")));
   if (!k) return null;
   const hit = index.get(k);
   return hit ? { slug: hit.slug, name: hit.name } : null;
+}
+
+/* The second dedup pass, once company attribution exists — the shape
+   dedupeByCompany() has next door (rule 3c-i), and here for the same
+   reason. ma.js compares the names the extractor returned, which is
+   all it has; only after resolution do "AGI" and "American Growth
+   Insurance" become one identity, and their two reports of buying
+   Heller-Kowitz become one deal.
+
+   The acquirer is matched on resolved identity and the target still
+   on its name, because the target of a small deal usually has no page
+   here to resolve against — which is exactly the case this pass has to
+   handle. */
+function dedupeMaByCompany(deals) {
+  const kept = [];
+  for (const d of deals) {
+    const dup = kept.find((k) => {
+      const ka = k.acquirerCo && d.acquirerCo && k.acquirerCo.slug === d.acquirerCo.slug;
+      if (!ka) return false;
+      if (k.targetCo && d.targetCo) return k.targetCo.slug === d.targetCo.slug;
+      return sameParty(k.target, d.target);
+    });
+    if (!dup) { kept.push(d); continue; }
+    for (const s of [d.source, ...(d.alsoReportedBy || [])]) {
+      if (s && s !== dup.source && !dup.alsoReportedBy.includes(s)) dup.alsoReportedBy.push(s);
+    }
+    if (!dup.amountM && d.amountM) {
+      dup.amountM = d.amountM;
+      dup.nativeM = d.nativeM;
+      dup.currency = d.currency;
+      dup.amountLink = d.link;
+      dup.amountSource = d.source;
+    }
+  }
+  return kept;
 }
 
 function collectMaDeals(news, db) {
@@ -4601,7 +4643,9 @@ function collectMaDeals(news, db) {
     acquirerCo: resolveParty(d.acquirer, index),
     targetCo: resolveParty(d.target, index),
   }));
-  return deals.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+  return dedupeMaByCompany(deals).sort(
+    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+  );
 }
 
 /* The lede figures. Count first and capital second, which is the

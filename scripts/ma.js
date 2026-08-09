@@ -551,13 +551,32 @@ function normName(s) {
 
 const MIN_OVERLAP = 4;
 
+/* A consortium is named in whatever order the desk felt like. Optio
+   was bought by "La Caisse and Cinven" in one report and "Cinven and
+   La Caisse" in another, on the same day, and stood as two rows —
+   containment cannot see through a reordering. So a multi-party name
+   is compared as a SET of parties rather than as a string. */
+function partySet(s) {
+  return new Set(
+    String(s || "")
+      .split(/\s*(?:,|;|\band\b|&|\+)\s*/i)
+      .map(normName)
+      .filter((p) => p.length >= MIN_OVERLAP)
+  );
+}
+
 function sameParty(a, b) {
   const x = normName(a), y = normName(b);
   if (!x || !y) return false;
   if (x === y) return true;
   const [short, long] = x.length <= y.length ? [x, y] : [y, x];
-  if (short.length < MIN_OVERLAP) return false;
-  return long.includes(short);
+  if (short.length >= MIN_OVERLAP && long.includes(short)) return true;
+
+  const px = partySet(a), py = partySet(b);
+  if (px.size > 1 && px.size === py.size) {
+    return [...px].every((p) => py.has(p));
+  }
+  return false;
 }
 
 /* Containment is not enough on the target side, and the archive says
@@ -615,12 +634,33 @@ function maDeals(articles, opts = {}) {
     const row = fact ? fromFact(a, fact) : fromRegex(a);
     if (!row) continue;
 
-    const dup = kept.find(
-      (k) =>
-        sameParty(k.acquirer, row.acquirer) &&
+    /* Two tests, and the window applies to only one of them.
+
+       An acquisition happens ONCE: a company does not buy the same
+       company twice, which is the structural difference from a round
+       (where the same company raises again and again, and the window
+       is what keeps the second Series from being swallowed by the
+       first). So when BOTH sides match by name, that is the same deal
+       however far apart the two reports are — and they are routinely
+       far apart, because an insurance deal takes about a year to
+       clear: Radian/Inigo was reported at announcement and again at
+       completion 316 days later, Majesco/Vitech 248 days, Munich
+       Re/NEXT 199. All three stood as duplicate rows under a flat
+       180-day window, and widening that window would only move the
+       problem to the next slow deal.
+
+       The window stays on the FUZZY arm, where the targets merely
+       share a distinctive word. That match is loose enough to catch
+       two different companies with a word in common, and the date is
+       what keeps it honest. */
+    const dup = kept.find((k) => {
+      if (!sameParty(k.acquirer, row.acquirer)) return false;
+      if (sameParty(k.target, row.target)) return true;
+      return (
         sameTarget(k.target, row.target) &&
         daysApart(k.publishedAt, row.publishedAt) <= SAME_DEAL_DAYS
-    );
+      );
+    });
     if (dup) {
       // The duplicate is still evidence: keep the outlet, and let a
       // report that named a figure fill one the first didn't.
