@@ -1490,6 +1490,111 @@ produce all of that consistently — **route new pages through them.**
    375 and 360 with no body overflow and no table scrolling inside its
    wrap.
 
+3l. **M&A lives at `/ma/` + `/ma/<YYYY-MM>/`, and it is the tracker's
+   second dataset — the deal axis, where `/funding/` is the round
+   axis.** `scripts/ma.js` holds the extraction and the dedup,
+   `scripts/ma-extract.js` is the Claude reader, `collectMaDeals()` +
+   `maIndexHtml()` in `seo.js` build the pages.
+   It passes rule 3c-i's test, which is the only argument this site
+   accepts for a new page type: no outlet covers more than the deals it
+   reports itself, so a table deduplicated across all of them exists
+   nowhere else. The archive was already carrying them — 288 admitted
+   stories match deal vocabulary against 583 that match funding
+   vocabulary, so this is the same order of dataset and not a scraping
+   of the margins. 82 deals on the regex fallback alone, $34.5B
+   disclosed across the 14 that state a price.
+   **It is also where the deals `CAP_M` turns away belong.** That cap
+   exists to keep $1bn-plus brokerage recapitalisations off a table
+   whose median row is $13.6M (rule 3c-i), and every one of those is an
+   acquisition — they were never wrong, only filed under the wrong
+   heading. So there is **no cap here**: Allianz/HSBC Life Singapore at
+   $2.1bn is the largest kind of thing this table is read for.
+   Seven rules:
+   • **The amount is OPTIONAL, and that is the deepest difference.**
+     Most acquisition prices are never disclosed — 14 of 82 here — and
+     a row is complete without one: acquirer, target and date are the
+     deal. Next door a round with no figure is cached as a negative
+     because every funding surface sums or ranks by capital; dropping
+     the unpriced deals here would discard 83% of the dataset to
+     protect a total nobody promised. The cell reads **"Undisclosed",
+     not an em dash** — the funding table's dash means *nobody stated
+     this*, and here it is the normal, true state of the record.
+   • **The dedup key is the PAIR, not the amount.** Next door two
+     outlets reporting one round agree on the company and disagree on
+     the figure, so the amount is what must be bounded. Here most rows
+     have no figure at all and the same deal is reported three or four
+     times as it moves through announcement, regulatory clearance and
+     completion — TPL Insurance appears nine times across four phases
+     and six outlets. `SAME_DEAL_DAYS` is 180, not funding's 45,
+     because announcement-to-close routinely exceeds a quarter.
+     **Containment alone is not enough on the target side**: one
+     Gallagher deal stood as three rows under three wordings, so
+     same-acquirer rows also collapse on a shared distinctive word.
+     That is safe *only* because the acquirer has already matched.
+   • **A minority stake is an investment, not a change of ownership,
+     and the line is CONTROL rather than vocabulary.** "Tokio Marine
+     takes minority stake in Igloo" belongs to the funding tracker;
+     Wipro going "to 80%" of Aggne Global is an acquisition though it
+     never says "majority". So a stated percentage decides it — under
+     50% out, 50%+ in — read only from a figure attached to the word
+     "stake", so a headline's other percentages can't be mistaken for
+     one.
+   • **The false positives are not the funding tracker's, and each
+     pattern was written against a real match.** "Acquisition" is a
+     marketing word ("customer acquisition cost", "rethinking
+     acquisition KPIs") and "buy" is a stock-tip and consumer word
+     ("5 Multiline Insurers to Buy Amid Inflation", "Wants Kenyans to
+     Buy Insurance"). All parse cleanly as deals and none is one.
+     Money raised *in order to* acquire is a funding round and is
+     counted there — filing it here double-counts one event across two
+     datasets.
+   • **Read the output by hand when touching the patterns**, the rule
+     `CANON_LIST`, `SPLIT_LIST`, `TERMS` and the sector patterns all
+     carry, because most of these were findable no other way. Four
+     that were: `PAIR_PATTERNS` ordering, where the active form's lazy
+     `(.+?)` stranded the infinitive and filed a buyer called "MAPFRE
+     to" on eight rows including the two largest deals; `TARGET_PREFIX`
+     eating real names, so "Mile Auto Acquires Insurance House" became
+     a deal for "House" (`glossary.js`'s bare-`/\bmarine\b/` trap by
+     another door), fixed by requiring a strip to be evidently safe
+     rather than by shortening the list; `looksLikeName()` demanding a
+     token START capitalised, which rejected iCapital, eHealth and mea
+     outright; and a leading kicker read as a buyer, so "Rent costs:
+     Gallagher acquires…" filed "Rent costs" — acquirers keep the last
+     chained segment, targets the first.
+   • **No statistics page and no company ranking, yet — and that is a
+     gate, not an omission.** Both rest on money and only ~17% of
+     these deals state a price, so a median at n=14 is not a market
+     rate: `STAT_STAGE_MIN`'s rule (rule 3c-viii) applied before the
+     page exists rather than after. Same for quarter and year pages,
+     which would carry no aggregate the month pages don't. The lede
+     therefore leads with a **count**, which is honest at any n, and
+     prints the disclosed share beside the total. They become possible
+     as the priced share grows.
+   • **The table reuses `.deal-table` and adds only `.ma-table`**,
+     so the styling and the phone breakpoints are shared (rule 3a-i).
+     Two-name tables need what one-name tables don't: `table-layout:
+     fixed` with **every** column declared — declaring only the two
+     being widened let the browser split the rest equally and clip the
+     source column on 23 rows — and the phone rule drops **Type**
+     rather than `.deal-lead`, which this table doesn't have. Verified
+     at 375 and 360: no body overflow; the table scrolls inside its
+     own `.table-wrap`, which is the accepted trade for a table you
+     scan across rather than compare down.
+   `ma-extract.js` is **last of the seven Claude steps** for rule
+   3c-v's reason — it is the only one whose absence costs nothing
+   visible, since the regexes decide any headline it hasn't reached.
+   Its own hard case is this dataset's alone: a round has one company
+   and the question is whether the other name is an investor (rule
+   3c-vi), while a deal has two real parties and an outlet may lead
+   with either, so **getting them backwards prints a false row rather
+   than losing a true one**. `ma` must be carried through every writer
+   of the store (rule 3c-v's truncation hazard) and `ma/` must be in
+   the `git add` pathspec of every workflow that commits pages (rules
+   3e, 3g). `MA_MIN_DEALS` (20) holds the whole section until the
+   table means something; thin months are noindex and out of the
+   sitemap like thin funding months.
+
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may

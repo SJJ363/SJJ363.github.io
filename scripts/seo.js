@@ -26,6 +26,7 @@ const path = require("path");
 const { admits } = require("./relevance");
 const { TAXONOMY, FALLBACK_TAG, tagArticle, topicSlug, subjectOf } = require("./taxonomy");
 const { fundingDeals } = require("./funding");
+const { maDeals, normName } = require("./ma");
 const {
   collectTerms: collectGlossaryTerms,
   indexableTerm,
@@ -246,7 +247,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=36" />
+  <link rel="stylesheet" href="/style.css?v=37" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="alternate" type="application/rss+xml" title="Insurtech Daily — The Brief" href="/feed.xml" />
   <script src="/nav.js?v=1" defer></script>`;
@@ -466,6 +467,7 @@ ${navMarkup(active, currentTopic)}
    absence. */
 const FOOT_LINKS = `    <p class="foot-links"><a href="/glossary/">Insurance glossary</a> ·
       <a href="/funding/statistics/">Funding statistics</a> ·
+      <a href="/ma/">M&amp;A tracker</a> ·
       <a href="/funding/companies/">Most funded companies</a> ·
       <a href="/sector/">Sectors</a> ·
       <a href="/market/">Markets</a> ·
@@ -4500,6 +4502,476 @@ function buildFundingPages(deals, months, quarters, years, ranked = [], markets 
   );
 }
 
+
+/* ══════════════════════════════════════════════════════════════
+   M&A — /ma/ + /ma/<YYYY-MM>/
+
+   The tracker's second dataset, and the site's second original one.
+   /funding/ earns its place because no outlet covers more than the
+   rounds it reports itself, so a table deduplicated across all of
+   them exists nowhere else (rule 3c-i); the identical argument holds
+   for acquisitions, and the archive was already carrying them —
+   288 admitted stories match deal vocabulary against 583 that match
+   funding vocabulary, so this is the same order of dataset, not a
+   scraping of the margins.
+
+   It is also where the deals CAP_M turns away belong. That cap
+   exists to keep $1bn-plus brokerage recapitalisations off a table
+   whose median row is $13.6M, and every one of those is an
+   acquisition — they were never wrong, only filed under the wrong
+   heading. Allianz/HSBC Life Singapore at $2.1bn is the largest
+   kind of thing THIS table is read for.
+
+   Two things it does NOT copy from /funding/, both because the
+   dataset is shaped differently:
+
+   • NO STATISTICS PAGE AND NO COMPANY RANKING, yet. Both of those
+     rest on money, and only ~17% of deals here state a price. A
+     median deal size at n=14 is not a market rate, which is
+     STAT_STAGE_MIN's rule (rule 3c-viii) applied before the page
+     exists rather than after. They become possible as the priced
+     share grows; until then the aggregate this page leads with is a
+     COUNT, which is honest at any n.
+   • NO QUARTER OR YEAR PAGES, yet. Same gate as collectMonths()
+     one level up (rule 3c-i): a period page has to carry an
+     aggregate the month pages don't, and with prices this sparse
+     the only aggregate is deal count, which a reader gets from the
+     month list itself.
+
+   Rows come from `maDeals()` in scripts/ma.js — the one extractor,
+   with the regexes as fallback — and are DERIVED EVERY BUILD, never
+   persisted, so a pattern fix retroactively corrects the whole
+   archive. The verdicts are cached; the rows built from them are
+   not. That is collectDeals()'s contract, and it is what makes the
+   tracker inherit the relevance gate for free.
+   ══════════════════════════════════════════════════════════════ */
+
+const MA_MONTH_MIN_DEALS = 3;
+/* Held until the table means something, the way STAT_MIN_DEALS holds
+   the statistics page. Below this a "tracker" is a list. */
+const MA_MIN_DEALS = 20;
+/* The index shows the most recent slice; the months hold the rest.
+   A single page of 200 rows is not the way anyone reads this, and
+   the month pages are what the deeper archive is for. */
+const MA_INDEX_ROWS = 60;
+
+function maFacts() {
+  try {
+    return JSON.parse(fs.readFileSync(STORE, "utf8")).ma || {};
+  } catch {
+    return {};
+  }
+}
+
+/* Both sides of a deal resolved against the FINISHED index, never a
+   raw extracted name — rule 3c-iv, which exists because raw names
+   skip canonicalisation, JUNK and prefix merging, and seo.js prunes
+   any /company/<slug>/ without a record. A link built from a raw name
+   is a link to a 404.
+
+   Matching is on the normalised name, so "MAPFRE" finds "Mapfre" and
+   "Arthur J. Gallagher & Co" finds "Arthur J. Gallagher". Anything
+   that doesn't resolve renders as plain text — a deal is still a true
+   row when one of its parties has no page here, which is the common
+   case for the acquirer (a large carrier the wire rarely writes about
+   on its own account). */
+function maCompanyIndex(db) {
+  const byName = new Map();
+  for (const c of db.companies || []) {
+    if (!c || !c.slug || !c.name) continue;
+    const k = normName(c.name);
+    if (k && !byName.has(k)) byName.set(k, c);
+  }
+  return byName;
+}
+
+function resolveParty(name, index) {
+  const k = normName(name);
+  if (!k) return null;
+  const hit = index.get(k);
+  return hit ? { slug: hit.slug, name: hit.name } : null;
+}
+
+function collectMaDeals(news, db) {
+  const pool = storeArticles();
+  const arts = pool.length ? pool : news.articles || [];
+  const index = maCompanyIndex(db);
+  const deals = maDeals(arts, { facts: maFacts() }).map((d) => ({
+    ...d,
+    acquirerCo: resolveParty(d.acquirer, index),
+    targetCo: resolveParty(d.target, index),
+  }));
+  return deals.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+}
+
+/* The lede figures. Count first and capital second, which is the
+   reverse of /funding/ and is the honest order here: every deal
+   contributes to the count and only ~17% contribute to the total, so
+   leading with money would put the least representative number in
+   the largest type. The disclosed share is printed beside it for
+   rule 3c-viii's reason — a derived figure states its own sample or
+   isn't shown. */
+function maSummary(deals) {
+  const priced = deals.filter((d) => d.amountM > 0);
+  const capital = priced.reduce((s, d) => s + d.amountM, 0);
+  const buyers = new Set(deals.map((d) => normName(d.acquirer)).filter(Boolean));
+  const bits = [
+    `<b>${deals.length}</b> deal${deals.length === 1 ? "" : "s"}`,
+    `<b>${buyers.size}</b> acquirer${buyers.size === 1 ? "" : "s"}`,
+  ];
+  if (capital > 0) {
+    bits.push(
+      `<b>${escHtml(money(capital))}</b> disclosed across ${priced.length} of ${deals.length}`
+    );
+  }
+  return bits.join("  ·  ");
+}
+
+/* One row. Both party cells link into the archive where we have a
+   page, the headline links out to whoever reported it — dealRow()'s
+   rule, and the .deal-* classes are reused wholesale so the styling
+   and the phone breakpoints are shared rather than re-tuned (rule
+   3a-i). This table runs at five columns where the funding table
+   runs at six, which is exactly why the @media rules there key off
+   .deal-lead / .deal-stage and not th:nth-child(). */
+function maPartyCell(name, co) {
+  return co
+    ? `<a class="deal-link" href="/company/${escAttr(co.slug)}/">${escHtml(co.name)}</a>`
+    : escHtml(name);
+}
+
+function maRow(d) {
+  const outlets = [d.source, ...(d.alsoReportedBy || [])].filter(Boolean);
+  const also =
+    outlets.length > 1
+      ? `<span class="deal-also" title="${escAttr(outlets.join(", "))}">+${
+          outlets.length - 1
+        }</span>`
+      : "";
+  /* An undisclosed price is the normal case here, not a gap in the
+     record — so it reads "Undisclosed" rather than the em dash the
+     funding table uses for a stage nobody stated. The two mean
+     different things and should not look the same. */
+  const amt =
+    d.amountM > 0
+      ? amountCell(d)
+      : '<span class="deal-blank">Undisclosed</span>';
+  return `        <tr data-amount="${Number(d.amountM) || 0}" data-date="${escAttr(
+    isoDate(d.publishedAt)
+  )}">
+          <td class="deal-co">${maPartyCell(d.acquirer, d.acquirerCo)}</td>
+          <td class="deal-co">${maPartyCell(d.target, d.targetCo)}</td>
+          <td class="deal-amt">${amt}</td>
+          <td class="deal-stage">${escHtml(d.type || "Acquisition")}</td>
+          <td class="deal-date"><time datetime="${escAttr(
+            isoDate(d.publishedAt)
+          )}">${escHtml(fullDate(d.publishedAt))}</time></td>
+          <td class="deal-src"><a class="deal-link" href="${escAttr(
+            d.amountLink || d.link
+          )}" target="_blank" rel="noopener noreferrer">${escHtml(
+    d.amountSource || d.source || "source"
+  )}<span class="deal-ext" aria-hidden="true">↗</span></a>${also}</td>
+        </tr>`;
+}
+
+function maTable(deals, caption) {
+  if (!deals.length) return `    <p class="empty">No deals recorded in this period.</p>`;
+  return `    <div class="table-wrap">
+      <table class="deal-table ma-table">
+        <caption class="sr-only">${escHtml(caption)}</caption>
+        <thead>
+          <tr>
+            <th scope="col">Acquirer</th>
+            <th scope="col">Target</th>
+            <th scope="col">Price</th>
+            <th scope="col" class="deal-stage">Type</th>
+            <th scope="col">Announced</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+${deals.map(maRow).join("\n")}
+        </tbody>
+      </table>
+    </div>`;
+}
+
+const MA_METHOD_NOTE = `    <section class="method">
+      <h2 class="fact-label">How this is compiled</h2>
+      <p class="method-text">
+        Every row is an insurance acquisition, merger or controlling-stake
+        purchase announced in the trade press and aggregated by Insurtech
+        Daily. Unlike the funding tracker, a deal is counted whether or not
+        a price is disclosed — most acquisition prices never are, and the
+        parties and the date are the record. Where a price is stated it is
+        shown in US dollars, converted at a fixed reference rate, with the
+        figure as originally printed beside it so it can be checked against
+        the reporting it links to.
+      </p>
+      <p class="method-text">
+        Minority investments are excluded and belong on the
+        <a href="/funding/">funding tracker</a> instead: a stake under half
+        a company is an investment, not a change of ownership. So are deals
+        still described as explored, rumoured or in talks — an announced or
+        agreed deal is counted, a possible one is not. Money raised in order
+        to make acquisitions later is a funding round and is counted there,
+        not here. The same deal reported by several outlets, or reported
+        again as it moves from announcement through regulatory clearance to
+        completion, is collapsed into one row with the extra outlets counted
+        in the source column.
+      </p>
+      <p class="method-text">
+        Deal counts are therefore a floor on real activity rather than a
+        market estimate, and the disclosed total is a floor on a floor —
+        it reflects only the minority of deals whose price was published.
+        The earliest months here were backfilled from dated searches that
+        surface less the further back they reach, so a rise across the
+        earliest periods may be this tracker seeing more rather than the
+        market doing more.
+      </p>
+      <p class="method-text">
+        This tracker is a work in progress, and data may contain errors
+        and/or some deals may be missing from it. We do not guarantee the
+        accuracy or completeness of the data tracked here. Figures link to
+        the reporting they come from — check it before citing.
+      </p>
+    </section>`;
+
+function maMonthLinks(months) {
+  if (!months.length) return "";
+  const rows = months
+    .map((m) => {
+      const label = monthLabel(m.key);
+      const n = m.deals.length;
+      const thin = n < MA_MONTH_MIN_DEALS;
+      const cell = thin
+        ? `<span class="pl-label">${escHtml(label)}</span>`
+        : `<a class="pl-link" href="/ma/${escAttr(m.key)}/"><span class="pl-label">${escHtml(
+            label
+          )}</span></a>`;
+      return `        <li class="pl-item">${cell} <span class="pl-count">${n} deal${
+        n === 1 ? "" : "s"
+      }</span></li>`;
+    })
+    .join("\n");
+  return `    <section class="period-index">
+      <h2 class="fact-label">By month</h2>
+      <ol class="pl-list">
+${rows}
+      </ol>
+    </section>`;
+}
+
+function maIndexHtml(deals, months) {
+  const canonical = "/ma/";
+  const title = `Insurance M&A tracker — every deal, by month | ${SITE.name}`;
+  const priced = deals.filter((d) => d.amountM > 0);
+  const capital = priced.reduce((s, d) => s + d.amountM, 0);
+  const description =
+    `${deals.length} insurance and insurtech acquisitions tracked` +
+    (capital > 0 ? `, ${money(capital)} disclosed across ${priced.length} priced deals` : "") +
+    `. Acquirer, target, price and date, deduplicated across every outlet that covered it.`;
+
+  const datasetLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "Insurtech Daily — insurance M&A tracker",
+    description: clamp(description, 300),
+    url: url(canonical),
+    inLanguage: SITE.lang,
+    isAccessibleForFree: true,
+    creator: { "@type": "Organization", name: SITE.name, url: url("/") },
+    ...(deals.length
+      ? {
+          temporalCoverage: `${isoDate(
+            deals[deals.length - 1].publishedAt
+          )}/${isoDate(deals[0].publishedAt)}`,
+        }
+      : {}),
+  };
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "M&A", path: canonical },
+  ]);
+
+  const shown = deals.slice(0, MA_INDEX_ROWS);
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    jsonld: [datasetLd, crumbLd],
+  })}
+<body>
+${header("ma")}
+
+  <main id="top">
+    <div class="intro co-head">
+      <p class="co-kicker">Tracker</p>
+      <h1 class="tagline">Insurance M&amp;A</h1>
+      <p class="statline">${maSummary(deals)}</p>
+      <p class="dek">
+        Every acquisition, merger and controlling-stake purchase in insurance
+        and insurtech that the trade press has reported, deduplicated across
+        the outlets that covered it. Rounds and investments are on the
+        <a href="/funding/">funding tracker</a>.
+      </p>
+    </div>
+
+${
+  deals.length > shown.length
+    ? `    <p class="deal-status">Showing the ${shown.length} most recent of ${deals.length}. The rest are in the monthly tables below.</p>`
+    : ""
+}
+${maTable(shown, "Insurance M&A deals, most recent first")}
+
+${maMonthLinks(months)}
+
+${MA_METHOD_NOTE}
+  </main>
+
+${footer()}
+</body>
+</html>
+`;
+}
+
+function maMonthHtml(m, newer, older) {
+  const canonical = `/ma/${m.key}/`;
+  const label = monthLabel(m.key);
+  const title = `Insurance M&A, ${label} — every deal | ${SITE.name}`;
+  const priced = m.deals.filter((d) => d.amountM > 0);
+  const capital = priced.reduce((s, d) => s + d.amountM, 0);
+  const description =
+    `${m.deals.length} insurance and insurtech deal${
+      m.deals.length === 1 ? "" : "s"
+    } announced in ${label}` +
+    (capital > 0 ? `, ${money(capital)} disclosed` : "") +
+    `. Acquirer, target, price and source for each.`;
+
+  /* Thin months are noindex and out of the sitemap, exactly like thin
+     company pages and thin funding months (rule 3a) — built and linked
+     so a click never dead-ends, kept off the crawler-facing list. */
+  const thin = m.deals.length < MA_MONTH_MIN_DEALS;
+
+  const crumbLd = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "M&A", path: "/ma/" },
+    { name: label, path: canonical },
+  ]);
+
+  const nav = [];
+  if (older)
+    nav.push(
+      `<a class="brief-nav-link" rel="prev" href="/ma/${escAttr(older.key)}/">` +
+        `<span class="brief-nav-dir">← Earlier</span>` +
+        `<span class="brief-nav-title">${escHtml(monthLabel(older.key))}</span></a>`
+    );
+  if (newer)
+    nav.push(
+      `<a class="brief-nav-link next" rel="next" href="/ma/${escAttr(newer.key)}/">` +
+        `<span class="brief-nav-dir">Later →</span>` +
+        `<span class="brief-nav-title">${escHtml(monthLabel(newer.key))}</span></a>`
+    );
+
+  return `${head({
+    title,
+    description,
+    canonical,
+    robots: thin
+      ? "noindex, follow"
+      : "index, follow, max-image-preview:large, max-snippet:-1",
+    jsonld: [crumbLd],
+  })}
+<body>
+${header("ma")}
+
+  <main id="top">
+    <p class="crumb"><a href="/ma/">← All M&amp;A</a></p>
+
+    <div class="intro co-head">
+      <p class="co-kicker">M&amp;A</p>
+      <h1 class="tagline">${escHtml(label)}</h1>
+      <p class="statline">${maSummary(m.deals)}</p>
+    </div>
+
+${maTable(m.deals, `Insurance M&A deals announced in ${label}`)}
+
+${
+  nav.length
+    ? `    <nav class="brief-nav" aria-label="Other months">\n      ${nav.join(
+        "\n      "
+      )}\n    </nav>`
+    : ""
+}
+
+${MA_METHOD_NOTE}
+  </main>
+
+${footer()}
+</body>
+</html>
+`;
+}
+
+/* Months exist only once there are two, for collectMonths()'s reason
+   (rule 3c-i): with one month, /ma/<month>/ is byte-identical to /ma/
+   and is a second copy of the page you want ranked. The split starts
+   by itself at the first rollover. */
+function collectMaMonths(deals) {
+  const by = new Map();
+  for (const d of deals) {
+    const key = isoDate(d.publishedAt).slice(0, 7);
+    if (!/^\d{4}-\d{2}$/.test(key)) continue;
+    if (!by.has(key)) by.set(key, []);
+    by.get(key).push(d);
+  }
+  if (by.size < 2) return [];
+  return [...by.entries()]
+    .sort((a, b) => (a[0] < b[0] ? 1 : -1))
+    .map(([key, list]) => ({ key, deals: list }));
+}
+
+function buildMaPages(deals, months) {
+  const outRoot = path.join(ROOT, "ma");
+  if (deals.length < MA_MIN_DEALS) {
+    fs.rmSync(outRoot, { recursive: true, force: true });
+    console.log(
+      `  · /ma/ held — ${deals.length} deal(s), needs ${MA_MIN_DEALS}`
+    );
+    return 0;
+  }
+  fs.mkdirSync(outRoot, { recursive: true });
+
+  // Prune months the archive no longer has, so a key left out can't
+  // outlive the run that wrote it (buildFundingPages()'s rule).
+  const wanted = new Set(months.map((m) => m.key));
+  for (const name of fs.readdirSync(outRoot)) {
+    const dir = path.join(outRoot, name);
+    if (fs.statSync(dir).isDirectory() && !wanted.has(name)) {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
+  }
+
+  fs.writeFileSync(path.join(outRoot, "index.html"), maIndexHtml(deals, months));
+  months.forEach((m, i) => {
+    const dir = path.join(outRoot, m.key);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(
+      path.join(dir, "index.html"),
+      maMonthHtml(m, months[i - 1], months[i + 1])
+    );
+  });
+
+  const indexable = months.filter((m) => m.deals.length >= MA_MONTH_MIN_DEALS).length;
+  const priced = deals.filter((d) => d.amountM > 0).length;
+  console.log(
+    `  ✓ M&A tracker — ${deals.length} deals (${priced} priced), ` +
+      `${months.length} month pages (${indexable} indexable)`
+  );
+  return 1 + months.length;
+}
+
 /* ══════════════════════════════════════════════════════════════
    MARKETS — /market/ + /market/<country>/
 
@@ -6507,7 +6979,9 @@ function buildSitemap(
   ranked = [],
   terms = [],
   markets = [],
-  sectors = []
+  sectors = [],
+  maDealsAll = [],
+  maMonths = []
 ) {
   const now = isoDate(new Date().toISOString());
   const entries = [
@@ -6620,6 +7094,30 @@ function buildSitemap(
      to list (see scripts/markets.js on why this differs from rule 3a).
      Ranked with the hubs — a market page is an aggregate over companies,
      the way a hub is one over a theme. */
+  /* Ranked with /funding/: the M&A tracker is the site's other dataset
+     that isn't a restatement of someone else's reporting, and a table
+     deduplicated across every outlet that covered a deal exists nowhere
+     else. Thin months are noindex, so listing them would only ask a
+     crawler to fetch what it has been told not to index — the same rule
+     the funding months and the company pages carry. */
+  if (maDealsAll.length >= MA_MIN_DEALS) {
+    entries.push({
+      loc: "/ma/",
+      lastmod: isoDate(maDealsAll[0].publishedAt) || now,
+      priority: "0.9",
+      changefreq: "daily",
+    });
+    maMonths
+      .filter((m) => m.deals.length >= MA_MONTH_MIN_DEALS)
+      .forEach((m, i) => {
+        entries.push({
+          loc: `/ma/${m.key}/`,
+          lastmod: isoDate(m.deals[0].publishedAt) || now,
+          priority: "0.7",
+          changefreq: i === 0 ? "daily" : "monthly",
+        });
+      });
+  }
   if (markets.length) {
     entries.push({ loc: "/market/", lastmod: now, priority: "0.8", changefreq: "daily" });
     markets.forEach((m) => {
@@ -7272,6 +7770,8 @@ function main() {
   const quarters = collectQuarters(deals);
   const years = collectYears(deals);
   const ranked = collectFundedCompanies(deals);
+  const maAll = collectMaDeals(news, db);
+  const maMonths = collectMaMonths(maAll);
   const profiles = companyProfiles();
   // `briefs` above is the daily-brief archive; these are the standing
   // topic explainers. Two different things called a brief on this site.
@@ -7306,6 +7806,7 @@ function main() {
   buildBriefPages(briefs, db);
   buildTopicPages(topics, db, deals, hubBriefs);
   buildFundingPages(deals, months, quarters, years, ranked, markets);
+  buildMaPages(maAll, maMonths);
   buildGlossaryPages(terms, db);
   buildMarketPages(markets);
   /* After the glossary, because a sector page links the term defining
@@ -7335,7 +7836,8 @@ function main() {
   injectHomepage(news, db);
   injectCompaniesIndex(db);
   buildSitemap(
-    news, db, briefs, topics, months, deals, quarters, years, ranked, terms, markets, sectors
+    news, db, briefs, topics, months, deals, quarters, years, ranked, terms, markets,
+    sectors, maAll, maMonths
   );
   buildRobots();
   buildFeed(briefs, db);
