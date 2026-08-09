@@ -873,6 +873,27 @@ main > .subscribe {
    rows. Wrapping is the right failure here: the cell can grow down,
    and it is the only column whose content this site does not control
    the length of. */
+/* The month index under the deal table.
+
+   It must NOT reuse .period-index: that class is written for the <ol>
+   on the funding pages and sets `margin: 0 0 0 -7px`, so on a
+   <section> it removes the top gap and jams the "By month" heading
+   against the bottom of a 60-row table — which is exactly how it
+   shipped. The list classes it borrowed (.pl-item, .pl-list,
+   .pl-count) were not in this file at all, so the rows had no styling
+   either. Grep a class against this file before reusing it (rule 3f).
+
+   Spaced like .method, which follows it, so the page reads as three
+   blocks rather than a table with two afterthoughts stuck to it. */
+.ma-months { margin: 40px 0 0; padding: 20px 0 0; border-top: 1px solid var(--rule); }
+.ma-month-list { list-style: none; margin: 0; padding: 0; max-width: 42ch; }
+.ma-month {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--rule-soft);
+}
+.ma-month:last-child { border-bottom: 0; }
+.ma-month-n { color: var(--ink-3); font-size: 0.82rem; font-feature-settings: "tnum" 1; }
+
 .ma-table .deal-src { white-space: normal; }
 /* Same reason, one column over: "Asset purchase" is the longest of the
    four deal types and overran a fixed column by 15px on every row

@@ -248,7 +248,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=37" />
+  <link rel="stylesheet" href="/style.css?v=38" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="alternate" type="application/rss+xml" title="Insurtech Daily — The Brief" href="/feed.xml" />
   <script src="/nav.js?v=1" defer></script>`;
@@ -531,8 +531,7 @@ const PITCH = {
   brief: {
     h: "Get the brief by email",
     dek:
-      "This, every weekday morning — written once a day from the headlines " +
-      "that landed since the last one.",
+      "Written once a day from the headlines that landed since the last one.",
   },
   funding: {
     h: "Follow the money by email",
@@ -553,7 +552,7 @@ const PITCH = {
      one screen; this one just asks. */
   page: {
     h: "Start tomorrow morning",
-    dek: "Enter your email address — that is the whole of the signup.",
+    dek: "Enter your email address to start receiving the brief.",
     self: true,
   },
   /* The same page's closing block. Different words for the same ask,
@@ -4793,14 +4792,22 @@ function maMonthLinks(months) {
         : `<a class="pl-link" href="/ma/${escAttr(m.key)}/"><span class="pl-label">${escHtml(
             label
           )}</span></a>`;
-      return `        <li class="pl-item">${cell} <span class="pl-count">${n} deal${
+      return `        <li class="ma-month">${cell} <span class="ma-month-n">${n} deal${
         n === 1 ? "" : "s"
       }</span></li>`;
     })
     .join("\n");
-  return `    <section class="period-index">
+  /* NOT .period-index. That class is written for the <ol> on the
+     funding pages and sets `margin: 0 0 0 -7px`, so on a <section> it
+     removes the top gap entirely and jams this heading against the
+     bottom of a 60-row table. `.pl-item`, `.pl-list` and `.pl-count`
+     were worse — they are not in the stylesheet at all, so the list
+     had no styling beyond whatever .pl-label and .pl-link happened to
+     give it. Rule 3f's lesson, which is to grep a class against
+     style.css before reusing it. */
+  return `    <section class="ma-months">
       <h2 class="fact-label">By month</h2>
-      <ol class="pl-list">
+      <ol class="ma-month-list">
 ${rows}
       </ol>
     </section>`;
@@ -6340,7 +6347,7 @@ ${briefBlocks(sample, briefLinker(sample, db))}
     </article>
 
     <p class="brief-provenance">
-      That is the whole of it — read it on
+      Read it on
       <a href="/brief/${escAttr(sample.date)}/">its own page</a>, or see
       <a href="/brief/">every brief published so far</a>.
     </p>
@@ -6404,12 +6411,10 @@ ${subscribeBlock("page")}
       <p>
         One email, each weekday morning. It leads with what happened and why
         it matters, then lists the day's top stories with the outlet that
-        reported each one. Nothing else — no sponsored placements, and no
-        second email asking why you didn't open the first.
+        reported each one.
       </p>
       <p>
-        The brief is published on the site as well, so you can read
-        <a href="/brief/">the archive</a> before deciding, and everything it
+        The brief is published on the site as well, and everything it
         is written from stays free to browse: the
         <a href="/funding/">funding tracker</a>, ${
           (db.companies || []).length
