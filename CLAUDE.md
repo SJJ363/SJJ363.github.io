@@ -1595,6 +1595,79 @@ produce all of that consistently — **route new pages through them.**
    table means something; thin months are noindex and out of the
    sitemap like thin funding months.
 
+3l-i. **The dataset reaches the rest of the site the four ways the
+   funding one does, and shipping the pages alone was only half of
+   it.** `/ma/` went live carrying 94 deals that appeared nowhere
+   else on ~1,470 pages — the shape rule 3j had already had to
+   rescue the funding feed from, repeated one directory over. The
+   four surfaces, each the sibling of a funding-side twin:
+   • **`companyMaBlock()` on the company pages**, `companyFundingBlock()`'s
+     sibling. It is a separate builder because a deal is not shaped
+     like a round: two parties instead of one, and usually no price.
+     **One deal files under BOTH sides** — hence a second map in
+     `buildCompanyPages()` rather than a field on the first — and
+     the cell says what happened to *this* company ("Acquired by
+     Beazley"), since a column of the page's own name repeated down
+     the table is what listing both parties would give.
+     **The price column is rendered only where a price exists**, and
+     that is a layout decision as much as an editorial one. ~80% of
+     these blocks have no priced deal at all, so the column would
+     read "Undisclosed" in every cell — one repeated value. It is
+     also the widest of three `nowrap` columns that together cost a
+     fixed 271px of a 320px wrap at 360px, squeezing the deal cell to
+     69px and scrolling the table sideways on *every* page rather
+     than the long ones. Dropping it removes information from
+     nowhere: the statline says the prices were never published,
+     which is what the column was repeating. Measured after: no
+     scroll at 360px on the worst priced and unpriced cells in the
+     archive. `.co-ma .deal-src` unsets `nowrap` for `.ma-table`'s
+     reason and is the only CSS this needed — so it **did** take a
+     `?v=` bump in all three places (rule 3c-i).
+   • **The fourth door in `indexable()`**, via `setMaSlugs()` and the
+     set-once-per-build contract every other door has. Rule 3a-i's
+     argument about the other dataset: a page carrying a deduplicated
+     deal record is not restating one outlet's headline. Both sides
+     count — the row is identical either way — though in practice it
+     admits targets, since a serial acquirer is usually over
+     `PAGE_MIN_STORIES` already. 147 pages gained a block, 19 became
+     indexable on it alone.
+   • **`/ma.csv` + `/ma.json`**, `buildFundingExport()`'s sibling,
+     one row builder feeding both (rule 3i) and declared as the
+     `Dataset`'s `distribution` — which is what makes the `@type`
+     already on that page true rather than aspirational. The one real
+     divergence: **an undisclosed price ships EMPTY, never 0.** Zero
+     is a number, it sums, and anything averaging the column would
+     read it as a free acquisition; `price_disclosed` states which
+     rows have one, and `pricedCount` sits beside `count` so nobody
+     divides the total by the wrong denominator.
+   • **`/ma-feed.xml`**, and rule 3j's own test is what justifies a
+     third feed rather than folding deals into the funding one: the
+     audiences differ. Someone tracking consolidation is not served
+     by a stream of Series A rounds. **The guid departs from
+     `dealGuid()` and departs in the opposite direction** — it keys
+     on the two parties and nothing else. The amount is absent
+     because most deals have none, and the month is absent because a
+     deal is re-reported as it clears and completes, which moves the
+     row's date and would re-emit it months later under an identical
+     title. `ma.js` already asserts exactly this identity: the
+     both-sides-match arm of its dedup carries no window, on the
+     reasoning that a company does not buy the same company twice.
+     Items link the **target's** page first — the deal is the larger
+     event for the company it happens to — with the acquirer as
+     fallback.
+   Discovery is `FOOT_LINKS` (~1,559 pages, named "M&A RSS" and never
+   a bare "RSS" — three feeds make the generic label misleading), the
+   dek, `maDownloadBlock()`, and the page-local `rel=alternate`. The
+   pitch variant is `ma`, which names what the brief actually covers
+   and points a deals-only reader at the feed rather than promising
+   an email the send doesn't deliver (rule 10). All three new
+   transports need the `git add` pathspec and the `indexnow.js`
+   `SKIP_FILES` exclusion (rules 3h, 3i, 3j, 9).
+   **Still deliberately absent: the statistics page and the company
+   ranking** — both rest on money and only ~15% of these deals carry
+   a price (rule 3l's gate), so they wait on the priced share, not on
+   anyone's enthusiasm.
+
 4. **Links and assets use root-absolute paths** (`/style.css`, `/companies.html`,
    `/company/<slug>/`) so they resolve at any URL depth.
 5. **Keep pre-rendered content crawlable without JS.** Client scripts may

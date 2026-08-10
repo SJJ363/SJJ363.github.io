@@ -138,10 +138,10 @@ const url = (p = "/") => SITE.origin + (p.startsWith("/") ? p : "/" + p);
    admit the pages that have no profile too, which is the exact
    mass-produced-stub failure this whole gate exists to prevent.
 
-   FUNDED_SLUGS and PROFILED_SLUGS are both set once per build, the
-   same way NAV_TOPICS is, because every reader of the gate — the page
-   builder, the sitemap and the companies index — has to agree about
-   it. */
+   FUNDED_SLUGS, PROFILED_SLUGS and MA_SLUGS are all set once per
+   build, the same way NAV_TOPICS is, because every reader of the gate
+   — the page builder, the sitemap and the companies index — has to
+   agree about it. */
 const PAGE_MIN_STORIES = 3;
 let FUNDED_SLUGS = new Set();
 function setFundedSlugs(deals) {
@@ -155,10 +155,35 @@ function setProfiledSlugs(profiles = {}) {
       .map(([slug]) => slug)
   );
 }
+/* The fourth door, and it is the funding door's argument (rule 3a-i)
+   about the other dataset. The reason to withhold a one-story page is
+   that it restates one outlet's headline; a page carrying the deal
+   record collectMaDeals() assembled — counterparty, price, type and
+   date, collapsed across every outlet that covered it and across the
+   announcement/clearance/completion reports of the same deal — is not
+   doing that. For a company this small the record exists in one place
+   nowhere else, which is the same thing that makes /ma/ worth building.
+
+   BOTH sides of a deal count, not just the target. The asymmetry is
+   tempting — being acquired is the bigger event for the company it
+   happens to — but the page carries the identical derived row either
+   way, and the acquirer side is where the archive holds a serial
+   buyer's whole run of deals under one name. In practice the door
+   mostly admits targets regardless: an acquirer that has bought
+   several companies is usually over PAGE_MIN_STORIES already. */
+let MA_SLUGS = new Set();
+function setMaSlugs(deals = []) {
+  MA_SLUGS = new Set(
+    deals.flatMap((d) =>
+      [d.acquirerCo, d.targetCo].filter(Boolean).map((co) => co.slug)
+    )
+  );
+}
 const indexable = (c) =>
   (c.count || (c.articles || []).length) >= PAGE_MIN_STORIES ||
   FUNDED_SLUGS.has(c.slug) ||
-  PROFILED_SLUGS.has(c.slug);
+  PROFILED_SLUGS.has(c.slug) ||
+  MA_SLUGS.has(c.slug);
 
 /* ── Escaping ───────────────────────────────────────────────── */
 const escHtml = (s = "") =>
@@ -248,7 +273,7 @@ const ANALYTICS = GA_ID
 const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=38" />
+  <link rel="stylesheet" href="/style.css?v=39" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="alternate" type="application/rss+xml" title="Insurtech Daily — The Brief" href="/feed.xml" />
   <script src="/nav.js?v=1" defer></script>`;
@@ -260,6 +285,18 @@ const HEAD_ASSETS = `  <link rel="preconnect" href="https://fonts.googleapis.com
 const FUNDING_FEED = {
   href: "/funding-feed.xml",
   title: "Insurtech Daily — Funding Rounds",
+};
+
+/* The third, on the same terms as the second: offered by the pages it
+   describes rather than site-wide, because the brief feed is the
+   site's (rule 3h) and these two belong to their sections. It earns a
+   separate feed from the funding one by rule 3j's test — the two have
+   different audiences. A reader tracking who is buying whom is not
+   served by a stream of venture rounds, and folding deals into the
+   funding feed would mean neither subscriber gets what they asked for. */
+const MA_FEED = {
+  href: "/ma-feed.xml",
+  title: "Insurtech Daily — M&A Deals",
 };
 
 /* ── The social card block ──────────────────────────────────────
@@ -449,7 +486,16 @@ ${navMarkup(active, currentTopic)}
 
    Unlike the nav (rule 2b), a sixth item here needs no re-measuring:
    .foot-links is a plain wrapping <p> with a line-height, not a flex row
-   tuned to the 375px and 360px breakpoints. */
+   tuned to the 375px and 360px breakpoints.
+
+   "M&A RSS" is here on the funding feed's precedent and to avoid
+   repeating its mistake rather than to correct one after the fact: it
+   shipped reachable from downloadBlock() alone and had to be rescued.
+   Named, never a bare "RSS", for the reason the second feed forced —
+   three feeds make the generic label actively misleading. This is
+   also the M&A feed's only route from outside /ma/: the twenty-odd
+   month pages carry the page-local rel=alternate, which no current
+   browser surfaces to a human. */
 /* /funding/statistics/ is here for precisely the reason the funding feed
    is, and the reason is a mistake this file has already made once. That
    feed shipped reachable from downloadBlock() alone — two pages, below a
@@ -475,6 +521,7 @@ const FOOT_LINKS = `    <p class="foot-links"><a href="/glossary/">Insurance glo
       <a href="/topic/">All topics</a> ·
       <a href="/feed.xml">Brief RSS</a> ·
       <a href="${FUNDING_FEED.href}">Funding RSS</a> ·
+      <a href="${MA_FEED.href}">M&amp;A RSS</a> ·
       <a href="/about/">About</a></p>`;
 
 /* ── The email signup, written here and nowhere else (rule 10) ──
@@ -540,6 +587,24 @@ const PITCH = {
     /* Rendered after the sample link, so the block still ends on the
        aside rather than interrupting the pitch with it. */
     extra: `Rounds only, no commentary? <a href="${FUNDING_FEED.href}">Funding RSS</a>.`,
+  },
+  /* The M&A pages' variant, and it is a variant for the funding one's
+     reason rather than for the sake of having one: these pages carry
+     the highest-intent reader on the site after the brief, and the
+     default line ("what moved in insurtech") says nothing to somebody
+     who arrived tracking consolidation.
+
+     What it must NOT do is promise a deals-only email — the product is
+     the same daily brief in every variant, and a pitch the send
+     doesn't keep is the failure rule 10 warns about. So it names what
+     the brief actually covers and points a reader who genuinely wants
+     deals and nothing else at the feed that really is that. */
+  ma: {
+    h: "Follow the deals by email",
+    dek:
+      "The brief goes out each weekday and covers who is buying whom, " +
+      "alongside the rest of the day.",
+    extra: `Deals only, no commentary? <a href="${MA_FEED.href}">M&amp;A RSS</a>.`,
   },
   company: {
     h: "Get the brief by email",
@@ -802,7 +867,7 @@ ${meta.length ? `      <p class="co-tags">${meta.join("")}</p>\n` : ""}      <p 
     </section>`;
 }
 
-function companyPageHtml(c, deals = [], profile = null) {
+function companyPageHtml(c, deals = [], profile = null, maRows = []) {
   const canonical = `/company/${c.slug}/`;
   const storyWord = c.count === 1 ? "story" : "stories";
   const sources = (c.sources || []).slice(0, 6).join(", ");
@@ -978,6 +1043,7 @@ ${companyProfileBlock(c, profile)}
 ${facts}
 
 ${companyFundingBlock(c, deals)}
+${companyMaBlock(c, maRows)}
 ${coverage}
   </main>
 
@@ -2715,6 +2781,171 @@ ${rows}
         see the <a href="/funding/">funding tracker</a> for what is counted and what isn't,
         or how this compares in the <a href="/funding/companies/">ranking of the most-funded
         insurtech companies</a>.</p>
+    </section>
+`;
+}
+
+/* ── The company page's M&A block ─────────────────────────────
+   companyFundingBlock()'s sibling for the other dataset, and a
+   separate builder rather than a second call to it because a deal is
+   not shaped like a round: it has two parties instead of one, and it
+   usually has no price at all.
+
+   That second difference decides the layout. /ma/ carries an Acquirer
+   column and a Target column because it lists deals; this lists ONE
+   company's deals, so one of those two columns would be the page's own
+   name repeated down the table. The cell says what happened to this
+   company instead — and the deal type folds into that sentence rather
+   than taking a column of its own, since "Acquired by Aon" already
+   says the type. Four columns is also what keeps this free of a phone
+   rule: the shared @media rules drop .deal-lead and then .deal-stage
+   (rule 3a-i), and a table that needs neither reuses .deal-table
+   wholesale and adds no CSS, so no ?v= bump (rule 3c-i). */
+const MA_PHRASE = {
+  Merger: { target: "Merged with", acquirer: "Merged with" },
+  "Majority stake": {
+    target: "Majority stake acquired by",
+    acquirer: "Acquired majority stake in",
+  },
+  "Asset purchase": {
+    target: "Assets acquired by",
+    acquirer: "Acquired assets of",
+  },
+  Acquisition: { target: "Acquired by", acquirer: "Acquired" },
+};
+
+/* Whether naming the seller tells the reader anything the target
+   hasn't already. Most divested units are named after the parent
+   selling them, so the phrase runs "Acquired AIG's travel insurance
+   business from AIG" unless something stops it.
+
+   Deliberately NOT sameParty(): that predicate decides whether two
+   rows are the same deal and carries a MIN_OVERLAP of 4 to keep two
+   real companies from collapsing into one, which is why "AIG" (three
+   characters) does not match "AIG's travel insurance business" there
+   and should not — loosening it to fix a display string would ripple
+   into the dedup. The question here is smaller and needs no minimum:
+   is the seller's name already IN the phrase? Bare containment
+   answers that. sameParty() still runs alongside it, for the
+   reordered-consortium case containment cannot see. */
+function sellerWorthNaming(seller, target) {
+  const s = normName(seller);
+  const t = normName(target);
+  if (!s || !t) return false;
+  return !t.includes(s) && !s.includes(t) && !sameParty(seller, target);
+}
+
+/* This company's side of the deal, and the other party's cell. The
+   counterparty links where it has a page — every company in the index
+   gets one built, thin ones included (rule 3a), so this can never be
+   a link to a 404 — and is plain text where the deal names someone
+   the archive has no record of, which is most small targets. */
+function maCounterCell(d, role) {
+  const other =
+    role === "target"
+      ? { name: d.acquirer, co: d.acquirerCo }
+      : { name: d.target, co: d.targetCo };
+  const phrase = (MA_PHRASE[d.type] || MA_PHRASE.Acquisition)[role];
+  const who = other.co
+    ? `<a class="deal-link" href="/company/${escAttr(other.co.slug)}/">${escHtml(
+        other.co.name
+      )}</a>`
+    : escHtml(other.name);
+  const from =
+    role === "acquirer" && d.seller && sellerWorthNaming(d.seller, d.target)
+      ? ` from ${escHtml(d.seller)}`
+      : "";
+  return `${escHtml(phrase)} ${who}${from}`;
+}
+
+function companyMaBlock(c, deals = []) {
+  if (!deals.length) return "";
+  const priced = deals.filter((d) => d.amountM > 0);
+  const capital = priced.reduce((s, d) => s + d.amountM, 0);
+
+  const bits = [`${deals.length} deal${deals.length === 1 ? "" : "s"} tracked`];
+  /* States its own sample, for rule 3c-viii's reason — and it needs to
+     more than most, because a company that has both bought and been
+     bought contributes both sides to this sum. */
+  if (capital > 0) {
+    bits.push(`${money(capital)} disclosed across ${priced.length} of ${deals.length}`);
+  }
+
+  /* The price column exists only where a price does, and on ~80% of
+     these pages that is nowhere — every cell would read "Undisclosed",
+     which is a column carrying one repeated value.
+
+     Dropping it is also what makes the block fit a phone. The three
+     narrow columns are all nowrap and cost a fixed 271px of a 320px
+     wrap at 360px, so the deal cell — the one column anybody reads —
+     was being squeezed to 69px and the table scrolled sideways on
+     every page, not merely the long ones. Cutting the widest of the
+     three is worth more than any amount of tuning the other two, and
+     it removes information from nowhere: the statline says the prices
+     were never published, which is the same fact the column was
+     repeating, stated once. */
+  const showPrice = priced.length > 0;
+  if (!showPrice) {
+    bits.push(deals.length === 1 ? "price not disclosed" : "no prices disclosed");
+  }
+
+  const rows = deals
+    .map((d) => {
+      const role =
+        d.acquirerCo && d.acquirerCo.slug === c.slug ? "acquirer" : "target";
+      const outlets = [d.source, ...(d.alsoReportedBy || [])].filter(Boolean);
+      const also =
+        outlets.length > 1
+          ? `<span class="deal-also" title="${escAttr(outlets.join(", "))}">+${
+              outlets.length - 1
+            }</span>`
+          : "";
+      /* "Undisclosed", never the em dash: the funding table's dash means
+         nobody stated a stage, and here an unstated price is the normal
+         condition of the record rather than a gap in it (rule 3l). Only
+         reached on a block that holds at least one real price — see
+         showPrice. */
+      const amt = d.amountM > 0
+        ? amountCell(d)
+        : '<span class="deal-blank">Undisclosed</span>';
+      return `        <tr>
+          <td>${maCounterCell(d, role)}</td>
+${showPrice ? `          <td class="deal-amt">${amt}</td>\n` : ""}          <td class="deal-date"><time datetime="${escAttr(
+            isoDate(d.publishedAt)
+          )}">${escHtml(fullDate(d.publishedAt))}</time></td>
+          <td class="deal-src"><a class="deal-link" href="${escAttr(
+            d.amountLink || d.link
+          )}" target="_blank" rel="noopener noreferrer">${escHtml(
+        d.amountSource || d.source || "source"
+      )}<span class="deal-ext" aria-hidden="true">↗</span></a>${also}</td>
+        </tr>`;
+    })
+    .join("\n");
+
+  return `    <section class="co-funding co-ma">
+      <h2 class="section-label">Mergers &amp; acquisitions</h2>
+      <p class="statline">${escHtml(bits.join("  ·  "))}</p>
+      <div class="table-wrap">
+        <table class="deal-table">
+          <caption class="sr-only">${escHtml(c.name)} acquisitions and mergers — ${
+    showPrice ? "counterparty, price, date and source" : "counterparty, date and source"
+  }</caption>
+          <thead>
+            <tr>
+              <th scope="col">Deal</th>
+${showPrice ? `              <th scope="col">Price</th>\n` : ""}              <th scope="col">Announced</th>
+              <th scope="col">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+${rows}
+          </tbody>
+        </table>
+      </div>
+      <p class="co-fund-note">Ownership changes as reported in the insurance press —
+        see the <a href="/ma/">M&amp;A tracker</a> for what is counted and what isn't.
+        Minority investments are not acquisitions and are on the
+        <a href="/funding/">funding tracker</a> instead.</p>
     </section>
 `;
 }
@@ -4832,6 +5063,9 @@ function maIndexHtml(deals, months) {
     inLanguage: SITE.lang,
     isAccessibleForFree: true,
     creator: { "@type": "Organization", name: SITE.name, url: url("/") },
+    keywords: ["insurance M&A", "acquisitions", "insurtech", "mergers"],
+    license: url("/ma/"),
+    variableMeasured: ["Acquirer", "Target", "Price (USD)", "Deal type", "Announcement date"],
     ...(deals.length
       ? {
           temporalCoverage: `${isoDate(
@@ -4839,6 +5073,25 @@ function maIndexHtml(deals, months) {
           )}/${isoDate(deals[0].publishedAt)}`,
         }
       : {}),
+    /* What makes the @type true rather than aspirational — see the
+       funding tracker's copy of this. Declared only here: the month
+       pages are isPartOf this dataset and the file is the whole of
+       it, so pointing each of them at it would advertise one archive
+       from twenty URLs. */
+    distribution: [
+      {
+        "@type": "DataDownload",
+        name: "Insurance M&A deals (CSV)",
+        encodingFormat: "text/csv",
+        contentUrl: url("/ma.csv"),
+      },
+      {
+        "@type": "DataDownload",
+        name: "Insurance M&A deals (JSON)",
+        encodingFormat: "application/json",
+        contentUrl: url("/ma.json"),
+      },
+    ],
   };
   const crumbLd = breadcrumbLd([
     { name: "Home", path: "/" },
@@ -4851,6 +5104,7 @@ function maIndexHtml(deals, months) {
     title,
     description,
     canonical,
+    feeds: [MA_FEED],
     jsonld: [datasetLd, crumbLd],
   })}
 <body>
@@ -4866,6 +5120,8 @@ ${header("ma")}
         and insurtech that the trade press has reported, deduplicated across
         the outlets that covered it. Rounds and investments are on the
         <a href="/funding/">funding tracker</a>.
+        Follow new deals by <a href="${escAttr(MA_FEED.href)}">RSS</a> or
+        <a href="/ma.csv" download>download the table</a>.
       </p>
     </div>
 
@@ -4878,10 +5134,12 @@ ${maTable(shown, "Insurance M&A deals, most recent first")}
 
 ${maMonthLinks(months)}
 
+${maDownloadBlock(deals.length, priced.length)}
+
 ${MA_METHOD_NOTE}
   </main>
 
-${footer()}
+${footer("ma")}
 </body>
 </html>
 `;
@@ -4929,6 +5187,7 @@ function maMonthHtml(m, newer, older) {
     title,
     description,
     canonical,
+    feeds: [MA_FEED],
     robots: thin
       ? "noindex, follow"
       : "index, follow, max-image-preview:large, max-snippet:-1",
@@ -4959,7 +5218,7 @@ ${
 ${MA_METHOD_NOTE}
   </main>
 
-${footer()}
+${footer("ma")}
 </body>
 </html>
 `;
@@ -7421,6 +7680,138 @@ function downloadBlock(n) {
     </section>`;
 }
 
+/* ── The M&A export ───────────────────────────────────────────
+   buildFundingExport()'s sibling, and it exists for that function's
+   reason: /ma/ carries Dataset markup, and a Dataset with no
+   distribution.contentUrl is close to invisible to the surfaces that
+   read it. The tracker is one of the two things here nobody else
+   publishes (rule 3l), and a table nobody can download is a table
+   nobody cites — an analyst or a trade journalist writing up
+   insurance M&A uses a file they can open and check.
+
+   One row builder feeding both files, exportRow()'s contract (rule
+   3i): a CSV and a JSON that disagree about a deal are worse than
+   either alone.
+
+   The one real divergence from the funding export is the amount, and
+   it follows from rule 3l's deepest difference: a price is OPTIONAL
+   here, and only ~15% of deals state one. So an undisclosed price
+   ships EMPTY — null in JSON, blank in CSV — and never 0. Zero is a
+   number, it sums, it sorts below every real figure, and anything
+   averaging this column would read it as a free acquisition. That is
+   the same argument rule 3i makes for shipping an unattributed round
+   blank rather than as an em dash, one column over. */
+function maExportRow(d) {
+  const priced = Number(d.amountM) > 0;
+  return {
+    acquirer: d.acquirerCo ? d.acquirerCo.name : d.acquirer || "",
+    acquirer_url: d.acquirerCo ? url(`/company/${d.acquirerCo.slug}/`) : "",
+    target: d.targetCo ? d.targetCo.name : d.target || "",
+    target_url: d.targetCo ? url(`/company/${d.targetCo.slug}/`) : "",
+    seller: d.seller || "",
+    deal_type: d.type || "Acquisition",
+    price_disclosed: priced ? "yes" : "no",
+    amount_usd_millions: priced ? round3(d.amountM) : null,
+    amount_reported_millions: priced ? round3(d.nativeM || d.amountM) : null,
+    reported_currency: priced ? d.currency || "USD" : "",
+    announced: isoDate(d.publishedAt),
+    source: d.amountSource || d.source || "",
+    source_url: d.amountLink || d.link || "",
+    also_reported_by: (d.alsoReportedBy || []).join("; "),
+  };
+}
+
+const MA_EXPORT_COLUMNS = Object.keys(maExportRow({}));
+
+const MA_EXPORT_FIELDS = {
+  acquirer: "Company acquiring, as canonicalised by this site where it has a page here.",
+  acquirer_url: "The acquirer's page here. Blank where the archive holds no record of it.",
+  target: "Company, book or business unit being acquired.",
+  target_url: "The target's page here. Blank where the archive holds no record of it.",
+  seller: "Party disposing of the target, where the deal is a divestment and a headline names one. Blank otherwise.",
+  deal_type: "Acquisition, Merger, Majority stake or Asset purchase, read from the reporting.",
+  price_disclosed: "yes where a price was published, no otherwise. Most acquisition prices never are.",
+  amount_usd_millions: "Price in millions of US dollars, converted at a fixed reference rate. Empty where undisclosed — never zero.",
+  amount_reported_millions: "The same price in millions of the currency the outlet printed. Empty where undisclosed.",
+  reported_currency: "ISO code of the currency the outlet printed. Empty where undisclosed.",
+  announced: "Date the deal was reported, YYYY-MM-DD. A deal is reported again as it clears and completes; this is the report this row was built from.",
+  source: "Outlet this row was taken from.",
+  source_url: "The report it comes from — check it before citing.",
+  also_reported_by: "Other outlets that covered the same deal, semicolon-separated.",
+};
+
+function buildMaExport(deals = []) {
+  const rows = deals.map(maExportRow);
+  const priced = deals.filter((d) => d.amountM > 0);
+
+  // RFC 4180 CRLF, no BOM — buildFundingExport()'s rules, same reasons.
+  const csv = [
+    MA_EXPORT_COLUMNS.join(","),
+    ...rows.map((r) => MA_EXPORT_COLUMNS.map((k) => csvCell(r[k])).join(",")),
+  ].join("\r\n") + "\r\n";
+  fs.writeFileSync(path.join(ROOT, "ma.csv"), csv);
+
+  const json = {
+    name: "Insurance M&A deals",
+    description:
+      "Every insurance and insurtech acquisition, merger and controlling-stake purchase reported in " +
+      "the trade press, deduplicated into one row per deal. Counted whether or not a price was " +
+      "disclosed — most never are. A floor on real activity, not a market estimate.",
+    publisher: SITE.name,
+    url: url("/ma/"),
+    method: url("/ma/"),
+    terms: "Free to use with attribution to " + SITE.name + " and a link to " + url("/ma/") + ".",
+    generatedAt: new Date().toISOString(),
+    count: rows.length,
+    /* Both numbers, always. The total alone invites a reader to divide
+       it by `count` and get an average deal size that is wrong by a
+       factor of seven — rule 3c-viii's "every derived figure states
+       its own sample", carried into the file. */
+    pricedCount: priced.length,
+    totalDisclosedUsdMillions: round3(priced.reduce((s, d) => s + d.amountM, 0)),
+    coverage: rows.length
+      ? { from: rows[rows.length - 1].announced, to: rows[0].announced }
+      : null,
+    fields: MA_EXPORT_FIELDS,
+    deals: rows,
+  };
+  fs.writeFileSync(path.join(ROOT, "ma.json"), JSON.stringify(json, null, 2) + "\n");
+
+  console.log(`  ✓ ma.csv + ma.json — ${rows.length} deals (${priced.length} priced)`);
+}
+
+/* downloadBlock()'s sibling, with one paragraph the funding one has no
+   need of. Every round on /funding/ carries a figure by construction,
+   so the file's shape needs no explaining; here the majority of rows
+   have an empty price column, and a reader who downloads this without
+   being told will read that as missing data rather than as the normal
+   state of the record. Disclosing it is rule 3c-viii's "the page
+   discloses what it doesn't know" at the point of use. */
+function maDownloadBlock(n, priced) {
+  return `    <section class="method">
+      <h2 class="fact-label">Download the data</h2>
+      <p class="method-text">
+        All ${n} deal${n === 1 ? "" : "s"} as
+        <a href="/ma.csv" download>CSV</a> or
+        <a href="/ma.json">JSON</a> — acquirer, target, deal type, date and
+        a link to the reporting behind every row. Rebuilt with this page,
+        so a download is never older than what is shown above.
+      </p>
+      <p class="method-text">
+        ${priced} of the ${n} carry a published price. The rest are real
+        deals whose terms were never disclosed, so their price columns are
+        empty rather than zero — an average taken across all ${n} rows
+        would not mean anything.
+      </p>
+      <p class="method-text">
+        New deals as they are found: <a href="${escAttr(MA_FEED.href)}">RSS feed</a>.
+        Free to use with attribution to Insurtech Daily and a link back to
+        <a href="/ma/">${escHtml(url("/ma/").replace(/^https?:\/\//, ""))}</a>.
+        Please read how the deals are compiled below before citing them.
+      </p>
+    </section>`;
+}
+
 /* ══════════════════════════════════════════════════════════════
    The feed
 
@@ -7742,9 +8133,190 @@ ${body}
 }
 
 /* ══════════════════════════════════════════════════════════════
+   /ma-feed.xml — the deal wire
+
+   The funding feed's sibling, and it clears rule 3j's bar for a
+   separate feed rather than a merged one: the two have different
+   audiences. Somebody tracking consolidation — who is buying brokers,
+   which carriers are exiting which lines — is not served by a stream
+   of Series A rounds, and a reader following venture funding does not
+   want completion notices for regional agency roll-ups. Folding them
+   together would give neither subscriber the thing they subscribed to.
+
+   Everything else is inherited: items link HOME with the sources
+   cited in the body (rule 3h's decision, which is the whole reason
+   a feed of somebody else's headlines is not worth publishing),
+   pubDate is when the deal was reported rather than when the build
+   saw it, and hrefs are absolutised on the way out.
+
+   The guid is the one place this DEPARTS from the funding feed, and
+   it departs in the opposite direction — see maGuid().
+   ══════════════════════════════════════════════════════════════ */
+
+/* ~7 months at the archive's ~4 deals a month. The tracker keeps every
+   deal; a feed is a window on it. */
+const MA_FEED_MAX = 30;
+
+/* An item's identity, and the interesting half of this file.
+
+   dealGuid() next door puts the AMOUNT in the key, deliberately, so a
+   round whose figure is restated re-emits rather than risking two
+   different rounds by one company collapsing onto one id. Copying
+   that here would be wrong twice over. Most deals have no price at
+   all, so the amount contributes nothing to most keys; and the date
+   cannot stand in for it either, because a deal is reported again as
+   it clears and completes — maDeals() collapses those reports into
+   one row whose date then MOVES to the latest of them, so any key
+   carrying the month would re-emit a deal every time it changed
+   phase, months apart, under an identical title.
+
+   What a deal is, is its two parties. ma.js already asserts exactly
+   that: the both-sides-match arm of its dedup carries no window at
+   all, on the reasoning that an acquisition happens once and a
+   company does not buy the same company twice. The guid is that same
+   claim, so the two cannot disagree about what one deal is. */
+function maGuid(d) {
+  const who = (co, raw) => (co ? co.slug : guidKey(raw));
+  return `${SITE.origin}/ma/#${who(d.acquirerCo, d.acquirer)}-acquires-${who(
+    d.targetCo,
+    d.target
+  )}`;
+}
+
+/* The sentence a deal makes, in the type's own verb. "Acquires" for
+   everything would file a merger of equals and a book purchase under
+   a word neither side used. */
+const MA_VERB = {
+  Merger: "merges with",
+  "Majority stake": "takes majority stake in",
+  "Asset purchase": "acquires assets of",
+  Acquisition: "acquires",
+};
+
+const maName = (co, raw) => (co ? co.name : raw || "");
+
+function maItemHtml(d) {
+  const verb = MA_VERB[d.type] || MA_VERB.Acquisition;
+  const acquirer = maName(d.acquirerCo, d.acquirer);
+  const target = maName(d.targetCo, d.target);
+  const native = nativeMoney(d.nativeM, d.currency);
+  const outlets = [d.source, ...(d.alsoReportedBy || [])].filter(Boolean);
+
+  const lede =
+    `<p><strong>${escHtml(acquirer)}</strong> ${escHtml(verb)} <strong>${escHtml(
+      target
+    )}</strong>` +
+    (d.seller && sellerWorthNaming(d.seller, d.target)
+      ? ` from ${escHtml(d.seller)}`
+      : "") +
+    (d.amountM > 0
+      ? ` for <strong>${escHtml(money(d.amountM))}</strong>${
+          native ? ` (${escHtml(native)} as reported)` : ""
+        }`
+      : ", for an undisclosed sum") +
+    `, reported ${escHtml(fullDate(d.publishedAt))}.</p>`;
+
+  const src =
+    `<p>Reported by <a href="${escAttr(d.amountLink || d.link)}">${escHtml(
+      d.amountSource || d.source || "source"
+    )}</a>` +
+    (outlets.length > 1 ? `, and covered by ${escHtml(outlets.slice(1).join(", "))}` : "") +
+    `.</p>`;
+
+  const pages = [d.targetCo, d.acquirerCo]
+    .filter(Boolean)
+    .map(
+      (co) =>
+        `<a href="/company/${escAttr(co.slug)}/">${escHtml(co.name)} on ${escHtml(
+          SITE.name
+        )}</a>`
+    );
+
+  const links =
+    `<p>` +
+    pages.map((p) => `${p} &middot; `).join("") +
+    `<a href="/ma/">Every insurance acquisition tracked</a> &middot; ` +
+    `<a href="/ma.csv">Download the tracker</a></p>`;
+
+  return absolutise([lede, src, links].join("\n"));
+}
+
+function buildMaFeed(deals = []) {
+  const items = deals.slice(0, MA_FEED_MAX);
+
+  const self = url(MA_FEED.href);
+  const built = rfc822(new Date().toISOString());
+
+  const body = items
+    .map((d) => {
+      const verb = MA_VERB[d.type] || MA_VERB.Acquisition;
+      const acquirer = maName(d.acquirerCo, d.acquirer);
+      const target = maName(d.targetCo, d.target);
+      /* Home, never the source. The TARGET's page first: an
+         acquisition is the larger event for the company it happens to,
+         and its page is the one whose subject this deal now is. The
+         acquirer is the fallback because a serial buyer's page carries
+         its whole run of deals, which is still ours and still better
+         than sending the reader to one outlet's report. */
+      const co = d.targetCo || d.acquirerCo;
+      const loc = url(co ? `/company/${co.slug}/` : "/ma/");
+      const price = d.amountM > 0 ? ` for ${money(d.amountM)}` : "";
+      const title = `${acquirer} ${verb} ${target}${price}`;
+      return `    <item>
+      <title>${escHtml(title)}</title>
+      <link>${escHtml(loc)}</link>
+      <guid isPermaLink="false">${escHtml(maGuid(d))}</guid>
+      <pubDate>${rfc822(d.publishedAt)}</pubDate>
+      <description>${escHtml(
+        `${acquirer} ${verb} ${target}${
+          d.amountM > 0 ? ` for ${money(d.amountM)}` : ", for an undisclosed sum"
+        }, reported ${fullDate(d.publishedAt)} by ${
+          d.amountSource || d.source || "the trade press"
+        }.`
+      )}</description>
+      <content:encoded>${cdata(maItemHtml(d))}</content:encoded>
+      <dc:creator>${escHtml(SITE.name)}</dc:creator>
+      <category>Insurance M&amp;A</category>
+      <category>${escHtml(d.type || "Acquisition")}</category>
+      <source url="${escAttr(self)}">${escHtml(SITE.name)}</source>
+    </item>`;
+    })
+    .join("\n");
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>${escHtml(SITE.name)} — M&amp;A Deals</title>
+    <link>${escHtml(url("/ma/"))}</link>
+    <atom:link href="${escAttr(self)}" rel="self" type="application/rss+xml" />
+    <description>${escHtml(
+      "Every insurance and insurtech acquisition, merger and controlling-stake purchase — " +
+        "acquirer, target, price where disclosed and the reporting behind it, deduplicated " +
+        "across the trade press."
+    )}</description>
+    <language>${escHtml(SITE.lang)}</language>
+    <lastBuildDate>${built}</lastBuildDate>
+    <generator>scripts/seo.js</generator>
+    <image>
+      <url>${escHtml(url(SITE.logo))}</url>
+      <title>${escHtml(SITE.name)}</title>
+      <link>${escHtml(url("/ma/"))}</link>
+    </image>
+${body}
+  </channel>
+</rss>
+`;
+  fs.writeFileSync(path.join(ROOT, path.basename(MA_FEED.href)), xml);
+  console.log(`  ✓ ma-feed.xml — ${items.length} deals`);
+}
+
+/* ══════════════════════════════════════════════════════════════
    Company page directory management
    ══════════════════════════════════════════════════════════════ */
-function buildCompanyPages(db, deals = [], profiles = {}) {
+function buildCompanyPages(db, deals = [], profiles = {}, maRows = []) {
   const outRoot = path.join(ROOT, "company");
   fs.mkdirSync(outRoot, { recursive: true });
 
@@ -7755,6 +8327,19 @@ function buildCompanyPages(db, deals = [], profiles = {}) {
     if (!d.company) continue;
     if (!bySlug.has(d.company.slug)) bySlug.set(d.company.slug, []);
     bySlug.get(d.company.slug).push(d);
+  }
+
+  /* The same pass for the deals, and one deal files under BOTH sides —
+     which is the whole reason this is a second map rather than a field
+     on the first. A round has one company; an acquisition has two, and
+     it belongs on each of their pages. */
+  const maBySlug = new Map();
+  for (const d of maRows) {
+    for (const co of [d.acquirerCo, d.targetCo]) {
+      if (!co) continue;
+      if (!maBySlug.has(co.slug)) maBySlug.set(co.slug, []);
+      maBySlug.get(co.slug).push(d);
+    }
   }
 
   const companies = db.companies || [];
@@ -7770,15 +8355,17 @@ function buildCompanyPages(db, deals = [], profiles = {}) {
     }
   }
 
-  let funded = 0, profiled = 0;
+  let funded = 0, profiled = 0, merged = 0;
   for (const c of companies) {
     const cd = bySlug.get(c.slug) || [];
     if (cd.length) funded++;
+    const md = maBySlug.get(c.slug) || [];
+    if (md.length) merged++;
     const profile = profiles[c.slug] && profiles[c.slug].known ? profiles[c.slug] : null;
     if (profile) profiled++;
     const dir = path.join(outRoot, c.slug);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, "index.html"), companyPageHtml(c, cd, profile));
+    fs.writeFileSync(path.join(dir, "index.html"), companyPageHtml(c, cd, profile, md));
   }
   const n = companies.filter(indexable).length;
   // The second number is the point of the funding door: pages that carry
@@ -7795,12 +8382,22 @@ function buildCompanyPages(db, deals = [], profiles = {}) {
       !FUNDED_SLUGS.has(c.slug) &&
       PROFILED_SLUGS.has(c.slug)
   ).length;
+  // And the same for the fourth door, for the same reason: this is the
+  // number the M&A parity work exists to move.
+  const onMa = companies.filter(
+    (c) =>
+      (c.count || 0) < PAGE_MIN_STORIES &&
+      !FUNDED_SLUGS.has(c.slug) &&
+      !PROFILED_SLUGS.has(c.slug) &&
+      MA_SLUGS.has(c.slug)
+  ).length;
   console.log(
     `  ✓ ${companies.length} company pages under /company/ — ` +
       `${n} indexable, ${companies.length - n} noindex (under ${PAGE_MIN_STORIES} stories,` +
-      ` no disclosed round, no profile)\n` +
+      ` no disclosed round, no profile, no deal)\n` +
       `    ${funded} carry a funding block; ${onFunding} of those are indexable on it alone\n` +
-      `    ${profiled} carry an original profile; ${onProfile} of those are indexable on it alone`
+      `    ${profiled} carry an original profile; ${onProfile} of those are indexable on it alone\n` +
+      `    ${merged} carry an M&A block; ${onMa} of those are indexable on it alone`
   );
 }
 
@@ -7832,6 +8429,7 @@ function main() {
   setNavTopics(topics);
   setFundedSlugs(deals);
   setProfiledSlugs(profiles);
+  setMaSlugs(maAll);
   /* Same contract as the two above: the company pages turn a profile's
      place into a link to its market, so the set of markets that HAVE a
      page has to exist before the first company page is written. */
@@ -7851,7 +8449,7 @@ function main() {
      exist before the first page is written. */
   const terms = glossaryLive(rawStore());
   setLinkTerms(terms);
-  buildCompanyPages(db, deals, profiles);
+  buildCompanyPages(db, deals, profiles, maAll);
   buildBriefPages(briefs, db);
   buildTopicPages(topics, db, deals, hubBriefs);
   buildFundingPages(deals, months, quarters, years, ranked, markets);
@@ -7892,6 +8490,8 @@ function main() {
   buildFeed(briefs, db);
   buildFundingExport(deals);
   buildFundingFeed(deals);
+  buildMaExport(maAll);
+  buildMaFeed(maAll);
   console.log("SEO build complete.");
 }
 

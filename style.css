@@ -900,6 +900,16 @@ main > .subscribe {
    carrying it. Wrapping a two-word label beats tuning percentages
    against the widest string, which the next type name would undo. */
 .ma-table .deal-stage { white-space: normal; }
+/* The company page's M&A block runs four columns where /ma/ runs six,
+   so it inherits .deal-table wholesale and needs none of the widths
+   above — but it does need this one line, for the reason the tracker
+   needed it. .deal-src is nowrap, which is right on a wide table and
+   costs ~160px here: measured at 360px it squeezed the deal cell to
+   81px and pushed the table into a 112px horizontal scroll inside its
+   own wrap, on a table narrow enough not to need one. Wrapping the
+   outlet name is what a four-column table can afford and a six-column
+   one can't. */
+.co-ma .deal-src { white-space: normal; }
 .deal-src { white-space: nowrap; font-size: 0.84rem; color: var(--ink-3); }
 .deal-also {
   margin-left: 5px; padding: 1px 5px; border-radius: 2px;

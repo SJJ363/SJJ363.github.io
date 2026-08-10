@@ -131,6 +131,9 @@ const SKIP_FILES = new Set([
   "funding-feed.xml",
   "funding.csv",
   "funding.json",
+  "ma-feed.xml",
+  "ma.csv",
+  "ma.json",
   "company.html", // the noindex redirect shim
   "CNAME",
 ]);
