@@ -234,6 +234,69 @@ const CANON_LIST = {
      means an `inszone` record is never created. */
   "Inszone Insurance Services": ["Inszone", "Inszone Insurance"],
   "Zurich": ["Zurich Insurance"],
+  /* The rest of the same sweep, found the same way and sharing its
+     root cause: the company extractor settles on ONE name per entity,
+     so the index was never split and no pass over it could have found
+     these — while ma-extract.js echoes whatever the headline said, so
+     the tracker shows every spelling. All twelve are M&A party strings
+     that resolved to nothing, which cost the link and the grouping and
+     hid nothing: every affected deal has a distinct target, so no row
+     was double-counted before and none collapses now.
+
+     Direction needed no judgement in any of these. Only one side of
+     each pair exists as a record at all, and in eleven of the twelve
+     that side is the one holding the profile, so canonicalising to it
+     is forced rather than chosen.
+
+     Verified against the article titles on both sides, per the Leadway
+     block. The clearest are the ones where two outlets wrote up one
+     deal in two names on the same day:
+
+       Federated / Federated Insurance
+         "Federated Acquires Illinois-Based HDVI"     (Ins. Journal)
+         "Federated Insurance buys HDVI"              (FinTech Global)
+       Heller-Kowitz / …Insurance Advisors
+         "…American Growth Insurance Makes Heller-Kowitz its First Buy"
+         "AGI acquires Heller-Kowitz Insurance Advisors"
+       Relation / Relation Insurance Services
+         "Relation acquires Mid-State Insurance"
+         "Relation Insurance acquires Fresno ag agency…"
+
+     Several aliases are ordinary words — Relation, Bamboo, AXIS,
+     Federated. That is the Kiwi/Breeze trade above and is accepted on
+     its terms: mapping a generic form onto a specific one is safe only
+     in a corpus already filtered to insurance, which relevance.js
+     guarantees. None of them currently names a different company here,
+     and SPLIT_LIST is the remedy if one ever does. */
+  "Federated Insurance": ["Federated"],
+  "Etiqa Insurance": ["Etiqa"],
+  "Relation Insurance Services": ["Relation"],
+  "Bamboo Insurance": ["Bamboo"],
+  "Baldwin Insurance Group": ["The Baldwin Group"],
+  "FutureProof": ["FutureProof Technologies"],
+  "AXIS Capital": ["AXIS"],
+  "APOLLO": ["Apollo Insurance Solutions", "Apollo Insurance"],
+  "First Connect": ["First Connect Insurance"],
+  "Duck Creek": ["Duck Creek Technologies"],
+  "Heller-Kowitz": ["Heller-Kowitz Insurance Advisors"],
+  /* The twelfth is not a variant of a right name, it is a wrong one.
+     Two outlets covered this deal and Insurance Journal wrote the
+     state as a possessive — "Enterprise Risk Associates Acquires
+     Texas' Hamann Insurance Group" — which the extractor read into the
+     company name, so the site has carried a page for a firm called
+     "Texas Hamann Insurance Group" ever since. Insurance Business
+     names it plainly: "Enterprise Risk Associates acquires Hamann
+     Insurance Group".
+
+     So this one is written in the reverse direction from the other
+     eleven: the alias is the record that EXISTS and the canonical is
+     the string only the tracker holds. That is safe here precisely
+     because the profile test comes out empty on both sides — the
+     indexed record has no profile to lose (rule 3a-ii's hazard does
+     not apply), it holds one story, and it is already noindex and out
+     of sitemap.xml, so retiring /company/texas-hamann-insurance-group/
+     for /company/hamann-insurance-group/ costs no indexed URL. */
+  "Hamann Insurance Group": ["Texas Hamann Insurance Group"],
 };
 
 /* ---- Curated splits: one name, two companies ----
