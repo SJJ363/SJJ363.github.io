@@ -192,6 +192,48 @@ const CANON_LIST = {
      Kong), which is deliberately NOT merged elsewhere. Revisit if
      Anytime picks up coverage outside Romania. */
   "Anytime": ["Anytime Romania"],
+  /* Found through the M&A tracker rather than the company index, which
+     is why they survived every earlier sweep: these variants were never
+     company RECORDS at all. resolveParty() matches a headline's raw
+     party name against the index, so "Inszone" and "Zurich Insurance"
+     were strings that resolved to nothing — the deals rendered as plain
+     text instead of links, did not gather onto one company page's M&A
+     block, and were invisible to dedupeMaByCompany(), which can only
+     collapse two reports of one deal once both resolve to the same
+     identity. Nothing was double-counted here (all seven deals have
+     distinct targets); what was lost was the grouping.
+
+     Inszone is the costly one and the reason this is worth an entry:
+     it is a serial acquirer of small US agencies, so its record grows
+     a row every few weeks and each one arrives under whichever of the
+     three names the desk used.
+
+       Inszone Insurance   "Inszone Insurance Acquires Pennsylvania
+                            Hospitality Specialist Progress Brokerage"
+       Inszone Insurance Services
+                           "Inszone Insurance Services acquires Advice
+                            Insurance Agency…"
+       Inszone             "Inszone acquires Chelf Insurance Group in
+                            Oklahoma expansion"
+
+     Verified against the article titles on both sides rather than the
+     profiles, for the reason the Leadway block gives. One Sacramento
+     brokerage in every case; one Swiss insurer in every case.
+
+     Direction follows the rule above — the surviving slug keeps its
+     profile — and lands opposite ways round for the two, which is the
+     point of choosing it by profile rather than by length: `zurich`
+     holds one (Insurer, Switzerland) and `inszone-insurance-services`
+     holds one (Broker, California), so the short name wins the first
+     and the long name the second.
+
+     mergePrefixes() cannot fight the Inszone entry even though
+     "insurance" and "services" are both in COMPANY_TYPE: it folds a
+     long slug into a short root only where that root already EXISTS as
+     a record, and canonicalising every surface form to the long name
+     means an `inszone` record is never created. */
+  "Inszone Insurance Services": ["Inszone", "Inszone Insurance"],
+  "Zurich": ["Zurich Insurance"],
 };
 
 /* ---- Curated splits: one name, two companies ----
