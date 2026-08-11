@@ -1,21 +1,918 @@
 {
-  "updatedAt": "2026-08-10T23:00:58.828Z",
-  "count": 1449,
+  "updatedAt": "2026-08-11T13:01:49.162Z",
+  "count": 1456,
   "companies": [
     {
-      "slug": "aviva",
-      "name": "Aviva",
-      "count": 10,
-      "firstSeen": "2024-12-10T08:00:00.000Z",
-      "lastSeen": "2026-08-10T22:00:36.000Z",
+      "slug": "cleversoft",
+      "name": "Cleversoft",
+      "count": 1,
+      "firstSeen": "2026-08-11T13:27:00.000Z",
+      "lastSeen": "2026-08-11T13:27:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Regulation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Finextra"
+      ],
+      "related": [
+        {
+          "slug": "fs-assist",
+          "name": "FS Assist",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Cleversoft to buy FS Assist to expand insurance reporting footprint",
+          "link": "https://www.finextra.com/pressarticle/110616/cleversoft-to-buy-fs-assist-to-expand-insurance-reporting-footprint?utm_medium=rssfinextra&utm_source=finextrafeed",
+          "source": "Finextra",
+          "publishedAt": "2026-08-11T13:27:00.000Z",
+          "tags": [
+            "M&A",
+            "Regulation"
+          ],
+          "summary": "The cleversoft group, a leading provider of regulatory technology solutions for the financial services industry, today announced the signing of a definitive agreement to acquire UK-based FS Assist, a trusted specialist…",
+          "co": [
+            "fs-assist"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "fs-assist",
+      "name": "FS Assist",
+      "count": 1,
+      "firstSeen": "2026-08-11T13:27:00.000Z",
+      "lastSeen": "2026-08-11T13:27:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Regulation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Finextra"
+      ],
+      "related": [
+        {
+          "slug": "cleversoft",
+          "name": "Cleversoft",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Cleversoft to buy FS Assist to expand insurance reporting footprint",
+          "link": "https://www.finextra.com/pressarticle/110616/cleversoft-to-buy-fs-assist-to-expand-insurance-reporting-footprint?utm_medium=rssfinextra&utm_source=finextrafeed",
+          "source": "Finextra",
+          "publishedAt": "2026-08-11T13:27:00.000Z",
+          "tags": [
+            "M&A",
+            "Regulation"
+          ],
+          "summary": "The cleversoft group, a leading provider of regulatory technology solutions for the financial services industry, today announced the signing of a definitive agreement to acquire UK-based FS Assist, a trusted specialist…",
+          "co": [
+            "cleversoft"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "axle",
+      "name": "Axle",
+      "count": 2,
+      "firstSeen": "2026-02-03T08:00:00.000Z",
+      "lastSeen": "2026-08-11T13:01:04.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "FF News"
+      ],
+      "related": [
+        {
+          "slug": "experian",
+          "name": "Experian",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Axle raises $17.5 million",
+          "link": "https://coverager.com/axle-raises-17-5-million/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-11T13:01:04.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "Axle automates insurance verification.",
+          "co": []
+        },
+        {
+          "title": "Axle Teams With Experian to Bring Insurance Verification to Automotive Dealers to Reduce Fraud",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVlI0LUZYNlRTNDM4LV90MTNvNG9nZ1pUY3VJNFJ5VTFFeFlfbTF1RWdlVXpqd3p5SGR6YVJmZ3c4YXQyYmZLM3lIcFp5OF80eDJ4cnB5SENqVWhhaTl3NjZySkhjdlBoTG8wWW1Pa3dIemRYOHgtSmlvQXNPdkpTWlJNS2ZlaFEwd1FPN1hCR2QtYnNHYWx5N2RXaTZWQnFVN1ZiV0wzaGJieDJMbTNMTUJyVktrVkVCc1ZabnJrTk9KWTUyRmFMLTZ1ZHVLNXZYZXc?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-02-03T08:00:00.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": [
+            "experian"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "allstate",
+      "name": "Allstate",
+      "count": 7,
+      "firstSeen": "2024-09-29T07:00:00.000Z",
+      "lastSeen": "2026-08-11T12:38:33.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurtech Insights",
+        "Claims Journal",
+        "Insurance Journal",
+        "Insurance Business",
+        "Digital Insurance"
+      ],
+      "related": [
+        {
+          "slug": "the-standard",
+          "name": "The Standard",
+          "count": 1
+        },
+        {
+          "slug": "state-farm",
+          "name": "State Farm",
+          "count": 1
+        },
+        {
+          "slug": "geico",
+          "name": "GEICO",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Allstate develops Allie platform for agentic AI strategy",
+          "link": "https://www.insurtechinsights.com/allstate-develops-allie-platform-for-agentic-ai-strategy/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-11T12:38:33.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "Allstate is developing a proprietary agentic AI platform called Allie as the insurer looks to embed AI more deeply across its operations and customer interactions.",
+          "co": []
+        },
+        {
+          "title": "Allstate Introduces Large Language Model, ALLIE",
+          "link": "https://www.claimsjournal.com/news/national/2026/08/10/339372.htm",
+          "source": "Claims Journal",
+          "publishedAt": "2026-08-10T05:00:48.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Allstate CEO Tom Wilson said the insurer has a “technology-drive strategy, not a strategy supported by technology.” And the next step in the strategy is the build of ALLIE – Allstate’s Large Language Intelligent…",
+          "co": []
+        },
+        {
+          "title": "Allstate Introduces Large Language Model, ALLIE",
+          "link": "https://www.insurancejournal.com/news/national/2026/08/07/880719.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-07T13:59:55.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Allstate CEO Tom Wilson said the insurer has a “technology-drive strategy, not a strategy supported by technology.” And the next step in the strategy is the build of ALLIE – Allstate’s Large Language Intelligent…",
+          "co": []
+        },
+        {
+          "title": "Allstate Q2 net income rises 56% as underwriting performance improves",
+          "link": "https://www.insurtechinsights.com/allstate-q2-net-income-rises-56-as-underwriting-performance-improves/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-06T13:36:40.000Z",
+          "tags": [
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "Allstate reported a sharp increase in second-quarter 2026 earnings, driven by stronger underwriting results across its Property-Liability business and improved performance in auto and homeowners insurance.",
+          "co": []
+        },
+        {
+          "title": "Allstate breach claim raises questions about scope of exposure",
+          "link": "https://www.insurancebusinessmag.com/us/news/cyber/allstate-breach-claim-raises-questions-about-scope-of-exposure-584600.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-03T04:01:17.000Z",
+          "tags": [
+            "Cyber",
+            "Claims & Underwriting"
+          ],
+          "summary": "The claimed data reportedly includes employee-related records - and the incident adds to a pattern of insurers becoming a repeated target for ransomware groups",
+          "co": []
+        },
+        {
+          "title": "The Standard acquires Allstate's employer benefits for $2B: Insurtech news",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQV182VGlaR20ybm9zNkp6YVN1akNUUGZOWGVqRDJrNmZMX21XWDJlNHNZWjd2aXluejVsOUdkZXNtbUdvOE1xcTFnb0VlOXU1bE4zd2NiU1U5aWVmX1JHeXBuNS11a3VnT2paSXlic05hUU4tYzVfeGNuRm85aWFfZ3F5TmxGa3lFVzg0dl85b2c?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2025-04-06T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "the-standard"
+          ]
+        },
+        {
+          "title": "State Farm, Allstate, Geico top digital performers",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM0NQQmZvSmpjUFFWLVpEX3BJdG9XU2VlOXNnOVROeFZZaWkzVFppbVlCVU9BTTBsZ2hPc0tJS0FIRTR2dWYwX3dsdmN2RFpDQktmamhQWEpFNlR1LUxOamU4UVJ4djdVU3JtS1FscDM4aDR3V1NrS2tWU29QOVo4WmZ3?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2024-09-29T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "state-farm",
+            "geico"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "fm",
+      "name": "FM",
+      "count": 2,
+      "firstSeen": "2026-08-11T08:30:30.000Z",
+      "lastSeen": "2026-08-11T12:14:42.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 2
+        },
+        {
+          "name": "Property & Cat",
+          "count": 2
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business",
+        "Reinsurance News"
+      ],
+      "related": [
+        {
+          "slug": "fortressfire",
+          "name": "FortressFire",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "FM bets on structure-level wildfire science with FortressFire acquisition",
+          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/fm-bets-on-structurelevel-wildfire-science-with-fortressfire-acquisition-585693.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-11T12:14:42.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "The deal puts physics-based ignition modeling at the center of FM's commercial property underwriting - and signals where the broader market is heading",
+          "co": [
+            "fortressfire"
+          ]
+        },
+        {
+          "title": "FM acquires wildfire intelligence provider FortressFire",
+          "link": "https://www.reinsurancene.ws/fm-acquires-wildfire-intelligence-provider-fortressfire/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-11T08:30:30.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation",
+            "Property & Cat"
+          ],
+          "summary": "Commercial property insurer FM has acquired FortressFire, a provider of wildfire intelligence that combines machine learning and physics-based modeling; financial details of the transaction were not disclosed.…",
+          "co": [
+            "fortressfire"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "fortressfire",
+      "name": "FortressFire",
+      "count": 2,
+      "firstSeen": "2026-08-11T08:30:30.000Z",
+      "lastSeen": "2026-08-11T12:14:42.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 2
+        },
+        {
+          "name": "Property & Cat",
+          "count": 2
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business",
+        "Reinsurance News"
+      ],
+      "related": [
+        {
+          "slug": "fm",
+          "name": "FM",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "FM bets on structure-level wildfire science with FortressFire acquisition",
+          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/fm-bets-on-structurelevel-wildfire-science-with-fortressfire-acquisition-585693.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-11T12:14:42.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "The deal puts physics-based ignition modeling at the center of FM's commercial property underwriting - and signals where the broader market is heading",
+          "co": [
+            "fm"
+          ]
+        },
+        {
+          "title": "FM acquires wildfire intelligence provider FortressFire",
+          "link": "https://www.reinsurancene.ws/fm-acquires-wildfire-intelligence-provider-fortressfire/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-11T08:30:30.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation",
+            "Property & Cat"
+          ],
+          "summary": "Commercial property insurer FM has acquired FortressFire, a provider of wildfire intelligence that combines machine learning and physics-based modeling; financial details of the transaction were not disclosed.…",
+          "co": [
+            "fm"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "go-digit",
+      "name": "Go Digit",
+      "count": 4,
+      "firstSeen": "2025-02-27T08:00:00.000Z",
+      "lastSeen": "2026-08-11T11:30:13.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "simplywall.st",
+        "Indian Startup News",
+        "Medical Dialogues"
+      ],
+      "related": [
+        {
+          "slug": "dr-reddy-s",
+          "name": "Dr Reddy's",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Gig Insurance Rules Put Go Digit Stock And APAC Insurers In Focus",
+          "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOZnVRUlFXYUphRXNlNHBKeWZ4dUIzcmpkV0lBMTByTFYwNXExbmNtczRFbVR2RXBCT0dJVkR5aS03TkpQbVhMejhINzR0S0Vvd2luVWthWjlqY0sxbjVyOGlseGFKR3FnWi1pSVNodlYzMW02QktNN041VHJyNUtuME5QMjZNR3NrczVscDhaeFlobDhRNlROZmEwLWtwT0NjanpiTHVuWDVCX29xN3hiSHJKajJ3Q0tIRnlTNmltaDZ2b1c0bWVwZWV4TjVJLU8tM0ZMZEp6ZU5NQldFSDJIV0NiYk8zelnSAewBQVVfeXFMT3F1eFBWMHMySmFwTm1MZExzYk5fcU1wZjlQY2h0bmUxWGNzdndJRTZaOGFBcTJab1hETzg0Y2w2bGk3Y245ZXRfNGZwNUFnbEN0SURIYXZJRGFSbTQ0bWhIQ3NMcmtuS1E1emdyQVJUTnZkd2JCbl9qZWdiZzN1OUdGQVpkcHAwQzdLVGhodUVKWE43RVlVT0RDRkR2ZlNpUGV4aXp4dnd6M3JEQkR4T2hfWENpdm9sekhrazI2N2daa3l1dFRITUhUTURTelVkT0JTNTBqdm0xZWJPVDdyWmM5cW5jeFBxUlBnSHo?oc=5",
+          "source": "simplywall.st",
+          "publishedAt": "2026-08-11T11:30:13.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech firm Go Digit profit before tax rises 36.9% to Rs 163 crore in Q3 FY26",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQYUNKNFg2dy16b2xEZFBNbXBEWF9nRUVrNG9vallzQ1d2THFhbXZhZjZTNWdrc2ZmVGpBY3QyTWlEVXByelJiLTNsTzBZZUc4aWVWN3FaWDZyaG1BXzlJOHJGU1hTNlFnY0phcDZ5QWZicC13a2VMMEFkWkFiT3EyR3pQWXlhOGtWam5VMTFVWVVRaUd3OGZCR1hVZHBQU0MyWno4TWFiaVdCbEFKb2l0Yjh3bk41b3ZrOGRjZ2VOSdIBvwFBVV95cUxQYUNKNFg2dy16b2xEZFBNbXBEWF9nRUVrNG9vallzQ1d2THFhbXZhZjZTNWdrc2ZmVGpBY3QyTWlEVXByelJiLTNsTzBZZUc4aWVWN3FaWDZyaG1BXzlJOHJGU1hTNlFnY0phcDZ5QWZicC13a2VMMEFkWkFiT3EyR3pQWXlhOGtWam5VMTFVWVVRaUd3OGZCR1hVZHBQU0MyWno4TWFiaVdCbEFKb2l0Yjh3bk41b3ZrOGRjZ2VOSQ?oc=5",
+          "source": "Indian Startup News",
+          "publishedAt": "2026-01-23T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech firm Go Digit General Insurance grants 25.05 lakh stock options to employees",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPV0l0MUFaWk5VYWhIUmhtcGdmbFk4OTZxSk9kMkdfYnJkem1CNF9NZDRFc1pQNU94QkxoQ3hfOThoYXFYRF85cjZDT2o5Q0x0WjRiM0NsVHYzUnI0REQ4SUZhZ3ZSV3RTRHotSXdfR1ZZSHctRURpTjdadFpoUUdWcjlxS2ZGakRjSTlxMnNweXdkTUZfeDJyd1JEQkdCNVRzV00xWWdISndfbUxvVDJSRFVaZUtQNTA1aDVKcnMwSjN5Qkw4QXNSVNIByAFBVV95cUxPV0l0MUFaWk5VYWhIUmhtcGdmbFk4OTZxSk9kMkdfYnJkem1CNF9NZDRFc1pQNU94QkxoQ3hfOThoYXFYRF85cjZDT2o5Q0x0WjRiM0NsVHYzUnI0REQ4SUZhZ3ZSV3RTRHotSXdfR1ZZSHctRURpTjdadFpoUUdWcjlxS2ZGakRjSTlxMnNweXdkTUZfeDJyd1JEQkdCNVRzV00xWWdISndfbUxvVDJSRFVaZUtQNTA1aDVKcnMwSjN5Qkw4QXNSVA?oc=5",
+          "source": "Indian Startup News",
+          "publishedAt": "2025-12-25T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech Giant Go Digit Buys Stake in Dr Reddy's for Rs 30 Crore",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeGR1Qjc2eUM0dTI1eU1Ubld2VW52a1hyblNCOWZEUVF4U2FtMzBSZWlwNDdFQl9TR2NpM1MzQldXY0JnemVVVFlkN0RCR3dXSGVXMk9RUEpiTTZvNkRnT1hfUEw4bi0wUG5IbVU3cUFMbS1HYV8xdVBiSUEwcC1KdzMxWlFDeVF4S3dhSlpwVWpxMHZOWG5MczBkLXNibXZNTG1EaVZhSXowTnhVVXlLLXp1YkxXQUFTbmozU2lhZTc5MFFtUEgxX3A1elLSAdIBQVVfeXFMT0U4aWYzRFA1aVZCaEl4WkU5c2NZbzl5NVZsN3lCOVNtNzQ2R01BQ3dwbFl6bDhMU3VNWmhVWmpDSl8xUEN2cG1JR241N3gwU3E1Nll3YUxqQUw4bGRVX0xoQ3ZzZHNISDdhQ3R6eHVoQzFaMmlMckVFX1hUT25EUkhreGdoUnQ0TkhJR2xHOFNnME5YeE1jckdNWWtoeEtycGlENk1fcHBxSlg1QkZqQy14V2tUeGQzYlNZMHdOY0dLQzlfcU5CUjg1R3RScW5EaklR?oc=5",
+          "source": "Medical Dialogues",
+          "publishedAt": "2025-02-27T08:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "dr-reddy-s"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "everquote",
+      "name": "EverQuote",
+      "count": 1,
+      "firstSeen": "2026-08-11T10:40:31.000Z",
+      "lastSeen": "2026-08-11T10:40:31.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "waniwani",
+          "name": "Waniwani",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "EverQuote takes minority stake in Waniwani",
+          "link": "https://coverager.com/everquote-takes-minority-stake-in-waniwani/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-11T10:40:31.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Property & Cat"
+          ],
+          "summary": "EverQuote plans to integrate Waniwani’s technology into its AI solutions for P&C carriers and insurance agents.",
+          "co": [
+            "waniwani"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "waniwani",
+      "name": "Waniwani",
+      "count": 1,
+      "firstSeen": "2026-08-11T10:40:31.000Z",
+      "lastSeen": "2026-08-11T10:40:31.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "everquote",
+          "name": "EverQuote",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "EverQuote takes minority stake in Waniwani",
+          "link": "https://coverager.com/everquote-takes-minority-stake-in-waniwani/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-11T10:40:31.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Property & Cat"
+          ],
+          "summary": "EverQuote plans to integrate Waniwani’s technology into its AI solutions for P&C carriers and insurance agents.",
+          "co": [
+            "everquote"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "accel",
+      "name": "Accel",
+      "count": 3,
+      "firstSeen": "2026-01-20T08:00:00.000Z",
+      "lastSeen": "2026-08-11T10:10:11.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 2
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurtech Insights",
+        "Reuters",
+        "BNN Bloomberg"
+      ],
+      "related": [
+        {
+          "slug": "sequoia",
+          "name": "Sequoia",
+          "count": 2
+        },
+        {
+          "slug": "ethos",
+          "name": "Ethos",
+          "count": 2
+        },
+        {
+          "slug": "marsh-mclennan-agency",
+          "name": "Marsh McLennan Agency",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Marsh McLennan Agency to acquire Accel Holdings",
+          "link": "https://www.insurtechinsights.com/marsh-mclennan-agency-to-acquire-accel-holdings/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-11T10:10:11.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Marsh McLennan Agency (MMA) has agreed to acquire Accel Holdings, a diversified independent insurance and advisory firm based in Waverly, Iowa.",
+          "co": [
+            "marsh-mclennan-agency"
+          ]
+        },
+        {
+          "title": "Sequoia, Accel-backed Ethos Technologies seeks $1.3 billion valuation in US IPO",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYUdiRmt2blR2UGJ5OUhfMXJOMFZYNnBWUmVkZi0zRXpUc19KOXFhQ21BVmVSLWRVVl8wa2JBNnUxaUtueE56dXNUVllvZ21ucnlHSlJMWlFDTThFUUlUNy1ad3VSdU1RWVNFTGdLbkxGZldCYTI2T1lhaVNHM1N5SHhnbHAwOGctSjFMbi1DcEdDYTZzUFJDdXliSFBWOEZoVWptYi1zVFJDb0haWENMUDIyRWUxLWs1?oc=5",
+          "source": "Reuters",
+          "publishedAt": "2026-01-20T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "sequoia",
+            "ethos"
+          ]
+        },
+        {
+          "title": "Sequoia, Accel-backed Ethos Technologies eyes $1.3 billion valuation in U.S. IPO",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNc1BYT0dhNm12bzdVQmVKWkF2SkZSaVhwMUs4OUFvR2hGMGtFSy11TW1CaUR3WGNzb0FHVmM1MEc0RXAxdWtKc2ZVeVY3bzVLRDB2QlYxVkVXQmJpRmczdXlaRDdfTGExcFp5UHBPM193cWkyZU9SdXZ0aWFHRXRtRkNzYTNsazFIbVVIYzg5QU1jVk1sZFkzT1l0cnFrQko0X1V3eWRtLWdaRlB0TUNoTEltRzdBbzBwT0dCR1BSWG1aUQ?oc=5",
+          "source": "BNN Bloomberg",
+          "publishedAt": "2026-01-20T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "sequoia",
+            "ethos"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "marsh-mclennan-agency",
+      "name": "Marsh McLennan Agency",
+      "count": 1,
+      "firstSeen": "2026-08-11T10:10:11.000Z",
+      "lastSeen": "2026-08-11T10:10:11.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurtech Insights"
+      ],
+      "related": [
+        {
+          "slug": "accel",
+          "name": "Accel",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Marsh McLennan Agency to acquire Accel Holdings",
+          "link": "https://www.insurtechinsights.com/marsh-mclennan-agency-to-acquire-accel-holdings/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-11T10:10:11.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Marsh McLennan Agency (MMA) has agreed to acquire Accel Holdings, a diversified independent insurance and advisory firm based in Waverly, Iowa.",
+          "co": [
+            "accel-holdings"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "count": 2,
+      "firstSeen": "2026-07-21T02:40:35.000Z",
+      "lastSeen": "2026-08-11T10:00:00.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Digital Insurance",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "manulife",
+          "name": "Manulife",
+          "count": 1
+        },
+        {
+          "slug": "axa",
+          "name": "AXA",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "How Manulife will expand use of AI with Microsoft partnership",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNOFEwS1lnSzBqVDlTXzQ1ZVR4cUc2eHRMSDBUV0tHcGxqMzhzclRLR19MMUt3Nm45bzlYSTg0a3NCcThMeGlRcmM2cnhkeDk1TTFwVnZYQnBnY2ROMS1ObG1TMVVFcTNzME40OVlCOHlocnFHa1BWLXNPUFFXS2pnbkRxWWV1RTJIRE8xeWVsY0ZYbDQ?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-08-11T10:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "manulife"
+          ]
+        },
+        {
+          "title": "AXA rolls out Microsoft 365 Copilot to employees worldwide",
+          "link": "https://www.insurancebusinessmag.com/us/news/technology/axa-rolls-out-microsoft-365-copilot-to-employees-worldwide-583084.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-21T02:40:35.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "The deployment is part of a widening wave of AI adoption across UK and global insurers",
+          "co": [
+            "axa"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "manulife",
+      "name": "Manulife",
+      "count": 6,
+      "firstSeen": "2024-11-13T08:00:00.000Z",
+      "lastSeen": "2026-08-11T10:00:00.000Z",
       "topics": [
         {
           "name": "AI & Automation",
           "count": 3
         },
         {
-          "name": "Claims & Underwriting",
+          "name": "Health & Life",
           "count": 2
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Digital Insurance",
+        "Passionate In Marketing",
+        "Insurance Asia",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "microsoft",
+          "name": "Microsoft",
+          "count": 1
+        },
+        {
+          "slug": "mahindra",
+          "name": "Mahindra",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "How Manulife will expand use of AI with Microsoft partnership",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNOFEwS1lnSzBqVDlTXzQ1ZVR4cUc2eHRMSDBUV0tHcGxqMzhzclRLR19MMUt3Nm45bzlYSTg0a3NCcThMeGlRcmM2cnhkeDk1TTFwVnZYQnBnY2ROMS1ObG1TMVVFcTNzME40OVlCOHlocnFHa1BWLXNPUFFXS2pnbkRxWWV1RTJIRE8xeWVsY0ZYbDQ?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-08-11T10:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "microsoft"
+          ]
+        },
+        {
+          "title": "How Manulife hit its first ROI on AI investment",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQX1Q3RTdwelNYOTdxa285WDE0bXM1bE1MRlRIbEt1TFpVM2RYSU1rNlczLVYxdUpxOWhNVnViLWxScUhRSEhDZU1fS19CakZFaHh6X3FNaEhKdEdsRHY4cEp2S2J3bEgxM3BETVp4QURCNGhOSHl4amlCR1laRFVlag?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-06-22T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Mahindra and Manulife Insurance JV Moves Ahead; Gets Approval from Corporate Affairs Ministry",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQWHNUZkhNTGpmaV9UbEF3OVJlWHl0NkNqQU1aT0ZoQmRiWVhpSVFaVnExWUlHdjN6c0JsRFpvekxQX0ZZN2o3clNnWGsyNGFsUkItNk1ZWnB1bklXTVVrbmxWNXJKcDBISVhNVTZndC00RG5wblZwNDluTFFZa1RmTzJQTl9kM1libG5aS0dacDFPV2ZpLUNlX1pzTU10eWZ2N3REdmhLc2hnbW83YUpSRnhXUmRrUEVWNk5XR0hWRDUwRS1YT05WYjZXQQ?oc=5",
+          "source": "Passionate In Marketing",
+          "publishedAt": "2026-06-01T07:00:00.000Z",
+          "tags": [
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "mahindra"
+          ]
+        },
+        {
+          "title": "Manulife dares startups to tackle Asia’s age imbalance",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNaVdNTFNraHZlUU9EZTFLVVFkQThBZzdVWFlOaDRUQlJWMEM0eExHWVpWTmlPMDlQSWtwNTBua1FnVXdCS2pUTEhYbWYzY053MkgzZ1FPV0xxN2wwVkRsNWFHWjdzWEJMSGRkRHdybGk4aHRPYk1VaDAxZ1REN3lGR01fRWRudmM3RmFNNjhkdw?oc=5",
+          "source": "Insurance Asia",
+          "publishedAt": "2025-04-30T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Manulife goes 100% Gen AI",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBaOFRENmt6SDdHZzRPSTRhLUdrZFo2cnVrTzBrV0htcGhwUng3V0tFQmRMc0pnajkzNVhZZXJCZnIwVjZ3bm5iMVdkUjNWdXFKTWpRWVRzWVUxWnBad3p6aDhn?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2025-03-07T08:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Manulife Canada unveils new life insurance products",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNbkFjd2hzbTB5LXVNQ3gwbFNaajNJNzJ3cnVsZ3daSTU2dzhNSlRpOVl3MGE2azlCWWxHeWg0NUllUFVaalhaMlJvNmVhWFEzOThmdVY4VEt1R2MtU0hmYXQyRm5IcDIyWHhYMHhvTVFxclZLQy0tU2Vrd2prdzdQOXp2cXhONmpQYVlSR0hKdmlYbm91QnJNNzdDN2hGMXJSZ0wwaHZsV2d0ZXd3NENXTWU3WVVZN2VKOXNmblZNdw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2024-11-13T08:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "aviva",
+      "name": "Aviva",
+      "count": 11,
+      "firstSeen": "2024-12-10T08:00:00.000Z",
+      "lastSeen": "2026-08-11T09:21:07.000Z",
+      "topics": [
+        {
+          "name": "Claims & Underwriting",
+          "count": 3
+        },
+        {
+          "name": "AI & Automation",
+          "count": 3
         },
         {
           "name": "Product & Launches",
@@ -35,9 +932,9 @@
         }
       ],
       "sources": [
+        "Insurtech Insights",
         "Coverager",
         "Insurance Business UK",
-        "Insurtech Insights",
         "Insurance Times",
         "InfotechLead",
         "Insurance Business",
@@ -61,6 +958,17 @@
         }
       ],
       "articles": [
+        {
+          "title": "Aviva expands financial institutions underwriting across UK",
+          "link": "https://www.insurtechinsights.com/aviva-expands-financial-institutions-underwriting-across-uk/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-11T09:21:07.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "Aviva is expanding its Financial Institutions underwriting capabilities across the UK, adding four specialist underwriters to its regional network.",
+          "co": []
+        },
         {
           "title": "Aviva expands financial institutions underwriting across UK regions",
           "link": "https://coverager.com/aviva-expands-financial-institutions-underwriting-across-uk-regions/",
@@ -471,17 +1379,17 @@
     {
       "slug": "ryan-specialty",
       "name": "Ryan Specialty",
-      "count": 3,
+      "count": 4,
       "firstSeen": "2025-02-28T08:00:00.000Z",
       "lastSeen": "2026-08-10T20:39:40.000Z",
       "topics": [
         {
           "name": "Claims & Underwriting",
-          "count": 3
+          "count": 4
         },
         {
           "name": "Product & Launches",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Leadership",
@@ -504,6 +1412,18 @@
         {
           "title": "Ryan Specialty launches Tera Underwriters for data centre hardware",
           "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPakJ4cEhRYVRDUVRvdUI5b1B6V0t5N3pfXzItd3BibXVOMDVWOFF1U0hOc1ZVUEFtWDdLTU1sMWFjM18yQmZ1ZDN0VGNKRUg5eUVYUGVyd3lTSTNNcnVmcGZpeGplZGd2ZzVsVFJKbjRNUEVScjRLVlpCWHY5VDF6MFgwYUtpVi1GTldjNmJ3cGtqTTY1TnNzMnZuQi0yTll3QmREdHYwNDRBUlFwdXA3My1NS3Jfd3pkN0JVSFNQUDZqVWFobmp0bHpMMDE3TnpvSklEUXRORm5CRENBa0hkQlBzUWU4WGxab2FZ?oc=5",
+          "source": "Captive Insurance Times",
+          "publishedAt": "2026-08-10T20:39:40.000Z",
+          "tags": [
+            "Product & Launches",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Ryan Specialty launches Tera Underwriters for data centre hardware",
+          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOanhTNDNLQUl6ZHl3QTRISG9Mb2VsQnJveFJJbnhKTEJHYXRRZjIyNTUwbnUzZm9hWmRKMEtWTkdKYWJSVDVOUGdFRUU1VXhZeWhEdkdDMlNJT3RsdFB3c2tPU0V3NldzcXdtRzNPMG1PdzJ2d1Zna0lGSmkydW9PZ2FIUlYxNUlRRWpXU1RNUm9PZnNSTGhkWkNfMXRndmc0YV9vNmg3eDFYYzJSR051ODNvQXVnMGp5VTYzd0hZT0dYX1pLbVBqMVQ1bVI4dkJKWDNFTWF5VjF1T29UTms0WTE0Q0VvUQ?oc=5",
           "source": "Captive Insurance Times",
           "publishedAt": "2026-08-10T20:39:40.000Z",
           "tags": [
@@ -584,13 +1504,13 @@
     {
       "slug": "gallagher",
       "name": "Gallagher",
-      "count": 36,
+      "count": 37,
       "firstSeen": "2025-05-07T07:00:00.000Z",
-      "lastSeen": "2026-08-10T18:42:35.000Z",
+      "lastSeen": "2026-08-10T18:43:03.000Z",
       "topics": [
         {
           "name": "M&A",
-          "count": 16
+          "count": 17
         },
         {
           "name": "Funding",
@@ -632,6 +1552,7 @@
         "Investing.com Nigeria",
         "Investing.com Canada",
         "Investing.com",
+        "Investing.com Australia",
         "PR Newswire",
         "Artemis",
         "Cyber Magazine"
@@ -648,7 +1569,7 @@
           "title": "Arthur J. Gallagher acquires Canadian digital insurance broker",
           "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPSjdCa3pURnltbjV3aGpHbkNKajRMRUFGd1kxaGY2c1BqOXFiMkwwdzJfT25KQTllYVo4V3k5S2dhUHUxa190b1F6cFA2VU9QRUxWMklHTjhvdjdIdnFVYzlSVFNFa09TeGVGSVdKWFBERVN4eU5kaGdLVkZWX09xTW5lNzRtX01ORWV5dkcyR3N0YlJZU3ViRmRiTTZQUkU?oc=5",
           "source": "insurance-portal.ca",
-          "publishedAt": "2026-08-10T18:42:35.000Z",
+          "publishedAt": "2026-08-10T18:43:03.000Z",
           "tags": [
             "M&A"
           ],
@@ -899,6 +1820,17 @@
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcUQwNGNQTHdMUWhJTFJUMkZDOS1KQU9uZk5oWnYxLUJVVHZHYWV3VVBTOG9JQkM2NzlLb2RPV01YNmViQ2xPck0tWjgyZDhkcEdVQ01GUEV2VVlXSUdSeURzMzNaSnFEUnhqWWRMLTNiQndSb1ZnSFFWc0dkbkNGZGI0WHE5YU9ZOXYxU3FQT0xQb252UVFYeVRwOXgwbVVPdDZvNUdHRmVzRFM3UlhyUXRsRDRqU3c5NlE?oc=5",
           "source": "Investing.com",
           "publishedAt": "2026-08-05T13:31:44.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Arthur J. Gallagher acquires Canadian digital insurance broker By Investing.com",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNc3htT015LWxGQnFIVW9EODVUYWo5dDlzWlRiTm5ialI4amFibjhvdm1vT0ZPRExYQ2tUaHlwY2xzTVUwUUMyTDVzR3B4SlAtaFJjTjJJWElhT2tVZThtZU1yMTl3U284dlRVVmgwTVBJZDhsQU5hYVBYaUwzWTNCZEdrcnVtU3FTUV91SC10dndtVk9TZ2FYb0lBeUZINTg0ejhYbVJqYXhHaGx5UE5FdnYxRTd5bVh3NS1lRWwyaw?oc=5",
+          "source": "Investing.com Australia",
+          "publishedAt": "2026-08-05T13:18:06.000Z",
           "tags": [
             "M&A"
           ],
@@ -3420,134 +4352,6 @@
           "summary": "Accredited Insurance (Europe) Limited (Accredited) and Hellenic Hull Management (HM Insurance Agencies) Ltd (Hellenic Hull) have entered into a delegated authority partnership covering Hull & Machinery, ancillary marine…",
           "co": [
             "accredited"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "allstate",
-      "name": "Allstate",
-      "count": 6,
-      "firstSeen": "2024-09-29T07:00:00.000Z",
-      "lastSeen": "2026-08-10T05:00:48.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 2
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 2
-        },
-        {
-          "name": "Property & Cat",
-          "count": 1
-        },
-        {
-          "name": "Cyber",
-          "count": 1
-        },
-        {
-          "name": "M&A",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Claims Journal",
-        "Insurance Journal",
-        "Insurtech Insights",
-        "Insurance Business",
-        "Digital Insurance"
-      ],
-      "related": [
-        {
-          "slug": "the-standard",
-          "name": "The Standard",
-          "count": 1
-        },
-        {
-          "slug": "state-farm",
-          "name": "State Farm",
-          "count": 1
-        },
-        {
-          "slug": "geico",
-          "name": "GEICO",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Allstate Introduces Large Language Model, ALLIE",
-          "link": "https://www.claimsjournal.com/news/national/2026/08/10/339372.htm",
-          "source": "Claims Journal",
-          "publishedAt": "2026-08-10T05:00:48.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Allstate CEO Tom Wilson said the insurer has a “technology-drive strategy, not a strategy supported by technology.” And the next step in the strategy is the build of ALLIE – Allstate’s Large Language Intelligent…",
-          "co": []
-        },
-        {
-          "title": "Allstate Introduces Large Language Model, ALLIE",
-          "link": "https://www.insurancejournal.com/news/national/2026/08/07/880719.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-07T13:59:55.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Allstate CEO Tom Wilson said the insurer has a “technology-drive strategy, not a strategy supported by technology.” And the next step in the strategy is the build of ALLIE – Allstate’s Large Language Intelligent…",
-          "co": []
-        },
-        {
-          "title": "Allstate Q2 net income rises 56% as underwriting performance improves",
-          "link": "https://www.insurtechinsights.com/allstate-q2-net-income-rises-56-as-underwriting-performance-improves/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-06T13:36:40.000Z",
-          "tags": [
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "Allstate reported a sharp increase in second-quarter 2026 earnings, driven by stronger underwriting results across its Property-Liability business and improved performance in auto and homeowners insurance.",
-          "co": []
-        },
-        {
-          "title": "Allstate breach claim raises questions about scope of exposure",
-          "link": "https://www.insurancebusinessmag.com/us/news/cyber/allstate-breach-claim-raises-questions-about-scope-of-exposure-584600.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-03T04:01:17.000Z",
-          "tags": [
-            "Cyber",
-            "Claims & Underwriting"
-          ],
-          "summary": "The claimed data reportedly includes employee-related records - and the incident adds to a pattern of insurers becoming a repeated target for ransomware groups",
-          "co": []
-        },
-        {
-          "title": "The Standard acquires Allstate's employer benefits for $2B: Insurtech news",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQV182VGlaR20ybm9zNkp6YVN1akNUUGZOWGVqRDJrNmZMX21XWDJlNHNZWjd2aXluejVsOUdkZXNtbUdvOE1xcTFnb0VlOXU1bE4zd2NiU1U5aWVmX1JHeXBuNS11a3VnT2paSXlic05hUU4tYzVfeGNuRm85aWFfZ3F5TmxGa3lFVzg0dl85b2c?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2025-04-06T07:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "the-standard"
-          ]
-        },
-        {
-          "title": "State Farm, Allstate, Geico top digital performers",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM0NQQmZvSmpjUFFWLVpEX3BJdG9XU2VlOXNnOVROeFZZaWkzVFppbVlCVU9BTTBsZ2hPc0tJS0FIRTR2dWYwX3dsdmN2RFpDQktmamhQWEpFNlR1LUxOamU4UVJ4djdVU3JtS1FscDM4aDR3V1NrS2tWU29QOVo4WmZ3?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2024-09-29T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "state-farm",
-            "geico"
           ]
         }
       ]
@@ -13259,14 +14063,14 @@
         }
       ],
       "sources": [
-        "dig-in.com"
+        "Digital Insurance"
       ],
       "related": [],
       "articles": [
         {
           "title": "Why insurers struggle to measure AI's ROI: PwC",
           "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBYa0tMaVFjOHk3TXJLS01ISFJXN0wtQ0dLaEJMSThSbE55TW5abHFEYW0yeTRYS00zcnBSQUxBNWVtdUxkdGMzZ3BLc2hSelJHaUxHSEhiUVcwQ2pVbWFXVmdsZjVEeWo5TXdjZUswOUMyLWdKRG5hc2lubnU?oc=5",
-          "source": "dig-in.com",
+          "source": "Digital Insurance",
           "publishedAt": "2026-08-05T10:00:00.000Z",
           "tags": [
             "AI & Automation"
@@ -31074,49 +31878,6 @@
       ]
     },
     {
-      "slug": "microsoft",
-      "name": "Microsoft",
-      "count": 1,
-      "firstSeen": "2026-07-21T02:40:35.000Z",
-      "lastSeen": "2026-07-21T02:40:35.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "axa",
-          "name": "AXA",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "AXA rolls out Microsoft 365 Copilot to employees worldwide",
-          "link": "https://www.insurancebusinessmag.com/us/news/technology/axa-rolls-out-microsoft-365-copilot-to-employees-worldwide-583084.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-07-21T02:40:35.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "The deployment is part of a widening wave of AI adoption across UK and global insurers",
-          "co": [
-            "axa"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "prudential-singapore",
       "name": "Prudential Singapore",
       "count": 2,
@@ -38139,100 +38900,6 @@
             "volkswagen",
             "cardif-airstar"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "manulife",
-      "name": "Manulife",
-      "count": 5,
-      "firstSeen": "2024-11-13T08:00:00.000Z",
-      "lastSeen": "2026-06-22T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Health & Life",
-          "count": 2
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Digital Insurance",
-        "Passionate In Marketing",
-        "Insurance Asia",
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "mahindra",
-          "name": "Mahindra",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "How Manulife hit its first ROI on AI investment",
-          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQX1Q3RTdwelNYOTdxa285WDE0bXM1bE1MRlRIbEt1TFpVM2RYSU1rNlczLVYxdUpxOWhNVnViLWxScUhRSEhDZU1fS19CakZFaHh6X3FNaEhKdEdsRHY4cEp2S2J3bEgxM3BETVp4QURCNGhOSHl4amlCR1laRFVlag?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-06-22T07:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Mahindra and Manulife Insurance JV Moves Ahead; Gets Approval from Corporate Affairs Ministry",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQWHNUZkhNTGpmaV9UbEF3OVJlWHl0NkNqQU1aT0ZoQmRiWVhpSVFaVnExWUlHdjN6c0JsRFpvekxQX0ZZN2o3clNnWGsyNGFsUkItNk1ZWnB1bklXTVVrbmxWNXJKcDBISVhNVTZndC00RG5wblZwNDluTFFZa1RmTzJQTl9kM1libG5aS0dacDFPV2ZpLUNlX1pzTU10eWZ2N3REdmhLc2hnbW83YUpSRnhXUmRrUEVWNk5XR0hWRDUwRS1YT05WYjZXQQ?oc=5",
-          "source": "Passionate In Marketing",
-          "publishedAt": "2026-06-01T07:00:00.000Z",
-          "tags": [
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "mahindra"
-          ]
-        },
-        {
-          "title": "Manulife dares startups to tackle Asia’s age imbalance",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNaVdNTFNraHZlUU9EZTFLVVFkQThBZzdVWFlOaDRUQlJWMEM0eExHWVpWTmlPMDlQSWtwNTBua1FnVXdCS2pUTEhYbWYzY053MkgzZ1FPV0xxN2wwVkRsNWFHWjdzWEJMSGRkRHdybGk4aHRPYk1VaDAxZ1REN3lGR01fRWRudmM3RmFNNjhkdw?oc=5",
-          "source": "Insurance Asia",
-          "publishedAt": "2025-04-30T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Manulife goes 100% Gen AI",
-          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBaOFRENmt6SDdHZzRPSTRhLUdrZFo2cnVrTzBrV0htcGhwUng3V0tFQmRMc0pnajkzNVhZZXJCZnIwVjZ3bm5iMVdkUjNWdXFKTWpRWVRzWVUxWnBad3p6aDhn?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2025-03-07T08:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Manulife Canada unveils new life insurance products",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNbkFjd2hzbTB5LXVNQ3gwbFNaajNJNzJ3cnVsZ3daSTU2dzhNSlRpOVl3MGE2azlCWWxHeWg0NUllUFVaalhaMlJvNmVhWFEzOThmdVY4VEt1R2MtU0hmYXQyRm5IcDIyWHhYMHhvTVFxclZLQy0tU2Vrd2prdzdQOXp2cXhONmpQYVlSR0hKdmlYbm91QnJNNzdDN2hGMXJSZ0wwaHZsV2d0ZXd3NENXTWU3WVVZN2VKOXNmblZNdw?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2024-11-13T08:00:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": []
         }
       ]
     },
@@ -54326,44 +54993,6 @@
       ]
     },
     {
-      "slug": "axle",
-      "name": "Axle",
-      "count": 1,
-      "firstSeen": "2026-02-03T08:00:00.000Z",
-      "lastSeen": "2026-02-03T08:00:00.000Z",
-      "topics": [
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "FF News"
-      ],
-      "related": [
-        {
-          "slug": "experian",
-          "name": "Experian",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Axle Teams With Experian to Bring Insurance Verification to Automotive Dealers to Reduce Fraud",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVlI0LUZYNlRTNDM4LV90MTNvNG9nZ1pUY3VJNFJ5VTFFeFlfbTF1RWdlVXpqd3p5SGR6YVJmZ3c4YXQyYmZLM3lIcFp5OF80eDJ4cnB5SENqVWhhaTl3NjZySkhjdlBoTG8wWW1Pa3dIemRYOHgtSmlvQXNPdkpTWlJNS2ZlaFEwd1FPN1hCR2QtYnNHYWx5N2RXaTZWQnFVN1ZiV0wzaGJieDJMbTNMTUJyVktrVkVCc1ZabnJrTk9KWTUyRmFMLTZ1ZHVLNXZYZXc?oc=5",
-          "source": "FF News",
-          "publishedAt": "2026-02-03T08:00:00.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": [
-            "experian"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "experian",
       "name": "Experian",
       "count": 1,
@@ -55771,67 +56400,6 @@
       ]
     },
     {
-      "slug": "go-digit",
-      "name": "Go Digit",
-      "count": 3,
-      "firstSeen": "2025-02-27T08:00:00.000Z",
-      "lastSeen": "2026-01-23T08:00:00.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Indian Startup News",
-        "Medical Dialogues"
-      ],
-      "related": [
-        {
-          "slug": "dr-reddy-s",
-          "name": "Dr Reddy's",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Insurtech firm Go Digit profit before tax rises 36.9% to Rs 163 crore in Q3 FY26",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQYUNKNFg2dy16b2xEZFBNbXBEWF9nRUVrNG9vallzQ1d2THFhbXZhZjZTNWdrc2ZmVGpBY3QyTWlEVXByelJiLTNsTzBZZUc4aWVWN3FaWDZyaG1BXzlJOHJGU1hTNlFnY0phcDZ5QWZicC13a2VMMEFkWkFiT3EyR3pQWXlhOGtWam5VMTFVWVVRaUd3OGZCR1hVZHBQU0MyWno4TWFiaVdCbEFKb2l0Yjh3bk41b3ZrOGRjZ2VOSdIBvwFBVV95cUxQYUNKNFg2dy16b2xEZFBNbXBEWF9nRUVrNG9vallzQ1d2THFhbXZhZjZTNWdrc2ZmVGpBY3QyTWlEVXByelJiLTNsTzBZZUc4aWVWN3FaWDZyaG1BXzlJOHJGU1hTNlFnY0phcDZ5QWZicC13a2VMMEFkWkFiT3EyR3pQWXlhOGtWam5VMTFVWVVRaUd3OGZCR1hVZHBQU0MyWno4TWFiaVdCbEFKb2l0Yjh3bk41b3ZrOGRjZ2VOSQ?oc=5",
-          "source": "Indian Startup News",
-          "publishedAt": "2026-01-23T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Insurtech firm Go Digit General Insurance grants 25.05 lakh stock options to employees",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPV0l0MUFaWk5VYWhIUmhtcGdmbFk4OTZxSk9kMkdfYnJkem1CNF9NZDRFc1pQNU94QkxoQ3hfOThoYXFYRF85cjZDT2o5Q0x0WjRiM0NsVHYzUnI0REQ4SUZhZ3ZSV3RTRHotSXdfR1ZZSHctRURpTjdadFpoUUdWcjlxS2ZGakRjSTlxMnNweXdkTUZfeDJyd1JEQkdCNVRzV00xWWdISndfbUxvVDJSRFVaZUtQNTA1aDVKcnMwSjN5Qkw4QXNSVNIByAFBVV95cUxPV0l0MUFaWk5VYWhIUmhtcGdmbFk4OTZxSk9kMkdfYnJkem1CNF9NZDRFc1pQNU94QkxoQ3hfOThoYXFYRF85cjZDT2o5Q0x0WjRiM0NsVHYzUnI0REQ4SUZhZ3ZSV3RTRHotSXdfR1ZZSHctRURpTjdadFpoUUdWcjlxS2ZGakRjSTlxMnNweXdkTUZfeDJyd1JEQkdCNVRzV00xWWdISndfbUxvVDJSRFVaZUtQNTA1aDVKcnMwSjN5Qkw4QXNSVA?oc=5",
-          "source": "Indian Startup News",
-          "publishedAt": "2025-12-25T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Insurtech Giant Go Digit Buys Stake in Dr Reddy's for Rs 30 Crore",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeGR1Qjc2eUM0dTI1eU1Ubld2VW52a1hyblNCOWZEUVF4U2FtMzBSZWlwNDdFQl9TR2NpM1MzQldXY0JnemVVVFlkN0RCR3dXSGVXMk9RUEpiTTZvNkRnT1hfUEw4bi0wUG5IbVU3cUFMbS1HYV8xdVBiSUEwcC1KdzMxWlFDeVF4S3dhSlpwVWpxMHZOWG5MczBkLXNibXZNTG1EaVZhSXowTnhVVXlLLXp1YkxXQUFTbmozU2lhZTc5MFFtUEgxX3A1elLSAdIBQVVfeXFMT0U4aWYzRFA1aVZCaEl4WkU5c2NZbzl5NVZsN3lCOVNtNzQ2R01BQ3dwbFl6bDhMU3VNWmhVWmpDSl8xUEN2cG1JR241N3gwU3E1Nll3YUxqQUw4bGRVX0xoQ3ZzZHNISDdhQ3R6eHVoQzFaMmlMckVFX1hUT25EUkhreGdoUnQ0TkhJR2xHOFNnME5YeE1jckdNWWtoeEtycGlENk1fcHBxSlg1QkZqQy14V2tUeGQzYlNZMHdOY0dLQzlfcU5CUjg1R3RScW5EaklR?oc=5",
-          "source": "Medical Dialogues",
-          "publishedAt": "2025-02-27T08:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "dr-reddy-s"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "axa-mansard",
       "name": "AXA Mansard",
       "count": 2,
@@ -56300,65 +56868,6 @@
           "summary": "",
           "co": [
             "zinnia"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "accel",
-      "name": "Accel",
-      "count": 2,
-      "firstSeen": "2026-01-20T08:00:00.000Z",
-      "lastSeen": "2026-01-20T08:00:00.000Z",
-      "topics": [
-        {
-          "name": "Funding",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Reuters",
-        "BNN Bloomberg"
-      ],
-      "related": [
-        {
-          "slug": "sequoia",
-          "name": "Sequoia",
-          "count": 2
-        },
-        {
-          "slug": "ethos",
-          "name": "Ethos",
-          "count": 2
-        }
-      ],
-      "articles": [
-        {
-          "title": "Sequoia, Accel-backed Ethos Technologies seeks $1.3 billion valuation in US IPO",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYUdiRmt2blR2UGJ5OUhfMXJOMFZYNnBWUmVkZi0zRXpUc19KOXFhQ21BVmVSLWRVVl8wa2JBNnUxaUtueE56dXNUVllvZ21ucnlHSlJMWlFDTThFUUlUNy1ad3VSdU1RWVNFTGdLbkxGZldCYTI2T1lhaVNHM1N5SHhnbHAwOGctSjFMbi1DcEdDYTZzUFJDdXliSFBWOEZoVWptYi1zVFJDb0haWENMUDIyRWUxLWs1?oc=5",
-          "source": "Reuters",
-          "publishedAt": "2026-01-20T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": [
-            "sequoia",
-            "ethos"
-          ]
-        },
-        {
-          "title": "Sequoia, Accel-backed Ethos Technologies eyes $1.3 billion valuation in U.S. IPO",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNc1BYT0dhNm12bzdVQmVKWkF2SkZSaVhwMUs4OUFvR2hGMGtFSy11TW1CaUR3WGNzb0FHVmM1MEc0RXAxdWtKc2ZVeVY3bzVLRDB2QlYxVkVXQmJpRmczdXlaRDdfTGExcFp5UHBPM193cWkyZU9SdXZ0aWFHRXRtRkNzYTNsazFIbVVIYzg5QU1jVk1sZFkzT1l0cnFrQko0X1V3eWRtLWdaRlB0TUNoTEltRzdBbzBwT0dCR1BSWG1aUQ?oc=5",
-          "source": "BNN Bloomberg",
-          "publishedAt": "2026-01-20T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": [
-            "sequoia",
-            "ethos"
           ]
         }
       ]
