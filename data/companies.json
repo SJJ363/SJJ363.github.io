@@ -1,16 +1,285 @@
 {
-  "updatedAt": "2026-08-14T13:01:20.094Z",
-  "count": 1494,
+  "updatedAt": "2026-08-14T18:00:57.825Z",
+  "count": 1495,
   "companies": [
     {
-      "slug": "adesso",
-      "name": "adesso",
-      "count": 2,
-      "firstSeen": "2026-08-14T08:47:25.000Z",
-      "lastSeen": "2026-08-14T13:00:41.000Z",
+      "slug": "amynta",
+      "name": "Amynta",
+      "count": 4,
+      "firstSeen": "2026-08-12T13:44:53.000Z",
+      "lastSeen": "2026-08-14T15:21:25.000Z",
       "topics": [
         {
           "name": "M&A",
+          "count": 4
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 3
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurance Journal",
+        "Reinsurance News",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "southern-states-underwriters",
+          "name": "Southern States Underwriters",
+          "count": 4
+        }
+      ],
+      "articles": [
+        {
+          "title": "Amynta Group to acquire Southern States’ insurance operations",
+          "link": "https://coverager.com/amynta-group-to-acquire-southern-states-insurance-operations/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-14T15:21:25.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "The deal expands Amynta into agribusiness insurance.",
+          "co": [
+            "southern-states-underwriters"
+          ]
+        },
+        {
+          "title": "Amynta Group Buys Virginia-Based Southern States Underwriters MGU",
+          "link": "https://www.insurancejournal.com/news/east/2026/08/13/881307.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-13T05:01:52.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "summary": "Amynta Group, an insurance services firm and managing general agent based in New York, said it has acquired Southern States Underwriters and SSC Insurance Agency, based in Richmond, Virginia. The underwriter and agency…",
+          "co": [
+            "southern-states-underwriters"
+          ]
+        },
+        {
+          "title": "Amynta to acquire agricultural industry specialist MGU Southern States Underwriters",
+          "link": "https://www.reinsurancene.ws/amynta-to-acquire-agricultural-industry-specialist-mgu-southern-states-underwriters/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-12T15:00:40.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "summary": "Insurance services provider Amynta Group has agreed to acquire Southern States Underwriters and SSC Insurance Agency (collectively, Southern States Underwriters), the insurance operations of Southern States Cooperative…",
+          "co": [
+            "southern-states-underwriters"
+          ]
+        },
+        {
+          "title": "Amynta Group acquires 70-year-old agribusiness MGU in Virginia",
+          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/amynta-group-acquires-70yearold-agribusiness-mgu-in-virginia-585859.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-12T13:44:53.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "summary": "Southern States Underwriters' exclusive reciprocal arrangement is the key question for brokers after the deal closes",
+          "co": [
+            "southern-states-underwriters"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "southern-states-underwriters",
+      "name": "Southern States Underwriters",
+      "count": 4,
+      "firstSeen": "2026-08-12T13:44:53.000Z",
+      "lastSeen": "2026-08-14T15:21:25.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 4
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 3
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurance Journal",
+        "Reinsurance News",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "amynta",
+          "name": "Amynta",
+          "count": 4
+        }
+      ],
+      "articles": [
+        {
+          "title": "Amynta Group to acquire Southern States’ insurance operations",
+          "link": "https://coverager.com/amynta-group-to-acquire-southern-states-insurance-operations/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-14T15:21:25.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "The deal expands Amynta into agribusiness insurance.",
+          "co": [
+            "amynta"
+          ]
+        },
+        {
+          "title": "Amynta Group Buys Virginia-Based Southern States Underwriters MGU",
+          "link": "https://www.insurancejournal.com/news/east/2026/08/13/881307.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-13T05:01:52.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "summary": "Amynta Group, an insurance services firm and managing general agent based in New York, said it has acquired Southern States Underwriters and SSC Insurance Agency, based in Richmond, Virginia. The underwriter and agency…",
+          "co": [
+            "amynta"
+          ]
+        },
+        {
+          "title": "Amynta to acquire agricultural industry specialist MGU Southern States Underwriters",
+          "link": "https://www.reinsurancene.ws/amynta-to-acquire-agricultural-industry-specialist-mgu-southern-states-underwriters/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-12T15:00:40.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "summary": "Insurance services provider Amynta Group has agreed to acquire Southern States Underwriters and SSC Insurance Agency (collectively, Southern States Underwriters), the insurance operations of Southern States Cooperative…",
+          "co": [
+            "amynta"
+          ]
+        },
+        {
+          "title": "Amynta Group acquires 70-year-old agribusiness MGU in Virginia",
+          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/amynta-group-acquires-70yearold-agribusiness-mgu-in-virginia-585859.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-12T13:44:53.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "summary": "Southern States Underwriters' exclusive reciprocal arrangement is the key question for brokers after the deal closes",
+          "co": [
+            "amynta"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sixfold",
+      "name": "Sixfold",
+      "count": 4,
+      "firstSeen": "2026-01-30T08:00:00.000Z",
+      "lastSeen": "2026-08-14T14:50:31.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 4
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 4
+        },
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Funding",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "FinTech Global",
+        "Insurtech Insights",
+        "FF News"
+      ],
+      "related": [
+        {
+          "slug": "sollers",
+          "name": "Sollers",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "Sixfold and Sollers team up on AI underwriting",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNYVViZnpfZjlWbmdULTR0VWZXTnZMc3lIN3FCVkpYdlczck1mUzBNSFgxMEhUVEE3RmRVZnVYOC11WTlkY0lhU2R1NkdjZUlzTmFaWjVqLUlzcVdJR243Q3FiM05iWTNjU1VXMHhOZWQ1Y01sUVV2Z2VfT1ZZYVAxR2IzVVZJRlFV?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-08-14T14:50:31.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": [
+            "sollers"
+          ]
+        },
+        {
+          "title": "Sixfold and Sollers partner to accelerate AI underwriting",
+          "link": "https://www.insurtechinsights.com/sixfold-and-sollers-partner-to-accelerate-ai-underwriting/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-13T10:15:24.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "Sixfold has partnered with Sollers Consulting to help insurers accelerate underwriting transformation by combining AI-powered risk assessment with insurance consulting and implementation expertise.",
+          "co": [
+            "sollers"
+          ]
+        },
+        {
+          "title": "Sixfold Raises US$30 Million Series B to Build the AI Underwriter",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOb1BJbGU4Zm1aZVNnMFFHSUt6aWVJdkhQNlVfT3ZfOGgzOEoyRUJ2ejNKMHJGUzFkLV9Obk9ReG5Yc3dxS3NTamJ1N05hVUQ2Z25PRVloa2g2QmVtRGNjVGFQWnlzZ2V6RjE1Nk5hWGlYUDBremNjVHlxMzVxNUZZT0lMbHdFeGtXTmNZSDJINmdsRXNYVUx4M3VBQ1IzWlRENmh6bVJRMUg?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-02-01T08:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "InsurTech firm Sixfold secures $30m to advance AI underwriting",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObTF2M2lyZUozZHhoM3A3ci1hSDBxREx3a1VZTUFpcUNJcmY5S2FWcGlKbUt6S2JpMjR6MmRCQk44NWt5UnFpNDZSUVh1Uk1vZGxadjdrV2Q4MHNCMmVyRHRmcjB5WVp6TXl3ODcwYTNpN1JqOS14RG9qNFAya2N0Q0FVc3gwc3hiX2pwc2c5dmR5eU9CV2wzT2JjWEs?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-01-30T08:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "sollers",
+      "name": "Sollers",
+      "count": 2,
+      "firstSeen": "2026-08-13T10:15:24.000Z",
+      "lastSeen": "2026-08-14T14:50:31.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
           "count": 2
         },
         {
@@ -19,146 +288,584 @@
         },
         {
           "name": "Claims & Underwriting",
-          "count": 1
+          "count": 2
         }
       ],
       "sources": [
-        "Coverager",
-        "EU-Startups"
+        "FinTech Global",
+        "Insurtech Insights"
       ],
       "related": [
         {
-          "slug": "omni-us",
-          "name": "omni:us",
+          "slug": "sixfold",
+          "name": "Sixfold",
           "count": 2
         }
       ],
       "articles": [
         {
-          "title": "adesso acquires claims automation startup omni:us",
-          "link": "https://coverager.com/adesso-acquires-claims-automation-startup-omnius/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-14T13:00:41.000Z",
+          "title": "Sixfold and Sollers team up on AI underwriting",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNYVViZnpfZjlWbmdULTR0VWZXTnZMc3lIN3FCVkpYdlczck1mUzBNSFgxMEhUVEE3RmRVZnVYOC11WTlkY0lhU2R1NkdjZUlzTmFaWjVqLUlzcVdJR243Q3FiM05iWTNjU1VXMHhOZWQ1Y01sUVV2Z2VfT1ZZYVAxR2IzVVZJRlFV?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-08-14T14:50:31.000Z",
           "tags": [
-            "M&A",
+            "Partnerships",
             "AI & Automation",
             "Claims & Underwriting"
           ],
-          "summary": "omni:us will continue operating under its existing brand.",
+          "summary": "",
           "co": [
-            "omni-us"
+            "sixfold"
           ]
         },
         {
-          "title": "Berlin AI InsurTech startup omni:us acquired by Dortmund’s adesso embed AI into core insurance systems",
-          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQNFVKNnZMLTRzTkIxNjJWc2RPSGgxd3BjdDdJN191dlJvOFVvUDNvQjBtYWNWYmhOUXJxU29WMm9ZT05FSVc2dV9tY1VyNHlXRVlfNjJ0OG8tYUZoWmREYkhhTU1OMGZJMGlvZDVwX205bTR2Z3lZeGdLU0tHWTJKN1dXUTJQTzNiWHNzVFFseUoyUFdFMWN4UkhOTFdJVjhHNjBJNXltR2RtblVick0tUXVmc0ZfODBlay1KUEFuc2dFVXh3V2pGTXNseFF2QmlmbDJN?oc=5",
-          "source": "EU-Startups",
-          "publishedAt": "2026-08-14T08:47:25.000Z",
+          "title": "Sixfold and Sollers partner to accelerate AI underwriting",
+          "link": "https://www.insurtechinsights.com/sixfold-and-sollers-partner-to-accelerate-ai-underwriting/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-13T10:15:24.000Z",
           "tags": [
-            "M&A",
-            "AI & Automation"
+            "Partnerships",
+            "AI & Automation",
+            "Claims & Underwriting"
           ],
-          "summary": "",
+          "summary": "Sixfold has partnered with Sollers Consulting to help insurers accelerate underwriting transformation by combining AI-powered risk assessment with insurance consulting and implementation expertise.",
           "co": [
-            "omni-us"
+            "sixfold"
           ]
         }
       ]
     },
     {
-      "slug": "omni-us",
-      "name": "omni:us",
-      "count": 2,
-      "firstSeen": "2026-08-14T08:47:25.000Z",
-      "lastSeen": "2026-08-14T13:00:41.000Z",
+      "slug": "hiscox",
+      "name": "Hiscox",
+      "count": 3,
+      "firstSeen": "2025-11-09T08:00:00.000Z",
+      "lastSeen": "2026-08-14T14:30:34.000Z",
       "topics": [
         {
-          "name": "M&A",
+          "name": "Product & Launches",
           "count": 2
         },
         {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Claims & Underwriting",
+          "name": "Partnerships",
           "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "EU-Startups"
-      ],
-      "related": [
-        {
-          "slug": "adesso",
-          "name": "adesso",
-          "count": 2
-        }
-      ],
-      "articles": [
-        {
-          "title": "adesso acquires claims automation startup omni:us",
-          "link": "https://coverager.com/adesso-acquires-claims-automation-startup-omnius/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-14T13:00:41.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "omni:us will continue operating under its existing brand.",
-          "co": [
-            "adesso"
-          ]
         },
-        {
-          "title": "Berlin AI InsurTech startup omni:us acquired by Dortmund’s adesso embed AI into core insurance systems",
-          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQNFVKNnZMLTRzTkIxNjJWc2RPSGgxd3BjdDdJN191dlJvOFVvUDNvQjBtYWNWYmhOUXJxU29WMm9ZT05FSVc2dV9tY1VyNHlXRVlfNjJ0OG8tYUZoWmREYkhhTU1OMGZJMGlvZDVwX205bTR2Z3lZeGdLU0tHWTJKN1dXUTJQTzNiWHNzVFFseUoyUFdFMWN4UkhOTFdJVjhHNjBJNXltR2RtblVick0tUXVmc0ZfODBlay1KUEFuc2dFVXh3V2pGTXNseFF2QmlmbDJN?oc=5",
-          "source": "EU-Startups",
-          "publishedAt": "2026-08-14T08:47:25.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "adesso"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "korean-re",
-      "name": "Korean Re",
-      "count": 1,
-      "firstSeen": "2026-08-14T12:30:27.000Z",
-      "lastSeen": "2026-08-14T12:30:27.000Z",
-      "topics": [
         {
           "name": "Claims & Underwriting",
           "count": 1
         },
         {
-          "name": "Property & Cat",
+          "name": "Leadership",
           "count": 1
         }
       ],
       "sources": [
-        "Reinsurance News"
+        "Reinsurance News",
+        "Artemis",
+        "Insurance Nerds"
       ],
       "related": [],
       "articles": [
         {
-          "title": "Korean Re Q2’26 net income rises 77.6% amid stronger underwriting and investment results",
-          "link": "https://www.reinsurancene.ws/korean-re-q226-net-income-rises-77-6-amid-stronger-underwriting-and-investment-results/",
+          "title": "Hiscox announces current return estimates for Syndicates 33 and 6104",
+          "link": "https://www.reinsurancene.ws/hiscox-announces-current-return-estimates-for-syndicates-33-and-6104/",
           "source": "Reinsurance News",
-          "publishedAt": "2026-08-14T12:30:27.000Z",
+          "publishedAt": "2026-08-14T14:30:34.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Bermuda-headquartered international specialist insurer Hiscox has released current estimates for the 2024 and 2025 accounts of Syndicate 33 and Syndicate 6104. For the 2024 year of account, Hiscox has raised its…",
+          "co": []
+        },
+        {
+          "title": "Hiscox Capital Partners hires Spanos as Senior ILS Actuary",
+          "link": "https://www.artemis.bm/news/hiscox-capital-partners-hires-spanos-as-senior-ils-actuary/?utm_source=rss&utm_medium=rss&utm_campaign=hiscox-capital-partners-hires-spanos-as-senior-ils-actuary",
+          "source": "Artemis",
+          "publishedAt": "2026-08-10T11:30:36.000Z",
+          "tags": [
+            "Partnerships",
+            "Claims & Underwriting",
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Portuguese insurtech expands to Spain with insurer Hiscox",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPcWlRbnZ6NzBXWW1HRzI3QWFTVE5BLXJBU0pmMnJVOGRHQjAyNlBjTEpNOGpQdWt2UExtYlZWSnlqakRZT1FYb2ZOQ09wSXVXSDdETlpjQjlTZjBHSldSSU5ZUXcyZXh5bWRnUnJETHVNTmxxM0tjdzcyN1huLVU3ZVB1Y3YwcjY1czRj0gGbAUFVX3lxTE02ajFudFNRWGdlaVo3ZHhIdkptclZoYm5uRjYzNUZ2Q0JsVUpBSnNaQUFiR25sYkZuT2FZUU9MM1ROcjlaZzBBcjJjd0J2Vk9yZ19pR0FsX0pDcUdzYzNLRC0tTTN6OEhkWjFWaFBkS1UyVkV2YkZiRmY2ckZNYmxwS0w4bDUzYzRpMVVwNjRYdmZhYjV0al82ZDd3?oc=5",
+          "source": "Insurance Nerds",
+          "publishedAt": "2025-11-09T08:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "vertical-insure",
+      "name": "Vertical Insure",
+      "count": 5,
+      "firstSeen": "2025-06-16T07:00:00.000Z",
+      "lastSeen": "2026-08-14T14:17:24.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 4
+        },
+        {
+          "name": "Embedded",
+          "count": 3
+        },
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Pulse 2.0",
+        "EIN News",
+        "EIN Presswire",
+        "TipRanks",
+        "FinTech Global"
+      ],
+      "related": [
+        {
+          "slug": "updata-partners",
+          "name": "Updata Partners",
+          "count": 3
+        },
+        {
+          "slug": "stripe",
+          "name": "Stripe",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Vertical Insure Secures Updata Partners Investment To Scale Embedded Insurance Across 100+ SaaS Platforms",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWjVQNkZsNUxaalN4UVJQZWVZNTEzNXl4TTZEMFVYeXdZUXh1ZzRNc3g4S0xfUHd3bDh5Vl9ldDVTZmxyUU1OWkt3OGRrcXpiNjRRaTNNNks0NFBqVG40dXBrVE9yZm1wYm9KYmRsalNGWTlTN1JsVkd4Zi1PQTdiNURVSWEweXFiWU1FcXBTMWNaQWE2Z2ZpRXJVX2UwMUstRHpBbGFSaWppbTgxdnl0WE9PNDFjTldwNjNFSXVWMzBwQdIBxwFBVV95cUxNaXVBOXl2MUw0WDFyY25mV3R6ajBMMy1jeFdjbmtyMmhyY1ZkRDdkaE1nT0Rzd3VzWXhjczN2X3Jyb3VXMVJESGpoMU02R3M4M3R5OW9pM3ZfbHNBZEgzdVVsUEFaSGNUd182N1dRRVFZUm9xYXYzSkN6c1prT1RXLTc3UUR0WkNBQ1dGVHpxRFpRSXg0dkVnM0hNZXp0U3phY3dZcWxMMFBoQWpXZHFZVHhGVTZiTXpYTEp5dkFiLW04eXUyYnZV?oc=5",
+          "source": "Pulse 2.0",
+          "publishedAt": "2026-08-14T14:17:24.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "updata-partners"
+          ]
+        },
+        {
+          "title": "Vertical Insure Secures Investment from Updata Partners to Expand Embedded Insurance Infrastructure for SaaS Platforms",
+          "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPVExCaHBJZUswVFhERGx0cHZOeHR1dFVxbGpTMzB0MllZYWdjVm9DV1FRS3NtdE1Vb0l6bWhsek0xU1EzZkNVMVJpM2dyWnRyaVJWX3JMRlRwcWJMbTFoaWFraENFa0wxbnN3NEwza09udGFUdm9QWHFidE55N3JoektHQmlmS3JMYzBBdV9QV18zR21vcllGaWgwd0NvS3RSNThZaGNremZtQzdMcXhidjI2RXdwNDZ0eldUMmJDUklTMVh0NW12a0FxQlV6Nnk0VWxIend1QWxxQ09YcmZlcGtMR3czeDEzTUpsYmZQdFdEZw?oc=5",
+          "source": "EIN News",
+          "publishedAt": "2026-08-04T15:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "updata-partners"
+          ]
+        },
+        {
+          "title": "Vertical Insure Secures Investment from Updata Partners to Expand Embedded Insurance Infrastructure for SaaS Platforms",
+          "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNWTlDU1NCUWVXRVhZdENOQTk2U1VzYmhVc2JoZVg5bTRwMk5HNmJxaEUzdDNoUzNPbGtuaHNpV1Q5LVJhMy13TmVLODMwZTVhVHU0Nk12Vi1sLVZwS1AtVWpseGlQUTBuRVJwVzNfRjdIT2dMWnlPTDFQMk1uZld5YnZLWDdlUktkbjFnc1YtWWNRcnFpVFNsSC1fdU03UDQzcG5mNWhHVE1lc2R1ZlFwZVdvcGswOWJUc0hXcG5iTks5WHZScVBqOFJnQTRWZFVJaGlUNWZEUVF1R3VFWmJieGlPWUdJQW5JYTZTVlZrb3F0UGRKTVd1ZQ?oc=5",
+          "source": "EIN Presswire",
+          "publishedAt": "2026-08-04T15:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "updata-partners"
+          ]
+        },
+        {
+          "title": "Vertical Insure Highlights Stripe Partnership and Insurtech Visibility at Stripe Sessions 2026",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNd2wxYlQzVVg3aW8zMUJaZG9ENVZnQTRNT1dPR01UTnRzZFZvV0cwUU1PRjFxZEpVWHZmLTNuMFF0eGNPdWVvQXZYYjRHNDI2NFFtbFl2amxzVjM5WGVVZXMwTExUV2FfN1F1R3hxbXAyb0wzYnJDeXM1REdraWNGTnByZWpETjJlVjRReWZ5QTJHVUxsYWJmU0UzUWRlei1ORlhIQmIzTWtaZnZRdWxEcWstX0psSjZOd2ZuVHVGSHZZVVZTQzRKdDd1enVVa0UzX3ZGQXNTYTdBQQ?oc=5",
+          "source": "TipRanks",
+          "publishedAt": "2026-05-04T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "stripe"
+          ]
+        },
+        {
+          "title": "Vertical Insure lands $8.5m raise",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE92NXp2bHdRWUtqdmV5QXU1a3RfN3ZHTWFkYzhDcUdBSHNCLTlRay1EeWtQWEJfRUE3dzBzZ0RxRzNZeElCR1VualNNUGVaYl9LbF9IYnZjTTJmeXFFZE1FRURFOWhkNDRLOVY1bm93THBzZDZaMGc?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-06-16T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "updata-partners",
+      "name": "Updata Partners",
+      "count": 3,
+      "firstSeen": "2026-08-04T15:00:00.000Z",
+      "lastSeen": "2026-08-14T14:17:24.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 3
+        },
+        {
+          "name": "Embedded",
+          "count": 3
+        }
+      ],
+      "sources": [
+        "Pulse 2.0",
+        "EIN News",
+        "EIN Presswire"
+      ],
+      "related": [
+        {
+          "slug": "vertical-insure",
+          "name": "Vertical Insure",
+          "count": 3
+        }
+      ],
+      "articles": [
+        {
+          "title": "Vertical Insure Secures Updata Partners Investment To Scale Embedded Insurance Across 100+ SaaS Platforms",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWjVQNkZsNUxaalN4UVJQZWVZNTEzNXl4TTZEMFVYeXdZUXh1ZzRNc3g4S0xfUHd3bDh5Vl9ldDVTZmxyUU1OWkt3OGRrcXpiNjRRaTNNNks0NFBqVG40dXBrVE9yZm1wYm9KYmRsalNGWTlTN1JsVkd4Zi1PQTdiNURVSWEweXFiWU1FcXBTMWNaQWE2Z2ZpRXJVX2UwMUstRHpBbGFSaWppbTgxdnl0WE9PNDFjTldwNjNFSXVWMzBwQdIBxwFBVV95cUxNaXVBOXl2MUw0WDFyY25mV3R6ajBMMy1jeFdjbmtyMmhyY1ZkRDdkaE1nT0Rzd3VzWXhjczN2X3Jyb3VXMVJESGpoMU02R3M4M3R5OW9pM3ZfbHNBZEgzdVVsUEFaSGNUd182N1dRRVFZUm9xYXYzSkN6c1prT1RXLTc3UUR0WkNBQ1dGVHpxRFpRSXg0dkVnM0hNZXp0U3phY3dZcWxMMFBoQWpXZHFZVHhGVTZiTXpYTEp5dkFiLW04eXUyYnZV?oc=5",
+          "source": "Pulse 2.0",
+          "publishedAt": "2026-08-14T14:17:24.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "vertical-insure"
+          ]
+        },
+        {
+          "title": "Vertical Insure Secures Investment from Updata Partners to Expand Embedded Insurance Infrastructure for SaaS Platforms",
+          "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPVExCaHBJZUswVFhERGx0cHZOeHR1dFVxbGpTMzB0MllZYWdjVm9DV1FRS3NtdE1Vb0l6bWhsek0xU1EzZkNVMVJpM2dyWnRyaVJWX3JMRlRwcWJMbTFoaWFraENFa0wxbnN3NEwza09udGFUdm9QWHFidE55N3JoektHQmlmS3JMYzBBdV9QV18zR21vcllGaWgwd0NvS3RSNThZaGNremZtQzdMcXhidjI2RXdwNDZ0eldUMmJDUklTMVh0NW12a0FxQlV6Nnk0VWxIend1QWxxQ09YcmZlcGtMR3czeDEzTUpsYmZQdFdEZw?oc=5",
+          "source": "EIN News",
+          "publishedAt": "2026-08-04T15:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "vertical-insure"
+          ]
+        },
+        {
+          "title": "Vertical Insure Secures Investment from Updata Partners to Expand Embedded Insurance Infrastructure for SaaS Platforms",
+          "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNWTlDU1NCUWVXRVhZdENOQTk2U1VzYmhVc2JoZVg5bTRwMk5HNmJxaEUzdDNoUzNPbGtuaHNpV1Q5LVJhMy13TmVLODMwZTVhVHU0Nk12Vi1sLVZwS1AtVWpseGlQUTBuRVJwVzNfRjdIT2dMWnlPTDFQMk1uZld5YnZLWDdlUktkbjFnc1YtWWNRcnFpVFNsSC1fdU03UDQzcG5mNWhHVE1lc2R1ZlFwZVdvcGswOWJUc0hXcG5iTks5WHZScVBqOFJnQTRWZFVJaGlUNWZEUVF1R3VFWmJieGlPWUdJQW5JYTZTVlZrb3F0UGRKTVd1ZQ?oc=5",
+          "source": "EIN Presswire",
+          "publishedAt": "2026-08-04T15:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "vertical-insure"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "simplicity",
+      "name": "Simplicity",
+      "count": 2,
+      "firstSeen": "2026-08-04T11:00:09.000Z",
+      "lastSeen": "2026-08-14T14:06:00.000Z",
+      "topics": [
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business",
+        "Coverager"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Simplicity beats price in closing the SME cyber insurance gap",
+          "link": "https://www.insurancebusinessmag.com/us/news/cyber/simplicity-beats-price-in-closing-the-sme-cyber-insurance-gap-586033.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-14T14:06:00.000Z",
+          "tags": [
+            "Cyber"
+          ],
+          "summary": "CRC Group's Christiaan Durdaller explains what sustains the SME cyber gap and how brokers can close it",
+          "co": []
+        },
+        {
+          "title": "Simplicity acquires Pennsylvania RIA",
+          "link": "https://coverager.com/simplicity-acquires-pennsylvania-ria/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T11:00:09.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "The acquisition expands Simplicity's wealth management platform.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "am-best",
+      "name": "AM Best",
+      "count": 5,
+      "firstSeen": "2026-07-29T12:07:03.000Z",
+      "lastSeen": "2026-08-14T13:30:26.000Z",
+      "topics": [
+        {
+          "name": "Property & Cat",
+          "count": 3
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News",
+        "Artemis",
+        "theinsurer.com",
+        "Carrier Management"
+      ],
+      "related": [
+        {
+          "slug": "ledgebrook",
+          "name": "Ledgebrook",
+          "count": 1
+        },
+        {
+          "slug": "mapfre",
+          "name": "Mapfre",
+          "count": 1
+        },
+        {
+          "slug": "safety-insurance",
+          "name": "Safety Insurance",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "AI adoption in reinsurance likely to remain gradual despite growing enthusiasm: AM Best",
+          "link": "https://www.reinsurancene.ws/ai-adoption-in-reinsurance-likely-to-remain-gradual-despite-growing-enthusiasm-am-best/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-14T13:30:26.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "While artificial intelligence (AI) adoption in reinsurance will likely remain gradual due to key challenges, it is becoming a major differentiator for companies that successfully incorporate it into underwriting…",
+          "co": []
+        },
+        {
+          "title": "Maturing alternative capital partnerships help reinsurers exceed cost of capital: AM Best",
+          "link": "https://www.artemis.bm/news/maturing-alternative-capital-partnerships-help-reinsurers-exceed-cost-of-capital-am-best/?utm_source=rss&utm_medium=rss&utm_campaign=maturing-alternative-capital-partnerships-help-reinsurers-exceed-cost-of-capital-am-best",
+          "source": "Artemis",
+          "publishedAt": "2026-08-12T09:30:33.000Z",
+          "tags": [
+            "Partnerships",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Ledgebrook secures A-minus AM Best ratings as insurtech completes full-stack build",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPXzFUMUxfenk0am9sWDdOd0gtZUlkWGdKRFBGdzNBMjA4LTVFQXBYNllGWDlBZFdhUThKTVVheDNCT1lLaVplYmFxQ1FIZ2hzS3phUDBDU2prOUtlM3V3czRyUVVIaWlvWC16cW1SRk42Q1h1N3dJVnp1czJWTkdkLWItNVMzdDBDTnpfeVZtYVVqQmxCUzNpal93UGFBa1BOc3otYm94aF9uWG1qMzlQVHhHdUE4cEFsWjd4bGlodkQ?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2026-08-10T21:33:55.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "ledgebrook"
+          ]
+        },
+        {
+          "title": "Dedicated reinsurance capital expected to hit record $705bn in 2026: AM Best & Guy Carpenter",
+          "link": "https://www.reinsurancene.ws/dedicated-reinsurance-capital-expected-to-hit-record-705bn-in-2026-am-best-guy-carpenter/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-10T13:00:31.000Z",
           "tags": [
             "Claims & Underwriting",
             "Property & Cat"
           ],
-          "summary": "Korean Re, South Korea’s specialist reinsurance company, reported higher profit for the first half of 2026, supported by improved reinsurance performance and stronger investment results. The reinsurer’s revenue from…",
+          "summary": "Dedicated reinsurance capital is expected to increase further in 2026, as reinsurers continue to benefit from underwriting profits, investment returns and growing participation from third-party capital, according to AM…",
+          "co": []
+        },
+        {
+          "title": "AM Best Calls $1.54 Billion Mapfre-Safety Marriage ‘Strategically Compelling’",
+          "link": "https://www.carriermanagement.com/news/2026/07/29/290500.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-07-29T12:07:03.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Ratings analysts at AM Best see the pending acquisition of Safety Insurance Group by Mapfre as “strategically compelling” as the carriers have complementary geographic and product profiles. Last week Safety, a…",
+          "co": [
+            "mapfre",
+            "safety-insurance-group"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "faye",
+      "name": "Faye",
+      "count": 7,
+      "firstSeen": "2025-09-25T07:00:00.000Z",
+      "lastSeen": "2026-08-14T13:26:09.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 5
+        },
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Insurtech Insights",
+        "citybiz",
+        "Richmond BizSense",
+        "Beinsure",
+        "Skift",
+        "Insurify"
+      ],
+      "related": [
+        {
+          "slug": "madrona",
+          "name": "Madrona",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Faye raises $50 million to expand AI-powered travel insurance platform",
+          "link": "https://www.insurtechinsights.com/faye-raises-50-million-to-expand-ai-powered-travel-insurance-platform/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-14T13:26:09.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "Series C brings Faye's total funding to $100 million as the company targets greater automation across underwriting, assistance and claims",
+          "co": []
+        },
+        {
+          "title": "Insurtech Firm Faye Closes $50M Series C Led by Madrona",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNYllpMDJzV0lMTEhBN0xVb2FnT243dnFBbnhVX3Q3V2V6NllvTEpzOHVUWFZoTFVfTHp1TjNWeElDQ0V0UnM2VFRsb3FOOXpmZC1Pd041UklEWlhfWTlJaFlnX3YtTnRIZXNWbGFpdzQ1NG9haGo5Z2ZTU2xEU042V04yemZtX3RyOWYxTWUxX1NZa1BwQWd4cg?oc=5",
+          "source": "citybiz",
+          "publishedAt": "2026-08-06T10:25:49.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "madrona"
+          ]
+        },
+        {
+          "title": "Insurtech startup Faye announces $50M capital raise",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOeVdlMmFtMFpJcXhnNXNTdmtLTXBpN09uemhUVGU0cGlUWkUzZi0tS29BalZYOWNuVl9IQ1ZrTDllOVA4N3lrZmlOdGt2ZHc1eHhxNmRZR2k1ZXNLX25xaDNFNXFJVURGU0NCQU1qQnkwZWZSN1dyOHJyUU45Q1BmNWhHSnZCeHE2NHRqa2VweDV4bUhzTEE?oc=5",
+          "source": "Richmond BizSense",
+          "publishedAt": "2026-08-06T06:03:43.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Faye raises $50 mn in Series C for AI travel insurance expansion",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZHhmYmJaZlJBLTZfZ3BGeDVrZFZjdmx5YlVCaEhhRUlhS3lJdHBuVUJ4MUw4ZGdkdGs1WFk3WUVuVGxuZm1wNGF3d3N6aXFyLVZNbEVMX3NGMllQTFA3QlloR0xSS3BCTUhrNlYxeHFWYmVjQllfMkV5cWZvQ3hPQjBRMA?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-08-05T19:15:30.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Faye Raises $50 Million, Bets on AI to Get Travel Insurance Claims Paid in Minutes",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQW1DdFR2UUQxbE82anlGd2R5TlJGVEJlbmNYWDBpTDV2eEQyZ3BHV2RGMXlKYVltVVNYX3p3dEtXR1VVRWJRX3FzZVUySGZfSnpVeWN1V0EtODdCdGhTajlQTWR0NFVWQnZFN2IteXdFdF80dExfTXlENjh1WGJrS3FmYXJGMG02MFpja05VQy13b0JROFMzZmpVc3lSeWVJSDU1Z0N5eThqbVdkS1RB?oc=5",
+          "source": "Skift",
+          "publishedAt": "2026-08-05T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech startup Faye moves into bigger HQ in Henrico",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPX1RrR3VlaVo3LUhiMlEtLVpOY29FSlc0Z1liejdrWTNIME5wX0t1REROQmdzd1R1YldUMTZrcFh3OW1Ha2FRVml6TkpDNUJRRWVlcXFMNnJfWWVxV1d4X0RQcmc4X2VUSVk5T3R2RkZHZTRZZG9GeWRVZjdjdFE4bFJGc0tPR1NEakpRa2pxemtIeDI5c1dJNXMyOA?oc=5",
+          "source": "Richmond BizSense",
+          "publishedAt": "2026-05-22T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "How Faye Travel Insurance Stacks Up",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5ZMjJRTmRsNl9qaFRPeEN0VWtfUnF0N1dKcnNENHUwX095WG0yWDM5RUhMd2J2Tl9oc2xLZ1I2UGdtaVBUc3hKcjlPQk9RaGt3WmluVm5mT1ZNNEV0dnp1MDA4VQ?oc=5",
+          "source": "Insurify",
+          "publishedAt": "2025-09-25T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
           "co": []
         }
       ]
@@ -166,21 +873,21 @@
     {
       "slug": "parametrix",
       "name": "Parametrix",
-      "count": 4,
+      "count": 5,
       "firstSeen": "2025-12-09T08:00:00.000Z",
-      "lastSeen": "2026-08-14T09:30:32.000Z",
+      "lastSeen": "2026-08-14T13:14:55.000Z",
       "topics": [
         {
           "name": "Product & Launches",
-          "count": 3
+          "count": 4
         },
         {
           "name": "Cyber",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Property & Cat",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Funding",
@@ -192,6 +899,7 @@
         }
       ],
       "sources": [
+        "Insurtech Insights",
         "Reinsurance News",
         "Artemis",
         "calcalistech.com"
@@ -200,10 +908,25 @@
         {
           "slug": "aig",
           "name": "AIG",
-          "count": 2
+          "count": 3
         }
       ],
       "articles": [
+        {
+          "title": "AIG, Parametrix launch parametric cover for cloud outage losses",
+          "link": "https://www.insurtechinsights.com/aig-parametrix-launch-parametric-cover-for-cloud-outage-losses/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-14T13:14:55.000Z",
+          "tags": [
+            "Product & Launches",
+            "Cyber",
+            "Property & Cat"
+          ],
+          "summary": "New cyber solution provides faster payouts for business interruption caused by cloud service disruptions",
+          "co": [
+            "aig"
+          ]
+        },
         {
           "title": "AIG & Parametrix launch cyber parametric solution for cloud service outage losses",
           "link": "https://www.reinsurancene.ws/aig-parametrix-launch-cyber-parametric-solution-for-cloud-service-outage-losses/",
@@ -263,21 +986,21 @@
     {
       "slug": "aig",
       "name": "AIG",
-      "count": 6,
+      "count": 7,
       "firstSeen": "2024-12-19T08:00:00.000Z",
-      "lastSeen": "2026-08-14T09:30:32.000Z",
+      "lastSeen": "2026-08-14T13:14:55.000Z",
       "topics": [
         {
           "name": "Product & Launches",
-          "count": 3
+          "count": 4
         },
         {
           "name": "Property & Cat",
-          "count": 3
+          "count": 4
         },
         {
           "name": "Cyber",
-          "count": 2
+          "count": 3
         },
         {
           "name": "AI & Automation",
@@ -293,6 +1016,7 @@
         }
       ],
       "sources": [
+        "Insurtech Insights",
         "Reinsurance News",
         "Artemis",
         "Insurance Journal",
@@ -303,7 +1027,7 @@
         {
           "slug": "parametrix",
           "name": "Parametrix",
-          "count": 2
+          "count": 3
         },
         {
           "slug": "zurich",
@@ -312,6 +1036,21 @@
         }
       ],
       "articles": [
+        {
+          "title": "AIG, Parametrix launch parametric cover for cloud outage losses",
+          "link": "https://www.insurtechinsights.com/aig-parametrix-launch-parametric-cover-for-cloud-outage-losses/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-14T13:14:55.000Z",
+          "tags": [
+            "Product & Launches",
+            "Cyber",
+            "Property & Cat"
+          ],
+          "summary": "New cyber solution provides faster payouts for business interruption caused by cloud service disruptions",
+          "co": [
+            "parametrix"
+          ]
+        },
         {
           "title": "AIG & Parametrix launch cyber parametric solution for cloud service outage losses",
           "link": "https://www.reinsurancene.ws/aig-parametrix-launch-cyber-parametric-solution-for-cloud-service-outage-losses/",
@@ -388,6 +1127,533 @@
           "summary": "",
           "co": [
             "zurich"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "adesso",
+      "name": "adesso",
+      "count": 2,
+      "firstSeen": "2026-08-14T08:47:25.000Z",
+      "lastSeen": "2026-08-14T13:00:41.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "EU-Startups"
+      ],
+      "related": [
+        {
+          "slug": "omni-us",
+          "name": "omni:us",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "adesso acquires claims automation startup omni:us",
+          "link": "https://coverager.com/adesso-acquires-claims-automation-startup-omnius/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-14T13:00:41.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "omni:us will continue operating under its existing brand.",
+          "co": [
+            "omni-us"
+          ]
+        },
+        {
+          "title": "Berlin's AI InsurTech startup omni:us acquired by Dortmund’s adesso to embed AI into core insurance systems",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQNFVKNnZMLTRzTkIxNjJWc2RPSGgxd3BjdDdJN191dlJvOFVvUDNvQjBtYWNWYmhOUXJxU29WMm9ZT05FSVc2dV9tY1VyNHlXRVlfNjJ0OG8tYUZoWmREYkhhTU1OMGZJMGlvZDVwX205bTR2Z3lZeGdLU0tHWTJKN1dXUTJQTzNiWHNzVFFseUoyUFdFMWN4UkhOTFdJVjhHNjBJNXltR2RtblVick0tUXVmc0ZfODBlay1KUEFuc2dFVXh3V2pGTXNseFF2QmlmbDJN?oc=5",
+          "source": "EU-Startups",
+          "publishedAt": "2026-08-14T08:47:25.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "omni-us"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "omni-us",
+      "name": "omni:us",
+      "count": 2,
+      "firstSeen": "2026-08-14T08:47:25.000Z",
+      "lastSeen": "2026-08-14T13:00:41.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "EU-Startups"
+      ],
+      "related": [
+        {
+          "slug": "adesso",
+          "name": "adesso",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "adesso acquires claims automation startup omni:us",
+          "link": "https://coverager.com/adesso-acquires-claims-automation-startup-omnius/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-14T13:00:41.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "omni:us will continue operating under its existing brand.",
+          "co": [
+            "adesso"
+          ]
+        },
+        {
+          "title": "Berlin's AI InsurTech startup omni:us acquired by Dortmund’s adesso to embed AI into core insurance systems",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQNFVKNnZMLTRzTkIxNjJWc2RPSGgxd3BjdDdJN191dlJvOFVvUDNvQjBtYWNWYmhOUXJxU29WMm9ZT05FSVc2dV9tY1VyNHlXRVlfNjJ0OG8tYUZoWmREYkhhTU1OMGZJMGlvZDVwX205bTR2Z3lZeGdLU0tHWTJKN1dXUTJQTzNiWHNzVFFseUoyUFdFMWN4UkhOTFdJVjhHNjBJNXltR2RtblVick0tUXVmc0ZfODBlay1KUEFuc2dFVXh3V2pGTXNseFF2QmlmbDJN?oc=5",
+          "source": "EU-Startups",
+          "publishedAt": "2026-08-14T08:47:25.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "adesso"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "korean-re",
+      "name": "Korean Re",
+      "count": 1,
+      "firstSeen": "2026-08-14T12:30:27.000Z",
+      "lastSeen": "2026-08-14T12:30:27.000Z",
+      "topics": [
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Korean Re Q2’26 net income rises 77.6% amid stronger underwriting and investment results",
+          "link": "https://www.reinsurancene.ws/korean-re-q226-net-income-rises-77-6-amid-stronger-underwriting-and-investment-results/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-14T12:30:27.000Z",
+          "tags": [
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "Korean Re, South Korea’s specialist reinsurance company, reported higher profit for the first half of 2026, supported by improved reinsurance performance and stronger investment results. The reinsurer’s revenue from…",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "thoma-bravo",
+      "name": "Thoma Bravo",
+      "count": 5,
+      "firstSeen": "2025-05-20T07:00:00.000Z",
+      "lastSeen": "2026-08-14T12:00:36.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Carrier Management",
+        "Insurance Journal",
+        "pehub.com",
+        "Reuters"
+      ],
+      "related": [
+        {
+          "slug": "accelerant",
+          "name": "Accelerant",
+          "count": 3
+        },
+        {
+          "slug": "majesco",
+          "name": "Majesco",
+          "count": 1
+        },
+        {
+          "slug": "vitech",
+          "name": "Vitech",
+          "count": 1
+        },
+        {
+          "slug": "nearmap",
+          "name": "Nearmap",
+          "count": 1
+        },
+        {
+          "slug": "itel",
+          "name": "itel",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Thoma Bravo to Take Accelerant Private in $4 Billion Deal",
+          "link": "https://www.carriermanagement.com/news/2026/08/14/291059.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-08-14T12:00:36.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Accelerant said on Thursday that private equity firm Thoma Bravo will take the insurance marketplace platform private in an all-cash deal worth more than $4 billion, just over a year after its New York listing.…",
+          "co": [
+            "accelerant"
+          ]
+        },
+        {
+          "title": "Thoma Bravo to Take Accelerant Private in $4 Billion Deal",
+          "link": "https://www.insurancejournal.com/news/southeast/2026/08/13/881367.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-13T13:16:17.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Accelerant said on Thursday that private equity firm Thoma Bravo will take the insurance marketplace platform private in an all-cash deal worth more than $4 billion, just over a year after its New York listing.…",
+          "co": [
+            "accelerant"
+          ]
+        },
+        {
+          "title": "Thoma Bravo to take specialty insurance risk exchange platform Accelerant private for more than $4bn",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNdDhpVXpDLXFsaThzdUVDMmVmR0FoY0F1bjM4dHl4LUs2OTBMcTZEd2lXcFRjQ1l6ZUtnRUhvOUNldnBBZFhlQzZzQTI4NmVsR2ZaUUVFdTMwYWM2MmVVWGNGdnhraWh2TnRFR2g0M2pRVUN3bXR6V1ZBaDBYbWRzS0lXVm1wLTFETk8tbmh1WlZLWFFxQTh4SHh5NzJIMWU5aVYxN1I4MjN5UFBqakZRWEhWY3NhNXNfT2RLbjBSNA?oc=5",
+          "source": "pehub.com",
+          "publishedAt": "2026-08-13T07:42:09.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "accelerant"
+          ]
+        },
+        {
+          "title": "Thoma Bravo-backed Majesco to acquire pension software firm Vitech",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQX0k0OEVlS1U4SElCT2FiSDcxT2o2ZFlwZHVkcFQ0SWRRMnljcExocmtsU2w5Y3BUQ3BRUlNaYlRfM1V4RHhjTTc1dnRxajZXSEttMm13NWdMY0J0eWxCQ2JnbHBodFdsZE9yRGlSaHBYcERPWWt1d2k3dV9BOTl0aTNoc0ZuMnJrcXduUzdsXzVDMXM?oc=5",
+          "source": "pehub.com",
+          "publishedAt": "2025-11-21T08:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "majesco",
+            "vitech"
+          ]
+        },
+        {
+          "title": "Thoma Bravo's Nearmap to buy insurance tech firm itel for over $1.3 billion",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPaFdsQmI3Y09LaFNsUWpJekR4bExjUTZhU2ZxcXNEX0JzQ1VCbC1kNG42S1BKOWdiVXZNcFFieWtielJhNmFTc0xyRFBjWnpVdmczOWw4ZDlZbnVfcWR3OFdBWEdWZkcyZEp1djY0aEE5Z2o5QzNqdW93RGcyaEREbERYMVJiZWRDZDJTcm9IOTYybV9tS1VmYTk2a0JVWjhIVGpiZ2VGZGNTSG9HZU5OczFB?oc=5",
+          "source": "Reuters",
+          "publishedAt": "2025-05-20T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "nearmap",
+            "itel"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "accelerant",
+      "name": "Accelerant",
+      "count": 4,
+      "firstSeen": "2025-07-24T07:00:00.000Z",
+      "lastSeen": "2026-08-14T12:00:36.000Z",
+      "topics": [],
+      "sources": [
+        "Carrier Management",
+        "Insurance Journal",
+        "pehub.com",
+        "Future Nexus"
+      ],
+      "related": [
+        {
+          "slug": "thoma-bravo",
+          "name": "Thoma Bravo",
+          "count": 3
+        }
+      ],
+      "articles": [
+        {
+          "title": "Thoma Bravo to Take Accelerant Private in $4 Billion Deal",
+          "link": "https://www.carriermanagement.com/news/2026/08/14/291059.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-08-14T12:00:36.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Accelerant said on Thursday that private equity firm Thoma Bravo will take the insurance marketplace platform private in an all-cash deal worth more than $4 billion, just over a year after its New York listing.…",
+          "co": [
+            "thoma-bravo"
+          ]
+        },
+        {
+          "title": "Thoma Bravo to Take Accelerant Private in $4 Billion Deal",
+          "link": "https://www.insurancejournal.com/news/southeast/2026/08/13/881367.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-13T13:16:17.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Accelerant said on Thursday that private equity firm Thoma Bravo will take the insurance marketplace platform private in an all-cash deal worth more than $4 billion, just over a year after its New York listing.…",
+          "co": [
+            "thoma-bravo"
+          ]
+        },
+        {
+          "title": "Thoma Bravo to take specialty insurance risk exchange platform Accelerant private for more than $4bn",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNdDhpVXpDLXFsaThzdUVDMmVmR0FoY0F1bjM4dHl4LUs2OTBMcTZEd2lXcFRjQ1l6ZUtnRUhvOUNldnBBZFhlQzZzQTI4NmVsR2ZaUUVFdTMwYWM2MmVVWGNGdnhraWh2TnRFR2g0M2pRVUN3bXR6V1ZBaDBYbWRzS0lXVm1wLTFETk8tbmh1WlZLWFFxQTh4SHh5NzJIMWU5aVYxN1I4MjN5UFBqakZRWEhWY3NhNXNfT2RLbjBSNA?oc=5",
+          "source": "pehub.com",
+          "publishedAt": "2026-08-13T07:42:09.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "thoma-bravo"
+          ]
+        },
+        {
+          "title": "As Accelerant IPOs on NYSE, CEO Jeff Radke Hopes to Usher In Insurtech 3.0",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNOWFLU0xXendGc3VfZFhEazRPUVl3UkY1UmhWbkM1X2RQMk1lN2tpUGRnZ3BsQ0FRZW1TUTVMbEtSUVl6N3dMM3NWUlJUQmd0SGd6azFMdkFMc3U3bk5aM1NaanFXN3ZWQ0N5ODI0dXk2M1pjNXM5UHNVODM5NVhvcWlxcWx2OFJwZFJ4WGVzdHF1YmFSUUtQU1FVQjhSbng1elMzVkV5X0I4Nks0YW93?oc=5",
+          "source": "Future Nexus",
+          "publishedAt": "2025-07-24T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "liberty-mutual",
+      "name": "Liberty Mutual",
+      "count": 9,
+      "firstSeen": "2026-04-14T07:00:00.000Z",
+      "lastSeen": "2026-08-14T11:02:34.000Z",
+      "topics": [
+        {
+          "name": "Property & Cat",
+          "count": 4
+        },
+        {
+          "name": "Product & Launches",
+          "count": 3
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 3
+        },
+        {
+          "name": "Partnerships",
+          "count": 3
+        },
+        {
+          "name": "Cyber",
+          "count": 2
+        },
+        {
+          "name": "Health & Life",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "FF News",
+        "Insurtech Insights",
+        "FinTech Global",
+        "Insurance Journal",
+        "Digital Insurance"
+      ],
+      "related": [
+        {
+          "slug": "ethos",
+          "name": "Ethos",
+          "count": 3
+        },
+        {
+          "slug": "travelers",
+          "name": "Travelers",
+          "count": 1
+        },
+        {
+          "slug": "hippo",
+          "name": "Hippo",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Liberty Mutual Reinsurance and Safehub Launch Parametric Earthquake Solution for Fast Payments",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMXdLN1BkblBQYkdHNGY2ekIwSlJqeWhBVEtxWTUtZE9aZEhsOEMzdmhVQnltOERyeXVjZDk2SFVwS1Bsdy1UOGw0TnJKRGFHLVhqbzJZRlY1Q3dwSXFXVnlZakRNQWlYSGtwbjdGYUhYa2xGb2xHcGJiX2I0WWpESE1DemZpUW53ZkVjZXRnbk1qOFZORkRCYU9fZjBhZFA1RV8tSXh6RmVTMEVDTWYxa3V5MA?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-08-14T11:02:34.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual Q2 profit rises 43% on underwriting improvement and investment gains",
+          "link": "https://www.insurtechinsights.com/liberty-mutual-q2-profit-rises-43-on-underwriting-improvement-and-investment-gains/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-07T13:27:40.000Z",
+          "tags": [
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "Liberty Mutual reported second-quarter 2026 net income of $2.63 billion, up 43% from the prior-year period, as improved underwriting results, lower catastrophe losses and stronger investment performance supported…",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual Re names new global cyber reinsurance chief",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObWU0NndNcWZJeTFSMjlYY1NrNmtnQjNGS2lFbDIzLTdjM0Y5RU1rdVpiTGJaMFlvR2tkZ1ZTNExZaElNTDJIRzN6T2VZMnZaOXc0RW9nZGZ2MFhvdTJoOHlXSXVzSkNLTWRwOGFRUkpZbDdRakc4enduUmFjQWhzYlVCbmhpRkVWWktSQktUZUxDdk56Z3RYdg?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-07-24T11:29:11.000Z",
+          "tags": [
+            "Cyber",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual Introduces Its Newest Brand Character: Liberty Biberty",
+          "link": "https://www.insurancejournal.com/news/national/2026/07/24/878751.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-24T05:16:59.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Liberty Mutual Insurance has introduced its first new brand character in eight years: Liberty Biberty, the embodiment of the warm, fuzzy feeling you get when you have great coverage at a great price. Liberty Mutual…",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual Re appoints Tom Spurgeon as Global Head of Cyber Reinsurance",
+          "link": "https://www.insurtechinsights.com/liberty-mutual-re-appoints-tom-spurgeon-as-global-head-of-cyber-reinsurance/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-07-21T14:53:25.000Z",
+          "tags": [
+            "Cyber",
+            "Property & Cat",
+            "Leadership"
+          ],
+          "summary": "Liberty Mutual Reinsurance Group (LM Re) has appointed Tom Spurgeon as Global Head of Cyber Reinsurance, reinforcing its focus on expanding its global cyber reinsurance business.",
+          "co": []
+        },
+        {
+          "title": "Ethos Collaborates with Liberty Mutual to Deliver a Modern, Digital-First Life Insurance Experience",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNbXA2M09Qa2tkbWtsNUxfUnkwOGVuRXlKN1lTUXhKZVZwY2NrUU5RU2F1aHczenF2UWpva0NHQUdzVjJIZ3RWQVhPdlU5RDUxaS1NTXF6RFJXWTRqQzVONHNrWXhPT3daSWRYbFNkT3ZGdXFfUEJWUlEyTjZJVUxIczMyOHVFNkhRM28tQTZZRmgyRjFZNFhKcmNSQXpZR1ROLXhwUHlwYnZLbW9zZnAzS3pBbTdzV2tKVk96dEdMZ0lxMFJBU3FJR3FqWHhGS3lzeC0zNmJR?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-07-03T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "ethos"
+          ]
+        },
+        {
+          "title": "Travelers launches AI claims tool; Ethos partners with Liberty Mutual",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ0VOUDRXbVVEMlA1Y3k1OXAxbWRieWtZdkpHYW5CS2szLWxLRWFaNlI1LXV6U2g4c2gzWDY1RnJPZ0VTbWtfWmVhOFhCd05MQlBXLV8xNTRjZGp4VzZuSHUzWVpZZE0wRzAtSGVfYXcydzIyNTNkcXBBUzJaTFRiUjRrVi1EcG90RF93QWpEeFBySHczZ1VEM3FBajY?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-05-11T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": [
+            "travelers",
+            "ethos"
+          ]
+        },
+        {
+          "title": "Liberty Mutual partners Ethos to expand digital life insurance offering",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPVDFubjFwaF90NW4tMjBwNTJfazdyU3ItVXpBTW9NWDAwbHNJcVhsckZoc3FXdldLcEhDTXFiUGJsWHpKN0RYT0M0SmVXcFFtdjZRakhBU2MxQ1A1MzZleW9Kd05ZUk9zWHpqYjJ3ZTN5aFRCemNDRFFROTNWNERyNXNKc2ZVU085MUdFR2stMFl1OEZUZ2czSVlRd1RJMmUxZTRFZGJLS093UQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-04-27T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "ethos"
+          ]
+        },
+        {
+          "title": "Liberty Mutual restructures leadership, Hippo deploys AI claims",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSHBBcTRqZ0N6TEJiX0lhck9kbFNvTHJKYk5zUmplZ0hseVI1WXVfSFhFdEw2ZE5DT2dCMW10eTY4ZnB2TS1RNm12ZGpwbi05eVNvZExFUFFKaDZLUWFnZWZ0VkpKT1Z1UkxBdjI3YXg1NERjbVlmc25RTDZIRy1ienRGRS1zbjBmNkEw?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-04-14T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": [
+            "hippo"
           ]
         }
       ]
@@ -1345,166 +2611,6 @@
       ]
     },
     {
-      "slug": "thoma-bravo",
-      "name": "Thoma Bravo",
-      "count": 4,
-      "firstSeen": "2025-05-20T07:00:00.000Z",
-      "lastSeen": "2026-08-13T13:16:17.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Insurance Journal",
-        "pehub.com",
-        "Reuters"
-      ],
-      "related": [
-        {
-          "slug": "accelerant",
-          "name": "Accelerant",
-          "count": 2
-        },
-        {
-          "slug": "majesco",
-          "name": "Majesco",
-          "count": 1
-        },
-        {
-          "slug": "vitech",
-          "name": "Vitech",
-          "count": 1
-        },
-        {
-          "slug": "nearmap",
-          "name": "Nearmap",
-          "count": 1
-        },
-        {
-          "slug": "itel",
-          "name": "itel",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Thoma Bravo to Take Accelerant Private in $4 Billion Deal",
-          "link": "https://www.insurancejournal.com/news/southeast/2026/08/13/881367.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-13T13:16:17.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "Accelerant said on Thursday that private equity firm Thoma Bravo will take the insurance marketplace platform private in an all-cash deal worth more than $4 billion, just over a year after its New York listing.…",
-          "co": [
-            "accelerant"
-          ]
-        },
-        {
-          "title": "Thoma Bravo to take specialty insurance risk exchange platform Accelerant private for more than $4bn",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNdDhpVXpDLXFsaThzdUVDMmVmR0FoY0F1bjM4dHl4LUs2OTBMcTZEd2lXcFRjQ1l6ZUtnRUhvOUNldnBBZFhlQzZzQTI4NmVsR2ZaUUVFdTMwYWM2MmVVWGNGdnhraWh2TnRFR2g0M2pRVUN3bXR6V1ZBaDBYbWRzS0lXVm1wLTFETk8tbmh1WlZLWFFxQTh4SHh5NzJIMWU5aVYxN1I4MjN5UFBqakZRWEhWY3NhNXNfT2RLbjBSNA?oc=5",
-          "source": "pehub.com",
-          "publishedAt": "2026-08-13T07:42:09.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "accelerant"
-          ]
-        },
-        {
-          "title": "Thoma Bravo-backed Majesco to acquire pension software firm Vitech",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQX0k0OEVlS1U4SElCT2FiSDcxT2o2ZFlwZHVkcFQ0SWRRMnljcExocmtsU2w5Y3BUQ3BRUlNaYlRfM1V4RHhjTTc1dnRxajZXSEttMm13NWdMY0J0eWxCQ2JnbHBodFdsZE9yRGlSaHBYcERPWWt1d2k3dV9BOTl0aTNoc0ZuMnJrcXduUzdsXzVDMXM?oc=5",
-          "source": "pehub.com",
-          "publishedAt": "2025-11-21T08:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "majesco",
-            "vitech"
-          ]
-        },
-        {
-          "title": "Thoma Bravo's Nearmap to buy insurance tech firm itel for over $1.3 billion",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPaFdsQmI3Y09LaFNsUWpJekR4bExjUTZhU2ZxcXNEX0JzQ1VCbC1kNG42S1BKOWdiVXZNcFFieWtielJhNmFTc0xyRFBjWnpVdmczOWw4ZDlZbnVfcWR3OFdBWEdWZkcyZEp1djY0aEE5Z2o5QzNqdW93RGcyaEREbERYMVJiZWRDZDJTcm9IOTYybV9tS1VmYTk2a0JVWjhIVGpiZ2VGZGNTSG9HZU5OczFB?oc=5",
-          "source": "Reuters",
-          "publishedAt": "2025-05-20T07:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "nearmap",
-            "itel"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "accelerant",
-      "name": "Accelerant",
-      "count": 3,
-      "firstSeen": "2025-07-24T07:00:00.000Z",
-      "lastSeen": "2026-08-13T13:16:17.000Z",
-      "topics": [],
-      "sources": [
-        "Insurance Journal",
-        "pehub.com",
-        "Future Nexus"
-      ],
-      "related": [
-        {
-          "slug": "thoma-bravo",
-          "name": "Thoma Bravo",
-          "count": 2
-        }
-      ],
-      "articles": [
-        {
-          "title": "Thoma Bravo to Take Accelerant Private in $4 Billion Deal",
-          "link": "https://www.insurancejournal.com/news/southeast/2026/08/13/881367.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-13T13:16:17.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "Accelerant said on Thursday that private equity firm Thoma Bravo will take the insurance marketplace platform private in an all-cash deal worth more than $4 billion, just over a year after its New York listing.…",
-          "co": [
-            "thoma-bravo"
-          ]
-        },
-        {
-          "title": "Thoma Bravo to take specialty insurance risk exchange platform Accelerant private for more than $4bn",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNdDhpVXpDLXFsaThzdUVDMmVmR0FoY0F1bjM4dHl4LUs2OTBMcTZEd2lXcFRjQ1l6ZUtnRUhvOUNldnBBZFhlQzZzQTI4NmVsR2ZaUUVFdTMwYWM2MmVVWGNGdnhraWh2TnRFR2g0M2pRVUN3bXR6V1ZBaDBYbWRzS0lXVm1wLTFETk8tbmh1WlZLWFFxQTh4SHh5NzJIMWU5aVYxN1I4MjN5UFBqakZRWEhWY3NhNXNfT2RLbjBSNA?oc=5",
-          "source": "pehub.com",
-          "publishedAt": "2026-08-13T07:42:09.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "thoma-bravo"
-          ]
-        },
-        {
-          "title": "As Accelerant IPOs on NYSE, CEO Jeff Radke Hopes to Usher In Insurtech 3.0",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNOWFLU0xXendGc3VfZFhEazRPUVl3UkY1UmhWbkM1X2RQMk1lN2tpUGRnZ3BsQ0FRZW1TUTVMbEtSUVl6N3dMM3NWUlJUQmd0SGd6azFMdkFMc3U3bk5aM1NaanFXN3ZWQ0N5ODI0dXk2M1pjNXM5UHNVODM5NVhvcWlxcWx2OFJwZFJ4WGVzdHF1YmFSUUtQU1FVQjhSbng1elMzVkV5X0I4Nks0YW93?oc=5",
-          "source": "Future Nexus",
-          "publishedAt": "2025-07-24T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "xchange-tec",
       "name": "XChange TEC.INC",
       "count": 2,
@@ -1526,7 +2632,7 @@
       ],
       "sources": [
         "The Manila Times",
-        "stocktitan.net"
+        "Stock Titan"
       ],
       "related": [
         {
@@ -1553,7 +2659,7 @@
         {
           "title": "XChange TEC’s Proposed Deal Could Put AI Agents in Insurance Claims",
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQT0Vtc1JMQkVzaXdIS25pVkQ2N1dfTUJucVRJTVFUZVlJZ1htUDJ1bW1URTA3MnVPdDdkdTIya25aYThTWGN3SngwdnR4NWRPcFY4NnpwSnczb3hueEIxajI4UkJLbUNBLUJHeDBHM2FYb243S0xBVE50ZmZmYVFTZGNRV04zdmlhb2F3T1k5a3BqSnZieC1Dc2V5RkZUZUV2a3VDS0g0OUI1Wk0tSWU2Sm45RXM?oc=5",
-          "source": "stocktitan.net",
+          "source": "Stock Titan",
           "publishedAt": "2026-08-13T12:00:00.000Z",
           "tags": [
             "AI & Automation",
@@ -1870,280 +2976,6 @@
           "summary": "",
           "co": [
             "experian"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "sixfold",
-      "name": "Sixfold",
-      "count": 3,
-      "firstSeen": "2026-01-30T08:00:00.000Z",
-      "lastSeen": "2026-08-13T10:15:24.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 3
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 3
-        },
-        {
-          "name": "Funding",
-          "count": 2
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurtech Insights",
-        "FF News",
-        "FinTech Global"
-      ],
-      "related": [
-        {
-          "slug": "sollers",
-          "name": "Sollers",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Sixfold and Sollers partner to accelerate AI underwriting",
-          "link": "https://www.insurtechinsights.com/sixfold-and-sollers-partner-to-accelerate-ai-underwriting/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-13T10:15:24.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "Sixfold has partnered with Sollers Consulting to help insurers accelerate underwriting transformation by combining AI-powered risk assessment with insurance consulting and implementation expertise.",
-          "co": [
-            "sollers"
-          ]
-        },
-        {
-          "title": "Sixfold Raises US$30 Million Series B to Build the AI Underwriter",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOb1BJbGU4Zm1aZVNnMFFHSUt6aWVJdkhQNlVfT3ZfOGgzOEoyRUJ2ejNKMHJGUzFkLV9Obk9ReG5Yc3dxS3NTamJ1N05hVUQ2Z25PRVloa2g2QmVtRGNjVGFQWnlzZ2V6RjE1Nk5hWGlYUDBremNjVHlxMzVxNUZZT0lMbHdFeGtXTmNZSDJINmdsRXNYVUx4M3VBQ1IzWlRENmh6bVJRMUg?oc=5",
-          "source": "FF News",
-          "publishedAt": "2026-02-01T08:00:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "InsurTech firm Sixfold secures $30m to advance AI underwriting",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObTF2M2lyZUozZHhoM3A3ci1hSDBxREx3a1VZTUFpcUNJcmY5S2FWcGlKbUt6S2JpMjR6MmRCQk44NWt5UnFpNDZSUVh1Uk1vZGxadjdrV2Q4MHNCMmVyRHRmcjB5WVp6TXl3ODcwYTNpN1JqOS14RG9qNFAya2N0Q0FVc3gwc3hiX2pwc2c5dmR5eU9CV2wzT2JjWEs?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-01-30T08:00:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "sollers",
-      "name": "Sollers",
-      "count": 1,
-      "firstSeen": "2026-08-13T10:15:24.000Z",
-      "lastSeen": "2026-08-13T10:15:24.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurtech Insights"
-      ],
-      "related": [
-        {
-          "slug": "sixfold",
-          "name": "Sixfold",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Sixfold and Sollers partner to accelerate AI underwriting",
-          "link": "https://www.insurtechinsights.com/sixfold-and-sollers-partner-to-accelerate-ai-underwriting/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-13T10:15:24.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "Sixfold has partnered with Sollers Consulting to help insurers accelerate underwriting transformation by combining AI-powered risk assessment with insurance consulting and implementation expertise.",
-          "co": [
-            "sixfold"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "amynta",
-      "name": "Amynta",
-      "count": 3,
-      "firstSeen": "2026-08-12T13:44:53.000Z",
-      "lastSeen": "2026-08-13T05:01:52.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 3
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 3
-        }
-      ],
-      "sources": [
-        "Insurance Journal",
-        "Reinsurance News",
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "southern-states-underwriters",
-          "name": "Southern States Underwriters",
-          "count": 3
-        }
-      ],
-      "articles": [
-        {
-          "title": "Amynta Group Buys Virginia-Based Southern States Underwriters MGU",
-          "link": "https://www.insurancejournal.com/news/east/2026/08/13/881307.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-13T05:01:52.000Z",
-          "tags": [
-            "M&A",
-            "Claims & Underwriting"
-          ],
-          "summary": "Amynta Group, an insurance services firm and managing general agent based in New York, said it has acquired Southern States Underwriters and SSC Insurance Agency, based in Richmond, Virginia. The underwriter and agency…",
-          "co": [
-            "southern-states-underwriters"
-          ]
-        },
-        {
-          "title": "Amynta to acquire agricultural industry specialist MGU Southern States Underwriters",
-          "link": "https://www.reinsurancene.ws/amynta-to-acquire-agricultural-industry-specialist-mgu-southern-states-underwriters/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-12T15:00:40.000Z",
-          "tags": [
-            "M&A",
-            "Claims & Underwriting"
-          ],
-          "summary": "Insurance services provider Amynta Group has agreed to acquire Southern States Underwriters and SSC Insurance Agency (collectively, Southern States Underwriters), the insurance operations of Southern States Cooperative…",
-          "co": [
-            "southern-states-underwriters"
-          ]
-        },
-        {
-          "title": "Amynta Group acquires 70-year-old agribusiness MGU in Virginia",
-          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/amynta-group-acquires-70yearold-agribusiness-mgu-in-virginia-585859.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-12T13:44:53.000Z",
-          "tags": [
-            "M&A",
-            "Claims & Underwriting"
-          ],
-          "summary": "Southern States Underwriters' exclusive reciprocal arrangement is the key question for brokers after the deal closes",
-          "co": [
-            "southern-states-underwriters"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "southern-states-underwriters",
-      "name": "Southern States Underwriters",
-      "count": 3,
-      "firstSeen": "2026-08-12T13:44:53.000Z",
-      "lastSeen": "2026-08-13T05:01:52.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 3
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 3
-        }
-      ],
-      "sources": [
-        "Insurance Journal",
-        "Reinsurance News",
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "amynta",
-          "name": "Amynta",
-          "count": 3
-        }
-      ],
-      "articles": [
-        {
-          "title": "Amynta Group Buys Virginia-Based Southern States Underwriters MGU",
-          "link": "https://www.insurancejournal.com/news/east/2026/08/13/881307.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-13T05:01:52.000Z",
-          "tags": [
-            "M&A",
-            "Claims & Underwriting"
-          ],
-          "summary": "Amynta Group, an insurance services firm and managing general agent based in New York, said it has acquired Southern States Underwriters and SSC Insurance Agency, based in Richmond, Virginia. The underwriter and agency…",
-          "co": [
-            "amynta"
-          ]
-        },
-        {
-          "title": "Amynta to acquire agricultural industry specialist MGU Southern States Underwriters",
-          "link": "https://www.reinsurancene.ws/amynta-to-acquire-agricultural-industry-specialist-mgu-southern-states-underwriters/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-12T15:00:40.000Z",
-          "tags": [
-            "M&A",
-            "Claims & Underwriting"
-          ],
-          "summary": "Insurance services provider Amynta Group has agreed to acquire Southern States Underwriters and SSC Insurance Agency (collectively, Southern States Underwriters), the insurance operations of Southern States Cooperative…",
-          "co": [
-            "amynta"
-          ]
-        },
-        {
-          "title": "Amynta Group acquires 70-year-old agribusiness MGU in Virginia",
-          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/amynta-group-acquires-70yearold-agribusiness-mgu-in-virginia-585859.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-12T13:44:53.000Z",
-          "tags": [
-            "M&A",
-            "Claims & Underwriting"
-          ],
-          "summary": "Southern States Underwriters' exclusive reciprocal arrangement is the key question for brokers after the deal closes",
-          "co": [
-            "amynta"
           ]
         }
       ]
@@ -4221,14 +5053,14 @@
         }
       ],
       "sources": [
-        "Insurance Edge"
+        "insurance-edge.net"
       ],
       "related": [],
       "articles": [
         {
           "title": "Fisent Technologies Secures $4.3m in Funding Round -",
           "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQ2tXU2xWZHVrU3otejU3ZWxzdG9wWDhpajBwRHhfb1Z2MzlkVjFfLXhMenE2TWdrd3NEbDdPU04ySGZyMjBnNk9TTnJPbXF1UExTRmo2QXhsazdDMmRXWHNoU2xUQzFXNXVHblBwUy0xUU1uZm9FZThZQ2tKbVU3OHhTOGlwSzQwRjVaTTdNSG9pUQ?oc=5",
-          "source": "Insurance Edge",
+          "source": "insurance-edge.net",
           "publishedAt": "2026-08-12T12:48:19.000Z",
           "tags": [
             "Funding"
@@ -4666,107 +5498,6 @@
           ],
           "summary": "St. Petersburg-based Mangrove Property Insurance, launched two years ago, has created its own reinsurance sidecar, the company announced. Grove Re Ltd., domiciled in Bermuda, will be a Class 3A insurer, designed to…",
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "am-best",
-      "name": "AM Best",
-      "count": 4,
-      "firstSeen": "2026-07-29T12:07:03.000Z",
-      "lastSeen": "2026-08-12T09:30:33.000Z",
-      "topics": [
-        {
-          "name": "Property & Cat",
-          "count": 2
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        },
-        {
-          "name": "M&A",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Artemis",
-        "theinsurer.com",
-        "Reinsurance News",
-        "Carrier Management"
-      ],
-      "related": [
-        {
-          "slug": "ledgebrook",
-          "name": "Ledgebrook",
-          "count": 1
-        },
-        {
-          "slug": "mapfre",
-          "name": "Mapfre",
-          "count": 1
-        },
-        {
-          "slug": "safety-insurance",
-          "name": "Safety Insurance",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Maturing alternative capital partnerships help reinsurers exceed cost of capital: AM Best",
-          "link": "https://www.artemis.bm/news/maturing-alternative-capital-partnerships-help-reinsurers-exceed-cost-of-capital-am-best/?utm_source=rss&utm_medium=rss&utm_campaign=maturing-alternative-capital-partnerships-help-reinsurers-exceed-cost-of-capital-am-best",
-          "source": "Artemis",
-          "publishedAt": "2026-08-12T09:30:33.000Z",
-          "tags": [
-            "Partnerships",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Ledgebrook secures A-minus AM Best ratings as insurtech completes full-stack build",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPXzFUMUxfenk0am9sWDdOd0gtZUlkWGdKRFBGdzNBMjA4LTVFQXBYNllGWDlBZFdhUThKTVVheDNCT1lLaVplYmFxQ1FIZ2hzS3phUDBDU2prOUtlM3V3czRyUVVIaWlvWC16cW1SRk42Q1h1N3dJVnp1czJWTkdkLWItNVMzdDBDTnpfeVZtYVVqQmxCUzNpal93UGFBa1BOc3otYm94aF9uWG1qMzlQVHhHdUE4cEFsWjd4bGlodkQ?oc=5",
-          "source": "theinsurer.com",
-          "publishedAt": "2026-08-10T21:33:55.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "ledgebrook"
-          ]
-        },
-        {
-          "title": "Dedicated reinsurance capital expected to hit record $705bn in 2026: AM Best & Guy Carpenter",
-          "link": "https://www.reinsurancene.ws/dedicated-reinsurance-capital-expected-to-hit-record-705bn-in-2026-am-best-guy-carpenter/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-10T13:00:31.000Z",
-          "tags": [
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "Dedicated reinsurance capital is expected to increase further in 2026, as reinsurers continue to benefit from underwriting profits, investment returns and growing participation from third-party capital, according to AM…",
-          "co": []
-        },
-        {
-          "title": "AM Best Calls $1.54 Billion Mapfre-Safety Marriage ‘Strategically Compelling’",
-          "link": "https://www.carriermanagement.com/news/2026/07/29/290500.htm",
-          "source": "Carrier Management",
-          "publishedAt": "2026-07-29T12:07:03.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Ratings analysts at AM Best see the pending acquisition of Safety Insurance Group by Mapfre as “strategically compelling” as the carriers have complementary geographic and product profiles. Last week Safety, a…",
-          "co": [
-            "mapfre",
-            "safety-insurance-group"
-          ]
         }
       ]
     },
@@ -8928,7 +9659,7 @@
           "title": "Gallagher acquires Vancouver-based digital tenant insurance broker Apollo",
           "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOMmU1TmlZUkVJd3NsSThpbnpWVzJ1YkFPbDJPdk9oTlVaYVhmUDQwc0h6TGdtVjFTbTFYWnMxcUNGRllBc1ZybXd2WVp0WWZIMHNIYTRiSmhfS1BnYm8zbms3cmdMek80SW0xWml6SFFTWUNXLXQ2aWhPUzQwLVNna2RPaVNrd05NdVJ5eGs3RUhpRm1aenNLa3JNY0stYmYyTGVmS2gyQlluOFB6dlM5SndGd0dHVVdJU0ZpNjZjQlBnNzMyQ1RfRzJJd1RVWE9ld1lvWjFrVmJic3dPT0hSNFp3OWM?oc=5",
           "source": "Insurance Business",
-          "publishedAt": "2026-08-06T05:21:12.000Z",
+          "publishedAt": "2026-08-06T07:00:00.000Z",
           "tags": [
             "M&A"
           ],
@@ -10603,7 +11334,7 @@
         }
       ],
       "sources": [
-        "wamda.com",
+        "Wamda",
         "My Startup World"
       ],
       "related": [],
@@ -10611,7 +11342,7 @@
         {
           "title": "Bahraini insurtech Soor secures pre-Seed investment from Spring",
           "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNRUctbVNWeWFJdEFpYkY4Tng4TlQ4UWJTWnBLdHhwUXU2SG15ZWhqMDd5cDVOVzMwMmZ4eXBBTjU2U1NjV1JIT0V0RFU2RE8zYWZtUHVFT2Q0QTN5YkdZQ00wcG1PcC1abTdzLUFHRnkwajNySDZIZEQydm5zd0xLRmpFcTBLaUxzazlkRTZjcDhqUQ?oc=5",
-          "source": "wamda.com",
+          "source": "Wamda",
           "publishedAt": "2026-08-10T12:17:19.000Z",
           "tags": [
             "Funding"
@@ -10626,62 +11357,6 @@
           "publishedAt": "2026-08-06T08:43:08.000Z",
           "tags": [
             "Industry"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "hiscox",
-      "name": "Hiscox",
-      "count": 2,
-      "firstSeen": "2025-11-09T08:00:00.000Z",
-      "lastSeen": "2026-08-10T11:30:36.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        },
-        {
-          "name": "Leadership",
-          "count": 1
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Artemis",
-        "Insurance Nerds"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Hiscox Capital Partners hires Spanos as Senior ILS Actuary",
-          "link": "https://www.artemis.bm/news/hiscox-capital-partners-hires-spanos-as-senior-ils-actuary/?utm_source=rss&utm_medium=rss&utm_campaign=hiscox-capital-partners-hires-spanos-as-senior-ils-actuary",
-          "source": "Artemis",
-          "publishedAt": "2026-08-10T11:30:36.000Z",
-          "tags": [
-            "Partnerships",
-            "Claims & Underwriting",
-            "Leadership"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Portuguese insurtech expands to Spain with insurer Hiscox",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPcWlRbnZ6NzBXWW1HRzI3QWFTVE5BLXJBU0pmMnJVOGRHQjAyNlBjTEpNOGpQdWt2UExtYlZWSnlqakRZT1FYb2ZOQ09wSXVXSDdETlpjQjlTZjBHSldSSU5ZUXcyZXh5bWRnUnJETHVNTmxxM0tjdzcyN1huLVU3ZVB1Y3YwcjY1czRj0gGbAUFVX3lxTE02ajFudFNRWGdlaVo3ZHhIdkptclZoYm5uRjYzNUZ2Q0JsVUpBSnNaQUFiR25sYkZuT2FZUU9MM1ROcjlaZzBBcjJjd0J2Vk9yZ19pR0FsX0pDcUdzYzNLRC0tTTN6OEhkWjFWaFBkS1UyVkV2YkZiRmY2ckZNYmxwS0w4bDUzYzRpMVVwNjRYdmZhYjV0al82ZDd3?oc=5",
-          "source": "Insurance Nerds",
-          "publishedAt": "2025-11-09T08:00:00.000Z",
-          "tags": [
-            "Product & Launches"
           ],
           "summary": "",
           "co": []
@@ -12214,172 +12889,6 @@
           "summary": "Cytora, a UK insurance technology company that develops digital risk processing software for insurers, brokers and managing general agents (MGAs), has entered into a strategic partnership with Octave Specialty Group, a…",
           "co": [
             "cytora"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "liberty-mutual",
-      "name": "Liberty Mutual",
-      "count": 8,
-      "firstSeen": "2026-04-14T07:00:00.000Z",
-      "lastSeen": "2026-08-07T13:27:40.000Z",
-      "topics": [
-        {
-          "name": "Claims & Underwriting",
-          "count": 3
-        },
-        {
-          "name": "Property & Cat",
-          "count": 3
-        },
-        {
-          "name": "Partnerships",
-          "count": 3
-        },
-        {
-          "name": "Cyber",
-          "count": 2
-        },
-        {
-          "name": "Product & Launches",
-          "count": 2
-        },
-        {
-          "name": "Health & Life",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Insurtech Insights",
-        "FinTech Global",
-        "Insurance Journal",
-        "FF News",
-        "Digital Insurance"
-      ],
-      "related": [
-        {
-          "slug": "ethos",
-          "name": "Ethos",
-          "count": 3
-        },
-        {
-          "slug": "travelers",
-          "name": "Travelers",
-          "count": 1
-        },
-        {
-          "slug": "hippo",
-          "name": "Hippo",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Liberty Mutual Q2 profit rises 43% on underwriting improvement and investment gains",
-          "link": "https://www.insurtechinsights.com/liberty-mutual-q2-profit-rises-43-on-underwriting-improvement-and-investment-gains/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-07T13:27:40.000Z",
-          "tags": [
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "Liberty Mutual reported second-quarter 2026 net income of $2.63 billion, up 43% from the prior-year period, as improved underwriting results, lower catastrophe losses and stronger investment performance supported…",
-          "co": []
-        },
-        {
-          "title": "Liberty Mutual Re names new global cyber reinsurance chief",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObWU0NndNcWZJeTFSMjlYY1NrNmtnQjNGS2lFbDIzLTdjM0Y5RU1rdVpiTGJaMFlvR2tkZ1ZTNExZaElNTDJIRzN6T2VZMnZaOXc0RW9nZGZ2MFhvdTJoOHlXSXVzSkNLTWRwOGFRUkpZbDdRakc4enduUmFjQWhzYlVCbmhpRkVWWktSQktUZUxDdk56Z3RYdg?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-07-24T11:29:11.000Z",
-          "tags": [
-            "Cyber",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Liberty Mutual Introduces Its Newest Brand Character: Liberty Biberty",
-          "link": "https://www.insurancejournal.com/news/national/2026/07/24/878751.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-24T05:16:59.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Liberty Mutual Insurance has introduced its first new brand character in eight years: Liberty Biberty, the embodiment of the warm, fuzzy feeling you get when you have great coverage at a great price. Liberty Mutual…",
-          "co": []
-        },
-        {
-          "title": "Liberty Mutual Re appoints Tom Spurgeon as Global Head of Cyber Reinsurance",
-          "link": "https://www.insurtechinsights.com/liberty-mutual-re-appoints-tom-spurgeon-as-global-head-of-cyber-reinsurance/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-07-21T14:53:25.000Z",
-          "tags": [
-            "Cyber",
-            "Property & Cat",
-            "Leadership"
-          ],
-          "summary": "Liberty Mutual Reinsurance Group (LM Re) has appointed Tom Spurgeon as Global Head of Cyber Reinsurance, reinforcing its focus on expanding its global cyber reinsurance business.",
-          "co": []
-        },
-        {
-          "title": "Ethos Collaborates with Liberty Mutual to Deliver a Modern, Digital-First Life Insurance Experience",
-          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNbXA2M09Qa2tkbWtsNUxfUnkwOGVuRXlKN1lTUXhKZVZwY2NrUU5RU2F1aHczenF2UWpva0NHQUdzVjJIZ3RWQVhPdlU5RDUxaS1NTXF6RFJXWTRqQzVONHNrWXhPT3daSWRYbFNkT3ZGdXFfUEJWUlEyTjZJVUxIczMyOHVFNkhRM28tQTZZRmgyRjFZNFhKcmNSQXpZR1ROLXhwUHlwYnZLbW9zZnAzS3pBbTdzV2tKVk96dEdMZ0lxMFJBU3FJR3FqWHhGS3lzeC0zNmJR?oc=5",
-          "source": "FF News",
-          "publishedAt": "2026-07-03T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "ethos"
-          ]
-        },
-        {
-          "title": "Travelers launches AI claims tool; Ethos partners with Liberty Mutual",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ0VOUDRXbVVEMlA1Y3k1OXAxbWRieWtZdkpHYW5CS2szLWxLRWFaNlI1LXV6U2g4c2gzWDY1RnJPZ0VTbWtfWmVhOFhCd05MQlBXLV8xNTRjZGp4VzZuSHUzWVpZZE0wRzAtSGVfYXcydzIyNTNkcXBBUzJaTFRiUjRrVi1EcG90RF93QWpEeFBySHczZ1VEM3FBajY?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-05-11T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": [
-            "travelers",
-            "ethos"
-          ]
-        },
-        {
-          "title": "Liberty Mutual partners Ethos to expand digital life insurance offering",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPVDFubjFwaF90NW4tMjBwNTJfazdyU3ItVXpBTW9NWDAwbHNJcVhsckZoc3FXdldLcEhDTXFiUGJsWHpKN0RYT0M0SmVXcFFtdjZRakhBU2MxQ1A1MzZleW9Kd05ZUk9zWHpqYjJ3ZTN5aFRCemNDRFFROTNWNERyNXNKc2ZVU085MUdFR2stMFl1OEZUZ2czSVlRd1RJMmUxZTRFZGJLS093UQ?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-04-27T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "ethos"
-          ]
-        },
-        {
-          "title": "Liberty Mutual restructures leadership, Hippo deploys AI claims",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSHBBcTRqZ0N6TEJiX0lhck9kbFNvTHJKYk5zUmplZ0hseVI1WXVfSFhFdEw2ZE5DT2dCMW10eTY4ZnB2TS1RNm12ZGpwbi05eVNvZExFUFFKaDZLUWFnZWZ0VkpKT1Z1UkxBdjI3YXg1NERjbVlmc25RTDZIRy1ienRGRS1zbjBmNkEw?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-04-14T07:00:00.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": [
-            "hippo"
           ]
         }
       ]
@@ -15728,114 +16237,6 @@
       ]
     },
     {
-      "slug": "faye",
-      "name": "Faye",
-      "count": 6,
-      "firstSeen": "2025-09-25T07:00:00.000Z",
-      "lastSeen": "2026-08-06T10:25:49.000Z",
-      "topics": [
-        {
-          "name": "Funding",
-          "count": 4
-        },
-        {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "citybiz",
-        "Richmond BizSense",
-        "Beinsure",
-        "Skift",
-        "Insurify"
-      ],
-      "related": [
-        {
-          "slug": "madrona",
-          "name": "Madrona",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Insurtech Firm Faye Closes $50M Series C Led by Madrona",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNYllpMDJzV0lMTEhBN0xVb2FnT243dnFBbnhVX3Q3V2V6NllvTEpzOHVUWFZoTFVfTHp1TjNWeElDQ0V0UnM2VFRsb3FOOXpmZC1Pd041UklEWlhfWTlJaFlnX3YtTnRIZXNWbGFpdzQ1NG9haGo5Z2ZTU2xEU042V04yemZtX3RyOWYxTWUxX1NZa1BwQWd4cg?oc=5",
-          "source": "citybiz",
-          "publishedAt": "2026-08-06T10:25:49.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": [
-            "madrona"
-          ]
-        },
-        {
-          "title": "Insurtech startup Faye announces $50M capital raise",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOeVdlMmFtMFpJcXhnNXNTdmtLTXBpN09uemhUVGU0cGlUWkUzZi0tS29BalZYOWNuVl9IQ1ZrTDllOVA4N3lrZmlOdGt2ZHc1eHhxNmRZR2k1ZXNLX25xaDNFNXFJVURGU0NCQU1qQnkwZWZSN1dyOHJyUU45Q1BmNWhHSnZCeHE2NHRqa2VweDV4bUhzTEE?oc=5",
-          "source": "Richmond BizSense",
-          "publishedAt": "2026-08-06T06:03:43.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Faye raises $50 mn in Series C for AI travel insurance expansion",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZHhmYmJaZlJBLTZfZ3BGeDVrZFZjdmx5YlVCaEhhRUlhS3lJdHBuVUJ4MUw4ZGdkdGs1WFk3WUVuVGxuZm1wNGF3d3N6aXFyLVZNbEVMX3NGMllQTFA3QlloR0xSS3BCTUhrNlYxeHFWYmVjQllfMkV5cWZvQ3hPQjBRMA?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-08-05T19:15:30.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Faye Raises $50 Million, Bets on AI to Get Travel Insurance Claims Paid in Minutes",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQW1DdFR2UUQxbE82anlGd2R5TlJGVEJlbmNYWDBpTDV2eEQyZ3BHV2RGMXlKYVltVVNYX3p3dEtXR1VVRWJRX3FzZVUySGZfSnpVeWN1V0EtODdCdGhTajlQTWR0NFVWQnZFN2IteXdFdF80dExfTXlENjh1WGJrS3FmYXJGMG02MFpja05VQy13b0JROFMzZmpVc3lSeWVJSDU1Z0N5eThqbVdkS1RB?oc=5",
-          "source": "Skift",
-          "publishedAt": "2026-08-05T10:45:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Insurtech startup Faye moves into bigger HQ in Henrico",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPX1RrR3VlaVo3LUhiMlEtLVpOY29FSlc0Z1liejdrWTNIME5wX0t1REROQmdzd1R1YldUMTZrcFh3OW1Ha2FRVml6TkpDNUJRRWVlcXFMNnJfWWVxV1d4X0RQcmc4X2VUSVk5T3R2RkZHZTRZZG9GeWRVZjdjdFE4bFJGc0tPR1NEakpRa2pxemtIeDI5c1dJNXMyOA?oc=5",
-          "source": "Richmond BizSense",
-          "publishedAt": "2026-05-22T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "How Faye Travel Insurance Stacks Up",
-          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5ZMjJRTmRsNl9qaFRPeEN0VWtfUnF0N1dKcnNENHUwX095WG0yWDM5RUhMd2J2Tl9oc2xLZ1I2UGdtaVBUc3hKcjlPQk9RaGt3WmluVm5mT1ZNNEV0dnp1MDA4VQ?oc=5",
-          "source": "Insurify",
-          "publishedAt": "2025-09-25T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "madrona",
       "name": "Madrona",
       "count": 2,
@@ -16077,7 +16478,7 @@
           "title": "Gallagher acquires Vancouver-based digital tenant insurance broker Apollo",
           "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOMmU1TmlZUkVJd3NsSThpbnpWVzJ1YkFPbDJPdk9oTlVaYVhmUDQwc0h6TGdtVjFTbTFYWnMxcUNGRllBc1ZybXd2WVp0WWZIMHNIYTRiSmhfS1BnYm8zbms3cmdMek80SW0xWml6SFFTWUNXLXQ2aWhPUzQwLVNna2RPaVNrd05NdVJ5eGs3RUhpRm1aenNLa3JNY0stYmYyTGVmS2gyQlluOFB6dlM5SndGd0dHVVdJU0ZpNjZjQlBnNzMyQ1RfRzJJd1RVWE9ld1lvWjFrVmJic3dPT0hSNFp3OWM?oc=5",
           "source": "Insurance Business",
-          "publishedAt": "2026-08-06T05:21:12.000Z",
+          "publishedAt": "2026-08-06T07:00:00.000Z",
           "tags": [
             "M&A"
           ],
@@ -19676,90 +20077,6 @@
       ]
     },
     {
-      "slug": "vertical-insure",
-      "name": "Vertical Insure",
-      "count": 4,
-      "firstSeen": "2025-06-16T07:00:00.000Z",
-      "lastSeen": "2026-08-04T15:00:00.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 3
-        },
-        {
-          "name": "Embedded",
-          "count": 2
-        },
-        {
-          "name": "Funding",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "EIN News",
-        "EIN Presswire",
-        "TipRanks",
-        "FinTech Global"
-      ],
-      "related": [
-        {
-          "slug": "stripe",
-          "name": "Stripe",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Vertical Insure Secures Investment from Updata Partners to Expand Embedded Insurance Infrastructure for SaaS Platforms",
-          "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPVExCaHBJZUswVFhERGx0cHZOeHR1dFVxbGpTMzB0MllZYWdjVm9DV1FRS3NtdE1Vb0l6bWhsek0xU1EzZkNVMVJpM2dyWnRyaVJWX3JMRlRwcWJMbTFoaWFraENFa0wxbnN3NEwza09udGFUdm9QWHFidE55N3JoektHQmlmS3JMYzBBdV9QV18zR21vcllGaWgwd0NvS3RSNThZaGNremZtQzdMcXhidjI2RXdwNDZ0eldUMmJDUklTMVh0NW12a0FxQlV6Nnk0VWxIend1QWxxQ09YcmZlcGtMR3czeDEzTUpsYmZQdFdEZw?oc=5",
-          "source": "EIN News",
-          "publishedAt": "2026-08-04T15:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Embedded"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Vertical Insure Secures Investment from Updata Partners to Expand Embedded Insurance Infrastructure for SaaS Platforms",
-          "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNWTlDU1NCUWVXRVhZdENOQTk2U1VzYmhVc2JoZVg5bTRwMk5HNmJxaEUzdDNoUzNPbGtuaHNpV1Q5LVJhMy13TmVLODMwZTVhVHU0Nk12Vi1sLVZwS1AtVWpseGlQUTBuRVJwVzNfRjdIT2dMWnlPTDFQMk1uZld5YnZLWDdlUktkbjFnc1YtWWNRcnFpVFNsSC1fdU03UDQzcG5mNWhHVE1lc2R1ZlFwZVdvcGswOWJUc0hXcG5iTks5WHZScVBqOFJnQTRWZFVJaGlUNWZEUVF1R3VFWmJieGlPWUdJQW5JYTZTVlZrb3F0UGRKTVd1ZQ?oc=5",
-          "source": "EIN Presswire",
-          "publishedAt": "2026-08-04T15:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Embedded"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Vertical Insure Highlights Stripe Partnership and Insurtech Visibility at Stripe Sessions 2026",
-          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNd2wxYlQzVVg3aW8zMUJaZG9ENVZnQTRNT1dPR01UTnRzZFZvV0cwUU1PRjFxZEpVWHZmLTNuMFF0eGNPdWVvQXZYYjRHNDI2NFFtbFl2amxzVjM5WGVVZXMwTExUV2FfN1F1R3hxbXAyb0wzYnJDeXM1REdraWNGTnByZWpETjJlVjRReWZ5QTJHVUxsYWJmU0UzUWRlei1ORlhIQmIzTWtaZnZRdWxEcWstX0psSjZOd2ZuVHVGSHZZVVZTQzRKdDd1enVVa0UzX3ZGQXNTYTdBQQ?oc=5",
-          "source": "TipRanks",
-          "publishedAt": "2026-05-04T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "stripe"
-          ]
-        },
-        {
-          "title": "Vertical Insure lands $8.5m raise",
-          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE92NXp2bHdRWUtqdmV5QXU1a3RfN3ZHTWFkYzhDcUdBSHNCLTlRay1EeWtQWEJfRUE3dzBzZ0RxRzNZeElCR1VualNNUGVaYl9LbF9IYnZjTTJmeXFFZE1FRURFOWhkNDRLOVY1bm93THBzZDZaMGc?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2025-06-16T07:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "vertafore",
       "name": "Vertafore",
       "count": 3,
@@ -20475,36 +20792,6 @@
           "co": [
             "radian"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "simplicity",
-      "name": "Simplicity",
-      "count": 1,
-      "firstSeen": "2026-08-04T11:00:09.000Z",
-      "lastSeen": "2026-08-04T11:00:09.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Simplicity acquires Pennsylvania RIA",
-          "link": "https://coverager.com/simplicity-acquires-pennsylvania-ria/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-04T11:00:09.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "The acquisition expands Simplicity's wealth management platform.",
-          "co": []
         }
       ]
     },
