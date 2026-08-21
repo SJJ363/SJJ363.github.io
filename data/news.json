@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T18:01:00.674Z",
+  "updatedAt": "2026-08-21T23:01:12.495Z",
   "count": 140,
   "sources": [
     "AM Best",
@@ -18,6 +18,7 @@
     "FinTech Global",
     "Finextra Research",
     "Globes - Israel Business News",
+    "Grand View Research",
     "Insurance Asia",
     "Insurance Business",
     "Insurance Business UK",
@@ -25,25 +26,24 @@
     "Insurance Edge",
     "Insurance Innovation Reporter",
     "Insurance Journal",
+    "Insurance Nerds",
     "InsuranceNewsNet",
     "Insurtech Insights",
     "Intelligent Insurer",
     "Kalkine",
     "Law360",
     "Life Insurance International",
-    "Munich Re",
-    "Newswire.com",
     "PR Newswire",
     "Pulse 2.0",
     "Reinsurance News",
     "Risk & Insurance",
     "SILive.com",
-    "SNS Insider",
     "Stock Titan",
     "StreetInsider",
     "TMX Newsfile",
     "The Manila Times",
     "The Tribune",
+    "Vietnam Investment Review - VIR",
     "Yahoo Finance",
     "calcalistech.com",
     "citybiz",
@@ -52,12 +52,14 @@
     "israeldefense.co.il",
     "marketscreener.com",
     "micromobilitybiz",
+    "munichre.com",
+    "newswire.com",
     "pehub.com"
   ],
   "taxonomy": [
     {
       "name": "Funding",
-      "count": 14
+      "count": 13
     },
     {
       "name": "M&A",
@@ -69,11 +71,11 @@
     },
     {
       "name": "Product & Launches",
-      "count": 18
+      "count": 17
     },
     {
       "name": "AI & Automation",
-      "count": 37
+      "count": 33
     },
     {
       "name": "Embedded",
@@ -85,7 +87,7 @@
     },
     {
       "name": "Claims & Underwriting",
-      "count": 22
+      "count": 21
     },
     {
       "name": "Health & Life",
@@ -97,7 +99,7 @@
     },
     {
       "name": "Property & Cat",
-      "count": 13
+      "count": 12
     },
     {
       "name": "Regulation",
@@ -109,7 +111,7 @@
     },
     {
       "name": "Industry",
-      "count": 23
+      "count": 27
     }
   ],
   "briefing": {
@@ -161,6 +163,31 @@
   },
   "articles": [
     {
+      "title": "ALPS Corporation Goes Live on OneShield Market Solutions",
+      "link": "https://coverager.com/alps-corporation-goes-live-on-oneshield-market-solutions/",
+      "source": "Coverager",
+      "summary": "OneShield announced that ALPS Property & Casualty Insurance Company (ALPS), has gone live on OneShield Market Solutions (OMS) for policy administration of its LawyerCare lawyers' professional liability (LPL) program.",
+      "tags": [
+        "Product & Launches"
+      ],
+      "publishedAt": "2026-08-21T19:20:56.000Z",
+      "timestamp": 1787340056000,
+      "native": true,
+      "score": 3.145,
+      "clusterId": "t1",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "ALPS Corporation",
+          "slug": "alps"
+        },
+        {
+          "name": "OneShield",
+          "slug": "oneshield"
+        }
+      ]
+    },
+    {
       "title": "InsurConnect comes to ChatGPT",
       "link": "https://coverager.com/insurconnect-comes-to-chatgpt/",
       "source": "Coverager",
@@ -172,8 +199,8 @@
       "publishedAt": "2026-08-21T17:11:10.000Z",
       "timestamp": 1787332270000,
       "native": true,
-      "score": 3.415,
-      "clusterId": "t1",
+      "score": 2.961,
+      "clusterId": "t2",
       "cluster": 1,
       "companies": [
         {
@@ -183,21 +210,29 @@
       ]
     },
     {
-      "title": "Payments and AI drive $361m in FinTech funding this week",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNY0FpMENEdEFxdFNpbXJuX0Vmb09ZeWtycTF0NkpaVFo0VXU4SjJXWEN2cmp4cUlweVFZdVVELWtCV3RrN0NIc002WFFHaHZTcWhpYk92dklUVkxWWHVtUEdfdE9JMlBUX1YwakRtNTVpUHVYbG5jRGJoaExrak9RZ29GQnAxaDVyelMzSzRkbHlZN0ZP?oc=5",
+      "title": "August Equity backs InsurTech MGA Starpeak",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYk1KTkNqWHhPT25VdlBsTkp2TU9vcWpDRUVpajVuUW5mLVZmM0ZMQzFPVVlGNTZOaWh5aV9wNzJCWFFwT3B3b1ItYlc2OEhKbjVrcEtQYUFtVG5ya3Rpb0w0WFlSWFNBOGZOZ1kwNkRTVWJFSVZ1MWpqVWpHWFVBdGJOVQ?oc=5",
       "source": "FinTech Global",
       "summary": "",
       "tags": [
-        "Funding",
-        "AI & Automation"
+        "Industry"
       ],
-      "publishedAt": "2026-08-21T17:00:11.000Z",
-      "timestamp": 1787331611000,
+      "publishedAt": "2026-08-21T15:45:45.000Z",
+      "timestamp": 1787327145000,
       "native": true,
-      "score": 3.997,
-      "clusterId": "t2",
+      "score": 2.848,
+      "clusterId": "t3",
       "cluster": 1,
-      "companies": []
+      "companies": [
+        {
+          "name": "August Equity",
+          "slug": "august-equity"
+        },
+        {
+          "name": "Starpeak",
+          "slug": "starpeak"
+        }
+      ]
     },
     {
       "title": "Vessel owners to benefit from Blenheim Partnerships’ new-build delivery failure solution",
@@ -211,38 +246,13 @@
       ],
       "publishedAt": "2026-08-21T15:00:41.000Z",
       "timestamp": 1787324441000,
-      "score": 3.406,
-      "clusterId": "t3",
+      "score": 2.991,
+      "clusterId": "t4",
       "cluster": 1,
       "companies": [
         {
           "name": "Blenheim",
           "slug": "blenheim"
-        }
-      ]
-    },
-    {
-      "title": "August Equity backs InsurTech MGA Starpeak",
-      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYk1KTkNqWHhPT25VdlBsTkp2TU9vcWpDRUVpajVuUW5mLVZmM0ZMQzFPVVlGNTZOaWh5aV9wNzJCWFFwT3B3b1ItYlc2OEhKbjVrcEtQYUFtVG5ya3Rpb0w0WFlSWFNBOGZOZ1kwNkRTVWJFSVZ1MWpqVWpHWFVBdGJOVQ?oc=5",
-      "source": "FinTech Global",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-08-21T15:00:01.000Z",
-      "timestamp": 1787324401000,
-      "native": true,
-      "score": 3.205,
-      "clusterId": "t4",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "August Equity",
-          "slug": "august-equity"
-        },
-        {
-          "name": "Starpeak",
-          "slug": "starpeak"
         }
       ]
     },
@@ -257,7 +267,7 @@
       "publishedAt": "2026-08-21T14:48:13.000Z",
       "timestamp": 1787323693000,
       "native": true,
-      "score": 3.187,
+      "score": 2.775,
       "clusterId": "t5",
       "cluster": 1,
       "companies": [
@@ -278,7 +288,7 @@
       "publishedAt": "2026-08-21T14:00:52.000Z",
       "timestamp": 1787320852000,
       "native": true,
-      "score": 3.616,
+      "score": 3.218,
       "clusterId": "t6",
       "cluster": 2,
       "companies": [
@@ -298,7 +308,7 @@
       ],
       "publishedAt": "2026-08-21T14:00:16.000Z",
       "timestamp": 1787320816000,
-      "score": 3.115,
+      "score": 2.717,
       "clusterId": "t7",
       "cluster": 1,
       "companies": [
@@ -319,7 +329,7 @@
       ],
       "publishedAt": "2026-08-21T13:00:57.000Z",
       "timestamp": 1787317257000,
-      "score": 3.23,
+      "score": 2.848,
       "clusterId": "t8",
       "cluster": 1,
       "companies": [
@@ -343,7 +353,7 @@
       ],
       "publishedAt": "2026-08-21T13:00:10.000Z",
       "timestamp": 1787317210000,
-      "score": 3.029,
+      "score": 2.647,
       "clusterId": "t9",
       "cluster": 1,
       "companies": []
@@ -359,7 +369,7 @@
       "publishedAt": "2026-08-21T12:40:33.000Z",
       "timestamp": 1787316033000,
       "native": true,
-      "score": 3.101,
+      "score": 2.725,
       "clusterId": "t6",
       "cluster": 2,
       "companies": [
@@ -380,7 +390,7 @@
       ],
       "publishedAt": "2026-08-21T12:32:41.000Z",
       "timestamp": 1787315561000,
-      "score": 3.69,
+      "score": 3.316,
       "clusterId": "t10",
       "cluster": 1,
       "companies": [
@@ -405,7 +415,7 @@
       "publishedAt": "2026-08-21T12:13:53.000Z",
       "timestamp": 1787314433000,
       "native": true,
-      "score": 2.164,
+      "score": 1.795,
       "clusterId": "t11",
       "cluster": 1,
       "companies": [
@@ -427,7 +437,7 @@
       "publishedAt": "2026-08-21T11:18:19.000Z",
       "timestamp": 1787311099000,
       "native": true,
-      "score": 2.09,
+      "score": 1.734,
       "clusterId": "t12",
       "cluster": 1,
       "companies": [
@@ -449,7 +459,7 @@
       "publishedAt": "2026-08-21T10:57:43.000Z",
       "timestamp": 1787309863000,
       "native": true,
-      "score": 2.463,
+      "score": 2.113,
       "clusterId": "t13",
       "cluster": 1,
       "companies": [
@@ -476,7 +486,7 @@
       ],
       "publishedAt": "2026-08-21T10:51:42.000Z",
       "timestamp": 1787309502000,
-      "score": 4.056,
+      "score": 3.706,
       "clusterId": "t14",
       "cluster": 3,
       "companies": [
@@ -497,7 +507,7 @@
       "publishedAt": "2026-08-21T10:04:01.000Z",
       "timestamp": 1787306641000,
       "native": true,
-      "score": 1.795,
+      "score": 1.457,
       "clusterId": "t15",
       "cluster": 1,
       "companies": [
@@ -519,7 +529,7 @@
       "publishedAt": "2026-08-21T10:02:41.000Z",
       "timestamp": 1787306561000,
       "native": true,
-      "score": 1.793,
+      "score": 1.456,
       "clusterId": "t16",
       "cluster": 1,
       "companies": []
@@ -536,7 +546,7 @@
       "publishedAt": "2026-08-21T10:00:00.000Z",
       "timestamp": 1787306400000,
       "native": true,
-      "score": 2.79,
+      "score": 2.453,
       "clusterId": "t17",
       "cluster": 1,
       "companies": [
@@ -557,7 +567,7 @@
       "publishedAt": "2026-08-21T10:00:00.000Z",
       "timestamp": 1787306400000,
       "native": true,
-      "score": 2.79,
+      "score": 2.453,
       "clusterId": "t18",
       "cluster": 1,
       "companies": []
@@ -572,7 +582,7 @@
       ],
       "publishedAt": "2026-08-21T09:55:32.000Z",
       "timestamp": 1787306132000,
-      "score": 2.785,
+      "score": 2.449,
       "clusterId": "t19",
       "cluster": 1,
       "companies": [
@@ -593,7 +603,7 @@
       ],
       "publishedAt": "2026-08-21T09:47:55.000Z",
       "timestamp": 1787305675000,
-      "score": 3.275,
+      "score": 2.941,
       "clusterId": "t20",
       "cluster": 1,
       "companies": [
@@ -617,7 +627,7 @@
       ],
       "publishedAt": "2026-08-21T08:56:39.000Z",
       "timestamp": 1787302599000,
-      "score": 2.713,
+      "score": 2.391,
       "clusterId": "t21",
       "cluster": 1,
       "companies": [
@@ -657,7 +667,7 @@
       ],
       "publishedAt": "2026-08-21T06:18:29.000Z",
       "timestamp": 1787293109000,
-      "score": 1.535,
+      "score": 1.246,
       "clusterId": "t22",
       "cluster": 1,
       "companies": [
@@ -677,7 +687,7 @@
       ],
       "publishedAt": "2026-08-21T05:56:58.000Z",
       "timestamp": 1787291818000,
-      "score": 2.512,
+      "score": 2.228,
       "clusterId": "t23",
       "cluster": 1,
       "companies": [
@@ -697,7 +707,7 @@
       ],
       "publishedAt": "2026-08-21T05:25:58.000Z",
       "timestamp": 1787289958000,
-      "score": 1.48,
+      "score": 1.201,
       "clusterId": "t24",
       "cluster": 1,
       "companies": [
@@ -722,7 +732,7 @@
       ],
       "publishedAt": "2026-08-21T05:11:07.000Z",
       "timestamp": 1787289067000,
-      "score": 2.465,
+      "score": 2.189,
       "clusterId": "t25",
       "cluster": 1,
       "companies": []
@@ -738,7 +748,7 @@
       "publishedAt": "2026-08-21T04:26:02.000Z",
       "timestamp": 1787286362000,
       "native": true,
-      "score": 1.62,
+      "score": 1.352,
       "clusterId": "t26",
       "cluster": 1,
       "companies": []
@@ -753,7 +763,7 @@
       ],
       "publishedAt": "2026-08-20T21:45:07.000Z",
       "timestamp": 1787262307000,
-      "score": 2.075,
+      "score": 1.872,
       "clusterId": "t27",
       "cluster": 1,
       "companies": [
@@ -768,32 +778,6 @@
       ]
     },
     {
-      "title": "AEGIS London and Augentic launch digital follow consortium",
-      "link": "https://coverager.com/aegis-london-and-augentic-launch-digital-follow-consortium/",
-      "source": "Coverager",
-      "summary": "Augentic is the new name of Augmented Underwriting.",
-      "tags": [
-        "Product & Launches",
-        "Claims & Underwriting"
-      ],
-      "publishedAt": "2026-08-20T21:08:18.000Z",
-      "timestamp": 1787260098000,
-      "native": true,
-      "score": 2.247,
-      "clusterId": "t28",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "AEGIS London",
-          "slug": "aegis-london"
-        },
-        {
-          "name": "Augentic",
-          "slug": "augentic"
-        }
-      ]
-    },
-    {
       "title": "Is Your Insurance Core System/Platform Agent-Ready?",
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9mekFreVNrTUppeWNfcVJXVENGLTZLc1V6dUFsUnZETjIta0hzMG9TX3pOeGI0dFlZTWdxbFNQeHJkbV9SWjI2dE5ocG5pTFBiVDk2MDNJcnlvbVE4ZnhHLTBaaGxlWjRsWjFOeXdCaDE3ZHZsY25DTTU4aW4wVDg?oc=5",
       "source": "Insurance Innovation Reporter",
@@ -804,8 +788,8 @@
       "publishedAt": "2026-08-20T21:04:47.000Z",
       "timestamp": 1787259887000,
       "native": true,
-      "score": 1.045,
-      "clusterId": "t29",
+      "score": 0.848,
+      "clusterId": "t28",
       "cluster": 1,
       "companies": []
     },
@@ -820,8 +804,8 @@
       "publishedAt": "2026-08-20T20:35:19.000Z",
       "timestamp": 1787258119000,
       "native": true,
-      "score": 1.024,
-      "clusterId": "t30",
+      "score": 0.831,
+      "clusterId": "t29",
       "cluster": 1,
       "companies": [
         {
@@ -841,8 +825,8 @@
       "publishedAt": "2026-08-20T17:20:42.000Z",
       "timestamp": 1787246442000,
       "native": true,
-      "score": 3.994,
-      "clusterId": "t31",
+      "score": 3.826,
+      "clusterId": "t30",
       "cluster": 7,
       "companies": [
         {
@@ -866,8 +850,8 @@
       "publishedAt": "2026-08-20T16:58:13.000Z",
       "timestamp": 1787245093000,
       "native": true,
-      "score": 1.38,
-      "clusterId": "t32",
+      "score": 1.215,
+      "clusterId": "t31",
       "cluster": 2,
       "companies": [
         {
@@ -887,8 +871,8 @@
       ],
       "publishedAt": "2026-08-20T15:58:14.000Z",
       "timestamp": 1787241494000,
-      "score": 1.845,
-      "clusterId": "t33",
+      "score": 1.686,
+      "clusterId": "t32",
       "cluster": 1,
       "companies": [
         {
@@ -912,8 +896,8 @@
       ],
       "publishedAt": "2026-08-20T15:42:28.000Z",
       "timestamp": 1787240548000,
-      "score": 1.835,
-      "clusterId": "t34",
+      "score": 1.678,
+      "clusterId": "t33",
       "cluster": 1,
       "companies": []
     },
@@ -929,8 +913,8 @@
       "publishedAt": "2026-08-20T14:37:09.000Z",
       "timestamp": 1787236629000,
       "native": true,
-      "score": 0.798,
-      "clusterId": "t35",
+      "score": 0.648,
+      "clusterId": "t34",
       "cluster": 1,
       "companies": [
         {
@@ -958,8 +942,8 @@
       "publishedAt": "2026-08-20T14:21:00.000Z",
       "timestamp": 1787235660000,
       "native": true,
-      "score": 0.789,
-      "clusterId": "t36",
+      "score": 0.641,
+      "clusterId": "t35",
       "cluster": 1,
       "companies": [
         {
@@ -978,8 +962,8 @@
       ],
       "publishedAt": "2026-08-20T14:18:11.000Z",
       "timestamp": 1787235491000,
-      "score": 2.288,
-      "clusterId": "t32",
+      "score": 2.14,
+      "clusterId": "t31",
       "cluster": 2,
       "companies": [
         {
@@ -999,8 +983,8 @@
       "publishedAt": "2026-08-20T14:16:40.000Z",
       "timestamp": 1787235400000,
       "native": true,
-      "score": 1.787,
-      "clusterId": "t37",
+      "score": 1.639,
+      "clusterId": "t36",
       "cluster": 1,
       "companies": []
     },
@@ -1015,8 +999,8 @@
       "publishedAt": "2026-08-20T13:34:09.000Z",
       "timestamp": 1787232849000,
       "native": true,
-      "score": 0.964,
-      "clusterId": "t38",
+      "score": 0.82,
+      "clusterId": "t37",
       "cluster": 1,
       "companies": [
         {
@@ -1037,8 +1021,8 @@
       "publishedAt": "2026-08-20T12:29:33.000Z",
       "timestamp": 1787228973000,
       "native": true,
-      "score": 0.731,
-      "clusterId": "t39",
+      "score": 0.593,
+      "clusterId": "t38",
       "cluster": 1,
       "companies": [
         {
@@ -1058,8 +1042,8 @@
       ],
       "publishedAt": "2026-08-20T10:18:19.000Z",
       "timestamp": 1787221099000,
-      "score": 0.667,
-      "clusterId": "t40",
+      "score": 0.541,
+      "clusterId": "t39",
       "cluster": 1,
       "companies": []
     },
@@ -1074,8 +1058,8 @@
       "publishedAt": "2026-08-20T10:14:49.000Z",
       "timestamp": 1787220889000,
       "native": true,
-      "score": 0.665,
-      "clusterId": "t41",
+      "score": 0.54,
+      "clusterId": "t40",
       "cluster": 1,
       "companies": [
         {
@@ -1095,8 +1079,8 @@
       "publishedAt": "2026-08-20T10:00:00.000Z",
       "timestamp": 1787220000000,
       "native": true,
-      "score": 1.659,
-      "clusterId": "t42",
+      "score": 1.535,
+      "clusterId": "t41",
       "cluster": 1,
       "companies": [
         {
@@ -1116,8 +1100,8 @@
       "publishedAt": "2026-08-20T10:00:00.000Z",
       "timestamp": 1787220000000,
       "native": true,
-      "score": 1.659,
-      "clusterId": "t43",
+      "score": 1.535,
+      "clusterId": "t42",
       "cluster": 1,
       "companies": []
     },
@@ -1132,8 +1116,8 @@
       "publishedAt": "2026-08-20T09:48:22.000Z",
       "timestamp": 1787219302000,
       "native": true,
-      "score": 0.853,
-      "clusterId": "t44",
+      "score": 0.73,
+      "clusterId": "t43",
       "cluster": 1,
       "companies": [
         {
@@ -1153,8 +1137,8 @@
       "publishedAt": "2026-08-20T08:13:36.000Z",
       "timestamp": 1787213616000,
       "native": true,
-      "score": 1.612,
-      "clusterId": "t45",
+      "score": 1.497,
+      "clusterId": "t44",
       "cluster": 1,
       "companies": []
     },
@@ -1170,8 +1154,8 @@
       ],
       "publishedAt": "2026-08-20T06:30:00.000Z",
       "timestamp": 1787207400000,
-      "score": 2.369,
-      "clusterId": "t46",
+      "score": 2.262,
+      "clusterId": "t45",
       "cluster": 1,
       "companies": [
         {
@@ -1191,8 +1175,8 @@
       "publishedAt": "2026-08-20T05:39:01.000Z",
       "timestamp": 1787204341000,
       "native": true,
-      "score": 1.649,
-      "clusterId": "t47",
+      "score": 1.546,
+      "clusterId": "t46",
       "cluster": 2,
       "companies": [
         {
@@ -1216,8 +1200,8 @@
       ],
       "publishedAt": "2026-08-20T03:42:45.000Z",
       "timestamp": 1787197365000,
-      "score": 0.507,
-      "clusterId": "t48",
+      "score": 0.411,
+      "clusterId": "t47",
       "cluster": 1,
       "companies": []
     },
@@ -1231,8 +1215,8 @@
       ],
       "publishedAt": "2026-08-20T03:26:08.000Z",
       "timestamp": 1787196368000,
-      "score": 0.501,
-      "clusterId": "t49",
+      "score": 0.407,
+      "clusterId": "t48",
       "cluster": 1,
       "companies": []
     },
@@ -1246,8 +1230,8 @@
       ],
       "publishedAt": "2026-08-20T03:20:51.000Z",
       "timestamp": 1787196051000,
-      "score": 0.499,
-      "clusterId": "t50",
+      "score": 0.405,
+      "clusterId": "t49",
       "cluster": 1,
       "companies": [
         {
@@ -1279,7 +1263,7 @@
       "publishedAt": "2026-08-19T21:28:44.000Z",
       "timestamp": 1787174924000,
       "native": true,
-      "score": 1.591,
+      "score": 1.517,
       "clusterId": "t14",
       "cluster": 3,
       "companies": [
@@ -1301,8 +1285,8 @@
       "publishedAt": "2026-08-19T18:11:08.000Z",
       "timestamp": 1787163068000,
       "native": true,
-      "score": 2.441,
-      "clusterId": "t31",
+      "score": 2.377,
+      "clusterId": "t30",
       "cluster": 7,
       "companies": [
         {
@@ -1312,28 +1296,6 @@
         {
           "name": "At-Bay",
           "slug": "at-bay"
-        }
-      ]
-    },
-    {
-      "title": "Bolt debuts industry-first AI insurance platform",
-      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZTJUNWhoSkhNTF9qQkY1bVo0ck9IZUhydzJfVlVCSnBMOXBNMDhzRGRQMW1VaTc5MHJzbGFKcEU3TUczWVlMOEo0QWd5Uk4zb3hieW1naWg3MVN6X2h1ajBzZXpVdkZPeFVER0NMRjlHYVNhUXFHTFhDQXR5TTZxQnpCSzBTOURhbmhj?oc=5",
-      "source": "FinTech Global",
-      "summary": "",
-      "tags": [
-        "Product & Launches",
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-08-19T16:40:09.000Z",
-      "timestamp": 1787157609000,
-      "native": true,
-      "score": 1.32,
-      "clusterId": "t51",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Bolt",
-          "slug": "bolt"
         }
       ]
     },
@@ -1351,7 +1313,7 @@
       "publishedAt": "2026-08-19T15:41:56.000Z",
       "timestamp": 1787154116000,
       "native": true,
-      "score": 1.507,
+      "score": 1.449,
       "clusterId": "t14",
       "cluster": 3,
       "companies": [
@@ -1373,8 +1335,8 @@
       "publishedAt": "2026-08-19T15:35:38.000Z",
       "timestamp": 1787153738000,
       "native": true,
-      "score": 2.806,
-      "clusterId": "t31",
+      "score": 2.748,
+      "clusterId": "t30",
       "cluster": 7,
       "companies": [
         {
@@ -1396,8 +1358,8 @@
       "publishedAt": "2026-08-19T14:03:21.000Z",
       "timestamp": 1787148201000,
       "native": true,
-      "score": 0.487,
-      "clusterId": "t52",
+      "score": 0.433,
+      "clusterId": "t50",
       "cluster": 1,
       "companies": [
         {
@@ -1418,8 +1380,8 @@
       "publishedAt": "2026-08-19T13:36:18.000Z",
       "timestamp": 1787146578000,
       "native": true,
-      "score": 3.782,
-      "clusterId": "t31",
+      "score": 3.729,
+      "clusterId": "t30",
       "cluster": 7,
       "companies": [
         {
@@ -1443,8 +1405,8 @@
       "publishedAt": "2026-08-19T13:31:04.000Z",
       "timestamp": 1787146264000,
       "native": true,
-      "score": 0.881,
-      "clusterId": "t53",
+      "score": 0.828,
+      "clusterId": "t51",
       "cluster": 1,
       "companies": [
         {
@@ -1465,8 +1427,8 @@
       "publishedAt": "2026-08-19T12:52:00.000Z",
       "timestamp": 1787143920000,
       "native": true,
-      "score": 2.773,
-      "clusterId": "t31",
+      "score": 2.722,
+      "clusterId": "t30",
       "cluster": 7,
       "companies": [
         {
@@ -1491,8 +1453,8 @@
       "publishedAt": "2026-08-19T12:26:19.000Z",
       "timestamp": 1787142379000,
       "native": true,
-      "score": 2.768,
-      "clusterId": "t54",
+      "score": 2.718,
+      "clusterId": "t52",
       "cluster": 3,
       "companies": [
         {
@@ -1512,8 +1474,8 @@
       "publishedAt": "2026-08-19T12:00:00.000Z",
       "timestamp": 1787140800000,
       "native": true,
-      "score": -0.937,
-      "clusterId": "t55",
+      "score": -0.986,
+      "clusterId": "t53",
       "cluster": 1,
       "companies": [
         {
@@ -1533,8 +1495,8 @@
       "publishedAt": "2026-08-19T11:47:26.000Z",
       "timestamp": 1787140046000,
       "native": true,
-      "score": 0.261,
-      "clusterId": "t56",
+      "score": 0.212,
+      "clusterId": "t54",
       "cluster": 1,
       "companies": [
         {
@@ -1555,8 +1517,8 @@
       ],
       "publishedAt": "2026-08-19T11:41:08.000Z",
       "timestamp": 1787139668000,
-      "score": 3.76,
-      "clusterId": "t54",
+      "score": 3.711,
+      "clusterId": "t52",
       "cluster": 3,
       "companies": [
         {
@@ -1577,8 +1539,8 @@
       "publishedAt": "2026-08-19T10:38:25.000Z",
       "timestamp": 1787135905000,
       "native": true,
-      "score": 0.449,
-      "clusterId": "t57",
+      "score": 0.402,
+      "clusterId": "t55",
       "cluster": 1,
       "companies": [
         {
@@ -1603,8 +1565,8 @@
       "publishedAt": "2026-08-19T10:31:25.000Z",
       "timestamp": 1787135485000,
       "native": true,
-      "score": 1.748,
-      "clusterId": "t58",
+      "score": 1.701,
+      "clusterId": "t56",
       "cluster": 1,
       "companies": [
         {
@@ -1628,8 +1590,8 @@
       "publishedAt": "2026-08-19T10:23:26.000Z",
       "timestamp": 1787135006000,
       "native": true,
-      "score": 0.746,
-      "clusterId": "t59",
+      "score": 0.7,
+      "clusterId": "t57",
       "cluster": 1,
       "companies": [
         {
@@ -1650,8 +1612,8 @@
       "publishedAt": "2026-08-19T10:05:47.000Z",
       "timestamp": 1787133947000,
       "native": true,
-      "score": 2.743,
-      "clusterId": "t31",
+      "score": 2.697,
+      "clusterId": "t30",
       "cluster": 7,
       "companies": [
         {
@@ -1673,8 +1635,8 @@
       "publishedAt": "2026-08-19T10:02:26.000Z",
       "timestamp": 1787133746000,
       "native": true,
-      "score": 0.443,
-      "clusterId": "t60",
+      "score": 0.397,
+      "clusterId": "t58",
       "cluster": 1,
       "companies": [
         {
@@ -1698,8 +1660,8 @@
       "publishedAt": "2026-08-19T10:00:00.000Z",
       "timestamp": 1787133600000,
       "native": true,
-      "score": 1.242,
-      "clusterId": "t61",
+      "score": 1.197,
+      "clusterId": "t59",
       "cluster": 1,
       "companies": []
     },
@@ -1714,8 +1676,8 @@
       ],
       "publishedAt": "2026-08-19T09:43:56.000Z",
       "timestamp": 1787132636000,
-      "score": 0.24,
-      "clusterId": "t62",
+      "score": 0.194,
+      "clusterId": "t60",
       "cluster": 1,
       "companies": []
     },
@@ -1732,8 +1694,8 @@
       "publishedAt": "2026-08-19T09:41:26.000Z",
       "timestamp": 1787132486000,
       "native": true,
-      "score": 0.439,
-      "clusterId": "t63",
+      "score": 0.394,
+      "clusterId": "t61",
       "cluster": 1,
       "companies": [
         {
@@ -1756,8 +1718,8 @@
       ],
       "publishedAt": "2026-08-19T09:39:22.000Z",
       "timestamp": 1787132362000,
-      "score": 0.239,
-      "clusterId": "t64",
+      "score": 0.194,
+      "clusterId": "t62",
       "cluster": 1,
       "companies": []
     },
@@ -1772,8 +1734,8 @@
       "publishedAt": "2026-08-19T09:15:00.000Z",
       "timestamp": 1787130900000,
       "native": true,
-      "score": 1.735,
-      "clusterId": "t65",
+      "score": 1.691,
+      "clusterId": "t63",
       "cluster": 1,
       "companies": [
         {
@@ -1796,8 +1758,8 @@
       ],
       "publishedAt": "2026-08-19T09:11:11.000Z",
       "timestamp": 1787130671000,
-      "score": 1.234,
-      "clusterId": "t66",
+      "score": 1.19,
+      "clusterId": "t64",
       "cluster": 1,
       "companies": [
         {
@@ -1817,8 +1779,8 @@
       "publishedAt": "2026-08-19T08:49:07.000Z",
       "timestamp": 1787129347000,
       "native": true,
-      "score": 1.331,
-      "clusterId": "t47",
+      "score": 1.287,
+      "clusterId": "t46",
       "cluster": 2,
       "companies": [
         {
@@ -1838,8 +1800,8 @@
       "publishedAt": "2026-08-19T08:28:57.000Z",
       "timestamp": 1787128137000,
       "native": true,
-      "score": 1.127,
-      "clusterId": "t54",
+      "score": 1.085,
+      "clusterId": "t52",
       "cluster": 3,
       "companies": [
         {
@@ -1860,8 +1822,8 @@
       "publishedAt": "2026-08-19T07:42:58.000Z",
       "timestamp": 1787125378000,
       "native": true,
-      "score": 3.72,
-      "clusterId": "t31",
+      "score": 3.679,
+      "clusterId": "t30",
       "cluster": 7,
       "companies": [
         {
@@ -1873,7 +1835,7 @@
     {
       "title": "Munich Re Group to Acquire Cyber Insurtech At-Bay",
       "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQaWNlRUM5YllvZHp4R1liV0tSQlNlMWM3MXRFQWl6STJZWFZDLVFXa0tXUGRUZFR4YmV4NlZmd3ZMNi1MVnFnN3l1OVRQTlZrVlhGZ2E4Y3RkTFE0X0R1cnBKdkJzN1J2TGZUX3J5d05PeDh0ZS1mQURQLVJYTGFOM2RHOF9CMzRaR2g4OEVrcElBRWVVNlp6d2kwSFJQTXZ0SU9NRXBwWVBiREhHM3Z4YXczU3M0aGVwSmE3VjRMSUM5c09zTENUaDVyR0VCaFpwd3FwdHM4cUo?oc=5",
-      "source": "Munich Re",
+      "source": "munichre.com",
       "summary": "",
       "tags": [
         "M&A",
@@ -1882,8 +1844,8 @@
       "publishedAt": "2026-08-19T07:03:02.000Z",
       "timestamp": 1787122982000,
       "native": true,
-      "score": 2.214,
-      "clusterId": "t67",
+      "score": 2.174,
+      "clusterId": "t65",
       "cluster": 1,
       "companies": [
         {
@@ -1904,8 +1866,8 @@
       "publishedAt": "2026-08-19T06:19:00.000Z",
       "timestamp": 1787120340000,
       "native": true,
-      "score": 0.708,
-      "clusterId": "t68",
+      "score": 0.669,
+      "clusterId": "t66",
       "cluster": 1,
       "companies": [
         {
@@ -1924,8 +1886,8 @@
       ],
       "publishedAt": "2026-08-19T03:20:30.000Z",
       "timestamp": 1787109630000,
-      "score": 1.184,
-      "clusterId": "t69",
+      "score": 1.149,
+      "clusterId": "t67",
       "cluster": 1,
       "companies": []
     },
@@ -1939,8 +1901,8 @@
       ],
       "publishedAt": "2026-08-19T03:07:28.000Z",
       "timestamp": 1787108848000,
-      "score": 1.182,
-      "clusterId": "t70",
+      "score": 1.148,
+      "clusterId": "t68",
       "cluster": 1,
       "companies": [
         {
@@ -1985,8 +1947,8 @@
       ],
       "publishedAt": "2026-08-19T02:39:20.000Z",
       "timestamp": 1787107160000,
-      "score": 0.178,
-      "clusterId": "t71",
+      "score": 0.145,
+      "clusterId": "t69",
       "cluster": 1,
       "companies": [
         {
@@ -2016,25 +1978,9 @@
       ]
     },
     {
-      "title": "Insurers gain a small-biz boost from digital, AI channels: JD Power",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMW1nWlUyQzd5eHlFWU9aWVRVX0d0S00yOTlkd2szM245RE5CcmVoeFZsZzlzVmRPTm00bjdweDVCTlFSWkE4ZThVMUMxaG1NTGdBRkVGRE9OamR2azdneW9hbExhNHE1Vm5pZGtwZzBPbFdWRFpFRHFrT1NWOGNfZ1phdG1xX1FfRVVHRg?oc=5",
-      "source": "Digital Insurance",
-      "summary": "",
-      "tags": [
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-08-18T20:19:00.000Z",
-      "timestamp": 1787084340000,
-      "native": true,
-      "score": 1.137,
-      "clusterId": "t72",
-      "cluster": 1,
-      "companies": []
-    },
-    {
       "title": "InsurTech Express Appoints Nichole Gaines CEO and Ron Hensel President as Company Enters Next Phase of Growth",
       "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcl9PeS1yZk5CbkdmSk5ydUU0bGh0OUxLLWNoQWhSbHNTQm9WZXBGNzMwRXA4bU14Q1F4REkzSUFRcHRXWjR0NGFJaXB5elJaeFlPZHFWSkdDa3ctWFVmNW1GS2IyUE9oZWIybTlfMHdEeXJFUGZyTEV0cVZzcWQ1cDVkVnZmbWMzRDR6bFo3X2VFbXBIYjc5M1c2c2p4UTdfY2o3elltNjRhQVF1LVE?oc=5",
-      "source": "Newswire.com",
+      "source": "newswire.com",
       "summary": "",
       "tags": [
         "Leadership"
@@ -2042,8 +1988,8 @@
       "publishedAt": "2026-08-18T14:00:00.000Z",
       "timestamp": 1787061600000,
       "native": true,
-      "score": 0.105,
-      "clusterId": "t73",
+      "score": 0.085,
+      "clusterId": "t70",
       "cluster": 1,
       "companies": [
         {
@@ -2064,8 +2010,8 @@
       "publishedAt": "2026-08-18T12:57:34.000Z",
       "timestamp": 1787057854000,
       "native": true,
-      "score": 1.101,
-      "clusterId": "t74",
+      "score": 1.082,
+      "clusterId": "t71",
       "cluster": 1,
       "companies": []
     },
@@ -2080,8 +2026,8 @@
       "publishedAt": "2026-08-18T11:52:55.000Z",
       "timestamp": 1787053975000,
       "native": true,
-      "score": 0.096,
-      "clusterId": "t75",
+      "score": 0.078,
+      "clusterId": "t72",
       "cluster": 1,
       "companies": [
         {
@@ -2101,8 +2047,8 @@
       "publishedAt": "2026-08-18T11:42:00.000Z",
       "timestamp": 1787053320000,
       "native": true,
-      "score": 0.096,
-      "clusterId": "t76",
+      "score": 0.078,
+      "clusterId": "t73",
       "cluster": 1,
       "companies": [
         {
@@ -2122,8 +2068,8 @@
       "publishedAt": "2026-08-18T11:10:55.000Z",
       "timestamp": 1787051455000,
       "native": true,
-      "score": 0.094,
-      "clusterId": "t77",
+      "score": 0.076,
+      "clusterId": "t74",
       "cluster": 1,
       "companies": [
         {
@@ -2143,8 +2089,8 @@
       "publishedAt": "2026-08-18T08:52:22.000Z",
       "timestamp": 1787043142000,
       "native": true,
-      "score": 0.085,
-      "clusterId": "t78",
+      "score": 0.069,
+      "clusterId": "t75",
       "cluster": 1,
       "companies": [
         {
@@ -2163,8 +2109,8 @@
       ],
       "publishedAt": "2026-08-18T08:32:06.000Z",
       "timestamp": 1787041926000,
-      "score": 0.084,
-      "clusterId": "t79",
+      "score": 0.068,
+      "clusterId": "t76",
       "cluster": 1,
       "companies": []
     },
@@ -2180,8 +2126,8 @@
       "publishedAt": "2026-08-18T04:01:06.000Z",
       "timestamp": 1787025666000,
       "native": true,
-      "score": 0.069,
-      "clusterId": "t80",
+      "score": 0.056,
+      "clusterId": "t77",
       "cluster": 1,
       "companies": [
         {
@@ -2201,8 +2147,8 @@
       "publishedAt": "2026-08-17T21:00:00.000Z",
       "timestamp": 1787000400000,
       "native": true,
-      "score": 1.852,
-      "clusterId": "t81",
+      "score": 1.842,
+      "clusterId": "t78",
       "cluster": 1,
       "companies": []
     },
@@ -2217,8 +2163,8 @@
       "publishedAt": "2026-08-17T16:03:21.000Z",
       "timestamp": 1786982601000,
       "native": true,
-      "score": 0.042,
-      "clusterId": "t82",
+      "score": 0.034,
+      "clusterId": "t79",
       "cluster": 1,
       "companies": []
     },
@@ -2233,8 +2179,8 @@
       "publishedAt": "2026-08-17T13:01:00.000Z",
       "timestamp": 1786971660000,
       "native": true,
-      "score": 0.637,
-      "clusterId": "t83",
+      "score": 0.63,
+      "clusterId": "t80",
       "cluster": 1,
       "companies": [
         {
@@ -2254,8 +2200,8 @@
       "publishedAt": "2026-08-17T12:07:10.000Z",
       "timestamp": 1786968430000,
       "native": true,
-      "score": -1.164,
-      "clusterId": "t84",
+      "score": -1.171,
+      "clusterId": "t81",
       "cluster": 1,
       "companies": [
         {
@@ -2275,8 +2221,8 @@
       "publishedAt": "2026-08-17T10:00:00.000Z",
       "timestamp": 1786960800000,
       "native": true,
-      "score": 1.033,
-      "clusterId": "t85",
+      "score": 1.027,
+      "clusterId": "t82",
       "cluster": 1,
       "companies": []
     },
@@ -2291,8 +2237,8 @@
       "publishedAt": "2026-08-17T10:00:00.000Z",
       "timestamp": 1786960800000,
       "native": true,
-      "score": 1.033,
-      "clusterId": "t86",
+      "score": 1.027,
+      "clusterId": "t83",
       "cluster": 1,
       "companies": [
         {
@@ -2312,8 +2258,8 @@
       ],
       "publishedAt": "2026-08-17T09:48:40.000Z",
       "timestamp": 1786960120000,
-      "score": 1.033,
-      "clusterId": "t87",
+      "score": 1.026,
+      "clusterId": "t84",
       "cluster": 1,
       "companies": []
     },
@@ -2327,8 +2273,8 @@
       ],
       "publishedAt": "2026-08-17T02:01:45.000Z",
       "timestamp": 1786932105000,
-      "score": 0.024,
-      "clusterId": "t88",
+      "score": 0.019,
+      "clusterId": "t85",
       "cluster": 1,
       "companies": [
         {
@@ -2349,7 +2295,7 @@
       "timestamp": 1786729235000,
       "native": true,
       "score": 0.202,
-      "clusterId": "t89",
+      "clusterId": "t86",
       "cluster": 1,
       "companies": [
         {
@@ -2372,7 +2318,7 @@
       "timestamp": 1786717373000,
       "native": true,
       "score": 0.502,
-      "clusterId": "t90",
+      "clusterId": "t87",
       "cluster": 1,
       "companies": [
         {
@@ -2398,7 +2344,7 @@
       "timestamp": 1786717044000,
       "native": true,
       "score": 0.202,
-      "clusterId": "t91",
+      "clusterId": "t88",
       "cluster": 1,
       "companies": [
         {
@@ -2422,34 +2368,12 @@
       "publishedAt": "2026-08-14T14:06:00.000Z",
       "timestamp": 1786716360000,
       "score": 1.002,
-      "clusterId": "t92",
+      "clusterId": "t89",
       "cluster": 1,
       "companies": [
         {
           "name": "Simplicity",
           "slug": "simplicity"
-        }
-      ]
-    },
-    {
-      "title": "Liberty Mutual Reinsurance and Safehub Launch Parametric Earthquake Solution for Fast Payments",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMXdLN1BkblBQYkdHNGY2ekIwSlJqeWhBVEtxWTUtZE9aZEhsOEMzdmhVQnltOERyeXVjZDk2SFVwS1Bsdy1UOGw0TnJKRGFHLVhqbzJZRlY1Q3dwSXFXVnlZakRNQWlYSGtwbjdGYUhYa2xGb2xHcGJiX2I0WWpESE1DemZpUW53ZkVjZXRnbk1qOFZORkRCYU9fZjBhZFA1RV8tSXh6RmVTMEVDTWYxa3V5MA?oc=5",
-      "source": "FF News",
-      "summary": "",
-      "tags": [
-        "Product & Launches",
-        "Property & Cat"
-      ],
-      "publishedAt": "2026-08-14T11:02:34.000Z",
-      "timestamp": 1786705354000,
-      "native": true,
-      "score": 0.202,
-      "clusterId": "t93",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Liberty Mutual",
-          "slug": "liberty-mutual"
         }
       ]
     },
@@ -2465,8 +2389,8 @@
       "publishedAt": "2026-08-14T08:47:25.000Z",
       "timestamp": 1786697245000,
       "native": true,
-      "score": 0.502,
-      "clusterId": "t94",
+      "score": 0.501,
+      "clusterId": "t90",
       "cluster": 1,
       "companies": [
         {
@@ -2489,8 +2413,8 @@
       ],
       "publishedAt": "2026-08-14T08:06:34.000Z",
       "timestamp": 1786694794000,
-      "score": 0.002,
-      "clusterId": "t95",
+      "score": 0.001,
+      "clusterId": "t91",
       "cluster": 1,
       "companies": []
     },
@@ -2505,7 +2429,7 @@
       "publishedAt": "2026-08-14T03:47:11.000Z",
       "timestamp": 1786679231000,
       "score": 1.001,
-      "clusterId": "t96",
+      "clusterId": "t92",
       "cluster": 1,
       "companies": []
     },
@@ -2520,7 +2444,7 @@
       "publishedAt": "2026-08-14T03:17:05.000Z",
       "timestamp": 1786677425000,
       "score": 1.001,
-      "clusterId": "t97",
+      "clusterId": "t93",
       "cluster": 1,
       "companies": [
         {
@@ -2542,7 +2466,7 @@
       "timestamp": 1786649886000,
       "native": true,
       "score": 0.001,
-      "clusterId": "t98",
+      "clusterId": "t94",
       "cluster": 1,
       "companies": []
     },
@@ -2558,7 +2482,7 @@
       "timestamp": 1786644000000,
       "native": true,
       "score": 0.601,
-      "clusterId": "t99",
+      "clusterId": "t95",
       "cluster": 1,
       "companies": []
     },
@@ -2575,7 +2499,7 @@
       "timestamp": 1786624252000,
       "native": true,
       "score": 0.501,
-      "clusterId": "t100",
+      "clusterId": "t96",
       "cluster": 1,
       "companies": [
         {
@@ -2599,8 +2523,8 @@
       "publishedAt": "2026-08-13T10:31:37.000Z",
       "timestamp": 1786617097000,
       "native": true,
-      "score": 0.001,
-      "clusterId": "t101",
+      "score": 0,
+      "clusterId": "t97",
       "cluster": 1,
       "companies": [
         {
@@ -2620,8 +2544,8 @@
       "publishedAt": "2026-08-13T10:21:20.000Z",
       "timestamp": 1786616480000,
       "native": true,
-      "score": 0.001,
-      "clusterId": "t102",
+      "score": 0,
+      "clusterId": "t98",
       "cluster": 1,
       "companies": []
     },
@@ -2636,8 +2560,8 @@
       "publishedAt": "2026-08-13T09:03:39.000Z",
       "timestamp": 1786611819000,
       "native": true,
-      "score": 0.001,
-      "clusterId": "t103",
+      "score": 0,
+      "clusterId": "t99",
       "cluster": 1,
       "companies": []
     },
@@ -2652,8 +2576,8 @@
       "publishedAt": "2026-08-13T07:42:09.000Z",
       "timestamp": 1786606929000,
       "native": true,
-      "score": 0.601,
-      "clusterId": "t104",
+      "score": 0.6,
+      "clusterId": "t100",
       "cluster": 1,
       "companies": [
         {
@@ -2678,8 +2602,8 @@
       "publishedAt": "2026-08-13T07:00:00.000Z",
       "timestamp": 1786604400000,
       "native": true,
-      "score": -1.199,
-      "clusterId": "t105",
+      "score": -1.2,
+      "clusterId": "t101",
       "cluster": 1,
       "companies": [
         {
@@ -2700,8 +2624,8 @@
       "publishedAt": "2026-08-13T06:03:53.000Z",
       "timestamp": 1786601033000,
       "native": true,
-      "score": 1.601,
-      "clusterId": "t106",
+      "score": 1.6,
+      "clusterId": "t102",
       "cluster": 1,
       "companies": [
         {
@@ -2723,7 +2647,7 @@
       "timestamp": 1786550855000,
       "native": true,
       "score": 1.2,
-      "clusterId": "t107",
+      "clusterId": "t103",
       "cluster": 1,
       "companies": [
         {
@@ -2746,7 +2670,7 @@
       "timestamp": 1786547801000,
       "native": true,
       "score": 0.2,
-      "clusterId": "t108",
+      "clusterId": "t104",
       "cluster": 1,
       "companies": [
         {
@@ -2771,7 +2695,7 @@
       "timestamp": 1786546800000,
       "native": true,
       "score": -1,
-      "clusterId": "t109",
+      "clusterId": "t105",
       "cluster": 1,
       "companies": [
         {
@@ -2785,22 +2709,6 @@
       ]
     },
     {
-      "title": "AI in Insurance Industry Analysis, Growth & Key Players",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1NVkMxZWtMamJhTkNWcW9wajJsTVU5c3k3RFROdGxGRUthTEQyUXU1YXpvaHhJVDA0Vzh2eThKTUZUeDRnUmJac1M3alJpRjFpMERQaDdvcTZSSXVTOHptM1FtWDQza3Nl?oc=5",
-      "source": "SNS Insider",
-      "summary": "",
-      "tags": [
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-08-12T12:31:50.000Z",
-      "timestamp": 1786537910000,
-      "native": true,
-      "score": 0,
-      "clusterId": "t110",
-      "cluster": 1,
-      "companies": []
-    },
-    {
       "title": "Zhibao Technology Inc. Establishes Joint Venture with Dongbaohui, Unlocking a New Chapter in AI-Native Embedded Long-Term Insurance Services",
       "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxNeTNjZUVsRkNoWHd3Z0ZhVllWNG0yaVhzaDA0cFZTY19aU2pabVhmenRQTVpOd0xRR0xDRGEtRUZfU0ctUzFXRDV4ZDRva1UtODJtQTBrYzZLZkQ3QlRnYWhiWEdCVThhSUNzTHlGdWktMVlSWjN2VmplcWhvRWYta1BFVHBpQk9uV2FoZFJwRVJ5TWM1eTZJV0VySGFaRGNEX1BpYlFPc1lpc0R2SU1oOHNuTlB4MHR2ZlkzSlhOUEExaGM4WDZxQUtBNndXRFpSNUdteUtPZ2xRdzdsWS01SEF4bTR1NTA2S3NReTVCWnA3VUdJZ2kxenZsLV82OHlVWTAtVkZMWk9GVHY0eUE?oc=5",
       "source": "TMX Newsfile",
@@ -2812,7 +2720,7 @@
       "timestamp": 1786537800000,
       "native": true,
       "score": 0,
-      "clusterId": "t111",
+      "clusterId": "t106",
       "cluster": 1,
       "companies": [
         {
@@ -2837,7 +2745,7 @@
       "timestamp": 1786518000000,
       "native": true,
       "score": 1,
-      "clusterId": "t112",
+      "clusterId": "t107",
       "cluster": 1,
       "companies": []
     },
@@ -2854,7 +2762,7 @@
       "timestamp": 1786518000000,
       "native": true,
       "score": 1.2,
-      "clusterId": "t113",
+      "clusterId": "t108",
       "cluster": 1,
       "companies": [
         {
@@ -2877,7 +2785,7 @@
       "timestamp": 1786518000000,
       "native": true,
       "score": 1.2,
-      "clusterId": "t114",
+      "clusterId": "t109",
       "cluster": 1,
       "companies": [
         {
@@ -2902,7 +2810,7 @@
       "timestamp": 1786518000000,
       "native": true,
       "score": 1,
-      "clusterId": "t115",
+      "clusterId": "t110",
       "cluster": 1,
       "companies": [
         {
@@ -2927,7 +2835,7 @@
       "timestamp": 1786514400000,
       "native": true,
       "score": -1.2,
-      "clusterId": "t116",
+      "clusterId": "t111",
       "cluster": 1,
       "companies": [
         {
@@ -2952,7 +2860,7 @@
       "timestamp": 1786501948000,
       "native": true,
       "score": 1.2,
-      "clusterId": "t117",
+      "clusterId": "t112",
       "cluster": 1,
       "companies": [
         {
@@ -2974,7 +2882,7 @@
       "timestamp": 1786489354000,
       "native": true,
       "score": 0.6,
-      "clusterId": "t118",
+      "clusterId": "t113",
       "cluster": 1,
       "companies": [
         {
@@ -2995,7 +2903,7 @@
       "timestamp": 1786489289000,
       "native": true,
       "score": 1,
-      "clusterId": "t119",
+      "clusterId": "t114",
       "cluster": 1,
       "companies": [
         {
@@ -3016,7 +2924,7 @@
       "timestamp": 1786457840000,
       "native": true,
       "score": 0,
-      "clusterId": "t120",
+      "clusterId": "t115",
       "cluster": 1,
       "companies": [
         {
@@ -3037,7 +2945,7 @@
       "timestamp": 1786457700000,
       "native": true,
       "score": -1,
-      "clusterId": "t121",
+      "clusterId": "t116",
       "cluster": 1,
       "companies": [
         {
@@ -3059,7 +2967,7 @@
       "timestamp": 1786457031000,
       "native": true,
       "score": 1.2,
-      "clusterId": "t122",
+      "clusterId": "t117",
       "cluster": 1,
       "companies": [
         {
@@ -3084,7 +2992,7 @@
       "timestamp": 1786441286000,
       "native": true,
       "score": 0,
-      "clusterId": "t123",
+      "clusterId": "t118",
       "cluster": 1,
       "companies": []
     },
@@ -3100,7 +3008,7 @@
       "timestamp": 1786433602000,
       "native": true,
       "score": 1,
-      "clusterId": "t124",
+      "clusterId": "t119",
       "cluster": 1,
       "companies": []
     },
@@ -3117,7 +3025,7 @@
       "timestamp": 1786394380000,
       "native": true,
       "score": 0.2,
-      "clusterId": "t125",
+      "clusterId": "t120",
       "cluster": 1,
       "companies": [
         {
@@ -3138,7 +3046,7 @@
       "timestamp": 1786353671000,
       "native": true,
       "score": 1,
-      "clusterId": "t126",
+      "clusterId": "t121",
       "cluster": 1,
       "companies": [
         {
@@ -3163,9 +3071,99 @@
       "timestamp": 1786345200000,
       "native": true,
       "score": 0.6,
-      "clusterId": "t127",
+      "clusterId": "t122",
       "cluster": 1,
       "companies": []
+    },
+    {
+      "title": "Insurtech reshapes Vietnam’s insurance sector - Vietnam Investment Review",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQS1ZMQWVoVDB6TmxDbE1MeXNqZU9fTG1LQ2MyZDhHZTIzcDF0cF95NEhuWk1Fdy15QnFZbHNzd3FmcEwyblRrSWRtMWxUWVZPcEttZVpacC1CeTRHb1M0VGpRQ1JYT3FSUERKWVdYZHhZd0VTUE0tX1V1XzJiX0oyNA?oc=5",
+      "source": "Vietnam Investment Review - VIR",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-08-10T07:00:00.000Z",
+      "timestamp": 1786345200000,
+      "native": true,
+      "score": 0.5,
+      "clusterId": "t123",
+      "cluster": 2,
+      "companies": []
+    },
+    {
+      "title": "Europe Digital Insurance Market Size & Outlook, 2026-2033",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOSUtkRmxaRUJDQ2o0RXMzWkg3T3ZNbGZZNGlQYm9aRDBkdUo5d2thcmRISjhoWjlqeERWR3ppV3RNZEluQzRVVGNjbUhaMVZuX3pXRUVqSWJ3SW9hN2xTcmFNREgyelh4anVWNUlkUmRDRmt2b3NxcE1yUnplQXpScVFaRzZqNU5f?oc=5",
+      "source": "Grand View Research",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-08-10T07:00:00.000Z",
+      "timestamp": 1786345200000,
+      "native": true,
+      "score": 0,
+      "clusterId": "t124",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Insurtech reshapes Vietnam’s insurance sector",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5LWVVlbjdEa00zR003ZUNaOVZSZmxodEpNZXV0MjVCX1dPcXZ2Nl9HV2p5aThsRVVKWGdqdDVVYy0tQzdaLURHZ01TRVpIX2MyRlpEanFKUC1adXFqeS0wd1J0bGtBZFhFQnFnR3p6NW8taE5SLVVCVE9n0gGKAUFVX3lxTE0zTDdEaUpIQXJpbHF6c1ZqU21VNk9IYmJweUtlRXVQb01WOWcwZlFIcDQ5bDZBN05UallOUmZQNTVpMFA3SHJwWXJ1dlZKdHl4UFg5dnNkbW96cm9OY1oxTmMxS2dRZi1ua1J3aW84aTlKbFNmMDRweUpzWVVQY2NkWElkdVJMSUxmUQ?oc=5",
+      "source": "Insurance Nerds",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-08-09T07:00:00.000Z",
+      "timestamp": 1786258800000,
+      "native": true,
+      "score": 1.5,
+      "clusterId": "t123",
+      "cluster": 2,
+      "companies": []
+    },
+    {
+      "title": "OneShield Creates New Product Leadership Role, Names Insurance Technology Veteran Rick Becker",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQNE5nUEJPLVFtWTF5R3BiVnhndXlQWEd3aG4wUi1sRWZ5QnVsMmlSNElVT3dUS2l5SXpQTVFrMkx1Y05PeGEwb3dZYzlLRUt5bzZ0d0diRHZndWV2dWV3cHQxZXZoNUxqVE14eWNQOExZSHZHdXF6Y0VPOFJIaU5YeHdKZllMUUNSTlBjNlpMQXBiUDhGMHIxQ1JMZEp5Z1R1UEEtYmRwLTJlMEhLem1jMmdBdXNSZUI0cmw4UjVnX3RubWxMLXgxZEdkcw?oc=5",
+      "source": "citybiz",
+      "summary": "",
+      "tags": [
+        "Product & Launches"
+      ],
+      "publishedAt": "2026-08-07T16:36:19.000Z",
+      "timestamp": 1786120579000,
+      "native": true,
+      "score": 0,
+      "clusterId": "t125",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "OneShield",
+          "slug": "oneshield"
+        }
+      ]
+    },
+    {
+      "title": "MGA consolidation reaches trucking insurtech HDVI",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPcDZ5b29BOVRxQzZuTzVUR0pVUlBJQ29LQ1JRVndGQjJKZjJ6WjFqQjZ2ZWNad1pKYndCU1hyYnBOcnhMQThEZFFleWI1bTg4UDFGdWRsT3hCWGxXZnVYSEpQVnUwZy02a045SzRBVGRxQ3VLUUtOV3pFQzlLMjkzM3VWczBJeGxRS3JRMkc4dDRPaVY5Wl9XelVlaVhNWFNLWGNiRXo4MlcwdFdXblAwbUJPNGJ4OTVS?oc=5",
+      "source": "Insurance Business",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-08-07T07:00:00.000Z",
+      "timestamp": 1786086000000,
+      "native": true,
+      "score": 1,
+      "clusterId": "t126",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "HDVI",
+          "slug": "hdvi"
+        }
+      ]
     }
   ]
 }
