@@ -1,17 +1,187 @@
 {
-  "updatedAt": "2026-08-21T13:00:54.799Z",
-  "count": 1579,
+  "updatedAt": "2026-08-21T18:01:10.931Z",
+  "count": 1583,
   "companies": [
     {
-      "slug": "orion180",
-      "name": "Orion180",
-      "count": 3,
-      "firstSeen": "2026-08-04T13:40:01.000Z",
-      "lastSeen": "2026-08-21T12:40:33.000Z",
+      "slug": "chatgpt",
+      "name": "ChatGPT",
+      "count": 7,
+      "firstSeen": "2026-07-27T18:54:32.000Z",
+      "lastSeen": "2026-08-21T17:11:10.000Z",
       "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 4
+        },
         {
           "name": "Property & Cat",
           "count": 3
+        },
+        {
+          "name": "Regulation",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurance Business UK",
+        "Insurance Journal"
+      ],
+      "related": [
+        {
+          "slug": "plymouth-rock-assurance",
+          "name": "Plymouth Rock Assurance",
+          "count": 2
+        },
+        {
+          "slug": "freeway",
+          "name": "Freeway",
+          "count": 1
+        },
+        {
+          "slug": "openai",
+          "name": "OpenAI",
+          "count": 1
+        },
+        {
+          "slug": "brokly",
+          "name": "Brokly",
+          "count": 1
+        },
+        {
+          "slug": "fletch",
+          "name": "Fletch",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "InsurConnect comes to ChatGPT",
+          "link": "https://coverager.com/insurconnect-comes-to-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-21T17:11:10.000Z",
+          "tags": [
+            "Property & Cat",
+            "Regulation"
+          ],
+          "summary": "The app allows consumers to search for licensed property and casualty insurance agents.",
+          "co": []
+        },
+        {
+          "title": "Freeway launches auto insurance quoting in ChatGPT",
+          "link": "https://coverager.com/freeway-launches-auto-insurance-quoting-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-10T14:20:02.000Z",
+          "tags": [
+            "Product & Launches",
+            "Auto & Mobility"
+          ],
+          "summary": "Freeway joins a growing list of insurance companies and distributors building inside ChatGPT.",
+          "co": [
+            "freeway",
+            "openai"
+          ]
+        },
+        {
+          "title": "Your client’s staff are pasting data into ChatGPT. Their cyber insurer wants to know about it",
+          "link": "https://www.insurancebusinessmag.com/uk/news/cyber/your-clients-staff-are-pasting-data-into-chatgpt--their-cyber-insurer-wants-to-know-about-it-585510.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-08-10T09:49:34.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber"
+          ],
+          "summary": "There's no standard question yet for \"how is your business using AI?\" But insurers are starting to ask anyway",
+          "co": []
+        },
+        {
+          "title": "Plymouth Rock Launches ChatGPT for Home Insurance Quotes",
+          "link": "https://www.insurancejournal.com/news/east/2026/08/03/879945.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-03T12:31:27.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "Homeowners can now obtain insurance quotes from Plymouth Rock Home Assurance through a “natural” conversation with ChatGPT, the artificial intelligence chatbot created by OpenAI. The insurer claims it creates a “faster…",
+          "co": [
+            "plymouth-rock-assurance"
+          ]
+        },
+        {
+          "title": "Brokly launches commercial insurance app in ChatGPT",
+          "link": "https://coverager.com/brokly-launches-commercial-insurance-app-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-02T17:28:43.000Z",
+          "tags": [
+            "Product & Launches",
+            "Regulation"
+          ],
+          "summary": "Brokly is a licensed commercial insurance brokerage.",
+          "co": [
+            "brokly"
+          ]
+        },
+        {
+          "title": "Plymouth Rock brings home insurance quoting to ChatGPT",
+          "link": "https://coverager.com/plymouth-rock-assurance-brings-home-insurance-quoting-to-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-30T12:44:31.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "The new plugin enables homeowners to receive a home insurance quote within ChatGPT.",
+          "co": [
+            "plymouth-rock-assurance"
+          ]
+        },
+        {
+          "title": "Fletch launches pet insurance comparison app in ChatGPT",
+          "link": "https://coverager.com/fletch-launches-pet-insurance-comparison-app-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-27T18:54:32.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The app may access a summary of the user’s recent ChatGPT context and intent to respond to requests.",
+          "co": [
+            "fletch"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "blenheim",
+      "name": "Blenheim",
+      "count": 2,
+      "firstSeen": "2026-08-14T20:23:14.000Z",
+      "lastSeen": "2026-08-21T15:00:41.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
         },
         {
           "name": "Product & Launches",
@@ -19,12 +189,292 @@
         }
       ],
       "sources": [
-        "Insurtech Insights",
-        "Insurance Journal",
+        "Reinsurance News",
         "Coverager"
       ],
       "related": [],
       "articles": [
+        {
+          "title": "Vessel owners to benefit from Blenheim Partnerships’ new-build delivery failure solution",
+          "link": "https://www.reinsurancene.ws/vessel-owners-to-benefit-from-blenheim-partnerships-new-build-delivery-failure-solution/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-21T15:00:41.000Z",
+          "tags": [
+            "Funding",
+            "Partnerships",
+            "Claims & Underwriting"
+          ],
+          "summary": "Blenheim Partnerships, part of the White Bear Group, has expanded its marine specialty risks offering with a new-build delivery failure insurance solution, Knot-on-Time. Led by Edward Parker as Senior Underwriter…",
+          "co": []
+        },
+        {
+          "title": "Blenheim launches Knot-on-Time",
+          "link": "https://coverager.com/blenheim-launches-knot-on-time/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-14T20:23:14.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "An insurance for shipbuilding delivery failures.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "august-equity",
+      "name": "August Equity",
+      "count": 1,
+      "firstSeen": "2026-08-21T15:00:01.000Z",
+      "lastSeen": "2026-08-21T15:00:01.000Z",
+      "topics": [],
+      "sources": [
+        "FinTech Global"
+      ],
+      "related": [
+        {
+          "slug": "starpeak",
+          "name": "Starpeak",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "August Equity backs InsurTech MGA Starpeak",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYk1KTkNqWHhPT25VdlBsTkp2TU9vcWpDRUVpajVuUW5mLVZmM0ZMQzFPVVlGNTZOaWh5aV9wNzJCWFFwT3B3b1ItYlc2OEhKbjVrcEtQYUFtVG5ya3Rpb0w0WFlSWFNBOGZOZ1kwNkRTVWJFSVZ1MWpqVWpHWFVBdGJOVQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-08-21T15:00:01.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "starpeak"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "starpeak",
+      "name": "Starpeak",
+      "count": 1,
+      "firstSeen": "2026-08-21T15:00:01.000Z",
+      "lastSeen": "2026-08-21T15:00:01.000Z",
+      "topics": [],
+      "sources": [
+        "FinTech Global"
+      ],
+      "related": [
+        {
+          "slug": "august-equity",
+          "name": "August Equity",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "August Equity backs InsurTech MGA Starpeak",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYk1KTkNqWHhPT25VdlBsTkp2TU9vcWpDRUVpajVuUW5mLVZmM0ZMQzFPVVlGNTZOaWh5aV9wNzJCWFFwT3B3b1ItYlc2OEhKbjVrcEtQYUFtVG5ya3Rpb0w0WFlSWFNBOGZOZ1kwNkRTVWJFSVZ1MWpqVWpHWFVBdGJOVQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-08-21T15:00:01.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "august-equity"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "allstate",
+      "name": "Allstate",
+      "count": 8,
+      "firstSeen": "2024-09-29T07:00:00.000Z",
+      "lastSeen": "2026-08-21T14:48:13.000Z",
+      "topics": [
+        {
+          "name": "Claims & Underwriting",
+          "count": 3
+        },
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurtech Insights",
+        "Claims Journal",
+        "Insurance Journal",
+        "Insurance Business",
+        "Digital Insurance"
+      ],
+      "related": [
+        {
+          "slug": "the-standard",
+          "name": "The Standard",
+          "count": 1
+        },
+        {
+          "slug": "state-farm",
+          "name": "State Farm",
+          "count": 1
+        },
+        {
+          "slug": "geico",
+          "name": "GEICO",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Allstate claims a piece of Countrywide history",
+          "link": "https://coverager.com/allstate-claims-a-piece-of-countrywide-history/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-21T14:48:13.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "Ihaveinsurance.com dates back roughly 26 years and has passed from Countrywide to Bank of America, QBE, National General and ultimately Allstate.",
+          "co": []
+        },
+        {
+          "title": "Allstate develops Allie platform for agentic AI strategy",
+          "link": "https://www.insurtechinsights.com/allstate-develops-allie-platform-for-agentic-ai-strategy/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-11T12:38:33.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "Allstate is developing a proprietary agentic AI platform called Allie as the insurer looks to embed AI more deeply across its operations and customer interactions.",
+          "co": []
+        },
+        {
+          "title": "Allstate Introduces Large Language Model, ALLIE",
+          "link": "https://www.claimsjournal.com/news/national/2026/08/10/339372.htm",
+          "source": "Claims Journal",
+          "publishedAt": "2026-08-10T05:00:48.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Allstate CEO Tom Wilson said the insurer has a “technology-drive strategy, not a strategy supported by technology.” And the next step in the strategy is the build of ALLIE – Allstate’s Large Language Intelligent…",
+          "co": []
+        },
+        {
+          "title": "Allstate Introduces Large Language Model, ALLIE",
+          "link": "https://www.insurancejournal.com/news/national/2026/08/07/880719.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-07T13:59:55.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Allstate CEO Tom Wilson said the insurer has a “technology-drive strategy, not a strategy supported by technology.” And the next step in the strategy is the build of ALLIE – Allstate’s Large Language Intelligent…",
+          "co": []
+        },
+        {
+          "title": "Allstate Q2 net income rises 56% as underwriting performance improves",
+          "link": "https://www.insurtechinsights.com/allstate-q2-net-income-rises-56-as-underwriting-performance-improves/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-06T13:36:40.000Z",
+          "tags": [
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "Allstate reported a sharp increase in second-quarter 2026 earnings, driven by stronger underwriting results across its Property-Liability business and improved performance in auto and homeowners insurance.",
+          "co": []
+        },
+        {
+          "title": "Allstate breach claim raises questions about scope of exposure",
+          "link": "https://www.insurancebusinessmag.com/us/news/cyber/allstate-breach-claim-raises-questions-about-scope-of-exposure-584600.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-03T04:01:17.000Z",
+          "tags": [
+            "Cyber",
+            "Claims & Underwriting"
+          ],
+          "summary": "The claimed data reportedly includes employee-related records - and the incident adds to a pattern of insurers becoming a repeated target for ransomware groups",
+          "co": []
+        },
+        {
+          "title": "The Standard acquires Allstate's employer benefits for $2B: Insurtech news",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQV182VGlaR20ybm9zNkp6YVN1akNUUGZOWGVqRDJrNmZMX21XWDJlNHNZWjd2aXluejVsOUdkZXNtbUdvOE1xcTFnb0VlOXU1bE4zd2NiU1U5aWVmX1JHeXBuNS11a3VnT2paSXlic05hUU4tYzVfeGNuRm85aWFfZ3F5TmxGa3lFVzg0dl85b2c?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2025-04-06T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "the-standard"
+          ]
+        },
+        {
+          "title": "State Farm, Allstate, Geico top digital performers",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM0NQQmZvSmpjUFFWLVpEX3BJdG9XU2VlOXNnOVROeFZZaWkzVFppbVlCVU9BTTBsZ2hPc0tJS0FIRTR2dWYwX3dsdmN2RFpDQktmamhQWEpFNlR1LUxOamU4UVJ4djdVU3JtS1FscDM4aDR3V1NrS2tWU29QOVo4WmZ3?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2024-09-29T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "state-farm",
+            "geico"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "orion180",
+      "name": "Orion180",
+      "count": 4,
+      "firstSeen": "2026-08-04T13:40:01.000Z",
+      "lastSeen": "2026-08-21T14:00:52.000Z",
+      "topics": [
+        {
+          "name": "Property & Cat",
+          "count": 4
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurtech Insights",
+        "Insurance Journal"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Orion180 files for IPO",
+          "link": "https://coverager.com/orion180-files-for-ipo/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-21T14:00:52.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "Orion180 describes itself as the second-largest E&S homeowners insurer in the US by direct written premium.",
+          "co": []
+        },
         {
           "title": "$100m IPO: Orion180 files S-1",
           "link": "https://www.insurtechinsights.com/100m-ipo-orion180-files-s-1/",
@@ -57,6 +507,208 @@
             "Property & Cat"
           ],
           "summary": "The product offers up to $1 million in building coverage.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "noldor",
+      "name": "Noldor",
+      "count": 1,
+      "firstSeen": "2026-08-21T14:00:16.000Z",
+      "lastSeen": "2026-08-21T14:00:16.000Z",
+      "topics": [
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Noldor appoints Tom Anderson as Head of Sales",
+          "link": "https://www.reinsurancene.ws/noldor-appoints-tom-anderson-as-head-of-sales/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-21T14:00:16.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "Noldor, a company focused on transforming disjointed insurance data into a valuable asset driving the programme marketplace, has announced the appointment of Tom Anderson as Head of Sales. In his new role, Anderson will…",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "accredited",
+      "name": "Accredited",
+      "count": 4,
+      "firstSeen": "2025-09-18T07:00:00.000Z",
+      "lastSeen": "2026-08-21T13:00:57.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 3
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News",
+        "FF News",
+        "FinTech Global"
+      ],
+      "related": [
+        {
+          "slug": "banyan-risk",
+          "name": "Banyan Risk",
+          "count": 2
+        },
+        {
+          "slug": "hellenic-hull",
+          "name": "Hellenic Hull",
+          "count": 1
+        },
+        {
+          "slug": "bamboo-insurance",
+          "name": "Bamboo Insurance",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Banyan Risk and Accredited partner to launch US Inland Marine & Marine Property product",
+          "link": "https://www.reinsurancene.ws/banyan-risk-and-accredited-partner-to-launch-us-inland-marine-marine-property-product/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-21T13:00:57.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "Specialist managing general agent (MGA) Banyan Risk has launched a new US Inland Marine & Marine Property product, with capacity provided by program partner Accredited Insurance Limited. The new line targets four core…",
+          "co": [
+            "banyan-risk"
+          ]
+        },
+        {
+          "title": "Banyan Risk Enters US Inland Marine Market with Accredited Insurance Partnership",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPX083M0lfc3c0VjBPVzJUVVFDaUNWdkRFWEFHUTZMa2N2d2ZhblJtWW1HeFhVejRqMVhjYXlsZHRRcldCcjNUMHZfSDlsb1ptSDRsUEJVeGt3UkVDNFJWT2FaUTJWU1lULXg2akg4RmhWaHVBYjRhLTI0bUhmQjFxYUlrVVF6OExtZFVhZWtHaVMyMDRlQ0FfZDRnUlZ4bEZ5UHdJTkJfRQ?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-08-20T10:35:49.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "banyan-risk"
+          ]
+        },
+        {
+          "title": "Accredited selects Hellenic Hull as first dedicated ocean marine MGA partner",
+          "link": "https://www.reinsurancene.ws/accredited-selects-hellenic-hull-as-first-dedicated-ocean-marine-mga-partner/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-10T07:00:40.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "Accredited Insurance (Europe) Limited (Accredited) and Hellenic Hull Management (HM Insurance Agencies) Ltd (Hellenic Hull) have entered into a delegated authority partnership covering Hull & Machinery, ancillary marine…",
+          "co": [
+            "hellenic-hull"
+          ]
+        },
+        {
+          "title": "Accredited backs Bamboo Insurance’s new California product",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUlY0bHA1OEh0SVo1bHoxV1JRSTRYMVdQUUVaSjg4eHdFOUpxV3hLcm9sNWJJX3o5UWw5ZzJyNlpmOVdRTjIxM3kta2FYWTRMakJLVXYzbEN1eVhkdm5MMFpIRFhyUDI2dGRqX3BvaHhodFY0c0xRSXVTRC1tdEx4S0hLX01qRHFxZTBCM3cyZlVHQndLbjM0?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-09-18T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "bamboo-insurance"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "banyan-risk",
+      "name": "Banyan Risk",
+      "count": 3,
+      "firstSeen": "2026-07-31T12:30:12.000Z",
+      "lastSeen": "2026-08-21T13:00:57.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News",
+        "FF News"
+      ],
+      "related": [
+        {
+          "slug": "accredited",
+          "name": "Accredited",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "Banyan Risk and Accredited partner to launch US Inland Marine & Marine Property product",
+          "link": "https://www.reinsurancene.ws/banyan-risk-and-accredited-partner-to-launch-us-inland-marine-marine-property-product/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-21T13:00:57.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "Specialist managing general agent (MGA) Banyan Risk has launched a new US Inland Marine & Marine Property product, with capacity provided by program partner Accredited Insurance Limited. The new line targets four core…",
+          "co": [
+            "accredited"
+          ]
+        },
+        {
+          "title": "Banyan Risk Enters US Inland Marine Market with Accredited Insurance Partnership",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPX083M0lfc3c0VjBPVzJUVVFDaUNWdkRFWEFHUTZMa2N2d2ZhblJtWW1HeFhVejRqMVhjYXlsZHRRcldCcjNUMHZfSDlsb1ptSDRsUEJVeGt3UkVDNFJWT2FaUTJWU1lULXg2akg4RmhWaHVBYjRhLTI0bUhmQjFxYUlrVVF6OExtZFVhZWtHaVMyMDRlQ0FfZDRnUlZ4bEZ5UHdJTkJfRQ?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-08-20T10:35:49.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "accredited"
+          ]
+        },
+        {
+          "title": "Banyan Risk launches insurance product for digital asset and emerging risk sector",
+          "link": "https://www.reinsurancene.ws/banyan-risk-launches-insurance-product-for-digital-asset-and-emerging-risk-sector/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-31T12:30:12.000Z",
+          "tags": [
+            "M&A",
+            "Product & Launches",
+            "Claims & Underwriting"
+          ],
+          "summary": "Banyan Risk Ltd, a Bermuda-based specialty Managing General Agent (MGA), has announced the launch of a new Digital Assets & Emerging Risks product. The line will be underwritten through Banyan’s platform in Bermuda…",
           "co": []
         }
       ]
@@ -174,6 +826,89 @@
           ],
           "summary": "",
           "co": []
+        }
+      ]
+    },
+    {
+      "slug": "c3",
+      "name": "C3",
+      "count": 2,
+      "firstSeen": "2026-08-21T08:56:39.000Z",
+      "lastSeen": "2026-08-21T11:18:19.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "FF News",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "sedgwick",
+          "name": "Sedgwick",
+          "count": 1
+        },
+        {
+          "slug": "alkeme",
+          "name": "ALKEME",
+          "count": 1
+        },
+        {
+          "slug": "icw-specialty",
+          "name": "ICW Specialty",
+          "count": 1
+        },
+        {
+          "slug": "humana",
+          "name": "Humana",
+          "count": 1
+        },
+        {
+          "slug": "ameritas",
+          "name": "Ameritas",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "C3 Risk & Insurance Services Appoints Brandon Stanford as CFO and Partner to Drive Strategic Growth",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQbzZPVTBFZnlwMVNMTjI0RnhfTXRVbC1yaUNXdmpQZ3FVY2R0OTc1bzRiVmRla21mbndCZWo0endCRV96LVFpdGJhM0Q0ZU9wZ2RxSjdYMHctNlBjdjc2RlZfenM2ODVsUjBPWUt3YUo3ZzZ4ZlcyQUZaRmZ4aDlOSFJqQUNvN0FxQS01SWhNUXY3WWFfcDdrRTM4ejlweHprbkg4ME40c1BRTEVBREIxa29YV0dhd3R2aDg4U2pB?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-08-21T11:18:19.000Z",
+          "tags": [
+            "Partnerships",
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurance moves: Sedgwick, ALKEME, ICW Specialty, C3, Humana, Ameritas",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/insurance-moves-sedgwick-alkeme-icw-specialty-c3-humana-ameritas-586984.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-21T08:56:39.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "ICW Specialty's legacy workers' comp LPT platform is its fourth product line in 12 months. Humana's new CMO shapes how AI changes care delivery at one of the country's largest health plans. Both matter for brokers now",
+          "co": [
+            "sedgwick",
+            "alkeme",
+            "icw-specialty",
+            "humana",
+            "ameritas"
+          ]
         }
       ]
     },
@@ -1432,6 +2167,36 @@
       ]
     },
     {
+      "slug": "openroad-insurance",
+      "name": "OpenRoad Insurance",
+      "count": 1,
+      "firstSeen": "2026-08-21T10:04:01.000Z",
+      "lastSeen": "2026-08-21T10:04:01.000Z",
+      "topics": [
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "FF News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "OpenRoad Insurance Hits 40-State Milestone: Classic Car Insurer Accelerates U.S. Expansion",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd29YWTJlRk1pZF9QTVN0U3hFMzRJTjA1UWMxY3FpeFdxdW81dHlrVHRabEpkY0lteWJORUlGczh3b0RHT1YxZlVhV2tKS1g1SHVaSzNVODcwS1RvZDBLWTR4dzRISFlqNWJVTElxUEx0bUpMUTFFM1pQMEhLa0lBa29DaTNjY1VCMmZyaW44b29DaFczUkFjUm1acGtQVktnQjI0YmdTMEc3ZGVtUXhUUw?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-08-21T10:04:01.000Z",
+          "tags": [
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
       "slug": "the-hartford",
       "name": "The Hartford",
       "count": 13,
@@ -1900,7 +2665,7 @@
             "Funding",
             "M&A"
           ],
-          "summary": "Australian insurance broker Steadfast Group said on Friday it has agreed to a A$7.7 billion ($5.51 billion) takeover offer by a U.S. consortium backed by investment firm KKR. As part of the proposal, insurance…",
+          "summary": "Australia’s Steadfast Group has agreed to a A$7.7 billion ($5.52 billion) buyout by a consortium backed by U.S. investment giant KKR, the insurance broker said on Friday. Under the deal, specialty insurance distributor…",
           "co": [
             "kkr"
           ]
@@ -1979,7 +2744,7 @@
             "Funding",
             "M&A"
           ],
-          "summary": "Australian insurance broker Steadfast Group said on Friday it has agreed to a A$7.7 billion ($5.51 billion) takeover offer by a U.S. consortium backed by investment firm KKR. As part of the proposal, insurance…",
+          "summary": "Australia’s Steadfast Group has agreed to a A$7.7 billion ($5.52 billion) buyout by a consortium backed by U.S. investment giant KKR, the insurance broker said on Friday. Under the deal, specialty insurance distributor…",
           "co": [
             "steadfast"
           ]
@@ -2603,68 +3368,6 @@
             "sedgwick",
             "icw-specialty",
             "c3",
-            "humana",
-            "ameritas"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "c3",
-      "name": "C3",
-      "count": 1,
-      "firstSeen": "2026-08-21T08:56:39.000Z",
-      "lastSeen": "2026-08-21T08:56:39.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "sedgwick",
-          "name": "Sedgwick",
-          "count": 1
-        },
-        {
-          "slug": "alkeme",
-          "name": "ALKEME",
-          "count": 1
-        },
-        {
-          "slug": "icw-specialty",
-          "name": "ICW Specialty",
-          "count": 1
-        },
-        {
-          "slug": "humana",
-          "name": "Humana",
-          "count": 1
-        },
-        {
-          "slug": "ameritas",
-          "name": "Ameritas",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Insurance moves: Sedgwick, ALKEME, ICW Specialty, C3, Humana, Ameritas",
-          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/insurance-moves-sedgwick-alkeme-icw-specialty-c3-humana-ameritas-586984.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-21T08:56:39.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "ICW Specialty's legacy workers' comp LPT platform is its fourth product line in 12 months. Humana's new CMO shapes how AI changes care delivery at one of the country's largest health plans. Both matter for brokers now",
-          "co": [
-            "sedgwick",
-            "alkeme",
-            "icw-specialty",
             "humana",
             "ameritas"
           ]
@@ -3490,7 +4193,7 @@
         "theinsurer.com",
         "Reinsurance News",
         "Asia Insurance Post",
-        "munichre.com"
+        "Munich Re"
       ],
       "related": [
         {
@@ -3719,7 +4422,7 @@
         {
           "title": "Munich Re Group to Acquire Cyber Insurtech At-Bay",
           "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQaWNlRUM5YllvZHp4R1liV0tSQlNlMWM3MXRFQWl6STJZWFZDLVFXa0tXUGRUZFR4YmV4NlZmd3ZMNi1MVnFnN3l1OVRQTlZrVlhGZ2E4Y3RkTFE0X0R1cnBKdkJzN1J2TGZUX3J5d05PeDh0ZS1mQURQLVJYTGFOM2RHOF9CMzRaR2g4OEVrcElBRWVVNlp6d2kwSFJQTXZ0SU9NRXBwWVBiREhHM3Z4YXczU3M0aGVwSmE3VjRMSUM5c09zTENUaDVyR0VCaFpwd3FwdHM4cUo?oc=5",
-          "source": "munichre.com",
+          "source": "Munich Re",
           "publishedAt": "2026-08-19T07:03:02.000Z",
           "tags": [
             "M&A",
@@ -4571,146 +5274,6 @@
           "co": [
             "willis-re"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "accredited",
-      "name": "Accredited",
-      "count": 3,
-      "firstSeen": "2025-09-18T07:00:00.000Z",
-      "lastSeen": "2026-08-20T10:35:49.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "FF News",
-        "Reinsurance News",
-        "FinTech Global"
-      ],
-      "related": [
-        {
-          "slug": "banyan-risk",
-          "name": "Banyan Risk",
-          "count": 1
-        },
-        {
-          "slug": "hellenic-hull",
-          "name": "Hellenic Hull",
-          "count": 1
-        },
-        {
-          "slug": "bamboo-insurance",
-          "name": "Bamboo Insurance",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Banyan Risk Enters US Inland Marine Market with Accredited Insurance Partnership",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPX083M0lfc3c0VjBPVzJUVVFDaUNWdkRFWEFHUTZMa2N2d2ZhblJtWW1HeFhVejRqMVhjYXlsZHRRcldCcjNUMHZfSDlsb1ptSDRsUEJVeGt3UkVDNFJWT2FaUTJWU1lULXg2akg4RmhWaHVBYjRhLTI0bUhmQjFxYUlrVVF6OExtZFVhZWtHaVMyMDRlQ0FfZDRnUlZ4bEZ5UHdJTkJfRQ?oc=5",
-          "source": "FF News",
-          "publishedAt": "2026-08-20T10:35:49.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "banyan-risk"
-          ]
-        },
-        {
-          "title": "Accredited selects Hellenic Hull as first dedicated ocean marine MGA partner",
-          "link": "https://www.reinsurancene.ws/accredited-selects-hellenic-hull-as-first-dedicated-ocean-marine-mga-partner/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-10T07:00:40.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "Accredited Insurance (Europe) Limited (Accredited) and Hellenic Hull Management (HM Insurance Agencies) Ltd (Hellenic Hull) have entered into a delegated authority partnership covering Hull & Machinery, ancillary marine…",
-          "co": [
-            "hellenic-hull"
-          ]
-        },
-        {
-          "title": "Accredited backs Bamboo Insurance’s new California product",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUlY0bHA1OEh0SVo1bHoxV1JRSTRYMVdQUUVaSjg4eHdFOUpxV3hLcm9sNWJJX3o5UWw5ZzJyNlpmOVdRTjIxM3kta2FYWTRMakJLVXYzbEN1eVhkdm5MMFpIRFhyUDI2dGRqX3BvaHhodFY0c0xRSXVTRC1tdEx4S0hLX01qRHFxZTBCM3cyZlVHQndLbjM0?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2025-09-18T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "bamboo-insurance"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "banyan-risk",
-      "name": "Banyan Risk",
-      "count": 2,
-      "firstSeen": "2026-07-31T12:30:12.000Z",
-      "lastSeen": "2026-08-20T10:35:49.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "M&A",
-          "count": 1
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "FF News",
-        "Reinsurance News"
-      ],
-      "related": [
-        {
-          "slug": "accredited",
-          "name": "Accredited",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Banyan Risk Enters US Inland Marine Market with Accredited Insurance Partnership",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPX083M0lfc3c0VjBPVzJUVVFDaUNWdkRFWEFHUTZMa2N2d2ZhblJtWW1HeFhVejRqMVhjYXlsZHRRcldCcjNUMHZfSDlsb1ptSDRsUEJVeGt3UkVDNFJWT2FaUTJWU1lULXg2akg4RmhWaHVBYjRhLTI0bUhmQjFxYUlrVVF6OExtZFVhZWtHaVMyMDRlQ0FfZDRnUlZ4bEZ5UHdJTkJfRQ?oc=5",
-          "source": "FF News",
-          "publishedAt": "2026-08-20T10:35:49.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "accredited"
-          ]
-        },
-        {
-          "title": "Banyan Risk launches insurance product for digital asset and emerging risk sector",
-          "link": "https://www.reinsurancene.ws/banyan-risk-launches-insurance-product-for-digital-asset-and-emerging-risk-sector/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-31T12:30:12.000Z",
-          "tags": [
-            "M&A",
-            "Product & Launches",
-            "Claims & Underwriting"
-          ],
-          "summary": "Banyan Risk Ltd, a Bermuda-based specialty Managing General Agent (MGA), has announced the launch of a new Digital Assets & Emerging Risks product. The line will be underwritten through Banyan’s platform in Bermuda…",
-          "co": []
         }
       ]
     },
@@ -13053,36 +13616,6 @@
       ]
     },
     {
-      "slug": "blenheim",
-      "name": "Blenheim",
-      "count": 1,
-      "firstSeen": "2026-08-14T20:23:14.000Z",
-      "lastSeen": "2026-08-14T20:23:14.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Blenheim launches Knot-on-Time",
-          "link": "https://coverager.com/blenheim-launches-knot-on-time/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-14T20:23:14.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "An insurance for shipbuilding delivery failures.",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "proper-insurance",
       "name": "Proper Insurance",
       "count": 1,
@@ -19824,149 +20357,6 @@
       ]
     },
     {
-      "slug": "allstate",
-      "name": "Allstate",
-      "count": 7,
-      "firstSeen": "2024-09-29T07:00:00.000Z",
-      "lastSeen": "2026-08-11T12:38:33.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 2
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 2
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        },
-        {
-          "name": "Property & Cat",
-          "count": 1
-        },
-        {
-          "name": "Cyber",
-          "count": 1
-        },
-        {
-          "name": "M&A",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurtech Insights",
-        "Claims Journal",
-        "Insurance Journal",
-        "Insurance Business",
-        "Digital Insurance"
-      ],
-      "related": [
-        {
-          "slug": "the-standard",
-          "name": "The Standard",
-          "count": 1
-        },
-        {
-          "slug": "state-farm",
-          "name": "State Farm",
-          "count": 1
-        },
-        {
-          "slug": "geico",
-          "name": "GEICO",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Allstate develops Allie platform for agentic AI strategy",
-          "link": "https://www.insurtechinsights.com/allstate-develops-allie-platform-for-agentic-ai-strategy/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-11T12:38:33.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "Allstate is developing a proprietary agentic AI platform called Allie as the insurer looks to embed AI more deeply across its operations and customer interactions.",
-          "co": []
-        },
-        {
-          "title": "Allstate Introduces Large Language Model, ALLIE",
-          "link": "https://www.claimsjournal.com/news/national/2026/08/10/339372.htm",
-          "source": "Claims Journal",
-          "publishedAt": "2026-08-10T05:00:48.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Allstate CEO Tom Wilson said the insurer has a “technology-drive strategy, not a strategy supported by technology.” And the next step in the strategy is the build of ALLIE – Allstate’s Large Language Intelligent…",
-          "co": []
-        },
-        {
-          "title": "Allstate Introduces Large Language Model, ALLIE",
-          "link": "https://www.insurancejournal.com/news/national/2026/08/07/880719.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-07T13:59:55.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Allstate CEO Tom Wilson said the insurer has a “technology-drive strategy, not a strategy supported by technology.” And the next step in the strategy is the build of ALLIE – Allstate’s Large Language Intelligent…",
-          "co": []
-        },
-        {
-          "title": "Allstate Q2 net income rises 56% as underwriting performance improves",
-          "link": "https://www.insurtechinsights.com/allstate-q2-net-income-rises-56-as-underwriting-performance-improves/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-06T13:36:40.000Z",
-          "tags": [
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "Allstate reported a sharp increase in second-quarter 2026 earnings, driven by stronger underwriting results across its Property-Liability business and improved performance in auto and homeowners insurance.",
-          "co": []
-        },
-        {
-          "title": "Allstate breach claim raises questions about scope of exposure",
-          "link": "https://www.insurancebusinessmag.com/us/news/cyber/allstate-breach-claim-raises-questions-about-scope-of-exposure-584600.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-03T04:01:17.000Z",
-          "tags": [
-            "Cyber",
-            "Claims & Underwriting"
-          ],
-          "summary": "The claimed data reportedly includes employee-related records - and the incident adds to a pattern of insurers becoming a repeated target for ransomware groups",
-          "co": []
-        },
-        {
-          "title": "The Standard acquires Allstate's employer benefits for $2B: Insurtech news",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQV182VGlaR20ybm9zNkp6YVN1akNUUGZOWGVqRDJrNmZMX21XWDJlNHNZWjd2aXluejVsOUdkZXNtbUdvOE1xcTFnb0VlOXU1bE4zd2NiU1U5aWVmX1JHeXBuNS11a3VnT2paSXlic05hUU4tYzVfeGNuRm85aWFfZ3F5TmxGa3lFVzg0dl85b2c?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2025-04-06T07:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "the-standard"
-          ]
-        },
-        {
-          "title": "State Farm, Allstate, Geico top digital performers",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM0NQQmZvSmpjUFFWLVpEX3BJdG9XU2VlOXNnOVROeFZZaWkzVFppbVlCVU9BTTBsZ2hPc0tJS0FIRTR2dWYwX3dsdmN2RFpDQktmamhQWEpFNlR1LUxOamU4UVJ4djdVU3JtS1FscDM4aDR3V1NrS2tWU29QOVo4WmZ3?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2024-09-29T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "state-farm",
-            "geico"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "go-digit",
       "name": "Go Digit",
       "count": 4,
@@ -21429,156 +21819,6 @@
           ],
           "summary": "",
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "chatgpt",
-      "name": "ChatGPT",
-      "count": 6,
-      "firstSeen": "2026-07-27T18:54:32.000Z",
-      "lastSeen": "2026-08-10T14:20:02.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 4
-        },
-        {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Property & Cat",
-          "count": 2
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 1
-        },
-        {
-          "name": "Cyber",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Insurance Business UK",
-        "Insurance Journal"
-      ],
-      "related": [
-        {
-          "slug": "plymouth-rock-assurance",
-          "name": "Plymouth Rock Assurance",
-          "count": 2
-        },
-        {
-          "slug": "freeway",
-          "name": "Freeway",
-          "count": 1
-        },
-        {
-          "slug": "openai",
-          "name": "OpenAI",
-          "count": 1
-        },
-        {
-          "slug": "brokly",
-          "name": "Brokly",
-          "count": 1
-        },
-        {
-          "slug": "fletch",
-          "name": "Fletch",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Freeway launches auto insurance quoting in ChatGPT",
-          "link": "https://coverager.com/freeway-launches-auto-insurance-quoting-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-10T14:20:02.000Z",
-          "tags": [
-            "Product & Launches",
-            "Auto & Mobility"
-          ],
-          "summary": "Freeway joins a growing list of insurance companies and distributors building inside ChatGPT.",
-          "co": [
-            "freeway",
-            "openai"
-          ]
-        },
-        {
-          "title": "Your client’s staff are pasting data into ChatGPT. Their cyber insurer wants to know about it",
-          "link": "https://www.insurancebusinessmag.com/uk/news/cyber/your-clients-staff-are-pasting-data-into-chatgpt--their-cyber-insurer-wants-to-know-about-it-585510.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-08-10T09:49:34.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber"
-          ],
-          "summary": "There's no standard question yet for \"how is your business using AI?\" But insurers are starting to ask anyway",
-          "co": []
-        },
-        {
-          "title": "Plymouth Rock Launches ChatGPT for Home Insurance Quotes",
-          "link": "https://www.insurancejournal.com/news/east/2026/08/03/879945.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-03T12:31:27.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "Homeowners can now obtain insurance quotes from Plymouth Rock Home Assurance through a “natural” conversation with ChatGPT, the artificial intelligence chatbot created by OpenAI. The insurer claims it creates a “faster…",
-          "co": [
-            "plymouth-rock-assurance"
-          ]
-        },
-        {
-          "title": "Brokly launches commercial insurance app in ChatGPT",
-          "link": "https://coverager.com/brokly-launches-commercial-insurance-app-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-02T17:28:43.000Z",
-          "tags": [
-            "Product & Launches",
-            "Regulation"
-          ],
-          "summary": "Brokly is a licensed commercial insurance brokerage.",
-          "co": [
-            "brokly"
-          ]
-        },
-        {
-          "title": "Plymouth Rock brings home insurance quoting to ChatGPT",
-          "link": "https://coverager.com/plymouth-rock-assurance-brings-home-insurance-quoting-to-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-30T12:44:31.000Z",
-          "tags": [
-            "Property & Cat"
-          ],
-          "summary": "The new plugin enables homeowners to receive a home insurance quote within ChatGPT.",
-          "co": [
-            "plymouth-rock-assurance"
-          ]
-        },
-        {
-          "title": "Fletch launches pet insurance comparison app in ChatGPT",
-          "link": "https://coverager.com/fletch-launches-pet-insurance-comparison-app-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-27T18:54:32.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The app may access a summary of the user’s recent ChatGPT context and intent to respond to requests.",
-          "co": [
-            "fletch"
-          ]
         }
       ]
     },
