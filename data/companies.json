@@ -1,7 +1,199 @@
 {
-  "updatedAt": "2026-08-26T18:47:04.012Z",
-  "count": 1628,
+  "updatedAt": "2026-08-26T23:01:02.836Z",
+  "count": 1635,
   "companies": [
+    {
+      "slug": "vanguard",
+      "name": "Vanguard",
+      "count": 1,
+      "firstSeen": "2026-08-26T19:17:15.000Z",
+      "lastSeen": "2026-08-26T19:17:15.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "altruist",
+          "name": "Altruist",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Vanguard to acquire Altruist",
+          "link": "https://coverager.com/vanguard-to-acquire-altruist/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-26T19:17:15.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "Altruist also operates Hazel, an AI platform for financial and tax planning.",
+          "co": [
+            "altruist"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "altruist",
+      "name": "Altruist",
+      "count": 1,
+      "firstSeen": "2026-08-26T19:17:15.000Z",
+      "lastSeen": "2026-08-26T19:17:15.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "vanguard",
+          "name": "Vanguard",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Vanguard to acquire Altruist",
+          "link": "https://coverager.com/vanguard-to-acquire-altruist/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-26T19:17:15.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "Altruist also operates Hazel, an AI platform for financial and tax planning.",
+          "co": [
+            "vanguard"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "hagerty",
+      "name": "Hagerty",
+      "count": 1,
+      "firstSeen": "2026-08-26T19:05:03.000Z",
+      "lastSeen": "2026-08-26T19:05:03.000Z",
+      "topics": [
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Hagerty appoints insurance transformation executive",
+          "link": "https://coverager.com/hagerty-appoints-insurance-transformation-executive/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-26T19:05:03.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "Cicero joins after nearly 22 years at Progressive.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "heffernan",
+      "name": "Heffernan",
+      "count": 1,
+      "firstSeen": "2026-08-26T18:55:32.000Z",
+      "lastSeen": "2026-08-26T18:55:32.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "kristin-manwaring-insurance-associates",
+          "name": "Kristin Manwaring Insurance Associates",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Heffernan acquires Kristin Manwaring Insurance Associates",
+          "link": "https://coverager.com/heffernan-acquires-kristin-manwaring-insurance-associates/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-26T18:55:32.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "The acquisition expands Heffernan’s presence in the Pacific Northwest.",
+          "co": [
+            "kristin-manwaring-insurance-associates"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "kristin-manwaring-insurance-associates",
+      "name": "Kristin Manwaring Insurance Associates",
+      "count": 1,
+      "firstSeen": "2026-08-26T18:55:32.000Z",
+      "lastSeen": "2026-08-26T18:55:32.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "heffernan",
+          "name": "Heffernan",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Heffernan acquires Kristin Manwaring Insurance Associates",
+          "link": "https://coverager.com/heffernan-acquires-kristin-manwaring-insurance-associates/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-26T18:55:32.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "The acquisition expands Heffernan’s presence in the Pacific Northwest.",
+          "co": [
+            "heffernan"
+          ]
+        }
+      ]
+    },
     {
       "slug": "strong-tower-insurance",
       "name": "Strong Tower Insurance",
@@ -74,6 +266,72 @@
           "summary": "Strong Tower Insurance Group is a family-founded independent insurance brokerage and risk-management firm based in Gilbert, Arizona.",
           "co": [
             "strong-tower-insurance"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "fpt-is",
+      "name": "FPT IS",
+      "count": 1,
+      "firstSeen": "2026-08-26T18:41:31.000Z",
+      "lastSeen": "2026-08-26T18:41:31.000Z",
+      "topics": [],
+      "sources": [
+        "The Futurum Group"
+      ],
+      "related": [
+        {
+          "slug": "atomi-digital",
+          "name": "Atomi Digital",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "FPT IS Bets on Vietnam’s Insurance Gap With Atomi Digital MOU",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQak1VbHU4OFcxLWN5dGV4clNpbjBNSEp4ZW1pYjR1cUdxemtMWnJLaTJWQXdrdjM4NHR0dUl5MmZSQmdab1RaUUcyTkktclhRWG1ON0Z3NlNiV1Fkbmx6YkljLXJocE50dEM1U1dJWUloZUxCb2ZmdHVrWVhoX25RdmNjaGJXRmM1RExiODBCNzF5YVFLOV9zckpjYw?oc=5",
+          "source": "The Futurum Group",
+          "publishedAt": "2026-08-26T18:41:31.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "atomi-digital"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "atomi-digital",
+      "name": "Atomi Digital",
+      "count": 1,
+      "firstSeen": "2026-08-26T18:41:31.000Z",
+      "lastSeen": "2026-08-26T18:41:31.000Z",
+      "topics": [],
+      "sources": [
+        "The Futurum Group"
+      ],
+      "related": [
+        {
+          "slug": "fpt-is",
+          "name": "FPT IS",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "FPT IS Bets on Vietnam’s Insurance Gap With Atomi Digital MOU",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQak1VbHU4OFcxLWN5dGV4clNpbjBNSEp4ZW1pYjR1cUdxemtMWnJLaTJWQXdrdjM4NHR0dUl5MmZSQmdab1RaUUcyTkktclhRWG1ON0Z3NlNiV1Fkbmx6YkljLXJocE50dEM1U1dJWUloZUxCb2ZmdHVrWVhoX25RdmNjaGJXRmM1RExiODBCNzF5YVFLOV9zckpjYw?oc=5",
+          "source": "The Futurum Group",
+          "publishedAt": "2026-08-26T18:41:31.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "fpt-is"
           ]
         }
       ]
@@ -1565,7 +1823,7 @@
       "name": "Tokio Marine",
       "count": 6,
       "firstSeen": "2026-01-27T08:00:00.000Z",
-      "lastSeen": "2026-08-26T13:22:45.000Z",
+      "lastSeen": "2026-08-26T13:22:50.000Z",
       "topics": [
         {
           "name": "Partnerships",
@@ -1610,7 +1868,7 @@
           "title": "Tokio Marine invests in insurtech Kita to expand carbon insurance business",
           "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1UZnhXbTZkM3VZYkJ1UjdQOE1WcVktQWdfYTdpc1ZwUmtPUWcxZWZnSnotVFpQYmpSdFdWb2tYYlJxWGo3dHBDR1VDdURRUGp6Qk8zUVplM094WWJJOVBkSzhQdE5uNGJzczB0Uk40aU0wYVE?oc=5",
           "source": "Beinsure",
-          "publishedAt": "2026-08-26T13:22:45.000Z",
+          "publishedAt": "2026-08-26T13:22:50.000Z",
           "tags": [
             "Industry"
           ],
@@ -1689,7 +1947,7 @@
       "name": "Kita",
       "count": 3,
       "firstSeen": "2025-04-09T07:00:00.000Z",
-      "lastSeen": "2026-08-26T13:22:45.000Z",
+      "lastSeen": "2026-08-26T13:22:50.000Z",
       "topics": [
         {
           "name": "Partnerships",
@@ -1717,7 +1975,7 @@
           "title": "Tokio Marine invests in insurtech Kita to expand carbon insurance business",
           "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1UZnhXbTZkM3VZYkJ1UjdQOE1WcVktQWdfYTdpc1ZwUmtPUWcxZWZnSnotVFpQYmpSdFdWb2tYYlJxWGo3dHBDR1VDdURRUGp6Qk8zUVplM094WWJJOVBkSzhQdE5uNGJzczB0Uk40aU0wYVE?oc=5",
           "source": "Beinsure",
-          "publishedAt": "2026-08-26T13:22:45.000Z",
+          "publishedAt": "2026-08-26T13:22:50.000Z",
           "tags": [
             "Industry"
           ],
@@ -1757,7 +2015,7 @@
       "name": "Bolt",
       "count": 6,
       "firstSeen": "2025-11-25T08:00:00.000Z",
-      "lastSeen": "2026-08-26T13:17:54.000Z",
+      "lastSeen": "2026-08-26T13:15:43.000Z",
       "topics": [
         {
           "name": "Product & Launches",
@@ -1795,7 +2053,7 @@
           "title": "Insurtech bolt launches AI insurance distribution platform across all lines",
           "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNOXpKd2pLU1owZ3dnaHVMNUlITEo3OWNUdWVXdTgtVGNnRHR6X1ZHUWlMcVpxcWhENXpJNFhFMFprX3V6TV81ZDlBZHhSUGdHNmJ0SzAtTVAtV3RYN1dtWUdwUXpvN0xhS3FxdkRmUnRkUy1YV3hlcWRwQW9mdC12RVZB?oc=5",
           "source": "Beinsure",
-          "publishedAt": "2026-08-26T13:17:54.000Z",
+          "publishedAt": "2026-08-26T13:15:43.000Z",
           "tags": [
             "Product & Launches",
             "AI & Automation"
@@ -20029,162 +20287,6 @@
       ]
     },
     {
-      "slug": "ikea",
-      "name": "IKEA",
-      "count": 9,
-      "firstSeen": "2026-08-05T04:22:32.000Z",
-      "lastSeen": "2026-08-17T12:07:10.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 4
-        },
-        {
-          "name": "Partnerships",
-          "count": 3
-        },
-        {
-          "name": "Embedded",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Yahoo Finance",
-        "Life Insurance International",
-        "Insurance Business",
-        "Insurance Business UK",
-        "FinTech Global",
-        "Insurtech Insights",
-        "Coverager",
-        "Retail Technology Innovation Hub"
-      ],
-      "related": [
-        {
-          "slug": "urban-jungle",
-          "name": "Urban Jungle",
-          "count": 4
-        },
-        {
-          "slug": "fca",
-          "name": "FCA",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Embedded insurance gains pace as IKEA enters UK home insurance market",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWVRqY1l0VzZ0eEFYWDFFdFVKTDZBQVdxSkNYemR2OWtuMkY4WWF0Umk5aWJDWVdEYkd5NnhCSW1LVzQ3Tl9oTVZtRERFZnlVcWVJYXpLTldSUWdVRDRXT1lpM3FQaHlYZktGMldiY2wzYnVYUzd2MjdLRldxc2N1OThBZnlucE1kQmZFUWN2TU92VFFFeVhoNlZTalFqMHoz?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-08-17T12:07:10.000Z",
-          "tags": [
-            "Embedded"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Embedded insurance gains pace as IKEA enters UK home insurance market",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNbGpXdUxyeWU3eVAyU05UNV96eWxpeWl4V2U4UnpubVBabjJUX3BVWGNlX2xCdWdac3NFUHF3ZERWMW1BT1lfdDhBRUJFMkx3VExBVnR2UzJ6Z04xVUJfM2R3SVVCR1lLOEJ4WVhXS0RUTlhyZ1FXOVNYMk1Vb1NyMzkzdEZLa3hoUnpvMUlFRUYwV0Y5aElPOXJETERIc0xkSjg0?oc=5",
-          "source": "Life Insurance International",
-          "publishedAt": "2026-08-17T11:37:02.000Z",
-          "tags": [
-            "Embedded"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "FCA backs Urban Jungle as insurtech expands into IKEA distribution",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMGxYVHF5R093OGxNQ1VBRGtxTTlPNEptb1hnTElTVlJjTmpxakgyN2ZWc2FPXzBlYVlpRkNPekRXTHdIRFc1R3lJb2dxTDFQLTctMTFDUkU1NjFQbzRZMU92U0g5ZU9YOFJwNE1JMHIxcG9xbmZZTHJLd1hnQnBXSThCUkVUOXFhVDBhSURQZC0tNWpUc2pOaWhvOE8wbDBDTkg5UXhOaDBibUhsZGRZaWV6Tk5ZOUxtTnYwZVZRWnVQT2RHOFViTDBCbU1waG8?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-10T09:11:40.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": [
-            "urban-jungle"
-          ]
-        },
-        {
-          "title": "FCA fast-tracks insurtech behind IKEA insurance push",
-          "link": "https://www.insurancebusinessmag.com/uk/news/technology/fca-fasttracks-insurtech-behind-ikea-insurance-push-585501.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-08-10T09:08:39.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "Urban Jungle's white-label deal puts a digital-first insurer inside one of the UK's busiest retail footfalls",
-          "co": []
-        },
-        {
-          "title": "FCA fast-tracks insurtech behind IKEA insurance push",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWVR3NnYwZGJ5akk3QWExWEdTVkcweWRYTnVQVExXaFpoQU51Z19mN0JXLWZsd1NEd1NqTkFlV1Y0RWxXbE96VnU1STQ0TjFFUS1vRkV4czEwd0ZXTUJVMUMtUnRNeUJUZUxKN20tVmVGVWVnQWp3Q2N6MEpnYXNaZVNIbzZMMk5RT3B3OU13STVzSlNhQnFnTFFhQ0tuV1pCX0xscHJZem9LWXJlU1lDeV8zejFfRmY5Z1BZ?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-10T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "fca"
-          ]
-        },
-        {
-          "title": "IKEA enters UK insurance market with Urban Jungle tie-up",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOaU0yT2FpdjNPUDFtNWdXZUdwaFV2R05rc2dwR0FnSmt2UHhfbFlBa1paN1RQYlJDUUE0VWZ0Mmg5ZEU2U3Zqb2hGMEp0WWFYYUxBd18wTVBpRGZsMnkzUjJaaUZxb0xOb3FibmktV3VCZDNXRGtnOU10dDFLSXFRNVh0dFlITTljbFJJcWlURFFwYVJhQXc?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-08-06T11:17:07.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "urban-jungle"
-          ]
-        },
-        {
-          "title": "IKEA launches home insurance in the UK through Urban Jungle partnership",
-          "link": "https://www.insurtechinsights.com/ikea-launches-home-insurance-in-the-uk-through-urban-jungle-partnership/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-05T13:19:31.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches"
-          ],
-          "summary": "IKEA has entered the UK insurance market through a partnership with London-based insurtech Urban Jungle, offering home insurance products to customers as the retailer expands its \"Life at Home\" services.",
-          "co": [
-            "urban-jungle"
-          ]
-        },
-        {
-          "title": "IKEA launches home insurance in the UK",
-          "link": "https://coverager.com/ikea-launches-home-insurance-in-the-uk/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-05T12:14:25.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The offering includes three coverages.",
-          "co": []
-        },
-        {
-          "title": "InsurTech specialist Urban Jungle partners with Ikea to launch home insurance service in the UK",
-          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNaVBCTGRET1I5eUVPSmhRYXFrRzlpYXljNS1FMmQ2ZlBBYXVaXzRRZ2xqc0tFQTY2NzJlSE81bnhTdUpmR0dtdm9yVmNrYUY0ZDVfemliMVNLUG1ra0RKS1BSSjMxNjhOd2pPYjNfS0h4VHdtZmVSRndYVDc0RVMtaXprenpYUnRUbnFQdEd3cl81cy1ObGdndTN2WmtlRmtxMWpBMW4wWTBHODJBNVdjU2o4Y0FWNDc5OWZZZkhUaF9QQlBNdmNvSGFXZ2Z1ZUdycUl4ZldfYVNOWDI4dkE?oc=5",
-          "source": "Retail Technology Innovation Hub",
-          "publishedAt": "2026-08-05T04:22:32.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": [
-            "urban-jungle"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "aig",
       "name": "AIG",
       "count": 8,
@@ -20341,6 +20443,162 @@
           "summary": "",
           "co": [
             "zurich"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ikea",
+      "name": "IKEA",
+      "count": 9,
+      "firstSeen": "2026-08-05T04:22:32.000Z",
+      "lastSeen": "2026-08-17T11:37:02.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 4
+        },
+        {
+          "name": "Partnerships",
+          "count": 3
+        },
+        {
+          "name": "Embedded",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Life Insurance International",
+        "Yahoo Finance",
+        "Insurance Business",
+        "Insurance Business UK",
+        "FinTech Global",
+        "Insurtech Insights",
+        "Coverager",
+        "Retail Technology Innovation Hub"
+      ],
+      "related": [
+        {
+          "slug": "urban-jungle",
+          "name": "Urban Jungle",
+          "count": 4
+        },
+        {
+          "slug": "fca",
+          "name": "FCA",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Embedded insurance gains pace as IKEA enters UK home insurance market",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNbGpXdUxyeWU3eVAyU05UNV96eWxpeWl4V2U4UnpubVBabjJUX3BVWGNlX2xCdWdac3NFUHF3ZERWMW1BT1lfdDhBRUJFMkx3VExBVnR2UzJ6Z04xVUJfM2R3SVVCR1lLOEJ4WVhXS0RUTlhyZ1FXOVNYMk1Vb1NyMzkzdEZLa3hoUnpvMUlFRUYwV0Y5aElPOXJETERIc0xkSjg0?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2026-08-17T11:37:02.000Z",
+          "tags": [
+            "Embedded"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Embedded insurance gains pace as IKEA enters UK home insurance market",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWVRqY1l0VzZ0eEFYWDFFdFVKTDZBQVdxSkNYemR2OWtuMkY4WWF0Umk5aWJDWVdEYkd5NnhCSW1LVzQ3Tl9oTVZtRERFZnlVcWVJYXpLTldSUWdVRDRXT1lpM3FQaHlYZktGMldiY2wzYnVYUzd2MjdLRldxc2N1OThBZnlucE1kQmZFUWN2TU92VFFFeVhoNlZTalFqMHoz?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-08-17T07:00:00.000Z",
+          "tags": [
+            "Embedded"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "FCA backs Urban Jungle as insurtech expands into IKEA distribution",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMGxYVHF5R093OGxNQ1VBRGtxTTlPNEptb1hnTElTVlJjTmpxakgyN2ZWc2FPXzBlYVlpRkNPekRXTHdIRFc1R3lJb2dxTDFQLTctMTFDUkU1NjFQbzRZMU92U0g5ZU9YOFJwNE1JMHIxcG9xbmZZTHJLd1hnQnBXSThCUkVUOXFhVDBhSURQZC0tNWpUc2pOaWhvOE8wbDBDTkg5UXhOaDBibUhsZGRZaWV6Tk5ZOUxtTnYwZVZRWnVQT2RHOFViTDBCbU1waG8?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-10T09:11:40.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "urban-jungle"
+          ]
+        },
+        {
+          "title": "FCA fast-tracks insurtech behind IKEA insurance push",
+          "link": "https://www.insurancebusinessmag.com/uk/news/technology/fca-fasttracks-insurtech-behind-ikea-insurance-push-585501.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-08-10T09:08:39.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Urban Jungle's white-label deal puts a digital-first insurer inside one of the UK's busiest retail footfalls",
+          "co": []
+        },
+        {
+          "title": "FCA fast-tracks insurtech behind IKEA insurance push",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWVR3NnYwZGJ5akk3QWExWEdTVkcweWRYTnVQVExXaFpoQU51Z19mN0JXLWZsd1NEd1NqTkFlV1Y0RWxXbE96VnU1STQ0TjFFUS1vRkV4czEwd0ZXTUJVMUMtUnRNeUJUZUxKN20tVmVGVWVnQWp3Q2N6MEpnYXNaZVNIbzZMMk5RT3B3OU13STVzSlNhQnFnTFFhQ0tuV1pCX0xscHJZem9LWXJlU1lDeV8zejFfRmY5Z1BZ?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-10T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "fca"
+          ]
+        },
+        {
+          "title": "IKEA enters UK insurance market with Urban Jungle tie-up",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOaU0yT2FpdjNPUDFtNWdXZUdwaFV2R05rc2dwR0FnSmt2UHhfbFlBa1paN1RQYlJDUUE0VWZ0Mmg5ZEU2U3Zqb2hGMEp0WWFYYUxBd18wTVBpRGZsMnkzUjJaaUZxb0xOb3FibmktV3VCZDNXRGtnOU10dDFLSXFRNVh0dFlITTljbFJJcWlURFFwYVJhQXc?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-08-06T11:17:07.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "urban-jungle"
+          ]
+        },
+        {
+          "title": "IKEA launches home insurance in the UK through Urban Jungle partnership",
+          "link": "https://www.insurtechinsights.com/ikea-launches-home-insurance-in-the-uk-through-urban-jungle-partnership/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-05T13:19:31.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "IKEA has entered the UK insurance market through a partnership with London-based insurtech Urban Jungle, offering home insurance products to customers as the retailer expands its \"Life at Home\" services.",
+          "co": [
+            "urban-jungle"
+          ]
+        },
+        {
+          "title": "IKEA launches home insurance in the UK",
+          "link": "https://coverager.com/ikea-launches-home-insurance-in-the-uk/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-05T12:14:25.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The offering includes three coverages.",
+          "co": []
+        },
+        {
+          "title": "InsurTech specialist Urban Jungle partners with Ikea to launch home insurance service in the UK",
+          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNaVBCTGRET1I5eUVPSmhRYXFrRzlpYXljNS1FMmQ2ZlBBYXVaXzRRZ2xqc0tFQTY2NzJlSE81bnhTdUpmR0dtdm9yVmNrYUY0ZDVfemliMVNLUG1ra0RKS1BSSjMxNjhOd2pPYjNfS0h4VHdtZmVSRndYVDc0RVMtaXprenpYUnRUbnFQdEd3cl81cy1ObGdndTN2WmtlRmtxMWpBMW4wWTBHODJBNVdjU2o4Y0FWNDc5OWZZZkhUaF9QQlBNdmNvSGFXZ2Z1ZUdycUl4ZldfYVNOWDI4dkE?oc=5",
+          "source": "Retail Technology Innovation Hub",
+          "publishedAt": "2026-08-05T04:22:32.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "urban-jungle"
           ]
         }
       ]
@@ -22937,17 +23195,17 @@
     {
       "slug": "xchange-tec",
       "name": "XChange TEC.INC",
-      "count": 2,
+      "count": 3,
       "firstSeen": "2026-08-13T07:00:00.000Z",
       "lastSeen": "2026-08-13T07:00:00.000Z",
       "topics": [
         {
           "name": "AI & Automation",
-          "count": 2
+          "count": 3
         },
         {
           "name": "M&A",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Claims & Underwriting",
@@ -22956,13 +23214,14 @@
       ],
       "sources": [
         "The Manila Times",
-        "Stock Titan"
+        "Stock Titan",
+        "Yahoo Finance"
       ],
       "related": [
         {
           "slug": "first-cycle",
           "name": "First Cycle",
-          "count": 1
+          "count": 2
         }
       ],
       "articles": [
@@ -22991,33 +23250,48 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "XChange TEC.INC Announces Intent to Acquire First Cycle, INC., Accelerating AI-Powered Insurance Transformation",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPUjZEV282S2ttQnVNS1NJU3JXZ2JUTnY4ZU5GTnpDZDdBUkdzblEydGVURG9sZ0ZINTUyb1Zwc0UzWUpTcnBIOWQ2MnI3bzNWZFNkNEdyU200YzdaejA4alZQNmVDTDBoQTREY1hzM3c5WVA5ZVdOM1lVMDJSNk9sQ0ZIVElZSkpBZXZSeHRsTDRXOFB2Nl9RZW9OcWg?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-08-13T07:00:00.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "first-cycle"
+          ]
         }
       ]
     },
     {
       "slug": "first-cycle",
       "name": "First Cycle",
-      "count": 1,
+      "count": 2,
       "firstSeen": "2026-08-13T07:00:00.000Z",
       "lastSeen": "2026-08-13T07:00:00.000Z",
       "topics": [
         {
           "name": "M&A",
-          "count": 1
+          "count": 2
         },
         {
           "name": "AI & Automation",
-          "count": 1
+          "count": 2
         }
       ],
       "sources": [
-        "The Manila Times"
+        "The Manila Times",
+        "Yahoo Finance"
       ],
       "related": [
         {
           "slug": "xchange-tec",
           "name": "XChange TEC.INC",
-          "count": 1
+          "count": 2
         }
       ],
       "articles": [
@@ -23025,6 +23299,20 @@
           "title": "XChange TEC.INC Announces Intent to Acquire First Cycle, INC., Accelerating AI-Powered Insurance Transformation",
           "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNY092N0drOElBcmJ6cWkyV0lmVVJjY2o1LXBiUGRUMlZQZGEyTmlYVjNFNWNFNkFGRFRFT0FNaFVtbVdyc2ExS0F4VGt3cndJbGI0N2ZITVY1bHdFWVhfcHdkRUlVQTdRR1IzMXloTTBlRFZyU2Rwb0s2LXZSY296elJWZzUzcTNSMU0yYzdzM1ltaHpsQW9EbFlRZHdJbm9veERxVzRtZm5NNXZFYjhYS2dfZTl5b2JHZDV2RG1STGNNampfX19NVExPb3F4QXk3UEJLb2VmMm5MRlc2blRTbHJJVzNXU2RTVEJndDZXdkRyZ1BrbkIxT1RYdVNIMl9OUXdjdE5iREk0UjDSAZACQVVfeXFMTVhkLWhvZW52SzJaOHJrUG5BdTlmdVRNVkhvYktvbHFkNnN0U05JLWEzYWF4SjBlaDNDUjV0YlpQRkZXaWM3Q1ZvWnc3LXl0OW03VUYzSTZKNV9vWERubWwtTVFBVTgwU09ZTjdlb3JFYVR3RUlhZWpOOF9Wb0MxeE52WlBMa05LRGhNRkx0LWgzY2w1ZXQzRGRWajBxOXVOVkk3N2RCV3h5OEFLcXZBb3VhT0lHU0ducW9jYzNZZjQ0eWF0QmJSLTBoaS1yekJaMXJjWkJoN1VtV29LQ2tQVk13U19raWpWc0NFTmVIaUhLWnlSR25Td01LU3Q5ZFdiSWxueGgtSW5NZVVYdzJnMWM?oc=5",
           "source": "The Manila Times",
+          "publishedAt": "2026-08-13T07:00:00.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "xchange-tec"
+          ]
+        },
+        {
+          "title": "XChange TEC.INC Announces Intent to Acquire First Cycle, INC., Accelerating AI-Powered Insurance Transformation",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPUjZEV282S2ttQnVNS1NJU3JXZ2JUTnY4ZU5GTnpDZDdBUkdzblEydGVURG9sZ0ZINTUyb1Zwc0UzWUpTcnBIOWQ2MnI3bzNWZFNkNEdyU200YzdaejA4alZQNmVDTDBoQTREY1hzM3c5WVA5ZVdOM1lVMDJSNk9sQ0ZIVElZSkpBZXZSeHRsTDRXOFB2Nl9RZW9OcWg?oc=5",
+          "source": "Yahoo Finance",
           "publishedAt": "2026-08-13T07:00:00.000Z",
           "tags": [
             "M&A",
