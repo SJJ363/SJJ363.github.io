@@ -1,7 +1,140 @@
 {
-  "updatedAt": "2026-09-02T19:02:52.260Z",
-  "count": 1690,
+  "updatedAt": "2026-09-02T23:01:18.443Z",
+  "count": 1692,
   "companies": [
+    {
+      "slug": "amwins",
+      "name": "Amwins",
+      "count": 3,
+      "firstSeen": "2026-08-24T14:53:11.000Z",
+      "lastSeen": "2026-09-02T19:30:26.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 3
+        },
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Journal",
+        "Insurtech Insights",
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "kkr",
+          "name": "KKR",
+          "count": 2
+        },
+        {
+          "slug": "steadfast",
+          "name": "Steadfast",
+          "count": 2
+        },
+        {
+          "slug": "dragoneer",
+          "name": "Dragoneer",
+          "count": 2
+        },
+        {
+          "slug": "joseph-chiarello-and",
+          "name": "Joseph Chiarello & Co.",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Amwins Acquires Firearms Insurance Specialist Joseph Chiarello & Co.",
+          "link": "https://www.insurancejournal.com/news/east/2026/09/02/883757.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-02T19:30:26.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Specialty insurance wholesale broker Amwins reports it has acquired Joseph Chiarello & Co., Inc., a managing general agent (MGA) specializing in commercial insurance for the firearms industry. Terms of the deal were not…",
+          "co": [
+            "joseph-chiarello-and"
+          ]
+        },
+        {
+          "title": "$5.5bn buyout: KKR-backed consortium to acquire Steadfast Group, with Amwins and Dragoneer",
+          "link": "https://www.insurtechinsights.com/5-5bn-buyout-kkr-backed-consortium-to-acquire-steadfast-group-with-amwins-and-dragoneer/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-24T15:34:09.000Z",
+          "tags": [
+            "Funding",
+            "M&A"
+          ],
+          "summary": "Australian insurance broker Steadfast Group has agreed to a $5.5bn buyout by a consortium backed by investment firm KKR.",
+          "co": [
+            "kkr",
+            "steadfast",
+            "dragoneer"
+          ]
+        },
+        {
+          "title": "KKR, Dragoneer, and Amwins to acquire Steadfast Group",
+          "link": "https://coverager.com/kkr-dragoneer-and-amwins-to-acquire-steadfast-group/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-24T14:53:11.000Z",
+          "tags": [
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "summary": "Amwins Group will acquire Steadfast’s underwriting agency business.",
+          "co": [
+            "kkr",
+            "dragoneer",
+            "steadfast"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "joseph-chiarello-and",
+      "name": "Joseph Chiarello & Co.",
+      "count": 1,
+      "firstSeen": "2026-09-02T19:30:26.000Z",
+      "lastSeen": "2026-09-02T19:30:26.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Journal"
+      ],
+      "related": [
+        {
+          "slug": "amwins",
+          "name": "Amwins",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Amwins Acquires Firearms Insurance Specialist Joseph Chiarello & Co.",
+          "link": "https://www.insurancejournal.com/news/east/2026/09/02/883757.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-02T19:30:26.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Specialty insurance wholesale broker Amwins reports it has acquired Joseph Chiarello & Co., Inc., a managing general agent (MGA) specializing in commercial insurance for the firearms industry. Terms of the deal were not…",
+          "co": [
+            "amwins"
+          ]
+        }
+      ]
+    },
     {
       "slug": "chariot-re",
       "name": "Chariot Re",
@@ -3675,7 +3808,7 @@
         }
       ],
       "sources": [
-        "The420.in",
+        "the420.in",
         "Moneycontrol.com",
         "The Economic Times",
         "The Indian Express",
@@ -3716,7 +3849,7 @@
         {
           "title": "IRDAI Proposes Digital Insurance Registry to Improve Underwriting and Transparency",
           "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5KRTc4ZS1qNmJMM0J2ZHA5MjF3LUdlb1hsU01PQ2hKZmJtRE9JNU9YZzhOM2NEMk50ZGs2T0JOVVpmamJ2bFlDTXh3cnNzN01GMkVaQzRNT3htVEctbGcyMGlyamRrOHBkS0JZ?oc=5",
-          "source": "The420.in",
+          "source": "the420.in",
           "publishedAt": "2026-09-02T10:20:53.000Z",
           "tags": [
             "Claims & Underwriting"
@@ -5121,7 +5254,7 @@
     {
       "slug": "lemonade",
       "name": "Lemonade",
-      "count": 28,
+      "count": 29,
       "firstSeen": "2025-03-06T08:00:00.000Z",
       "lastSeen": "2026-09-01T17:38:04.000Z",
       "topics": [
@@ -5131,11 +5264,11 @@
         },
         {
           "name": "AI & Automation",
-          "count": 7
+          "count": 8
         },
         {
           "name": "Product & Launches",
-          "count": 6
+          "count": 7
         },
         {
           "name": "Property & Cat",
@@ -5145,6 +5278,7 @@
       "sources": [
         "Coverager",
         "FinTech Global",
+        "FF News",
         "Insurance Journal",
         "Beinsure",
         "Reinsurance News",
@@ -5193,6 +5327,18 @@
           "publishedAt": "2026-08-27T14:49:24.000Z",
           "tags": [
             "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Lemonade Car Launches in Florida: AI-Driven Insurtech Hits Major U.S. Auto Market",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWFgxc2NYMTFyemJ4SmlOc1E2ODZudFV3cHlTXzdLMUViZUVGOEcyeWpyaFY3Znhmd216YlVmcFdIRnhyRkNCbWpJanFSaVNyN0ZLQ2JsaWdvY3l5ZzZCWVE3a0dwMU1CVFBHNUcxMkhUdWl3aUhTZDBFblp5WW5FdndldzNSaEF5ZEpyV25mVFhCNDhpOUdENzkwcHMwVUQwQW1rR3V0TUg?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-08-27T08:36:04.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
           ],
           "summary": "",
           "co": []
@@ -5907,7 +6053,7 @@
         }
       ],
       "sources": [
-        "citybiz.co",
+        "citybiz",
         "Pulse 2.0"
       ],
       "related": [
@@ -5921,7 +6067,7 @@
         {
           "title": "Great Hill Partners Invests in E&S Insurance MGA Aurenity",
           "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaXNHa3lXaEVjWVhiR0VVYnlfRlpTR1U1M0NaOVZuU19IZnpNaGthbzlhaFQ4enpDMXlxNHJrUHpUNTJYZmVLbzU2dFY5R1p6LUh6b2YtUHJUcERVRG1IdThWZTZCODFDY3RJNmQyT2FjQW1hdUJMb2h1clBCU2N0b1lTOEk1MlZ3WWcxSklaNEEzbE5JQmtrU3RiZw?oc=5",
-          "source": "citybiz.co",
+          "source": "citybiz",
           "publishedAt": "2026-09-01T16:25:38.000Z",
           "tags": [
             "Partnerships"
@@ -5968,7 +6114,7 @@
         }
       ],
       "sources": [
-        "citybiz.co",
+        "citybiz",
         "Pulse 2.0"
       ],
       "related": [
@@ -5982,7 +6128,7 @@
         {
           "title": "Great Hill Partners Invests in E&S Insurance MGA Aurenity",
           "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaXNHa3lXaEVjWVhiR0VVYnlfRlpTR1U1M0NaOVZuU19IZnpNaGthbzlhaFQ4enpDMXlxNHJrUHpUNTJYZmVLbzU2dFY5R1p6LUh6b2YtUHJUcERVRG1IdThWZTZCODFDY3RJNmQyT2FjQW1hdUJMb2h1clBCU2N0b1lTOEk1MlZ3WWcxSklaNEEzbE5JQmtrU3RiZw?oc=5",
-          "source": "citybiz.co",
+          "source": "citybiz",
           "publishedAt": "2026-09-01T16:25:38.000Z",
           "tags": [
             "Partnerships"
@@ -6193,6 +6339,70 @@
       ]
     },
     {
+      "slug": "foxquilt",
+      "name": "Foxquilt",
+      "count": 4,
+      "firstSeen": "2026-09-01T11:05:00.000Z",
+      "lastSeen": "2026-09-01T13:33:14.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 4
+        }
+      ],
+      "sources": [
+        "Insurance Journal",
+        "Yahoo Finance Singapore"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Markets/Coverages: Insurtech Foxquilt Launches E&O Product",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOd2c2LVhmU1NRVXlMTElMM3pCT2NDSnpTNHNGSXJWYXowM0dRc3FvWmo4ZTdScFhkVlhLMjdKNFFTTjd1SlNKd0ZBaFFFaUlRc09tdXJlVEVWUFp4TDh5MWp1bEQ4NGRZaDNLWU93eHRPdUhwZm42SG8taW5uVDdIejBxbw?oc=5",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-01T13:33:14.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Markets/Coverages: Insurtech Foxquilt Launches E&O Product",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBYQ0lSS0pLeGdEU3Q0TjR1blJZZHRmRXRMalBtZlRySDdLZWxfUHJqWXpPdEJZZW5Nbi04VnJVRU5iNnhHNTQ1ZWViT19INGFzb2Zac1NqX2oxaUIyWFhyN2xDTkZDNkpjbXNZY25RUUJGbUlXMzBF?oc=5",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-01T13:30:57.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Markets/Coverages: Insurtech Foxquilt Launches E&O Product",
+          "link": "https://www.insurancejournal.com/news/national/2026/09/01/883540.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-01T13:26:26.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Small business focused insurtech Foxquilt said it has launched an admitted errors & omissions product with a rollout to 10 states starting in September. E&O is Foxquilt’s second admitted product in the U.S. along with…",
+          "co": []
+        },
+        {
+          "title": "Foxquilt Expands U.S. Product Suite with Launch of Errors & Omissions (E&O) Insurance",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcW0wSEFhUTRQV1E4MlFUaEhqX1lhSE5hTVE3a29ZQWt0U2dUYmRuXzVaZnpIbzJIa1J6c2RzdjVqSDVGQ3lqWmRGWXFENmxjV2pBTFI5SFh0TUxOd2ZNNllpMVhoUGVvekREenFETHFpXzlLNDhocG5jRlFVeVZENFNUQTNIS3Vj?oc=5",
+          "source": "Yahoo Finance Singapore",
+          "publishedAt": "2026-09-01T11:05:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
       "slug": "igi",
       "name": "IGI",
       "count": 1,
@@ -6233,59 +6443,6 @@
             "Property & Cat"
           ],
           "summary": "International General Insurance Holdings Ltd. (IGI) has announced the launch of Bermuda-based Cipher Underwriting Ltd., a specialty treaty reinsurance managing general agent (MGA) that will provide dedicated cyber…",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "foxquilt",
-      "name": "Foxquilt",
-      "count": 3,
-      "firstSeen": "2026-09-01T11:05:00.000Z",
-      "lastSeen": "2026-09-01T13:30:57.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 3
-        }
-      ],
-      "sources": [
-        "Insurance Journal",
-        "Yahoo Finance Singapore"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Markets/Coverages: Insurtech Foxquilt Launches E&O Product",
-          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBYQ0lSS0pLeGdEU3Q0TjR1blJZZHRmRXRMalBtZlRySDdLZWxfUHJqWXpPdEJZZW5Nbi04VnJVRU5iNnhHNTQ1ZWViT19INGFzb2Zac1NqX2oxaUIyWFhyN2xDTkZDNkpjbXNZY25RUUJGbUlXMzBF?oc=5",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-09-01T13:30:57.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Markets/Coverages: Insurtech Foxquilt Launches E&O Product",
-          "link": "https://www.insurancejournal.com/news/national/2026/09/01/883540.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-09-01T13:26:26.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Small business focused insurtech Foxquilt said it has launched an admitted errors & omissions product with a rollout to 10 states starting in September. E&O is Foxquilt’s second admitted product in the U.S. along with…",
-          "co": []
-        },
-        {
-          "title": "Foxquilt Expands U.S. Product Suite with Launch of Errors & Omissions (E&O) Insurance",
-          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcW0wSEFhUTRQV1E4MlFUaEhqX1lhSE5hTVE3a29ZQWt0U2dUYmRuXzVaZnpIbzJIa1J6c2RzdjVqSDVGQ3lqWmRGWXFENmxjV2pBTFI5SFh0TUxOd2ZNNllpMVhoUGVvekREenFETHFpXzlLNDhocG5jRlFVeVZENFNUQTNIS3Vj?oc=5",
-          "source": "Yahoo Finance Singapore",
-          "publishedAt": "2026-09-01T11:05:00.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
           "co": []
         }
       ]
@@ -7846,7 +8003,7 @@
       "sources": [
         "Coverager",
         "EIN Presswire",
-        "einnews.com"
+        "EIN News"
       ],
       "related": [
         {
@@ -7885,7 +8042,7 @@
         {
           "title": "Insureon Partners with LIO to Expand Digital Access to Specialized Business Insurance Coverage",
           "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNWmdaUWtjcnJtamRKRWwwY1NUZEZXN010Wk9kZ1lpUXBSY28zS3hjRFpFVXhJSnVEUkJ2NUJCbmU0S3hIXzBEM3E2azU2NFp6aUZ6Nl9vWDE0cUIzbnh0TG1XcmpmZUJmQkdQZ3QxLWlPc0tyeEVxSWxWMUdOTUl5YjBocjlqYm9CbkIxQTNyeHgwWW9yMERxdXJKN2VhSkVJcVJILUZacmo5REVHTEhqX2lVRi04aTdOZEJZOFhHNzZ1YkU3SHZZUnlpaFhNVHY1a3c?oc=5",
-          "source": "einnews.com",
+          "source": "EIN News",
           "publishedAt": "2026-08-31T15:41:00.000Z",
           "tags": [
             "Partnerships"
@@ -7912,7 +8069,7 @@
       "sources": [
         "Coverager",
         "EIN Presswire",
-        "einnews.com"
+        "EIN News"
       ],
       "related": [
         {
@@ -7951,7 +8108,7 @@
         {
           "title": "Insureon Partners with LIO to Expand Digital Access to Specialized Business Insurance Coverage",
           "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNWmdaUWtjcnJtamRKRWwwY1NUZEZXN010Wk9kZ1lpUXBSY28zS3hjRFpFVXhJSnVEUkJ2NUJCbmU0S3hIXzBEM3E2azU2NFp6aUZ6Nl9vWDE0cUIzbnh0TG1XcmpmZUJmQkdQZ3QxLWlPc0tyeEVxSWxWMUdOTUl5YjBocjlqYm9CbkIxQTNyeHgwWW9yMERxdXJKN2VhSkVJcVJILUZacmo5REVHTEhqX2lVRi04aTdOZEJZOFhHNzZ1YkU3SHZZUnlpaFhNVHY1a3c?oc=5",
-          "source": "einnews.com",
+          "source": "EIN News",
           "publishedAt": "2026-08-31T15:41:00.000Z",
           "tags": [
             "Partnerships"
@@ -10045,9 +10202,10 @@
       ],
       "sources": [
         "Coverager",
-        "Digital Insurance",
+        "dig-in.com",
         "Insurance Journal",
         "Carrier Management",
+        "Digital Insurance",
         "Reinsurance News",
         "The Times of India",
         "The Hindu",
@@ -10078,7 +10236,7 @@
         {
           "title": "Can AI cut underwriting time? The Hartford says yes",
           "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPNThiVS1SWjRPWk9jd09uVTF1ZEdYbEJnb0psQ1JDQm55dF95bXlsb3BOcDd1YVRpN19DLWpEZDJyV3JzNzNvOHRMZ3dRdkRPY1hybnVxZ1N1STNia25MbU1kcE1YYkxqTTVDYk1xSG5JWWR2Mkg1bEh6RkZRcmdDZmtNRHg?oc=5",
-          "source": "Digital Insurance",
+          "source": "dig-in.com",
           "publishedAt": "2026-08-21T10:00:00.000Z",
           "tags": [
             "AI & Automation",
@@ -11285,7 +11443,7 @@
         }
       ],
       "sources": [
-        "citybiz.co",
+        "citybiz",
         "Reinsurance News"
       ],
       "related": [],
@@ -11293,7 +11451,7 @@
         {
           "title": "Noldor Names Beau Bessant EMEA Sales VP to Expand Insurer Relationships",
           "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPS2xWQ2h1VTBvdkZqVC1CUkhSZ2hlaDZnZXh4SDFpNm90SUJSV3d1Mk0xdDI3cUVxU3dtVG42ZUtJakdIb09zMGZFZ0VqQ0Njb1BtU0dJYzZTS25kRERxX29mMHV2a3I4SlNmVE5HNnRmMy1lZHlSa0Y1eFJ1Rklwckg5b01jcXlvTEhIUXlmQmZLRVhrTmZscmJPQmFoTGo4VlpkVXhuX1NBODhYdW5Z?oc=5",
-          "source": "citybiz.co",
+          "source": "citybiz",
           "publishedAt": "2026-08-27T16:03:15.000Z",
           "tags": [
             "Industry"
@@ -11996,7 +12154,7 @@
       ],
       "sources": [
         "Coverager",
-        "citybiz.co",
+        "citybiz",
         "Business Wire"
       ],
       "related": [],
@@ -12015,7 +12173,7 @@
         {
           "title": "Arbella Insurance Appoints Martina Conlon and Bob Bizak to Board",
           "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUmlJSkI1UVN1alFiY1R6NWwxZ2NwOXNxWHloZXozOEowSkhKd0tfaGE5WTZlcWRFcjJNZmxKSFRVMzcxaWlfYTBoYnZzVGtuajB0RnB1dHJlQmRubkNhd0RTSkY4akVnSlJtWEFDVTl6cVA3eVpWOGtKV3FFeFV6X1FLNm5CQ3d6YlpFTEdtQS1NWXY5djdQQk5XZmJhMWQwaHphM3Fn?oc=5",
-          "source": "citybiz.co",
+          "source": "citybiz",
           "publishedAt": "2026-08-25T20:52:37.000Z",
           "tags": [
             "Leadership"
@@ -16384,14 +16542,14 @@
       "lastSeen": "2026-08-25T15:57:07.000Z",
       "topics": [],
       "sources": [
-        "citybiz.co"
+        "citybiz"
       ],
       "related": [],
       "articles": [
         {
           "title": "Kinetic Insurance Names Matthew Crum VP of Product to Scale Workers’ Comp Technology",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNUUdIbjkzZl80WmtXWlo1YmdpTHZNWnVjUi1YR0dUQUNtbE5Sa0hUQWQycDhDZkdfWnBwZlN0dlUtM1czZkFyLXZ6QUNsVFZYSmFMTl82WU9SbFlmV0RHMEE2SUdQdjdEdWRtM2pJMm43ZUdoRmlHWkpDeHItMHlOakRSdWxINVkxcjJfaVpBcXNLaEZ4S3lhOUM4b0g0M05uVWczRVFBcnlQcGctZ2ZkcjUxUFVPUGtVOFlRZVJYUQ?oc=5",
-          "source": "citybiz.co",
+          "source": "citybiz",
           "publishedAt": "2026-08-25T15:57:07.000Z",
           "tags": [
             "Industry"
@@ -17597,6 +17755,36 @@
       ]
     },
     {
+      "slug": "veriscopic",
+      "name": "Veriscopic",
+      "count": 1,
+      "firstSeen": "2026-08-25T08:56:51.000Z",
+      "lastSeen": "2026-08-25T08:56:51.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "FF News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Veriscopic Launches Initiative to Measure 'Reconstruction Burden' in Insurance Decision-Making",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWi1lbi1BdlF2WUNvR1laUXVtZ1BVUHY4VFlWWXhfdjNwc2FUc1RNdU9aSTZEWUVUcmo3cEJsZ05seXJZRlZNOVhnTlpHeFNtcnU0VzBheWZtZTBFRlJZY29KcVhoOXJWWmpIZDlnVjNpd0o0bzVqdUk2aTNQQzQ1blVZelJxdXNIV2VzenV3cl9XQjNpRUdfQmZFc1Eya01vU3UxU2ZYNmF3UTFmd0hhb3FFMA?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-08-25T08:56:51.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
       "slug": "openroad-insurance",
       "name": "OpenRoad Insurance",
       "count": 2,
@@ -18284,82 +18472,6 @@
           "summary": "Steadfast Group, an Australian insurance broker, has announced that Amwins Group, Inc. and Dragoneer Investment Group, LLC (collectively, the Consortium) have confirmed that due diligence is in its final stages and that…",
           "co": [
             "amwins-global-risks",
-            "steadfast"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "amwins",
-      "name": "Amwins",
-      "count": 2,
-      "firstSeen": "2026-08-24T14:53:11.000Z",
-      "lastSeen": "2026-08-24T15:34:09.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 2
-        },
-        {
-          "name": "Funding",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurtech Insights",
-        "Coverager"
-      ],
-      "related": [
-        {
-          "slug": "kkr",
-          "name": "KKR",
-          "count": 2
-        },
-        {
-          "slug": "steadfast",
-          "name": "Steadfast",
-          "count": 2
-        },
-        {
-          "slug": "dragoneer",
-          "name": "Dragoneer",
-          "count": 2
-        }
-      ],
-      "articles": [
-        {
-          "title": "$5.5bn buyout: KKR-backed consortium to acquire Steadfast Group, with Amwins and Dragoneer",
-          "link": "https://www.insurtechinsights.com/5-5bn-buyout-kkr-backed-consortium-to-acquire-steadfast-group-with-amwins-and-dragoneer/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-24T15:34:09.000Z",
-          "tags": [
-            "Funding",
-            "M&A"
-          ],
-          "summary": "Australian insurance broker Steadfast Group has agreed to a $5.5bn buyout by a consortium backed by investment firm KKR.",
-          "co": [
-            "kkr",
-            "steadfast",
-            "dragoneer"
-          ]
-        },
-        {
-          "title": "KKR, Dragoneer, and Amwins to acquire Steadfast Group",
-          "link": "https://coverager.com/kkr-dragoneer-and-amwins-to-acquire-steadfast-group/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-24T14:53:11.000Z",
-          "tags": [
-            "M&A",
-            "Claims & Underwriting"
-          ],
-          "summary": "Amwins Group will acquire Steadfast’s underwriting agency business.",
-          "co": [
-            "kkr",
-            "dragoneer",
             "steadfast"
           ]
         }
