@@ -1,7 +1,1050 @@
 {
-  "updatedAt": "2026-09-11T13:01:06.495Z",
-  "count": 1799,
+  "updatedAt": "2026-09-11T18:50:34.928Z",
+  "count": 1800,
   "companies": [
+    {
+      "slug": "manulife",
+      "name": "Manulife",
+      "count": 9,
+      "firstSeen": "2024-11-13T08:00:00.000Z",
+      "lastSeen": "2026-09-11T15:28:16.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 3
+        },
+        {
+          "name": "Health & Life",
+          "count": 3
+        },
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Beinsure",
+        "Insurtech Insights",
+        "Digital Insurance",
+        "Passionate In Marketing",
+        "Insurance Asia",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "count": 2
+        },
+        {
+          "slug": "ant-health",
+          "name": "Ant Health",
+          "count": 1
+        },
+        {
+          "slug": "microsoft",
+          "name": "Microsoft",
+          "count": 1
+        },
+        {
+          "slug": "mahindra",
+          "name": "Mahindra",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Manulife launches travel insurance app in ChatGPT",
+          "link": "https://coverager.com/manulife-launches-travel-insurance-app-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-11T15:28:16.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The app supports single-trip coverage for one traveler who is a Canadian citizen or resident.",
+          "co": [
+            "chatgpt"
+          ]
+        },
+        {
+          "title": "Manulife Asia Insurance and Ant Health explore cross-border healthcare services",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxORHNRMUZubVFibjk0SXp2Y1pWRkg1U293b3FKbFdwVUVEcEkydENwNDJQaWJWRmhyaEdsdkxhMUg5eFZETVZzVUdLRXBYUGVJRzFoenl2cElmM0NKcFUxSGN1THBWQnRTSHBDN0tPWkM5SXJ2eE04WkdDanc3SEdla2Z6bFNKZzlYbjFfLVdPeFo?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-10T12:34:07.000Z",
+          "tags": [
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "ant-health"
+          ]
+        },
+        {
+          "title": "Manulife launches CoverMe travel insurance app inside ChatGPT",
+          "link": "https://www.insurtechinsights.com/manulife-launches-coverme-travel-insurance-app-inside-chatgpt/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-24T13:47:14.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Manulife has launched a ChatGPT app that allows Canadian travellers to receive personalised CoverMe travel insurance quotes.",
+          "co": [
+            "chatgpt"
+          ]
+        },
+        {
+          "title": "Why Manulife chose to expand its Microsoft AI partnership",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNOFEwS1lnSzBqVDlTXzQ1ZVR4cUc2eHRMSDBUV0tHcGxqMzhzclRLR19MMUt3Nm45bzlYSTg0a3NCcThMeGlRcmM2cnhkeDk1TTFwVnZYQnBnY2ROMS1ObG1TMVVFcTNzME40OVlCOHlocnFHa1BWLXNPUFFXS2pnbkRxWWV1RTJIRE8xeWVsY0ZYbDQ?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-08-11T10:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "microsoft"
+          ]
+        },
+        {
+          "title": "How Manulife hit its first ROI on AI investment",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQX1Q3RTdwelNYOTdxa285WDE0bXM1bE1MRlRIbEt1TFpVM2RYSU1rNlczLVYxdUpxOWhNVnViLWxScUhRSEhDZU1fS19CakZFaHh6X3FNaEhKdEdsRHY4cEp2S2J3bEgxM3BETVp4QURCNGhOSHl4amlCR1laRFVlag?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-06-22T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Mahindra and Manulife Insurance JV Moves Ahead; Gets Approval from Corporate Affairs Ministry",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQWHNUZkhNTGpmaV9UbEF3OVJlWHl0NkNqQU1aT0ZoQmRiWVhpSVFaVnExWUlHdjN6c0JsRFpvekxQX0ZZN2o3clNnWGsyNGFsUkItNk1ZWnB1bklXTVVrbmxWNXJKcDBISVhNVTZndC00RG5wblZwNDluTFFZa1RmTzJQTl9kM1libG5aS0dacDFPV2ZpLUNlX1pzTU10eWZ2N3REdmhLc2hnbW83YUpSRnhXUmRrUEVWNk5XR0hWRDUwRS1YT05WYjZXQQ?oc=5",
+          "source": "Passionate In Marketing",
+          "publishedAt": "2026-06-01T07:00:00.000Z",
+          "tags": [
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "mahindra"
+          ]
+        },
+        {
+          "title": "Manulife dares startups to tackle Asia’s age imbalance",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNaVdNTFNraHZlUU9EZTFLVVFkQThBZzdVWFlOaDRUQlJWMEM0eExHWVpWTmlPMDlQSWtwNTBua1FnVXdCS2pUTEhYbWYzY053MkgzZ1FPV0xxN2wwVkRsNWFHWjdzWEJMSGRkRHdybGk4aHRPYk1VaDAxZ1REN3lGR01fRWRudmM3RmFNNjhkdw?oc=5",
+          "source": "Insurance Asia",
+          "publishedAt": "2025-04-30T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Manulife goes 100% Gen AI",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBaOFRENmt6SDdHZzRPSTRhLUdrZFo2cnVrTzBrV0htcGhwUng3V0tFQmRMc0pnajkzNVhZZXJCZnIwVjZ3bm5iMVdkUjNWdXFKTWpRWVRzWVUxWnBad3p6aDhn?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2025-03-07T08:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Manulife Canada unveils new life insurance products",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNbkFjd2hzbTB5LXVNQ3gwbFNaajNJNzJ3cnVsZ3daSTU2dzhNSlRpOVl3MGE2azlCWWxHeWg0NUllUFVaalhaMlJvNmVhWFEzOThmdVY4VEt1R2MtU0hmYXQyRm5IcDIyWHhYMHhvTVFxclZLQy0tU2Vrd2prdzdQOXp2cXhONmpQYVlSR0hKdmlYbm91QnJNNzdDN2hGMXJSZ0wwaHZsV2d0ZXd3NENXTWU3WVVZN2VKOXNmblZNdw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2024-11-13T08:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "chatgpt",
+      "name": "ChatGPT",
+      "count": 12,
+      "firstSeen": "2026-07-27T18:54:32.000Z",
+      "lastSeen": "2026-09-11T15:28:16.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 7
+        },
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Property & Cat",
+          "count": 3
+        },
+        {
+          "name": "Regulation",
+          "count": 2
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurance Business",
+        "Insurtech Insights",
+        "Insurance Business UK",
+        "Insurance Journal"
+      ],
+      "related": [
+        {
+          "slug": "manulife",
+          "name": "Manulife",
+          "count": 2
+        },
+        {
+          "slug": "plymouth-rock-assurance",
+          "name": "Plymouth Rock Assurance",
+          "count": 2
+        },
+        {
+          "slug": "was-travel-insurance",
+          "name": "WAS Travel Insurance",
+          "count": 1
+        },
+        {
+          "slug": "europea-seguros",
+          "name": "Europea Seguros",
+          "count": 1
+        },
+        {
+          "slug": "freeway",
+          "name": "Freeway",
+          "count": 1
+        },
+        {
+          "slug": "openai",
+          "name": "OpenAI",
+          "count": 1
+        },
+        {
+          "slug": "brokly",
+          "name": "Brokly",
+          "count": 1
+        },
+        {
+          "slug": "fletch",
+          "name": "Fletch",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Manulife launches travel insurance app in ChatGPT",
+          "link": "https://coverager.com/manulife-launches-travel-insurance-app-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-11T15:28:16.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The app supports single-trip coverage for one traveler who is a Canadian citizen or resident.",
+          "co": [
+            "manulife"
+          ]
+        },
+        {
+          "title": "WAS Travel Insurance comes to ChatGPT",
+          "link": "https://coverager.com/was-travel-insurance-comes-to-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-09T13:01:47.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "WAS Travel Insurance is operated by Australia-based Wiseandsilent Pty Ltd.",
+          "co": [
+            "was-travel-insurance"
+          ]
+        },
+        {
+          "title": "Europea Seguros launches ChatGPT plugin",
+          "link": "https://coverager.com/europea-seguros-launches-chatgpt-plugin/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-07T17:37:24.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Europea Seguros is a funeral insurance provider.",
+          "co": [
+            "europea-seguros"
+          ]
+        },
+        {
+          "title": "Insurers race into ChatGPT while agent rules stay silent",
+          "link": "https://www.insurancebusinessmag.com/us/news/cyber/insurers-race-into-chatgpt-while-agent-rules-stay-silent-587828.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-28T07:51:47.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "A third of insurance customers using AI to research coverage are already choosing TP tools over their insurer's own. Liberty Mutual is now writing new business inside ChatGPT. The commission question - who gets paid…",
+          "co": []
+        },
+        {
+          "title": "Manulife launches CoverMe travel insurance app inside ChatGPT",
+          "link": "https://www.insurtechinsights.com/manulife-launches-coverme-travel-insurance-app-inside-chatgpt/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-24T13:47:14.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Manulife has launched a ChatGPT app that allows Canadian travellers to receive personalised CoverMe travel insurance quotes.",
+          "co": [
+            "manulife"
+          ]
+        },
+        {
+          "title": "InsurConnect comes to ChatGPT",
+          "link": "https://coverager.com/insurconnect-comes-to-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-21T17:11:10.000Z",
+          "tags": [
+            "Property & Cat",
+            "Regulation"
+          ],
+          "summary": "The app allows consumers to search for licensed property and casualty insurance agents.",
+          "co": []
+        },
+        {
+          "title": "Freeway launches auto insurance quoting in ChatGPT",
+          "link": "https://coverager.com/freeway-launches-auto-insurance-quoting-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-10T14:20:02.000Z",
+          "tags": [
+            "Product & Launches",
+            "Auto & Mobility"
+          ],
+          "summary": "Freeway joins a growing list of insurance companies and distributors building inside ChatGPT.",
+          "co": [
+            "freeway",
+            "openai"
+          ]
+        },
+        {
+          "title": "Your client’s staff are pasting data into ChatGPT. Their cyber insurer wants to know about it",
+          "link": "https://www.insurancebusinessmag.com/uk/news/cyber/your-clients-staff-are-pasting-data-into-chatgpt--their-cyber-insurer-wants-to-know-about-it-585510.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-08-10T09:49:34.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber"
+          ],
+          "summary": "There's no standard question yet for \"how is your business using AI?\" But insurers are starting to ask anyway",
+          "co": []
+        },
+        {
+          "title": "Plymouth Rock Launches ChatGPT for Home Insurance Quotes",
+          "link": "https://www.insurancejournal.com/news/east/2026/08/03/879945.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-03T12:31:27.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "Homeowners can now obtain insurance quotes from Plymouth Rock Home Assurance through a “natural” conversation with ChatGPT, the artificial intelligence chatbot created by OpenAI. The insurer claims it creates a “faster…",
+          "co": [
+            "plymouth-rock-assurance"
+          ]
+        },
+        {
+          "title": "Brokly launches commercial insurance app in ChatGPT",
+          "link": "https://coverager.com/brokly-launches-commercial-insurance-app-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-02T17:28:43.000Z",
+          "tags": [
+            "Product & Launches",
+            "Regulation"
+          ],
+          "summary": "Brokly is a licensed commercial insurance brokerage.",
+          "co": [
+            "brokly"
+          ]
+        },
+        {
+          "title": "Plymouth Rock brings home insurance quoting to ChatGPT",
+          "link": "https://coverager.com/plymouth-rock-assurance-brings-home-insurance-quoting-to-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-30T12:44:31.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "The new plugin enables homeowners to receive a home insurance quote within ChatGPT.",
+          "co": [
+            "plymouth-rock-assurance"
+          ]
+        },
+        {
+          "title": "Fletch launches pet insurance comparison app in ChatGPT",
+          "link": "https://coverager.com/fletch-launches-pet-insurance-comparison-app-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-27T18:54:32.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The app may access a summary of the user’s recent ChatGPT context and intent to respond to requests.",
+          "co": [
+            "fletch"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "admiral",
+      "name": "Admiral",
+      "count": 5,
+      "firstSeen": "2026-02-13T08:00:00.000Z",
+      "lastSeen": "2026-09-11T15:12:56.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurtech Insights",
+        "taxi-point.co.uk",
+        "Non-Billable",
+        "businesscloud.co.uk",
+        "Life Insurance International"
+      ],
+      "related": [
+        {
+          "slug": "insurd",
+          "name": "insurd",
+          "count": 1
+        },
+        {
+          "slug": "flock",
+          "name": "Flock",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Admiral Insurance Group relaunches AdmiralPro Excess",
+          "link": "https://www.insurtechinsights.com/admiral-insurance-group-relaunches-admiralpro-excess/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-11T15:12:56.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Admiral Insurance Group, a Berkley Company providing wholesale-dedicated excess and surplus (E&S) lines commercial insurance, has announced the relaunch of AdmiralPro Excess, its Excess Professional Liability product…",
+          "co": []
+        },
+        {
+          "title": "Digital insurance broker insurd joins select group supporting Admiral’s first move into taxi and PHV cover",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPLUFIX1dFNldNLU1ldlgxSTFDczJjd0xCcmZ1Szlra29JSUItVGVPX0pEaUlSRjhPSjhQdVhOMmtDVElDaGlxT0pWWW1IbVBGQlN6TzlYV1hneE5uTFhFTU0tZFNNeXpCcGJ5MlVmQUlZRGVCdE50LTcyM01qa0RDMXVhbVUxTDUzV01HYVpMcTVPaUl6Y0hsNjFtRUxxUXNUdnhyQWhXcEJ4ZWlERTFIRTh6bzFfRC1id19ieGNwbXk3Q3JKUkZQSzBoVUtrWkk?oc=5",
+          "source": "taxi-point.co.uk",
+          "publishedAt": "2026-04-10T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "insurd"
+          ]
+        },
+        {
+          "title": "CC, Osborne Clarke lead on FTSE 100 Admiral's £80m insurtech buy",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcGJfaUV4UmhMX2diZXd1UVNRQ0FVeWwtT3lFUGVqMzBUTmE5Vk90VEF6VzJqSkpkc1pZenBGckJjUWUzWlQ2elBJZktYVWtmWk40TTY1YnowVEt0N1VNbmxYWi16VmtrWDJvV0Z0NVU1ZE9yWkljOG5pMm9hd0prOVVsWmplQQ?oc=5",
+          "source": "Non-Billable",
+          "publishedAt": "2026-02-17T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Admiral Group drives away with InsurTech in £80m deal",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUzZWTk43MkpOV1JCRmdBeXItM1pVTXl2X09WU082SURoel91VncwSWlDVWJNWFZNTTFDZUpxRlpkVzlfTnVabzhtODNTY052M19zd3VjOXlSLVVDdG95YW5pMGtheEVMVUdhcVJCWkZuRFF0dFFrbzlsVHR5Q1J0YnluM2t5b3hYT3ktOFRyQQ?oc=5",
+          "source": "businesscloud.co.uk",
+          "publishedAt": "2026-02-13T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Admiral Group to buy Flock in £80m fleet insurance deal",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBOV2lyOUxRTm1KN2RHbV9zSmYxci1aU3JKU3l2UHNIMWhJcFZKR0pHZUREZ1E4d0xid3p6elA4OXl1aklObkw4c3RZUGd3dGdsbVJBWFRIRUZnNUxSeFUyM3UzVHdKek5TN3JvcDhvdGlYTUIxQ183Qm5oSXc?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2026-02-13T08:00:00.000Z",
+          "tags": [
+            "M&A",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": [
+            "flock"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "acrisure",
+      "name": "Acrisure",
+      "count": 8,
+      "firstSeen": "2025-05-21T07:00:00.000Z",
+      "lastSeen": "2026-09-11T15:00:54.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        },
+        {
+          "name": "M&A",
+          "count": 2
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News",
+        "FinTech Global",
+        "Coverager",
+        "Insurance Business",
+        "Beinsure"
+      ],
+      "related": [
+        {
+          "slug": "palantir",
+          "name": "Palantir",
+          "count": 2
+        },
+        {
+          "slug": "efficient-insurance-solutions",
+          "name": "Efficient Insurance Solutions",
+          "count": 2
+        },
+        {
+          "slug": "eset",
+          "name": "ESET",
+          "count": 1
+        },
+        {
+          "slug": "hdi-global",
+          "name": "HDI Global",
+          "count": 1
+        },
+        {
+          "slug": "aegis-london",
+          "name": "AEGIS London",
+          "count": 1
+        },
+        {
+          "slug": "waggel",
+          "name": "Waggel",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Acrisure unveils Palantir-powered AI platform for insurance operations",
+          "link": "https://www.reinsurancene.ws/acrisure-unveils-palantir-powered-ai-platform-for-insurance-operations/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-11T15:00:54.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "Acrisure, a global financial technology and insurance company, has unveiled Auris AI, its applied AI platform designed to connect data, workflows, and AI-assisted decision-making across its portfolio of services. Built…",
+          "co": [
+            "palantir"
+          ]
+        },
+        {
+          "title": "Acrisure bets on Palantir to reshape insurance workflows",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY0Z3R2NFYmxXRDV3U2RYVkZHai1LeVhaSUVPUHBxaTVSRW4wN0piclU5Wk5OVzdEX0FBdXkyZkhjV1NUVHpCRG9NbDJHYk4xbmN2T01mbDZUdGdSMjdKdWNVd3NHVjF6c3VmdU9vRjBrdGZmNlZOUTBrdVlqYzBRUmJWZUNtU0VNZzRTUEdRRVZDR0NjUGc?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-09-11T10:41:01.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "palantir"
+          ]
+        },
+        {
+          "title": "Acrisure introduces Auris AI",
+          "link": "https://coverager.com/acrisure-introduces-auris-ai/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-10T14:41:04.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "Auris AI is designed to organize operational data, business logic, and workflows.",
+          "co": []
+        },
+        {
+          "title": "Acrisure UK partners with ESET",
+          "link": "https://coverager.com/acrisure-uk-partners-with-eset/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-09T10:42:45.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "ESET’s platform provides threat prevention, detection and response capabilities.",
+          "co": [
+            "eset"
+          ]
+        },
+        {
+          "title": "Insurance moves: HDI Global, Acrisure London, AEGIS London, Waggel",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOa3I3eHVKcWVOXzdlejhPTDJWSGoyWUplNEZZNXliTmRTMEJtX09vZ3ljX09scWhIcWhYZHd6X0kxMDlvclJNckZ1Um9VMFJFWVgycmpGVTNQNTZFOFJmSzE0QkFsdlU1UkF6cFRIaWV4blNIbXg0VUMxREhoM3hVT183YTg1MWZkcjRnUG81dVo5N0JOa1NfT0hQV0dWTXpDR0ZTQ1I3TnhUZVJwQU9IUlJsYy1PQ0lKeW1wd2szX3NEUzVMR25lZjVYdDJ0dw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2026-03-02T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "hdi-global",
+            "aegis-london",
+            "waggel"
+          ]
+        },
+        {
+          "title": "Insurtech Acrisure to buy MGA Efficient Insurance Solutions, expand EIS",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1jclhMcFg5YVQ0UmowY01JbXV0aTgwODZZT2RwSTZZWnBfZXdQVVY3SDJURU43XzBDS0VsU0gyZU9ZNWwwZndpS0NvM0hVNnV1cGkzMWFoR2szWE5jMExHcVJmbnl4ekw3VzJwOA?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-01-09T08:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "efficient-insurance-solutions"
+          ]
+        },
+        {
+          "title": "Acrisure to acquire Poland-based Efficient Insurance Solutions",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQRHI3S2FRYVdTZFAyVTRVUHNWRjdWZTBGX2F4blNSRmNpM0RDUjdSajlabkI5dXMwcWZpaE03eFF4ZVdXUDBlVDBVZnpLSDBkMVQ4RHJ6ZVBZbklfUVgtNEV3dGdHNGNDejdTNzJJLTl5VC1PYkNmaWVhWW9IbExsNUgxejJKZWp2ak9ya01n?oc=5",
+          "source": "Coverager",
+          "publishedAt": "2025-12-25T08:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "efficient-insurance-solutions"
+          ]
+        },
+        {
+          "title": "FinTech giant Acrisure secures $2.1bn funding led by Bain Capital",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWTBLb2F6Wi1vNEI5OWFlN0xDX29sWnpSY01qLUVsUG9tOUhUWHhGNGg3RXJGSTBkUUV0T3pvNEVQZExrTlFyb2pEYVp4NHJjOURlb3RkMmZtQzNjZ3JVc3F6WEw2U29JcV8teFlkRTdQV1lvOWZIX3RrUnVNcFJrWU81cExyV2pQbDZtOWZDcHhRYXcyNHdiZXMtdUhhaUt3?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-05-21T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "palantir",
+      "name": "Palantir",
+      "count": 3,
+      "firstSeen": "2026-09-02T13:43:06.000Z",
+      "lastSeen": "2026-09-11T15:00:54.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News",
+        "FinTech Global",
+        "Insurtech Insights"
+      ],
+      "related": [
+        {
+          "slug": "acrisure",
+          "name": "Acrisure",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "Acrisure unveils Palantir-powered AI platform for insurance operations",
+          "link": "https://www.reinsurancene.ws/acrisure-unveils-palantir-powered-ai-platform-for-insurance-operations/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-11T15:00:54.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "Acrisure, a global financial technology and insurance company, has unveiled Auris AI, its applied AI platform designed to connect data, workflows, and AI-assisted decision-making across its portfolio of services. Built…",
+          "co": [
+            "acrisure"
+          ]
+        },
+        {
+          "title": "Acrisure bets on Palantir to reshape insurance workflows",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY0Z3R2NFYmxXRDV3U2RYVkZHai1LeVhaSUVPUHBxaTVSRW4wN0piclU5Wk5OVzdEX0FBdXkyZkhjV1NUVHpCRG9NbDJHYk4xbmN2T01mbDZUdGdSMjdKdWNVd3NHVjF6c3VmdU9vRjBrdGZmNlZOUTBrdVlqYzBRUmJWZUNtU0VNZzRTUEdRRVZDR0NjUGc?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-09-11T10:41:01.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "acrisure"
+          ]
+        },
+        {
+          "title": "Peter Zaffino to join Palantir as global head of financial services",
+          "link": "https://www.insurtechinsights.com/peter-zaffino-to-join-palantir-as-global-head-of-financial-services/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-02T13:43:06.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Palantir Technologies has announced that Peter Zaffino will join the company as global head of financial services, effective 15 January 2027.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "rokstone-agriculture",
+      "name": "Rokstone Agriculture",
+      "count": 1,
+      "firstSeen": "2026-09-11T14:00:17.000Z",
+      "lastSeen": "2026-09-11T14:00:17.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Rokstone Agriculture reaches $125m premium income since launch",
+          "link": "https://www.reinsurancene.ws/rokstone-agriculture-reaches-125m-premium-income-since-launch/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-11T14:00:17.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Rokstone Agriculture, a specialist agriculture and livestock MGU, part of the international speciality re/insurance MGA Rokstone, has reached USD 125 million in premium income since its launch, including USD 34 million…",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "howden",
+      "name": "Howden",
+      "count": 9,
+      "firstSeen": "2025-07-18T07:00:00.000Z",
+      "lastSeen": "2026-09-11T13:59:41.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 7
+        },
+        {
+          "name": "Property & Cat",
+          "count": 3
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurtech Insights",
+        "Coverager",
+        "Beinsure",
+        "Artemis",
+        "Reinsurance News",
+        "Insurance Journal",
+        "InsuranceAsia News",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "novark",
+          "name": "Novark",
+          "count": 4
+        },
+        {
+          "slug": "synthetik",
+          "name": "Synthetik",
+          "count": 1
+        },
+        {
+          "slug": "bhsi",
+          "name": "BHSI",
+          "count": 1
+        },
+        {
+          "slug": "lockton",
+          "name": "Lockton",
+          "count": 1
+        },
+        {
+          "slug": "starr",
+          "name": "Starr",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Howden Re introduces Novark to expand institutional access to insurance risk",
+          "link": "https://www.insurtechinsights.com/howden-re-introduces-novark-to-expand-institutional-access-to-insurance-risk/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-11T13:59:41.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Howden Re has launched Novark, a new platform combining insurance management and securities administration with technology designed to improve how institutional investors access and monitor insurance risk.",
+          "co": [
+            "novark"
+          ]
+        },
+        {
+          "title": "Howden Re launches Novark",
+          "link": "https://coverager.com/howden-re-launches-novark/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-11T10:29:03.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The platform helps investors track their investments and insurers manage third-party capital.",
+          "co": [
+            "novark"
+          ]
+        },
+        {
+          "title": "Howden Re launches Novark platform for insurance-linked capital",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNT3NPdEpBVHRCWEg5X1dyMHhNZFlQbzVlWGpOVHptUHVYTFBiRzlqZktDUmx6eTFpQjloQVNOT1Ytd080ekxhb0t4R2VEay1mQW0zeVQ0SHN2bHFuWm1mSXFUMjlXU0c5c0dsWl9taXZMY3NDZVlmOGNkVVFZVUpXd2dmQXNES01wU0tSQjNRbUZjTnI5?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-10T10:59:10.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "novark"
+          ]
+        },
+        {
+          "title": "Howden Re launches Novark, to modernise ILS infrastructure, insurance management, securities admin",
+          "link": "https://www.artemis.bm/news/howden-re-launches-novark-to-modernise-ils-infrastructure-insurance-management-securities-admin/?utm_source=rss&utm_medium=rss&utm_campaign=howden-re-launches-novark-to-modernise-ils-infrastructure-insurance-management-securities-admin",
+          "source": "Artemis",
+          "publishedAt": "2026-09-07T05:00:38.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "novark"
+          ]
+        },
+        {
+          "title": "Howden Re launches new unit with parametric reinsurance and capital market ILS focus",
+          "link": "https://www.artemis.bm/news/howden-re-launches-new-unit-parametric-reinsurance-and-capital-market-ils-focus/?utm_source=rss&utm_medium=rss&utm_campaign=howden-re-launches-new-unit-parametric-reinsurance-and-capital-market-ils-focus",
+          "source": "Artemis",
+          "publishedAt": "2026-09-06T05:00:37.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Howden Re and Synthetik launch dedicated SRCC analytics capability, UNREST",
+          "link": "https://www.reinsurancene.ws/howden-re-and-synthetik-launch-dedicated-srcc-analytics-capability-unrest/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-04T12:30:18.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "Howden Re, the reinsurance, capital markets and strategic advisory business of Howden Group, and Synthetik Insurance Technologies, a leader in modelling political violence and terrorism perils, have launched UNREST, an…",
+          "co": [
+            "synthetik"
+          ]
+        },
+        {
+          "title": "Tech Update: Howden Re Offers Property-Level Modeling for SRCC Risks",
+          "link": "https://www.insurancejournal.com/news/international/2026/09/02/883720.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-02T16:24:13.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "Howden Re, the reinsurance arm of insurance broker Howden, is partnering with the modeling company Synthetik Insurance Technologies, to launch an analytical tool designed to help insurers and reinsurers better…",
+          "co": []
+        },
+        {
+          "title": "BHSI, Howden, Lockton, Starr, Marsh: 16 APAC insurance people moves of the week",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOW4ySnJoYjd4UkR6dlUwdUd1STM0aVdkMWlKYy1QcTZNc0NvTlFtNjNnMlE0YW1hNlRZd2J3QlozaURyZUVVN2p0VnZVaFhFcVU5VTlHT0JEaXo1eENwTGFtZE11M1BERzZnRzBvajhRSW1TMzhLUDRJUFM0bjJtMXN2M1dxcXRqamdWeGhhV1k5VjJTYWNzeU1iZTdLOFhiSWl2RTVmVlk?oc=5",
+          "source": "InsuranceAsia News",
+          "publishedAt": "2026-03-06T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "bhsi",
+            "lockton",
+            "starr"
+          ]
+        },
+        {
+          "title": "Howden to assess insurance cover for carbon credits in aviation offset scheme",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPZ3ltTWlWQktmN044RU9SZnZjWWlDYmF3bm1yWXA1VXB3cEpyWHZaN0J1WThXM1hXMlEyVnl4VWJ2LUpsZ2QwWU9jME9JZVQxaWpKY1JFdnFTTm93enVFSWxFa0tWRzFvSm1OdGlWZDZfbDYyUnRKeW9iaGx4NVgtOHlKRVFkVENWcEdKbnljNzdYWkExRUYzNjV4S1dzYV9nVDVwd1Q1YVZncWVHeVlpMndRYjhUSUtyVmdwVHdDUVJwdllhMjBzYXl0UEhFOU5zRjR6X1pnOXBwd2IyZDRzUWln?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-07-18T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "novark",
+      "name": "Novark",
+      "count": 4,
+      "firstSeen": "2026-09-07T05:00:38.000Z",
+      "lastSeen": "2026-09-11T13:59:41.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 4
+        }
+      ],
+      "sources": [
+        "Insurtech Insights",
+        "Coverager",
+        "Beinsure",
+        "Artemis"
+      ],
+      "related": [
+        {
+          "slug": "howden",
+          "name": "Howden",
+          "count": 4
+        }
+      ],
+      "articles": [
+        {
+          "title": "Howden Re introduces Novark to expand institutional access to insurance risk",
+          "link": "https://www.insurtechinsights.com/howden-re-introduces-novark-to-expand-institutional-access-to-insurance-risk/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-11T13:59:41.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Howden Re has launched Novark, a new platform combining insurance management and securities administration with technology designed to improve how institutional investors access and monitor insurance risk.",
+          "co": [
+            "howden-re"
+          ]
+        },
+        {
+          "title": "Howden Re launches Novark",
+          "link": "https://coverager.com/howden-re-launches-novark/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-11T10:29:03.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The platform helps investors track their investments and insurers manage third-party capital.",
+          "co": [
+            "howden"
+          ]
+        },
+        {
+          "title": "Howden Re launches Novark platform for insurance-linked capital",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNT3NPdEpBVHRCWEg5X1dyMHhNZFlQbzVlWGpOVHptUHVYTFBiRzlqZktDUmx6eTFpQjloQVNOT1Ytd080ekxhb0t4R2VEay1mQW0zeVQ0SHN2bHFuWm1mSXFUMjlXU0c5c0dsWl9taXZMY3NDZVlmOGNkVVFZVUpXd2dmQXNES01wU0tSQjNRbUZjTnI5?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-10T10:59:10.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "howden"
+          ]
+        },
+        {
+          "title": "Howden Re launches Novark, to modernise ILS infrastructure, insurance management, securities admin",
+          "link": "https://www.artemis.bm/news/howden-re-launches-novark-to-modernise-ils-infrastructure-insurance-management-securities-admin/?utm_source=rss&utm_medium=rss&utm_campaign=howden-re-launches-novark-to-modernise-ils-infrastructure-insurance-management-securities-admin",
+          "source": "Artemis",
+          "publishedAt": "2026-09-07T05:00:38.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "howden-re"
+          ]
+        }
+      ]
+    },
     {
       "slug": "gallagher",
       "name": "Gallagher",
@@ -805,235 +1848,6 @@
       ]
     },
     {
-      "slug": "howden",
-      "name": "Howden",
-      "count": 8,
-      "firstSeen": "2025-07-18T07:00:00.000Z",
-      "lastSeen": "2026-09-11T10:29:03.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 6
-        },
-        {
-          "name": "Property & Cat",
-          "count": 3
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Beinsure",
-        "Artemis",
-        "Reinsurance News",
-        "Insurance Journal",
-        "InsuranceAsia News",
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "novark",
-          "name": "Novark",
-          "count": 3
-        },
-        {
-          "slug": "synthetik",
-          "name": "Synthetik",
-          "count": 1
-        },
-        {
-          "slug": "bhsi",
-          "name": "BHSI",
-          "count": 1
-        },
-        {
-          "slug": "lockton",
-          "name": "Lockton",
-          "count": 1
-        },
-        {
-          "slug": "starr",
-          "name": "Starr",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Howden Re launches Novark",
-          "link": "https://coverager.com/howden-re-launches-novark/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-11T10:29:03.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The platform helps investors track their investments and insurers manage third-party capital.",
-          "co": [
-            "novark"
-          ]
-        },
-        {
-          "title": "Howden Re launches Novark platform for insurance-linked capital",
-          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNT3NPdEpBVHRCWEg5X1dyMHhNZFlQbzVlWGpOVHptUHVYTFBiRzlqZktDUmx6eTFpQjloQVNOT1Ytd080ekxhb0t4R2VEay1mQW0zeVQ0SHN2bHFuWm1mSXFUMjlXU0c5c0dsWl9taXZMY3NDZVlmOGNkVVFZVUpXd2dmQXNES01wU0tSQjNRbUZjTnI5?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-09-10T10:59:10.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": [
-            "novark"
-          ]
-        },
-        {
-          "title": "Howden Re launches Novark, to modernise ILS infrastructure, insurance management, securities admin",
-          "link": "https://www.artemis.bm/news/howden-re-launches-novark-to-modernise-ils-infrastructure-insurance-management-securities-admin/?utm_source=rss&utm_medium=rss&utm_campaign=howden-re-launches-novark-to-modernise-ils-infrastructure-insurance-management-securities-admin",
-          "source": "Artemis",
-          "publishedAt": "2026-09-07T05:00:38.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": [
-            "novark"
-          ]
-        },
-        {
-          "title": "Howden Re launches new unit with parametric reinsurance and capital market ILS focus",
-          "link": "https://www.artemis.bm/news/howden-re-launches-new-unit-parametric-reinsurance-and-capital-market-ils-focus/?utm_source=rss&utm_medium=rss&utm_campaign=howden-re-launches-new-unit-parametric-reinsurance-and-capital-market-ils-focus",
-          "source": "Artemis",
-          "publishedAt": "2026-09-06T05:00:37.000Z",
-          "tags": [
-            "Product & Launches",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Howden Re and Synthetik launch dedicated SRCC analytics capability, UNREST",
-          "link": "https://www.reinsurancene.ws/howden-re-and-synthetik-launch-dedicated-srcc-analytics-capability-unrest/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-09-04T12:30:18.000Z",
-          "tags": [
-            "Product & Launches",
-            "Property & Cat"
-          ],
-          "summary": "Howden Re, the reinsurance, capital markets and strategic advisory business of Howden Group, and Synthetik Insurance Technologies, a leader in modelling political violence and terrorism perils, have launched UNREST, an…",
-          "co": [
-            "synthetik"
-          ]
-        },
-        {
-          "title": "Tech Update: Howden Re Offers Property-Level Modeling for SRCC Risks",
-          "link": "https://www.insurancejournal.com/news/international/2026/09/02/883720.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-09-02T16:24:13.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "Property & Cat"
-          ],
-          "summary": "Howden Re, the reinsurance arm of insurance broker Howden, is partnering with the modeling company Synthetik Insurance Technologies, to launch an analytical tool designed to help insurers and reinsurers better…",
-          "co": []
-        },
-        {
-          "title": "BHSI, Howden, Lockton, Starr, Marsh: 16 APAC insurance people moves of the week",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOW4ySnJoYjd4UkR6dlUwdUd1STM0aVdkMWlKYy1QcTZNc0NvTlFtNjNnMlE0YW1hNlRZd2J3QlozaURyZUVVN2p0VnZVaFhFcVU5VTlHT0JEaXo1eENwTGFtZE11M1BERzZnRzBvajhRSW1TMzhLUDRJUFM0bjJtMXN2M1dxcXRqamdWeGhhV1k5VjJTYWNzeU1iZTdLOFhiSWl2RTVmVlk?oc=5",
-          "source": "InsuranceAsia News",
-          "publishedAt": "2026-03-06T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "bhsi",
-            "lockton",
-            "starr"
-          ]
-        },
-        {
-          "title": "Howden to assess insurance cover for carbon credits in aviation offset scheme",
-          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPZ3ltTWlWQktmN044RU9SZnZjWWlDYmF3bm1yWXA1VXB3cEpyWHZaN0J1WThXM1hXMlEyVnl4VWJ2LUpsZ2QwWU9jME9JZVQxaWpKY1JFdnFTTm93enVFSWxFa0tWRzFvSm1OdGlWZDZfbDYyUnRKeW9iaGx4NVgtOHlKRVFkVENWcEdKbnljNzdYWkExRUYzNjV4S1dzYV9nVDVwd1Q1YVZncWVHeVlpMndRYjhUSUtyVmdwVHdDUVJwdllhMjBzYXl0UEhFOU5zRjR6X1pnOXBwd2IyZDRzUWln?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2025-07-18T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "novark",
-      "name": "Novark",
-      "count": 3,
-      "firstSeen": "2026-09-07T05:00:38.000Z",
-      "lastSeen": "2026-09-11T10:29:03.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 3
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Beinsure",
-        "Artemis"
-      ],
-      "related": [
-        {
-          "slug": "howden",
-          "name": "Howden",
-          "count": 3
-        }
-      ],
-      "articles": [
-        {
-          "title": "Howden Re launches Novark",
-          "link": "https://coverager.com/howden-re-launches-novark/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-11T10:29:03.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The platform helps investors track their investments and insurers manage third-party capital.",
-          "co": [
-            "howden"
-          ]
-        },
-        {
-          "title": "Howden Re launches Novark platform for insurance-linked capital",
-          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNT3NPdEpBVHRCWEg5X1dyMHhNZFlQbzVlWGpOVHptUHVYTFBiRzlqZktDUmx6eTFpQjloQVNOT1Ytd080ekxhb0t4R2VEay1mQW0zeVQ0SHN2bHFuWm1mSXFUMjlXU0c5c0dsWl9taXZMY3NDZVlmOGNkVVFZVUpXd2dmQXNES01wU0tSQjNRbUZjTnI5?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-09-10T10:59:10.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": [
-            "howden"
-          ]
-        },
-        {
-          "title": "Howden Re launches Novark, to modernise ILS infrastructure, insurance management, securities admin",
-          "link": "https://www.artemis.bm/news/howden-re-launches-novark-to-modernise-ils-infrastructure-insurance-management-securities-admin/?utm_source=rss&utm_medium=rss&utm_campaign=howden-re-launches-novark-to-modernise-ils-infrastructure-insurance-management-securities-admin",
-          "source": "Artemis",
-          "publishedAt": "2026-09-07T05:00:38.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": [
-            "howden-re"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "igi",
       "name": "IGI",
       "count": 2,
@@ -1184,210 +1998,6 @@
             "Regulation"
           ],
           "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "acrisure",
-      "name": "Acrisure",
-      "count": 7,
-      "firstSeen": "2025-05-21T07:00:00.000Z",
-      "lastSeen": "2026-09-11T09:46:54.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 2
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "Funding",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "FinTech Global",
-        "Coverager",
-        "Insurance Business",
-        "Beinsure"
-      ],
-      "related": [
-        {
-          "slug": "efficient-insurance-solutions",
-          "name": "Efficient Insurance Solutions",
-          "count": 2
-        },
-        {
-          "slug": "palantir",
-          "name": "Palantir",
-          "count": 1
-        },
-        {
-          "slug": "eset",
-          "name": "ESET",
-          "count": 1
-        },
-        {
-          "slug": "hdi-global",
-          "name": "HDI Global",
-          "count": 1
-        },
-        {
-          "slug": "aegis-london",
-          "name": "AEGIS London",
-          "count": 1
-        },
-        {
-          "slug": "waggel",
-          "name": "Waggel",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Acrisure bets on Palantir to reshape insurance workflows",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY0Z3R2NFYmxXRDV3U2RYVkZHai1LeVhaSUVPUHBxaTVSRW4wN0piclU5Wk5OVzdEX0FBdXkyZkhjV1NUVHpCRG9NbDJHYk4xbmN2T01mbDZUdGdSMjdKdWNVd3NHVjF6c3VmdU9vRjBrdGZmNlZOUTBrdVlqYzBRUmJWZUNtU0VNZzRTUEdRRVZDR0NjUGc?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-09-11T09:46:54.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "palantir"
-          ]
-        },
-        {
-          "title": "Acrisure introduces Auris AI",
-          "link": "https://coverager.com/acrisure-introduces-auris-ai/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-10T14:41:04.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "Auris AI is designed to organize operational data, business logic, and workflows.",
-          "co": []
-        },
-        {
-          "title": "Acrisure UK partners with ESET",
-          "link": "https://coverager.com/acrisure-uk-partners-with-eset/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-09T10:42:45.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "ESET’s platform provides threat prevention, detection and response capabilities.",
-          "co": [
-            "eset"
-          ]
-        },
-        {
-          "title": "Insurance moves: HDI Global, Acrisure London, AEGIS London, Waggel",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOa3I3eHVKcWVOXzdlejhPTDJWSGoyWUplNEZZNXliTmRTMEJtX09vZ3ljX09scWhIcWhYZHd6X0kxMDlvclJNckZ1Um9VMFJFWVgycmpGVTNQNTZFOFJmSzE0QkFsdlU1UkF6cFRIaWV4blNIbXg0VUMxREhoM3hVT183YTg1MWZkcjRnUG81dVo5N0JOa1NfT0hQV0dWTXpDR0ZTQ1I3TnhUZVJwQU9IUlJsYy1PQ0lKeW1wd2szX3NEUzVMR25lZjVYdDJ0dw?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2026-03-02T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "hdi-global",
-            "aegis-london",
-            "waggel"
-          ]
-        },
-        {
-          "title": "Insurtech Acrisure to buy MGA Efficient Insurance Solutions, expand EIS",
-          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1jclhMcFg5YVQ0UmowY01JbXV0aTgwODZZT2RwSTZZWnBfZXdQVVY3SDJURU43XzBDS0VsU0gyZU9ZNWwwZndpS0NvM0hVNnV1cGkzMWFoR2szWE5jMExHcVJmbnl4ekw3VzJwOA?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-01-09T08:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "efficient-insurance-solutions"
-          ]
-        },
-        {
-          "title": "Acrisure to acquire Poland-based Efficient Insurance Solutions",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQRHI3S2FRYVdTZFAyVTRVUHNWRjdWZTBGX2F4blNSRmNpM0RDUjdSajlabkI5dXMwcWZpaE03eFF4ZVdXUDBlVDBVZnpLSDBkMVQ4RHJ6ZVBZbklfUVgtNEV3dGdHNGNDejdTNzJJLTl5VC1PYkNmaWVhWW9IbExsNUgxejJKZWp2ak9ya01n?oc=5",
-          "source": "Coverager",
-          "publishedAt": "2025-12-25T08:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "efficient-insurance-solutions"
-          ]
-        },
-        {
-          "title": "FinTech giant Acrisure secures $2.1bn funding led by Bain Capital",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWTBLb2F6Wi1vNEI5OWFlN0xDX29sWnpSY01qLUVsUG9tOUhUWHhGNGg3RXJGSTBkUUV0T3pvNEVQZExrTlFyb2pEYVp4NHJjOURlb3RkMmZtQzNjZ3JVc3F6WEw2U29JcV8teFlkRTdQV1lvOWZIX3RrUnVNcFJrWU81cExyV2pQbDZtOWZDcHhRYXcyNHdiZXMtdUhhaUt3?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2025-05-21T07:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "palantir",
-      "name": "Palantir",
-      "count": 2,
-      "firstSeen": "2026-09-02T13:43:06.000Z",
-      "lastSeen": "2026-09-11T09:46:54.000Z",
-      "topics": [],
-      "sources": [
-        "FinTech Global",
-        "Insurtech Insights"
-      ],
-      "related": [
-        {
-          "slug": "acrisure",
-          "name": "Acrisure",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Acrisure bets on Palantir to reshape insurance workflows",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY0Z3R2NFYmxXRDV3U2RYVkZHai1LeVhaSUVPUHBxaTVSRW4wN0piclU5Wk5OVzdEX0FBdXkyZkhjV1NUVHpCRG9NbDJHYk4xbmN2T01mbDZUdGdSMjdKdWNVd3NHVjF6c3VmdU9vRjBrdGZmNlZOUTBrdVlqYzBRUmJWZUNtU0VNZzRTUEdRRVZDR0NjUGc?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-09-11T09:46:54.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "acrisure"
-          ]
-        },
-        {
-          "title": "Peter Zaffino to join Palantir as global head of financial services",
-          "link": "https://www.insurtechinsights.com/peter-zaffino-to-join-palantir-as-global-head-of-financial-services/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-09-02T13:43:06.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "Palantir Technologies has announced that Peter Zaffino will join the company as global head of financial services, effective 15 January 2027.",
           "co": []
         }
       ]
@@ -3517,175 +4127,6 @@
           "tags": [
             "AI & Automation",
             "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "manulife",
-      "name": "Manulife",
-      "count": 9,
-      "firstSeen": "2024-11-13T08:00:00.000Z",
-      "lastSeen": "2026-09-10T12:34:07.000Z",
-      "topics": [
-        {
-          "name": "Health & Life",
-          "count": 3
-        },
-        {
-          "name": "Product & Launches",
-          "count": 3
-        },
-        {
-          "name": "AI & Automation",
-          "count": 3
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Beinsure",
-        "Insurtech Insights",
-        "Coverager",
-        "Digital Insurance",
-        "Passionate In Marketing",
-        "Insurance Asia",
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "chatgpt",
-          "name": "ChatGPT",
-          "count": 2
-        },
-        {
-          "slug": "ant-health",
-          "name": "Ant Health",
-          "count": 1
-        },
-        {
-          "slug": "microsoft",
-          "name": "Microsoft",
-          "count": 1
-        },
-        {
-          "slug": "mahindra",
-          "name": "Mahindra",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Manulife Asia Insurance and Ant Health explore cross-border healthcare services",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxORHNRMUZubVFibjk0SXp2Y1pWRkg1U293b3FKbFdwVUVEcEkydENwNDJQaWJWRmhyaEdsdkxhMUg5eFZETVZzVUdLRXBYUGVJRzFoenl2cElmM0NKcFUxSGN1THBWQnRTSHBDN0tPWkM5SXJ2eE04WkdDanc3SEdla2Z6bFNKZzlYbjFfLVdPeFo?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-09-10T12:34:07.000Z",
-          "tags": [
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "ant-health"
-          ]
-        },
-        {
-          "title": "Manulife launches CoverMe travel insurance app inside ChatGPT",
-          "link": "https://www.insurtechinsights.com/manulife-launches-coverme-travel-insurance-app-inside-chatgpt/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-24T13:47:14.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Manulife has launched a ChatGPT app that allows Canadian travellers to receive personalised CoverMe travel insurance quotes.",
-          "co": [
-            "chatgpt"
-          ]
-        },
-        {
-          "title": "Manulife launches travel insurance app in ChatGPT",
-          "link": "https://coverager.com/manulife-launches-travel-insurance-app-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-23T18:38:16.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The app supports single-trip coverage for one traveler who is a Canadian citizen or resident.",
-          "co": [
-            "chatgpt"
-          ]
-        },
-        {
-          "title": "Why Manulife chose to expand its Microsoft AI partnership",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNOFEwS1lnSzBqVDlTXzQ1ZVR4cUc2eHRMSDBUV0tHcGxqMzhzclRLR19MMUt3Nm45bzlYSTg0a3NCcThMeGlRcmM2cnhkeDk1TTFwVnZYQnBnY2ROMS1ObG1TMVVFcTNzME40OVlCOHlocnFHa1BWLXNPUFFXS2pnbkRxWWV1RTJIRE8xeWVsY0ZYbDQ?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-08-11T10:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "microsoft"
-          ]
-        },
-        {
-          "title": "How Manulife hit its first ROI on AI investment",
-          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQX1Q3RTdwelNYOTdxa285WDE0bXM1bE1MRlRIbEt1TFpVM2RYSU1rNlczLVYxdUpxOWhNVnViLWxScUhRSEhDZU1fS19CakZFaHh6X3FNaEhKdEdsRHY4cEp2S2J3bEgxM3BETVp4QURCNGhOSHl4amlCR1laRFVlag?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-06-22T07:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Mahindra and Manulife Insurance JV Moves Ahead; Gets Approval from Corporate Affairs Ministry",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQWHNUZkhNTGpmaV9UbEF3OVJlWHl0NkNqQU1aT0ZoQmRiWVhpSVFaVnExWUlHdjN6c0JsRFpvekxQX0ZZN2o3clNnWGsyNGFsUkItNk1ZWnB1bklXTVVrbmxWNXJKcDBISVhNVTZndC00RG5wblZwNDluTFFZa1RmTzJQTl9kM1libG5aS0dacDFPV2ZpLUNlX1pzTU10eWZ2N3REdmhLc2hnbW83YUpSRnhXUmRrUEVWNk5XR0hWRDUwRS1YT05WYjZXQQ?oc=5",
-          "source": "Passionate In Marketing",
-          "publishedAt": "2026-06-01T07:00:00.000Z",
-          "tags": [
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "mahindra"
-          ]
-        },
-        {
-          "title": "Manulife dares startups to tackle Asia’s age imbalance",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNaVdNTFNraHZlUU9EZTFLVVFkQThBZzdVWFlOaDRUQlJWMEM0eExHWVpWTmlPMDlQSWtwNTBua1FnVXdCS2pUTEhYbWYzY053MkgzZ1FPV0xxN2wwVkRsNWFHWjdzWEJMSGRkRHdybGk4aHRPYk1VaDAxZ1REN3lGR01fRWRudmM3RmFNNjhkdw?oc=5",
-          "source": "Insurance Asia",
-          "publishedAt": "2025-04-30T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Manulife goes 100% Gen AI",
-          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBaOFRENmt6SDdHZzRPSTRhLUdrZFo2cnVrTzBrV0htcGhwUng3V0tFQmRMc0pnajkzNVhZZXJCZnIwVjZ3bm5iMVdkUjNWdXFKTWpRWVRzWVUxWnBad3p6aDhn?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2025-03-07T08:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Manulife Canada unveils new life insurance products",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNbkFjd2hzbTB5LXVNQ3gwbFNaajNJNzJ3cnVsZ3daSTU2dzhNSlRpOVl3MGE2azlCWWxHeWg0NUllUFVaalhaMlJvNmVhWFEzOThmdVY4VEt1R2MtU0hmYXQyRm5IcDIyWHhYMHhvTVFxclZLQy0tU2Vrd2prdzdQOXp2cXhONmpQYVlSR0hKdmlYbm91QnJNNzdDN2hGMXJSZ0wwaHZsV2d0ZXd3NENXTWU3WVVZN2VKOXNmblZNdw?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2024-11-13T08:00:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "Health & Life"
           ],
           "summary": "",
           "co": []
@@ -8436,248 +8877,6 @@
       ]
     },
     {
-      "slug": "chatgpt",
-      "name": "ChatGPT",
-      "count": 12,
-      "firstSeen": "2026-07-27T18:54:32.000Z",
-      "lastSeen": "2026-09-09T13:01:47.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 7
-        },
-        {
-          "name": "AI & Automation",
-          "count": 3
-        },
-        {
-          "name": "Property & Cat",
-          "count": 3
-        },
-        {
-          "name": "Regulation",
-          "count": 2
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 1
-        },
-        {
-          "name": "Cyber",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Insurance Business",
-        "Insurtech Insights",
-        "Insurance Business UK",
-        "Insurance Journal"
-      ],
-      "related": [
-        {
-          "slug": "manulife",
-          "name": "Manulife",
-          "count": 2
-        },
-        {
-          "slug": "plymouth-rock-assurance",
-          "name": "Plymouth Rock Assurance",
-          "count": 2
-        },
-        {
-          "slug": "was-travel-insurance",
-          "name": "WAS Travel Insurance",
-          "count": 1
-        },
-        {
-          "slug": "europea-seguros",
-          "name": "Europea Seguros",
-          "count": 1
-        },
-        {
-          "slug": "freeway",
-          "name": "Freeway",
-          "count": 1
-        },
-        {
-          "slug": "openai",
-          "name": "OpenAI",
-          "count": 1
-        },
-        {
-          "slug": "brokly",
-          "name": "Brokly",
-          "count": 1
-        },
-        {
-          "slug": "fletch",
-          "name": "Fletch",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "WAS Travel Insurance comes to ChatGPT",
-          "link": "https://coverager.com/was-travel-insurance-comes-to-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-09T13:01:47.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "WAS Travel Insurance is operated by Australia-based Wiseandsilent Pty Ltd.",
-          "co": [
-            "was-travel-insurance"
-          ]
-        },
-        {
-          "title": "Europea Seguros launches ChatGPT plugin",
-          "link": "https://coverager.com/europea-seguros-launches-chatgpt-plugin/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-07T17:37:24.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Europea Seguros is a funeral insurance provider.",
-          "co": [
-            "europea-seguros"
-          ]
-        },
-        {
-          "title": "Insurers race into ChatGPT while agent rules stay silent",
-          "link": "https://www.insurancebusinessmag.com/us/news/cyber/insurers-race-into-chatgpt-while-agent-rules-stay-silent-587828.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-28T07:51:47.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "A third of insurance customers using AI to research coverage are already choosing TP tools over their insurer's own. Liberty Mutual is now writing new business inside ChatGPT. The commission question - who gets paid…",
-          "co": []
-        },
-        {
-          "title": "Manulife launches CoverMe travel insurance app inside ChatGPT",
-          "link": "https://www.insurtechinsights.com/manulife-launches-coverme-travel-insurance-app-inside-chatgpt/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-24T13:47:14.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Manulife has launched a ChatGPT app that allows Canadian travellers to receive personalised CoverMe travel insurance quotes.",
-          "co": [
-            "manulife"
-          ]
-        },
-        {
-          "title": "Manulife launches travel insurance app in ChatGPT",
-          "link": "https://coverager.com/manulife-launches-travel-insurance-app-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-23T18:38:16.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The app supports single-trip coverage for one traveler who is a Canadian citizen or resident.",
-          "co": [
-            "manulife"
-          ]
-        },
-        {
-          "title": "InsurConnect comes to ChatGPT",
-          "link": "https://coverager.com/insurconnect-comes-to-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-21T17:11:10.000Z",
-          "tags": [
-            "Property & Cat",
-            "Regulation"
-          ],
-          "summary": "The app allows consumers to search for licensed property and casualty insurance agents.",
-          "co": []
-        },
-        {
-          "title": "Freeway launches auto insurance quoting in ChatGPT",
-          "link": "https://coverager.com/freeway-launches-auto-insurance-quoting-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-10T14:20:02.000Z",
-          "tags": [
-            "Product & Launches",
-            "Auto & Mobility"
-          ],
-          "summary": "Freeway joins a growing list of insurance companies and distributors building inside ChatGPT.",
-          "co": [
-            "freeway",
-            "openai"
-          ]
-        },
-        {
-          "title": "Your client’s staff are pasting data into ChatGPT. Their cyber insurer wants to know about it",
-          "link": "https://www.insurancebusinessmag.com/uk/news/cyber/your-clients-staff-are-pasting-data-into-chatgpt--their-cyber-insurer-wants-to-know-about-it-585510.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-08-10T09:49:34.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber"
-          ],
-          "summary": "There's no standard question yet for \"how is your business using AI?\" But insurers are starting to ask anyway",
-          "co": []
-        },
-        {
-          "title": "Plymouth Rock Launches ChatGPT for Home Insurance Quotes",
-          "link": "https://www.insurancejournal.com/news/east/2026/08/03/879945.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-03T12:31:27.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "Homeowners can now obtain insurance quotes from Plymouth Rock Home Assurance through a “natural” conversation with ChatGPT, the artificial intelligence chatbot created by OpenAI. The insurer claims it creates a “faster…",
-          "co": [
-            "plymouth-rock-assurance"
-          ]
-        },
-        {
-          "title": "Brokly launches commercial insurance app in ChatGPT",
-          "link": "https://coverager.com/brokly-launches-commercial-insurance-app-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-02T17:28:43.000Z",
-          "tags": [
-            "Product & Launches",
-            "Regulation"
-          ],
-          "summary": "Brokly is a licensed commercial insurance brokerage.",
-          "co": [
-            "brokly"
-          ]
-        },
-        {
-          "title": "Plymouth Rock brings home insurance quoting to ChatGPT",
-          "link": "https://coverager.com/plymouth-rock-assurance-brings-home-insurance-quoting-to-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-30T12:44:31.000Z",
-          "tags": [
-            "Property & Cat"
-          ],
-          "summary": "The new plugin enables homeowners to receive a home insurance quote within ChatGPT.",
-          "co": [
-            "plymouth-rock-assurance"
-          ]
-        },
-        {
-          "title": "Fletch launches pet insurance comparison app in ChatGPT",
-          "link": "https://coverager.com/fletch-launches-pet-insurance-comparison-app-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-27T18:54:32.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The app may access a summary of the user’s recent ChatGPT context and intent to respond to requests.",
-          "co": [
-            "fletch"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "was-travel-insurance",
       "name": "WAS Travel Insurance",
       "count": 1,
@@ -10571,8 +10770,8 @@
         },
         {
           "title": "Root Insurance and Carvana Extend Embedded Insurance Agreement",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcW40dmoxVHdMNlowZHNaOEFUY3FQV0p4TzVRQ1JHVEs4ZUE5T2lpSWFaWE1RTElkeEFhSGxsaHhWSmMzN1FRb3VwamlFa3FRRW81QlpmNDJjYnlUMmFRd29lVkpTSXRHc2o4SHhLRGJiUmg5dVJJMWtxaGdXbGhKWE9vZlVYb1NuZ0NWZ2hPVUc?oc=5",
-          "source": "Yahoo Finance UK",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeGMtRTBBVFIycFNTTGoxQ2NJdnJFb1c1TDR4Y2tENy1IeHNUbjIyZDN2NEZNUnhGQ0tjNFpRSkJRaG5BSTdvVU5ZeVpjVWlqUThhODBSaDNrUVRMZFRVdnlJZmxMb3cxMHdOWnBYWXp6QXZGbjY2aWkxZ2NyNUxkVTNLZkhwSXdDZG1LclQ0VFR5dURMbUxieklNNHh4OEU4?oc=5",
+          "source": "Yahoo Finance",
           "publishedAt": "2026-09-01T20:05:00.000Z",
           "tags": [
             "Embedded"
@@ -10584,9 +10783,9 @@
         },
         {
           "title": "Root Insurance and Carvana Extend Embedded Insurance Agreement",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeGMtRTBBVFIycFNTTGoxQ2NJdnJFb1c1TDR4Y2tENy1IeHNUbjIyZDN2NEZNUnhGQ0tjNFpRSkJRaG5BSTdvVU5ZeVpjVWlqUThhODBSaDNrUVRMZFRVdnlJZmxMb3cxMHdOWnBYWXp6QXZGbjY2aWkxZ2NyNUxkVTNLZkhwSXdDZG1LclQ0VFR5dURMbUxieklNNHh4OEU4?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-09-01T07:00:00.000Z",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcW40dmoxVHdMNlowZHNaOEFUY3FQV0p4TzVRQ1JHVEs4ZUE5T2lpSWFaWE1RTElkeEFhSGxsaHhWSmMzN1FRb3VwamlFa3FRRW81QlpmNDJjYnlUMmFRd29lVkpTSXRHc2o4SHhLRGJiUmg5dVJJMWtxaGdXbGhKWE9vZlVYb1NuZ0NWZ2hPVUc?oc=5",
+          "source": "Yahoo Finance UK",
+          "publishedAt": "2026-09-01T20:05:00.000Z",
           "tags": [
             "Embedded"
           ],
@@ -11057,6 +11256,19 @@
           ]
         },
         {
+          "title": "Root Insurance and Carvana Extend Embedded Insurance Agreement",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeGMtRTBBVFIycFNTTGoxQ2NJdnJFb1c1TDR4Y2tENy1IeHNUbjIyZDN2NEZNUnhGQ0tjNFpRSkJRaG5BSTdvVU5ZeVpjVWlqUThhODBSaDNrUVRMZFRVdnlJZmxMb3cxMHdOWnBYWXp6QXZGbjY2aWkxZ2NyNUxkVTNLZkhwSXdDZG1LclQ0VFR5dURMbUxieklNNHh4OEU4?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-09-01T20:05:00.000Z",
+          "tags": [
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "root"
+          ]
+        },
+        {
           "title": "Carvana’s insurance partnership tops 200,000 policies and extends to at least August 2028.",
           "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQ2x0eW0wdkxGQUVXbFlocjNoZ2NUVGF3bHhxNE1aYjVUZFFpd2RZWVJMNDdBcGpkWnJ2cW5NdjdQRklzWFE5dFk0MjdraFFyWmFmdXdsNHo5b0s3Z21JMDBlekNoMVNhc0hXOU93RENzUm9KWUhJVnlMcmZ1WHNFaU5Zd2p6VERWbnd2bS1hdjdlVEJmYy1ZNGxoWUJ5eGRqYi14aHNzS2NlazA?oc=5",
           "source": "Stock Titan",
@@ -11066,19 +11278,6 @@
           ],
           "summary": "",
           "co": []
-        },
-        {
-          "title": "Root Insurance and Carvana Extend Embedded Insurance Agreement",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeGMtRTBBVFIycFNTTGoxQ2NJdnJFb1c1TDR4Y2tENy1IeHNUbjIyZDN2NEZNUnhGQ0tjNFpRSkJRaG5BSTdvVU5ZeVpjVWlqUThhODBSaDNrUVRMZFRVdnlJZmxMb3cxMHdOWnBYWXp6QXZGbjY2aWkxZ2NyNUxkVTNLZkhwSXdDZG1LclQ0VFR5dURMbUxieklNNHh4OEU4?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-09-01T07:00:00.000Z",
-          "tags": [
-            "Embedded"
-          ],
-          "summary": "",
-          "co": [
-            "root"
-          ]
         },
         {
           "title": "Root Insurance and Carvana Surpass 200,000 Policies Driven by Pioneering Embedded Insurance Partnership",
@@ -21481,14 +21680,14 @@
         }
       ],
       "sources": [
-        "Insurance Business"
+        "insurancebusinessmag.com"
       ],
       "related": [],
       "articles": [
         {
           "title": "MAS's S$220m FinTech scheme has an AI on-ramp insurers should know about",
           "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQMEdIVUF1bWw1NER4NHNDQ283Qk5JX0VIMEp0YTN4Y3hldlFaWjJoUnR0NUhYVExDdkxHQmpJeTZqZnlnaVBsTXRoWXZ0MjIyVXJJckdlaEZIRFhBUHdMSWpNcENoVzd1WExLMVpxbXJYdWJzcXlPVkh4N0hkcU10NnJMa0Z2WjJwWGtkb0dJeFprX2MycmxHT2lBZDlhRHYzZmx5bVZhTFJvTllUVml5MjZrTGdWSEkxX1B1YTJXMWRvYWxIQ052NWZIZ3UydDNXbGg5dHRR?oc=5",
-          "source": "Insurance Business",
+          "source": "insurancebusinessmag.com",
           "publishedAt": "2026-09-01T18:06:38.000Z",
           "tags": [
             "AI & Automation"
@@ -77609,92 +77808,6 @@
           "summary": "",
           "co": [
             "admiral"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "admiral",
-      "name": "Admiral",
-      "count": 4,
-      "firstSeen": "2026-02-13T08:00:00.000Z",
-      "lastSeen": "2026-04-10T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 1
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "taxi-point.co.uk",
-        "Non-Billable",
-        "businesscloud.co.uk",
-        "Life Insurance International"
-      ],
-      "related": [
-        {
-          "slug": "insurd",
-          "name": "insurd",
-          "count": 1
-        },
-        {
-          "slug": "flock",
-          "name": "Flock",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Digital insurance broker insurd joins select group supporting Admiral’s first move into taxi and PHV cover",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPLUFIX1dFNldNLU1ldlgxSTFDczJjd0xCcmZ1Szlra29JSUItVGVPX0pEaUlSRjhPSjhQdVhOMmtDVElDaGlxT0pWWW1IbVBGQlN6TzlYV1hneE5uTFhFTU0tZFNNeXpCcGJ5MlVmQUlZRGVCdE50LTcyM01qa0RDMXVhbVUxTDUzV01HYVpMcTVPaUl6Y0hsNjFtRUxxUXNUdnhyQWhXcEJ4ZWlERTFIRTh6bzFfRC1id19ieGNwbXk3Q3JKUkZQSzBoVUtrWkk?oc=5",
-          "source": "taxi-point.co.uk",
-          "publishedAt": "2026-04-10T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "insurd"
-          ]
-        },
-        {
-          "title": "CC, Osborne Clarke lead on FTSE 100 Admiral's £80m insurtech buy",
-          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcGJfaUV4UmhMX2diZXd1UVNRQ0FVeWwtT3lFUGVqMzBUTmE5Vk90VEF6VzJqSkpkc1pZenBGckJjUWUzWlQ2elBJZktYVWtmWk40TTY1YnowVEt0N1VNbmxYWi16VmtrWDJvV0Z0NVU1ZE9yWkljOG5pMm9hd0prOVVsWmplQQ?oc=5",
-          "source": "Non-Billable",
-          "publishedAt": "2026-02-17T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Admiral Group drives away with InsurTech in £80m deal",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUzZWTk43MkpOV1JCRmdBeXItM1pVTXl2X09WU082SURoel91VncwSWlDVWJNWFZNTTFDZUpxRlpkVzlfTnVabzhtODNTY052M19zd3VjOXlSLVVDdG95YW5pMGtheEVMVUdhcVJCWkZuRFF0dFFrbzlsVHR5Q1J0YnluM2t5b3hYT3ktOFRyQQ?oc=5",
-          "source": "businesscloud.co.uk",
-          "publishedAt": "2026-02-13T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Admiral Group to buy Flock in £80m fleet insurance deal",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBOV2lyOUxRTm1KN2RHbV9zSmYxci1aU3JKU3l2UHNIMWhJcFZKR0pHZUREZ1E4d0xid3p6elA4OXl1aklObkw4c3RZUGd3dGdsbVJBWFRIRUZnNUxSeFUyM3UzVHdKek5TN3JvcDhvdGlYTUIxQ183Qm5oSXc?oc=5",
-          "source": "Life Insurance International",
-          "publishedAt": "2026-02-13T08:00:00.000Z",
-          "tags": [
-            "M&A",
-            "Auto & Mobility"
-          ],
-          "summary": "",
-          "co": [
-            "flock"
           ]
         }
       ]
