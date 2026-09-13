@@ -1,7 +1,501 @@
 {
-  "updatedAt": "2026-09-12T18:01:24.632Z",
+  "updatedAt": "2026-09-13T18:01:04.300Z",
   "count": 1801,
   "companies": [
+    {
+      "slug": "lassie",
+      "name": "Lassie",
+      "count": 6,
+      "firstSeen": "2026-02-11T08:00:00.000Z",
+      "lastSeen": "2026-09-13T12:53:39.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 5
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Silicon Republic",
+        "Insurance Nerds",
+        "EU-Startups",
+        "Tech Funding News",
+        "Sifted"
+      ],
+      "related": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "count": 1
+        },
+        {
+          "slug": "balderton",
+          "name": "Balderton",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Lassie launches ChatGPT plugin for pet insurance",
+          "link": "https://coverager.com/lassie-launches-chatgpt-plugin-for-pet-insurance/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-13T12:53:39.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Users can connect the Lassie app through ChatGPT’s app directory.",
+          "co": [
+            "chatgpt"
+          ]
+        },
+        {
+          "title": "Europe’s love for pets fuels Swedish insurtech Lassie as it raises $75m Series C",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWVR2UXVENk5vQmhWeXlxdUxEUHJvc29UQWtpSlZJallFTEl4M1dWRC1mUUJEV2c0LW4xejhPNnFRSnc4Sk9BTWZVNW90X2lYWFBTZ0NfbDNzYngyUy1pYmZTekM4b0xhLTRXYkVoS0I3dmF1Y05uU09WM0hISDY2Nm41MTBzTUNiRkJINHhaUXUtUVZuSEp3ckpJb0JUWDhGdG9TRFhSRjNBb19rem45VjU2VUVSWU54U0t4dQ?oc=5",
+          "source": "Silicon Republic",
+          "publishedAt": "2026-02-16T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Swedish pet insurtech Lassie raises $75M Series C after hitting $100M ARR",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOczZRb0FXTFYzeG80dFB1M1A1REJXVHVQZUIyQ1VzNzRycVNDMlEyejRiaVhqM2w0dThDb2RoLXpnMkVQMXc1UWxUMlRqZ0Y2T1BSUGh6Z0FSU0hOUWExX01QbTVnb2luMTBoV252blBrNkpwMWlxbVV3WU5wVWZJUVFlQ3M3Z1F0MTIySThRV19SLXlaWFgtMHBrazJYUdIBrgFBVV95cUxPdmZKZUVfLVFsTFJYOHFsXzlISnl5ODlDMFZidk9kVG5KMmtRSXIxQzdZa0MyZkFzMDl1Nl81ZENDVGxyVVN2X2hiZWdRZ1pjT0hXQk54a0UwV294VWhhTER4OWNXUEZ4eElmV0lHb3hET1Nsdmo4SmNBMU5RQjJKbFg0ZVN4dktGSnFZbkZVZEtmWkJUVU1sTV9RcVA1RV9SXzY5MHBLTXR2bWhVM3c?oc=5",
+          "source": "Insurance Nerds",
+          "publishedAt": "2026-02-12T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Stockholm-based prevention-first pet InsurTech Lassie fetches €63.2 million in Series C funding",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOEZta1l3ZVFuTlV2UWFSRnhpeUZhUGsweHdNMkY0bXNUSC0yX1Q5bTgwaFBuU3EzV0VITncxNC1ET1lzcDdWMXV4SDdab2tsdF94OGdLZG5fRjNXMGRZcGlBTVVHUWJ4NUk3MV9YSTVIVEJPSkpiaGFpdVJaakE3bEdrbEs4Y0llc1BNMzRiTDBPMmZNV0tKT2ZrbEJrVm1iZlNaTHI4YjZ5bUhycXZIOVdhS0RlMXFPRlpqZmp0bTFmTmI5VVpJb0xR?oc=5",
+          "source": "EU-Startups",
+          "publishedAt": "2026-02-12T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Lassie raised $75M to turn pet insurance into a daily health and rewards app — TFN",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNWJfZ1dRN25UNzVTNk83NWRIZFZHdWx0SFBQWDNqcm5lWkhGRGRtYnpDbG1xTng4a014dW5nN0R4dUY1aG51UXdMMTJ3SjJTTkt2Qm1qTlMzbEdWbmNJUnlOMnd4ZXRjdXl4VWExLW5LTUZBZlAwZUZYM2k0RWQ1aWVHNFpMdw?oc=5",
+          "source": "Tech Funding News",
+          "publishedAt": "2026-02-12T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Balderton backs pet startup Lassie’s $75m Series C",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPd3FqNEVtUUxZRDZmX3RtUWpxb2JBUVdHR1cySTUwY2ItX21saUNZWkJUWEMxUGNMTU42YWVEeUlxZy0xS3pDRjdNM2lEcXFyVUtkZkpqMzdIQXhzRFNUZ3MtT2kzcHdGc3NLbHpBWmR1MTFNU3pVQ3VJZVByZTRLag?oc=5",
+          "source": "Sifted",
+          "publishedAt": "2026-02-11T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "balderton"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "chatgpt",
+      "name": "ChatGPT",
+      "count": 13,
+      "firstSeen": "2026-07-27T18:54:32.000Z",
+      "lastSeen": "2026-09-13T12:53:39.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 8
+        },
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Property & Cat",
+          "count": 3
+        },
+        {
+          "name": "Regulation",
+          "count": 2
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurance Business",
+        "Insurtech Insights",
+        "Insurance Business UK",
+        "Insurance Journal"
+      ],
+      "related": [
+        {
+          "slug": "manulife",
+          "name": "Manulife",
+          "count": 2
+        },
+        {
+          "slug": "plymouth-rock-assurance",
+          "name": "Plymouth Rock Assurance",
+          "count": 2
+        },
+        {
+          "slug": "lassie",
+          "name": "Lassie",
+          "count": 1
+        },
+        {
+          "slug": "was-travel-insurance",
+          "name": "WAS Travel Insurance",
+          "count": 1
+        },
+        {
+          "slug": "europea-seguros",
+          "name": "Europea Seguros",
+          "count": 1
+        },
+        {
+          "slug": "freeway",
+          "name": "Freeway",
+          "count": 1
+        },
+        {
+          "slug": "openai",
+          "name": "OpenAI",
+          "count": 1
+        },
+        {
+          "slug": "brokly",
+          "name": "Brokly",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Lassie launches ChatGPT plugin for pet insurance",
+          "link": "https://coverager.com/lassie-launches-chatgpt-plugin-for-pet-insurance/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-13T12:53:39.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Users can connect the Lassie app through ChatGPT’s app directory.",
+          "co": [
+            "lassie"
+          ]
+        },
+        {
+          "title": "Manulife launches travel insurance app in ChatGPT",
+          "link": "https://coverager.com/manulife-launches-travel-insurance-app-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-11T15:28:16.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The app supports single-trip coverage for one traveler who is a Canadian citizen or resident.",
+          "co": [
+            "manulife"
+          ]
+        },
+        {
+          "title": "WAS Travel Insurance comes to ChatGPT",
+          "link": "https://coverager.com/was-travel-insurance-comes-to-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-09T13:01:47.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "WAS Travel Insurance is operated by Australia-based Wiseandsilent Pty Ltd.",
+          "co": [
+            "was-travel-insurance"
+          ]
+        },
+        {
+          "title": "Europea Seguros launches ChatGPT plugin",
+          "link": "https://coverager.com/europea-seguros-launches-chatgpt-plugin/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-07T17:37:24.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Europea Seguros is a funeral insurance provider.",
+          "co": [
+            "europea-seguros"
+          ]
+        },
+        {
+          "title": "Insurers race into ChatGPT while agent rules stay silent",
+          "link": "https://www.insurancebusinessmag.com/us/news/cyber/insurers-race-into-chatgpt-while-agent-rules-stay-silent-587828.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-28T07:51:47.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "A third of insurance customers using AI to research coverage are already choosing TP tools over their insurer's own. Liberty Mutual is now writing new business inside ChatGPT. The commission question - who gets paid…",
+          "co": []
+        },
+        {
+          "title": "Manulife launches CoverMe travel insurance app inside ChatGPT",
+          "link": "https://www.insurtechinsights.com/manulife-launches-coverme-travel-insurance-app-inside-chatgpt/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-24T13:47:14.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Manulife has launched a ChatGPT app that allows Canadian travellers to receive personalised CoverMe travel insurance quotes.",
+          "co": [
+            "manulife"
+          ]
+        },
+        {
+          "title": "InsurConnect comes to ChatGPT",
+          "link": "https://coverager.com/insurconnect-comes-to-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-21T17:11:10.000Z",
+          "tags": [
+            "Property & Cat",
+            "Regulation"
+          ],
+          "summary": "The app allows consumers to search for licensed property and casualty insurance agents.",
+          "co": []
+        },
+        {
+          "title": "Freeway launches auto insurance quoting in ChatGPT",
+          "link": "https://coverager.com/freeway-launches-auto-insurance-quoting-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-10T14:20:02.000Z",
+          "tags": [
+            "Product & Launches",
+            "Auto & Mobility"
+          ],
+          "summary": "Freeway joins a growing list of insurance companies and distributors building inside ChatGPT.",
+          "co": [
+            "freeway",
+            "openai"
+          ]
+        },
+        {
+          "title": "Your client’s staff are pasting data into ChatGPT. Their cyber insurer wants to know about it",
+          "link": "https://www.insurancebusinessmag.com/uk/news/cyber/your-clients-staff-are-pasting-data-into-chatgpt--their-cyber-insurer-wants-to-know-about-it-585510.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-08-10T09:49:34.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber"
+          ],
+          "summary": "There's no standard question yet for \"how is your business using AI?\" But insurers are starting to ask anyway",
+          "co": []
+        },
+        {
+          "title": "Plymouth Rock Launches ChatGPT for Home Insurance Quotes",
+          "link": "https://www.insurancejournal.com/news/east/2026/08/03/879945.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-08-03T12:31:27.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "Homeowners can now obtain insurance quotes from Plymouth Rock Home Assurance through a “natural” conversation with ChatGPT, the artificial intelligence chatbot created by OpenAI. The insurer claims it creates a “faster…",
+          "co": [
+            "plymouth-rock-assurance"
+          ]
+        },
+        {
+          "title": "Brokly launches commercial insurance app in ChatGPT",
+          "link": "https://coverager.com/brokly-launches-commercial-insurance-app-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-02T17:28:43.000Z",
+          "tags": [
+            "Product & Launches",
+            "Regulation"
+          ],
+          "summary": "Brokly is a licensed commercial insurance brokerage.",
+          "co": [
+            "brokly"
+          ]
+        },
+        {
+          "title": "Plymouth Rock brings home insurance quoting to ChatGPT",
+          "link": "https://coverager.com/plymouth-rock-assurance-brings-home-insurance-quoting-to-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-30T12:44:31.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "The new plugin enables homeowners to receive a home insurance quote within ChatGPT.",
+          "co": [
+            "plymouth-rock-assurance"
+          ]
+        },
+        {
+          "title": "Fletch launches pet insurance comparison app in ChatGPT",
+          "link": "https://coverager.com/fletch-launches-pet-insurance-comparison-app-in-chatgpt/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-27T18:54:32.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The app may access a summary of the user’s recent ChatGPT context and intent to respond to requests.",
+          "co": [
+            "fletch"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "mosaic",
+      "name": "Mosaic",
+      "count": 6,
+      "firstSeen": "2026-09-10T10:00:04.000Z",
+      "lastSeen": "2026-09-13T12:00:56.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 4
+        },
+        {
+          "name": "AI & Automation",
+          "count": 4
+        },
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Captive Insurance Times",
+        "Insurance Business",
+        "Reinsurance News"
+      ],
+      "related": [
+        {
+          "slug": "carbon-underwriting",
+          "name": "Carbon Underwriting",
+          "count": 1
+        },
+        {
+          "slug": "liberty-mutual",
+          "name": "Liberty Mutual",
+          "count": 1
+        },
+        {
+          "slug": "5star-life",
+          "name": "5Star Life",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Mosaic expands North American financial lines business",
+          "link": "https://coverager.com/mosaic-expands-north-american-financial-lines-business/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-13T12:00:56.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Mosaic Insurance is a global specialty insurer founded in 2021 by industry veterans Mitch Blaser and Mark Wheeler.",
+          "co": []
+        },
+        {
+          "title": "Mosaic launches AI lab and engineer programme",
+          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPcnF2U1FKdm5kRHczQ3lEcFA0SWZkR0w1dm54dmNXVF9JSFFDbS04Y2hfc3J4VHhxWlU4eEM5cHhCTHdfSFdOR1RQR3FVWnRnMjM1andsMno0UzRtdWhqeW12Q3RTVldNandiUkZNREZIb1V0Qmsyb1lCTVYyV3l3blJ2VmNKV1pDajd3eHlIUXhRbGNIZ0x4M2lxa1RFRkZMQkpQWllWY3FXLXlNR21iTUFCdW1vZ0I1MnRzQTdyWU14SnAydEZ2NDYzaVhxOEpwV1BRM2gzSkFHeGZsWmhMTHlvb3VSQQ?oc=5",
+          "source": "Captive Insurance Times",
+          "publishedAt": "2026-09-11T22:05:47.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Mosaic launches AI lab and engineer programme",
+          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOQ2RyM2hRNzkxalRJMmhZa0VzTEU5bXNrc1N1SU9qQzVNMm5OQmFDTjJrQ29SUDdfbWU5NjZuQlhSTFlqNVNpWVhCYzNWRE1YOXo4ZVpPZS1ybDBhR3lTUkZYaTNMWnkzaGNWR01fZV9SMTRDZkMtMG9ISFZHNlhtRkhQeWk4UXMtY3didE9kSkNtVU1UMlloSUx0bDBYM3Q1TmhVYWJPVXcyc25icGl2czNqTzZWM1ZwMzJhRTNsRTNXTlJUbDRrUHdDZXFyZUNFeFB4VkR4UzVmZXlPOE9UazhwbkwwVkJZUGt3?oc=5",
+          "source": "Captive Insurance Times",
+          "publishedAt": "2026-09-11T22:05:33.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Mosaic launches AI Lab",
+          "link": "https://coverager.com/mosaic-launches-ai-lab/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-11T09:46:50.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "The insurer hired its first cohort of four AI, machine learning, and data science specialists.",
+          "co": []
+        },
+        {
+          "title": "Insurance moves: Carbon Underwriting, Liberty Mutual, Mosaic and 5Star Life",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/insurance-moves-carbon-underwriting-liberty-mutual-mosaic-and-5star-life-589406.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-09-11T03:13:24.000Z",
+          "tags": [
+            "Funding",
+            "Partnerships",
+            "Claims & Underwriting"
+          ],
+          "summary": "Carbon Underwriting has hired its first dedicated US casualty head with fresh growth capital behind the role, and Mosaic has expanded its finpro team with two new integrated products for digital asset and asset…",
+          "co": [
+            "carbon-underwriting",
+            "liberty-mutual",
+            "5star-life"
+          ]
+        },
+        {
+          "title": "Mosaic launches AI Lab and Forward Deployed Engineer Programme",
+          "link": "https://www.reinsurancene.ws/mosaic-launches-ai-lab-and-forward-deployed-engineer-programme/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-10T10:00:04.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "Mosaic Insurance, a global specialty insurer, has announced the launch of an AI Lab and Forward Deployed Engineer (FDE) Programme, designed to accelerate practical artificial intelligence (AI) adoption across its…",
+          "co": []
+        }
+      ]
+    },
     {
       "slug": "leifras",
       "name": "Leifras",
@@ -73,113 +567,6 @@
             "Partnerships"
           ],
           "summary": "Ignite was previously available mainly through L&G’s Mortgage Club and selected CRM integrations.",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "mosaic",
-      "name": "Mosaic",
-      "count": 4,
-      "firstSeen": "2026-09-10T10:00:04.000Z",
-      "lastSeen": "2026-09-11T22:05:47.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 3
-        },
-        {
-          "name": "AI & Automation",
-          "count": 3
-        },
-        {
-          "name": "Funding",
-          "count": 1
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Captive Insurance Times",
-        "Coverager",
-        "Insurance Business",
-        "Reinsurance News"
-      ],
-      "related": [
-        {
-          "slug": "carbon-underwriting",
-          "name": "Carbon Underwriting",
-          "count": 1
-        },
-        {
-          "slug": "liberty-mutual",
-          "name": "Liberty Mutual",
-          "count": 1
-        },
-        {
-          "slug": "5star-life",
-          "name": "5Star Life",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Mosaic launches AI lab and engineer programme",
-          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPcnF2U1FKdm5kRHczQ3lEcFA0SWZkR0w1dm54dmNXVF9JSFFDbS04Y2hfc3J4VHhxWlU4eEM5cHhCTHdfSFdOR1RQR3FVWnRnMjM1andsMno0UzRtdWhqeW12Q3RTVldNandiUkZNREZIb1V0Qmsyb1lCTVYyV3l3blJ2VmNKV1pDajd3eHlIUXhRbGNIZ0x4M2lxa1RFRkZMQkpQWllWY3FXLXlNR21iTUFCdW1vZ0I1MnRzQTdyWU14SnAydEZ2NDYzaVhxOEpwV1BRM2gzSkFHeGZsWmhMTHlvb3VSQQ?oc=5",
-          "source": "Captive Insurance Times",
-          "publishedAt": "2026-09-11T22:05:47.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Mosaic launches AI Lab",
-          "link": "https://coverager.com/mosaic-launches-ai-lab/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-11T09:46:50.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "The insurer hired its first cohort of four AI, machine learning, and data science specialists.",
-          "co": []
-        },
-        {
-          "title": "Insurance moves: Carbon Underwriting, Liberty Mutual, Mosaic and 5Star Life",
-          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/insurance-moves-carbon-underwriting-liberty-mutual-mosaic-and-5star-life-589406.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-09-11T03:13:24.000Z",
-          "tags": [
-            "Funding",
-            "Partnerships",
-            "Claims & Underwriting"
-          ],
-          "summary": "Carbon Underwriting has hired its first dedicated US casualty head with fresh growth capital behind the role, and Mosaic has expanded its finpro team with two new integrated products for digital asset and asset…",
-          "co": [
-            "carbon-underwriting",
-            "liberty-mutual",
-            "5star-life"
-          ]
-        },
-        {
-          "title": "Mosaic launches AI Lab and Forward Deployed Engineer Programme",
-          "link": "https://www.reinsurancene.ws/mosaic-launches-ai-lab-and-forward-deployed-engineer-programme/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-09-10T10:00:04.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "Mosaic Insurance, a global specialty insurer, has announced the launch of an AI Lab and Forward Deployed Engineer (FDE) Programme, designed to accelerate practical artificial intelligence (AI) adoption across its…",
           "co": []
         }
       ]
@@ -354,248 +741,6 @@
       ]
     },
     {
-      "slug": "chatgpt",
-      "name": "ChatGPT",
-      "count": 12,
-      "firstSeen": "2026-07-27T18:54:32.000Z",
-      "lastSeen": "2026-09-11T15:28:16.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 7
-        },
-        {
-          "name": "AI & Automation",
-          "count": 3
-        },
-        {
-          "name": "Property & Cat",
-          "count": 3
-        },
-        {
-          "name": "Regulation",
-          "count": 2
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 1
-        },
-        {
-          "name": "Cyber",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Insurance Business",
-        "Insurtech Insights",
-        "Insurance Business UK",
-        "Insurance Journal"
-      ],
-      "related": [
-        {
-          "slug": "manulife",
-          "name": "Manulife",
-          "count": 2
-        },
-        {
-          "slug": "plymouth-rock-assurance",
-          "name": "Plymouth Rock Assurance",
-          "count": 2
-        },
-        {
-          "slug": "was-travel-insurance",
-          "name": "WAS Travel Insurance",
-          "count": 1
-        },
-        {
-          "slug": "europea-seguros",
-          "name": "Europea Seguros",
-          "count": 1
-        },
-        {
-          "slug": "freeway",
-          "name": "Freeway",
-          "count": 1
-        },
-        {
-          "slug": "openai",
-          "name": "OpenAI",
-          "count": 1
-        },
-        {
-          "slug": "brokly",
-          "name": "Brokly",
-          "count": 1
-        },
-        {
-          "slug": "fletch",
-          "name": "Fletch",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Manulife launches travel insurance app in ChatGPT",
-          "link": "https://coverager.com/manulife-launches-travel-insurance-app-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-11T15:28:16.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The app supports single-trip coverage for one traveler who is a Canadian citizen or resident.",
-          "co": [
-            "manulife"
-          ]
-        },
-        {
-          "title": "WAS Travel Insurance comes to ChatGPT",
-          "link": "https://coverager.com/was-travel-insurance-comes-to-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-09T13:01:47.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "WAS Travel Insurance is operated by Australia-based Wiseandsilent Pty Ltd.",
-          "co": [
-            "was-travel-insurance"
-          ]
-        },
-        {
-          "title": "Europea Seguros launches ChatGPT plugin",
-          "link": "https://coverager.com/europea-seguros-launches-chatgpt-plugin/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-07T17:37:24.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Europea Seguros is a funeral insurance provider.",
-          "co": [
-            "europea-seguros"
-          ]
-        },
-        {
-          "title": "Insurers race into ChatGPT while agent rules stay silent",
-          "link": "https://www.insurancebusinessmag.com/us/news/cyber/insurers-race-into-chatgpt-while-agent-rules-stay-silent-587828.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-28T07:51:47.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "A third of insurance customers using AI to research coverage are already choosing TP tools over their insurer's own. Liberty Mutual is now writing new business inside ChatGPT. The commission question - who gets paid…",
-          "co": []
-        },
-        {
-          "title": "Manulife launches CoverMe travel insurance app inside ChatGPT",
-          "link": "https://www.insurtechinsights.com/manulife-launches-coverme-travel-insurance-app-inside-chatgpt/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-24T13:47:14.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Manulife has launched a ChatGPT app that allows Canadian travellers to receive personalised CoverMe travel insurance quotes.",
-          "co": [
-            "manulife"
-          ]
-        },
-        {
-          "title": "InsurConnect comes to ChatGPT",
-          "link": "https://coverager.com/insurconnect-comes-to-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-21T17:11:10.000Z",
-          "tags": [
-            "Property & Cat",
-            "Regulation"
-          ],
-          "summary": "The app allows consumers to search for licensed property and casualty insurance agents.",
-          "co": []
-        },
-        {
-          "title": "Freeway launches auto insurance quoting in ChatGPT",
-          "link": "https://coverager.com/freeway-launches-auto-insurance-quoting-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-10T14:20:02.000Z",
-          "tags": [
-            "Product & Launches",
-            "Auto & Mobility"
-          ],
-          "summary": "Freeway joins a growing list of insurance companies and distributors building inside ChatGPT.",
-          "co": [
-            "freeway",
-            "openai"
-          ]
-        },
-        {
-          "title": "Your client’s staff are pasting data into ChatGPT. Their cyber insurer wants to know about it",
-          "link": "https://www.insurancebusinessmag.com/uk/news/cyber/your-clients-staff-are-pasting-data-into-chatgpt--their-cyber-insurer-wants-to-know-about-it-585510.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-08-10T09:49:34.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber"
-          ],
-          "summary": "There's no standard question yet for \"how is your business using AI?\" But insurers are starting to ask anyway",
-          "co": []
-        },
-        {
-          "title": "Plymouth Rock Launches ChatGPT for Home Insurance Quotes",
-          "link": "https://www.insurancejournal.com/news/east/2026/08/03/879945.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-08-03T12:31:27.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "Homeowners can now obtain insurance quotes from Plymouth Rock Home Assurance through a “natural” conversation with ChatGPT, the artificial intelligence chatbot created by OpenAI. The insurer claims it creates a “faster…",
-          "co": [
-            "plymouth-rock-assurance"
-          ]
-        },
-        {
-          "title": "Brokly launches commercial insurance app in ChatGPT",
-          "link": "https://coverager.com/brokly-launches-commercial-insurance-app-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-02T17:28:43.000Z",
-          "tags": [
-            "Product & Launches",
-            "Regulation"
-          ],
-          "summary": "Brokly is a licensed commercial insurance brokerage.",
-          "co": [
-            "brokly"
-          ]
-        },
-        {
-          "title": "Plymouth Rock brings home insurance quoting to ChatGPT",
-          "link": "https://coverager.com/plymouth-rock-assurance-brings-home-insurance-quoting-to-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-30T12:44:31.000Z",
-          "tags": [
-            "Property & Cat"
-          ],
-          "summary": "The new plugin enables homeowners to receive a home insurance quote within ChatGPT.",
-          "co": [
-            "plymouth-rock-assurance"
-          ]
-        },
-        {
-          "title": "Fletch launches pet insurance comparison app in ChatGPT",
-          "link": "https://coverager.com/fletch-launches-pet-insurance-comparison-app-in-chatgpt/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-27T18:54:32.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The app may access a summary of the user’s recent ChatGPT context and intent to respond to requests.",
-          "co": [
-            "fletch"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "admiral",
       "name": "Admiral",
       "count": 5,
@@ -727,10 +872,11 @@
       ],
       "sources": [
         "Reinsurance News",
-        "FinTech Global",
+        "fintech.global",
         "Coverager",
         "Insurance Business",
-        "Beinsure"
+        "Beinsure",
+        "FinTech Global"
       ],
       "related": [
         {
@@ -782,7 +928,7 @@
         {
           "title": "Acrisure bets on Palantir to reshape insurance workflows",
           "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY0Z3R2NFYmxXRDV3U2RYVkZHai1LeVhaSUVPUHBxaTVSRW4wN0piclU5Wk5OVzdEX0FBdXkyZkhjV1NUVHpCRG9NbDJHYk4xbmN2T01mbDZUdGdSMjdKdWNVd3NHVjF6c3VmdU9vRjBrdGZmNlZOUTBrdVlqYzBRUmJWZUNtU0VNZzRTUEdRRVZDR0NjUGc?oc=5",
-          "source": "FinTech Global",
+          "source": "fintech.global",
           "publishedAt": "2026-09-11T10:41:01.000Z",
           "tags": [
             "Industry"
@@ -889,7 +1035,7 @@
       ],
       "sources": [
         "Reinsurance News",
-        "FinTech Global",
+        "fintech.global",
         "Insurtech Insights"
       ],
       "related": [
@@ -917,7 +1063,7 @@
         {
           "title": "Acrisure bets on Palantir to reshape insurance workflows",
           "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY0Z3R2NFYmxXRDV3U2RYVkZHai1LeVhaSUVPUHBxaTVSRW4wN0piclU5Wk5OVzdEX0FBdXkyZkhjV1NUVHpCRG9NbDJHYk4xbmN2T01mbDZUdGdSMjdKdWNVd3NHVjF6c3VmdU9vRjBrdGZmNlZOUTBrdVlqYzBRUmJWZUNtU0VNZzRTUEdRRVZDR0NjUGc?oc=5",
-          "source": "FinTech Global",
+          "source": "fintech.global",
           "publishedAt": "2026-09-11T10:41:01.000Z",
           "tags": [
             "Industry"
@@ -1998,7 +2144,7 @@
       "sources": [
         "Reinsurance News",
         "thejewishnews.com",
-        "globenewswire.com"
+        "GlobeNewswire"
       ],
       "related": [],
       "articles": [
@@ -2031,7 +2177,7 @@
         {
           "title": "Bloc Cyber Launches Specialty Cyber Insurance and Technology E&O Brokerage for Regulated Industries",
           "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQLTFkNmxkajQzTkk3YndUN2MyUGJGd29iNEZvc1pFOV9QSjBsX292dU1WT3hJRWJSZ090QTJpV2NpX2c2TXZZcEJQVm55TlJfa1ZUR1NYc0tvRm9CZW9HUDNJM3J3WUV0RjlkWkRfYkdnMjhRTk5OaHJnbzhUdExpdUpPY3BjMXkzUW9sMjBBc0dkby0tWDdrUDFVejRiNlNpeFppam1ZMVRUd2E1anBvOUpkYnd1WEs5UmZ5R3ZhRmo2Uy1WXzFDTWJmUkh2Rk1zS0pyQzREb21YUGxtM3F5aXNaQWdncXNUMHczcGFlUWwzZ2dFMk85dlVoczh4S0dQ?oc=5",
-          "source": "globenewswire.com",
+          "source": "GlobeNewswire",
           "publishedAt": "2026-09-09T20:21:27.000Z",
           "tags": [
             "Product & Launches",
@@ -10842,8 +10988,8 @@
         },
         {
           "title": "Root Insurance and Carvana Extend Embedded Insurance Agreement",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeGMtRTBBVFIycFNTTGoxQ2NJdnJFb1c1TDR4Y2tENy1IeHNUbjIyZDN2NEZNUnhGQ0tjNFpRSkJRaG5BSTdvVU5ZeVpjVWlqUThhODBSaDNrUVRMZFRVdnlJZmxMb3cxMHdOWnBYWXp6QXZGbjY2aWkxZ2NyNUxkVTNLZkhwSXdDZG1LclQ0VFR5dURMbUxieklNNHh4OEU4?oc=5",
-          "source": "Yahoo Finance",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcW40dmoxVHdMNlowZHNaOEFUY3FQV0p4TzVRQ1JHVEs4ZUE5T2lpSWFaWE1RTElkeEFhSGxsaHhWSmMzN1FRb3VwamlFa3FRRW81QlpmNDJjYnlUMmFRd29lVkpTSXRHc2o4SHhLRGJiUmg5dVJJMWtxaGdXbGhKWE9vZlVYb1NuZ0NWZ2hPVUc?oc=5",
+          "source": "Yahoo Finance UK",
           "publishedAt": "2026-09-01T20:05:00.000Z",
           "tags": [
             "Embedded"
@@ -10855,9 +11001,9 @@
         },
         {
           "title": "Root Insurance and Carvana Extend Embedded Insurance Agreement",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcW40dmoxVHdMNlowZHNaOEFUY3FQV0p4TzVRQ1JHVEs4ZUE5T2lpSWFaWE1RTElkeEFhSGxsaHhWSmMzN1FRb3VwamlFa3FRRW81QlpmNDJjYnlUMmFRd29lVkpTSXRHc2o4SHhLRGJiUmg5dVJJMWtxaGdXbGhKWE9vZlVYb1NuZ0NWZ2hPVUc?oc=5",
-          "source": "Yahoo Finance UK",
-          "publishedAt": "2026-09-01T20:05:00.000Z",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeGMtRTBBVFIycFNTTGoxQ2NJdnJFb1c1TDR4Y2tENy1IeHNUbjIyZDN2NEZNUnhGQ0tjNFpRSkJRaG5BSTdvVU5ZeVpjVWlqUThhODBSaDNrUVRMZFRVdnlJZmxMb3cxMHdOWnBYWXp6QXZGbjY2aWkxZ2NyNUxkVTNLZkhwSXdDZG1LclQ0VFR5dURMbUxieklNNHh4OEU4?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-09-01T07:00:00.000Z",
           "tags": [
             "Embedded"
           ],
@@ -11328,19 +11474,6 @@
           ]
         },
         {
-          "title": "Root Insurance and Carvana Extend Embedded Insurance Agreement",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeGMtRTBBVFIycFNTTGoxQ2NJdnJFb1c1TDR4Y2tENy1IeHNUbjIyZDN2NEZNUnhGQ0tjNFpRSkJRaG5BSTdvVU5ZeVpjVWlqUThhODBSaDNrUVRMZFRVdnlJZmxMb3cxMHdOWnBYWXp6QXZGbjY2aWkxZ2NyNUxkVTNLZkhwSXdDZG1LclQ0VFR5dURMbUxieklNNHh4OEU4?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-09-01T20:05:00.000Z",
-          "tags": [
-            "Embedded"
-          ],
-          "summary": "",
-          "co": [
-            "root"
-          ]
-        },
-        {
           "title": "Carvana’s insurance partnership tops 200,000 policies and extends to at least August 2028.",
           "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQ2x0eW0wdkxGQUVXbFlocjNoZ2NUVGF3bHhxNE1aYjVUZFFpd2RZWVJMNDdBcGpkWnJ2cW5NdjdQRklzWFE5dFk0MjdraFFyWmFmdXdsNHo5b0s3Z21JMDBlekNoMVNhc0hXOU93RENzUm9KWUhJVnlMcmZ1WHNFaU5Zd2p6VERWbnd2bS1hdjdlVEJmYy1ZNGxoWUJ5eGRqYi14aHNzS2NlazA?oc=5",
           "source": "Stock Titan",
@@ -11350,6 +11483,19 @@
           ],
           "summary": "",
           "co": []
+        },
+        {
+          "title": "Root Insurance and Carvana Extend Embedded Insurance Agreement",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeGMtRTBBVFIycFNTTGoxQ2NJdnJFb1c1TDR4Y2tENy1IeHNUbjIyZDN2NEZNUnhGQ0tjNFpRSkJRaG5BSTdvVU5ZeVpjVWlqUThhODBSaDNrUVRMZFRVdnlJZmxMb3cxMHdOWnBYWXp6QXZGbjY2aWkxZ2NyNUxkVTNLZkhwSXdDZG1LclQ0VFR5dURMbUxieklNNHh4OEU4?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-09-01T07:00:00.000Z",
+          "tags": [
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "root"
+          ]
         },
         {
           "title": "Root Insurance and Carvana Surpass 200,000 Policies Driven by Pioneering Embedded Insurance Partnership",
@@ -16058,7 +16204,7 @@
     {
       "slug": "guidewire",
       "name": "Guidewire",
-      "count": 18,
+      "count": 19,
       "firstSeen": "2025-01-24T08:00:00.000Z",
       "lastSeen": "2026-09-04T12:01:36.000Z",
       "topics": [
@@ -16072,7 +16218,7 @@
         },
         {
           "name": "Product & Launches",
-          "count": 2
+          "count": 3
         },
         {
           "name": "M&A",
@@ -16089,6 +16235,7 @@
       ],
       "sources": [
         "Insurance Business",
+        "FF News",
         "PR Newswire",
         "Insurtech Insights",
         "Insurance Edge",
@@ -16109,6 +16256,11 @@
           "slug": "kayna",
           "name": "Kayna",
           "count": 2
+        },
+        {
+          "slug": "akur8",
+          "name": "Akur8",
+          "count": 1
         },
         {
           "slug": "zurich",
@@ -16139,11 +16291,6 @@
           "slug": "peel-mutual",
           "name": "Peel Mutual",
           "count": 1
-        },
-        {
-          "slug": "weav-ai",
-          "name": "Weav.ai",
-          "count": 1
         }
       ],
       "articles": [
@@ -16158,6 +16305,19 @@
           ],
           "summary": "P&C insurers are deepening AI commitments at scale. Here is what that means for how they place and process business",
           "co": []
+        },
+        {
+          "title": "Akur8 Debuts Guidewire Marketplace Accelerator to Streamline Insurance Rating Deployment",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNYUpfZGFya3dpQlBWSmx6aDlpcVBkQ0tCZTJHOWxsTVRoNFVzM1ZYaVlqS1JpTVluNjBLVFNFdEJrTDNkaUstQjZaWW55N2dTSUtNWkw4bEpUeHNPbzhmVUJUYUNhMjVKdGRFWUF0d3N2dlhIMlNwSkN3UXdLZG0zT3BhRko0QkV2SEdSc3FUM1p3d2xYZ1lGQXVXaS1wSnF4R1o4cG1IX1FKSGY5YV93elhXaw?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-08-13T15:55:56.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "akur8"
+          ]
         },
         {
           "title": "Zurich Group Germany Accelerates Digital Transformation with Move to Guidewire Cloud",
@@ -16372,6 +16532,57 @@
           "co": [
             "cna-insurance"
           ]
+        }
+      ]
+    },
+    {
+      "slug": "suncorp",
+      "name": "Suncorp",
+      "count": 2,
+      "firstSeen": "2024-12-11T08:00:00.000Z",
+      "lastSeen": "2026-09-04T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Asia",
+        "Suncorp Group"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Suncorp turns to insurtech as claims complexity mounts",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNQnBBYzA3eGpmYVJOMHRPLVdQWW1xVVhUYldMd2JaZXMwVXBKeWJXQWFTanRtSUVoNHpZdHp5WGh5clNtSmdSX21GZDQ3TXNoZWYxLTluMmw2QVl2OFB2NTVHR1duR2M5b0dfOWFIZDRkZ0hmOXNQMUpzQjY5VzBrZzRBWlYxRDk3bEM4RUhfcFJTWkk?oc=5",
+          "source": "Insurance Asia",
+          "publishedAt": "2026-09-04T07:00:00.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Suncorp announces five-year partnership with Microsoft to accelerate the use of AI and cloud to transform insurance",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE81Um1xOVdmZEViZUpCSE0wZGp4THZXR1Q2TnF0aFFXMnhPTHJuTzFGZF9VNjhYeUppZXNTV1E4NXhjaUJjMTRqalRIQXpiek50UE9qT0R3Mk83OHZkbjJUbFNNczhad1hPMDlueVo1bnpRUV9ET0tQQW5aYw?oc=5",
+          "source": "Suncorp Group",
+          "publishedAt": "2024-12-11T08:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -16707,57 +16918,6 @@
           "co": [
             "hawksoft"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "suncorp",
-      "name": "Suncorp",
-      "count": 2,
-      "firstSeen": "2024-12-11T08:00:00.000Z",
-      "lastSeen": "2026-09-03T21:15:00.000Z",
-      "topics": [
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurance Asia",
-        "Suncorp Group"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Suncorp turns to insurtech as claims complexity mounts",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNQnBBYzA3eGpmYVJOMHRPLVdQWW1xVVhUYldMd2JaZXMwVXBKeWJXQWFTanRtSUVoNHpZdHp5WGh5clNtSmdSX21GZDQ3TXNoZWYxLTluMmw2QVl2OFB2NTVHR1duR2M5b0dfOWFIZDRkZ0hmOXNQMUpzQjY5VzBrZzRBWlYxRDk3bEM4RUhfcFJTWkk?oc=5",
-          "source": "Insurance Asia",
-          "publishedAt": "2026-09-03T21:15:00.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Suncorp announces five-year partnership with Microsoft to accelerate the use of AI and cloud to transform insurance",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE81Um1xOVdmZEViZUpCSE0wZGp4THZXR1Q2TnF0aFFXMnhPTHJuTzFGZF9VNjhYeUppZXNTV1E4NXhjaUJjMTRqalRIQXpiek50UE9qT0R3Mk83OHZkbjJUbFNNczhad1hPMDlueVo1bnpRUV9ET0tQQW5aYw?oc=5",
-          "source": "Suncorp Group",
-          "publishedAt": "2024-12-11T08:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
         }
       ]
     },
@@ -18116,7 +18276,7 @@
       "sources": [
         "Insurance Business",
         "Insurance Journal",
-        "app.dealroom.co",
+        "Dealroom",
         "Coverager"
       ],
       "related": [
@@ -18156,7 +18316,7 @@
         {
           "title": "Ignyte buys InsureMyTrip, its sixth travel insurance brand",
           "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZHVrNXROZHkzNjkwSnBzeTlPZmd5emlkckVYWWpiRVhjUnpJejhrTURNS0xEWF92RFVJMTk3dktndkx0aFF2VlN1TXdtR2g5RXBkclFOQ09RZDdBbkVQdUQtQzlhU2FPS0QzaG9JZEV2ajA1aXRHeVYwX2hsVENXRlNRdDliOUIwN3R1V1B1OEp0ZTcyc2c?oc=5",
-          "source": "app.dealroom.co",
+          "source": "Dealroom",
           "publishedAt": "2026-09-02T00:13:15.000Z",
           "tags": [
             "M&A"
@@ -18196,7 +18356,7 @@
       "sources": [
         "Insurance Business",
         "Insurance Journal",
-        "app.dealroom.co",
+        "Dealroom",
         "Coverager"
       ],
       "related": [
@@ -18236,7 +18396,7 @@
         {
           "title": "Ignyte buys InsureMyTrip, its sixth travel insurance brand",
           "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZHVrNXROZHkzNjkwSnBzeTlPZmd5emlkckVYWWpiRVhjUnpJejhrTURNS0xEWF92RFVJMTk3dktndkx0aFF2VlN1TXdtR2g5RXBkclFOQ09RZDdBbkVQdUQtQzlhU2FPS0QzaG9JZEV2ajA1aXRHeVYwX2hsVENXRlNRdDliOUIwN3R1V1B1OEp0ZTcyc2c?oc=5",
-          "source": "app.dealroom.co",
+          "source": "Dealroom",
           "publishedAt": "2026-09-02T00:13:15.000Z",
           "tags": [
             "M&A"
@@ -31281,8 +31441,8 @@
         "Asia Insurance Post",
         "marketscreener.com",
         "Munich Re",
-        "finance.biggo.com",
         "calcalistech.com",
+        "finance.biggo.com",
         "Yahoo Finance"
       ],
       "related": [
@@ -31556,6 +31716,18 @@
           "co": []
         },
         {
+          "title": "Munich Re acquiring Israeli cyber insurance startup At-Bay in deal worth hundreds of millions",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9PZWJwOE9oenlreWNsdHhKa2JSQTgwcGNsX3lzVkhkdnI3NDg1RV8xSDZPd1YzajQwWTF4UDNtZkhnOVZ0ZkRkMG1WM1BXNnZvcHpzVmtxRVoyVmlHSkRhLW1DMlRxa0c1?oc=5",
+          "source": "calcalistech.com",
+          "publishedAt": "2026-08-19T07:00:00.000Z",
+          "tags": [
+            "M&A",
+            "Cyber"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
           "title": "Munich Re to Buy Cyber Insurtech At-Bay for $575 Million",
           "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9lanhCQ05SR081YzU3UllOd3BHRnRSdVpOLURqOVZaRGhBdVdPUUVhbmhtUjdXS3Y5NWN2Z09mb1VPWVlJd09EY2pfRm9ZTzc1dG5scF9xLS1iLUduT29QZzVjeTlZX1RqMlVvamVuclpHak4wM2c?oc=5",
           "source": "finance.biggo.com",
@@ -31613,18 +31785,6 @@
           "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONjM5bVVSaVFqaVZlX2NYY2h3Q0QtWm9yVUhfakZ4a21rTGlqbjBQSVNjLWNWYnVUd1FMLTFyY2ViRUlkdnktY2lxODEtVHlxbURkaWdIdE94VGdQY1Y0bXFRY2d5bzItZWhHMXVZQ1NyMzE0SzM4cWhJbVZUZ1RTblVqX3p2OTlLU3BSQzE4YjRqeUc5bnpkMC11aVk5M2EwSmo2dURhNA?oc=5",
           "source": "Munich Re",
           "publishedAt": "2026-08-19T07:00:00.000Z",
-          "tags": [
-            "M&A",
-            "Cyber"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Munich Re acquiring Israeli cyber insurance startup At-Bay in deal worth hundreds of millions",
-          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9PZWJwOE9oenlreWNsdHhKa2JSQTgwcGNsX3lzVkhkdnI3NDg1RV8xSDZPd1YzajQwWTF4UDNtZkhnOVZ0ZkRkMG1WM1BXNnZvcHpzVmtxRVoyVmlHSkRhLW1DMlRxa0c1?oc=5",
-          "source": "calcalistech.com",
-          "publishedAt": "2026-08-19T06:19:00.000Z",
           "tags": [
             "M&A",
             "Cyber"
@@ -33963,7 +34123,7 @@
       "lastSeen": "2026-08-21T07:00:00.000Z",
       "topics": [],
       "sources": [
-        "FinTech Global"
+        "fintech.global"
       ],
       "related": [
         {
@@ -33976,7 +34136,7 @@
         {
           "title": "August Equity backs InsurTech MGA Starpeak",
           "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYk1KTkNqWHhPT25VdlBsTkp2TU9vcWpDRUVpajVuUW5mLVZmM0ZMQzFPVVlGNTZOaWh5aV9wNzJCWFFwT3B3b1ItYlc2OEhKbjVrcEtQYUFtVG5ya3Rpb0w0WFlSWFNBOGZOZ1kwNkRTVWJFSVZ1MWpqVWpHWFVBdGJOVQ?oc=5",
-          "source": "FinTech Global",
+          "source": "fintech.global",
           "publishedAt": "2026-08-21T07:00:00.000Z",
           "tags": [
             "Industry"
@@ -33996,7 +34156,7 @@
       "lastSeen": "2026-08-21T07:00:00.000Z",
       "topics": [],
       "sources": [
-        "FinTech Global"
+        "fintech.global"
       ],
       "related": [
         {
@@ -34009,7 +34169,7 @@
         {
           "title": "August Equity backs InsurTech MGA Starpeak",
           "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYk1KTkNqWHhPT25VdlBsTkp2TU9vcWpDRUVpajVuUW5mLVZmM0ZMQzFPVVlGNTZOaWh5aV9wNzJCWFFwT3B3b1ItYlc2OEhKbjVrcEtQYUFtVG5ya3Rpb0w0WFlSWFNBOGZOZ1kwNkRTVWJFSVZ1MWpqVWpHWFVBdGJOVQ?oc=5",
-          "source": "FinTech Global",
+          "source": "fintech.global",
           "publishedAt": "2026-08-21T07:00:00.000Z",
           "tags": [
             "Industry"
@@ -42187,6 +42347,70 @@
             "Leadership"
           ],
           "summary": "Mandarin Re, a Malaysia-based reinsurance company, has appointed Patrick G. W. Ward as a Member of its Board of Directors. This appointment reflects Mandarin Re’s continued commitment to strong governance and long-term…",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "akur8",
+      "name": "Akur8",
+      "count": 2,
+      "firstSeen": "2024-09-12T07:00:00.000Z",
+      "lastSeen": "2026-08-13T15:55:56.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "FF News",
+        "theinsurer.com"
+      ],
+      "related": [
+        {
+          "slug": "guidewire",
+          "name": "Guidewire",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Akur8 Debuts Guidewire Marketplace Accelerator to Streamline Insurance Rating Deployment",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNYUpfZGFya3dpQlBWSmx6aDlpcVBkQ0tCZTJHOWxsTVRoNFVzM1ZYaVlqS1JpTVluNjBLVFNFdEJrTDNkaUstQjZaWW55N2dTSUtNWkw4bEpUeHNPbzhmVUJUYUNhMjVKdGRFWUF0d3N2dlhIMlNwSkN3UXdLZG0zT3BhRko0QkV2SEdSc3FUM1p3d2xYZ1lGQXVXaS1wSnF4R1o4cG1IX1FKSGY5YV93elhXaw?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-08-13T15:55:56.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "guidewire"
+          ]
+        },
+        {
+          "title": "Actuarial insurtech Akur8 completes latest raise at ~$400mn valuation, acquires Arius from Milliman",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNWG1xOTNxb0ROUTdPXzVrTC1QTnFjS2lneERVT0JGN0xvRW1JOTVWVDc0X3QyRFNrNTIyU2FnajAzc1Z5S2t5bHJ1ck42WjB3aFJoOVBKZ1lfemJISXdld0lyRVpNdVZyU21nZG5tMkxMRndMWEgxR1hfVFFvUXBUSEtEQ0V3eFVmRXREUktLZmVkTGVxNWhHSnZyQ3BBbzBMTHpvNy1ER2lVUFYzbm1yaDlTeXA0Wnc4bUlidFp4bHozWER5dTJ5N2FIVDk?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2024-09-12T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "M&A",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
           "co": []
         }
       ]
@@ -82771,92 +82995,6 @@
       ]
     },
     {
-      "slug": "lassie",
-      "name": "Lassie",
-      "count": 5,
-      "firstSeen": "2026-02-11T08:00:00.000Z",
-      "lastSeen": "2026-02-16T08:00:00.000Z",
-      "topics": [
-        {
-          "name": "Funding",
-          "count": 5
-        }
-      ],
-      "sources": [
-        "Silicon Republic",
-        "Insurance Nerds",
-        "EU-Startups",
-        "Tech Funding News",
-        "Sifted"
-      ],
-      "related": [
-        {
-          "slug": "balderton",
-          "name": "Balderton",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Europe’s love for pets fuels Swedish insurtech Lassie as it raises $75m Series C",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWVR2UXVENk5vQmhWeXlxdUxEUHJvc29UQWtpSlZJallFTEl4M1dWRC1mUUJEV2c0LW4xejhPNnFRSnc4Sk9BTWZVNW90X2lYWFBTZ0NfbDNzYngyUy1pYmZTekM4b0xhLTRXYkVoS0I3dmF1Y05uU09WM0hISDY2Nm41MTBzTUNiRkJINHhaUXUtUVZuSEp3ckpJb0JUWDhGdG9TRFhSRjNBb19rem45VjU2VUVSWU54U0t4dQ?oc=5",
-          "source": "Silicon Republic",
-          "publishedAt": "2026-02-16T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Swedish pet insurtech Lassie raises $75M Series C after hitting $100M ARR",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOczZRb0FXTFYzeG80dFB1M1A1REJXVHVQZUIyQ1VzNzRycVNDMlEyejRiaVhqM2w0dThDb2RoLXpnMkVQMXc1UWxUMlRqZ0Y2T1BSUGh6Z0FSU0hOUWExX01QbTVnb2luMTBoV252blBrNkpwMWlxbVV3WU5wVWZJUVFlQ3M3Z1F0MTIySThRV19SLXlaWFgtMHBrazJYUdIBrgFBVV95cUxPdmZKZUVfLVFsTFJYOHFsXzlISnl5ODlDMFZidk9kVG5KMmtRSXIxQzdZa0MyZkFzMDl1Nl81ZENDVGxyVVN2X2hiZWdRZ1pjT0hXQk54a0UwV294VWhhTER4OWNXUEZ4eElmV0lHb3hET1Nsdmo4SmNBMU5RQjJKbFg0ZVN4dktGSnFZbkZVZEtmWkJUVU1sTV9RcVA1RV9SXzY5MHBLTXR2bWhVM3c?oc=5",
-          "source": "Insurance Nerds",
-          "publishedAt": "2026-02-12T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Stockholm-based prevention-first pet InsurTech Lassie fetches €63.2 million in Series C funding",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOEZta1l3ZVFuTlV2UWFSRnhpeUZhUGsweHdNMkY0bXNUSC0yX1Q5bTgwaFBuU3EzV0VITncxNC1ET1lzcDdWMXV4SDdab2tsdF94OGdLZG5fRjNXMGRZcGlBTVVHUWJ4NUk3MV9YSTVIVEJPSkpiaGFpdVJaakE3bEdrbEs4Y0llc1BNMzRiTDBPMmZNV0tKT2ZrbEJrVm1iZlNaTHI4YjZ5bUhycXZIOVdhS0RlMXFPRlpqZmp0bTFmTmI5VVpJb0xR?oc=5",
-          "source": "EU-Startups",
-          "publishedAt": "2026-02-12T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Lassie raised $75M to turn pet insurance into a daily health and rewards app — TFN",
-          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNWJfZ1dRN25UNzVTNk83NWRIZFZHdWx0SFBQWDNqcm5lWkhGRGRtYnpDbG1xTng4a014dW5nN0R4dUY1aG51UXdMMTJ3SjJTTkt2Qm1qTlMzbEdWbmNJUnlOMnd4ZXRjdXl4VWExLW5LTUZBZlAwZUZYM2k0RWQ1aWVHNFpMdw?oc=5",
-          "source": "Tech Funding News",
-          "publishedAt": "2026-02-12T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Balderton backs pet startup Lassie’s $75m Series C",
-          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPd3FqNEVtUUxZRDZmX3RtUWpxb2JBUVdHR1cySTUwY2ItX21saUNZWkJUWEMxUGNMTU42YWVEeUlxZy0xS3pDRjdNM2lEcXFyVUtkZkpqMzdIQXhzRFNUZ3MtT2kzcHdGc3NLbHpBWmR1MTFNU3pVQ3VJZVByZTRLag?oc=5",
-          "source": "Sifted",
-          "publishedAt": "2026-02-11T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": [
-            "balderton"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "dr-walter",
       "name": "DR-WALTER",
       "count": 1,
@@ -107814,46 +107952,6 @@
           "tags": [
             "Funding",
             "Health & Life"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "akur8",
-      "name": "Akur8",
-      "count": 1,
-      "firstSeen": "2024-09-12T07:00:00.000Z",
-      "lastSeen": "2024-09-12T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "Funding",
-          "count": 1
-        },
-        {
-          "name": "M&A",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "theinsurer.com"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Actuarial insurtech Akur8 completes latest raise at ~$400mn valuation, acquires Arius from Milliman",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNWG1xOTNxb0ROUTdPXzVrTC1QTnFjS2lneERVT0JGN0xvRW1JOTVWVDc0X3QyRFNrNTIyU2FnajAzc1Z5S2t5bHJ1ck42WjB3aFJoOVBKZ1lfemJISXdld0lyRVpNdVZyU21nZG5tMkxMRndMWEgxR1hfVFFvUXBUSEtEQ0V3eFVmRXREUktLZmVkTGVxNWhHSnZyQ3BBbzBMTHpvNy1ER2lVUFYzbm1yaDlTeXA0Wnc4bUlidFp4bHozWER5dTJ5N2FIVDk?oc=5",
-          "source": "theinsurer.com",
-          "publishedAt": "2024-09-12T07:00:00.000Z",
-          "tags": [
-            "Funding",
-            "M&A",
-            "Claims & Underwriting"
           ],
           "summary": "",
           "co": []
