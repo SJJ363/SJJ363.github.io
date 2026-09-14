@@ -1,7 +1,441 @@
 {
-  "updatedAt": "2026-09-14T15:22:18.501Z",
-  "count": 1804,
+  "updatedAt": "2026-09-14T20:00:47.452Z",
+  "count": 1810,
   "companies": [
+    {
+      "slug": "agero",
+      "name": "Agero",
+      "count": 2,
+      "firstSeen": "2026-09-10T13:20:22.000Z",
+      "lastSeen": "2026-09-14T18:06:24.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 2
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Carrier Management",
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "moter",
+          "name": "MOTER",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "Tech Bytes: Agero Partners with MOTER Technologies",
+          "link": "https://www.carriermanagement.com/news/2026/09/14/291910.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-09-14T18:06:24.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships",
+            "Claims & Underwriting",
+            "Auto & Mobility"
+          ],
+          "summary": "Agero, through its Urgently acquisition, announced a partnership with MOTER Technologies Inc., an InsurTech that transforms connected vehicle data into real-time risk and claims insights. Together, the companies will…",
+          "co": [
+            "moter"
+          ]
+        },
+        {
+          "title": "Agero partners with MOTER",
+          "link": "https://coverager.com/agero-partners-with-moter/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-10T13:20:22.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Auto & Mobility"
+          ],
+          "summary": "The integration enables connected vehicle incidents to trigger digital roadside and accident assistance automatically.",
+          "co": [
+            "moter"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "moter",
+      "name": "MOTER",
+      "count": 2,
+      "firstSeen": "2026-09-10T13:20:22.000Z",
+      "lastSeen": "2026-09-14T18:06:24.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 2
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Carrier Management",
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "agero",
+          "name": "Agero",
+          "count": 2
+        }
+      ],
+      "articles": [
+        {
+          "title": "Tech Bytes: Agero Partners with MOTER Technologies",
+          "link": "https://www.carriermanagement.com/news/2026/09/14/291910.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-09-14T18:06:24.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships",
+            "Claims & Underwriting",
+            "Auto & Mobility"
+          ],
+          "summary": "Agero, through its Urgently acquisition, announced a partnership with MOTER Technologies Inc., an InsurTech that transforms connected vehicle data into real-time risk and claims insights. Together, the companies will…",
+          "co": [
+            "agero"
+          ]
+        },
+        {
+          "title": "Agero partners with MOTER",
+          "link": "https://coverager.com/agero-partners-with-moter/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-10T13:20:22.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Auto & Mobility"
+          ],
+          "summary": "The integration enables connected vehicle incidents to trigger digital roadside and accident assistance automatically.",
+          "co": [
+            "agero"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "world-insurance",
+      "name": "World Insurance",
+      "count": 4,
+      "firstSeen": "2026-09-03T19:30:50.000Z",
+      "lastSeen": "2026-09-14T16:54:59.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 4
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        },
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Journal",
+        "Beinsure",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "pellechio-family-agency",
+          "name": "Pellechio Family Agency",
+          "count": 2
+        },
+        {
+          "slug": "cubriel",
+          "name": "Cubriel",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "World Insurance Associates Acquires Texas’ Cubriel",
+          "link": "https://www.insurancejournal.com/news/southcentral/2026/09/14/885050.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-14T16:54:59.000Z",
+          "tags": [
+            "M&A",
+            "Property & Cat"
+          ],
+          "summary": "World Insurance Associates announced that it acquired the business of Cubriel Insurance Agency of Laredo, Texas on June 1, 2026. Terms of the transaction were not disclosed. Cubriel is a P&C agency with a business mix…",
+          "co": [
+            "cubriel"
+          ]
+        },
+        {
+          "title": "World Insurance Associates acquires Pellechio Family Agency",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWUxNLXlYd25BakZYeHlmUzBYM0huSWVSRVdZYmhKcW43X2hGU293VTM0YUc0NnFYVkRWdzZkV0J6YVJzcXowd1JSN09JcjYwM0NyT1NLcnNvOWdNTWQxemJ5UGNJMVFKVkx4bFpVVlJ6cmM4SXNva1FYNjZwMWc5SV9rb3RkNGpicEhwUlJQZw?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-04T17:40:20.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "pellechio-family-agency"
+          ]
+        },
+        {
+          "title": "World Insurance Associates picks up another New Jersey agency",
+          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/world-insurance-associates-picks-up-another-new-jersey-agency-588619.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-09-04T05:00:17.000Z",
+          "tags": [
+            "Funding",
+            "M&A"
+          ],
+          "summary": "World has now acquired at least five named New Jersey agencies since September 2025 - and with Goldman Sachs backing and a $3.4 billion enterprise valuation, the pace is unlikely to slow",
+          "co": []
+        },
+        {
+          "title": "World Insurance Acquires New Jersey’s Pellechio Family Agency",
+          "link": "https://www.insurancejournal.com/news/east/2026/09/03/884016.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-03T19:30:50.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "World Insurance Associates announced it acquired the business of Pellechio Family Agency of Parsippany, New Jersey on May 1, 2026. The Pellechio agency was founded in 2107. It offers commercial and personal insurance.…",
+          "co": [
+            "pellechio-family-agency"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cubriel",
+      "name": "Cubriel",
+      "count": 1,
+      "firstSeen": "2026-09-14T16:54:59.000Z",
+      "lastSeen": "2026-09-14T16:54:59.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Journal"
+      ],
+      "related": [
+        {
+          "slug": "world-insurance",
+          "name": "World Insurance",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "World Insurance Associates Acquires Texas’ Cubriel",
+          "link": "https://www.insurancejournal.com/news/southcentral/2026/09/14/885050.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-14T16:54:59.000Z",
+          "tags": [
+            "M&A",
+            "Property & Cat"
+          ],
+          "summary": "World Insurance Associates announced that it acquired the business of Cubriel Insurance Agency of Laredo, Texas on June 1, 2026. Terms of the transaction were not disclosed. Cubriel is a P&C agency with a business mix…",
+          "co": [
+            "world-insurance"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "brown-and-riding",
+      "name": "Brown & Riding",
+      "count": 1,
+      "firstSeen": "2026-09-14T16:34:47.000Z",
+      "lastSeen": "2026-09-14T16:34:47.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Journal"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Brown & Riding Launches Agribusiness Practice",
+          "link": "https://www.insurancejournal.com/news/southcentral/2026/09/14/885046.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-14T16:34:47.000Z",
+          "tags": [
+            "Funding",
+            "Product & Launches"
+          ],
+          "summary": "Brown & Riding announced the launch of its new national Agribusiness Practice, a specialty practice area delivering comprehensive insurance solutions for the entire agricultural supply chain. The practice is led by…",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "eigenrisk",
+      "name": "EigenRisk",
+      "count": 2,
+      "firstSeen": "2026-08-11T07:00:00.000Z",
+      "lastSeen": "2026-09-14T16:27:36.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurtech Insights",
+        "Beinsure"
+      ],
+      "related": [
+        {
+          "slug": "geox",
+          "name": "GeoX",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "EigenRisk integrates GeoX property intelligence into EigenPrism to elevate underwriting accuracy",
+          "link": "https://www.insurtechinsights.com/eigenrisk-integrates-geox-property-intelligence-into-eigenprism-to-elevate-underwriting-accuracy/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-14T16:27:36.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "EigenRisk, a provider of catastrophe risk management solutions, has announced a new agreement with GeoX, an AI-powered property intelligence company.",
+          "co": [
+            "geox"
+          ]
+        },
+        {
+          "title": "Insurtech EigenRisk adds Weatherwatch hail data to EigenPrism",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOTNQOVQ1eVNrMUhZM1NqTExDa2ZHZ2hRSkFicWlwVndHVEdfMkxnbi16RERaYVlMWHBOTlVwVmRKNEVzaTJuaWNSb0lBMWl1SUpsekRBTGtJOHVha0QzM0NsUGV2cTk3VTJuR3ZjNnZCLXVoU2pXZTVaVDFaV2gzcllRWWpqRVhqZmdjR1dEOGY3Zw?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-08-11T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "geox",
+      "name": "GeoX",
+      "count": 1,
+      "firstSeen": "2026-09-14T16:27:36.000Z",
+      "lastSeen": "2026-09-14T16:27:36.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurtech Insights"
+      ],
+      "related": [
+        {
+          "slug": "eigenrisk",
+          "name": "EigenRisk",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "EigenRisk integrates GeoX property intelligence into EigenPrism to elevate underwriting accuracy",
+          "link": "https://www.insurtechinsights.com/eigenrisk-integrates-geox-property-intelligence-into-eigenprism-to-elevate-underwriting-accuracy/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-14T16:27:36.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "EigenRisk, a provider of catastrophe risk management solutions, has announced a new agreement with GeoX, an AI-powered property intelligence company.",
+          "co": [
+            "eigenrisk"
+          ]
+        }
+      ]
+    },
     {
       "slug": "bamboo-insurance",
       "name": "Bamboo Insurance",
@@ -970,6 +1404,31 @@
       ]
     },
     {
+      "slug": "amazon-pay",
+      "name": "Amazon Pay",
+      "count": 1,
+      "firstSeen": "2026-09-14T11:54:12.000Z",
+      "lastSeen": "2026-09-14T11:54:12.000Z",
+      "topics": [],
+      "sources": [
+        "itij.com"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Amazon Pay eyes travel insurance expansion in India",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNzZ5RVh6VzFLb1I4YkVzY2w4OVlYcnh0UXlZUzNsWWFxV2JUd2p1aWpxQVJvWXU0R20wY3NLSkRVODVhZHZwTlNsLXRzMDB3X2l5MHVVZ0tweHhsYWNZbGNUTnFDSW55ODdRWkZSZGNHOENuUVVZUWxpakJsbFVpZzBTX0NkM0Vu?oc=5",
+          "source": "itij.com",
+          "publishedAt": "2026-09-14T11:54:12.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
       "slug": "rogo",
       "name": "Rogo",
       "count": 1,
@@ -996,6 +1455,138 @@
           ],
           "summary": "The platform allows firms to deploy different AI models across research and other financial workflows.",
           "co": []
+        }
+      ]
+    },
+    {
+      "slug": "fastweb",
+      "name": "Fastweb",
+      "count": 1,
+      "firstSeen": "2026-09-14T11:08:58.000Z",
+      "lastSeen": "2026-09-14T11:08:58.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Tech.eu"
+      ],
+      "related": [
+        {
+          "slug": "vodafone",
+          "name": "Vodafone",
+          "count": 1
+        },
+        {
+          "slug": "mama-insurance",
+          "name": "Mama Insurance",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Fastweb+Vodafone backs Italian insurtech Mama Insurance in new funding round",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWXlWakp3bExzX0VNYTFUdzNQTzN2ZnlRd0dPZk1jR010VFJIaF9tTXpXZ0xsZ1Z2YjNjWWNKX1d1c3lrOWNEWV80ZTRIN0JvS2JvcGlpdWYydTR4aFF3UGRNTUlIQ1RfQjNUVFFUaVdCdVJRMXEwdkU3bW1iZDMteXM5eEhraHoyckYxYS10Qm16OFAxTFoyc2xkTkxYVXNsYWVuWnFB?oc=5",
+          "source": "Tech.eu",
+          "publishedAt": "2026-09-14T11:08:58.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "vodafone",
+            "mama-insurance"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "vodafone",
+      "name": "Vodafone",
+      "count": 1,
+      "firstSeen": "2026-09-14T11:08:58.000Z",
+      "lastSeen": "2026-09-14T11:08:58.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Tech.eu"
+      ],
+      "related": [
+        {
+          "slug": "fastweb",
+          "name": "Fastweb",
+          "count": 1
+        },
+        {
+          "slug": "mama-insurance",
+          "name": "Mama Insurance",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Fastweb+Vodafone backs Italian insurtech Mama Insurance in new funding round",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWXlWakp3bExzX0VNYTFUdzNQTzN2ZnlRd0dPZk1jR010VFJIaF9tTXpXZ0xsZ1Z2YjNjWWNKX1d1c3lrOWNEWV80ZTRIN0JvS2JvcGlpdWYydTR4aFF3UGRNTUlIQ1RfQjNUVFFUaVdCdVJRMXEwdkU3bW1iZDMteXM5eEhraHoyckYxYS10Qm16OFAxTFoyc2xkTkxYVXNsYWVuWnFB?oc=5",
+          "source": "Tech.eu",
+          "publishedAt": "2026-09-14T11:08:58.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "fastweb",
+            "mama-insurance"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "mama-insurance",
+      "name": "Mama Insurance",
+      "count": 1,
+      "firstSeen": "2026-09-14T11:08:58.000Z",
+      "lastSeen": "2026-09-14T11:08:58.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Tech.eu"
+      ],
+      "related": [
+        {
+          "slug": "fastweb",
+          "name": "Fastweb",
+          "count": 1
+        },
+        {
+          "slug": "vodafone",
+          "name": "Vodafone",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Fastweb+Vodafone backs Italian insurtech Mama Insurance in new funding round",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWXlWakp3bExzX0VNYTFUdzNQTzN2ZnlRd0dPZk1jR010VFJIaF9tTXpXZ0xsZ1Z2YjNjWWNKX1d1c3lrOWNEWV80ZTRIN0JvS2JvcGlpdWYydTR4aFF3UGRNTUlIQ1RfQjNUVFFUaVdCdVJRMXEwdkU3bW1iZDMteXM5eEhraHoyckYxYS10Qm16OFAxTFoyc2xkTkxYVXNsYWVuWnFB?oc=5",
+          "source": "Tech.eu",
+          "publishedAt": "2026-09-14T11:08:58.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "fastweb",
+            "vodafone"
+          ]
         }
       ]
     },
@@ -1446,31 +2037,6 @@
           "publishedAt": "2026-03-17T07:00:00.000Z",
           "tags": [
             "Auto & Mobility"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "amazon-pay",
-      "name": "Amazon Pay",
-      "count": 1,
-      "firstSeen": "2026-09-14T10:29:29.000Z",
-      "lastSeen": "2026-09-14T10:29:29.000Z",
-      "topics": [],
-      "sources": [
-        "itij.com"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Amazon Pay eyes travel insurance expansion in India",
-          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNzZ5RVh6VzFLb1I4YkVzY2w4OVlYcnh0UXlZUzNsWWFxV2JUd2p1aWpxQVJvWXU0R20wY3NLSkRVODVhZHZwTlNsLXRzMDB3X2l5MHVVZ0tweHhsYWNZbGNUTnFDSW55ODdRWkZSZGNHOENuUVVZUWxpakJsbFVpZzBTX0NkM0Vu?oc=5",
-          "source": "itij.com",
-          "publishedAt": "2026-09-14T10:29:29.000Z",
-          "tags": [
-            "Industry"
           ],
           "summary": "",
           "co": []
@@ -5690,102 +6256,6 @@
           "summary": "",
           "co": [
             "lifecheq"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "agero",
-      "name": "Agero",
-      "count": 1,
-      "firstSeen": "2026-09-10T13:20:22.000Z",
-      "lastSeen": "2026-09-10T13:20:22.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager"
-      ],
-      "related": [
-        {
-          "slug": "moter",
-          "name": "MOTER",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Agero partners with MOTER",
-          "link": "https://coverager.com/agero-partners-with-moter/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-10T13:20:22.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation",
-            "Auto & Mobility"
-          ],
-          "summary": "The integration enables connected vehicle incidents to trigger digital roadside and accident assistance automatically.",
-          "co": [
-            "moter"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "moter",
-      "name": "MOTER",
-      "count": 1,
-      "firstSeen": "2026-09-10T13:20:22.000Z",
-      "lastSeen": "2026-09-10T13:20:22.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager"
-      ],
-      "related": [
-        {
-          "slug": "agero",
-          "name": "Agero",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Agero partners with MOTER",
-          "link": "https://coverager.com/agero-partners-with-moter/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-10T13:20:22.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation",
-            "Auto & Mobility"
-          ],
-          "summary": "The integration enables connected vehicle incidents to trigger digital roadside and accident assistance automatically.",
-          "co": [
-            "agero"
           ]
         }
       ]
@@ -16800,7 +17270,8 @@
       "sources": [
         "Beinsure",
         "citybiz",
-        "Pulse 2.0"
+        "Pulse 2.0",
+        "pulse2.com"
       ],
       "related": [
         {
@@ -16853,7 +17324,7 @@
         {
           "title": "Great Hill Invests In Aurenity To Expand E&S Insurance Programs And AI-Enabled Underwriting",
           "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPV2lvNU0xMEd2d0szZ191SkFMLWN2cjdtQjNpV3A0MVJRNUc3U1g5eXE5MVkxZHprdllhN1ppbDFaY3ZIdHRra21OZEl5QzQxWEkxa0tBdE1ORXdtTjlwMHZVS2hpbDJKUlY1SWxaMldVcFgtTHZaRFItSGdSbThmcksyNkN4ZmQxWl9JTmlvenh6MEQ0c2lhNk1IbHROWV9iM1k5N3VTRG5XZE1tY3Nj?oc=5",
-          "source": "Pulse 2.0",
+          "source": "pulse2.com",
           "publishedAt": "2026-09-01T12:15:26.000Z",
           "tags": [
             "AI & Automation",
@@ -16889,7 +17360,8 @@
       "sources": [
         "Beinsure",
         "citybiz",
-        "Pulse 2.0"
+        "Pulse 2.0",
+        "pulse2.com"
       ],
       "related": [
         {
@@ -16942,7 +17414,7 @@
         {
           "title": "Great Hill Invests In Aurenity To Expand E&S Insurance Programs And AI-Enabled Underwriting",
           "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPV2lvNU0xMEd2d0szZ191SkFMLWN2cjdtQjNpV3A0MVJRNUc3U1g5eXE5MVkxZHprdllhN1ppbDFaY3ZIdHRra21OZEl5QzQxWEkxa0tBdE1ORXdtTjlwMHZVS2hpbDJKUlY1SWxaMldVcFgtTHZaRFItSGdSbThmcksyNkN4ZmQxWl9JTmlvenh6MEQ0c2lhNk1IbHROWV9iM1k5N3VTRG5XZE1tY3Nj?oc=5",
-          "source": "Pulse 2.0",
+          "source": "pulse2.com",
           "publishedAt": "2026-09-01T12:15:26.000Z",
           "tags": [
             "AI & Automation",
@@ -17137,75 +17609,6 @@
           ],
           "summary": "",
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "world-insurance",
-      "name": "World Insurance",
-      "count": 3,
-      "firstSeen": "2026-09-03T19:30:50.000Z",
-      "lastSeen": "2026-09-04T17:40:20.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 3
-        },
-        {
-          "name": "Funding",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Beinsure",
-        "Insurance Business",
-        "Insurance Journal"
-      ],
-      "related": [
-        {
-          "slug": "pellechio-family-agency",
-          "name": "Pellechio Family Agency",
-          "count": 2
-        }
-      ],
-      "articles": [
-        {
-          "title": "World Insurance Associates acquires Pellechio Family Agency",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWUxNLXlYd25BakZYeHlmUzBYM0huSWVSRVdZYmhKcW43X2hGU293VTM0YUc0NnFYVkRWdzZkV0J6YVJzcXowd1JSN09JcjYwM0NyT1NLcnNvOWdNTWQxemJ5UGNJMVFKVkx4bFpVVlJ6cmM4SXNva1FYNjZwMWc5SV9rb3RkNGpicEhwUlJQZw?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-09-04T17:40:20.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "pellechio-family-agency"
-          ]
-        },
-        {
-          "title": "World Insurance Associates picks up another New Jersey agency",
-          "link": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/world-insurance-associates-picks-up-another-new-jersey-agency-588619.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-09-04T05:00:17.000Z",
-          "tags": [
-            "Funding",
-            "M&A"
-          ],
-          "summary": "World has now acquired at least five named New Jersey agencies since September 2025 - and with Goldman Sachs backing and a $3.4 billion enterprise valuation, the pace is unlikely to slow",
-          "co": []
-        },
-        {
-          "title": "World Insurance Acquires New Jersey’s Pellechio Family Agency",
-          "link": "https://www.insurancejournal.com/news/east/2026/09/03/884016.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-09-03T19:30:50.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "World Insurance Associates announced it acquired the business of Pellechio Family Agency of Parsippany, New Jersey on May 1, 2026. The Pellechio agency was founded in 2107. It offers commercial and personal insurance.…",
-          "co": [
-            "pellechio-family-agency"
-          ]
         }
       ]
     },
@@ -24350,137 +24753,6 @@
       ]
     },
     {
-      "slug": "cheche",
-      "name": "Cheche",
-      "count": 6,
-      "firstSeen": "2026-01-29T08:00:00.000Z",
-      "lastSeen": "2026-09-01T12:00:00.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 4
-        },
-        {
-          "name": "AI & Automation",
-          "count": 4
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 3
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 2
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "TradingView",
-        "The Globe and Mail",
-        "Finansavisen",
-        "Insurance Edge",
-        "Automotive World",
-        "Investing.com"
-      ],
-      "related": [
-        {
-          "slug": "volkswagen",
-          "name": "Volkswagen",
-          "count": 2
-        },
-        {
-          "slug": "cardif-airstar",
-          "name": "Cardif Airstar",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Cheche Group Launches ABAO Agent Family, Deploying AI Across the Full NEV Insurance Value Chain",
-          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNRzZGZ1o0aXJab0pobmZKQlczc3M0OWxaQzRaSjN6T3FTMGt4R0V3bUo1bjN3SV9oQXBTZmJkODM2RkdqZ2hrckpzOWdXaFZ0T2FrTjR2bWdkcjJ5eEFzNzhLbDJFMEllYjQxeU1sSmVWZzBWYk02MVhHbFhJRnIwSUJDWTM0ZjBiU01JSHNlRjMwMGJwTFlzNU50OE9nb2tDVXIyN2RHejBLU1ZJNXpneUNBQjNhYmJadHFoUFpwaTk4eTVYQjZBcXZTdjh3MDFac1BuMU5yUXlfLTFIUU4zNGdVbXE5TTd4SFdR?oc=5",
-          "source": "TradingView",
-          "publishedAt": "2026-09-01T12:00:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Cheche Group Unveils AI-Powered ABAO Agent to Automate Auto Insurance Underwriting",
-          "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNaVFQU0ZzeHZtQ1RnRnlybG0tN1BpTGw4WUF4YmJLMjFDOTB4RTF6WDVSN0pDS2x6VG9JWjkxaEg3TXdZVm9vc2V2Ni16ek5UNUllaGVOMklYYTVkRmI0SHBwcmt4bkthZHlBUWpxTlJ4Y0Y4WVFPTTlZeWRJc1ZHRVpWaUkwd2F3aTNscFRGdl9LT3pPRVNxQlpvdER6Qy0tTUI3R1d3R0VwWGZhSjMwQVBxLVBzZUwtamFNT1dKQ0VZekc1YmtGWXQ3RHdEa19EX29udHZPNmhiMHJHWjBUbERCMHlnbWdob3RkZWRrZkJCNTFkY0FRcDNn?oc=5",
-          "source": "The Globe and Mail",
-          "publishedAt": "2026-06-23T07:00:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting",
-            "Auto & Mobility"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Cheche Group Launches \"ABAO Agent,\" an AI-Powered Intelligent Underwriting Solution",
-          "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNUGJoa1lHWmVxUUMxcFYxMWY0UEZiZVhoZU4xcVJIeHRiZUVXTVFSZUJ4eXhhbUNNS3ZIODV5eFRUbjRUZl9QVjZCVjJzdmdPdG96a1R5aU83ODlnaUhDLWxQUnJYd0JaWUxMYUtWR0NNbUhRU3R5QTZ6Y2ZJT1Ztc2p4X0VYWEV6d0E1QXgzOGdzWEN4eTk4NzYwNW51Y2JiUERacDZHNE1GN1QyVmVocktrT1JYR1NIY2gwS21ydy1pQVZPdmdBaFliVXhxc2ZkLWpqbEphZGRWVmhydFVQTUxmWGQ0MTRsY0hVa1p2MnR1ajZVQm0yMVRyTDlhS3M?oc=5",
-          "source": "Finansavisen",
-          "publishedAt": "2026-06-22T07:00:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "China Market: Cheche Launches AI Driven Vehicle Pricing Product -",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcVhtVFBxLWZKczBpYWszU2QzcW51RnhLdHc1SHNrZ3RBajdlMzRyOTAyNXQ5azVEMnNNOFQyeE96OE54Q3pVUGVIWDdFamJSY2pDbzI0ZmZCMzBaekhWMFU5SWgwVWRmblk5ZllKd0EwekpIWUxBcXNqdWNYa0l4NFhBVlFRbFVLYlJsNkdDSkNmRWxvZFIyc2VrSVVZYUpmMENZ?oc=5",
-          "source": "Insurance Edge",
-          "publishedAt": "2026-06-08T07:00:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting",
-            "Auto & Mobility"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Cheche to develop digital insurance for VW owners",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOLWVGQ2JnZGxlU0duTHFReG1OM1hadFVwVFRrWTI2bVRtLVpHQ2c1bTlyVFl2YUVwNkc3VFdFZmpFWjF4TWV6dDJWX2otM0NacVFjMzZKeHdPOVEwNThNVVB2X0dLbjFpZ194WS1fbGNBTnJ5SEVQMXlyOWE4NFFpODFvakdnS0xDUWtScm9ad3g?oc=5",
-          "source": "Automotive World",
-          "publishedAt": "2026-01-30T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "volkswagen"
-          ]
-        },
-        {
-          "title": "Cheche partners with Volkswagen and Cardif Airstar for digital insurance",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSkUzTmJJd3dPbnpGUEFWbEt1NExaR2FFaE5HWkZacFlteUpjWVpTS3dqLWpzREQ0QW93RExJV3BadmcwQTJTV2pJX054ZkZCQU5LN2htOFp6X2xZTm5SdW5jaUhqQ0xrejNZRGZkM1hlQlI1VEt0RzdhNElBYnJMZHRVeE9wZ1E2ODNHOFo1T3hBR1N5OVpRS0MzRFdaZ21PVjhKN0NFR0NCNWhKUHVjbXpxZUI5RVpsMG1VQ2xYODhORk10cllSdQ?oc=5",
-          "source": "Investing.com",
-          "publishedAt": "2026-01-29T08:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "volkswagen",
-            "cardif-airstar"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "starr",
       "name": "Starr",
       "count": 3,
@@ -24721,6 +24993,137 @@
           ],
           "summary": "",
           "co": []
+        }
+      ]
+    },
+    {
+      "slug": "cheche",
+      "name": "Cheche",
+      "count": 6,
+      "firstSeen": "2026-01-29T08:00:00.000Z",
+      "lastSeen": "2026-09-01T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 4
+        },
+        {
+          "name": "AI & Automation",
+          "count": 4
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 3
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 2
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "TradingView",
+        "The Globe and Mail",
+        "Finansavisen",
+        "Insurance Edge",
+        "Automotive World",
+        "Investing.com"
+      ],
+      "related": [
+        {
+          "slug": "volkswagen",
+          "name": "Volkswagen",
+          "count": 2
+        },
+        {
+          "slug": "cardif-airstar",
+          "name": "Cardif Airstar",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Cheche Group Launches ABAO Agent Family, Deploying AI Across the Full NEV Insurance Value Chain",
+          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNRzZGZ1o0aXJab0pobmZKQlczc3M0OWxaQzRaSjN6T3FTMGt4R0V3bUo1bjN3SV9oQXBTZmJkODM2RkdqZ2hrckpzOWdXaFZ0T2FrTjR2bWdkcjJ5eEFzNzhLbDJFMEllYjQxeU1sSmVWZzBWYk02MVhHbFhJRnIwSUJDWTM0ZjBiU01JSHNlRjMwMGJwTFlzNU50OE9nb2tDVXIyN2RHejBLU1ZJNXpneUNBQjNhYmJadHFoUFpwaTk4eTVYQjZBcXZTdjh3MDFac1BuMU5yUXlfLTFIUU4zNGdVbXE5TTd4SFdR?oc=5",
+          "source": "TradingView",
+          "publishedAt": "2026-09-01T07:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Cheche Group Unveils AI-Powered ABAO Agent to Automate Auto Insurance Underwriting",
+          "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNaVFQU0ZzeHZtQ1RnRnlybG0tN1BpTGw4WUF4YmJLMjFDOTB4RTF6WDVSN0pDS2x6VG9JWjkxaEg3TXdZVm9vc2V2Ni16ek5UNUllaGVOMklYYTVkRmI0SHBwcmt4bkthZHlBUWpxTlJ4Y0Y4WVFPTTlZeWRJc1ZHRVpWaUkwd2F3aTNscFRGdl9LT3pPRVNxQlpvdER6Qy0tTUI3R1d3R0VwWGZhSjMwQVBxLVBzZUwtamFNT1dKQ0VZekc1YmtGWXQ3RHdEa19EX29udHZPNmhiMHJHWjBUbERCMHlnbWdob3RkZWRrZkJCNTFkY0FRcDNn?oc=5",
+          "source": "The Globe and Mail",
+          "publishedAt": "2026-06-23T07:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Cheche Group Launches \"ABAO Agent,\" an AI-Powered Intelligent Underwriting Solution",
+          "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNUGJoa1lHWmVxUUMxcFYxMWY0UEZiZVhoZU4xcVJIeHRiZUVXTVFSZUJ4eXhhbUNNS3ZIODV5eFRUbjRUZl9QVjZCVjJzdmdPdG96a1R5aU83ODlnaUhDLWxQUnJYd0JaWUxMYUtWR0NNbUhRU3R5QTZ6Y2ZJT1Ztc2p4X0VYWEV6d0E1QXgzOGdzWEN4eTk4NzYwNW51Y2JiUERacDZHNE1GN1QyVmVocktrT1JYR1NIY2gwS21ydy1pQVZPdmdBaFliVXhxc2ZkLWpqbEphZGRWVmhydFVQTUxmWGQ0MTRsY0hVa1p2MnR1ajZVQm0yMVRyTDlhS3M?oc=5",
+          "source": "Finansavisen",
+          "publishedAt": "2026-06-22T07:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "China Market: Cheche Launches AI Driven Vehicle Pricing Product -",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcVhtVFBxLWZKczBpYWszU2QzcW51RnhLdHc1SHNrZ3RBajdlMzRyOTAyNXQ5azVEMnNNOFQyeE96OE54Q3pVUGVIWDdFamJSY2pDbzI0ZmZCMzBaekhWMFU5SWgwVWRmblk5ZllKd0EwekpIWUxBcXNqdWNYa0l4NFhBVlFRbFVLYlJsNkdDSkNmRWxvZFIyc2VrSVVZYUpmMENZ?oc=5",
+          "source": "Insurance Edge",
+          "publishedAt": "2026-06-08T07:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Cheche to develop digital insurance for VW owners",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOLWVGQ2JnZGxlU0duTHFReG1OM1hadFVwVFRrWTI2bVRtLVpHQ2c1bTlyVFl2YUVwNkc3VFdFZmpFWjF4TWV6dDJWX2otM0NacVFjMzZKeHdPOVEwNThNVVB2X0dLbjFpZ194WS1fbGNBTnJ5SEVQMXlyOWE4NFFpODFvakdnS0xDUWtScm9ad3g?oc=5",
+          "source": "Automotive World",
+          "publishedAt": "2026-01-30T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "volkswagen"
+          ]
+        },
+        {
+          "title": "Cheche partners with Volkswagen and Cardif Airstar for digital insurance",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSkUzTmJJd3dPbnpGUEFWbEt1NExaR2FFaE5HWkZacFlteUpjWVpTS3dqLWpzREQ0QW93RExJV3BadmcwQTJTV2pJX054ZkZCQU5LN2htOFp6X2xZTm5SdW5jaUhqQ0xrejNZRGZkM1hlQlI1VEt0RzdhNElBYnJMZHRVeE9wZ1E2ODNHOFo1T3hBR1N5OVpRS0MzRFdaZ21PVjhKN0NFR0NCNWhKUHVjbXpxZUI5RVpsMG1VQ2xYODhORk10cllSdQ?oc=5",
+          "source": "Investing.com",
+          "publishedAt": "2026-01-29T08:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "volkswagen",
+            "cardif-airstar"
+          ]
         }
       ]
     },
@@ -28227,7 +28630,7 @@
       ],
       "sources": [
         "Theinvestor",
-        "Vietnam Investment Review - VIR"
+        "vir.com.vn"
       ],
       "related": [
         {
@@ -28251,9 +28654,9 @@
           ]
         },
         {
-          "title": "Tasco and PVI Insurance forge multi-sector partnership - Vietnam Investment Review",
+          "title": "Tasco and PVI Insurance forge multi-sector partnership",
           "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNWmpnOWtlZE9JNUd0cWJuX1dRQk10R0dlRGJTSFdqMU45d2dxRnFhanZqLVpEYloxZGNkbWFKaEJHSWxmMVNTdGhMUXZ1ZlpEYkw0VkxWOGtsZmYyckJTN1I1ZXlnVUF3Y0kxVG1JOEFCdFhmdzF5M0Y2THI4di1YYU1iYzZnc0ZSRTBxaHR3?oc=5",
-          "source": "Vietnam Investment Review - VIR",
+          "source": "vir.com.vn",
           "publishedAt": "2026-08-27T07:00:00.000Z",
           "tags": [
             "Partnerships"
@@ -28279,7 +28682,7 @@
       ],
       "sources": [
         "Theinvestor",
-        "Vietnam Investment Review - VIR"
+        "vir.com.vn"
       ],
       "related": [
         {
@@ -28303,9 +28706,9 @@
           ]
         },
         {
-          "title": "Tasco and PVI Insurance forge multi-sector partnership - Vietnam Investment Review",
+          "title": "Tasco and PVI Insurance forge multi-sector partnership",
           "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNWmpnOWtlZE9JNUd0cWJuX1dRQk10R0dlRGJTSFdqMU45d2dxRnFhanZqLVpEYloxZGNkbWFKaEJHSWxmMVNTdGhMUXZ1ZlpEYkw0VkxWOGtsZmYyckJTN1I1ZXlnVUF3Y0kxVG1JOEFCdFhmdzF5M0Y2THI4di1YYU1iYzZnc0ZSRTBxaHR3?oc=5",
-          "source": "Vietnam Investment Review - VIR",
+          "source": "vir.com.vn",
           "publishedAt": "2026-08-27T07:00:00.000Z",
           "tags": [
             "Partnerships"
@@ -46545,31 +46948,6 @@
           "co": [
             "everquote"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "eigenrisk",
-      "name": "EigenRisk",
-      "count": 1,
-      "firstSeen": "2026-08-11T07:00:00.000Z",
-      "lastSeen": "2026-08-11T07:00:00.000Z",
-      "topics": [],
-      "sources": [
-        "Beinsure"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Insurtech EigenRisk adds Weatherwatch hail data to EigenPrism",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOTNQOVQ1eVNrMUhZM1NqTExDa2ZHZ2hRSkFicWlwVndHVEdfMkxnbi16RERaYVlMWHBOTlVwVmRKNEVzaTJuaWNSb0lBMWl1SUpsekRBTGtJOHVha0QzM0NsUGV2cTk3VTJuR3ZjNnZCLXVoU2pXZTVaVDFaV2gzcllRWWpqRVhqZmdjR1dEOGY3Zw?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-08-11T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
         }
       ]
     },
