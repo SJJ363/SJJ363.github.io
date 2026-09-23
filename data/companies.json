@@ -1,7 +1,781 @@
 {
-  "updatedAt": "2026-09-23T13:01:45.472Z",
-  "count": 1876,
+  "updatedAt": "2026-09-23T18:00:49.594Z",
+  "count": 1880,
   "companies": [
+    {
+      "slug": "meta",
+      "name": "Meta",
+      "count": 3,
+      "firstSeen": "2026-07-31T13:00:12.000Z",
+      "lastSeen": "2026-09-23T17:30:37.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurance Business",
+        "Reinsurance News"
+      ],
+      "related": [
+        {
+          "slug": "insurify",
+          "name": "Insurify",
+          "count": 1
+        },
+        {
+          "slug": "openai",
+          "name": "OpenAI",
+          "count": 1
+        },
+        {
+          "slug": "marsh",
+          "name": "Marsh",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Insurify blocks Meta’s AI agent",
+          "link": "https://coverager.com/insurify-blocks-metas-ai-agent/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-23T17:30:37.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "Insurify says it made this decision to protect both consumers and its carrier partners.",
+          "co": [
+            "insurify"
+          ]
+        },
+        {
+          "title": "OpenAI's AI models teamed up to hack their way online. Then Meta admitted a breach of its own",
+          "link": "https://www.insurancebusinessmag.com/us/news/technology/openais-ai-models-teamed-up-to-hack-their-way-online--then-meta-admitted-a-breach-of-its-own-585210.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-08-06T13:35:08.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber",
+            "Claims & Underwriting"
+          ],
+          "summary": "For cyber and PI underwriters, three separate incidents in days is hard to write off as a one-off",
+          "co": [
+            "openai"
+          ]
+        },
+        {
+          "title": "Marsh provides risk and insurance services for Meta’s Texas AI data centre project",
+          "link": "https://www.reinsurancene.ws/marsh-provides-risk-and-insurance-services-for-metas-texas-ai-data-centre-project/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-31T13:00:12.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "Marsh, the global insurance broker and risk advisory business, has provided Meta with project risk analysis and insurance services for a new data centre development in Texas, supporting the technology company’s…",
+          "co": [
+            "marsh"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "insurify",
+      "name": "Insurify",
+      "count": 1,
+      "firstSeen": "2026-09-23T17:30:37.000Z",
+      "lastSeen": "2026-09-23T17:30:37.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "meta",
+          "name": "Meta",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Insurify blocks Meta’s AI agent",
+          "link": "https://coverager.com/insurify-blocks-metas-ai-agent/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-23T17:30:37.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "Insurify says it made this decision to protect both consumers and its carrier partners.",
+          "co": [
+            "meta"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "vig",
+      "name": "VIG",
+      "count": 4,
+      "firstSeen": "2025-10-02T07:00:00.000Z",
+      "lastSeen": "2026-09-23T17:03:27.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurtech Insights",
+        "Reinsurance News",
+        "SeeNews"
+      ],
+      "related": [
+        {
+          "slug": "dolphin-technologies",
+          "name": "Dolphin Technologies",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "VIG acquires 25% stake in Dolphin Technologies",
+          "link": "https://www.insurtechinsights.com/vig-acquires-25-stake-in-dolphin-technologies/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-23T17:03:27.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Vienna Insurance Group (VIG) has acquired a 25% stake in Vienna-based technology company Dolphin Technologies, with the relevant agreements now signed.",
+          "co": [
+            "dolphin-technologies"
+          ]
+        },
+        {
+          "title": "VIG reports 21% profit rise in H1 2026 to €641.5m",
+          "link": "https://www.insurtechinsights.com/vig-reports-21-profit-rise-in-h1-2026-to-e641-5m/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-26T14:05:57.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Vienna Insurance Group (VIG) has reported a 20.7% rise in result before taxes to €641.5m for the first half of 2026, driven primarily by a strong total capital investment result and an improved net combined ratio.",
+          "co": []
+        },
+        {
+          "title": "VIG reports 21% result hike in H1’26 to €642m",
+          "link": "https://www.reinsurancene.ws/vig-reports-21-result-hike-in-h126-to-e642m/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-26T08:00:47.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Vienna Insurance Group (VIG) has reported a 20.7% rise in result before taxes to EUR 641.5 million for the first half of 2026, driven primarily by the positive performance of the total capital investment result and an…",
+          "co": []
+        },
+        {
+          "title": "Digitalisation with a human touch: VIG’s customer-centric transformation",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVE00SmktOFF4UkpRRl9XRFJuUUNvTW14di1acTA0Q25rajFBcWJnNXpkemdMZG5Ua1QyMTR4X0ctSU5wM3hYamsxci1JYW1Qb0MwVkVUWGxvWklFQ084RXpaNUJTY2t1Y3JzOFBqU3MyRV9XTHFYS1JYMHNXWkNJT00xNjR1THlSUnV2ZEYxRTVOZDRSRmx2WEkzbzBZZlRvMzFMUl9R?oc=5",
+          "source": "SeeNews",
+          "publishedAt": "2025-10-02T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "dolphin-technologies",
+      "name": "Dolphin Technologies",
+      "count": 1,
+      "firstSeen": "2026-09-23T17:03:27.000Z",
+      "lastSeen": "2026-09-23T17:03:27.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurtech Insights"
+      ],
+      "related": [
+        {
+          "slug": "vig",
+          "name": "VIG",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "VIG acquires 25% stake in Dolphin Technologies",
+          "link": "https://www.insurtechinsights.com/vig-acquires-25-stake-in-dolphin-technologies/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-23T17:03:27.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Vienna Insurance Group (VIG) has acquired a 25% stake in Vienna-based technology company Dolphin Technologies, with the relevant agreements now signed.",
+          "co": [
+            "vig"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "vertafore",
+      "name": "Vertafore",
+      "count": 4,
+      "firstSeen": "2026-07-15T07:00:00.000Z",
+      "lastSeen": "2026-09-23T16:57:22.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 4
+        },
+        {
+          "name": "Product & Launches",
+          "count": 3
+        },
+        {
+          "name": "Health & Life",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Beinsure"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Vertafore Unveils Agentic Agency Vision to Accelerate Distribution Velocity for Independent Agencies",
+          "link": "https://coverager.com/vertafore-unveils-agentic-agency-vision-to-accelerate-distribution-velocity-for-independent-agencies/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-23T16:57:22.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "InsurTech leader introduces four new Velocity AI agents to reduce friction in agency workflows and create more capacity for relationships and growth",
+          "co": []
+        },
+        {
+          "title": "Vertafore named a 5-Star Technology and Software Provider for core digital systems and specialized AI built for the way agencies, MGAs and carriers work",
+          "link": "https://coverager.com/vertafore-named-a-5-star-technology-and-software-provider-for-core-digital-systems-and-specialized-ai-built-for-the-way-agencies-mgas-and-carriers-work/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-04T14:14:58.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "Insurance Business recognized InsurTech leader for the fifth consecutive year for helping insurance distribution move from friction to flow",
+          "co": []
+        },
+        {
+          "title": "Vertafore launches Velocity AI Benefit Plan Agent inside the market-leading employee benefits solution, BenefitPoint",
+          "link": "https://coverager.com/vertafore-launches-velocity-ai-benefit-plan-agent-inside-the-market-leading-employee-benefits-solution-benefitpoint/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-27T14:05:02.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Health & Life"
+          ],
+          "summary": "New Velocity AI Benefit Plan Agent cuts benefit plan setup time by up to 70%, automating one of the most manual workflows ahead of benefits season",
+          "co": []
+        },
+        {
+          "title": "Insurtech Vertafore launches Velocity AI agent for MGA submission intake",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5vUTNvRVlfVzJwa194SVlHTEZUYl9JQ19pelk2dHZIOFByMkFwVjg2dTJSdUtaR1Z3VDlWYWZTb3pvellYQS02RlhJOW81dFJDNEc0aHZNcHJfZkIzVVE4WDV1a1lYRkktSjVhb3NzSQ?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-07-15T07:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "munich-re-specialty",
+      "name": "Munich Re Specialty",
+      "count": 2,
+      "firstSeen": "2026-09-23T12:10:46.000Z",
+      "lastSeen": "2026-09-23T16:32:13.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Journal",
+        "Insurtech Insights"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Markets/Coverages: Munich Re Specialty Launches in Italy’s Primary Specialty Market",
+          "link": "https://www.insurancejournal.com/news/international/2026/09/23/886588.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-23T16:32:13.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Munich Re Specialty announced it will offer commercial solutions in the Italian primary specialty insurance market, with its Italian headquarters in Milan. Munich Re Specialty intends to provide solutions to a range of…",
+          "co": []
+        },
+        {
+          "title": "Munich Re Specialty enters Italian market with construction, property, and surety",
+          "link": "https://www.insurtechinsights.com/munich-re-specialty-enters-italian-market-with-construction-property-and-surety/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-23T12:10:46.000Z",
+          "tags": [
+            "Product & Launches",
+            "Claims & Underwriting"
+          ],
+          "summary": "Munich Re Specialty is entering the Italian primary specialty insurance market, its fifth European country launch in as many years, with first risks expected to be underwritten in early 2027.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "checkr",
+      "name": "Checkr",
+      "count": 1,
+      "firstSeen": "2026-09-23T15:34:50.000Z",
+      "lastSeen": "2026-09-23T15:34:50.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Beinsure"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Checkr launches AI verification platform for US insurers",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPLWktS3Myb0NSNWozSHpKc0NiM0FIeTlGNldRZ1RHTWQ4eE1BX3Z1MVRrQWFFY1dqUzNhNkZJRHZvUHBnVE9XUDVEV3ZoaHBSOEhmS21SRXJsd3N2NDE0MXF2bk5DaE9SU3lsRHRMWjZlYlR4bktVbUxPMzN2T2ZLUnlVa00xaTVtN0Rv?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-23T15:34:50.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "admiral",
+      "name": "Admiral",
+      "count": 6,
+      "firstSeen": "2026-02-13T08:00:00.000Z",
+      "lastSeen": "2026-09-23T14:40:17.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurtech Insights",
+        "taxi-point.co.uk",
+        "Non-Billable",
+        "businesscloud.co.uk",
+        "Life Insurance International"
+      ],
+      "related": [
+        {
+          "slug": "insurd",
+          "name": "insurd",
+          "count": 1
+        },
+        {
+          "slug": "flock",
+          "name": "Flock",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Admiral to cut 500 jobs in the UK",
+          "link": "https://coverager.com/admiral-to-cut-500-jobs-in-the-uk/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-23T14:40:17.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "This move is related to Admiral's UK insurance business only.",
+          "co": []
+        },
+        {
+          "title": "Admiral Insurance Group relaunches AdmiralPro Excess",
+          "link": "https://www.insurtechinsights.com/admiral-insurance-group-relaunches-admiralpro-excess/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-11T15:12:56.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Admiral Insurance Group, a Berkley Company providing wholesale-dedicated excess and surplus (E&S) lines commercial insurance, has announced the relaunch of AdmiralPro Excess, its Excess Professional Liability product…",
+          "co": []
+        },
+        {
+          "title": "Digital insurance broker insurd joins select group supporting Admiral’s first move into taxi and PHV cover",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPLUFIX1dFNldNLU1ldlgxSTFDczJjd0xCcmZ1Szlra29JSUItVGVPX0pEaUlSRjhPSjhQdVhOMmtDVElDaGlxT0pWWW1IbVBGQlN6TzlYV1hneE5uTFhFTU0tZFNNeXpCcGJ5MlVmQUlZRGVCdE50LTcyM01qa0RDMXVhbVUxTDUzV01HYVpMcTVPaUl6Y0hsNjFtRUxxUXNUdnhyQWhXcEJ4ZWlERTFIRTh6bzFfRC1id19ieGNwbXk3Q3JKUkZQSzBoVUtrWkk?oc=5",
+          "source": "taxi-point.co.uk",
+          "publishedAt": "2026-04-10T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "insurd"
+          ]
+        },
+        {
+          "title": "CC, Osborne Clarke lead on FTSE 100 Admiral's £80m insurtech buy",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcGJfaUV4UmhMX2diZXd1UVNRQ0FVeWwtT3lFUGVqMzBUTmE5Vk90VEF6VzJqSkpkc1pZenBGckJjUWUzWlQ2elBJZktYVWtmWk40TTY1YnowVEt0N1VNbmxYWi16VmtrWDJvV0Z0NVU1ZE9yWkljOG5pMm9hd0prOVVsWmplQQ?oc=5",
+          "source": "Non-Billable",
+          "publishedAt": "2026-02-17T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Admiral Group drives away with InsurTech in £80m deal",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUzZWTk43MkpOV1JCRmdBeXItM1pVTXl2X09WU082SURoel91VncwSWlDVWJNWFZNTTFDZUpxRlpkVzlfTnVabzhtODNTY052M19zd3VjOXlSLVVDdG95YW5pMGtheEVMVUdhcVJCWkZuRFF0dFFrbzlsVHR5Q1J0YnluM2t5b3hYT3ktOFRyQQ?oc=5",
+          "source": "businesscloud.co.uk",
+          "publishedAt": "2026-02-13T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Admiral Group to buy Flock in £80m fleet insurance deal",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBOV2lyOUxRTm1KN2RHbV9zSmYxci1aU3JKU3l2UHNIMWhJcFZKR0pHZUREZ1E4d0xid3p6elA4OXl1aklObkw4c3RZUGd3dGdsbVJBWFRIRUZnNUxSeFUyM3UzVHdKek5TN3JvcDhvdGlYTUIxQ183Qm5oSXc?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2026-02-13T08:00:00.000Z",
+          "tags": [
+            "M&A",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": [
+            "flock"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "clara-analytics",
+      "name": "CLARA Analytics",
+      "count": 3,
+      "firstSeen": "2026-08-03T12:54:42.000Z",
+      "lastSeen": "2026-09-23T14:15:22.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 3
+        },
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 3
+        },
+        {
+          "name": "Partnerships",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Insurtech Insights",
+        "Reinsurance News"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "CLARA Analytics unveils end-to-end agentic claims intelligence platform",
+          "link": "https://www.insurtechinsights.com/clara-analytics-unveils-end-to-end-agentic-claims-intelligence-platform/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-23T14:15:22.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "CLARA Analytics has launched Agentic Intelligence, which it describes as the industry's first end-to-end AI workforce built for complex casualty and workers' compensation claims. Built into the CLARAty.ai platform, it…",
+          "co": []
+        },
+        {
+          "title": "CLARA Analytics launches new integration between its Triage platform and CLARA DocIntel Pro",
+          "link": "https://www.reinsurancene.ws/clara-analytics-launches-new-integration-between-its-triage-platform-and-clara-docintel-pro/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-05T12:30:41.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "CLARA Analytics, a provider of artificial intelligence (AI) technology for commercial insurance claims optimisation, has introduced new integration between its market-leading Triage platform and CLARA DocIntel Pro. This…",
+          "co": []
+        },
+        {
+          "title": "CLARA Analytics integrates document intelligence with claims triage platform",
+          "link": "https://www.insurtechinsights.com/clara-analytics-integrates-document-intelligence-with-claims-triage-platform/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-03T12:54:42.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "CLARA Analytics has launched what it describes as the insurance industry's first platform to combine claim-level document intelligence with predictive claims triage, aiming to help commercial insurers turn unstructured…",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "travelers",
+      "name": "Travelers",
+      "count": 8,
+      "firstSeen": "2026-05-11T07:00:00.000Z",
+      "lastSeen": "2026-09-23T14:15:18.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 6
+        },
+        {
+          "name": "Cyber",
+          "count": 3
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 3
+        },
+        {
+          "name": "Regulation",
+          "count": 2
+        },
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Journal",
+        "Claims Journal",
+        "Coverager",
+        "Digital Insurance",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "ethos",
+          "name": "Ethos",
+          "count": 1
+        },
+        {
+          "slug": "liberty-mutual",
+          "name": "Liberty Mutual",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Cyber Threats the Top Business Concern as AI Heightens Risk: Travelers Risk Index",
+          "link": "https://www.insurancejournal.com/news/national/2026/09/23/886527.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-23T14:15:18.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber",
+            "Regulation"
+          ],
+          "summary": "The rapid growth and lack of governance or regulation in the use of artificial intelligence has once again made cyber threats the top concern among businesses. According to the latest Risk Index from insurer Travelers…",
+          "co": []
+        },
+        {
+          "title": "Travelers Risk Index: Cyber Threats the Top Business Concern as AI Heightens Risk",
+          "link": "https://www.claimsjournal.com/news/national/2026/09/23/340321.htm",
+          "source": "Claims Journal",
+          "publishedAt": "2026-09-23T12:00:22.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber",
+            "Regulation"
+          ],
+          "summary": "The rapid growth and lack of governance or regulation in the use of artificial intelligence has once again made cyber threats the top concern among businesses. According to the latest Risk Index from insurer Travelers…",
+          "co": []
+        },
+        {
+          "title": "Travelers expands product liability insurance to California life sciences companies",
+          "link": "https://coverager.com/travelers-expands-product-liability-insurance-to-california-life-sciences-companies/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-28T15:01:18.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The offering is now available in 50 states.",
+          "co": []
+        },
+        {
+          "title": "How Travelers measures ROI for its in-house LLM",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOdmhIZWttd2VCSHRrNFBnUzBscE9ERDNZWnZZN2ptRFR1UTdJQUZLMEJrWUIxMXZlVXBFaDQ5SDl6Y21PRWFpZ3dqYXI2X18tTXdIczVzcTB5M1N2b2t1NVp0NkczWjJ0VlVVbGRzWGJleG9YQlZkdEdaeGZTa2t3OQ?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-07-21T10:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Travelers reports Q2 net income of $2.21 billion as underwriting and investment results improve",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/travelers-reports-q2-net-income-of-2-21-billion-as-underwriting-and-investment-results-improve-582887.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-20T04:15:03.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "Strong activity on large construction projects fueled outsized growth in Travelers' surety line even as broader commercial pricing softens",
+          "co": []
+        },
+        {
+          "title": "Travelers: How AI improved claims, underwriting efficiency in Q2",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeHlGRENMU3NtZDBLejJkcldrSmJmekFuelNBcGR4d0pLOFQtVHVhVFAtY3NtZXgxWUdFUVJoVU1ndTFFVHZ3YjNFYTVWN0VxY285NFVxaUJrMDktSl84QnRia0V2S0RRS00yVWtvMlZ3Wll6blpmVUFDLVhwc242VUN0M2hMYlF6YmFNSEdBMA?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-07-17T20:05:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "AI is fueling a surge of new ransomware threats: Travelers",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQjFZcktMeXRWN2w3TnRISE1WQlBFUVBYb1BSR2x0dTEzZEpodlhwZkFCdGpOTDhFNTRacV8wYnVTeHZXVUYwaHFob1JBOHdsQTVJWHVIZmU5TWlBVWZocEd5MzVlNk9CdEEwOUJ6QUc3VkhQaktpVC1oZ0dtU2JhcmxhcndzRjFJSy1pbW5n?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-06-15T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Travelers launches AI claims tool; Ethos partners with Liberty Mutual",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ0VOUDRXbVVEMlA1Y3k1OXAxbWRieWtZdkpHYW5CS2szLWxLRWFaNlI1LXV6U2g4c2gzWDY1RnJPZ0VTbWtfWmVhOFhCd05MQlBXLV8xNTRjZGp4VzZuSHUzWVpZZE0wRzAtSGVfYXcydzIyNTNkcXBBUzJaTFRiUjRrVi1EcG90RF93QWpEeFBySHczZ1VEM3FBajY?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-05-11T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": [
+            "ethos",
+            "liberty-mutual"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sureify",
+      "name": "Sureify",
+      "count": 1,
+      "firstSeen": "2026-09-23T13:02:43.000Z",
+      "lastSeen": "2026-09-23T13:02:43.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Sureify Expands Life & Annuity New Business with LifetimeACQUIRE, Connecting Quote to Book with Headless Architecture",
+          "link": "https://coverager.com/sureify-expands-life-annuity-new-business-with-lifetimeacquire-connecting-quote-to-book-with-headless-architecture/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-23T13:02:43.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "New capabilities give carriers and distributors flexibility to shape the evolving digital acquisition experience around their own distribution models, meeting the ecosystem wherever they may be.",
+          "co": []
+        }
+      ]
+    },
     {
       "slug": "co-op",
       "name": "Co-op",
@@ -89,12 +863,13 @@
     {
       "slug": "mylo",
       "name": "Mylo",
-      "count": 3,
+      "count": 4,
       "firstSeen": "2026-07-23T13:17:59.000Z",
       "lastSeen": "2026-09-23T12:20:04.000Z",
       "topics": [],
       "sources": [
         "accessnewswire.com",
+        "Mid Florida Newspapers",
         "ACCESS Newswire",
         "Voice of Alexandria"
       ],
@@ -105,6 +880,17 @@
           "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPaVdqaXhTc3FvbXdfN3NZVjFObDJPbFVXZXZHb2JLSVF0SnZSMnVlcWdRSjVUVGNwM1YwMjNFd0w1TGhTRkpJM0xiaGl4aE9wNXhNY25BWkd5cmlBY2U0aXVVSzNrTDA0X3A5RjlISHRQbTduSUJfSHpzcklSeFBuazlZV3F4RTZaX211X1JjaG9OTEFGRnZGRWVjWnM2UUNOZ25BckprUEZrdlpranp4eTBvc0hjLVhrM0xhT1d0SFVMOWdfWVNEQURLeS11Unc2U1hCOHFfcFZXRC1NN0FfMEo5NA?oc=5",
           "source": "accessnewswire.com",
           "publishedAt": "2026-09-23T12:20:04.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech Mylo CEO David Embry and President & COO Belen Tokarski to Speak at ITC Vegas 2026",
+          "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOM2JMZ005WjNJRkFkdGZOM3J6Y196XzN1a3UyX0lCUWJNVVhPcTNyMEdsNTJmRkZFWHBiVnFWVVNoRVFfN1llNUFNTzFEMlFOZzFLZ2otSzhubWI1RXBkMGgwT1owbmt1WDZsc2hzNVRibjN2d211WFNvNnRWY1ZBR294eUJja25waUU0b210WGZ2QzFoM1k3bklVR1pfNVRROGFyVUszelJqT195WVZmSTVzQnVyeTJob21vNFdnbnBXM1JDZkNBZ2xOaGhFZkZuTllyVnJZM2JTbXpQUmRCbWhOa29FcFdEbGdjdjJqN2JWN1l1RjZSNHo5aW9zeXVXVHZJR2UwOTRjWHNRUnQ0dU1n?oc=5",
+          "source": "Mid Florida Newspapers",
+          "publishedAt": "2026-09-23T12:16:43.000Z",
           "tags": [
             "Industry"
           ],
@@ -131,41 +917,6 @@
             "Industry"
           ],
           "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "munich-re-specialty",
-      "name": "Munich Re Specialty",
-      "count": 1,
-      "firstSeen": "2026-09-23T12:10:46.000Z",
-      "lastSeen": "2026-09-23T12:10:46.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurtech Insights"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Munich Re Specialty enters Italian market with construction, property, and surety",
-          "link": "https://www.insurtechinsights.com/munich-re-specialty-enters-italian-market-with-construction-property-and-surety/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-09-23T12:10:46.000Z",
-          "tags": [
-            "Product & Launches",
-            "Claims & Underwriting"
-          ],
-          "summary": "Munich Re Specialty is entering the Italian primary specialty insurance market, its fifth European country launch in as many years, with first risks expected to be underwritten in early 2027.",
           "co": []
         }
       ]
@@ -397,6 +1148,268 @@
             "Funding",
             "AI & Automation",
             "Health & Life"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "3if-ventures",
+      "name": "3IF Ventures",
+      "count": 4,
+      "firstSeen": "2026-06-05T07:00:00.000Z",
+      "lastSeen": "2026-09-23T09:08:43.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "africaprivateequitynews.com",
+        "WeeTracker",
+        "Reinsurance News"
+      ],
+      "related": [
+        {
+          "slug": "turaco",
+          "name": "Turaco",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "3IF Ventures invests in African insurtech Turaco",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPaFV5V0JSSElPUGFNQ2RPbTVuUTdpWURrWEJOSlZ5Z3lTYjhPLWdBUXhRM3NEaGxBTzdTM0JKWjRWQkQtaHhGajRzTkp3bTBCa0xLMDVXaW1MR2FlTFV3VU85WVVIdDhDWTl1SWhNalZjSnNWNFFaMFlPMU5QV3lpRGxGS21zRDNjQURv?oc=5",
+          "source": "africaprivateequitynews.com",
+          "publishedAt": "2026-09-23T09:08:43.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "turaco"
+          ]
+        },
+        {
+          "title": "3IF Ventures reaches first close for insurance fund",
+          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9lVzE0VUJKdHVMUkc4TjVVVjI4dVNSd0Z6SkVfMlZQQThQTWhmYVBfT1dRU2FIam45OWpWNlZHSzBoNlNpRndPZlR5TVc4czROV1VudTc1M2lObklsa1dSQ0Raa08xc180S3dKLUFFd2NmWlUzMXlrSEpzWkRCM28?oc=5",
+          "source": "africaprivateequitynews.com",
+          "publishedAt": "2026-06-08T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "3IF Ventures Closes USD 12 M Fund To Back Insurtech Startups Across Africa",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNME54Z0JVZUZ0R2tPTXdWQkMySktBY2lHY3Y2VHdFMFl1NW9STzB2UmRQcUkxSl9JTFRXa3Z6YXlabEFzZUF1b2ZrdlVLSG13ZVgwOFRzS1VpaVUtZUgydlc3eUNHRnd0elVJVHB5X0FqOEljWXhHaC1JVTB3R3BrWjlsM3ZUU2x1d0c1X3hmLS1VeEVUSVVVdQ?oc=5",
+          "source": "WeeTracker",
+          "publishedAt": "2026-06-05T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "3IF Ventures secures $12m first close for Africa-focused inclusive insurance fund",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZml2Nld6LUUycEQtSl82RXN2Vlo1WU4tX196Y3ZRNzNKRDFLMGowRnlHT3lTYVhlOWZVSkkxUmpLemxxaEZFaWI5U2dPbHNqeEhpSTFNY3ZaZUlnMXl5YTJXZFVuN0F5NXM3M1o5cVYxNDhvc3NiV2I2ZV9fY1dmR2I5SmlGZGp3QUZmMFIzUVFIMm9Ha2NhWHExSnVlVC1YNUN4b0Q2UXV4MVFYLUtv?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-06-05T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "turaco",
+      "name": "Turaco",
+      "count": 5,
+      "firstSeen": "2025-03-18T07:00:00.000Z",
+      "lastSeen": "2026-09-23T09:08:43.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "africaprivateequitynews.com",
+        "Citizen Digital",
+        "The Nation (Pakistan )",
+        "Business Daily",
+        "Dabafinance"
+      ],
+      "related": [
+        {
+          "slug": "3if-ventures",
+          "name": "3IF Ventures",
+          "count": 1
+        },
+        {
+          "slug": "m-kopa",
+          "name": "M-KOPA",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "3IF Ventures invests in African insurtech Turaco",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPaFV5V0JSSElPUGFNQ2RPbTVuUTdpWURrWEJOSlZ5Z3lTYjhPLWdBUXhRM3NEaGxBTzdTM0JKWjRWQkQtaHhGajRzTkp3bTBCa0xLMDVXaW1MR2FlTFV3VU85WVVIdDhDWTl1SWhNalZjSnNWNFFaMFlPMU5QV3lpRGxGS21zRDNjQURv?oc=5",
+          "source": "africaprivateequitynews.com",
+          "publishedAt": "2026-09-23T09:08:43.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "3if-ventures"
+          ]
+        },
+        {
+          "title": "Turaco wins innovation of the year award at African insurance awards",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUUVhT3pkLS03YUpZQU5HdVc3bEhRYnotdmV1WVJyLXcxdDA0eFZZMlFXT28wNXpUdnkxMTM1X2NXT3gtV01Xd3hJOWFJVUF4UjNQLW1Zd0JlajRBM2VVQ3c5RlktMUtHeEQ1bDhMTlNzTVdsUkxTRk9vSWJqQWlvY3UwNG9hbnlXUW01LUs4NXAxWXp4MXpOWnBHTjBPdmRRNm5LWGgzTXY2UW1K?oc=5",
+          "source": "Citizen Digital",
+          "publishedAt": "2026-06-07T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "ASA Microfinance Bank, Turaco join forces to bring affordable insurance to underserved communities",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxObTIyTGZwWTZVcmdBT1RpV0drTlV2d1hpaG11dm95NFp5UURuTHpKaDhyeXRENUs3T1pFREtsTWRWTHd3QzV3ZDZnNmZMRjhSODNWYjFPTjBMQWktaTIzNXVTLTFfd2VydGI5M2xqalZhbl9aeHF1WjdSbGJsYWVDRHJoZU85ZGZPdzUwaEpvS01nZmpTVkxVdXg4QWRBNXJpNzNLUVlBeFF3bHZraUU5Q3FWZkExWkU0dnRVT0YwaGdsVm0yUUJBcQ?oc=5",
+          "source": "The Nation (Pakistan )",
+          "publishedAt": "2026-04-22T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Turaco CEO Ted Pantone on disrupting insurance and surviving Kenya's startup crunch",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQTWh2alRlbkJpOXlWakwyRnVadmJSaWFGVzJOb3VxblRYSnpCT3Q3Mk1jS0ZiVFA1RGduUWVVQS13V3NPcXlzX2piTVpnY1JFUTc2NkhlWTdGVmxlekhMaVd0d0Q5WjNaWE9IVUdFRjB4QjMwSVFpcVVPTW9XTGh5a1RVdVJxY0Rodk1TV2pBRWRUT2lxZ1REcWt4TmZrUDhqU1p6dGlVZjJBUW00RExDckRuSXNuZnNrRFVxZ2Q4QnFYN2hz?oc=5",
+          "source": "Business Daily",
+          "publishedAt": "2025-04-17T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Turaco Partners with M-KOPA to Boost Insurance Access in Kenya",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOYnNac0pYTGZieHdMcDZ2OWNpVE5JSnNEaWU1b2ZfUmY0M1Y0bjZ5MlZqZkNCSGhHcGY4Y21WZjYyeTNKanh1MXRzUXZ0cTUydkJvX2ZhM3ZVOWljcTlybVBQcVR6bU1VSXM5RFQ0OXliMWFhMWhCalk0ZEVQZUUySzhUdWI1T3pmS0JrZmpYWWZSODRULWl2RnZn?oc=5",
+          "source": "Dabafinance",
+          "publishedAt": "2025-03-18T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "m-kopa"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "dxc",
+      "name": "DXC",
+      "count": 5,
+      "firstSeen": "2025-04-24T07:00:00.000Z",
+      "lastSeen": "2026-09-23T08:06:55.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "SMBtech",
+        "IT Brief New Zealand",
+        "Rolling Out",
+        "PR Newswire",
+        "Consulting.us"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "DXC Technology Names Three Insurtech Winners In 2026 Invitational Competition",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPY2R5N2ZZdlA5THQ5U2VKcTJ2NDI4UEdLN0QySmNvT1RXTzExaXN0V1hKQXZKNWNoZnBMTDFtRmtpSTNUZXoxUU5NdUhIWGpQSFo2azF6d1hrM2c5dmVIQlZDNm44TGR5bUx6TG9CYVZqamp4OU5PMEhWZUlWTXdxMWtxUGNFblNZYmZxZHpYMmNVb2xNb2pNckhyc0ZFQ0xPODZnZw?oc=5",
+          "source": "SMBtech",
+          "publishedAt": "2026-09-23T08:06:55.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "DXC names three winners of 2026 insurance invitational",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWGdTN0ZickxtdTBOV2w0ekVsLUZkTGFUV0NOWlpWMU9MXzkzX3pjS1FoVS01ZGJsVFhsNjhCRzdoekJPTzRoTk1OMDdWRWhlTUVJRl9EdDJZVm4tMmptYWxOdUNtcFdRTXI4RzZfUVJ2Q3FRcWdLUUFrTW1sa3VBVnY1bDE0bTJheFE?oc=5",
+          "source": "IT Brief New Zealand",
+          "publishedAt": "2026-09-23T04:30:46.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "DXC’s essential AI apps promise 35% faster claims cycles",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1pX1k1b1J2Mkl5OVFXM1EwUkRIbmpXamVwQkZxcGJQVmlpem1zQk5rQkE5RTNqVWZTRkg4RFhweFN4ZXVldDhJN0hxVUVDMk1MMjBNc1dKWGpaTGd2QTNNTTZRTjNRSVB6UncwMndzaVIxbW1pakg2MmtsS3NwQQ?oc=5",
+          "source": "Rolling Out",
+          "publishedAt": "2026-04-09T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "DXC Launches APEX Partnership Program to Connect Insurers with Certified InsurTech Providers",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNZlo5cENxWXhqY1VocG5meE50V3FXZDZlQm9sNndCdmJvcGI3MHh4WWdXbEdqbWtYbVhXUXdKUUZBeVlqXzBtWEltR2N2Q1IzSGg3ZDdxOVBtOXBLSzF4dnYybFBncHdyNW93Zk9fYmVZbndUdC01SmpvOXZWNEREYVRlcU9fZ1p6ZkYyRG1WMG94RU5RbUVGWW5OcDEyWlZRMm9xSG5JbVJRcUpETmstcUZoR3NEa09CZGJIMUhjdVQ3SlUwR1ZETTdBUWI3eVU5QjF6UVlqZFFmYklwMGFxSWh3?oc=5",
+          "source": "PR Newswire",
+          "publishedAt": "2025-10-07T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "DXC hires William Pieroni as strategy and growth leader for insurance software and BPS",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOTJPb013a1JWX0xBUlpQVjRUQWIwY3hEc2FvRkYtcEFJazRNLUJJQlZXZ0Y4NEd1cEpmVzYxWlRZUVhab0puWEpnVXR0TFozUUxJMHV3MWpSdmtCbExxcjVkWFZaSFBHWWQtMkZIYzU5al9helNuNFVEc19lSWhkUGk1Y2VidzFzNnc0Z3F2TGZnNXVUTXlrMmFNdElGT0pSOExneC1sNk9JMnN4Z3ZNcXFKLUNHZUQyc0FhZTRLLTjSAcYBQVVfeXFMT0NaVzl0QVhCRnRtRUwxLVRQaVlsSGdnSGFyNWFIZ3d1U0h4ZWI2QUlhYlJabWNnTV9PMmVrbjdiSl9jZlZfTkNJVHExYTlnVFlmUy1HOVRIcnY5X2xwX3F4NlZ0V1gxZG1RdGNmb0tBUGRTeFlueXBRT2FsTVZDZmJzdTRQd3daUVlYV2ZtOFIxbloxZHFPOXdvSDNmbzRfSzRtamNROGdfYzBRYUJzbHpQam0wN0VHVjB1Z0ZicHFJdnhlejJR?oc=5",
+          "source": "Consulting.us",
+          "publishedAt": "2025-04-24T07:00:00.000Z",
+          "tags": [
+            "Leadership"
           ],
           "summary": "",
           "co": []
@@ -1134,90 +2147,6 @@
       ]
     },
     {
-      "slug": "dxc",
-      "name": "DXC",
-      "count": 4,
-      "firstSeen": "2025-04-24T07:00:00.000Z",
-      "lastSeen": "2026-09-23T04:30:46.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        },
-        {
-          "name": "Leadership",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "IT Brief New Zealand",
-        "Rolling Out",
-        "PR Newswire",
-        "Consulting.us"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "DXC names three winners of 2026 insurance invitational",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWGdTN0ZickxtdTBOV2w0ekVsLUZkTGFUV0NOWlpWMU9MXzkzX3pjS1FoVS01ZGJsVFhsNjhCRzdoekJPTzRoTk1OMDdWRWhlTUVJRl9EdDJZVm4tMmptYWxOdUNtcFdRTXI4RzZfUVJ2Q3FRcWdLUUFrTW1sa3VBVnY1bDE0bTJheFE?oc=5",
-          "source": "IT Brief New Zealand",
-          "publishedAt": "2026-09-23T04:30:46.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "DXC’s essential AI apps promise 35% faster claims cycles",
-          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1pX1k1b1J2Mkl5OVFXM1EwUkRIbmpXamVwQkZxcGJQVmlpem1zQk5rQkE5RTNqVWZTRkg4RFhweFN4ZXVldDhJN0hxVUVDMk1MMjBNc1dKWGpaTGd2QTNNTTZRTjNRSVB6UncwMndzaVIxbW1pakg2MmtsS3NwQQ?oc=5",
-          "source": "Rolling Out",
-          "publishedAt": "2026-04-09T07:00:00.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "DXC Launches APEX Partnership Program to Connect Insurers with Certified InsurTech Providers",
-          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNZlo5cENxWXhqY1VocG5meE50V3FXZDZlQm9sNndCdmJvcGI3MHh4WWdXbEdqbWtYbVhXUXdKUUZBeVlqXzBtWEltR2N2Q1IzSGg3ZDdxOVBtOXBLSzF4dnYybFBncHdyNW93Zk9fYmVZbndUdC01SmpvOXZWNEREYVRlcU9fZ1p6ZkYyRG1WMG94RU5RbUVGWW5OcDEyWlZRMm9xSG5JbVJRcUpETmstcUZoR3NEa09CZGJIMUhjdVQ3SlUwR1ZETTdBUWI3eVU5QjF6UVlqZFFmYklwMGFxSWh3?oc=5",
-          "source": "PR Newswire",
-          "publishedAt": "2025-10-07T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "DXC hires William Pieroni as strategy and growth leader for insurance software and BPS",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOTJPb013a1JWX0xBUlpQVjRUQWIwY3hEc2FvRkYtcEFJazRNLUJJQlZXZ0Y4NEd1cEpmVzYxWlRZUVhab0puWEpnVXR0TFozUUxJMHV3MWpSdmtCbExxcjVkWFZaSFBHWWQtMkZIYzU5al9helNuNFVEc19lSWhkUGk1Y2VidzFzNnc0Z3F2TGZnNXVUTXlrMmFNdElGT0pSOExneC1sNk9JMnN4Z3ZNcXFKLUNHZUQyc0FhZTRLLTjSAcYBQVVfeXFMT0NaVzl0QVhCRnRtRUwxLVRQaVlsSGdnSGFyNWFIZ3d1U0h4ZWI2QUlhYlJabWNnTV9PMmVrbjdiSl9jZlZfTkNJVHExYTlnVFlmUy1HOVRIcnY5X2xwX3F4NlZ0V1gxZG1RdGNmb0tBUGRTeFlueXBRT2FsTVZDZmJzdTRQd3daUVlYV2ZtOFIxbloxZHFPOXdvSDNmbzRfSzRtamNROGdfYzBRYUJzbHpQam0wN0VHVjB1Z0ZicHFJdnhlejJR?oc=5",
-          "source": "Consulting.us",
-          "publishedAt": "2025-04-24T07:00:00.000Z",
-          "tags": [
-            "Leadership"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "soteris",
       "name": "Soteris",
       "count": 2,
@@ -1375,7 +2304,7 @@
     {
       "slug": "root",
       "name": "Root",
-      "count": 38,
+      "count": 39,
       "firstSeen": "2024-08-29T07:00:00.000Z",
       "lastSeen": "2026-09-22T17:27:00.000Z",
       "topics": [
@@ -1406,6 +2335,7 @@
       ],
       "sources": [
         "finance.yahoo.com",
+        "Your Wyoming Link",
         "Seeking Alpha",
         "CollisionWeek",
         "Insurtech Insights",
@@ -1433,7 +2363,7 @@
         {
           "slug": "carvana",
           "name": "Carvana",
-          "count": 12
+          "count": 13
         },
         {
           "slug": "the-zebra",
@@ -1476,6 +2406,19 @@
           "title": "Root Extends Carvana Deal Through 2028 to Support Embedded Growth",
           "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNcU5fZDFpTnluTmxaNjN2Ry1zTU1Db2RVdDBiQXlReVJsVk5GTTRMYy1PWVZWQ19oNmFramdJU0NxZGt6ZmtaWk11NmxfMVBoZE04eWVDM1FJWGJWQ0hQMm1jZDRfU3pKTjhfU1NLZ3M3WUdaMVhfRmZhUUxWMlgtYWFVV3lWcDFhU0Fvcl9kYVBuRmN6M1BkQlluWQ?oc=5",
           "source": "finance.yahoo.com",
+          "publishedAt": "2026-09-22T17:27:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "carvana"
+          ]
+        },
+        {
+          "title": "Root Extends Carvana Deal Through 2028 to Support Embedded Growth",
+          "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQUHBlTEh4Zk84UlB1VURnaENxNjVKY2MwTmhySDdKdHhvY1hza2RncE9UU0FnU1QzSnUycjZTRFdSd1d0aXh1VHJYQ0VrVXVKaS03VkNkM0JrTUstWEVJbTFKcWpLRlBGV0M0R196SVlGT0NsSWxTUzRYcHE0bl9mZW5qSHlhY1NqLW1odjZ3UWN5RW5BVk1GUXdZS0NPOFB5d2dsNmdrYmltbXhLcjJkU3R5SGw0Z01KVmZkOXJsd0o3Q2JxbjBuVHJfUHFLd3NESGFuZ0xlcTMtOW5mTzEwNA?oc=5",
+          "source": "Your Wyoming Link",
           "publishedAt": "2026-09-22T17:27:00.000Z",
           "tags": [
             "Industry"
@@ -1963,7 +2906,7 @@
     {
       "slug": "carvana",
       "name": "Carvana",
-      "count": 14,
+      "count": 15,
       "firstSeen": "2025-12-16T08:00:00.000Z",
       "lastSeen": "2026-09-22T17:27:00.000Z",
       "topics": [
@@ -1982,6 +2925,7 @@
       ],
       "sources": [
         "finance.yahoo.com",
+        "Your Wyoming Link",
         "CollisionWeek",
         "Insurtech Insights",
         "marketscreener.com",
@@ -1998,7 +2942,7 @@
         {
           "slug": "root",
           "name": "Root",
-          "count": 12
+          "count": 13
         },
         {
           "slug": "geico",
@@ -2011,6 +2955,19 @@
           "title": "Root Extends Carvana Deal Through 2028 to Support Embedded Growth",
           "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNcU5fZDFpTnluTmxaNjN2Ry1zTU1Db2RVdDBiQXlReVJsVk5GTTRMYy1PWVZWQ19oNmFramdJU0NxZGt6ZmtaWk11NmxfMVBoZE04eWVDM1FJWGJWQ0hQMm1jZDRfU3pKTjhfU1NLZ3M3WUdaMVhfRmZhUUxWMlgtYWFVV3lWcDFhU0Fvcl9kYVBuRmN6M1BkQlluWQ?oc=5",
           "source": "finance.yahoo.com",
+          "publishedAt": "2026-09-22T17:27:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "root"
+          ]
+        },
+        {
+          "title": "Root Extends Carvana Deal Through 2028 to Support Embedded Growth",
+          "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQUHBlTEh4Zk84UlB1VURnaENxNjVKY2MwTmhySDdKdHhvY1hza2RncE9UU0FnU1QzSnUycjZTRFdSd1d0aXh1VHJYQ0VrVXVKaS03VkNkM0JrTUstWEVJbTFKcWpLRlBGV0M0R196SVlGT0NsSWxTUzRYcHE0bl9mZW5qSHlhY1NqLW1odjZ3UWN5RW5BVk1GUXdZS0NPOFB5d2dsNmdrYmltbXhLcjJkU3R5SGw0Z01KVmZkOXJsd0o3Q2JxbjBuVHJfUHFLd3NESGFuZ0xlcTMtOW5mTzEwNA?oc=5",
+          "source": "Your Wyoming Link",
           "publishedAt": "2026-09-22T17:27:00.000Z",
           "tags": [
             "Industry"
@@ -2875,7 +3832,7 @@
       ],
       "sources": [
         "Yahoo Finance UK",
-        "finance.yahoo.com",
+        "Yahoo Finance",
         "Digital Pakistan",
         "Biz Today"
       ],
@@ -2901,7 +3858,7 @@
         {
           "title": "JazzCash Named Finalist for Digitising Government Welfare Disbursement and Insurtech at The Money Awards 2026",
           "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZl9lT3ZTdzRlLTk2M3pvQ0JPYVNnN1dOQWdESmdHWlYzbERuaEstQlhnNEdMM2JIbXBfSlVNQTFyOU96TkMwNWdYTFNQc3lzY092YVNLVk1WbEVqQTROVWhKb01UWURPdUZQeUtuRFN6cFRha0VuT3gtOHlSa0NhWDVFVXMyWmhKbWJVWDZnZWxGQjR0R0JhMlVzaDgtanUza2FmMUV1WXRHcm1uZ0Vv?oc=5",
-          "source": "finance.yahoo.com",
+          "source": "Yahoo Finance",
           "publishedAt": "2026-09-22T13:07:00.000Z",
           "tags": [
             "Industry"
@@ -4145,7 +5102,7 @@
       "sources": [
         "IBS Intelligence",
         "SMEStreet",
-        "AD HOC NEWS",
+        "ad-hoc-news.de",
         "AOL.com",
         "Benzinga",
         "Insurtech Insights",
@@ -4249,7 +5206,7 @@
         {
           "title": "Zurich Insurance Group stock ends the day higher after the bell",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZnk5dUVLYm02anFPbmFYLU9UWXdvMXBQSmNKMk92Nk4yTXdMNUxJQUtnZVBiWTN3YzRPZWhyeWJWWEdaN1NuU3lLMnBPTUdsZ1NlNHZEZDhfd2Q2SGVSY3BkMFVSelhfTHp3bktRMkVLSEpJaGZrZWlWWU1mWGZ3SWRIZXJXUTVoc2Q5ZmZtWXVuQXJYRmxweDVMSWs2ZXA4TjdJc1d2SE9qbmFHRVVzUml2LWtFdTNyOHZZaDdqbw?oc=5",
-          "source": "AD HOC NEWS",
+          "source": "ad-hoc-news.de",
           "publishedAt": "2026-09-21T21:33:06.000Z",
           "tags": [
             "Industry"
@@ -10034,11 +10991,10 @@
       ],
       "sources": [
         "Reinsurance News",
-        "finance.yahoo.com",
+        "Yahoo Finance",
         "Investing.com",
         "TMX Newsfile",
         "Decrypt",
-        "Yahoo Finance",
         "TradingView",
         "Kalkine Media",
         "Bitcoin Magazine",
@@ -10083,7 +11039,7 @@
         {
           "title": "Zhibao Technology Expands Healthcare Data Infrastructure Through Changzhou Insurance Platform Agreement",
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUW1VUVkyRjBnUFp2NWJwM2RhRGkyVXdMWHhLYjl2VS1TbzR5U0J0cnZQOHNSOWZKOFRCaDY4UTZrTVIyNlUzNG1NY29FNWRMWmNmdHNuTEZoX09EcXZZYU56elA1dDBpSFd4Ty1XTzVpNHVENWtRdUdYMTdkbXRGTXQ5OWZzUTdTUm5DZkF1dHlLTWM0RE1vLW9weDhoMnRwTlU2Sg?oc=5",
-          "source": "finance.yahoo.com",
+          "source": "Yahoo Finance",
           "publishedAt": "2026-09-16T14:28:03.000Z",
           "tags": [
             "Health & Life"
@@ -10454,7 +11410,7 @@
         }
       ],
       "sources": [
-        "finance.yahoo.com",
+        "Yahoo Finance",
         "Life Insurance International",
         "Coverager"
       ],
@@ -10463,7 +11419,7 @@
         {
           "title": "Insurtech company Luzern Risk raises $45m in Series B round",
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNbGI1aHUwY1ItcGp1V2w3RmRaTFJvYlhvS1JRYU10ZWVkckhnSkpFWnc4QnhxbUJMUTBXazZpc3ZmLVU3WVB0Q204am1wdUUtNXBfSVFHbnh2ZmVBTXIzZEZKZXFhQ1JtbE4tTm8yaFdMUkRyb1lJcXF3X2k2WFd2bk9MNV85bERhaGlKZi1qT0N5V2FHLVp1M2tydXRvYUZfMGlr?oc=5",
-          "source": "finance.yahoo.com",
+          "source": "Yahoo Finance",
           "publishedAt": "2026-09-18T14:33:48.000Z",
           "tags": [
             "Funding"
@@ -11027,14 +11983,14 @@
         }
       ],
       "sources": [
-        "Launch Base Africa"
+        "launchbaseafrica.com"
       ],
       "related": [],
       "articles": [
         {
           "title": "Prince William’s Climate Hunt: African Insurtech Pula Named a £1m Earthshot Finalist",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOYTlsUTZZTE5zblpva3FGUzJuajl0Q3lveWZpNW93NnBzcWlhd2J1YnBaY0VRVk1FZTE3SEVsc1Vlb3E2dzhtY1puTXlDMDEzYUJhamZla3NaV1JPTGVRVTUyWTJBNzJDNW1hZ3BGelNPYXR4MWU1aHpfblZxN0pMSndhRmRIQXhEMzZRempKUnNkNmZwWDY0azJsZU1rNVoxeUFCS0d1X2oxU2phWFhfdkI4ck9FcFVCOW8ta2ZkZw?oc=5",
-          "source": "Launch Base Africa",
+          "source": "launchbaseafrica.com",
           "publishedAt": "2026-09-18T05:30:00.000Z",
           "tags": [
             "Property & Cat"
@@ -11663,7 +12619,7 @@
       "topics": [],
       "sources": [
         "Yahoo Finance UK",
-        "finance.yahoo.com"
+        "Yahoo Finance"
       ],
       "related": [],
       "articles": [
@@ -11681,7 +12637,7 @@
         {
           "title": "Jackson Wins Datos Insights Insurance Technology Impact Award",
           "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVUJUX2VraWJnNHR0Zl9UeTVBekxXRUJFanlpa2ZDZkl0ek9OUnhsN2xPa0VtV1FOZzR3YnZHc0FGN19zZGhFc0kxSWJYRE1tcXZSeEV6ME1FaXdfTGp1TVFOa2Z6T2Nqb0IxcGo0Q0xWRjNWZlJKM1JqZFJlbHZkUFpoMWFCb1pTczBqaEMwdmNQUkt0cnZBNWU1dFhhSEU?oc=5",
-          "source": "finance.yahoo.com",
+          "source": "Yahoo Finance",
           "publishedAt": "2026-09-17T13:15:00.000Z",
           "tags": [
             "Industry"
@@ -16550,7 +17506,7 @@
       ],
       "sources": [
         "Business Wire",
-        "finance.yahoo.com",
+        "Yahoo Finance",
         "Insurtech Insights",
         "FF News"
       ],
@@ -16570,7 +17526,7 @@
         {
           "title": "Socotra and Partners to Host Insurtech on Tap at ITC Vegas 2026",
           "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOYTlvVi1hSGtfZ2dvemZqOWxLVzNMWHdZQUJZSE5JREtsS2lWTVpQRHk1RzRlc0FtMDhybXNkVFhsVWRYbkNpd0pROHhBZXBwc1gzcXdaYjNXWkF0M1hTQU53bzFMRm9BWFJiOTFQZUFlM1B1dVlxWExwZU5WcFpWYlpybkVNdm9lNzg4MWxmMDRlY1NzdGpqSDg1Njg5dV9M?oc=5",
-          "source": "finance.yahoo.com",
+          "source": "Yahoo Finance",
           "publishedAt": "2026-09-15T07:00:00.000Z",
           "tags": [
             "Partnerships"
@@ -19333,108 +20289,6 @@
       ]
     },
     {
-      "slug": "admiral",
-      "name": "Admiral",
-      "count": 5,
-      "firstSeen": "2026-02-13T08:00:00.000Z",
-      "lastSeen": "2026-09-11T15:12:56.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 1
-        },
-        {
-          "name": "M&A",
-          "count": 1
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurtech Insights",
-        "taxi-point.co.uk",
-        "Non-Billable",
-        "businesscloud.co.uk",
-        "Life Insurance International"
-      ],
-      "related": [
-        {
-          "slug": "insurd",
-          "name": "insurd",
-          "count": 1
-        },
-        {
-          "slug": "flock",
-          "name": "Flock",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Admiral Insurance Group relaunches AdmiralPro Excess",
-          "link": "https://www.insurtechinsights.com/admiral-insurance-group-relaunches-admiralpro-excess/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-09-11T15:12:56.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Admiral Insurance Group, a Berkley Company providing wholesale-dedicated excess and surplus (E&S) lines commercial insurance, has announced the relaunch of AdmiralPro Excess, its Excess Professional Liability product…",
-          "co": []
-        },
-        {
-          "title": "Digital insurance broker insurd joins select group supporting Admiral’s first move into taxi and PHV cover",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPLUFIX1dFNldNLU1ldlgxSTFDczJjd0xCcmZ1Szlra29JSUItVGVPX0pEaUlSRjhPSjhQdVhOMmtDVElDaGlxT0pWWW1IbVBGQlN6TzlYV1hneE5uTFhFTU0tZFNNeXpCcGJ5MlVmQUlZRGVCdE50LTcyM01qa0RDMXVhbVUxTDUzV01HYVpMcTVPaUl6Y0hsNjFtRUxxUXNUdnhyQWhXcEJ4ZWlERTFIRTh6bzFfRC1id19ieGNwbXk3Q3JKUkZQSzBoVUtrWkk?oc=5",
-          "source": "taxi-point.co.uk",
-          "publishedAt": "2026-04-10T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "insurd"
-          ]
-        },
-        {
-          "title": "CC, Osborne Clarke lead on FTSE 100 Admiral's £80m insurtech buy",
-          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcGJfaUV4UmhMX2diZXd1UVNRQ0FVeWwtT3lFUGVqMzBUTmE5Vk90VEF6VzJqSkpkc1pZenBGckJjUWUzWlQ2elBJZktYVWtmWk40TTY1YnowVEt0N1VNbmxYWi16VmtrWDJvV0Z0NVU1ZE9yWkljOG5pMm9hd0prOVVsWmplQQ?oc=5",
-          "source": "Non-Billable",
-          "publishedAt": "2026-02-17T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Admiral Group drives away with InsurTech in £80m deal",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUzZWTk43MkpOV1JCRmdBeXItM1pVTXl2X09WU082SURoel91VncwSWlDVWJNWFZNTTFDZUpxRlpkVzlfTnVabzhtODNTY052M19zd3VjOXlSLVVDdG95YW5pMGtheEVMVUdhcVJCWkZuRFF0dFFrbzlsVHR5Q1J0YnluM2t5b3hYT3ktOFRyQQ?oc=5",
-          "source": "businesscloud.co.uk",
-          "publishedAt": "2026-02-13T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Admiral Group to buy Flock in £80m fleet insurance deal",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBOV2lyOUxRTm1KN2RHbV9zSmYxci1aU3JKU3l2UHNIMWhJcFZKR0pHZUREZ1E4d0xid3p6elA4OXl1aklObkw4c3RZUGd3dGdsbVJBWFRIRUZnNUxSeFUyM3UzVHdKek5TN3JvcDhvdGlYTUIxQ183Qm5oSXc?oc=5",
-          "source": "Life Insurance International",
-          "publishedAt": "2026-02-13T08:00:00.000Z",
-          "tags": [
-            "M&A",
-            "Auto & Mobility"
-          ],
-          "summary": "",
-          "co": [
-            "flock"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "acrisure",
       "name": "Acrisure",
       "count": 8,
@@ -19889,7 +20743,7 @@
         "Reinsurance News",
         "thejewishnews.com",
         "GlobeNewswire",
-        "finance.yahoo.com"
+        "Yahoo Finance"
       ],
       "related": [],
       "articles": [
@@ -19947,7 +20801,7 @@
         {
           "title": "Bloc Cyber Launches Specialty Cyber Insurance and Technology E&O Brokerage for Regulated Industries",
           "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcDJ1aHYwa28xVzRnLUZjSEZZU0Y2R1hQSF9FZUozVTBSamZGTkFSeWotbnhmRTkzd295ZF9kajFWTVNzblc5ZjV4NkZLVmtPb2hHRWdvcGlpRFBBcjhZZ19xalM1UU5PV2xpOURvTmM0WTY2NDl4OFNjcGtSVGxiMy14eE5TZXExenoydTlBWWJFNGpyd05HdVRjQldWcGhV?oc=5",
-          "source": "finance.yahoo.com",
+          "source": "Yahoo Finance",
           "publishedAt": "2026-09-09T07:00:00.000Z",
           "tags": [
             "Product & Launches",
@@ -20951,6 +21805,7 @@
         }
       ],
       "sources": [
+        "businesswire.com",
         "Business Wire"
       ],
       "related": [],
@@ -20958,7 +21813,7 @@
         {
           "title": "Elysian Appoints Insurance Industry Veterans Ian Thompson and Robin LaChapelle to Strategic Advisory Board",
           "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPc0ZqbWE0cDJlU2hsYW5IR0tROHNnTmFDb1RFVnllM3JVeWhxX2tHdDFTZ1RieS14M1NVZkV0UWdhQWNaTVFYMFh5NkJzNGlyWGphc0RtelpQcHpaMVotSlB1VFgwc21nbTFPOHlSZEhYSFVSUmI0ZUcwTEoxRFdjQm5saTBmM3pCNU8weWVLb3dyMHdidzZuZGhCWTViZS0wS2w1Y1FkYk5HcU5vS0pCOHNkM0ljVEdsOTk5a3ZFVWFUbFpJWnFISDBFSnhla0FGV2VIdi1oWGdIQnBMWV9YSW9nMk96LWlNZHdlbmFTUnY5YXpEYmc?oc=5",
-          "source": "Business Wire",
+          "source": "businesswire.com",
           "publishedAt": "2026-09-10T13:47:00.000Z",
           "tags": [
             "Leadership"
@@ -24645,8 +25500,9 @@
       ],
       "sources": [
         "Carrier Management",
-        "Business Wire",
+        "businesswire.com",
         "FF News",
+        "Business Wire",
         "CIR Magazine",
         "FinTech Global",
         "Insurance Today",
@@ -24687,7 +25543,7 @@
         {
           "title": "Insurity Partners with Key Management Group (KMG) to Expand Strategic System Integrator Capacity and Advance Insurity Pro Suite Innovation",
           "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxPR1ZMdHlBc29nUGcyWjdQT1RBWEJQamFHTFNRRWo5X3BvdWFPdFFiczBvUDI5ZzVNMjNBM2VIMmQtaVNIR1pDTUxCLXZNby1lRkJTbDFmLUtZS1ZmMnNraERXc1NBYUpMTnNnTGpoWktUbHVzdkZoc3V2d3ZMZUpSa0xZR0ltZTVXdjAzV3lPQUk5enFxOXVaaFZWYkxnMHpBUWhKRWdfQTVDZzJEZ0lsUmtZeUhyVWdUcG0xdk1DYVFmbmVFM08wUnh3aXJEcEVid0d2bXRubHBoeXBmaXlTM2N4TVlZbzhyY3phMUdTNU9kbV9Edm5aN2JRbFQtdjF1TkxWTGxscVJOZl85aVRzU213VVdOT0t4WmRoaTB3?oc=5",
-          "source": "Business Wire",
+          "source": "businesswire.com",
           "publishedAt": "2026-09-01T07:00:00.000Z",
           "tags": [
             "Partnerships"
@@ -31086,8 +31942,8 @@
       ],
       "sources": [
         "Insurance Business",
-        "Insurance Journal",
         "Dealroom",
+        "Insurance Journal",
         "Coverager"
       ],
       "related": [
@@ -31112,6 +31968,19 @@
           ]
         },
         {
+          "title": "Ignyte buys InsureMyTrip, its sixth travel insurance brand",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZHVrNXROZHkzNjkwSnBzeTlPZmd5emlkckVYWWpiRVhjUnpJejhrTURNS0xEWF92RFVJMTk3dktndkx0aFF2VlN1TXdtR2g5RXBkclFOQ09RZDdBbkVQdUQtQzlhU2FPS0QzaG9JZEV2ajA1aXRHeVYwX2hsVENXRlNRdDliOUIwN3R1V1B1OEp0ZTcyc2c?oc=5",
+          "source": "Dealroom",
+          "publishedAt": "2026-09-02T11:51:23.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "insuremytrip"
+          ]
+        },
+        {
           "title": "Specialty Insurance Platform Ignyte Acquires InsureMyTrip",
           "link": "https://www.insurancejournal.com/news/east/2026/09/02/883629.htm",
           "source": "Insurance Journal",
@@ -31120,19 +31989,6 @@
             "M&A"
           ],
           "summary": "Pennsylvania-based Ignyte Insurance, a specialty insurance platform, has acquired InsureMyTrip, a travel insurance marketplace that helps travelers compare and purchase coverage from insurance providers. Terms of the…",
-          "co": [
-            "insuremytrip"
-          ]
-        },
-        {
-          "title": "Ignyte buys InsureMyTrip, its sixth travel insurance brand",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZHVrNXROZHkzNjkwSnBzeTlPZmd5emlkckVYWWpiRVhjUnpJejhrTURNS0xEWF92RFVJMTk3dktndkx0aFF2VlN1TXdtR2g5RXBkclFOQ09RZDdBbkVQdUQtQzlhU2FPS0QzaG9JZEV2ajA1aXRHeVYwX2hsVENXRlNRdDliOUIwN3R1V1B1OEp0ZTcyc2c?oc=5",
-          "source": "Dealroom",
-          "publishedAt": "2026-09-02T03:30:11.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
           "co": [
             "insuremytrip"
           ]
@@ -31166,8 +32022,8 @@
       ],
       "sources": [
         "Insurance Business",
-        "Insurance Journal",
         "Dealroom",
+        "Insurance Journal",
         "Coverager"
       ],
       "related": [
@@ -31192,6 +32048,19 @@
           ]
         },
         {
+          "title": "Ignyte buys InsureMyTrip, its sixth travel insurance brand",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZHVrNXROZHkzNjkwSnBzeTlPZmd5emlkckVYWWpiRVhjUnpJejhrTURNS0xEWF92RFVJMTk3dktndkx0aFF2VlN1TXdtR2g5RXBkclFOQ09RZDdBbkVQdUQtQzlhU2FPS0QzaG9JZEV2ajA1aXRHeVYwX2hsVENXRlNRdDliOUIwN3R1V1B1OEp0ZTcyc2c?oc=5",
+          "source": "Dealroom",
+          "publishedAt": "2026-09-02T11:51:23.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "ignyte-insurance"
+          ]
+        },
+        {
           "title": "Specialty Insurance Platform Ignyte Acquires InsureMyTrip",
           "link": "https://www.insurancejournal.com/news/east/2026/09/02/883629.htm",
           "source": "Insurance Journal",
@@ -31200,19 +32069,6 @@
             "M&A"
           ],
           "summary": "Pennsylvania-based Ignyte Insurance, a specialty insurance platform, has acquired InsureMyTrip, a travel insurance marketplace that helps travelers compare and purchase coverage from insurance providers. Terms of the…",
-          "co": [
-            "ignyte-insurance"
-          ]
-        },
-        {
-          "title": "Ignyte buys InsureMyTrip, its sixth travel insurance brand",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZHVrNXROZHkzNjkwSnBzeTlPZmd5emlkckVYWWpiRVhjUnpJejhrTURNS0xEWF92RFVJMTk3dktndkx0aFF2VlN1TXdtR2g5RXBkclFOQ09RZDdBbkVQdUQtQzlhU2FPS0QzaG9JZEV2ajA1aXRHeVYwX2hsVENXRlNRdDliOUIwN3R1V1B1OEp0ZTcyc2c?oc=5",
-          "source": "Dealroom",
-          "publishedAt": "2026-09-02T03:30:11.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
           "co": [
             "ignyte-insurance"
           ]
@@ -38203,55 +39059,6 @@
             "AI & Automation"
           ],
           "summary": "The new solution was developed with TechUnion Co.",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "vig",
-      "name": "VIG",
-      "count": 3,
-      "firstSeen": "2025-10-02T07:00:00.000Z",
-      "lastSeen": "2026-08-26T14:05:57.000Z",
-      "topics": [],
-      "sources": [
-        "Insurtech Insights",
-        "Reinsurance News",
-        "SeeNews"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "VIG reports 21% profit rise in H1 2026 to €641.5m",
-          "link": "https://www.insurtechinsights.com/vig-reports-21-profit-rise-in-h1-2026-to-e641-5m/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-26T14:05:57.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "Vienna Insurance Group (VIG) has reported a 20.7% rise in result before taxes to €641.5m for the first half of 2026, driven primarily by a strong total capital investment result and an improved net combined ratio.",
-          "co": []
-        },
-        {
-          "title": "VIG reports 21% result hike in H1’26 to €642m",
-          "link": "https://www.reinsurancene.ws/vig-reports-21-result-hike-in-h126-to-e642m/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-26T08:00:47.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "Vienna Insurance Group (VIG) has reported a 20.7% rise in result before taxes to EUR 641.5 million for the first half of 2026, driven primarily by the positive performance of the total capital investment result and an…",
-          "co": []
-        },
-        {
-          "title": "Digitalisation with a human touch: VIG’s customer-centric transformation",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVE00SmktOFF4UkpRRl9XRFJuUUNvTW14di1acTA0Q25rajFBcWJnNXpkemdMZG5Ua1QyMTR4X0ctSU5wM3hYamsxci1JYW1Qb0MwVkVUWGxvWklFQ084RXpaNUJTY2t1Y3JzOFBqU3MyRV9XTHFYS1JYMHNXWkNJT00xNjR1THlSUnV2ZEYxRTVOZDRSRmx2WEkzbzBZZlRvMzFMUl9R?oc=5",
-          "source": "SeeNews",
-          "publishedAt": "2025-10-02T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
           "co": []
         }
       ]
@@ -58213,73 +59020,6 @@
       ]
     },
     {
-      "slug": "meta",
-      "name": "Meta",
-      "count": 2,
-      "firstSeen": "2026-07-31T13:00:12.000Z",
-      "lastSeen": "2026-08-06T13:35:08.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Cyber",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurance Business",
-        "Reinsurance News"
-      ],
-      "related": [
-        {
-          "slug": "openai",
-          "name": "OpenAI",
-          "count": 1
-        },
-        {
-          "slug": "marsh",
-          "name": "Marsh",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "OpenAI's AI models teamed up to hack their way online. Then Meta admitted a breach of its own",
-          "link": "https://www.insurancebusinessmag.com/us/news/technology/openais-ai-models-teamed-up-to-hack-their-way-online--then-meta-admitted-a-breach-of-its-own-585210.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-08-06T13:35:08.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber",
-            "Claims & Underwriting"
-          ],
-          "summary": "For cyber and PI underwriters, three separate incidents in days is hard to write off as a one-off",
-          "co": [
-            "openai"
-          ]
-        },
-        {
-          "title": "Marsh provides risk and insurance services for Meta’s Texas AI data centre project",
-          "link": "https://www.reinsurancene.ws/marsh-provides-risk-and-insurance-services-for-metas-texas-ai-data-centre-project/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-31T13:00:12.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "Marsh, the global insurance broker and risk advisory business, has provided Meta with project risk analysis and insurance services for a new data centre development in Texas, supporting the technology company’s…",
-          "co": [
-            "marsh"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "heller-kowitz",
       "name": "Heller-Kowitz",
       "count": 2,
@@ -60104,66 +60844,6 @@
       ]
     },
     {
-      "slug": "clara-analytics",
-      "name": "CLARA Analytics",
-      "count": 2,
-      "firstSeen": "2026-08-03T12:54:42.000Z",
-      "lastSeen": "2026-08-05T12:30:41.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 2
-        },
-        {
-          "name": "Product & Launches",
-          "count": 2
-        },
-        {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Reinsurance News",
-        "Insurtech Insights"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "CLARA Analytics launches new integration between its Triage platform and CLARA DocIntel Pro",
-          "link": "https://www.reinsurancene.ws/clara-analytics-launches-new-integration-between-its-triage-platform-and-clara-docintel-pro/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-05T12:30:41.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "CLARA Analytics, a provider of artificial intelligence (AI) technology for commercial insurance claims optimisation, has introduced new integration between its market-leading Triage platform and CLARA DocIntel Pro. This…",
-          "co": []
-        },
-        {
-          "title": "CLARA Analytics integrates document intelligence with claims triage platform",
-          "link": "https://www.insurtechinsights.com/clara-analytics-integrates-document-intelligence-with-claims-triage-platform/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-03T12:54:42.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "CLARA Analytics has launched what it describes as the insurance industry's first platform to combine claim-level document intelligence with predictive claims triage, aiming to help commercial insurers turn unstructured…",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "relation-insurance-services",
       "name": "Relation Insurance Services",
       "count": 4,
@@ -60880,70 +61560,6 @@
           "co": [
             "trucordia"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "vertafore",
-      "name": "Vertafore",
-      "count": 3,
-      "firstSeen": "2026-07-15T07:00:00.000Z",
-      "lastSeen": "2026-08-04T14:14:58.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 3
-        },
-        {
-          "name": "Product & Launches",
-          "count": 2
-        },
-        {
-          "name": "Health & Life",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Beinsure"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Vertafore named a 5-Star Technology and Software Provider for core digital systems and specialized AI built for the way agencies, MGAs and carriers work",
-          "link": "https://coverager.com/vertafore-named-a-5-star-technology-and-software-provider-for-core-digital-systems-and-specialized-ai-built-for-the-way-agencies-mgas-and-carriers-work/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-04T14:14:58.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "Insurance Business recognized InsurTech leader for the fifth consecutive year for helping insurance distribution move from friction to flow",
-          "co": []
-        },
-        {
-          "title": "Vertafore launches Velocity AI Benefit Plan Agent inside the market-leading employee benefits solution, BenefitPoint",
-          "link": "https://coverager.com/vertafore-launches-velocity-ai-benefit-plan-agent-inside-the-market-leading-employee-benefits-solution-benefitpoint/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-27T14:05:02.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Health & Life"
-          ],
-          "summary": "New Velocity AI Benefit Plan Agent cuts benefit plan setup time by up to 70%, automating one of the most manual workflows ahead of benefits season",
-          "co": []
-        },
-        {
-          "title": "Insurtech Vertafore launches Velocity AI agent for MGA submission intake",
-          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5vUTNvRVlfVzJwa194SVlHTEZUYl9JQ19pelk2dHZIOFByMkFwVjg2dTJSdUtaR1Z3VDlWYWZTb3pvellYQS02RlhJOW81dFJDNEc0aHZNcHJfZkIzVVE4WDV1a1lYRkktSjVhb3NzSQ?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-07-15T07:00:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
         }
       ]
     },
@@ -66210,128 +66826,6 @@
           "summary": "Enterprise Risk Associates announced the acquisition of Hamann Insurance Group of Katy, Texas on June 17, 2026. Terms of the transaction were not disclosed. For more than 45 years, Hamann Insurance Group has been…",
           "co": [
             "enterprise-risk-associates"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "travelers",
-      "name": "Travelers",
-      "count": 6,
-      "firstSeen": "2026-05-11T07:00:00.000Z",
-      "lastSeen": "2026-07-28T15:01:18.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 4
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 3
-        },
-        {
-          "name": "Product & Launches",
-          "count": 2
-        },
-        {
-          "name": "Cyber",
-          "count": 1
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Digital Insurance",
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "ethos",
-          "name": "Ethos",
-          "count": 1
-        },
-        {
-          "slug": "liberty-mutual",
-          "name": "Liberty Mutual",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Travelers expands product liability insurance to California life sciences companies",
-          "link": "https://coverager.com/travelers-expands-product-liability-insurance-to-california-life-sciences-companies/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-28T15:01:18.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The offering is now available in 50 states.",
-          "co": []
-        },
-        {
-          "title": "How Travelers measures ROI for its in-house LLM",
-          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOdmhIZWttd2VCSHRrNFBnUzBscE9ERDNZWnZZN2ptRFR1UTdJQUZLMEJrWUIxMXZlVXBFaDQ5SDl6Y21PRWFpZ3dqYXI2X18tTXdIczVzcTB5M1N2b2t1NVp0NkczWjJ0VlVVbGRzWGJleG9YQlZkdEdaeGZTa2t3OQ?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-07-21T10:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Travelers reports Q2 net income of $2.21 billion as underwriting and investment results improve",
-          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/travelers-reports-q2-net-income-of-2-21-billion-as-underwriting-and-investment-results-improve-582887.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-07-20T04:15:03.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "Strong activity on large construction projects fueled outsized growth in Travelers' surety line even as broader commercial pricing softens",
-          "co": []
-        },
-        {
-          "title": "Travelers: How AI improved claims, underwriting efficiency in Q2",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeHlGRENMU3NtZDBLejJkcldrSmJmekFuelNBcGR4d0pLOFQtVHVhVFAtY3NtZXgxWUdFUVJoVU1ndTFFVHZ3YjNFYTVWN0VxY285NFVxaUJrMDktSl84QnRia0V2S0RRS00yVWtvMlZ3Wll6blpmVUFDLVhwc242VUN0M2hMYlF6YmFNSEdBMA?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-07-17T20:05:00.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "AI is fueling a surge of new ransomware threats: Travelers",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQjFZcktMeXRWN2w3TnRISE1WQlBFUVBYb1BSR2x0dTEzZEpodlhwZkFCdGpOTDhFNTRacV8wYnVTeHZXVUYwaHFob1JBOHdsQTVJWHVIZmU5TWlBVWZocEd5MzVlNk9CdEEwOUJ6QUc3VkhQaktpVC1oZ0dtU2JhcmxhcndzRjFJSy1pbW5n?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-06-15T07:00:00.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Travelers launches AI claims tool; Ethos partners with Liberty Mutual",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ0VOUDRXbVVEMlA1Y3k1OXAxbWRieWtZdkpHYW5CS2szLWxLRWFaNlI1LXV6U2g4c2gzWDY1RnJPZ0VTbWtfWmVhOFhCd05MQlBXLV8xNTRjZGp4VzZuSHUzWVpZZE0wRzAtSGVfYXcydzIyNTNkcXBBUzJaTFRiUjRrVi1EcG90RF93QWpEeFBySHczZ1VEM3FBajY?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-05-11T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": [
-            "ethos",
-            "liberty-mutual"
           ]
         }
       ]
@@ -79046,60 +79540,6 @@
       ]
     },
     {
-      "slug": "3if-ventures",
-      "name": "3IF Ventures",
-      "count": 3,
-      "firstSeen": "2026-06-05T07:00:00.000Z",
-      "lastSeen": "2026-06-08T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "Funding",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "africaprivateequitynews.com",
-        "WeeTracker",
-        "Reinsurance News"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "3IF Ventures reaches first close for insurance fund",
-          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9lVzE0VUJKdHVMUkc4TjVVVjI4dVNSd0Z6SkVfMlZQQThQTWhmYVBfT1dRU2FIam45OWpWNlZHSzBoNlNpRndPZlR5TVc4czROV1VudTc1M2lObklsa1dSQ0Raa08xc180S3dKLUFFd2NmWlUzMXlrSEpzWkRCM28?oc=5",
-          "source": "africaprivateequitynews.com",
-          "publishedAt": "2026-06-08T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "3IF Ventures Closes USD 12 M Fund To Back Insurtech Startups Across Africa",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNME54Z0JVZUZ0R2tPTXdWQkMySktBY2lHY3Y2VHdFMFl1NW9STzB2UmRQcUkxSl9JTFRXa3Z6YXlabEFzZUF1b2ZrdlVLSG13ZVgwOFRzS1VpaVUtZUgydlc3eUNHRnd0elVJVHB5X0FqOEljWXhHaC1JVTB3R3BrWjlsM3ZUU2x1d0c1X3hmLS1VeEVUSVVVdQ?oc=5",
-          "source": "WeeTracker",
-          "publishedAt": "2026-06-05T07:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "3IF Ventures secures $12m first close for Africa-focused inclusive insurance fund",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZml2Nld6LUUycEQtSl82RXN2Vlo1WU4tX196Y3ZRNzNKRDFLMGowRnlHT3lTYVhlOWZVSkkxUmpLemxxaEZFaWI5U2dPbHNqeEhpSTFNY3ZaZUlnMXl5YTJXZFVuN0F5NXM3M1o5cVYxNDhvc3NiV2I2ZV9fY1dmR2I5SmlGZGp3QUZmMFIzUVFIMm9Ha2NhWHExSnVlVC1YNUN4b0Q2UXV4MVFYLUtv?oc=5",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-06-05T07:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "northwestern-mutual",
       "name": "Northwestern Mutual",
       "count": 5,
@@ -79220,80 +79660,6 @@
           "summary": "",
           "co": [
             "cover-genius"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "turaco",
-      "name": "Turaco",
-      "count": 4,
-      "firstSeen": "2025-03-18T07:00:00.000Z",
-      "lastSeen": "2026-06-07T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Citizen Digital",
-        "The Nation (Pakistan )",
-        "Business Daily",
-        "Dabafinance"
-      ],
-      "related": [
-        {
-          "slug": "m-kopa",
-          "name": "M-KOPA",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Turaco wins innovation of the year award at African insurance awards",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUUVhT3pkLS03YUpZQU5HdVc3bEhRYnotdmV1WVJyLXcxdDA0eFZZMlFXT28wNXpUdnkxMTM1X2NXT3gtV01Xd3hJOWFJVUF4UjNQLW1Zd0JlajRBM2VVQ3c5RlktMUtHeEQ1bDhMTlNzTVdsUkxTRk9vSWJqQWlvY3UwNG9hbnlXUW01LUs4NXAxWXp4MXpOWnBHTjBPdmRRNm5LWGgzTXY2UW1K?oc=5",
-          "source": "Citizen Digital",
-          "publishedAt": "2026-06-07T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "ASA Microfinance Bank, Turaco join forces to bring affordable insurance to underserved communities",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxObTIyTGZwWTZVcmdBT1RpV0drTlV2d1hpaG11dm95NFp5UURuTHpKaDhyeXRENUs3T1pFREtsTWRWTHd3QzV3ZDZnNmZMRjhSODNWYjFPTjBMQWktaTIzNXVTLTFfd2VydGI5M2xqalZhbl9aeHF1WjdSbGJsYWVDRHJoZU85ZGZPdzUwaEpvS01nZmpTVkxVdXg4QWRBNXJpNzNLUVlBeFF3bHZraUU5Q3FWZkExWkU0dnRVT0YwaGdsVm0yUUJBcQ?oc=5",
-          "source": "The Nation (Pakistan )",
-          "publishedAt": "2026-04-22T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Turaco CEO Ted Pantone on disrupting insurance and surviving Kenya's startup crunch",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQTWh2alRlbkJpOXlWakwyRnVadmJSaWFGVzJOb3VxblRYSnpCT3Q3Mk1jS0ZiVFA1RGduUWVVQS13V3NPcXlzX2piTVpnY1JFUTc2NkhlWTdGVmxlekhMaVd0d0Q5WjNaWE9IVUdFRjB4QjMwSVFpcVVPTW9XTGh5a1RVdVJxY0Rodk1TV2pBRWRUT2lxZ1REcWt4TmZrUDhqU1p6dGlVZjJBUW00RExDckRuSXNuZnNrRFVxZ2Q4QnFYN2hz?oc=5",
-          "source": "Business Daily",
-          "publishedAt": "2025-04-17T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Turaco Partners with M-KOPA to Boost Insurance Access in Kenya",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOYnNac0pYTGZieHdMcDZ2OWNpVE5JSnNEaWU1b2ZfUmY0M1Y0bjZ5MlZqZkNCSGhHcGY4Y21WZjYyeTNKanh1MXRzUXZ0cTUydkJvX2ZhM3ZVOWljcTlybVBQcVR6bU1VSXM5RFQ0OXliMWFhMWhCalk0ZEVQZUUySzhUdWI1T3pmS0JrZmpYWWZSODRULWl2RnZn?oc=5",
-          "source": "Dabafinance",
-          "publishedAt": "2025-03-18T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "m-kopa"
           ]
         }
       ]
