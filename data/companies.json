@@ -1,7 +1,1147 @@
 {
-  "updatedAt": "2026-09-29T16:11:56.388Z",
-  "count": 1944,
+  "updatedAt": "2026-09-29T21:07:48.083Z",
+  "count": 1946,
   "companies": [
+    {
+      "slug": "willis-towers-watson",
+      "name": "Willis Towers Watson",
+      "count": 41,
+      "firstSeen": "2024-09-11T07:00:00.000Z",
+      "lastSeen": "2026-09-29T19:00:54.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 14
+        },
+        {
+          "name": "Product & Launches",
+          "count": 14
+        },
+        {
+          "name": "AI & Automation",
+          "count": 12
+        },
+        {
+          "name": "Embedded",
+          "count": 6
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 5
+        },
+        {
+          "name": "Leadership",
+          "count": 4
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Reinsurance News",
+        "Insurance Journal",
+        "manilatimes.net",
+        "quiverquant.com",
+        "AOL.com",
+        "Benzinga",
+        "Yahoo Finance",
+        "Insurtech Insights",
+        "Insurance Business UK",
+        "Insurance Business",
+        "simplywall.st",
+        "Life Insurance International",
+        "Moomoo",
+        "marketscreener.com",
+        "FinTech Global",
+        "Quiver Quantitative",
+        "Digital Insurance",
+        "Global Reinsurance",
+        "techbuzzireland.com",
+        "Health & Protection",
+        "Captive Insurance Times"
+      ],
+      "related": [
+        {
+          "slug": "kayna",
+          "name": "Kayna",
+          "count": 11
+        },
+        {
+          "slug": "kwant",
+          "name": "Kwant",
+          "count": 8
+        },
+        {
+          "slug": "zurich",
+          "name": "Zurich",
+          "count": 5
+        },
+        {
+          "slug": "kwantsure",
+          "name": "KwantSure",
+          "count": 4
+        },
+        {
+          "slug": "softtek",
+          "name": "Softtek",
+          "count": 1
+        },
+        {
+          "slug": "hampden-risk-partners",
+          "name": "Hampden Risk Partners",
+          "count": 1
+        },
+        {
+          "slug": "miller",
+          "name": "Miller",
+          "count": 1
+        },
+        {
+          "slug": "brecon",
+          "name": "Brecon",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "WTW partners with Softtek on AI workforce transformation",
+          "link": "https://coverager.com/wtw-partners-with-softtek-on-ai-workforce-transformation/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-29T19:00:54.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "The partnership sits within WTW’s Health, Wealth & Career business.",
+          "co": [
+            "softtek"
+          ]
+        },
+        {
+          "title": "WTW adds AI assistant to Radar Vision",
+          "link": "https://coverager.com/wtw-adds-ai-assistant-to-radar-vision/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-29T12:04:16.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "Radar is WTW’s insurance technology platform spanning pricing, underwriting and claims.",
+          "co": []
+        },
+        {
+          "title": "Willis launches RiskIQ Nexus to bring risk and insurance data into one place",
+          "link": "https://www.reinsurancene.ws/willis-launches-riskiq-nexus-to-bring-risk-and-insurance-data-into-one-place/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-29T12:00:13.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Willis, a WTW business, has announced the launch of RiskIQ Nexus, a new risk intelligence platform designed to help organisations bring risk and insurance data together in one place. Part of WTW’s RiskIQ ecosystem…",
+          "co": []
+        },
+        {
+          "title": "WTW launches Radar AI Assistant for insurance portfolio management",
+          "link": "https://www.reinsurancene.ws/wtw-launches-radar-ai-assistant-for-insurance-portfolio-management/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-28T15:30:30.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "WTW, a global advisory, broking and solutions company, has announced the launch of Radar AI Assistant, a new natural language capability within Radar Vision designed to strengthen insurance portfolio management and…",
+          "co": []
+        },
+        {
+          "title": "Tech Update: WTW Unveils Radar AI Assistant for Radar Vision",
+          "link": "https://www.insurancejournal.com/news/national/2026/09/28/887060.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-28T15:27:23.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "WTW said it released Radar AI Assistant, a new natural language capability within Radar Vision, its AI-driven performance and experience monitoring tool built for insurers. The AI technology enables pricing…",
+          "co": []
+        },
+        {
+          "title": "WTW releases game-changing AI Assistant for insurance portfolio management to unlock faster insights",
+          "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPMmg0ejBNT3k3TEJxZll4MVZfYlJVclBXREUxZW5Qb3JRNEY0M0ZJelRmNXZFTFg1cGNtdmsxMndkSnliMDdCM0VzaDRqS2FFYmFHaGRaSUpnOTVYbTF3bEhNeTRXalFHU05NNkdlWm9NaXZoX3lsV1RXQ09reHlOWmVMaUxzWVI1MjJFVFgzcS1vY0R6YXJMRDkzVkdaM0k4OUhKSGhWSW52SXZ2Qm9KY0gxVXhmVy05cmoxSWJsZ3VLQTdfTXktZ0RUMTFOZ2ZZOFoyN0tQT1BnTldfUTRCWG1KbzJ4eC02Y1NRTHFDOVFjN0oxRGhpb2FWcGVrRW96M3FSRNIBigJBVV95cUxQazVBME5LNHFfN2RPRkRjSWM4RWhUbTRHRUhSQ1pGTXJKN2ZHdmp3bjVsdlA3MFNsSEMxbU1aazIycGVTaWltMGZwczc2ZEhRSGRVTC1JTmlHYjhGeGlGNk9LYXZBUTZ4c1lXakZlVkVRUVRNalA2S2Zxc3MzaVBVeXY0U1VHOGRWdmYybGJQNTc4bWpEcUZHZzlpYU5nTTA3d2lndl9yaUhDNzhNR0F5bVlVeThWRkVSNUVKWl95RjA5Z0dVM05kYkRHUEJPVXdfVVpMeEk5eVBLcVVDUjZPNnhHNXdHSWhjV3lyREZLbDRZOUtZQ1h2aE4zckNEaWN1bDJQM1ZtQUpZUQ?oc=5",
+          "source": "manilatimes.net",
+          "publishedAt": "2026-09-28T11:30:46.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "WTW Unveils Radar AI Assistant to Deliver Real-Time Insurance Pricing and Underwriting Insights",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNzcwcGtlbEFJZmctNXYxYXJFYy1VZFdfMVRiYlpMdDVILTktRGRIS2s5Mi0wa2lwX1pKOWpzT3VxR0tyaUJsM3ZJb1JMRktqY0hYc3FhWDNiQ3hWOWVHX3dKVnpDdWhMRl91MmF6NEZyYzhyMzdPSkZJN05jQmJjVXJhVjFSTURfYlIxaU1IazhocUtMNHJ1TjZKNlAtdmh6VGdWQXBMZWVWZjhFcEw4cUFIeGZYTUVkYmExbmpscERJZmNPbHlF?oc=5",
+          "source": "quiverquant.com",
+          "publishedAt": "2026-09-28T11:30:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "WTW’s Zurich Deal Puts Its Insurance Technology Business In Focus",
+          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB2RTVSMjdKYm5vVUZzejZpbGJsd2RzWjJ1OV9VaFVZR1dxdVdzTzBjeVZJOEFlakFRanVhOFhITHQ4aEphVzVLRURfTzJnWC1NbUdsWC1lUnhwX1FkdG5ha2VKZG9Del9faHVjWExVMnhxWmZTOHJucEVIaThuZ2c?oc=5",
+          "source": "AOL.com",
+          "publishedAt": "2026-09-21T16:41:43.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "zurich"
+          ]
+        },
+        {
+          "title": "WTW’s Zurich Deal Puts Its Insurance Technology Business In Focus",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPMmxTYkV2dTRKSjZoWUs0eklsWUdkVFZEYXRYZ05ISldmRmlQRzJhYkN1ZWRudTdnTWs2Mk1YdTMzOVFGai14SW9Nb09VS3R1T1VZOGpDWGlhYnhTOUhfVWZIeGF5WHp6dU81bWxPN2ZHOTV1d2QzWFJzMm5Ub2ZpUm1saWJPZmI2VHY0a1lyVVRRWmY5YlRCcUZvRG9Lck5WSEZtSks2cmtndmVRbkdGTnp6eks0WEZCUXVyOVhWOA?oc=5",
+          "source": "Benzinga",
+          "publishedAt": "2026-09-21T14:41:43.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "zurich"
+          ]
+        },
+        {
+          "title": "WTW’s Zurich Deal Puts Its Insurance Technology Business In Focus",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPcDFkVkttZTJma0N6Ykk2X014aVdrNjBVN1BrRDVYTVVhTGNlNFZDbjNnM3hhTE1sdVZkTGljWTlidFBpa3dIYWJnSEVTNzVCeTlvaUVjemZVaVd2LUVkaFpBUDRtbTNuT1o2XzJyN0JINElhRGh2OW1OTGhmYmQzbkdZaFB3a0pvSWNGbFBORDVOUjhSQ2c?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-09-21T14:41:43.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "zurich"
+          ]
+        },
+        {
+          "title": "WTW and Zurich expand partnership with global rollout of Radar across retail lines",
+          "link": "https://www.insurtechinsights.com/wtw-and-zurich-expand-partnership-with-global-rollout-of-radar-across-retail-lines/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-21T13:16:46.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "WTW has signed a global agreement with Zurich Insurance to deploy Radar, WTW's end-to-end rating and analytics software, across Zurich's target retail insurance markets worldwide.",
+          "co": [
+            "zurich"
+          ]
+        },
+        {
+          "title": "Zurich expands use of WTW’s Radar platform",
+          "link": "https://coverager.com/zurich-expands-use-of-wtws-radar-platform/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-21T12:00:11.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "The broader deployment will give Zurich a centralized platform for pricing analysis, monitoring and decisions across markets.",
+          "co": [
+            "zurich"
+          ]
+        },
+        {
+          "title": "WSL Football signs WTW to co-create insurance built for women's football",
+          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/wsl-football-signs-wtw-to-cocreate-insurance-built-for-womens-football-588431.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-09-03T02:48:47.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "Brokers have been coordinating with carriers on female footballer cover since at least 2022 - WTW's WSL partnership is the most concrete market commitment yet to building a product from the ground up rather than…",
+          "co": []
+        },
+        {
+          "title": "WTW partners with women’s football leagues",
+          "link": "https://coverager.com/wtw-partners-with-womens-football-leagues/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-02T13:28:03.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "WTW is partnering with England’s top two women’s professional soccer leagues to create insurance that better fits female players’ needs.",
+          "co": []
+        },
+        {
+          "title": "Insurance moves: Miller, Hampden Risk, Brecon, Willis, Pinion, QuestGates, more",
+          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/insurance-moves-miller-hampden-risk-brecon-willis-pinion-questgates-more-586582.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-08-19T02:39:20.000Z",
+          "tags": [
+            "Cyber",
+            "Claims & Underwriting",
+            "Leadership"
+          ],
+          "summary": "Seven appointments span Bermuda property capacity, Lloyd's intelligent follow, cyber claims leadership with dual legal-and-adjusting qualification, and a new active assailant underwriting desk at Clearwater",
+          "co": [
+            "hampden-risk-partners",
+            "miller",
+            "brecon",
+            "pinion",
+            "questgates"
+          ]
+        },
+        {
+          "title": "Willis and CBF launch first-of-its-kind coral reef parametric insurance programme",
+          "link": "https://www.reinsurancene.ws/willis-and-cbf-launch-first-of-its-kind-coral-reef-parametric-insurance-programme/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-05T13:00:25.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "Willis, a WTW business, and the Caribbean Biodiversity Fund (CBF) have launched a first-of-its-kind parametric insurance programme to protect Caribbean coral reefs. Liberty Mutual will provide capacity, with…",
+          "co": [
+            "cbf"
+          ]
+        },
+        {
+          "title": "WTW reports higher second-quarter revenue as AI investment weighs on earnings",
+          "link": "https://www.insurtechinsights.com/wtw-reports-higher-second-quarter-revenue-as-ai-investment-weighs-on-earnings/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-07-31T14:23:11.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "Willis Towers Watson (WTW) reported higher second-quarter revenue but lower net income as acquisition-related costs weighed on earnings, while announcing a $625 million investment to accelerate artificial intelligence…",
+          "co": []
+        },
+        {
+          "title": "Willis urges data centre sector to rethink insurance buying amid AI demand growth",
+          "link": "https://www.reinsurancene.ws/willis-urges-data-centre-sector-to-rethink-insurance-buying-amid-ai-demand-growth/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-27T16:00:24.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "As rapid expansion in digital infrastructure and AI-driven demand reshapes the technology landscape, insurance broker Willis, a WTW business, urges data center owners, developers, builders, operators and investors to…",
+          "co": []
+        },
+        {
+          "title": "Over-insured data centers are a growing problem, Willis says",
+          "link": "https://www.insurancebusinessmag.com/us/news/technology/overinsured-data-centers-are-a-growing-problem-willis-says-583799.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-27T14:18:14.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "The broker says AI-driven capacity demand is outrunning actual risk quantification at many sites",
+          "co": []
+        },
+        {
+          "title": "Over-insured data centres are a growing problem, Willis says",
+          "link": "https://www.insurancebusinessmag.com/uk/news/technology/overinsured-data-centres-are-a-growing-problem-willis-says-583800.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-07-27T14:18:14.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "The broker says AI-driven capacity demand is outrunning actual risk quantification at many sites",
+          "co": []
+        },
+        {
+          "title": "Willis Towers Watson (WTW) Launches New Pension Tools And Expands Digital Insurance Reach",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVkFFN1FGVlpPT1hrbHZXTmNFbWFDX2NVUUZxUmdKcmY5Y093Y3lWVkRpSk1LMWRsMXoyNkVnMWZLblhjYXV3enpSM2lBbVl3Q1ZtSHpfV0xUM3BZaFpPd3ZDX3M0RU12cjY5MDRuVEdHUE9vR0dINF96R3A5cXNsbUlrZDRfQkdZNkhiSzRnN3pGbXczaWYzaEotT3ZrdGc?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-07-21T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Is WTW’s KwantSure Partnership Quietly Rewiring Its Digital Risk Solutions Narrative (WTW)?",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOa1h4Zm1RY205ZkoxcjJjaGFISEdSSmJzVjVoRFBrSURNWkt3eHNWOWZ2cm9TYk5LdDRfQWNBUnVVV0lVU2h0a0c0OVdRMjdNZzFkZ3VSbUNPNExLR3RtQUVhbnBNRGljUDJMa3NvQTJ6UVBZNENuazB2OVJ0cDFtVVZxRXFZQk45VDc4a19hekZHRF9GQ1pKWGRRQ3VjU25ob1FHTHpCWnVWLUZVQnpheHhRcjBUUlpTRGI1bUlzdXoyUjdQTldtcEhaRXcyc1RIUUZsNGVR0gHbAUFVX3lxTE0xREVMTGM2d3NkN2NWYlNnR1U0c1IxSnIzdnhGQ0J5M1hQYmdsRjNnOWl5ejRGb0FfaExZZjlybXJvWkRwVkZ5UXA4S1NSSk5IWThxZXBqQjRvMDFPam8zVElTcm1pRy1uV29EYkVxZG55dWxUX3ZmYWVaajJYOWhvVGtsOV9rOUtyWWZicWtfRkMwWjk3c19xWW9PQlVkQTJaMUh6UVdDeDhVQ183SnV5c1I3b3czTmhQbTE0TGtJRnlRUldERzBodEl2Q1hwOF9FR1BBeE90VGZ4WQ?oc=5",
+          "source": "simplywall.st",
+          "publishedAt": "2026-07-17T21:30:26.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "kwantsure"
+          ]
+        },
+        {
+          "title": "Willis, Kayna partner with Kwant on subcontractor insurance",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNMTBObnBDdkt1Zkc4SEluUzUycGdHdlBuTlRkblJQUU1MMXdidnpoMHI1cDBPaENEYzkxa0dJaEFnQndKZ1BtOWxQMWNHdzFYZzFOV2tZeFM3UVpiY3VXdEhweFVFSVZLRFhHMXJMUnVqMlYzSXZMNW53R0Y5QWkxVEdET2FmT0U4Mlc3MXFSYXdHNThrRWF6V3YzMVBya0JTc1ExbFNfSGw?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-07-16T13:43:11.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "kayna",
+            "kwant"
+          ]
+        },
+        {
+          "title": "Willis and Kayna launch embedded insurance program for subcontractors in partnership with Kwant",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNMEkyLTFHc1FaSTJTNGU5YkdkU09tQ0l1VTV2RVBmeU5ZRmZwYWlmT20xR0J5TzJDUXl1V1NKeXVfR2VldTBpVVF5eHNxTG5kVlZ3SUN4RTEwQzB0RHBsUmI5SV82cVhDRlRFSEVpdHAwcG5IUFBabVBySlNUelZyZERqVHhaU29KaGhPdGx6VnFaeHNvbDB1QXR5aTNtUkJTb21PSnI5emMtTk1XQUp2T25QXzRGdy1veTRoV01falU3bkE?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-16T13:21:41.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "kayna",
+            "kwant"
+          ]
+        },
+        {
+          "title": "Willis, Kayna partner with Kwant on subcontractor insurance",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOeUZJS29KdDhGTUZ5R0JmdWJkU2xoQmk3RXFkNm56OUpnUkJaSG1JWHl5YzdYY2RZeGdQcWR6RktmaFRFWWN3Ym5xb0MtMlBfV19oYzVYZ1hQai04d01BR19XQW9GSkRFekk3X2hyVDJzajVIT2hWNS1oRVNfZndienBRdHBMQkdnRmRST2kwbEtGSzF2OVE?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2026-07-16T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "kayna",
+            "kwant"
+          ]
+        },
+        {
+          "title": "Willis, Kayna and Kwant Launch KwantSure Embedded Insurance Program for Construction Workforce Compliance",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbWs3cVFyQlRoajdyUmNrNzRqVDRWZC1hR3g1ZVFhMUtLeGtaUzB2dFhrUTcyVlJpaHNIaHlzM0xlMExHWnBaWUwtWXRYNG1ldVZqbkROTFRmNnhkWnFEMXZyZHFSMkRXWS1lbWhxYnFXb1BvcjdsVXotN1NUS09ZWmk5S1hqaTZFVlRMakxvekY4emh1Y0toR1NEcF8wRHJUQ0RIVHVnNzhCWkNEZkhtNDNDcDlyQQ?oc=5",
+          "source": "Moomoo",
+          "publishedAt": "2026-07-16T02:36:49.000Z",
+          "tags": [
+            "Product & Launches",
+            "Embedded",
+            "Regulation"
+          ],
+          "summary": "",
+          "co": [
+            "kayna",
+            "kwant",
+            "kwantsure"
+          ]
+        },
+        {
+          "title": "Willis Towers Watson US LLC And Kayna Partner With Kwant To Launch Embedded Insurance Program For Subcontractors",
+          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQSWhubkpMSGFDM2JCNWZkalZzVkE3WU94Tkh1MTZCelVhN0QySTZWQkRyN1k3ZlhTVGl5T0hsbmxQN1QweUY4VkhxZ1FZLXQxQ05WMDZpdE9DandXRDIzanhSR0ppc3BvOXp1bVhJZF9uSDl2UGJiN01Hbm5oNFpRdC1ZOXI3VzZScFlpQU9sNE5qMk10Y3hHOGdnQ3Q1cDFhN3N4RTl3bE81Sm9wR2NXbmdFNHRmQ241S0tNd1FCUGFJVFBIREViQkxScHd2VVlaWWpnMjVvMkZQLUx0WnRDb19MT3QtSkw4?oc=5",
+          "source": "marketscreener.com",
+          "publishedAt": "2026-07-15T17:20:43.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "kayna",
+            "kwant"
+          ]
+        },
+        {
+          "title": "Kayna and Willis target subcontractor insurance gaps",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQR3I4YV9OMkNEU0lKOUJmU2EyU01SNE5DRjlDbndGeVRLeDJORkZUbl85SVU5ODFrS3o2RGpfSFUtX2xhQ1Z0OVJuLVR6T2p0RnpVOTRWdlhhVzl5amtDN2tYQWNQVWkzd3Z5dWlnZWItT3hNQTEwQ19qMVpiTVZwdGU3aXFUR2ptQ1ROdExQVk8?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-07-15T16:16:48.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "kayna"
+          ]
+        },
+        {
+          "title": "Willis, Kayna and Kwant Launch KwantSure Embedded Insurance Program for Construction Workforce Compliance",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPY2VhSTNSaXQ0dHpMZkl1WGpUb20wbVNHMWFLV2NoUEZfTDFJMFJiN01vOEVOSnQ2YlZmcG1YZ29ZY1BLNHNCMmZoNFdzdUJBZ0FERUg3alBpa2lFSGNDbVFDRVB5Wkl6UHUxakZTcy1JektLSnBiU3lLdTFEc0NrY0RWcVkyMG0wczB6a0lwcS12NG9SZXQ2SjhuMU84X3lPN2ZpZ1liV1Y2alV2ZzNpNGdB?oc=5",
+          "source": "Moomoo",
+          "publishedAt": "2026-07-15T15:00:48.000Z",
+          "tags": [
+            "Product & Launches",
+            "Embedded",
+            "Regulation"
+          ],
+          "summary": "",
+          "co": [
+            "kayna",
+            "kwant",
+            "kwantsure"
+          ]
+        },
+        {
+          "title": "Willis, Kayna and Kwant Launch KwantSure Embedded Insurance Program for Construction Workforce Compliance",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQZEJoREt2WTNhSjY1M2FrWkV4VDdNS2tIWEc5RlJTdS1aRUhnNmFUTHpWWGZCd1U4ajVOam5EZFhJaW1FRjRuWE1NbHcyNjNlRV9xeFJwNkh5enJYVHhNYzVPTm9uRmh1TjFCOS1IX0I4VzVVQkJ4TzBHSFpKc2VnYTRvYnk5M0NnbkJDYUx3bGQtTEd6eEJUU0JWbGlkSUowb2FHUjlkLW5nOHB4d05Ka183R0pvdmJaSDNlQzhCb0dhcnoxaGRWOURmNC03aTJwNktXV2F1NA?oc=5",
+          "source": "Quiver Quantitative",
+          "publishedAt": "2026-07-15T07:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "Embedded",
+            "Regulation"
+          ],
+          "summary": "",
+          "co": [
+            "kayna",
+            "kwant",
+            "kwantsure"
+          ]
+        },
+        {
+          "title": "Willis and Kayna partner with Kwant to launch new embedded insurance program for subcontractors",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOdEQ4QllyOHR5NlhVSDhjbGYtQ3MxRDJuSDNlcGRJUEFtTkFDdGk3SG9xc1g2b3ZVcGhVSUREQXRUN2Rsc1dMaHZxVk1ZUlhJU20tZHlHTDg4bVBoZExoWGtSU0d2SW5WNVlBLVdqMWZFRUJkR1NhOXhsOWhtcDN6Sl92MDNudWJ0UW1OQXJFSWFueHpEaTBwU2xEUlhMOXc?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-07-15T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "kayna",
+            "kwant"
+          ]
+        },
+        {
+          "title": "How insurers should deploy AI without the pitfalls: WTW",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOV2o2dzEteGpLbWpucGcxekU3UldYOHV3QWlJUC1RVGJSU2o0clA0Z3M4eXdLX1QwZ2p1M19ibWdqQzZLY2pDM0V6WERETmtyYXRmX0wzZ2VudjlZQl9VdlNmMDhJSG5wVGYyQlBIcGs2VWlOTXIzWDZCdnFsczNyOGJ6OHBaZmoxT1E?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-06-24T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Willis warns leaders over AI governance gap",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORmk2LWpjSFl0OHhBT1lTNXpBY0NOOEFQb0JSdGplRXZwU2Z0QVhnb3N4cm8zcVhzUDc4S1BibXJ3bW9SeDNLNmpQSmRtdS01TEI4cUhHV2pNYUFDenI4ZVByc0NGTEg2bG1vTVhTYTlhZVROZ25PUWYxYTNuM2dUUnZGUW1nZ2NEa3VoOGZVX3pJYjkzSS10ZjByNXBUMm8?oc=5",
+          "source": "Global Reinsurance",
+          "publishedAt": "2026-05-28T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Willis partners with Qover to bolster GB embedded offering",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPMlo1c0xxRUR2QlFOc3JUYWY3RXcyWVlXQkI3V3BHT2dMemVnV0dWMl9IMWJ3Tl9YWGpNRlhCVlkwcGszTWswNHZmemc3QmxKMUZKZ2gwZVkxRks1VW95czlMZ0E3ZnJPWUZoNEgza3NMeEpDT0ZtWTBLbWNkeFU4aExSVU5SQS1EMXlRQ3d3MmdXUi1VYklxc2hoSE1sSXpTMHJnYTFJQlZkeU5DUm14bVNIMEhPUkY4aEsxZndob0kyZ0pN?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2026-03-17T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "qover"
+          ]
+        },
+        {
+          "title": "Willis, Kayna and Belfry Partner to Simplify Insurance Access for Security Providers",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQdHRXMnFsR28wRUpQaWZ1eTlRekgwZnRBUUMzaHpaZy1rUnlBV0R4VVRmNmhnSUEzdFdJTjh0N2Etd3prQk1kMFh6SlZQQVZYaDh4S3dNS1dJaXdvQldoRjYzVkpSY0wyVjZIb1g0M2UwS0RCVzdqY3l0VmN3Yk54cGJyMmFHOE5KMkh4eUNsV3liQWVEbjl1MjhLbVo4T3BZZ0FGRXdpLTRHWEloekFhNzZ1enFqQi1qVlRiSFpPS3E?oc=5",
+          "source": "techbuzzireland.com",
+          "publishedAt": "2026-02-26T08:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "kayna",
+            "belfry"
+          ]
+        },
+        {
+          "title": "WTW introduces Radar 5, the latest generation of its insurance analytics and rating software",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNYVlUdjQzM1ktZG5fTExVay1veHBHeWlEOUlIU2lWTjcxa09aTGZFbEU5alpfOG5nMnZCbVNiMXZLbVhLM2ROVDJWZW9HNmJjcmI3ZUZIYzBHR2p0YzlCS3Z0YTFraTBSOVAyV3FWQURMT0FiUTgxeFJwSWhrOXRsdWs5SUVGeDIycmVHUWduRGg5dVdDVjRORThra0ZKaHlOamNJWU9CSlRHbVFjX3VHaWlFemVlVkhvaTIyNzJB?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2025-10-15T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "WTW hires Mamone to advance insurance technology and strategy",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaUJvcHJ0V3hHeWYwUlNZZHVqWjhaUnMyQ281amM3VGhuemg0eFF3R0VUNllSNC1uTlhmZDBSUktaV21mTU83WU0zTkc3ZWxpbHgyUGpSMVBLV0JYNFlHSFM2dG02WXc2cW9FS1BwbTdwb3EzdHVaQTZMaXBIeEdBWWJXX0pqLUEwQzFMdXI5SEVtek1hRnhjc0JPZHU1UjV4bzI2Q0NWdVQ1dERKQjNxQjJQSGpTMEYxSUFIVU9vaWUyNXhLUjZLVw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2025-01-21T08:00:00.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "WTW hires head of technology delivery and strategy for ICT business",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMk1SalpQQjdCUTNlaXFaa0dEV2NINXA3NjZVc2dEdFEwOGhLQjRZS2FYVFRKSlRrZHRIMklSaEpsUlR5eUlPMXlzZ2w4M0RkYWFHeFljLVE3QXJtZ0xadlh6VW1Ib0hHVk5PNDkzN0s3NmwxVkZPeHJvZXA0WmtuYk1xQmEyNWZTYWJwRWgyU21kVzdPN3gzZXVseUExenMtX2RXTnZIdUZvMVHSAbABQVVfeXFMUGxUU0pmMWlCWThHWEJ3SFBZaHpHdUlWR29yUVBKanhGZXZGQTJFYmZ6bU4wMlplYlpQOXRQOEtFYWwybVBXNm1UMi12SktKOGpaeGUzVGdmQkRVV0pwaDdBSFZCc3VCMzY3WEVaN2NtLW9VQmdra2pvbXduUkNYSTBHTjlhSy1TYVM5SUh2UlpsdkpqQkVCdnFjODdIdDQtVUthY3BHeVIzbE9xdl9mZTM?oc=5",
+          "source": "Health & Protection",
+          "publishedAt": "2025-01-21T08:00:00.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Keylane joins WTW's Insurance Technology Partner Network",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNcHVPVnNGMl9oU3dMRzVuNWlFTzN0SjVHQlZsSGUzLTlXSWVBR3QybDV1dnVYYVVUQWRkYUlZU0o3NzB6ZEJKeXAxck1abE9xWUJ3WThsLWNLOGxHeVBYcHUwNDZUeVVTY253UkNSWEhLaVNvTFRkcFZNN3dwVjY2eEdCbXhicUZPaE4yMmhxd0t5Q3FFX2VrSTY2NWV4c3VveFFIRTBPS0pibi0wcW56NDJwUVpMZ3VuajFDdXFJTmc?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2024-10-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "keylane"
+          ]
+        },
+        {
+          "title": "WTW appoints Parveen Kaur as global leader for Neuron platform",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQRFhfU3loNjVkTXhoNlhqeVBXSXdVNjdoRzJINnc0bjF4bFVyM0Ribm9EcWJKclpJdlF2d1cxNWxYZ1pOWW1lVnNUd3NCU1NNREFjUVVYYXRyd1ZfM003djNUX3dOMVhBWjlVY0R5M0dlUEVuZXRzY2NTMDU1MC1ENmJjRTZfcHhGcDRucllXR2I0MDZnZWxhc2xHZ0gtMy1WUC1qTndxTW0zM0h1amh6OVJxdFZJVnZnc0JDRTdTbU9DYlpLTTNLVjJPaGMtdw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2024-09-24T07:00:00.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "WTW partners with Kayna in insurance solutions for SMEs",
+          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQUHN6YjZYYW9oUTRLOTlWNGd3bkEwZzBBSTY5Q1F2YTF3b3JaTnlkeS0xN2pLRkxVWTJITTV0MXFLNFgybmVPSk5MUkxmbE54ck41QUdxdjc3WW9mSDc4dVJJalBJbkVBdERVMS16aVE4UmhXMHFVU1p1YmNUYW1JOGFQOG9Vb1hXSS0zVTUxUWtCdFQ5dmZRaUFDWW9Fa0RRdU5fcGJfZkVpa0FMZmhCYzJBNDBYYjR5eVZIaHZFSXAxYXJaYUk5LUxPcFlldVFaaDZ2bDRhcjZJejJ0Nmc?oc=5",
+          "source": "Captive Insurance Times",
+          "publishedAt": "2024-09-11T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "kayna"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "softtek",
+      "name": "Softtek",
+      "count": 1,
+      "firstSeen": "2026-09-29T19:00:54.000Z",
+      "lastSeen": "2026-09-29T19:00:54.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "willis-towers-watson",
+          "name": "Willis Towers Watson",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "WTW partners with Softtek on AI workforce transformation",
+          "link": "https://coverager.com/wtw-partners-with-softtek-on-ai-workforce-transformation/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-29T19:00:54.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "The partnership sits within WTW’s Health, Wealth & Career business.",
+          "co": [
+            "willis-towers-watson"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "emtech",
+      "name": "Emtech",
+      "count": 2,
+      "firstSeen": "2026-09-10T10:21:04.000Z",
+      "lastSeen": "2026-09-29T18:28:11.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Beinsure"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Emtech launches QMT Oracle for insurance enterprise AI",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRVFIb3k4WnE3SWtEZTgwRzBHX0Fqb21LM0JnMHUyQmwzbWdkSTZybTBXLTJxZW1MdEMwM1pON1RhNVpRWEdxQWltTFE1TWhfRDhJSlFDT1hZdVVMeFZyT3UxSGVFZF9LcmM2cG8waWhSWnUxYVdabzZKVTYybW0xb3Q5V2szcWw2?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-29T18:28:11.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Emtech launches QMT 2.3 for autonomous insurance software testing",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOdE9ubWRPSWU0YkdBSm4zeUwzdDE2eFZFZ2lGNUhkTHBua3NNZDdmRWYtZXdaem1YNTE3V0NxOHZxU3NjVDdpT216YW5rY0ZVN2pydE80d3F6akhYdy1EZW1vZ0JnRGpKa3pzX2NWLVF6RVBBWW5Od2Jpam5CQkhPbFk0U2tUUjVfYWFfTg?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-10T10:21:04.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "sureify",
+      "name": "Sureify",
+      "count": 2,
+      "firstSeen": "2026-09-23T13:02:43.000Z",
+      "lastSeen": "2026-09-29T18:25:15.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Sureify Expands CoreCONNECT™ Platform with New aiCONNECT Purpose-Built for the Life & Annuity Industry",
+          "link": "https://coverager.com/sureify-expands-coreconnect-platform-with-new-aiconnect-purpose-built-for-the-life-annuity-industry/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-29T18:25:15.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "Built to bring trained AI models and agents to power new business, service, and operations.",
+          "co": []
+        },
+        {
+          "title": "Sureify Expands Life & Annuity New Business with LifetimeACQUIRE, Connecting Quote to Book with Headless Architecture",
+          "link": "https://coverager.com/sureify-expands-life-annuity-new-business-with-lifetimeacquire-connecting-quote-to-book-with-headless-architecture/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-23T13:02:43.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "New capabilities give carriers and distributors flexibility to shape the evolving digital acquisition experience around their own distribution models, meeting the ecosystem wherever they may be.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "pinion",
+      "name": "Pinion",
+      "count": 3,
+      "firstSeen": "2026-07-27T11:00:21.000Z",
+      "lastSeen": "2026-09-29T18:00:54.000Z",
+      "topics": [
+        {
+          "name": "Property & Cat",
+          "count": 1
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business",
+        "Insurance Business UK",
+        "Reinsurance News"
+      ],
+      "related": [
+        {
+          "slug": "willis-towers-watson",
+          "name": "Willis Towers Watson",
+          "count": 1
+        },
+        {
+          "slug": "hampden-risk-partners",
+          "name": "Hampden Risk Partners",
+          "count": 1
+        },
+        {
+          "slug": "miller",
+          "name": "Miller",
+          "count": 1
+        },
+        {
+          "slug": "brecon",
+          "name": "Brecon",
+          "count": 1
+        },
+        {
+          "slug": "questgates",
+          "name": "QuestGates",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Pinion hands US reins to Gary Maier as fronting market enters a shakeout",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/pinion-hands-us-reins-to-gary-maier-as-fronting-market-enters-a-shakeout-591646.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-09-29T18:00:54.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "The Barings-backed startup wants MGAs and reinsurers to trust a new name at a time when established carriers are marketing their balance sheets",
+          "co": []
+        },
+        {
+          "title": "Insurance moves: Miller, Hampden Risk, Brecon, Willis, Pinion, QuestGates, more",
+          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/insurance-moves-miller-hampden-risk-brecon-willis-pinion-questgates-more-586582.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-08-19T02:39:20.000Z",
+          "tags": [
+            "Cyber",
+            "Claims & Underwriting",
+            "Leadership"
+          ],
+          "summary": "Seven appointments span Bermuda property capacity, Lloyd's intelligent follow, cyber claims leadership with dual legal-and-adjusting qualification, and a new active assailant underwriting desk at Clearwater",
+          "co": [
+            "willis-towers-watson",
+            "hampden-risk-partners",
+            "miller",
+            "brecon",
+            "questgates"
+          ]
+        },
+        {
+          "title": "Pinion Insurance launches proprietary data interchange platform for MGAs",
+          "link": "https://www.reinsurancene.ws/pinion-insurance-launches-proprietary-data-interchange-platform-for-mgas/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-27T11:00:21.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "Pinion Insurance, a newly-formed, technology-enabled specialty insurer, has launched Sarrus, an upgraded, fully integrated proprietary technology platform to replace the fragmented, outmoded data exchange in the…",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "hippo",
+      "name": "Hippo",
+      "count": 12,
+      "firstSeen": "2024-11-08T08:00:00.000Z",
+      "lastSeen": "2026-09-29T17:58:13.000Z",
+      "topics": [
+        {
+          "name": "Property & Cat",
+          "count": 4
+        },
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 3
+        },
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "Funding",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Beinsure",
+        "FinTech Global",
+        "Reinsurance News",
+        "Insurtech Insights",
+        "Coverager",
+        "Insurance Journal",
+        "Digital Insurance",
+        "PYMNTS.com",
+        "Business Wire"
+      ],
+      "related": [
+        {
+          "slug": "clara-analytics",
+          "name": "CLARA Analytics",
+          "count": 1
+        },
+        {
+          "slug": "liberty-mutual",
+          "name": "Liberty Mutual",
+          "count": 1
+        },
+        {
+          "slug": "progressive",
+          "name": "Progressive",
+          "count": 1
+        },
+        {
+          "slug": "centana-growth-partners",
+          "name": "Centana Growth Partners",
+          "count": 1
+        },
+        {
+          "slug": "first-connect",
+          "name": "First Connect",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Home insurtech Hippo launches AI claims workflow to support 35% more volume",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB0VDN3RlBFWXcyN3FMU3BtM1E4WjVDWFhvY1BWZV9Pak50NmJKSzJLRDFpRVlTaHlpd0VfWTdzUWdGdk5leFlfaDI4S3JfLTQyMklpc29rMnBfbDlfbWliZVowNTVremozR2J1Rw?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-29T17:58:13.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Hippo scales homeowners claims with AI agent Clara",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNckVlOFo0WlVEellFOG9CT0tpdV9HX2RWZ3dpdW5qbGNQVWpQMmJ1bGhSZENXMWJJWlNnejNPS1dEdHBKNmVxT05wcWk5WHY5aXU3d3dQQzMtcUdtSWZmQmlJeG5pTTZZdkF3U3M5VXBuN3NuZFBSZ1U2cEpJZ2RiLVFzS1ZNVUQyNjFrbVNR?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-09-29T15:12:34.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": [
+            "clara-analytics"
+          ]
+        },
+        {
+          "title": "Hippo expands homeowners coverage to 22 states",
+          "link": "https://www.reinsurancene.ws/hippo-expands-homeowners-coverage-to-22-states/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-28T13:00:20.000Z",
+          "tags": [
+            "Partnerships",
+            "Property & Cat"
+          ],
+          "summary": "Hippo, a technology-native insurance group, has expanded its homeowners insurance programme to a further 14 states through national distribution partners, meaning the programme will service 22 states starting in the…",
+          "co": []
+        },
+        {
+          "title": "Hippo to expand homeowners program into 14 additional states",
+          "link": "https://www.insurtechinsights.com/hippo-to-expand-homeowners-program-into-14-additional-states/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-28T10:43:44.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "Hippo will expand the Hippo Homeowners Insurance Program into 14 additional states in the fourth quarter of 2026, increasing the program's availability from eight to 22 states.",
+          "co": []
+        },
+        {
+          "title": "Hippo to expand homeowners insurance",
+          "link": "https://coverager.com/hippo-to-expand-homeowners-insurance/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-27T17:13:36.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "The program will expand its availability into 14 additional states.",
+          "co": []
+        },
+        {
+          "title": "Insurtech Hippo reports $10 mn net income and raises 2026 guidance",
+          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBlWnZxNnkzOUtoeVd6SHlodG1sTy1iWG9Rblhtbk9ERExsZjJUVmtlZDEtVXBVODZRRjQwakxUZWZMLXYyUjQwUEJVemdqa1lWUFpzd3d6OENHbmZVRzA1N1ZNTXowR2Zjc2p0T2xUVURrUkdv?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-08-04T11:02:49.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Hippo’s Q2’26 net income rises to $10m, GWP up 62% with improved CoR",
+          "link": "https://www.reinsurancene.ws/hippos-q226-net-income-rises-to-10m-gwp-up-62-with-improved-cor/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-31T10:00:17.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Hippo, a technology-native insurance group, has announced its financial results for the second quarter of 2026, reporting a net income of $10 million, a gross premium written (GWP) increase of 61.5% and, an improved…",
+          "co": []
+        },
+        {
+          "title": "Hippo Sees Q2 Net Income Jump on Casualty, Commercial Lines Growth",
+          "link": "https://www.insurancejournal.com/news/national/2026/07/30/879656.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-30T13:27:39.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Insurtech Hippo posted net income for the second quarter 2026 of $10.1 million compared with about $1.3 million for the period a year ago. For the first six months of 2026, net income at the San Jose, California-based…",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual restructures leadership, Hippo deploys AI claims",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSHBBcTRqZ0N6TEJiX0lhck9kbFNvTHJKYk5zUmplZ0hseVI1WXVfSFhFdEw2ZE5DT2dCMW10eTY4ZnB2TS1RNm12ZGpwbi05eVNvZExFUFFKaDZLUWFnZWZ0VkpKT1Z1UkxBdjI3YXg1NERjbVlmc25RTDZIRy1ienRGRS1zbjBmNkEw?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-04-14T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": [
+            "liberty-mutual"
+          ]
+        },
+        {
+          "title": "Hippo’s CEO Says InsurTech Grew Up and the Progressive Deal Proves It",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUC1FWWREM3l5T1hVUmFkMzFzNnhPQTFqMWRTRmdIa20wZVlOTHhxVF9lcUZEUXJ2Ul9XbWtfQ2lkU2NmTDF2dnhoV2hTb0dsRHBWT1ZUNU4wNkJGYnlTTHZQNEFmMERzQ3NMcjZpOUZWWThZRWZFZXRWbWpYMEx6TXpyYWF1U3BLQl96TDJMZmpZdS00d2Z4bVd5ZkNBeXVSbFh1VUMtYXdaWXc?oc=5",
+          "source": "PYMNTS.com",
+          "publishedAt": "2026-04-13T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "progressive"
+          ]
+        },
+        {
+          "title": "Hippo Insurance raises $100m in Series D – Digital Wealth & CX Tech Forum – Virtual",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPV0FXRU1KQVhZNDBWaXlULVNaVXkxNW1xMUxjOXJNQ09yVGN4SUYtV3E5eDdoMEpseWI2VVFjdV95eU5jM3RXT1piUU11Zk43OEF3aVdhRHhnYnhaTE5ZTVJmU0NyaVRFY0pHdnFFcURCYm1qRnp2U1BaOUZLdnpDYjBJYzJBWXRxd2k5bHFCNA?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-07-24T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Centana Growth Partners Acquires Majority Stake in Hippo’s First Connect Insurance Services",
+          "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNOU1WaEswaTJnWElwUUNnODZfeE1kZnFPZF82LW5VblE2YVFPanJ0WXl3TjFiZ1lXcWVGRW5yb2gxQVJnR3k4R3JVTTRITlBhSWk3Wmp6YXNIbmJhS0dUeUtTQTEyay1nb2tfNEd2WnZicnhYYWZheTk0Rzg1V0czSmhuQkdMS0Y1Yk55Vk52a2ZvQUdkb1NXVlJpU2R1eUktMVVvWjlVU1Z0aDZxS1owWGRpVXBjTWt0UFNRdXR5b0VtcVprVl9oTTIyaVc2cTRGNnF6RlprRFltQW95aHgxSw?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2024-11-08T08:00:00.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "centana-growth-partners",
+            "first-connect"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "foresee",
+      "name": "Foresee",
+      "count": 1,
+      "firstSeen": "2026-09-29T17:40:49.000Z",
+      "lastSeen": "2026-09-29T17:40:49.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Foresee launches in California",
+          "link": "https://coverager.com/foresee-launches-in-california/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-29T17:40:49.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Auto & Mobility"
+          ],
+          "summary": "The startup is enabling AI agents to shop for home and auto insurance.",
+          "co": []
+        }
+      ]
+    },
     {
       "slug": "vipr",
       "name": "VIPR",
@@ -307,6 +1447,118 @@
             "Funding"
           ],
           "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "clara-analytics",
+      "name": "CLARA Analytics",
+      "count": 5,
+      "firstSeen": "2026-08-03T12:54:42.000Z",
+      "lastSeen": "2026-09-29T15:12:34.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 5
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 5
+        },
+        {
+          "name": "Product & Launches",
+          "count": 4
+        },
+        {
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "FinTech Global",
+        "Reinsurance News",
+        "Insurtech Insights"
+      ],
+      "related": [
+        {
+          "slug": "hippo",
+          "name": "Hippo",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Hippo scales homeowners claims with AI agent Clara",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNckVlOFo0WlVEellFOG9CT0tpdV9HX2RWZ3dpdW5qbGNQVWpQMmJ1bGhSZENXMWJJWlNnejNPS1dEdHBKNmVxT05wcWk5WHY5aXU3d3dQQzMtcUdtSWZmQmlJeG5pTTZZdkF3U3M5VXBuN3NuZFBSZ1U2cEpJZ2RiLVFzS1ZNVUQyNjFrbVNR?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-09-29T15:12:34.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": [
+            "hippo"
+          ]
+        },
+        {
+          "title": "CLARA Analytics launches ‘first’ agentic claims intelligence platform",
+          "link": "https://www.reinsurancene.ws/clara-analytics-launches-first-agentic-claims-intelligence-platform/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-24T12:30:08.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "CLARA Analytics, a provider of artificial intelligence (AI) technology for insurance claims optimisation, has announced the launch of its new platform, Agentic Intelligence, the industry’s first end-to-end AI workforce…",
+          "co": []
+        },
+        {
+          "title": "CLARA Analytics unveils end-to-end agentic claims intelligence platform",
+          "link": "https://www.insurtechinsights.com/clara-analytics-unveils-end-to-end-agentic-claims-intelligence-platform/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-23T14:15:22.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "CLARA Analytics has launched Agentic Intelligence, which it describes as the industry's first end-to-end AI workforce built for complex casualty and workers' compensation claims. Built into the CLARAty.ai platform, it…",
+          "co": []
+        },
+        {
+          "title": "CLARA Analytics launches new integration between its Triage platform and CLARA DocIntel Pro",
+          "link": "https://www.reinsurancene.ws/clara-analytics-launches-new-integration-between-its-triage-platform-and-clara-docintel-pro/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-08-05T12:30:41.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "CLARA Analytics, a provider of artificial intelligence (AI) technology for commercial insurance claims optimisation, has introduced new integration between its market-leading Triage platform and CLARA DocIntel Pro. This…",
+          "co": []
+        },
+        {
+          "title": "CLARA Analytics integrates document intelligence with claims triage platform",
+          "link": "https://www.insurtechinsights.com/clara-analytics-integrates-document-intelligence-with-claims-triage-platform/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-03T12:54:42.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "CLARA Analytics has launched what it describes as the insurance industry's first platform to combine claim-level document intelligence with predictive claims triage, aiming to help commercial insurers turn unstructured…",
           "co": []
         }
       ]
@@ -704,6 +1956,167 @@
       ]
     },
     {
+      "slug": "outmarket-ai",
+      "name": "Outmarket AI",
+      "count": 10,
+      "firstSeen": "2025-03-10T07:00:00.000Z",
+      "lastSeen": "2026-09-29T14:47:17.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 9
+        },
+        {
+          "name": "Funding",
+          "count": 8
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Yahoo Finance",
+        "Life Insurance International",
+        "Beinsure",
+        "Coverager",
+        "TechCrunch",
+        "TipRanks",
+        "FinTech Global",
+        "Digital Insurance",
+        "Pulse 2.0"
+      ],
+      "related": [
+        {
+          "slug": "virtus",
+          "name": "Virtus",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Insurtech company Outmarket AI raises $34.5m in Series B funding",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOemNFc21ENlF6VWlSbU1YeEl3LUJEV01aV3E4RDJLalRQRWhkUHpYOFdGcjhuaFVDZWFLN1Y2UURueHoxb3l1NHFVUmM2N2VCRXIwV3RfdThsbnJxS0ZCNmRBWktMdjRiT3lDenI5X2NFc2U3RlJmSHdBbjRLckFpQ19HeVJnT3Zod190QUJ3dmxTV0x2UzEzNHExVGdwN0J3REVV?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-09-29T14:47:17.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech company Outmarket AI raises $34.5m in Series B funding",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPNXN4Uzg1SEVQVTU4bWZMZF8wZUtrcm5zejc4MndlY2d2YXJMYVVxRUJQb1ZoU3l1QTJIUzFIRHkybFFVcnFpYXpqanlWc093WG5WVk5xakNWSVR6S3hVZHFIckZPUWFudG1WMDRRVnRuUTlyUHZiZ2NQSEpzZjh3eFhpTTVhTW05dS1INjQ0eTY5YkVfN1E?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2026-09-29T13:49:25.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Outmarket AI raises $34.5 mn Series B for insurance automation",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPcWlMRHduQjB5MUJrNXMwaUJEYW4wS3U1QmVhSkhKV0JlejBsMU5TZTR5a3JuVC1DQ3MwNkx5b2hvbllCS3IyWWc3LVdiM0Q4b3RoUVdDVXdtTEtlcEd2WUk4SWh6UDZrdzRJaUcwenlSQnBmTHk5aFJZTk1QU2s1X2FDYnllYjFLVGNyeU4xdnVLQQ?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-28T17:13:24.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Outmarket AI raises $34.5 million",
+          "link": "https://coverager.com/outmarket-ai-raises-34-5-million/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-28T14:52:57.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "Outmarket delivers intelligent workflows across commercial, benefits, personal lines, and specialty insurance.",
+          "co": []
+        },
+        {
+          "title": "Insurtech Outmarket raises $34.5M just months after prior round",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOUVJtcGYwOGYzSEh4c3hzY21EcTdxajNvWXViTFVucmFZUm95VnhMYmFjRDRQaGlwWGVTY3c5b1lCNTM3N2VJUzNMRW9kcWo5TGJtMG9iemFyWDRCS3hWd1VwZTdfR2pIWFVueXhZamMyRGR6MlJlMVBxU1A2ZG01UzhWWVBMSUIyX1FqY2NPaDQtLTcxZU9wbXRpMGxOMms?oc=5",
+          "source": "TechCrunch",
+          "publishedAt": "2026-09-28T14:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Outmarket AI Deepens Insurtech Presence With Virtus Partnership",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSVJ5WnlFam9FQ3BJeTFkYmYzU2J5SWxweW1fRk5TOHF0X2hLbVFfdVp5azA5LWF0cEZUWmphTXJOV2E5YUtaVDNJT3FJNmZhcVRYOWhUTWlvQTB4TVp2dnpBQ0VUR1IxWm82Ym8tcTFFVnlqd3FWTFdqM2NXM0cwN1JjcFhNN2k4Q1cxZFliQjJPZHNEV3VtNl9kMF9kTnZiUlI0c1JrSXNxYzgzbFVLSg?oc=5",
+          "source": "TipRanks",
+          "publishedAt": "2026-07-22T00:17:23.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "virtus"
+          ]
+        },
+        {
+          "title": "Outmarket AI bags $17m to expand insurance platform",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNdjd6SUxoa1hiMGZLVWJ2WElkbmdrMk92dFVZd2dVdEhkTDFhYl9UazFDVXJUTS1KZ25XUmwtalQ3d1ZYOXBJRVVlM2hMZTEtbXpnbXNiSEYxZW4xYjZkZUs0eGEwOHI1cWZFdG5pTkdfR29sYjkzOThOV2FXZFZVV2cwZ3dnaWlmeldMbmt3?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-05-14T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Outmarket AI raises $17 mn in Series A to expand AI tools for insurance brokers",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5tc2xjcUlOSy1ZNmlmekJGX01OZXItNGRtdjlJY2IxYTBoeWdIMlg5OTFDX1k1VkRvVWFQa0FFTzRoWS1NenE3MlRPeG1KbzJ2bEhJdzdDdU5iUzZXYVBkWg?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-05-14T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Meet the insurtech: Outmarket AI",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE12VDBUemFreWNETXRmdkQ5bmtnUy0zOEhSbXJRWXgyRWFoczNMcXB3Y1ZKTW1XRXh0cHl4NjNRdU5qU29pVlBibzJNMzl2clZycVk4T1ktWGdibGhkMnVmVDhWY1I2aGd3QWxj?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2025-10-27T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Outmarket AI: $4.7 Million (Seed) Raised For Transforming Insurance With AI-Based Insights",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPYVhaVHdSLWJwRnFTLTM1ZWZicUVBLWRNRWhlam5KSWFfRkQtSF8ySXJfLV9uME5neF9XaTJIZVRiQVllWHc4X2ttZkNkLU9TdGZSMWVKNXNGMGxjd2JJOUhWd2lvZkdRbF9XRWd6XzBwZEpPQ1dsUExIREd4RVEwZE1GaTlsVUk1YWlQTGxWd2drSWxNM1ZfWVpaU3lIQ3c0dW9uSXNScXNjZ9IBrwFBVV95cUxQUFJUeVJ4dkFLM0hkb3lkZGI0NHZxY3luMHB6T3Y1Qk5LUUdvc09tRnpXa1d3S3dSR0FzN1drel9zYjhHUVlPTmZKc2hXV2ZkNXg1RHdBeWluNU14Qy1uMjdrZTIxTTdHV0h4U3VpLU12NTZhWHZwb0FHdkdCdWNsQ2Jvd29RUld0aTVEcGNfU3dITHVJN3FYWU1yd05naTZQN1B4QW5uSWtJX25mUW1F?oc=5",
+          "source": "Pulse 2.0",
+          "publishedAt": "2025-03-10T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
       "slug": "anv",
       "name": "ANV",
       "count": 5,
@@ -946,326 +2359,6 @@
       ]
     },
     {
-      "slug": "hippo",
-      "name": "Hippo",
-      "count": 11,
-      "firstSeen": "2024-11-08T08:00:00.000Z",
-      "lastSeen": "2026-09-29T14:15:31.000Z",
-      "topics": [
-        {
-          "name": "Property & Cat",
-          "count": 4
-        },
-        {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 2
-        },
-        {
-          "name": "Partnerships",
-          "count": 2
-        },
-        {
-          "name": "Funding",
-          "count": 1
-        },
-        {
-          "name": "M&A",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "FinTech Global",
-        "Reinsurance News",
-        "Insurtech Insights",
-        "Coverager",
-        "Beinsure",
-        "Insurance Journal",
-        "Digital Insurance",
-        "PYMNTS.com",
-        "Business Wire"
-      ],
-      "related": [
-        {
-          "slug": "clara-analytics",
-          "name": "CLARA Analytics",
-          "count": 1
-        },
-        {
-          "slug": "liberty-mutual",
-          "name": "Liberty Mutual",
-          "count": 1
-        },
-        {
-          "slug": "progressive",
-          "name": "Progressive",
-          "count": 1
-        },
-        {
-          "slug": "centana-growth-partners",
-          "name": "Centana Growth Partners",
-          "count": 1
-        },
-        {
-          "slug": "first-connect",
-          "name": "First Connect",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Hippo scales homeowners claims with AI agent Clara",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNckVlOFo0WlVEellFOG9CT0tpdV9HX2RWZ3dpdW5qbGNQVWpQMmJ1bGhSZENXMWJJWlNnejNPS1dEdHBKNmVxT05wcWk5WHY5aXU3d3dQQzMtcUdtSWZmQmlJeG5pTTZZdkF3U3M5VXBuN3NuZFBSZ1U2cEpJZ2RiLVFzS1ZNVUQyNjFrbVNR?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-09-29T14:15:31.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": [
-            "clara-analytics"
-          ]
-        },
-        {
-          "title": "Hippo expands homeowners coverage to 22 states",
-          "link": "https://www.reinsurancene.ws/hippo-expands-homeowners-coverage-to-22-states/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-28T13:00:20.000Z",
-          "tags": [
-            "Partnerships",
-            "Property & Cat"
-          ],
-          "summary": "Hippo, a technology-native insurance group, has expanded its homeowners insurance programme to a further 14 states through national distribution partners, meaning the programme will service 22 states starting in the…",
-          "co": []
-        },
-        {
-          "title": "Hippo to expand homeowners program into 14 additional states",
-          "link": "https://www.insurtechinsights.com/hippo-to-expand-homeowners-program-into-14-additional-states/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-28T10:43:44.000Z",
-          "tags": [
-            "Property & Cat"
-          ],
-          "summary": "Hippo will expand the Hippo Homeowners Insurance Program into 14 additional states in the fourth quarter of 2026, increasing the program's availability from eight to 22 states.",
-          "co": []
-        },
-        {
-          "title": "Hippo to expand homeowners insurance",
-          "link": "https://coverager.com/hippo-to-expand-homeowners-insurance/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-27T17:13:36.000Z",
-          "tags": [
-            "Property & Cat"
-          ],
-          "summary": "The program will expand its availability into 14 additional states.",
-          "co": []
-        },
-        {
-          "title": "Insurtech Hippo reports $10 mn net income and raises 2026 guidance",
-          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBlWnZxNnkzOUtoeVd6SHlodG1sTy1iWG9Rblhtbk9ERExsZjJUVmtlZDEtVXBVODZRRjQwakxUZWZMLXYyUjQwUEJVemdqa1lWUFpzd3d6OENHbmZVRzA1N1ZNTXowR2Zjc2p0T2xUVURrUkdv?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-08-04T11:02:49.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Hippo’s Q2’26 net income rises to $10m, GWP up 62% with improved CoR",
-          "link": "https://www.reinsurancene.ws/hippos-q226-net-income-rises-to-10m-gwp-up-62-with-improved-cor/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-31T10:00:17.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "Hippo, a technology-native insurance group, has announced its financial results for the second quarter of 2026, reporting a net income of $10 million, a gross premium written (GWP) increase of 61.5% and, an improved…",
-          "co": []
-        },
-        {
-          "title": "Hippo Sees Q2 Net Income Jump on Casualty, Commercial Lines Growth",
-          "link": "https://www.insurancejournal.com/news/national/2026/07/30/879656.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-30T13:27:39.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "Insurtech Hippo posted net income for the second quarter 2026 of $10.1 million compared with about $1.3 million for the period a year ago. For the first six months of 2026, net income at the San Jose, California-based…",
-          "co": []
-        },
-        {
-          "title": "Liberty Mutual restructures leadership, Hippo deploys AI claims",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSHBBcTRqZ0N6TEJiX0lhck9kbFNvTHJKYk5zUmplZ0hseVI1WXVfSFhFdEw2ZE5DT2dCMW10eTY4ZnB2TS1RNm12ZGpwbi05eVNvZExFUFFKaDZLUWFnZWZ0VkpKT1Z1UkxBdjI3YXg1NERjbVlmc25RTDZIRy1ienRGRS1zbjBmNkEw?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-04-14T07:00:00.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": [
-            "liberty-mutual"
-          ]
-        },
-        {
-          "title": "Hippo’s CEO Says InsurTech Grew Up and the Progressive Deal Proves It",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUC1FWWREM3l5T1hVUmFkMzFzNnhPQTFqMWRTRmdIa20wZVlOTHhxVF9lcUZEUXJ2Ul9XbWtfQ2lkU2NmTDF2dnhoV2hTb0dsRHBWT1ZUNU4wNkJGYnlTTHZQNEFmMERzQ3NMcjZpOUZWWThZRWZFZXRWbWpYMEx6TXpyYWF1U3BLQl96TDJMZmpZdS00d2Z4bVd5ZkNBeXVSbFh1VUMtYXdaWXc?oc=5",
-          "source": "PYMNTS.com",
-          "publishedAt": "2026-04-13T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "progressive"
-          ]
-        },
-        {
-          "title": "Hippo Insurance raises $100m in Series D – Digital Wealth & CX Tech Forum – Virtual",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPV0FXRU1KQVhZNDBWaXlULVNaVXkxNW1xMUxjOXJNQ09yVGN4SUYtV3E5eDdoMEpseWI2VVFjdV95eU5jM3RXT1piUU11Zk43OEF3aVdhRHhnYnhaTE5ZTVJmU0NyaVRFY0pHdnFFcURCYm1qRnp2U1BaOUZLdnpDYjBJYzJBWXRxd2k5bHFCNA?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2025-07-24T07:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Centana Growth Partners Acquires Majority Stake in Hippo’s First Connect Insurance Services",
-          "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNOU1WaEswaTJnWElwUUNnODZfeE1kZnFPZF82LW5VblE2YVFPanJ0WXl3TjFiZ1lXcWVGRW5yb2gxQVJnR3k4R3JVTTRITlBhSWk3Wmp6YXNIbmJhS0dUeUtTQTEyay1nb2tfNEd2WnZicnhYYWZheTk0Rzg1V0czSmhuQkdMS0Y1Yk55Vk52a2ZvQUdkb1NXVlJpU2R1eUktMVVvWjlVU1Z0aDZxS1owWGRpVXBjTWt0UFNRdXR5b0VtcVprVl9oTTIyaVc2cTRGNnF6RlprRFltQW95aHgxSw?oc=5",
-          "source": "Business Wire",
-          "publishedAt": "2024-11-08T08:00:00.000Z",
-          "tags": [
-            "M&A",
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "centana-growth-partners",
-            "first-connect"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "clara-analytics",
-      "name": "CLARA Analytics",
-      "count": 5,
-      "firstSeen": "2026-08-03T12:54:42.000Z",
-      "lastSeen": "2026-09-29T14:15:31.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 5
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 5
-        },
-        {
-          "name": "Product & Launches",
-          "count": 4
-        },
-        {
-          "name": "Partnerships",
-          "count": 2
-        },
-        {
-          "name": "Property & Cat",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "FinTech Global",
-        "Reinsurance News",
-        "Insurtech Insights"
-      ],
-      "related": [
-        {
-          "slug": "hippo",
-          "name": "Hippo",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Hippo scales homeowners claims with AI agent Clara",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNckVlOFo0WlVEellFOG9CT0tpdV9HX2RWZ3dpdW5qbGNQVWpQMmJ1bGhSZENXMWJJWlNnejNPS1dEdHBKNmVxT05wcWk5WHY5aXU3d3dQQzMtcUdtSWZmQmlJeG5pTTZZdkF3U3M5VXBuN3NuZFBSZ1U2cEpJZ2RiLVFzS1ZNVUQyNjFrbVNR?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-09-29T14:15:31.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": [
-            "hippo"
-          ]
-        },
-        {
-          "title": "CLARA Analytics launches ‘first’ agentic claims intelligence platform",
-          "link": "https://www.reinsurancene.ws/clara-analytics-launches-first-agentic-claims-intelligence-platform/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-09-24T12:30:08.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "CLARA Analytics, a provider of artificial intelligence (AI) technology for insurance claims optimisation, has announced the launch of its new platform, Agentic Intelligence, the industry’s first end-to-end AI workforce…",
-          "co": []
-        },
-        {
-          "title": "CLARA Analytics unveils end-to-end agentic claims intelligence platform",
-          "link": "https://www.insurtechinsights.com/clara-analytics-unveils-end-to-end-agentic-claims-intelligence-platform/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-09-23T14:15:22.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "CLARA Analytics has launched Agentic Intelligence, which it describes as the industry's first end-to-end AI workforce built for complex casualty and workers' compensation claims. Built into the CLARAty.ai platform, it…",
-          "co": []
-        },
-        {
-          "title": "CLARA Analytics launches new integration between its Triage platform and CLARA DocIntel Pro",
-          "link": "https://www.reinsurancene.ws/clara-analytics-launches-new-integration-between-its-triage-platform-and-clara-docintel-pro/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-05T12:30:41.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "CLARA Analytics, a provider of artificial intelligence (AI) technology for commercial insurance claims optimisation, has introduced new integration between its market-leading Triage platform and CLARA DocIntel Pro. This…",
-          "co": []
-        },
-        {
-          "title": "CLARA Analytics integrates document intelligence with claims triage platform",
-          "link": "https://www.insurtechinsights.com/clara-analytics-integrates-document-intelligence-with-claims-triage-platform/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-03T12:54:42.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "CLARA Analytics has launched what it describes as the insurance industry's first platform to combine claim-level document intelligence with predictive claims triage, aiming to help commercial insurers turn unstructured…",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "radian",
       "name": "Radian",
       "count": 6,
@@ -1403,7 +2496,7 @@
       "name": "Corgi",
       "count": 42,
       "firstSeen": "2026-01-08T08:00:00.000Z",
-      "lastSeen": "2026-09-29T13:52:30.000Z",
+      "lastSeen": "2026-09-29T13:55:30.000Z",
       "topics": [
         {
           "name": "Funding",
@@ -1505,7 +2598,7 @@
           "title": "Corgi Insurance Hires Nirvana Veteran Stephen Segroves as Head of Pricing",
           "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMnExanRfc1A5c2RWYUpSTTR6MGpVUDFSNFBteTM2QzYtSUJGazZyNGdnTF9PWTVTeU5qamMyc1JkaG5yNWR5d21tcFFOa2FqeTRhNXhLeDY3STFVUWlPX1Z4Mmo2SFYwQmFCdFFlV1FxSFZzek5TS0d2dGhwaTJHVjZsanhnQ0NtSTZack8wN2RXTnlYUFltekplVnlqaDBMOEt3QmVtNFpGS2xvVnRPbWxB?oc=5",
           "source": "citybiz",
-          "publishedAt": "2026-09-29T13:52:30.000Z",
+          "publishedAt": "2026-09-29T13:55:30.000Z",
           "tags": [
             "Claims & Underwriting",
             "Leadership"
@@ -2010,7 +3103,7 @@
       "name": "Nirvana",
       "count": 8,
       "firstSeen": "2024-10-15T07:00:00.000Z",
-      "lastSeen": "2026-09-29T13:52:30.000Z",
+      "lastSeen": "2026-09-29T13:55:30.000Z",
       "topics": [
         {
           "name": "Funding",
@@ -2084,7 +3177,7 @@
           "title": "Corgi Insurance Hires Nirvana Veteran Stephen Segroves as Head of Pricing",
           "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMnExanRfc1A5c2RWYUpSTTR6MGpVUDFSNFBteTM2QzYtSUJGazZyNGdnTF9PWTVTeU5qamMyc1JkaG5yNWR5d21tcFFOa2FqeTRhNXhLeDY3STFVUWlPX1Z4Mmo2SFYwQmFCdFFlV1FxSFZzek5TS0d2dGhwaTJHVjZsanhnQ0NtSTZack8wN2RXTnlYUFltekplVnlqaDBMOEt3QmVtNFpGS2xvVnRPbWxB?oc=5",
           "source": "citybiz",
-          "publishedAt": "2026-09-29T13:52:30.000Z",
+          "publishedAt": "2026-09-29T13:55:30.000Z",
           "tags": [
             "Claims & Underwriting",
             "Leadership"
@@ -2182,154 +3275,6 @@
           "co": [
             "ms-transverse"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "outmarket-ai",
-      "name": "Outmarket AI",
-      "count": 9,
-      "firstSeen": "2025-03-10T07:00:00.000Z",
-      "lastSeen": "2026-09-29T13:49:25.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 8
-        },
-        {
-          "name": "Funding",
-          "count": 7
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Life Insurance International",
-        "Beinsure",
-        "Coverager",
-        "techcrunch.com",
-        "TipRanks",
-        "FinTech Global",
-        "Digital Insurance",
-        "Pulse 2.0"
-      ],
-      "related": [
-        {
-          "slug": "virtus",
-          "name": "Virtus",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Insurtech company Outmarket AI raises $34.5m in Series B funding",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPNXN4Uzg1SEVQVTU4bWZMZF8wZUtrcm5zejc4MndlY2d2YXJMYVVxRUJQb1ZoU3l1QTJIUzFIRHkybFFVcnFpYXpqanlWc093WG5WVk5xakNWSVR6S3hVZHFIckZPUWFudG1WMDRRVnRuUTlyUHZiZ2NQSEpzZjh3eFhpTTVhTW05dS1INjQ0eTY5YkVfN1E?oc=5",
-          "source": "Life Insurance International",
-          "publishedAt": "2026-09-29T13:49:25.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Outmarket AI raises $34.5 mn Series B for insurance automation",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPcWlMRHduQjB5MUJrNXMwaUJEYW4wS3U1QmVhSkhKV0JlejBsMU5TZTR5a3JuVC1DQ3MwNkx5b2hvbllCS3IyWWc3LVdiM0Q4b3RoUVdDVXdtTEtlcEd2WUk4SWh6UDZrdzRJaUcwenlSQnBmTHk5aFJZTk1QU2s1X2FDYnllYjFLVGNyeU4xdnVLQQ?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-09-28T17:13:24.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Outmarket AI raises $34.5 million",
-          "link": "https://coverager.com/outmarket-ai-raises-34-5-million/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-28T14:52:57.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "Outmarket delivers intelligent workflows across commercial, benefits, personal lines, and specialty insurance.",
-          "co": []
-        },
-        {
-          "title": "Insurtech Outmarket raises $34.5M just months after prior round",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOUVJtcGYwOGYzSEh4c3hzY21EcTdxajNvWXViTFVucmFZUm95VnhMYmFjRDRQaGlwWGVTY3c5b1lCNTM3N2VJUzNMRW9kcWo5TGJtMG9iemFyWDRCS3hWd1VwZTdfR2pIWFVueXhZamMyRGR6MlJlMVBxU1A2ZG01UzhWWVBMSUIyX1FqY2NPaDQtLTcxZU9wbXRpMGxOMms?oc=5",
-          "source": "techcrunch.com",
-          "publishedAt": "2026-09-28T14:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Outmarket AI Deepens Insurtech Presence With Virtus Partnership",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSVJ5WnlFam9FQ3BJeTFkYmYzU2J5SWxweW1fRk5TOHF0X2hLbVFfdVp5azA5LWF0cEZUWmphTXJOV2E5YUtaVDNJT3FJNmZhcVRYOWhUTWlvQTB4TVp2dnpBQ0VUR1IxWm82Ym8tcTFFVnlqd3FWTFdqM2NXM0cwN1JjcFhNN2k4Q1cxZFliQjJPZHNEV3VtNl9kMF9kTnZiUlI0c1JrSXNxYzgzbFVLSg?oc=5",
-          "source": "TipRanks",
-          "publishedAt": "2026-07-22T00:17:23.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "virtus"
-          ]
-        },
-        {
-          "title": "Outmarket AI bags $17m to expand insurance platform",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNdjd6SUxoa1hiMGZLVWJ2WElkbmdrMk92dFVZd2dVdEhkTDFhYl9UazFDVXJUTS1KZ25XUmwtalQ3d1ZYOXBJRVVlM2hMZTEtbXpnbXNiSEYxZW4xYjZkZUs0eGEwOHI1cWZFdG5pTkdfR29sYjkzOThOV2FXZFZVV2cwZ3dnaWlmeldMbmt3?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-05-14T07:00:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Outmarket AI raises $17 mn in Series A to expand AI tools for insurance brokers",
-          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5tc2xjcUlOSy1ZNmlmekJGX01OZXItNGRtdjlJY2IxYTBoeWdIMlg5OTFDX1k1VkRvVWFQa0FFTzRoWS1NenE3MlRPeG1KbzJ2bEhJdzdDdU5iUzZXYVBkWg?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-05-14T07:00:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Meet the insurtech: Outmarket AI",
-          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE12VDBUemFreWNETXRmdkQ5bmtnUy0zOEhSbXJRWXgyRWFoczNMcXB3Y1ZKTW1XRXh0cHl4NjNRdU5qU29pVlBibzJNMzl2clZycVk4T1ktWGdibGhkMnVmVDhWY1I2aGd3QWxj?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2025-10-27T07:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Outmarket AI: $4.7 Million (Seed) Raised For Transforming Insurance With AI-Based Insights",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPYVhaVHdSLWJwRnFTLTM1ZWZicUVBLWRNRWhlam5KSWFfRkQtSF8ySXJfLV9uME5neF9XaTJIZVRiQVllWHc4X2ttZkNkLU9TdGZSMWVKNXNGMGxjd2JJOUhWd2lvZkdRbF9XRWd6XzBwZEpPQ1dsUExIREd4RVEwZE1GaTlsVUk1YWlQTGxWd2drSWxNM1ZfWVpaU3lIQ3c0dW9uSXNScXNjZ9IBrwFBVV95cUxQUFJUeVJ4dkFLM0hkb3lkZGI0NHZxY3luMHB6T3Y1Qk5LUUdvc09tRnpXa1d3S3dSR0FzN1drel9zYjhHUVlPTmZKc2hXV2ZkNXg1RHdBeWluNU14Qy1uMjdrZTIxTTdHV0h4U3VpLU12NTZhWHZwb0FHdkdCdWNsQ2Jvd29RUld0aTVEcGNfU3dITHVJN3FYWU1yd05naTZQN1B4QW5uSWtJX25mUW1F?oc=5",
-          "source": "Pulse 2.0",
-          "publishedAt": "2025-03-10T07:00:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
         }
       ]
     },
@@ -2662,627 +3607,6 @@
           ],
           "summary": "",
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "willis-towers-watson",
-      "name": "Willis Towers Watson",
-      "count": 40,
-      "firstSeen": "2024-09-11T07:00:00.000Z",
-      "lastSeen": "2026-09-29T12:04:16.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 14
-        },
-        {
-          "name": "Partnerships",
-          "count": 13
-        },
-        {
-          "name": "AI & Automation",
-          "count": 11
-        },
-        {
-          "name": "Embedded",
-          "count": 6
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 5
-        },
-        {
-          "name": "Leadership",
-          "count": 4
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Reinsurance News",
-        "Insurance Journal",
-        "The Manila Times",
-        "Quiver Quantitative",
-        "AOL.com",
-        "Benzinga",
-        "Yahoo Finance",
-        "Insurtech Insights",
-        "Insurance Business UK",
-        "Insurance Business",
-        "simplywall.st",
-        "Life Insurance International",
-        "Moomoo",
-        "marketscreener.com",
-        "FinTech Global",
-        "Digital Insurance",
-        "Global Reinsurance",
-        "techbuzzireland.com",
-        "Health & Protection",
-        "Captive Insurance Times"
-      ],
-      "related": [
-        {
-          "slug": "kayna",
-          "name": "Kayna",
-          "count": 11
-        },
-        {
-          "slug": "kwant",
-          "name": "Kwant",
-          "count": 8
-        },
-        {
-          "slug": "zurich",
-          "name": "Zurich",
-          "count": 5
-        },
-        {
-          "slug": "kwantsure",
-          "name": "KwantSure",
-          "count": 4
-        },
-        {
-          "slug": "hampden-risk-partners",
-          "name": "Hampden Risk Partners",
-          "count": 1
-        },
-        {
-          "slug": "miller",
-          "name": "Miller",
-          "count": 1
-        },
-        {
-          "slug": "brecon",
-          "name": "Brecon",
-          "count": 1
-        },
-        {
-          "slug": "pinion",
-          "name": "Pinion",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "WTW adds AI assistant to Radar Vision",
-          "link": "https://coverager.com/wtw-adds-ai-assistant-to-radar-vision/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-29T12:04:16.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "Radar is WTW’s insurance technology platform spanning pricing, underwriting and claims.",
-          "co": []
-        },
-        {
-          "title": "Willis launches RiskIQ Nexus to bring risk and insurance data into one place",
-          "link": "https://www.reinsurancene.ws/willis-launches-riskiq-nexus-to-bring-risk-and-insurance-data-into-one-place/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-09-29T12:00:13.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Willis, a WTW business, has announced the launch of RiskIQ Nexus, a new risk intelligence platform designed to help organisations bring risk and insurance data together in one place. Part of WTW’s RiskIQ ecosystem…",
-          "co": []
-        },
-        {
-          "title": "WTW launches Radar AI Assistant for insurance portfolio management",
-          "link": "https://www.reinsurancene.ws/wtw-launches-radar-ai-assistant-for-insurance-portfolio-management/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-09-28T15:30:30.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "WTW, a global advisory, broking and solutions company, has announced the launch of Radar AI Assistant, a new natural language capability within Radar Vision designed to strengthen insurance portfolio management and…",
-          "co": []
-        },
-        {
-          "title": "Tech Update: WTW Unveils Radar AI Assistant for Radar Vision",
-          "link": "https://www.insurancejournal.com/news/national/2026/09/28/887060.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-09-28T15:27:23.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "WTW said it released Radar AI Assistant, a new natural language capability within Radar Vision, its AI-driven performance and experience monitoring tool built for insurers. The AI technology enables pricing…",
-          "co": []
-        },
-        {
-          "title": "WTW releases game-changing AI Assistant for insurance portfolio management to unlock faster insights",
-          "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPMmg0ejBNT3k3TEJxZll4MVZfYlJVclBXREUxZW5Qb3JRNEY0M0ZJelRmNXZFTFg1cGNtdmsxMndkSnliMDdCM0VzaDRqS2FFYmFHaGRaSUpnOTVYbTF3bEhNeTRXalFHU05NNkdlWm9NaXZoX3lsV1RXQ09reHlOWmVMaUxzWVI1MjJFVFgzcS1vY0R6YXJMRDkzVkdaM0k4OUhKSGhWSW52SXZ2Qm9KY0gxVXhmVy05cmoxSWJsZ3VLQTdfTXktZ0RUMTFOZ2ZZOFoyN0tQT1BnTldfUTRCWG1KbzJ4eC02Y1NRTHFDOVFjN0oxRGhpb2FWcGVrRW96M3FSRNIBigJBVV95cUxQazVBME5LNHFfN2RPRkRjSWM4RWhUbTRHRUhSQ1pGTXJKN2ZHdmp3bjVsdlA3MFNsSEMxbU1aazIycGVTaWltMGZwczc2ZEhRSGRVTC1JTmlHYjhGeGlGNk9LYXZBUTZ4c1lXakZlVkVRUVRNalA2S2Zxc3MzaVBVeXY0U1VHOGRWdmYybGJQNTc4bWpEcUZHZzlpYU5nTTA3d2lndl9yaUhDNzhNR0F5bVlVeThWRkVSNUVKWl95RjA5Z0dVM05kYkRHUEJPVXdfVVpMeEk5eVBLcVVDUjZPNnhHNXdHSWhjV3lyREZLbDRZOUtZQ1h2aE4zckNEaWN1bDJQM1ZtQUpZUQ?oc=5",
-          "source": "The Manila Times",
-          "publishedAt": "2026-09-28T11:30:46.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "WTW Unveils Radar AI Assistant to Deliver Real-Time Insurance Pricing and Underwriting Insights",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNzcwcGtlbEFJZmctNXYxYXJFYy1VZFdfMVRiYlpMdDVILTktRGRIS2s5Mi0wa2lwX1pKOWpzT3VxR0tyaUJsM3ZJb1JMRktqY0hYc3FhWDNiQ3hWOWVHX3dKVnpDdWhMRl91MmF6NEZyYzhyMzdPSkZJN05jQmJjVXJhVjFSTURfYlIxaU1IazhocUtMNHJ1TjZKNlAtdmh6VGdWQXBMZWVWZjhFcEw4cUFIeGZYTUVkYmExbmpscERJZmNPbHlF?oc=5",
-          "source": "Quiver Quantitative",
-          "publishedAt": "2026-09-28T11:30:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "WTW’s Zurich Deal Puts Its Insurance Technology Business In Focus",
-          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB2RTVSMjdKYm5vVUZzejZpbGJsd2RzWjJ1OV9VaFVZR1dxdVdzTzBjeVZJOEFlakFRanVhOFhITHQ4aEphVzVLRURfTzJnWC1NbUdsWC1lUnhwX1FkdG5ha2VKZG9Del9faHVjWExVMnhxWmZTOHJucEVIaThuZ2c?oc=5",
-          "source": "AOL.com",
-          "publishedAt": "2026-09-21T16:41:43.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "zurich"
-          ]
-        },
-        {
-          "title": "WTW’s Zurich Deal Puts Its Insurance Technology Business In Focus",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPMmxTYkV2dTRKSjZoWUs0eklsWUdkVFZEYXRYZ05ISldmRmlQRzJhYkN1ZWRudTdnTWs2Mk1YdTMzOVFGai14SW9Nb09VS3R1T1VZOGpDWGlhYnhTOUhfVWZIeGF5WHp6dU81bWxPN2ZHOTV1d2QzWFJzMm5Ub2ZpUm1saWJPZmI2VHY0a1lyVVRRWmY5YlRCcUZvRG9Lck5WSEZtSks2cmtndmVRbkdGTnp6eks0WEZCUXVyOVhWOA?oc=5",
-          "source": "Benzinga",
-          "publishedAt": "2026-09-21T14:41:43.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "zurich"
-          ]
-        },
-        {
-          "title": "WTW’s Zurich Deal Puts Its Insurance Technology Business In Focus",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPcDFkVkttZTJma0N6Ykk2X014aVdrNjBVN1BrRDVYTVVhTGNlNFZDbjNnM3hhTE1sdVZkTGljWTlidFBpa3dIYWJnSEVTNzVCeTlvaUVjemZVaVd2LUVkaFpBUDRtbTNuT1o2XzJyN0JINElhRGh2OW1OTGhmYmQzbkdZaFB3a0pvSWNGbFBORDVOUjhSQ2c?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-09-21T14:41:43.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "zurich"
-          ]
-        },
-        {
-          "title": "WTW and Zurich expand partnership with global rollout of Radar across retail lines",
-          "link": "https://www.insurtechinsights.com/wtw-and-zurich-expand-partnership-with-global-rollout-of-radar-across-retail-lines/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-09-21T13:16:46.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "WTW has signed a global agreement with Zurich Insurance to deploy Radar, WTW's end-to-end rating and analytics software, across Zurich's target retail insurance markets worldwide.",
-          "co": [
-            "zurich"
-          ]
-        },
-        {
-          "title": "Zurich expands use of WTW’s Radar platform",
-          "link": "https://coverager.com/zurich-expands-use-of-wtws-radar-platform/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-21T12:00:11.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "The broader deployment will give Zurich a centralized platform for pricing analysis, monitoring and decisions across markets.",
-          "co": [
-            "zurich"
-          ]
-        },
-        {
-          "title": "WSL Football signs WTW to co-create insurance built for women's football",
-          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/wsl-football-signs-wtw-to-cocreate-insurance-built-for-womens-football-588431.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-09-03T02:48:47.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "Brokers have been coordinating with carriers on female footballer cover since at least 2022 - WTW's WSL partnership is the most concrete market commitment yet to building a product from the ground up rather than…",
-          "co": []
-        },
-        {
-          "title": "WTW partners with women’s football leagues",
-          "link": "https://coverager.com/wtw-partners-with-womens-football-leagues/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-02T13:28:03.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "WTW is partnering with England’s top two women’s professional soccer leagues to create insurance that better fits female players’ needs.",
-          "co": []
-        },
-        {
-          "title": "Insurance moves: Miller, Hampden Risk, Brecon, Willis, Pinion, QuestGates, more",
-          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/insurance-moves-miller-hampden-risk-brecon-willis-pinion-questgates-more-586582.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-08-19T02:39:20.000Z",
-          "tags": [
-            "Cyber",
-            "Claims & Underwriting",
-            "Leadership"
-          ],
-          "summary": "Seven appointments span Bermuda property capacity, Lloyd's intelligent follow, cyber claims leadership with dual legal-and-adjusting qualification, and a new active assailant underwriting desk at Clearwater",
-          "co": [
-            "hampden-risk-partners",
-            "miller",
-            "brecon",
-            "pinion",
-            "questgates"
-          ]
-        },
-        {
-          "title": "Willis and CBF launch first-of-its-kind coral reef parametric insurance programme",
-          "link": "https://www.reinsurancene.ws/willis-and-cbf-launch-first-of-its-kind-coral-reef-parametric-insurance-programme/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-08-05T13:00:25.000Z",
-          "tags": [
-            "Product & Launches",
-            "Property & Cat"
-          ],
-          "summary": "Willis, a WTW business, and the Caribbean Biodiversity Fund (CBF) have launched a first-of-its-kind parametric insurance programme to protect Caribbean coral reefs. Liberty Mutual will provide capacity, with…",
-          "co": [
-            "cbf"
-          ]
-        },
-        {
-          "title": "WTW reports higher second-quarter revenue as AI investment weighs on earnings",
-          "link": "https://www.insurtechinsights.com/wtw-reports-higher-second-quarter-revenue-as-ai-investment-weighs-on-earnings/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-07-31T14:23:11.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "Willis Towers Watson (WTW) reported higher second-quarter revenue but lower net income as acquisition-related costs weighed on earnings, while announcing a $625 million investment to accelerate artificial intelligence…",
-          "co": []
-        },
-        {
-          "title": "Willis urges data centre sector to rethink insurance buying amid AI demand growth",
-          "link": "https://www.reinsurancene.ws/willis-urges-data-centre-sector-to-rethink-insurance-buying-amid-ai-demand-growth/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-27T16:00:24.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "As rapid expansion in digital infrastructure and AI-driven demand reshapes the technology landscape, insurance broker Willis, a WTW business, urges data center owners, developers, builders, operators and investors to…",
-          "co": []
-        },
-        {
-          "title": "Over-insured data centers are a growing problem, Willis says",
-          "link": "https://www.insurancebusinessmag.com/us/news/technology/overinsured-data-centers-are-a-growing-problem-willis-says-583799.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-07-27T14:18:14.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "The broker says AI-driven capacity demand is outrunning actual risk quantification at many sites",
-          "co": []
-        },
-        {
-          "title": "Over-insured data centres are a growing problem, Willis says",
-          "link": "https://www.insurancebusinessmag.com/uk/news/technology/overinsured-data-centres-are-a-growing-problem-willis-says-583800.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-07-27T14:18:14.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "The broker says AI-driven capacity demand is outrunning actual risk quantification at many sites",
-          "co": []
-        },
-        {
-          "title": "Willis Towers Watson (WTW) Launches New Pension Tools And Expands Digital Insurance Reach",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVkFFN1FGVlpPT1hrbHZXTmNFbWFDX2NVUUZxUmdKcmY5Y093Y3lWVkRpSk1LMWRsMXoyNkVnMWZLblhjYXV3enpSM2lBbVl3Q1ZtSHpfV0xUM3BZaFpPd3ZDX3M0RU12cjY5MDRuVEdHUE9vR0dINF96R3A5cXNsbUlrZDRfQkdZNkhiSzRnN3pGbXczaWYzaEotT3ZrdGc?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-07-21T07:00:00.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Is WTW’s KwantSure Partnership Quietly Rewiring Its Digital Risk Solutions Narrative (WTW)?",
-          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOa1h4Zm1RY205ZkoxcjJjaGFISEdSSmJzVjVoRFBrSURNWkt3eHNWOWZ2cm9TYk5LdDRfQWNBUnVVV0lVU2h0a0c0OVdRMjdNZzFkZ3VSbUNPNExLR3RtQUVhbnBNRGljUDJMa3NvQTJ6UVBZNENuazB2OVJ0cDFtVVZxRXFZQk45VDc4a19hekZHRF9GQ1pKWGRRQ3VjU25ob1FHTHpCWnVWLUZVQnpheHhRcjBUUlpTRGI1bUlzdXoyUjdQTldtcEhaRXcyc1RIUUZsNGVR0gHbAUFVX3lxTE0xREVMTGM2d3NkN2NWYlNnR1U0c1IxSnIzdnhGQ0J5M1hQYmdsRjNnOWl5ejRGb0FfaExZZjlybXJvWkRwVkZ5UXA4S1NSSk5IWThxZXBqQjRvMDFPam8zVElTcm1pRy1uV29EYkVxZG55dWxUX3ZmYWVaajJYOWhvVGtsOV9rOUtyWWZicWtfRkMwWjk3c19xWW9PQlVkQTJaMUh6UVdDeDhVQ183SnV5c1I3b3czTmhQbTE0TGtJRnlRUldERzBodEl2Q1hwOF9FR1BBeE90VGZ4WQ?oc=5",
-          "source": "simplywall.st",
-          "publishedAt": "2026-07-17T21:30:26.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "kwantsure"
-          ]
-        },
-        {
-          "title": "Willis, Kayna partner with Kwant on subcontractor insurance",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNMTBObnBDdkt1Zkc4SEluUzUycGdHdlBuTlRkblJQUU1MMXdidnpoMHI1cDBPaENEYzkxa0dJaEFnQndKZ1BtOWxQMWNHdzFYZzFOV2tZeFM3UVpiY3VXdEhweFVFSVZLRFhHMXJMUnVqMlYzSXZMNW53R0Y5QWkxVEdET2FmT0U4Mlc3MXFSYXdHNThrRWF6V3YzMVBya0JTc1ExbFNfSGw?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-07-16T13:43:11.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "kayna",
-            "kwant"
-          ]
-        },
-        {
-          "title": "Willis and Kayna launch embedded insurance program for subcontractors in partnership with Kwant",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNMEkyLTFHc1FaSTJTNGU5YkdkU09tQ0l1VTV2RVBmeU5ZRmZwYWlmT20xR0J5TzJDUXl1V1NKeXVfR2VldTBpVVF5eHNxTG5kVlZ3SUN4RTEwQzB0RHBsUmI5SV82cVhDRlRFSEVpdHAwcG5IUFBabVBySlNUelZyZERqVHhaU29KaGhPdGx6VnFaeHNvbDB1QXR5aTNtUkJTb21PSnI5emMtTk1XQUp2T25QXzRGdy1veTRoV01falU3bkE?oc=5",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-16T13:21:41.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "Embedded"
-          ],
-          "summary": "",
-          "co": [
-            "kayna",
-            "kwant"
-          ]
-        },
-        {
-          "title": "Willis, Kayna partner with Kwant on subcontractor insurance",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOeUZJS29KdDhGTUZ5R0JmdWJkU2xoQmk3RXFkNm56OUpnUkJaSG1JWHl5YzdYY2RZeGdQcWR6RktmaFRFWWN3Ym5xb0MtMlBfV19oYzVYZ1hQai04d01BR19XQW9GSkRFekk3X2hyVDJzajVIT2hWNS1oRVNfZndienBRdHBMQkdnRmRST2kwbEtGSzF2OVE?oc=5",
-          "source": "Life Insurance International",
-          "publishedAt": "2026-07-16T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "kayna",
-            "kwant"
-          ]
-        },
-        {
-          "title": "Willis, Kayna and Kwant Launch KwantSure Embedded Insurance Program for Construction Workforce Compliance",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbWs3cVFyQlRoajdyUmNrNzRqVDRWZC1hR3g1ZVFhMUtLeGtaUzB2dFhrUTcyVlJpaHNIaHlzM0xlMExHWnBaWUwtWXRYNG1ldVZqbkROTFRmNnhkWnFEMXZyZHFSMkRXWS1lbWhxYnFXb1BvcjdsVXotN1NUS09ZWmk5S1hqaTZFVlRMakxvekY4emh1Y0toR1NEcF8wRHJUQ0RIVHVnNzhCWkNEZkhtNDNDcDlyQQ?oc=5",
-          "source": "Moomoo",
-          "publishedAt": "2026-07-16T02:36:49.000Z",
-          "tags": [
-            "Product & Launches",
-            "Embedded",
-            "Regulation"
-          ],
-          "summary": "",
-          "co": [
-            "kayna",
-            "kwant",
-            "kwantsure"
-          ]
-        },
-        {
-          "title": "Willis Towers Watson US LLC And Kayna Partner With Kwant To Launch Embedded Insurance Program For Subcontractors",
-          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQSWhubkpMSGFDM2JCNWZkalZzVkE3WU94Tkh1MTZCelVhN0QySTZWQkRyN1k3ZlhTVGl5T0hsbmxQN1QweUY4VkhxZ1FZLXQxQ05WMDZpdE9DandXRDIzanhSR0ppc3BvOXp1bVhJZF9uSDl2UGJiN01Hbm5oNFpRdC1ZOXI3VzZScFlpQU9sNE5qMk10Y3hHOGdnQ3Q1cDFhN3N4RTl3bE81Sm9wR2NXbmdFNHRmQ241S0tNd1FCUGFJVFBIREViQkxScHd2VVlaWWpnMjVvMkZQLUx0WnRDb19MT3QtSkw4?oc=5",
-          "source": "marketscreener.com",
-          "publishedAt": "2026-07-15T17:20:43.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "Embedded"
-          ],
-          "summary": "",
-          "co": [
-            "kayna",
-            "kwant"
-          ]
-        },
-        {
-          "title": "Kayna and Willis target subcontractor insurance gaps",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQR3I4YV9OMkNEU0lKOUJmU2EyU01SNE5DRjlDbndGeVRLeDJORkZUbl85SVU5ODFrS3o2RGpfSFUtX2xhQ1Z0OVJuLVR6T2p0RnpVOTRWdlhhVzl5amtDN2tYQWNQVWkzd3Z5dWlnZWItT3hNQTEwQ19qMVpiTVZwdGU3aXFUR2ptQ1ROdExQVk8?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-07-15T16:16:48.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "kayna"
-          ]
-        },
-        {
-          "title": "Willis, Kayna and Kwant Launch KwantSure Embedded Insurance Program for Construction Workforce Compliance",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPY2VhSTNSaXQ0dHpMZkl1WGpUb20wbVNHMWFLV2NoUEZfTDFJMFJiN01vOEVOSnQ2YlZmcG1YZ29ZY1BLNHNCMmZoNFdzdUJBZ0FERUg3alBpa2lFSGNDbVFDRVB5Wkl6UHUxakZTcy1JektLSnBiU3lLdTFEc0NrY0RWcVkyMG0wczB6a0lwcS12NG9SZXQ2SjhuMU84X3lPN2ZpZ1liV1Y2alV2ZzNpNGdB?oc=5",
-          "source": "Moomoo",
-          "publishedAt": "2026-07-15T15:00:48.000Z",
-          "tags": [
-            "Product & Launches",
-            "Embedded",
-            "Regulation"
-          ],
-          "summary": "",
-          "co": [
-            "kayna",
-            "kwant",
-            "kwantsure"
-          ]
-        },
-        {
-          "title": "Willis, Kayna and Kwant Launch KwantSure Embedded Insurance Program for Construction Workforce Compliance",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQZEJoREt2WTNhSjY1M2FrWkV4VDdNS2tIWEc5RlJTdS1aRUhnNmFUTHpWWGZCd1U4ajVOam5EZFhJaW1FRjRuWE1NbHcyNjNlRV9xeFJwNkh5enJYVHhNYzVPTm9uRmh1TjFCOS1IX0I4VzVVQkJ4TzBHSFpKc2VnYTRvYnk5M0NnbkJDYUx3bGQtTEd6eEJUU0JWbGlkSUowb2FHUjlkLW5nOHB4d05Ka183R0pvdmJaSDNlQzhCb0dhcnoxaGRWOURmNC03aTJwNktXV2F1NA?oc=5",
-          "source": "Quiver Quantitative",
-          "publishedAt": "2026-07-15T07:00:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "Embedded",
-            "Regulation"
-          ],
-          "summary": "",
-          "co": [
-            "kayna",
-            "kwant",
-            "kwantsure"
-          ]
-        },
-        {
-          "title": "Willis and Kayna partner with Kwant to launch new embedded insurance program for subcontractors",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOdEQ4QllyOHR5NlhVSDhjbGYtQ3MxRDJuSDNlcGRJUEFtTkFDdGk3SG9xc1g2b3ZVcGhVSUREQXRUN2Rsc1dMaHZxVk1ZUlhJU20tZHlHTDg4bVBoZExoWGtSU0d2SW5WNVlBLVdqMWZFRUJkR1NhOXhsOWhtcDN6Sl92MDNudWJ0UW1OQXJFSWFueHpEaTBwU2xEUlhMOXc?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-07-15T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "Embedded"
-          ],
-          "summary": "",
-          "co": [
-            "kayna",
-            "kwant"
-          ]
-        },
-        {
-          "title": "How insurers should deploy AI without the pitfalls: WTW",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOV2o2dzEteGpLbWpucGcxekU3UldYOHV3QWlJUC1RVGJSU2o0clA0Z3M4eXdLX1QwZ2p1M19ibWdqQzZLY2pDM0V6WERETmtyYXRmX0wzZ2VudjlZQl9VdlNmMDhJSG5wVGYyQlBIcGs2VWlOTXIzWDZCdnFsczNyOGJ6OHBaZmoxT1E?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-06-24T07:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Willis warns leaders over AI governance gap",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORmk2LWpjSFl0OHhBT1lTNXpBY0NOOEFQb0JSdGplRXZwU2Z0QVhnb3N4cm8zcVhzUDc4S1BibXJ3bW9SeDNLNmpQSmRtdS01TEI4cUhHV2pNYUFDenI4ZVByc0NGTEg2bG1vTVhTYTlhZVROZ25PUWYxYTNuM2dUUnZGUW1nZ2NEa3VoOGZVX3pJYjkzSS10ZjByNXBUMm8?oc=5",
-          "source": "Global Reinsurance",
-          "publishedAt": "2026-05-28T07:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Willis partners with Qover to bolster GB embedded offering",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPMlo1c0xxRUR2QlFOc3JUYWY3RXcyWVlXQkI3V3BHT2dMemVnV0dWMl9IMWJ3Tl9YWGpNRlhCVlkwcGszTWswNHZmemc3QmxKMUZKZ2gwZVkxRks1VW95czlMZ0E3ZnJPWUZoNEgza3NMeEpDT0ZtWTBLbWNkeFU4aExSVU5SQS1EMXlRQ3d3MmdXUi1VYklxc2hoSE1sSXpTMHJnYTFJQlZkeU5DUm14bVNIMEhPUkY4aEsxZndob0kyZ0pN?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2026-03-17T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "qover"
-          ]
-        },
-        {
-          "title": "Willis, Kayna and Belfry Partner to Simplify Insurance Access for Security Providers",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQdHRXMnFsR28wRUpQaWZ1eTlRekgwZnRBUUMzaHpaZy1rUnlBV0R4VVRmNmhnSUEzdFdJTjh0N2Etd3prQk1kMFh6SlZQQVZYaDh4S3dNS1dJaXdvQldoRjYzVkpSY0wyVjZIb1g0M2UwS0RCVzdqY3l0VmN3Yk54cGJyMmFHOE5KMkh4eUNsV3liQWVEbjl1MjhLbVo4T3BZZ0FGRXdpLTRHWEloekFhNzZ1enFqQi1qVlRiSFpPS3E?oc=5",
-          "source": "techbuzzireland.com",
-          "publishedAt": "2026-02-26T08:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "kayna",
-            "belfry"
-          ]
-        },
-        {
-          "title": "WTW introduces Radar 5, the latest generation of its insurance analytics and rating software",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNYVlUdjQzM1ktZG5fTExVay1veHBHeWlEOUlIU2lWTjcxa09aTGZFbEU5alpfOG5nMnZCbVNiMXZLbVhLM2ROVDJWZW9HNmJjcmI3ZUZIYzBHR2p0YzlCS3Z0YTFraTBSOVAyV3FWQURMT0FiUTgxeFJwSWhrOXRsdWs5SUVGeDIycmVHUWduRGg5dVdDVjRORThra0ZKaHlOamNJWU9CSlRHbVFjX3VHaWlFemVlVkhvaTIyNzJB?oc=5",
-          "source": "Reinsurance News",
-          "publishedAt": "2025-10-15T07:00:00.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "WTW hires Mamone to advance insurance technology and strategy",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaUJvcHJ0V3hHeWYwUlNZZHVqWjhaUnMyQ281amM3VGhuemg0eFF3R0VUNllSNC1uTlhmZDBSUktaV21mTU83WU0zTkc3ZWxpbHgyUGpSMVBLV0JYNFlHSFM2dG02WXc2cW9FS1BwbTdwb3EzdHVaQTZMaXBIeEdBWWJXX0pqLUEwQzFMdXI5SEVtek1hRnhjc0JPZHU1UjV4bzI2Q0NWdVQ1dERKQjNxQjJQSGpTMEYxSUFIVU9vaWUyNXhLUjZLVw?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2025-01-21T08:00:00.000Z",
-          "tags": [
-            "Leadership"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "WTW hires head of technology delivery and strategy for ICT business",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMk1SalpQQjdCUTNlaXFaa0dEV2NINXA3NjZVc2dEdFEwOGhLQjRZS2FYVFRKSlRrZHRIMklSaEpsUlR5eUlPMXlzZ2w4M0RkYWFHeFljLVE3QXJtZ0xadlh6VW1Ib0hHVk5PNDkzN0s3NmwxVkZPeHJvZXA0WmtuYk1xQmEyNWZTYWJwRWgyU21kVzdPN3gzZXVseUExenMtX2RXTnZIdUZvMVHSAbABQVVfeXFMUGxUU0pmMWlCWThHWEJ3SFBZaHpHdUlWR29yUVBKanhGZXZGQTJFYmZ6bU4wMlplYlpQOXRQOEtFYWwybVBXNm1UMi12SktKOGpaeGUzVGdmQkRVV0pwaDdBSFZCc3VCMzY3WEVaN2NtLW9VQmdra2pvbXduUkNYSTBHTjlhSy1TYVM5SUh2UlpsdkpqQkVCdnFjODdIdDQtVUthY3BHeVIzbE9xdl9mZTM?oc=5",
-          "source": "Health & Protection",
-          "publishedAt": "2025-01-21T08:00:00.000Z",
-          "tags": [
-            "Leadership"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Keylane joins WTW's Insurance Technology Partner Network",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNcHVPVnNGMl9oU3dMRzVuNWlFTzN0SjVHQlZsSGUzLTlXSWVBR3QybDV1dnVYYVVUQWRkYUlZU0o3NzB6ZEJKeXAxck1abE9xWUJ3WThsLWNLOGxHeVBYcHUwNDZUeVVTY253UkNSWEhLaVNvTFRkcFZNN3dwVjY2eEdCbXhicUZPaE4yMmhxd0t5Q3FFX2VrSTY2NWV4c3VveFFIRTBPS0pibi0wcW56NDJwUVpMZ3VuajFDdXFJTmc?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2024-10-09T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "keylane"
-          ]
-        },
-        {
-          "title": "WTW appoints Parveen Kaur as global leader for Neuron platform",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQRFhfU3loNjVkTXhoNlhqeVBXSXdVNjdoRzJINnc0bjF4bFVyM0Ribm9EcWJKclpJdlF2d1cxNWxYZ1pOWW1lVnNUd3NCU1NNREFjUVVYYXRyd1ZfM003djNUX3dOMVhBWjlVY0R5M0dlUEVuZXRzY2NTMDU1MC1ENmJjRTZfcHhGcDRucllXR2I0MDZnZWxhc2xHZ0gtMy1WUC1qTndxTW0zM0h1amh6OVJxdFZJVnZnc0JDRTdTbU9DYlpLTTNLVjJPaGMtdw?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2024-09-24T07:00:00.000Z",
-          "tags": [
-            "Leadership"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "WTW partners with Kayna in insurance solutions for SMEs",
-          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQUHN6YjZYYW9oUTRLOTlWNGd3bkEwZzBBSTY5Q1F2YTF3b3JaTnlkeS0xN2pLRkxVWTJITTV0MXFLNFgybmVPSk5MUkxmbE54ck41QUdxdjc3WW9mSDc4dVJJalBJbkVBdERVMS16aVE4UmhXMHFVU1p1YmNUYW1JOGFQOG9Vb1hXSS0zVTUxUWtCdFQ5dmZRaUFDWW9Fa0RRdU5fcGJfZkVpa0FMZmhCYzJBNDBYYjR5eVZIaHZFSXAxYXJaYUk5LUxPcFlldVFaaDZ2bDRhcjZJejJ0Nmc?oc=5",
-          "source": "Captive Insurance Times",
-          "publishedAt": "2024-09-11T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "kayna"
-          ]
         }
       ]
     },
@@ -6204,14 +6528,14 @@
         }
       ],
       "sources": [
-        "tennessean.com"
+        "The Tennessean"
       ],
       "related": [],
       "articles": [
         {
           "title": "Exdion Insurance Advances Purpose-Built AI with Proposal Builder, Transforming Insurance Proposal Creation",
           "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQb2Z6NVVHbTJLTzRMRkdDSTNOMDJmMFU3OFRaN3dRQWNyQ3BfS2lTbjV4WE9sVzJFZ3dnR3BDZTVDQktEN29CS0lpdndVRmg5bVRreDFYMVVidFRiNU1pUllhb1R1YjlsZkpQVkFOOFo1amsyT3Y3MWMwY1paQlNXUWZkOVpBLTNRTUpyT0FicVd3OWV0NGE4eTNlc2lEQ0JzUmpnVDdNYUtQWHFtV3A1NGVmdjdYNnVvMDJsR2NWSS1tMFV4ZjNZTEFZQVJ5bmk3SzFsNm1LVFJCZ1p6NXdhei1idFJ1b09vNnlwY1FhTTloQQ?oc=5",
-          "source": "tennessean.com",
+          "source": "The Tennessean",
           "publishedAt": "2026-09-28T16:52:12.000Z",
           "tags": [
             "AI & Automation"
@@ -6334,7 +6658,7 @@
       "lastSeen": "2026-09-28T14:44:24.000Z",
       "topics": [],
       "sources": [
-        "propertycasualty360.com",
+        "PropertyCasualty360",
         "Business Wire",
         "Finovate",
         "Fintech Singapore"
@@ -6350,7 +6674,7 @@
         {
           "title": "CB Insights/ITC Vegas: The most promising insurtech startups of 2026",
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPQU95ZWxRUDBveWxKMHc3QV9KWU9oU0FYSWJEU0hFTzZaQmdJbkl5NHM0UUF0SmZZSVA5bDVJaXIwQy1nQjR0cEkzN3ZZS1VUa0JtU1J3XzJJWnRqN0JHb3p1Wjhkb2owZ0o4YXlaZEEteEhVVkw3U3VfQ2lkejBSeVFSRUpob0JpZG85YmQ3V3RtVHUyTFhpR1FYaXYtMGJlWFNZU19waTQ1UW5TOGVEaVN1SWM?oc=5",
-          "source": "propertycasualty360.com",
+          "source": "PropertyCasualty360",
           "publishedAt": "2026-09-28T14:44:24.000Z",
           "tags": [
             "Industry"
@@ -9075,41 +9399,6 @@
             "kwh-analytics",
             "aon"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "coverwatch",
-      "name": "Coverwatch",
-      "count": 1,
-      "firstSeen": "2026-09-25T18:44:28.000Z",
-      "lastSeen": "2026-09-25T18:44:28.000Z",
-      "topics": [
-        {
-          "name": "Funding",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Beinsure"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Insurtech Coverwatch raised $4.5 mn in pre-seed to build AI insurance broker",
-          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1QWXU4aWdCa09HUzRDT2xUd0l1TGxUVWh5TnppbjlyUDRtZ09NX3ZTc0NtLTRvZ1R0NFlUTkh6TWhGTW00NjUzblBFNzdrcmVLcnFZZlBFXzZRR1o1SDJTNHpYX3NTeWU2QkxqeEdob0JoYm1WbHZPZ0Z3?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-09-25T18:44:28.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
         }
       ]
     },
@@ -12181,6 +12470,41 @@
       ]
     },
     {
+      "slug": "coverwatch",
+      "name": "Coverwatch",
+      "count": 1,
+      "firstSeen": "2026-09-25T07:00:00.000Z",
+      "lastSeen": "2026-09-25T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Beinsure"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Insurtech Coverwatch raised $4.5 mn in pre-seed to build AI insurance broker",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1QWXU4aWdCa09HUzRDT2xUd0l1TGxUVWh5TnppbjlyUDRtZ09NX3ZTc0NtLTRvZ1R0NFlUTkh6TWhGTW00NjUzblBFNzdrcmVLcnFZZlBFXzZRR1o1SDJTNHpYX3NTeWU2QkxqeEdob0JoYm1WbHZPZ0Z3?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-25T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
       "slug": "panora",
       "name": "Panora",
       "count": 1,
@@ -12212,6 +12536,138 @@
           ],
           "summary": "",
           "co": []
+        }
+      ]
+    },
+    {
+      "slug": "pace",
+      "name": "Pace",
+      "count": 7,
+      "firstSeen": "2025-12-04T08:00:00.000Z",
+      "lastSeen": "2026-09-25T07:00:00.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 7
+        },
+        {
+          "name": "Funding",
+          "count": 5
+        }
+      ],
+      "sources": [
+        "Beinsure",
+        "FinTech Global",
+        "theinsurer.com",
+        "Forbes",
+        "Fortune",
+        "Business Wire"
+      ],
+      "related": [
+        {
+          "slug": "thrive-capital",
+          "name": "Thrive Capital",
+          "count": 1
+        },
+        {
+          "slug": "sequoia",
+          "name": "Sequoia",
+          "count": 1
+        },
+        {
+          "slug": "prudential",
+          "name": "Prudential",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Insurtech Pace raises $46 mn Series B for AI insurance operations",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBnNFdPZGhkX21BZnc1TUxHYl8yRUREa0VOaUkzUHcwa0JPaEd2QkhOVllwYk1QR2t1VXFHN1BjdmF5VXRqWUZQMFNLNW04dmZaLWxlUGI1WXliQW9oNmlVcHM3a2F3NkRZbXhHSVF4bldMaU11cWI5RTZQa0g?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-09-25T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Pace lands $46m funding round to automate insurance workflows",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZkJGOUZ1c1RBdXE3Wjg5UFJTOGFkeUZjMFVnRXluazQ5X2sxTno3Q2lhX1NId3lUaGJQNlAxc1BycDBFZGFzaGd0SG9wb3JGRUVOMDg4RXR0Zk8wYlZsS0ZrdEM0S21OYS1GcDJQNTRqd3BQSHk0TlFXMFJlMnhSSjU3OUQwZUQ2bk5CSzFnWG9ZOUtpSGNxdVExaw?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-06-01T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "AI operations insurtech Pace raises $46 million",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOaTJ5N3cyQXRvYVNFVmF5dWI5ZWlqQzFpdkVlNjZlcTJDUk9pWHFRcVBxTFltR1FNcHNuSnAwV1dBMVlISnRUVlpvVm83LTZmdUYyeDFra3Bsdlo1RFM0aGlvY1dsY08zbndtS0hZVDZLSmlmWk1VblA0aGxJSno5cE9naW85VFVwaW1reGx2SENDbUJrUFRUZQ?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2026-05-27T07:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Thrive And Sequoia Back Pace With $46 Million To Automate Insurance’s Back Office",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQaGdlazFWLUZkSGZOWjVTRDAxQlh5QUVDYTFsekVFOXpGamkwWkpNUnVhakc5d2RISzZrUlJnQVJQRnRWT0puZjE0OGpsdFdKdTlvMTZWVmp3c3ltWkJwSThtMnE4b1I1bG4tb1BiZER4VmpleGRsWERlcFR0WGZlSlFnemxIUGFOS3NVZngtc0RxY0VzQjlWaFR6aU82dmxXNWI4ekFkMWhjbHNTNGUwdXNiWk5MVGRPS1hIcVg4MlhjSkZEMm1MUw?oc=5",
+          "source": "Forbes",
+          "publishedAt": "2026-05-27T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "thrive-capital"
+          ]
+        },
+        {
+          "title": "Pace raises $10m to automate insurance operations",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNRndRNFg0TzBHd1BIWngwMmIzX2Y0amZsZW9COXhXQWtTQm1jR0FQaVpwajRaVFZFOTk1cFl5X1lKUHc4a0xXekh3amZHTGtsUHVmajZJVE1fLWpkWTVBOU5VZmV4YWVlNkF0QzNLeHBmaG9KWWJHamgwWlhMVF8zYkkwTFc5aU9BUXJF?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-01-28T08:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Exclusive: Pace raises $10 million from Sequoia as enterprise AI collides with insurance",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQQTRpVGhBbjJyTENIYTdQbTdtbEstLVlMblFaV2ZEUnpzY0x4RUd6aFEzeTlPR0lrVVhvdXRxX0lmdXNienVBMk9kYjRoOWpGbUVRNzVwS3FyaEJ4OV85VXNTQlNDM204dmpNNGFFQVA4SUF2WkxlOTRWVGVNNVFYcktJSUVaSEJ1WHBrblpmbXVibjFSWm5YTjZtRW9QcEI4Y3JiYVlOc1ptbldCeTNJ?oc=5",
+          "source": "Fortune",
+          "publishedAt": "2026-01-27T08:00:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "sequoia"
+          ]
+        },
+        {
+          "title": "Pace selected by Prudential Financial to help automate its insurance operations with agentic AI",
+          "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOX2dtOUd5WEotOUtuLXFzWW82cEI3a0RVd2dWUVVfTTNhb0ZHTEJ0RC1oSEdyRlMwaDRnaTVkMi1NODdyTmFMNzRHLVZpNWZDQmlCQkZuZDE1VHBRbk9MS3RSV1dwTENGR1N5QngwdGsyamZnM2w1Z1dJOHBsZmkyQTlxS0dtdFQzOXU2Nzd0U2dMMUljVlV4cHRPTUNBRWtSUUVrdDdHcFB2czcyODlGT0dKdGhoZkZtMW9BcVVxTlpiY2lnUkNscEJHQ3ZBZHlWaVgwYmdUZHFuSEdneEE0NHNvbTl0Q0U?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2025-12-04T08:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "prudential-financial"
+          ]
         }
       ]
     },
@@ -15962,36 +16418,6 @@
       ]
     },
     {
-      "slug": "sureify",
-      "name": "Sureify",
-      "count": 1,
-      "firstSeen": "2026-09-23T13:02:43.000Z",
-      "lastSeen": "2026-09-23T13:02:43.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Sureify Expands Life & Annuity New Business with LifetimeACQUIRE, Connecting Quote to Book with Headless Architecture",
-          "link": "https://coverager.com/sureify-expands-life-annuity-new-business-with-lifetimeacquire-connecting-quote-to-book-with-headless-architecture/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-23T13:02:43.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "New capabilities give carriers and distributors flexibility to shape the evolving digital acquisition experience around their own distribution models, meeting the ecosystem wherever they may be.",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "co-op",
       "name": "Co-op",
       "count": 1,
@@ -19700,14 +20126,14 @@
         }
       ],
       "sources": [
-        "ukstories.microsoft.com"
+        "Microsoft UK Stories"
       ],
       "related": [],
       "articles": [
         {
           "title": "1st Central’s pioneering approach to data, cloud and AI set to reshape motor insurance",
           "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPYmZIaURlb3B0enZEd1FObXIxS01aYXdqbWo4eUlQUkthTzh0UFVCSVJWaVdkclhuOU5UYXNKMk5waDZJWUlwUzhIc2tFWjU0dFNBVHBVNkJIUk5ERWowc09CdVdHWFNtSmY2MXZHZW9kN0lMTk9ibk54cS1qOTZKOElGQkFMQ1M3a2RVUWZ4NTVSSWZmanZZOWZyMDRRN201TlhZT3dXQ3FlYUZXMlNocmRiUlFTdnkwOGtjU2FwUE9xanhD?oc=5",
-          "source": "ukstories.microsoft.com",
+          "source": "Microsoft UK Stories",
           "publishedAt": "2026-09-22T07:41:05.000Z",
           "tags": [
             "AI & Automation",
@@ -34182,36 +34608,6 @@
           "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQaFhCMVlKTnEwZTRNN1dJV2p4WkdlX25hRnVrTjM5TlNHa1hHMjktelBUeFN5QXpfTFU3TFp5bjBENWZqQTU2TWYybVhOSEo4cmtZeHpFT1E2ajFZN0VIYjE0S2R0SmJXQ3g3MkNubXVtNENVR2dfd2pBLUlpLUFhX1VPYkpjS3p6WTBOLS11LWxnNmJCSVNyUk1Vbm05eDRtVmc?oc=5",
           "source": "Reinsurance News",
           "publishedAt": "2025-11-05T08:00:00.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "emtech",
-      "name": "Emtech",
-      "count": 1,
-      "firstSeen": "2026-09-10T10:21:04.000Z",
-      "lastSeen": "2026-09-10T10:21:04.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Beinsure"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Emtech launches QMT 2.3 for autonomous insurance software testing",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOdE9ubWRPSWU0YkdBSm4zeUwzdDE2eFZFZ2lGNUhkTHBua3NNZDdmRWYtZXdaem1YNTE3V0NxOHZxU3NjVDdpT216YW5rY0ZVN2pydE80d3F6akhYdy1EZW1vZ0JnRGpKa3pzX2NWLVF6RVBBWW5Od2Jpam5CQkhPbFk0U2tUUjVfYWFfTg?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-09-10T10:21:04.000Z",
           "tags": [
             "Product & Launches"
           ],
@@ -56039,99 +56435,6 @@
             "pinion",
             "questgates"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "pinion",
-      "name": "Pinion",
-      "count": 2,
-      "firstSeen": "2026-07-27T11:00:21.000Z",
-      "lastSeen": "2026-08-19T02:39:20.000Z",
-      "topics": [
-        {
-          "name": "Cyber",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        },
-        {
-          "name": "Leadership",
-          "count": 1
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurance Business UK",
-        "Reinsurance News"
-      ],
-      "related": [
-        {
-          "slug": "willis-towers-watson",
-          "name": "Willis Towers Watson",
-          "count": 1
-        },
-        {
-          "slug": "hampden-risk-partners",
-          "name": "Hampden Risk Partners",
-          "count": 1
-        },
-        {
-          "slug": "miller",
-          "name": "Miller",
-          "count": 1
-        },
-        {
-          "slug": "brecon",
-          "name": "Brecon",
-          "count": 1
-        },
-        {
-          "slug": "questgates",
-          "name": "QuestGates",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Insurance moves: Miller, Hampden Risk, Brecon, Willis, Pinion, QuestGates, more",
-          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/insurance-moves-miller-hampden-risk-brecon-willis-pinion-questgates-more-586582.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-08-19T02:39:20.000Z",
-          "tags": [
-            "Cyber",
-            "Claims & Underwriting",
-            "Leadership"
-          ],
-          "summary": "Seven appointments span Bermuda property capacity, Lloyd's intelligent follow, cyber claims leadership with dual legal-and-adjusting qualification, and a new active assailant underwriting desk at Clearwater",
-          "co": [
-            "willis-towers-watson",
-            "hampden-risk-partners",
-            "miller",
-            "brecon",
-            "questgates"
-          ]
-        },
-        {
-          "title": "Pinion Insurance launches proprietary data interchange platform for MGAs",
-          "link": "https://www.reinsurancene.ws/pinion-insurance-launches-proprietary-data-interchange-platform-for-mgas/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-27T11:00:21.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches"
-          ],
-          "summary": "Pinion Insurance, a newly-formed, technology-enabled specialty insurer, has launched Sarrus, an upgraded, fully integrated proprietary technology platform to replace the fragmented, outmoded data exchange in the…",
-          "co": []
         }
       ]
     },
@@ -86301,125 +86604,6 @@
           "summary": "",
           "co": [
             "manulife"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "pace",
-      "name": "Pace",
-      "count": 6,
-      "firstSeen": "2025-12-04T08:00:00.000Z",
-      "lastSeen": "2026-06-01T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 6
-        },
-        {
-          "name": "Funding",
-          "count": 4
-        }
-      ],
-      "sources": [
-        "FinTech Global",
-        "theinsurer.com",
-        "Forbes",
-        "Fortune",
-        "Business Wire"
-      ],
-      "related": [
-        {
-          "slug": "thrive-capital",
-          "name": "Thrive Capital",
-          "count": 1
-        },
-        {
-          "slug": "sequoia",
-          "name": "Sequoia",
-          "count": 1
-        },
-        {
-          "slug": "prudential",
-          "name": "Prudential",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Pace lands $46m funding round to automate insurance workflows",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZkJGOUZ1c1RBdXE3Wjg5UFJTOGFkeUZjMFVnRXluazQ5X2sxTno3Q2lhX1NId3lUaGJQNlAxc1BycDBFZGFzaGd0SG9wb3JGRUVOMDg4RXR0Zk8wYlZsS0ZrdEM0S21OYS1GcDJQNTRqd3BQSHk0TlFXMFJlMnhSSjU3OUQwZUQ2bk5CSzFnWG9ZOUtpSGNxdVExaw?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-06-01T07:00:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "AI operations insurtech Pace raises $46 million",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOaTJ5N3cyQXRvYVNFVmF5dWI5ZWlqQzFpdkVlNjZlcTJDUk9pWHFRcVBxTFltR1FNcHNuSnAwV1dBMVlISnRUVlpvVm83LTZmdUYyeDFra3Bsdlo1RFM0aGlvY1dsY08zbndtS0hZVDZLSmlmWk1VblA0aGxJSno5cE9naW85VFVwaW1reGx2SENDbUJrUFRUZQ?oc=5",
-          "source": "theinsurer.com",
-          "publishedAt": "2026-05-27T07:00:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Thrive And Sequoia Back Pace With $46 Million To Automate Insurance’s Back Office",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQaGdlazFWLUZkSGZOWjVTRDAxQlh5QUVDYTFsekVFOXpGamkwWkpNUnVhakc5d2RISzZrUlJnQVJQRnRWT0puZjE0OGpsdFdKdTlvMTZWVmp3c3ltWkJwSThtMnE4b1I1bG4tb1BiZER4VmpleGRsWERlcFR0WGZlSlFnemxIUGFOS3NVZngtc0RxY0VzQjlWaFR6aU82dmxXNWI4ekFkMWhjbHNTNGUwdXNiWk5MVGRPS1hIcVg4MlhjSkZEMm1MUw?oc=5",
-          "source": "Forbes",
-          "publishedAt": "2026-05-27T07:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "thrive-capital"
-          ]
-        },
-        {
-          "title": "Pace raises $10m to automate insurance operations",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNRndRNFg0TzBHd1BIWngwMmIzX2Y0amZsZW9COXhXQWtTQm1jR0FQaVpwajRaVFZFOTk1cFl5X1lKUHc4a0xXekh3amZHTGtsUHVmajZJVE1fLWpkWTVBOU5VZmV4YWVlNkF0QzNLeHBmaG9KWWJHamgwWlhMVF8zYkkwTFc5aU9BUXJF?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-01-28T08:00:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Exclusive: Pace raises $10 million from Sequoia as enterprise AI collides with insurance",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQQTRpVGhBbjJyTENIYTdQbTdtbEstLVlMblFaV2ZEUnpzY0x4RUd6aFEzeTlPR0lrVVhvdXRxX0lmdXNienVBMk9kYjRoOWpGbUVRNzVwS3FyaEJ4OV85VXNTQlNDM204dmpNNGFFQVA4SUF2WkxlOTRWVGVNNVFYcktJSUVaSEJ1WHBrblpmbXVibjFSWm5YTjZtRW9QcEI4Y3JiYVlOc1ptbldCeTNJ?oc=5",
-          "source": "Fortune",
-          "publishedAt": "2026-01-27T08:00:00.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "sequoia"
-          ]
-        },
-        {
-          "title": "Pace selected by Prudential Financial to help automate its insurance operations with agentic AI",
-          "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOX2dtOUd5WEotOUtuLXFzWW82cEI3a0RVd2dWUVVfTTNhb0ZHTEJ0RC1oSEdyRlMwaDRnaTVkMi1NODdyTmFMNzRHLVZpNWZDQmlCQkZuZDE1VHBRbk9MS3RSV1dwTENGR1N5QngwdGsyamZnM2w1Z1dJOHBsZmkyQTlxS0dtdFQzOXU2Nzd0U2dMMUljVlV4cHRPTUNBRWtSUUVrdDdHcFB2czcyODlGT0dKdGhoZkZtMW9BcVVxTlpiY2lnUkNscEJHQ3ZBZHlWaVgwYmdUZHFuSEdneEE0NHNvbTl0Q0U?oc=5",
-          "source": "Business Wire",
-          "publishedAt": "2025-12-04T08:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "prudential-financial"
           ]
         }
       ]
