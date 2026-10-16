@@ -1,110 +1,1045 @@
 {
-  "updatedAt": "2026-10-16T13:01:51.884Z",
-  "count": 2127,
+  "updatedAt": "2026-10-16T18:00:53.337Z",
+  "count": 2131,
   "companies": [
     {
-      "slug": "coalition",
-      "name": "Coalition",
-      "count": 4,
-      "firstSeen": "2026-05-06T07:00:00.000Z",
-      "lastSeen": "2026-10-16T12:00:13.000Z",
+      "slug": "geico",
+      "name": "GEICO",
+      "count": 8,
+      "firstSeen": "2024-09-29T07:00:00.000Z",
+      "lastSeen": "2026-10-16T17:39:43.000Z",
       "topics": [
         {
-          "name": "Cyber",
+          "name": "Partnerships",
+          "count": 2
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 2
+        },
+        {
+          "name": "Regulation",
+          "count": 1
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurtech Insights",
+        "theinsurer.com",
+        "Digital Insurance"
+      ],
+      "related": [
+        {
+          "slug": "liberty-mutual",
+          "name": "Liberty Mutual",
+          "count": 1
+        },
+        {
+          "slug": "insurify",
+          "name": "Insurify",
+          "count": 1
+        },
+        {
+          "slug": "sierra",
+          "name": "Sierra",
+          "count": 1
+        },
+        {
+          "slug": "exzeo",
+          "name": "Exzeo",
+          "count": 1
+        },
+        {
+          "slug": "mercury",
+          "name": "Mercury",
+          "count": 1
+        },
+        {
+          "slug": "carvana",
+          "name": "Carvana",
+          "count": 1
+        },
+        {
+          "slug": "state-farm",
+          "name": "State Farm",
+          "count": 1
+        },
+        {
+          "slug": "allstate",
+          "name": "Allstate",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "GEICO expands pet insurance partners",
+          "link": "https://coverager.com/geico-expands-pet-insurance-partners/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-16T17:39:43.000Z",
+          "tags": [
+            "Partnerships",
+            "Regulation"
+          ],
+          "summary": "Agency licensing records surfaced MetLife as a GEICO partner as of September.",
+          "co": []
+        },
+        {
+          "title": "GEICO, Liberty Mutual and Insurify join Sierra’s personal agent protocol initiative",
+          "link": "https://coverager.com/geico-liberty-mutual-and-insurify-join-sierras-personal-agent-protocol-initiative/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-11T08:07:38.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "GEICO, Liberty Mutual, Insurify, and Cigna are among 35 new design partners contributing feedback to the initiative.",
+          "co": [
+            "liberty-mutual",
+            "insurify",
+            "sierra"
+          ]
+        },
+        {
+          "title": "GEICO reports $994 million underwriting profit in first half of 2026",
+          "link": "https://www.insurtechinsights.com/geico-reports-994-million-underwriting-profit-in-first-half-of-2026/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-10T14:50:16.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "GEICO reported an underwriting profit of $994 million for the first half of 2026, down approximately 45% from the same period a year earlier, as higher claims and underwriting expenses put pressure on results.",
+          "co": []
+        },
+        {
+          "title": "GEICO ends Q2 2026 with $994 million profit",
+          "link": "https://coverager.com/geico-ends-q2-2026-with-994-million-profit/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-10T12:59:48.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "GEICO produced lower underwriting earnings in the first six months of 2026 compared to 2025.",
+          "co": []
+        },
+        {
+          "title": "Insurtech Exzeo beats Q2 profit estimates, lands Geico as eighth carrier",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQd3dQZjhyR19qTFkxOUxBR0pOX09yTXhHUjJIOXU3a3E0ZFpjVElRNTNoWVRGOUg4RFFJYmJwdUM3d0NLNUtSa1V2QWZ0Q3picEEydW1LcS1kcFBiSWVSQWVVbC1yaTZmM3hzNDVkc1FUODVhSjFxeGNVLS1feUFoS2RDbThBWTRyd2I5M1NpcTFBVmo2Uk56MHZHWG1uUFJBN1pzRFllN25sT0F4cF9uNVRBaS05NHlnbVE?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2026-08-07T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "exzeo"
+          ]
+        },
+        {
+          "title": "Geico and Mercury: Cheapest Insurance in California",
+          "link": "https://coverager.com/geico-and-mercury-cheapest-insurance-in-california/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-28T17:53:38.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "According to a recent survey by Clearsurance.com, Geico and Mercury are the cheapest home insurance providers in California.",
+          "co": [
+            "mercury"
+          ]
+        },
+        {
+          "title": "Embedded Car Insurance: GEICO & Carvana",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5TcklTWUt2bFJ0dVBZSW1HQ2JZMTRZLV9xLVMzaUFpRTJCWjQ1QnJYTzdiWkVQVlpGZ3dNRXlQUGVmZkZyY0FrMVpyR1JtMURJa3J5ejMxckVlX3ZwWGdWSTdZcy1JS2hnZFFn?oc=5",
+          "source": "Coverager",
+          "publishedAt": "2025-12-16T08:00:00.000Z",
+          "tags": [
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": [
+            "carvana"
+          ]
+        },
+        {
+          "title": "State Farm, Allstate, Geico top digital performers",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM0NQQmZvSmpjUFFWLVpEX3BJdG9XU2VlOXNnOVROeFZZaWkzVFppbVlCVU9BTTBsZ2hPc0tJS0FIRTR2dWYwX3dsdmN2RFpDQktmamhQWEpFNlR1LUxOamU4UVJ4djdVU3JtS1FscDM4aDR3V1NrS2tWU29QOVo4WmZ3?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2024-09-29T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "state-farm",
+            "allstate"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "fruga",
+      "name": "Fruga",
+      "count": 4,
+      "firstSeen": "2026-10-15T09:31:12.000Z",
+      "lastSeen": "2026-10-16T16:36:28.000Z",
+      "topics": [
+        {
+          "name": "Funding",
           "count": 4
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "FinTech Global",
+        "TheBusinessDesk.com",
+        "Insurance Edge"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Fruga raises £1 million",
+          "link": "https://coverager.com/fruga-raises-1-million/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-16T16:36:28.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "Money Expert already uses Fruga’s technology to let customers earn credits toward insurance costs.",
+          "co": []
+        },
+        {
+          "title": "Fruga raises £1m to cut the cost of insurance renewals",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOaHpVc0ZRU0NzVlpGOGVwczFvS2ZBajNzeDNrdl9Rc1Vja0FiVDFxMm5OaVVfRnZhY1E0NnU4SnYweFRTaG9PREZadHlESlJOZHV1UmFvT1lFQmdlSHhWdjE3Y1lEQnAteDUzdmNncHVGTE0zdUd5aElZNFdVTk9DazNOdUdyRGZkTGw0a0hWa3ludw?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-10-15T16:40:28.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "InsurTech scale-up Fruga raises £1m to scale open banking technology",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZmVYVnBRcTNzTHNvUU1uYVkyYXNTVVhiUWFCMmdsdmR1LWVWRzJLeUN5bDFiYjc2c1FHcVg5T3dzT1BPWnBraUN3ck54ckF5WGJ6S3dXcnJmSXd2SFZ4MndPSTR1Vkt1U0pESGdTNTNyRzQwek5WdmlCZi1SajhOZlhfVF9kWVlzOVRfTWhoZkdxanp0ODhyeXo5djNxd3FWd2ROOTd6ZmJnMHduM2IwZkxhV0U1Rlh3ZzNfN2pyQQ?oc=5",
+          "source": "TheBusinessDesk.com",
+          "publishedAt": "2026-10-15T12:17:57.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Fruga Raises £1m to Scale Up Insurance Renewals Offer -",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOeTEta2xQRDNpdTlYa1RINVd2SUhsZVlvaExFaHp3SUNEbU9VNXlzT01JMTY2X3k5Z0ZfVFpndXJhMVMwc0t5WlBCemM2NWFwVkdwRlM1RkNUMGNYSTdwM1IwdFNuTEhYaVRfRlVQOWQzc0RSTk9RZnNSTVdRMU1oX0xISXdpcEE3aHdEM2RIZ3d1aTd4REE?oc=5",
+          "source": "Insurance Edge",
+          "publishedAt": "2026-10-15T09:31:12.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "baldwin-insurance-group",
+      "name": "Baldwin Insurance Group",
+      "count": 5,
+      "firstSeen": "2026-01-13T08:00:00.000Z",
+      "lastSeen": "2026-10-16T15:57:43.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 2
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Sahm",
+        "Insurance Business",
+        "theinsurer.com",
+        "Business Wire"
+      ],
+      "related": [
+        {
+          "slug": "obie",
+          "name": "Obie",
+          "count": 2
+        },
+        {
+          "slug": "fairway",
+          "name": "Fairway",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Founder Shield rebrands as The Baldwin Group",
+          "link": "https://coverager.com/founder-shield-rebrands-as-the-baldwin-group/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-16T15:57:43.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Founder Shield serves ~20,000 clients through its digital insurance platform.",
+          "co": []
+        },
+        {
+          "title": "How Shifting Sentiment Around Growth and Risk Will Impact Baldwin Insurance Group (BWIN) Investors",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQaGY1R3pkeGpqY0M4NUZlSUtrbENVM0VIS19JU0ZVeS1kaXNiaGQ3WXFRQjNjN1p1WkFQd0FpQXQ2SllrNjJwN2lWVTBObjdmbVFBbjVQanJHOHhVUFRqMldyOW1CcFduVDhsUlRUZEJ3V3kwMk5lODNDVzV2YnRXUXdFUUMzUHhPTlZPUDl5TGxPN0lMRnFLckNFbFJtVUVuSWJidWpNUHcwZ2Y2ajdRWVZmZV9ON21WYl8xVHNYb3M4YU42UlJ5VVU0TElXTXFNOGVoTzVGWDI5eXlYLWI5c1Jn?oc=5",
+          "source": "Sahm",
+          "publishedAt": "2026-07-19T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Baldwin Group partners with Fairway to launch home insurance agency",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQTlMwelVsdnlPNGJqVzlJTTRKTTNrZjNRR0MzcS1GWlFDd0N4akduX0RaRDB3ekQ2V1NrNmxWZW53SkczcHFsaHF0bTNMeXJaNWhpSDFaQWt1ZnJ3QWpocXlheTBLRFVBLU14TE5iam1PdU1jQ1AtTmR3OVhQblJ1czFkSTdHX095c19wbEU0cGUzWXBBYU1yOHQxYlZsNWZpWXJYZmIwdUxPMEJtWElqMDMycGRkdHlhbkowaWluZnJfU0tkbzZtT3RzWUo2Zw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2026-02-26T08:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "fairway"
+          ]
+        },
+        {
+          "title": "The Baldwin Group acquires real estate insurtech Obie",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPOHNDd1B3SHo2aFBBSm55SEJTbkhyWTFTaWN5WkJkT0JYV0lkM09xbkFXbHNoalJjQWhIU0ZPcmYxbHVVeDhybWZXQ3hEZkRILWZFZmZWMFdsYmYwOTV0OWZNQ05RaDFhTUNVMGxoMzY1ZU1GZzJmT2dXLXdydkphLTVDdnhILXhyOGJHSERFSG16dnBRelpGNGdDR3FmNlQzREE?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2026-01-13T08:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "obie"
+          ]
+        },
+        {
+          "title": "The Baldwin Group Completes Acquisition of Obie, a Leading Investment Property Insurance Platform",
+          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPX3ZaSktLVGJxSEN2WTVaUkRkYktXU1NCVDE3akoyQXBHZHVfeDF4NXdtMDFjWGxyTDR2WXNvOXRITmNxVHJSa1h4TnZZeWFrd1k2T0xuWlJDX1hHaEstMEk5M3UyamRuR1NfMUxHLUFsOXhJaXF5b3pwbW4wWFZBbFhxRktSUnVnWksxUFlBNE8wM3ZFOC1TLXFMeko5Z3lKSE1aNkNoUmF5UDhsT1dwSWhSMjluS2plRGQxV1g4TlN2SWUxbWR2Z25ycGpBWXNiNEl6VGNYZ0tBNVpwaTlNTzNuV3N4VnJp?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2026-01-13T08:00:00.000Z",
+          "tags": [
+            "M&A",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": [
+            "obie"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "generali",
+      "name": "Generali",
+      "count": 11,
+      "firstSeen": "2024-11-22T08:00:00.000Z",
+      "lastSeen": "2026-10-16T15:45:11.000Z",
+      "topics": [
+        {
+          "name": "Property & Cat",
+          "count": 5
+        },
+        {
+          "name": "Partnerships",
+          "count": 3
         },
         {
           "name": "Product & Launches",
           "count": 2
         },
         {
-          "name": "AI & Automation",
+          "name": "M&A",
+          "count": 2
+        },
+        {
+          "name": "Leadership",
           "count": 1
         },
         {
           "name": "Claims & Underwriting",
           "count": 1
-        },
-        {
-          "name": "Leadership",
-          "count": 1
         }
       ],
       "sources": [
+        "Artemis",
         "Reinsurance News",
-        "Insurance Business UK",
-        "theinsurer.com"
+        "Insurtech Insights",
+        "theinsurer.com",
+        "Fintech News Malaysia",
+        "United Nations Development Programme",
+        "Passionate In Marketing",
+        "Business Standard"
       ],
       "related": [
         {
-          "slug": "verve",
-          "name": "Verve",
+          "slug": "lloyds",
+          "name": "Lloyds",
+          "count": 2
+        },
+        {
+          "slug": "descartes",
+          "name": "Descartes",
+          "count": 2
+        },
+        {
+          "slug": "central-bank-of-india",
+          "name": "Central Bank of India",
+          "count": 2
+        },
+        {
+          "slug": "world-bank-group",
+          "name": "World Bank Group",
           "count": 1
         },
         {
-          "slug": "sedgwick",
-          "name": "Sedgwick",
+          "slug": "ibisa",
+          "name": "Ibisa",
           "count": 1
         },
         {
-          "slug": "allianz",
-          "name": "Allianz",
+          "slug": "icmif-foundation",
+          "name": "ICMIF Foundation",
           "count": 1
         }
       ],
       "articles": [
         {
-          "title": "AI-driven incidents will escalate in frequency once attackers find the right business model: Coalition",
-          "link": "https://www.reinsurancene.ws/ai-driven-incidents-will-escalate-in-frequency-once-attackers-find-the-right-business-model-coalition/",
+          "title": "Generali launching Lloyd’s Syndicate 2031 Red Bridge, to enhance access to reinsurance capital",
+          "link": "https://www.artemis.bm/news/generali-launching-lloyds-syndicate-2031-red-bridge-to-enhance-access-to-reinsurance-capital/?utm_source=rss&utm_medium=rss&utm_campaign=generali-launching-lloyds-syndicate-2031-red-bridge-to-enhance-access-to-reinsurance-capital",
+          "source": "Artemis",
+          "publishedAt": "2026-10-16T15:45:11.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": [
+            "lloyds"
+          ]
+        },
+        {
+          "title": "Generali advances reinsurance strategy with launch of Syndicate 2031 Red Bridge at Lloyd’s",
+          "link": "https://www.reinsurancene.ws/generali-advances-reinsurance-strategy-with-launch-of-syndicate-2031-red-bridge-at-lloyds/",
           "source": "Reinsurance News",
-          "publishedAt": "2026-10-16T12:00:13.000Z",
+          "publishedAt": "2026-10-16T15:33:12.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "Global insurer Generali has entered the Lloyd’s marketplace with the launch of Syndicate 2031 Red Bridge, which will assume a share of the carrier’s outward reinsurance placements, across multiple lines of business. For…",
+          "co": [
+            "lloyds"
+          ]
+        },
+        {
+          "title": "Generali and the World Bank Group partner to advance insurance and resilience in emerging markets",
+          "link": "https://www.insurtechinsights.com/news/generali-and-the-world-bank-group-partner-to-advance-insurance-and-resilience-in-emerging-markets/6705/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-10-13T15:04:51.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships"
+          ],
+          "summary": "Generali and the World Bank Group (WBG) have signed a Memorandum of Understanding during the Annual Meetings of the WBG and the International Monetary Fund in Bangkok, built on a shared commitment to mobilise private…",
+          "co": [
+            "world-bank-group"
+          ]
+        },
+        {
+          "title": "Ibisa hires Generali's Singh to lead Indian parametric insurance expansion",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQNGczdG1jTHhBVnA2dDgyT0JBSDloYm92eFcxYU1GWlNuSlBtbjZMV1EzRWJ6dE92RWNQSzVBZ19VNVQ1REdXNzdrTVVvZjI2M3ZlRF95NmlUMDdzOWZ1VnFJam9uQVl1cjRYdnN2TVNYRUZxWEt3REJLMjBfamhZd05qQjQ0YVVXVGh2TklsRVEzdmRJZUxsVTNHVTZrZ29FWElDSFpwX29uSGQ3QVI3UXc3TWhIN3ZoVmlKSjJOTHRZZGxYbnN3SDhBYndvRUdzSGc?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2026-10-12T12:45:45.000Z",
+          "tags": [
+            "Property & Cat",
+            "Leadership"
+          ],
+          "summary": "",
+          "co": [
+            "ibisa"
+          ]
+        },
+        {
+          "title": "Descartes and Generali renew strategic parametric partnership",
+          "link": "https://www.reinsurancene.ws/descartes-and-generali-renew-strategic-parametric-partnership/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-03T14:00:52.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships",
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "Descartes Underwriting, a global provider of parametric re/insurance solutions for climate and emerging risks, and Generali Global Corporate & Commercial (GC&C), the business unit of Generali Group that provides…",
+          "co": [
+            "descartes"
+          ]
+        },
+        {
+          "title": "Descartes and Generali renew parametric insurance partnership",
+          "link": "https://www.artemis.bm/news/descartes-and-generali-renew-parametric-insurance-partnership/?utm_source=rss&utm_medium=rss&utm_campaign=descartes-and-generali-renew-parametric-insurance-partnership",
+          "source": "Artemis",
+          "publishedAt": "2026-09-03T10:15:59.000Z",
+          "tags": [
+            "Partnerships",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": [
+            "descartes"
+          ]
+        },
+        {
+          "title": "Generali Calls on Insurtech, Healthtech Startups to Join First Accelerator",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5xclo2aUk0WHVfSmdLLVJoMTNUMC1zRGtEdTVtNGRRS05HeUdfMkstVVdLY1Q5dXdGeTZtemxXYUh5WExfUlNDVlRSX2xiX21EZmNMTE91eU01RjZzV1BLWGtkNHU3dDduQ0xuRjlhOFdtTmJxLVE?oc=5",
+          "source": "Fintech News Malaysia",
+          "publishedAt": "2026-08-12T02:17:07.000Z",
+          "tags": [
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "UNDP, BMZ, Generali and ICMIF Foundation deliver world’s largest inclusive insurance innovation programme across 30 countries",
+          "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOZFZ1NjJNUm4xQU56QW82V2tmTGFfN1d4THNMZW9ELXJIWEpJaWg2ZU8zV0hKaXBYODc2em5qUkVSWUk3aDdRd1RvTnNDWGpKUWNqbV9ycWU1WGxqbjN2NEItR0RzTzRRQU9MaThsTlVKS1ZSTGxpNldzYmZORl8zVlhqeE1rQUJBMW5lZkgxTlE4bktBeC1fZjRTaFJDMTFja0RpZ1h6d0RRTEVjcy1RcXN4UWgwSTZiVUNtSHlNVFdJV0FHM0Z5Y2pFbldpUmdLMzJsMS05em5tUXhXVVoxZUpPQ053MzRaa3M4NVJKMTl4UFhr?oc=5",
+          "source": "United Nations Development Programme",
+          "publishedAt": "2025-11-06T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "icmif-foundation"
+          ]
+        },
+        {
+          "title": "Call for Proposals for UNDP-Generali Insurance Innovation Challenge: MSME Resilience in Thailand",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSjBZUFJsY2JQTGtJdWN0cldrTUNhVHZ3c1phZVFoMXpiZV9iaWpOaFZnN0R2VmlhR3UxUEduZjYxVUk1c2k1d1dLMVEtalZGWHA5SzN5ZHRNREg1ZjMwZXAyY3JRc3NhV3MtMGNvWldSLTJBcWpkYzU4M3Fua1NDeFYxS21fdw?oc=5",
+          "source": "United Nations Development Programme",
+          "publishedAt": "2025-08-18T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Generali Group and Central Bank of India announce new brand identity for their life and general insurance joint venture",
+          "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOdmFBMDJneWtZajJVY0dZVllyaEV3QTRsMHUzdzFvanNqN3RsVGZKSmUzMzVKRDRlQ3hVSzlLSnBEWVVLZXlCLXRVRlp2U3NEd3I5eHV1Wks1RDVDN0FOS0RJLTNBVHJubDdMcE0yN0w4dDJZcmlUVHRocG50TFdTWWJZc0dUSDlOcy1ZQktSVHJOalplVlBMdkQ5cmpJNHdoYWJDVDJ0el9ZNHZNaGdZcHU1LTVQY0lmekQ3THY4NUNMUmdUSWxrQWVqZVNWX0FaXzlrQklYMjdENllqb0tlbEZZazlLeGxkTVMwcnpYOA?oc=5",
+          "source": "Passionate In Marketing",
+          "publishedAt": "2025-08-04T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "central-bank-of-india"
+          ]
+        },
+        {
+          "title": "Central Bank of India gets RBI nod for insurance JV with Generali group",
+          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQekY3ei1iSWtHend3OFVBVkh3Qk5TR1BZc3lxcExuRHhaU1hZQWxkMEVMRG1sc2VQcGhvTUJUTUxYVlRrcGFLT2xybE9Hekd0UXhSSzFyZmhRRW9LWEhVTmNldXVqNUtyT1pQdVFLWGl0dzlvMEpZZXkxYnFYbHBTTkpwZ09EVGM0eXFTRG5ZTjRrZHJyZkJCRjl3TDVLdkNkbzZkZHJJOENIajlkeWk2cVR5b2hpNUFDMTZIVmhoalg4QlpiXzNMNGdQZU5SZ1UyczN3VjBKZzIwUG_SAeABQVVfeXFMUGZwNVk5cnFpSml2N09BeTNlN25xcmhXb1NxajcwTVoyazdlYjFoaTNPc0NWWFpJV01qRkxXbnB2VlNtX04wQnJpb2lTUjdndjZpRjRpc1lEdTVZT0dNVmt5ZHNjd2N4c29SZTlJb1NTRktUS3BUeU55dElrTWNhXzI5Si1XVU5sNGY5dGdMcFAtS1lZaXJRQUhjbGZMdC1adHJsV1FLY2VhVTdjY2ozV3FRRFBEUnhUOEMyQlFNSmNkenJxUlpXQUJxWlRsUFVWOTRub2xxOGFxSm9kNHlOVFI?oc=5",
+          "source": "Business Standard",
+          "publishedAt": "2024-11-22T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "central-bank-of-india"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lloyds",
+      "name": "Lloyds",
+      "count": 5,
+      "firstSeen": "2026-10-02T11:07:00.000Z",
+      "lastSeen": "2026-10-16T15:45:11.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "Property & Cat",
+          "count": 2
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Artemis",
+        "Reinsurance News",
+        "Beinsure",
+        "Finextra"
+      ],
+      "related": [
+        {
+          "slug": "generali",
+          "name": "Generali",
+          "count": 2
+        },
+        {
+          "slug": "asteria",
+          "name": "Asteria",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Generali launching Lloyd’s Syndicate 2031 Red Bridge, to enhance access to reinsurance capital",
+          "link": "https://www.artemis.bm/news/generali-launching-lloyds-syndicate-2031-red-bridge-to-enhance-access-to-reinsurance-capital/?utm_source=rss&utm_medium=rss&utm_campaign=generali-launching-lloyds-syndicate-2031-red-bridge-to-enhance-access-to-reinsurance-capital",
+          "source": "Artemis",
+          "publishedAt": "2026-10-16T15:45:11.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": [
+            "generali"
+          ]
+        },
+        {
+          "title": "Generali advances reinsurance strategy with launch of Syndicate 2031 Red Bridge at Lloyd’s",
+          "link": "https://www.reinsurancene.ws/generali-advances-reinsurance-strategy-with-launch-of-syndicate-2031-red-bridge-at-lloyds/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-10-16T15:33:12.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "Global insurer Generali has entered the Lloyd’s marketplace with the launch of Syndicate 2031 Red Bridge, which will assume a share of the carrier’s outward reinsurance placements, across multiple lines of business. For…",
+          "co": [
+            "generali"
+          ]
+        },
+        {
+          "title": "Asteria to grow digital infrastructure for aviation asset and loss information with new Lloyd’s investment",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQXzEyTU1zbk55c3doSE1xaXkyZVJIaW5uV1lURFF2MkJoOGoxaklibkhzeFRXVUdweWV3MDI2YU9VeV9zS3h5Z2E1VTRLQVpCYVQwZW1NbndhNHJVLXFyQnBfM0RiUnlWczFOQjF2dS1QVG0zbDdERmVGZC1OTjZWenBYb3lfaXN0dWRKeUN4Ymtqa01Nei1EekVkRVFPRmlxRTAwZWpHWVdOc2N2SlY3LU9pRFFTLUFobS1uUzljdjZ6VGtKMEFQV3pOV01RM0k2?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-10-14T06:25:05.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "asteria"
+          ]
+        },
+        {
+          "title": "Lloyd’s Lab selects 10 insurtech startups for Cohort 17 Accelerator",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcHJwTm9VdmU4SjBzYUlPTThfRFMwTVc5dGp5Skp6bURqbkExWlB1Rl9wbVQ4Q2VZUHROOGVVT1F0SmJEckp2Z05fSXVuZ0FXaXBqUk11YjBMNHpCczBMZnBsQkZYV1V1bkczY2djSkEzb1VxLXhJN3d3LThLY0d0dzh3T0NPajdJ?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-10-06T19:21:31.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Lloyds survey reveals 71% of UK FIs believe tokenisation will reshape financial services",
+          "link": "https://www.finextra.com/newsarticle/48526/lloyds-survey-reveals-71-of-uk-fis-believe-tokenisation-will-reshape-financial-services?utm_medium=rssfinextra&utm_source=finextrafeed",
+          "source": "Finextra",
+          "publishedAt": "2026-10-02T11:07:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Lloyds' 10th annual Financial Institutions Sentiment Survey, conducted between April and May 2026, showed that 71% of the 100 senior leaders surveyed across UK banks, insurers, financial sponsors and asset and wealth…",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "travelers",
+      "name": "Travelers",
+      "count": 11,
+      "firstSeen": "2026-05-11T07:00:00.000Z",
+      "lastSeen": "2026-10-16T15:18:40.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 8
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 4
+        },
+        {
+          "name": "Cyber",
+          "count": 4
+        },
+        {
+          "name": "Regulation",
+          "count": 3
+        },
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "Property & Cat",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Insurance Journal",
+        "Carrier Management",
+        "Claims Journal",
+        "Digital Insurance",
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "muse",
+          "name": "Muse",
+          "count": 1
+        },
+        {
+          "slug": "ethos",
+          "name": "Ethos",
+          "count": 1
+        },
+        {
+          "slug": "liberty-mutual",
+          "name": "Liberty Mutual",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Travelers on Muse: “It’s early days”",
+          "link": "https://coverager.com/travelers-on-muse-its-early-days/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-16T15:18:40.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "The comments come as Meta positions insurance as a use case for its AI agents.",
+          "co": [
+            "muse"
+          ]
+        },
+        {
+          "title": "Travelers Reports Solid Underwriting, Record Investment Income for Q3",
+          "link": "https://www.insurancejournal.com/news/national/2026/10/16/889213.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-10-16T15:10:48.000Z",
+          "tags": [
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "Travelers Insurance reported continued solid underwriting and historic investment income for the third quarter along with higher catastrophe losses. “It was another in a run of successful quarters, with very strong…",
+          "co": []
+        },
+        {
+          "title": "Cyber Threats the Top Business Concern as AI Heightens Risk: Travelers Risk Index",
+          "link": "https://www.carriermanagement.com/news/2026/09/23/292188.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-09-23T20:04:56.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber",
+            "Regulation"
+          ],
+          "summary": "The rapid growth and lack of governance or regulation in the use of artificial intelligence has once again made cyber threats the top concern among businesses. According to the latest Risk Index from insurer Travelers…",
+          "co": []
+        },
+        {
+          "title": "Cyber Threats the Top Business Concern as AI Heightens Risk: Travelers Risk Index",
+          "link": "https://www.insurancejournal.com/news/national/2026/09/23/886527.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-23T14:15:18.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber",
+            "Regulation"
+          ],
+          "summary": "The rapid growth and lack of governance or regulation in the use of artificial intelligence has once again made cyber threats the top concern among businesses. According to the latest Risk Index from insurer Travelers…",
+          "co": []
+        },
+        {
+          "title": "Travelers Risk Index: Cyber Threats the Top Business Concern as AI Heightens Risk",
+          "link": "https://www.claimsjournal.com/news/national/2026/09/23/340321.htm",
+          "source": "Claims Journal",
+          "publishedAt": "2026-09-23T12:00:22.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber",
+            "Regulation"
+          ],
+          "summary": "The rapid growth and lack of governance or regulation in the use of artificial intelligence has once again made cyber threats the top concern among businesses. According to the latest Risk Index from insurer Travelers…",
+          "co": []
+        },
+        {
+          "title": "Travelers expands product liability insurance to California life sciences companies",
+          "link": "https://coverager.com/travelers-expands-product-liability-insurance-to-california-life-sciences-companies/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-28T15:01:18.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "The offering is now available in 50 states.",
+          "co": []
+        },
+        {
+          "title": "How Travelers measures ROI for its in-house LLM",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOdmhIZWttd2VCSHRrNFBnUzBscE9ERDNZWnZZN2ptRFR1UTdJQUZLMEJrWUIxMXZlVXBFaDQ5SDl6Y21PRWFpZ3dqYXI2X18tTXdIczVzcTB5M1N2b2t1NVp0NkczWjJ0VlVVbGRzWGJleG9YQlZkdEdaeGZTa2t3OQ?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-07-21T10:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Travelers reports Q2 net income of $2.21 billion as underwriting and investment results improve",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/travelers-reports-q2-net-income-of-2-21-billion-as-underwriting-and-investment-results-improve-582887.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-20T04:15:03.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "Strong activity on large construction projects fueled outsized growth in Travelers' surety line even as broader commercial pricing softens",
+          "co": []
+        },
+        {
+          "title": "Travelers: How AI improved claims, underwriting efficiency in Q2",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeHlGRENMU3NtZDBLejJkcldrSmJmekFuelNBcGR4d0pLOFQtVHVhVFAtY3NtZXgxWUdFUVJoVU1ndTFFVHZ3YjNFYTVWN0VxY285NFVxaUJrMDktSl84QnRia0V2S0RRS00yVWtvMlZ3Wll6blpmVUFDLVhwc242VUN0M2hMYlF6YmFNSEdBMA?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-07-17T20:05:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "AI is fueling a surge of new ransomware threats: Travelers",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQjFZcktMeXRWN2w3TnRISE1WQlBFUVBYb1BSR2x0dTEzZEpodlhwZkFCdGpOTDhFNTRacV8wYnVTeHZXVUYwaHFob1JBOHdsQTVJWHVIZmU5TWlBVWZocEd5MzVlNk9CdEEwOUJ6QUc3VkhQaktpVC1oZ0dtU2JhcmxhcndzRjFJSy1pbW5n?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-06-15T07:00:00.000Z",
           "tags": [
             "AI & Automation",
             "Cyber"
           ],
-          "summary": "Cyber risk can hold flat for years, then jump sharply once attackers find a way to exploit a new technology; artificial intelligence (AI) appears to be heading down a similar path, cyber insurance specialist Coalition…",
+          "summary": "",
           "co": []
         },
         {
-          "title": "Insurance moves: Verve, Coalition, Sedgwick",
-          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/insurance-moves-verve-coalition-sedgwick-588852.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-09-07T06:37:49.000Z",
+          "title": "Travelers launches AI claims tool; Ethos partners with Liberty Mutual",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ0VOUDRXbVVEMlA1Y3k1OXAxbWRieWtZdkpHYW5CS2szLWxLRWFaNlI1LXV6U2g4c2gzWDY1RnJPZ0VTbWtfWmVhOFhCd05MQlBXLV8xNTRjZGp4VzZuSHUzWVpZZE0wRzAtSGVfYXcydzIyNTNkcXBBUzJaTFRiUjRrVi1EcG90RF93QWpEeFBySHczZ1VEM3FBajY?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-05-11T07:00:00.000Z",
           "tags": [
+            "Partnerships",
             "Product & Launches",
-            "Cyber",
-            "Claims & Underwriting",
-            "Leadership"
-          ],
-          "summary": "Coalition is moving upmarket on cyber, Verve has launched a fresh Lloyd's-backed FI capacity option, and a Sedgwick finance hire with an M&A background signals where the claims administrator's growth ambitions sit",
-          "co": [
-            "verve",
-            "sedgwick"
-          ]
-        },
-        {
-          "title": "Coalition’s cyber risk management platform new feature to help prevent business email compromise",
-          "link": "https://www.reinsurancene.ws/coalitions-cyber-risk-management-platform-new-feature-to-help-prevent-business-email-compromise/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-07-27T05:00:20.000Z",
-          "tags": [
-            "Product & Launches",
-            "Cyber"
-          ],
-          "summary": "Coalition, and active insurer focused on preventing digital risks, has launched Login Security, a new feature in its cyber risk management platform, Coalition Control, that helps small and midsize businesses (SMBs)…",
-          "co": []
-        },
-        {
-          "title": "Exclusive: Allianz hands cyber book to Coalition in deal set to push insurtech past $1 billion in premium",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYk93YjBiajY3UzZ6eUpacF9WZ1NWOWtMdVdlZncyYUJxbjZJUk9RMlpCOS1OSVVQY0daUmV3cjlVdzJsMHU5M0R5VXBZVTEwN2lwX1N1NEFVZlVyc1Y4WHcwallxaHFCbndOd3Qwa1U3bUtiWDZmWTlQQlNwZE9VN1dhZGxlTXBjQmdRTUxCTTk2QWo5bUI4VjFzc0t0a3lDRzBLYk44ZmYwVDNBcHZlS3RfTUE3QjZFNDNURGg2TU5GSm5XNUlSYlRYc18?oc=5",
-          "source": "theinsurer.com",
-          "publishedAt": "2026-05-06T07:00:00.000Z",
-          "tags": [
-            "Cyber"
+            "AI & Automation",
+            "Claims & Underwriting"
           ],
           "summary": "",
           "co": [
-            "allianz"
+            "ethos",
+            "liberty-mutual"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "muse",
+      "name": "Muse",
+      "count": 4,
+      "firstSeen": "2026-10-01T16:28:56.000Z",
+      "lastSeen": "2026-10-16T15:18:40.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 4
+        },
+        {
+          "name": "Partnerships",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Coverager",
+        "Beinsure",
+        "Digital Insurance"
+      ],
+      "related": [
+        {
+          "slug": "the-zebra",
+          "name": "The Zebra",
+          "count": 2
+        },
+        {
+          "slug": "travelers",
+          "name": "Travelers",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Travelers on Muse: “It’s early days”",
+          "link": "https://coverager.com/travelers-on-muse-its-early-days/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-16T15:18:40.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "The comments come as Meta positions insurance as a use case for its AI agents.",
+          "co": [
+            "travelers"
+          ]
+        },
+        {
+          "title": "Insurtech Zebra to integrate Muse AI assistant into insurance shopping",
+          "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9JZ2ZrMHVaYnVSdmtKVXROMkxEN1pocDJvUE95VmlHejVtRXpBQ3Z0cVpxYU52dExXZXFEX2l6RFRHZW1KdC1nclNMWk52b0Nqb2JNblBBTFBncWIxcE54VkVhVmVtelR5LTF0LWFfVUY?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-10-08T20:11:34.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "the-zebra"
+          ]
+        },
+        {
+          "title": "Mid-size insurer: Building AI apps beats letting Muse in",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOWWlSaDNBZlh4QnEtcDhiaDFqdFlEeE52cUxDNUd0T0xWdGNkTzRpcUE0Umx1a212dTZRNnpVNUNsRmx4TEFaczBEWXFfYVlxcUJGZV8wcHNSeU5Ha0tSWm5jTDFHcE1uYTdwTVFEWncwUDJyc2tPTTlzaDJCck5QN0pMODVXWUNwU19Z?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-10-05T10:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "The Zebra welcomes Muse",
+          "link": "https://coverager.com/the-zebra-welcomes-muse/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-01T16:28:56.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "The Zebra will offer agent-to-agent integration with AI personal assistant Muse.",
+          "co": [
+            "the-zebra"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sumitomo-life",
+      "name": "Sumitomo Life",
+      "count": 1,
+      "firstSeen": "2026-10-16T14:46:07.000Z",
+      "lastSeen": "2026-10-16T14:46:07.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "symetra",
+          "name": "Symetra",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Sumitomo Life sets Symetra loose on US deal hunt as Japan’s insurers keep buying American",
+          "link": "https://www.insurancebusinessmag.com/us/news/life-insurance/sumitomo-life-sets-symetra-loose-on-us-deal-hunt-as-japans-insurers-keep-buying-american-593864.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-10-16T14:46:07.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "The Japanese mutual has earmarked up to ¥1 trillion for acquisitions, and wants its Bellevue-based subsidiary to find targets that fit alongside, not on top of, what it already does",
+          "co": [
+            "symetra"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "symetra",
+      "name": "Symetra",
+      "count": 1,
+      "firstSeen": "2026-10-16T14:46:07.000Z",
+      "lastSeen": "2026-10-16T14:46:07.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Business"
+      ],
+      "related": [
+        {
+          "slug": "sumitomo-life",
+          "name": "Sumitomo Life",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Sumitomo Life sets Symetra loose on US deal hunt as Japan’s insurers keep buying American",
+          "link": "https://www.insurancebusinessmag.com/us/news/life-insurance/sumitomo-life-sets-symetra-loose-on-us-deal-hunt-as-japans-insurers-keep-buying-american-593864.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-10-16T14:46:07.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "The Japanese mutual has earmarked up to ¥1 trillion for acquisitions, and wants its Bellevue-based subsidiary to find targets that fit alongside, not on top of, what it already does",
+          "co": [
+            "sumitomo-life"
           ]
         }
       ]
@@ -112,9 +1047,9 @@
     {
       "slug": "zurich",
       "name": "Zurich",
-      "count": 63,
+      "count": 64,
       "firstSeen": "2024-08-12T07:00:00.000Z",
-      "lastSeen": "2026-10-16T11:43:55.000Z",
+      "lastSeen": "2026-10-16T13:55:30.000Z",
       "topics": [
         {
           "name": "Product & Launches",
@@ -130,20 +1065,20 @@
         },
         {
           "name": "Partnerships",
-          "count": 6
+          "count": 7
         },
         {
           "name": "Claims & Underwriting",
           "count": 6
         },
         {
-          "name": "Leadership",
+          "name": "Auto & Mobility",
           "count": 5
         }
       ],
       "sources": [
-        "FinTech Global",
         "Coverager",
+        "FinTech Global",
         "Reinsurance News",
         "FintechNews CH",
         "Carrier Management",
@@ -221,10 +1156,24 @@
       ],
       "articles": [
         {
+          "title": "Santalucía and Zurich sign ten-year distribution alliance",
+          "link": "https://coverager.com/santalucia-and-zurich-sign-ten-year-distribution-alliance/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-16T13:55:30.000Z",
+          "tags": [
+            "Partnerships",
+            "Auto & Mobility"
+          ],
+          "summary": "Santalucía will market Zurich’s auto insurance under its own brand across all distribution channels.",
+          "co": [
+            "santaluc-a"
+          ]
+        },
+        {
           "title": "Zurich partners with Hakuna to launch embedded ticket insurance",
           "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdkw4WE5WQlJkUlItdnNXQWdGM0x1NkJYUFR2V2JRRkxSRC1uVktmVWlZbTVBeUhTZDZ5NXhJaW1lUGV2UzBqNVcxbzVfTmkxUXJUR1prdER1OUxBN04tVEVrd2lVZmwwb1lnUWt4QUxoRW4yYnQ4a2ZxdW1ZT1ZvT0htdU80b3g2UFlVQmQzcUh6NUVad3NtS3J4WDNrc3c?oc=5",
           "source": "FinTech Global",
-          "publishedAt": "2026-10-16T11:43:55.000Z",
+          "publishedAt": "2026-10-16T12:39:41.000Z",
           "tags": [
             "Partnerships",
             "Product & Launches"
@@ -1022,11 +1971,662 @@
       ]
     },
     {
+      "slug": "santaluc-a",
+      "name": "Santalucía",
+      "count": 1,
+      "firstSeen": "2026-10-16T13:55:30.000Z",
+      "lastSeen": "2026-10-16T13:55:30.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "zurich",
+          "name": "Zurich",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Santalucía and Zurich sign ten-year distribution alliance",
+          "link": "https://coverager.com/santalucia-and-zurich-sign-ten-year-distribution-alliance/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-16T13:55:30.000Z",
+          "tags": [
+            "Partnerships",
+            "Auto & Mobility"
+          ],
+          "summary": "Santalucía will market Zurich’s auto insurance under its own brand across all distribution channels.",
+          "co": [
+            "zurich"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "stand",
+      "name": "Stand",
+      "count": 5,
+      "firstSeen": "2024-12-16T08:00:00.000Z",
+      "lastSeen": "2026-10-16T13:30:59.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 3
+        },
+        {
+          "name": "Property & Cat",
+          "count": 2
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News",
+        "Coverager",
+        "FinTech Global",
+        "PR Newswire",
+        "WSJ"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Stand secures $70m Series C Funding to grow resilient home insurance business",
+          "link": "https://www.reinsurancene.ws/stand-secures-70m-series-c-funding-at-to-grow-resilient-home-insurance-business/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-10-16T13:30:59.000Z",
+          "tags": [
+            "Funding",
+            "Property & Cat"
+          ],
+          "summary": "Stand, a property insurance company that helps homes withstand natural disasters, has secured $70 million in Series C funding at a $1 billion valuation. Announced on 15 October 2026, the investment takes the company’s…",
+          "co": []
+        },
+        {
+          "title": "Stand raises $70 million",
+          "link": "https://coverager.com/stand-raises-70-million/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-15T13:23:33.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "Stand now insures more than $10 billion of property.",
+          "co": []
+        },
+        {
+          "title": "Stand insurance secures $35m Series B to expand in Florida",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNZjlGUEhwV0s5QW5rYXhyaXVMU3lXcGxZQ2lyQjk5S1lZclJHQy1EVGdldGxyM0J5VWVHZHBJZmxTODdaczhPNFgydHNpNVB3LXM1TzlyTDZJYTYtTHd1dTVQbl9UT2E0U0xSZGZzc0g4dVBWaEh2eGEzNlgwTm5FS0ZsSFFvSXVyVUhEOU01My1BczgtYzBz?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-10-17T07:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Team Of Silicon Valley Veterans Launch Stand Insurance, Using Physics-Driven AI To Insure The World's Climate-Impacted Properties",
+          "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPV3d6UVdqZkNObVlpams0Rk82NVBhd1F3OU55TzR2V1hKVFZ3bExOeE5LYkxJSjN0Y045RDZ6a1hxekJVUHNmZHZEMS16Wmw2azB1TDBlZDQzQWJ6TmlDNHBFRFprczF3dFRva2ZsNXg5Z25xVldOV0VpS28xVDd2Y1I4WWRrWHZoZVhuTlJXY2RmWUh0X01obGZnT0hQYjlVbHl5a2p0Q1plWm53dEp0LWwxd245UTN1SDVwUW5Xd3F6ck16V3lrdjhFTkIyQmFqRElhbTB5SVZrRXFkSVJqNlkyN1RJbjlBWGU3SUk4ZUQ4QXJYMHMtY09XOUhXUzluT1pkdUg5aURNM09JSVRTRA?oc=5",
+          "source": "PR Newswire",
+          "publishedAt": "2024-12-16T08:00:00.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurance Startup Stand Has a Plan to Cover ‘Uninsurable’ Homes",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdURiUTNpdUdlV0ZSUlVoYzU3dkM5djlFanlVTmtIR05GSkNkODNCaEQwcUdDOG5Nam9FWXN4R0VFSW1ZcmVZa0QxekU2UDRSbXp5S1hjbGZLRnJTX2lCbnlORkFiTXpCbHVZSE1tS1J3SnlSMTJKdVhUdndvSWVrbDhseGw2T2FQLWhIb28xQ2J2WGNHdVVIc1BmYlIybVli?oc=5",
+          "source": "WSJ",
+          "publishedAt": "2024-12-16T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "axa",
+      "name": "AXA",
+      "count": 30,
+      "firstSeen": "2025-04-09T07:00:00.000Z",
+      "lastSeen": "2026-10-16T13:00:36.000Z",
+      "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 15
+        },
+        {
+          "name": "Partnerships",
+          "count": 13
+        },
+        {
+          "name": "Product & Launches",
+          "count": 9
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 5
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 2
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Journal",
+        "Insurance Business",
+        "Egypt Today",
+        "Insurance Business UK",
+        "Coverager",
+        "beinsure.com",
+        "Reinsurance News",
+        "FinTech Global",
+        "Insurtech Insights",
+        "QA Financial",
+        "itij.com",
+        "EU-Startups",
+        "Silicon Canals",
+        "InsiderPH",
+        "Life Insurance International",
+        "Asian Banking & Finance"
+      ],
+      "related": [
+        {
+          "slug": "byteplus",
+          "name": "BytePlus",
+          "count": 3
+        },
+        {
+          "slug": "publicis-sapient",
+          "name": "Publicis Sapient",
+          "count": 3
+        },
+        {
+          "slug": "prima-assicurazioni",
+          "name": "Prima Assicurazioni",
+          "count": 2
+        },
+        {
+          "slug": "ant-bank",
+          "name": "Ant Bank",
+          "count": 2
+        },
+        {
+          "slug": "alipayhk",
+          "name": "AlipayHK",
+          "count": 2
+        },
+        {
+          "slug": "banca-monte-dei-paschi-di-siena",
+          "name": "Banca Monte dei Paschi di Siena",
+          "count": 1
+        },
+        {
+          "slug": "tmg",
+          "name": "TMG",
+          "count": 1
+        },
+        {
+          "slug": "gecko-risk",
+          "name": "Gecko Risk",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Axa Braces for Loss of Paschi Contract as Italy Bank Deals Swirl",
+          "link": "https://www.insurancejournal.com/news/international/2026/10/16/889197.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-10-16T13:00:36.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "Axa SA expects to lose its distribution partnership with Banca Monte dei Paschi di Siena SpA next year, potentially putting the insurer on the losing side of the deals wave washing across Italian finance. Axa’s…",
+          "co": [
+            "banca-monte-dei-paschi-di-siena"
+          ]
+        },
+        {
+          "title": "AXA XL backs app-based art and collectibles cover in Singapore",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbGYwUm1KdTk4am56SXlPNktZSjNFakxjRkhPeTlnTzVVTWtZSHlEV1VReXBHREtVRDZZVTRSc3g5ZnowejdvUWN1RDJCYkhjWjc3c0RJMkM3WjBHendjaWRoQ1pNMGcwT05xbllxRTFYbW5DVEFZUS1rOExyZTAweGx6eURwRzJoc2pkRXJERUNpRmlpV1NmTDQ0Q25OSHVUZEdUSFJyV0kyWVRDWGdvci1XamNZdU9wdFMwNTExLVp6bDAyX3UyWGZ1ak90T3c?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2026-10-16T00:48:26.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "AI tops AXA’s risk ranking, and clients want to know if their cyber policy covers it",
+          "link": "https://www.insurancebusinessmag.com/us/news/risk-management/ai-tops-axas-risk-ranking-and-clients-want-to-know-if-their-cyber-policy-covers-it-593285.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-10-13T09:30:32.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber"
+          ],
+          "summary": "Only 9% of experts who named AI a top risk say authorities are well prepared, while WTW says insureds are questioning cover for generative AI losses",
+          "co": []
+        },
+        {
+          "title": "TMG, AXA Egypt partner to provide integrated insurance for 'The Spine'",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQR0I1NFhTMTBqc29ILUFlMGduUHlmT0lzbGdJUXlDNmJ6aXlwLUFsS2lzSVA0ZFctczJNUXVsZTRJSmY2a3N0T0NnaEgxN0ViUThZY3Nfb2U5MFF6NzZHc3NaMjRaMkVTdTFJZWduSi1IZEd1LWEtLVpGRDRfRk51SFNuOUdsbXczaVVGcjljanJOT25wN2dKMDlGUExvc05nRWt0SDNIc20?oc=5",
+          "source": "Egypt Today",
+          "publishedAt": "2026-10-12T03:55:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "tmg"
+          ]
+        },
+        {
+          "title": "AXA XL taps EV data platform to sharpen fleet underwriting",
+          "link": "https://www.insurancebusinessmag.com/uk/news/auto-motor/axa-xl-taps-ev-data-platform-to-sharpen-fleet-underwriting-592917.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-10-09T02:11:39.000Z",
+          "tags": [
+            "Partnerships",
+            "Claims & Underwriting",
+            "Auto & Mobility"
+          ],
+          "summary": "The Gecko Risk deal gives underwriters claims and model data as fleets electrify",
+          "co": []
+        },
+        {
+          "title": "AXA XL partners with Gecko Risk on commercial EV data",
+          "link": "https://coverager.com/axa-xl-partners-with-gecko-risk-on-commercial-ev-data/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-08T15:54:32.000Z",
+          "tags": [
+            "Partnerships",
+            "Claims & Underwriting",
+            "Auto & Mobility"
+          ],
+          "summary": "The partnership gives AXA XL’s underwriters and risk consultants access to insights into claims frequency and severity, vehicle make and model trends, and EV exposure patterns.",
+          "co": [
+            "gecko-risk"
+          ]
+        },
+        {
+          "title": "AXA XL launches dedicated E&S insurance company for wholesale brokers",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNb1BQTDVqODFYRU9nUW41bWVXQ1RCc0FDbndzQmlKWnVkY2tNcmhrbFh4QVVEVUhHalNjQ001Z2pYdElCNndmYk5Kc1RpRlhBc2ZDbkFrV2xWOE5BeEJ3QjFYWWd5OV9GVVk3M2tJaHE2YXdYb2lWSEpWYmRIdGpudWRNUEpMSnM3Y3M2bTBad1hpVkpmWlczSlFOcw?oc=5",
+          "source": "beinsure.com",
+          "publishedAt": "2026-10-02T11:57:08.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "AXA XL Launches Insurance Company, AXA XL E&S",
+          "link": "https://www.insurancejournal.com/news/national/2026/10/01/887453.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-10-01T05:08:36.000Z",
+          "tags": [
+            "Product & Launches",
+            "Claims & Underwriting"
+          ],
+          "summary": "AXA XL said it launched AXA XL Excess & Surplus Lines Insurance Company (AXA XL E&S), dedicated to exclusively serve wholesale brokers. This strategic move enhances AXA XL’s underwriting focus and capabilities within…",
+          "co": []
+        },
+        {
+          "title": "AXA XL launches dedicated Excess & Surplus lines insurance company",
+          "link": "https://www.reinsurancene.ws/axa-xl-launches-dedicated-excess-surplus-lines-insurance-company/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-30T14:30:58.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "AXA XL, the property and casualty specialty risk division of AXA, has launched AXA XL Excess & Surplus Lines Insurance Company (AXA XL E&S), a dedicated legal entity focused exclusively on wholesale broker…",
+          "co": []
+        },
+        {
+          "title": "AXA XL launches dedicated E&S insurance company",
+          "link": "https://coverager.com/axa-xl-launches-dedicated-es-insurance-company/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-30T14:12:58.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "AXA XL E&S received an A+ financial strength rating from AM Best in March 2026.",
+          "co": []
+        },
+        {
+          "title": "AXA taps BytePlus to scale AI across insurance",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPVHgwbzZkSmVISUlKZEI0UVFEZFBTbWdrR091cEFmYk5uWHcwazNoZk1rOENKSEV3OG01SjFqSzBUX3NHazRicmFyWXpUUTFzRXNTTmxvSnM5TGpSSVlYUnowNG9kN25HVS1sZ1VLZE1wV243MFVvZ09LQkx1Uk5WYkdFWmdBMUdQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-09-21T13:17:58.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "byteplus"
+          ]
+        },
+        {
+          "title": "AXA Hong Kong and Macau partners with BytePlus on AI",
+          "link": "https://www.insurtechinsights.com/axa-hong-kong-and-macau-partners-with-byteplus-on-ai/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-18T13:46:41.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "AXA Hong Kong and Macau has signed an agreement with enterprise technology provider BytePlus to develop and deploy AI solutions across the insurance value chain.",
+          "co": [
+            "byteplus"
+          ]
+        },
+        {
+          "title": "AXA partners with BytePlus on AI",
+          "link": "https://coverager.com/axa-partners-with-byteplus-on-ai/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-18T09:59:20.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "AXA is expanding its use of AI beyond internal productivity.",
+          "co": [
+            "byteplus"
+          ]
+        },
+        {
+          "title": "Inside AXA's \"Growing Forward\" plan: how the insurer plans to bank up to £600m a year from AI",
+          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/inside-axas-growing-forward-plan-how-the-insurer-plans-to-bank-up-to-600m-a-year-from-ai-589932.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-09-16T07:27:04.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "Insurer explains how it is going to use the new tech, and why the UK market is different",
+          "co": []
+        },
+        {
+          "title": "AXA targets AI-led growth under new “Growing Forward” strategic plan",
+          "link": "https://www.insurtechinsights.com/axa-targets-ai-led-growth-under-new-growing-forward-strategic-plan/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-15T14:16:52.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "AXA has unveiled \"Growing Forward\", its strategic plan for 2027 through 2029, focused on organic growth, artificial intelligence, and prevention.",
+          "co": []
+        },
+        {
+          "title": "AXA targets AI-led growth under new strategic plan",
+          "link": "https://coverager.com/axa-targets-ai-led-growth-under-new-strategic-plan/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-15T13:35:47.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "Under its current “Unlock the Future” plan, AXA has grown across its geographies and business lines.",
+          "co": []
+        },
+        {
+          "title": "AXA ready to move into ‘top gear’ regarding AI adoption: CEO",
+          "link": "https://www.reinsurancene.ws/axa-ready-to-move-into-top-gear-regarding-ai-adoption-ceo/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-15T11:00:12.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "Speaking at a presentation accompanying the unveiling of AXA’s 2027–29 strategy, CEO Thomas Buberl suggested the group has invested heavily in AI and its wider readiness to deploy the technology, with the French insurer…",
+          "co": []
+        },
+        {
+          "title": "AXA tells brokers where it will and won't compete for the next three years",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/axa-tells-brokers-where-it-will-and-wont-compete-for-the-next-three-years-589758.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-09-15T07:02:36.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "The group's new strategic plan signals discipline at AXA XL and AI deployment across underwriting and pricing",
+          "co": []
+        },
+        {
+          "title": "AXA partners with Publicis Sapient to deploy standardised “Global AI Hub” at scale",
+          "link": "https://www.insurtechinsights.com/axa-partners-with-publicis-sapient-to-deploy-standardised-global-ai-hub-at-scale/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-09-10T08:58:32.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "AXA has entered a strategic partnership with Publicis Sapient, a technology firm providing enterprise artificial intelligence (AI) platforms and services, to accelerate the next phase of its AI transformation.",
+          "co": [
+            "publicis-sapient"
+          ]
+        },
+        {
+          "title": "AXA collaborates with Publicis Sapient",
+          "link": "https://coverager.com/axa-collaborates-with-publicis-sapient/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-08T11:16:37.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "The idea is to develop AXA's Global AI Hub.",
+          "co": [
+            "publicis-sapient"
+          ]
+        },
+        {
+          "title": "AXA partners with Publicis Sapient to deploy standardised “Global AI Hub” at scale",
+          "link": "https://www.reinsurancene.ws/axa-partners-with-publicis-sapient-to-deploy-standardised-global-ai-hub-at-scale/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-09-08T11:00:52.000Z",
+          "tags": [
+            "Partnerships",
+            "AI & Automation"
+          ],
+          "summary": "AXA, the France-headquartered multinational insurance and asset management group, has entered a strategic partnership with Publicis Sapient, a technology firm providing enterprise artificial intelligence (AI) platforms…",
+          "co": [
+            "publicis-sapient"
+          ]
+        },
+        {
+          "title": "AXA scales governed AI infrastructure across global operations",
+          "link": "https://www.insurancebusinessmag.com/us/news/technology/axa-scales-governed-ai-infrastructure-across-global-operations-588998.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-09-08T08:27:25.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "The insurer's vendor-agnostic hub is already live in five entities, with AXA XL among those building claims and email applications",
+          "co": []
+        },
+        {
+          "title": "AI transformation: AXA rewrites insurance model",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5laXlvb1lRZjdHQURRSU9HODdlWkF3ejA0WDAweWllT0ZIcWFFdjZuOGkwLW9DZU9YdEFXalVnNzlib1lLQ0VYYS1ZSE5DejBKd0JOUng0VDZmS1FQMDZNVERfMEdJLUdmb2V2ajJCXzhrdkJCUjFhTw?oc=5",
+          "source": "QA Financial",
+          "publishedAt": "2026-08-25T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "AXA rolls out Microsoft 365 Copilot to employees worldwide",
+          "link": "https://www.insurancebusinessmag.com/us/news/technology/axa-rolls-out-microsoft-365-copilot-to-employees-worldwide-583084.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-07-21T02:40:35.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "The deployment is part of a widening wave of AI adoption across UK and global insurers",
+          "co": [
+            "microsoft"
+          ]
+        },
+        {
+          "title": "AXA renews partnership with Shift Technology",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE00Yk9VVkw4dlRDVUFwaEppNE9VWkJBa281N09EeVFJWFZNelFkTTlKWTFNektRX0c5dHl1MVNpWk1OT1VWUENPeWpmSTlPU0dzVkY5UzIwRVpDdU5VaW5yOGt3dk9aMnlLTjJBdWQ5NWh2V0ZQYVFZZG5ja0o?oc=5",
+          "source": "itij.com",
+          "publishedAt": "2026-03-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "shift-technology"
+          ]
+        },
+        {
+          "title": "Italian InsurTech platform Prima Assicurazioni joins Axa Group, as global insurer takes 51% stake",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPSTROS3dCcXV4dzk4T0NmMWpjclBLSG00YXNlNV8waFVUcTg5eC1aemVYTDNEaFRQSUtUVVVnM0lfU0pSNUdKUTBaTVZoNWFMUDRab2dyNmxrZFNaMS1TbE1BNmZjQ2JOZkphSHpTeWhLVDFjSFEyRFBNS3hPRTNYUXhzd3F4T2N0RUhHWlVSXzBOUFk2emluSmpOYTVRdEZvY2xYZmVWaXR6TGdRa2NTanlrT1lkUGZzNXlDR1hfTFMtSzdrWEpnbTFOaTM?oc=5",
+          "source": "EU-Startups",
+          "publishedAt": "2025-08-04T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "prima-assicurazioni"
+          ]
+        },
+        {
+          "title": "AXA to acquire Italian insurtech Prima: Know more",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE90MkJocUZHVFZyOHE5ajJMSk9OaU9WdjB6Y29ieVVmNFQxRUUzT0ZSY19MaFlKTkpWVGJuNkhIdVpoZjlKUWdUczg3ZTdnNlF2OWpSNzRIbkd3LUlBYklpUnNKTmJTdHB2WGxtX1RiX2VJS0U?oc=5",
+          "source": "Silicon Canals",
+          "publishedAt": "2025-08-04T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "prima-assicurazioni"
+          ]
+        },
+        {
+          "title": "AXA Philippines unveils its first digital self-service kiosk in Makati",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQOTRVVEpUbFJSdXotZ25KMTdRZkhDb2lCd2o0N1pQNUo1ejd0ckxNcjUwVnlRWjIxLWwzTnN1SUNPWHpWQ2lYdUhqVVJ2NTJHcTdBNVNaLTVqOERkcUx1VFhDaXdZcmdSMDdQNHVWSFVBc1ZUS0l1UGpTZlRJblp1djNLSmJkTW55SjZZV2JOYXhibGZXckRr?oc=5",
+          "source": "InsiderPH",
+          "publishedAt": "2025-07-17T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "AXA partners with Ant Bank and AlipayHK to offer embedded insurance",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbGFYX041Zmxtd2hvTTE1eUZadTV4SU4tQmNnOTh2VE53QmJrM2R5U1JudHg2dF9fMkpCeDFaQWVyOHZWWVlzdEZuaHNpZ1VKRDRjZHVhV3VvUTNKZ1Z6a0RiaTNLZU9pd1N5SzdtbU45bnRmTGpFazFvRlpCMG92RTdvckc3YWM?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2025-04-10T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Embedded"
+          ],
+          "summary": "",
+          "co": [
+            "ant-bank",
+            "alipayhk"
+          ]
+        },
+        {
+          "title": "AXA launches digital insurance with Ant Bank, AlipayHK tie-up",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQMnR2UHRRZHh2T25PRTFNaFRQUEdUcFFEMjJPNEFKZ3lfaGNDbHJHa0EzdmxzVTIxRl9rU3RIUmc4WTM4Q3ZkY3BYVE91ckZRZmVHR1Q0M0hXaWVuemhmdlZSUkU0VHdzVXlHTEhNdXhmaGd1MEZ4emdPNmFmeUdycGs5dEUtTnNINjRLaDZEOW9hd1ozaEhxa2tBcThTRmFJVjlkNA?oc=5",
+          "source": "Asian Banking & Finance",
+          "publishedAt": "2025-04-09T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "ant-bank",
+            "alipayhk"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "banca-monte-dei-paschi-di-siena",
+      "name": "Banca Monte dei Paschi di Siena",
+      "count": 1,
+      "firstSeen": "2026-10-16T13:00:36.000Z",
+      "lastSeen": "2026-10-16T13:00:36.000Z",
+      "topics": [
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Insurance Journal"
+      ],
+      "related": [
+        {
+          "slug": "axa",
+          "name": "AXA",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Axa Braces for Loss of Paschi Contract as Italy Bank Deals Swirl",
+          "link": "https://www.insurancejournal.com/news/international/2026/10/16/889197.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-10-16T13:00:36.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "Axa SA expects to lose its distribution partnership with Banca Monte dei Paschi di Siena SpA next year, potentially putting the insurer on the losing side of the deals wave washing across Italian finance. Axa’s…",
+          "co": [
+            "axa"
+          ]
+        }
+      ]
+    },
+    {
       "slug": "hakuna",
       "name": "Hakuna",
       "count": 2,
       "firstSeen": "2026-10-15T09:35:58.000Z",
-      "lastSeen": "2026-10-16T11:43:55.000Z",
+      "lastSeen": "2026-10-16T12:39:41.000Z",
       "topics": [
         {
           "name": "Partnerships",
@@ -1053,7 +2653,7 @@
           "title": "Zurich partners with Hakuna to launch embedded ticket insurance",
           "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdkw4WE5WQlJkUlItdnNXQWdGM0x1NkJYUFR2V2JRRkxSRC1uVktmVWlZbTVBeUhTZDZ5NXhJaW1lUGV2UzBqNVcxbzVfTmkxUXJUR1prdER1OUxBN04tVEVrd2lVZmwwb1lnUWt4QUxoRW4yYnQ4a2ZxdW1ZT1ZvT0htdU80b3g2UFlVQmQzcUh6NUVad3NtS3J4WDNrc3c?oc=5",
           "source": "FinTech Global",
-          "publishedAt": "2026-10-16T11:43:55.000Z",
+          "publishedAt": "2026-10-16T12:39:41.000Z",
           "tags": [
             "Partnerships",
             "Product & Launches"
@@ -1075,6 +2675,113 @@
           "summary": "Hakuna is the distribution and technology partner.",
           "co": [
             "zurich"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "coalition",
+      "name": "Coalition",
+      "count": 4,
+      "firstSeen": "2026-05-06T07:00:00.000Z",
+      "lastSeen": "2026-10-16T12:00:13.000Z",
+      "topics": [
+        {
+          "name": "Cyber",
+          "count": 4
+        },
+        {
+          "name": "Product & Launches",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 1
+        },
+        {
+          "name": "Leadership",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Reinsurance News",
+        "Insurance Business UK",
+        "theinsurer.com"
+      ],
+      "related": [
+        {
+          "slug": "verve",
+          "name": "Verve",
+          "count": 1
+        },
+        {
+          "slug": "sedgwick",
+          "name": "Sedgwick",
+          "count": 1
+        },
+        {
+          "slug": "allianz",
+          "name": "Allianz",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "AI-driven incidents will escalate in frequency once attackers find the right business model: Coalition",
+          "link": "https://www.reinsurancene.ws/ai-driven-incidents-will-escalate-in-frequency-once-attackers-find-the-right-business-model-coalition/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-10-16T12:00:13.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber"
+          ],
+          "summary": "Cyber risk can hold flat for years, then jump sharply once attackers find a way to exploit a new technology; artificial intelligence (AI) appears to be heading down a similar path, cyber insurance specialist Coalition…",
+          "co": []
+        },
+        {
+          "title": "Insurance moves: Verve, Coalition, Sedgwick",
+          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/insurance-moves-verve-coalition-sedgwick-588852.aspx",
+          "source": "Insurance Business UK",
+          "publishedAt": "2026-09-07T06:37:49.000Z",
+          "tags": [
+            "Product & Launches",
+            "Cyber",
+            "Claims & Underwriting",
+            "Leadership"
+          ],
+          "summary": "Coalition is moving upmarket on cyber, Verve has launched a fresh Lloyd's-backed FI capacity option, and a Sedgwick finance hire with an M&A background signals where the claims administrator's growth ambitions sit",
+          "co": [
+            "verve",
+            "sedgwick"
+          ]
+        },
+        {
+          "title": "Coalition’s cyber risk management platform new feature to help prevent business email compromise",
+          "link": "https://www.reinsurancene.ws/coalitions-cyber-risk-management-platform-new-feature-to-help-prevent-business-email-compromise/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-07-27T05:00:20.000Z",
+          "tags": [
+            "Product & Launches",
+            "Cyber"
+          ],
+          "summary": "Coalition, and active insurer focused on preventing digital risks, has launched Login Security, a new feature in its cyber risk management platform, Coalition Control, that helps small and midsize businesses (SMBs)…",
+          "co": []
+        },
+        {
+          "title": "Exclusive: Allianz hands cyber book to Coalition in deal set to push insurtech past $1 billion in premium",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYk93YjBiajY3UzZ6eUpacF9WZ1NWOWtMdVdlZncyYUJxbjZJUk9RMlpCOS1OSVVQY0daUmV3cjlVdzJsMHU5M0R5VXBZVTEwN2lwX1N1NEFVZlVyc1Y4WHcwallxaHFCbndOd3Qwa1U3bUtiWDZmWTlQQlNwZE9VN1dhZGxlTXBjQmdRTUxCTTk2QWo5bUI4VjFzc0t0a3lDRzBLYk44ZmYwVDNBcHZlS3RfTUE3QjZFNDNURGg2TU5GSm5XNUlSYlRYc18?oc=5",
+          "source": "theinsurer.com",
+          "publishedAt": "2026-05-06T07:00:00.000Z",
+          "tags": [
+            "Cyber"
+          ],
+          "summary": "",
+          "co": [
+            "allianz"
           ]
         }
       ]
@@ -1488,7 +3195,7 @@
       "name": "Vertafore",
       "count": 17,
       "firstSeen": "2026-07-15T07:00:00.000Z",
-      "lastSeen": "2026-10-16T10:03:52.000Z",
+      "lastSeen": "2026-10-16T11:01:57.000Z",
       "topics": [
         {
           "name": "AI & Automation",
@@ -1541,7 +3248,7 @@
           "title": "Vertafore launches AI agents to automate insurance policy checks",
           "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdnhTR2hqZmoxY0IwdFpUVEJUdWRUR1lDSnljM0ZHTUd5X0RnM2VEOFZXNTcwOHR5dzdPNHVDQTlZMGVTcWFRRUdGWVFaaHN4OE43SE1yZmg2ZzVZZ1U1VzVxbmh6ak8yVXl4SFg3dVc2dHYwMlo1TUY5MTloNWZFck92c2lNRFQ2WTE3bWRzOEd4Wm1BUm82UkxmaktSYVNv?oc=5",
           "source": "FinTech Global",
-          "publishedAt": "2026-10-16T10:03:52.000Z",
+          "publishedAt": "2026-10-16T11:01:57.000Z",
           "tags": [
             "Product & Launches",
             "AI & Automation"
@@ -1746,6 +3453,276 @@
       ]
     },
     {
+      "slug": "zocdoc",
+      "name": "Zocdoc",
+      "count": 7,
+      "firstSeen": "2026-10-14T10:00:00.000Z",
+      "lastSeen": "2026-10-16T11:01:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 7
+        },
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Health & Life",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Digital Health News",
+        "Coverager",
+        "AlleyWatch",
+        "Fierce Healthcare",
+        "Dealroom",
+        "PR Newswire",
+        "Modern Healthcare"
+      ],
+      "related": [
+        {
+          "slug": "sohar-health",
+          "name": "Sohar Health",
+          "count": 7
+        }
+      ],
+      "articles": [
+        {
+          "title": "Zocdoc Acquires Sohar Health to Automate Insurance Benefits Verification",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOMXUwSHdDWDBTNHVKQVQxY1FnUlpVOElCRC1wNnFtQWVQX29KY2dmWXFQNnNqYXNRZ211X2dZZUJ4MzhIaTF6YXlybkRtQnpBaUtBTGVjeFdyZ2FONkVVTXZ4NnZRNGpBOU1SZWxPUzl3R3JkTklwQjZIU0VMcXB2T3NrOGxMc2NuSzFFVjZqdGZqNWhHNGc?oc=5",
+          "source": "Digital Health News",
+          "publishedAt": "2026-10-16T11:01:00.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "sohar-health"
+          ]
+        },
+        {
+          "title": "Zocdoc acquires Sohar Health",
+          "link": "https://coverager.com/zocdoc-acquires-sohar-health/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-15T09:15:52.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation",
+            "Health & Life"
+          ],
+          "summary": "Sohar Health automates health insurance discovery and benefits verification.",
+          "co": [
+            "sohar-health"
+          ]
+        },
+        {
+          "title": "Zocdoc Makes Its First Acquisition in Nearly 20 Years, Buying NYC Insurance Verification Startup Sohar Health",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQ1BPczdKbGtYR080SXFocW1FR2RONmo2aXB3dkNsX280TkduYUtaenVqOUtROW1rZ2kxWnVPd1hGYUJzamljTjF4N2FFb2pRdlR5SUdVcGhrR3BSdG5Pa3NzZ0t2aTg5VnhXUkVwbDBmSzRrN1k3NXRxV2RBSDFGb21XUGFmZnBBT055VVBoSldHYl93UkJzMXRmWkZaRFJzVkdKbnFjRlI?oc=5",
+          "source": "AlleyWatch",
+          "publishedAt": "2026-10-15T03:51:26.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "sohar-health"
+          ]
+        },
+        {
+          "title": "Zocdoc acquires health tech company Sohar Health for automated benefits eligibility checks",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQek5fVjFkb1pTZGVUalR6amVXTkY1ejdITUxoR0VOeE43ejN6UGI0WUtUSzhGR2ZvQ05MN1A1YzdOcmg1LVNtaVhIaWhpckc2OFFRMkxWWnYzMHpVUWxrU2x6a2xPS09JdTRWNHpmQmhqVmFHYnUzbllhX09XVUZtSzVvZXlUa0hKM1I5LVZKb2JzcW5CNDl2YmVMR3lMQzJIQnVobUZKNk1yZVdXRUF4am4tN1p4dFJGNjVBMEw3UTc?oc=5",
+          "source": "Fierce Healthcare",
+          "publishedAt": "2026-10-14T20:00:00.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "sohar-health"
+          ]
+        },
+        {
+          "title": "Zocdoc makes first-ever acquisition, buying insurance startup Sohar Health",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMkFzc2xMZmNXUFp3bWgxNE1kV21jbmZObE9sbG1DRWhldFpMMlc5dmI1eTN5aDVmWVA3bnoybWVhWE5BSElFMlR5YnhPRW1DMnJ5T0phbVQ2R0ZuSno1WEVMTFJubDdoTFlNWWVyVGdQZHY1MEZHLXBucEJ5R2lGeFlOMFRwQVh2Vml5ajd6WFYwRk1jekFIYmNSTVBKeWx2azhENDJCVjhMNjg?oc=5",
+          "source": "Dealroom",
+          "publishedAt": "2026-10-14T13:22:54.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "sohar-health"
+          ]
+        },
+        {
+          "title": "Zocdoc Acquires Sohar Health to Make Insurance Easier to Navigate for Patients and Providers",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOUWdhZ1VSQXlYN1Z6MTFVTC1vYVhOR3pTY3pLdTJUdURJcVhGRkQ0aXJEVWdFOEJOeWI4VmVvS0ZiV0VBSjgxQzl1TXZ6dG8wVzVsb2ZEcmxFMmczN3BxRDI5VTVydXpHSTIwejJ2TEZTQW56WFhqbFFWOU5pQ3FtMmlybGJtSHA1VFNBaUkyNWFYMGxTSlBCeVBxSHFObmlCWEM1R2tJdEg5Z3k3TXZEZ0psNnhITHFtdU5ueEpVNUY2T3dtcHFFS0hYaVJNZjh4bkNDclhURV9nTnd4T1dsVnlB?oc=5",
+          "source": "PR Newswire",
+          "publishedAt": "2026-10-14T12:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "sohar-health"
+          ]
+        },
+        {
+          "title": "Zocdoc acquires insurance tech company Sohar Health",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORk9CczdaMDlfektwUldvcTBYb3VkamtMTTJrX3NfMWJVZzZDSWhlbnBIcDNBQm10WDJTNVl0QUZ6eUN6aU1yamRoTDVidkUtOVRkZHd6Ukxkd2hOWEpKelVISXFkZHVHWG1VdWhiRlhWa1NvMFo2RjRDS3ZnMzZHN1B4aG9rSm8?oc=5",
+          "source": "Modern Healthcare",
+          "publishedAt": "2026-10-14T10:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "sohar-health"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sohar-health",
+      "name": "Sohar Health",
+      "count": 7,
+      "firstSeen": "2026-10-14T10:00:00.000Z",
+      "lastSeen": "2026-10-16T11:01:00.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 7
+        },
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Health & Life",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Digital Health News",
+        "Coverager",
+        "AlleyWatch",
+        "Fierce Healthcare",
+        "Dealroom",
+        "PR Newswire",
+        "Modern Healthcare"
+      ],
+      "related": [
+        {
+          "slug": "zocdoc",
+          "name": "Zocdoc",
+          "count": 7
+        }
+      ],
+      "articles": [
+        {
+          "title": "Zocdoc Acquires Sohar Health to Automate Insurance Benefits Verification",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOMXUwSHdDWDBTNHVKQVQxY1FnUlpVOElCRC1wNnFtQWVQX29KY2dmWXFQNnNqYXNRZ211X2dZZUJ4MzhIaTF6YXlybkRtQnpBaUtBTGVjeFdyZ2FONkVVTXZ4NnZRNGpBOU1SZWxPUzl3R3JkTklwQjZIU0VMcXB2T3NrOGxMc2NuSzFFVjZqdGZqNWhHNGc?oc=5",
+          "source": "Digital Health News",
+          "publishedAt": "2026-10-16T11:01:00.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "zocdoc"
+          ]
+        },
+        {
+          "title": "Zocdoc acquires Sohar Health",
+          "link": "https://coverager.com/zocdoc-acquires-sohar-health/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-15T09:15:52.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation",
+            "Health & Life"
+          ],
+          "summary": "Sohar Health automates health insurance discovery and benefits verification.",
+          "co": [
+            "zocdoc"
+          ]
+        },
+        {
+          "title": "Zocdoc Makes Its First Acquisition in Nearly 20 Years, Buying NYC Insurance Verification Startup Sohar Health",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQ1BPczdKbGtYR080SXFocW1FR2RONmo2aXB3dkNsX280TkduYUtaenVqOUtROW1rZ2kxWnVPd1hGYUJzamljTjF4N2FFb2pRdlR5SUdVcGhrR3BSdG5Pa3NzZ0t2aTg5VnhXUkVwbDBmSzRrN1k3NXRxV2RBSDFGb21XUGFmZnBBT055VVBoSldHYl93UkJzMXRmWkZaRFJzVkdKbnFjRlI?oc=5",
+          "source": "AlleyWatch",
+          "publishedAt": "2026-10-15T03:51:26.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "zocdoc"
+          ]
+        },
+        {
+          "title": "Zocdoc acquires health tech company Sohar Health for automated benefits eligibility checks",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQek5fVjFkb1pTZGVUalR6amVXTkY1ejdITUxoR0VOeE43ejN6UGI0WUtUSzhGR2ZvQ05MN1A1YzdOcmg1LVNtaVhIaWhpckc2OFFRMkxWWnYzMHpVUWxrU2x6a2xPS09JdTRWNHpmQmhqVmFHYnUzbllhX09XVUZtSzVvZXlUa0hKM1I5LVZKb2JzcW5CNDl2YmVMR3lMQzJIQnVobUZKNk1yZVdXRUF4am4tN1p4dFJGNjVBMEw3UTc?oc=5",
+          "source": "Fierce Healthcare",
+          "publishedAt": "2026-10-14T20:00:00.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "zocdoc"
+          ]
+        },
+        {
+          "title": "Zocdoc makes first-ever acquisition, buying insurance startup Sohar Health",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMkFzc2xMZmNXUFp3bWgxNE1kV21jbmZObE9sbG1DRWhldFpMMlc5dmI1eTN5aDVmWVA3bnoybWVhWE5BSElFMlR5YnhPRW1DMnJ5T0phbVQ2R0ZuSno1WEVMTFJubDdoTFlNWWVyVGdQZHY1MEZHLXBucEJ5R2lGeFlOMFRwQVh2Vml5ajd6WFYwRk1jekFIYmNSTVBKeWx2azhENDJCVjhMNjg?oc=5",
+          "source": "Dealroom",
+          "publishedAt": "2026-10-14T13:22:54.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "zocdoc"
+          ]
+        },
+        {
+          "title": "Zocdoc Acquires Sohar Health to Make Insurance Easier to Navigate for Patients and Providers",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOUWdhZ1VSQXlYN1Z6MTFVTC1vYVhOR3pTY3pLdTJUdURJcVhGRkQ0aXJEVWdFOEJOeWI4VmVvS0ZiV0VBSjgxQzl1TXZ6dG8wVzVsb2ZEcmxFMmczN3BxRDI5VTVydXpHSTIwejJ2TEZTQW56WFhqbFFWOU5pQ3FtMmlybGJtSHA1VFNBaUkyNWFYMGxTSlBCeVBxSHFObmlCWEM1R2tJdEg5Z3k3TXZEZ0psNnhITHFtdU5ueEpVNUY2T3dtcHFFS0hYaVJNZjh4bkNDclhURV9nTnd4T1dsVnlB?oc=5",
+          "source": "PR Newswire",
+          "publishedAt": "2026-10-14T12:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "zocdoc"
+          ]
+        },
+        {
+          "title": "Zocdoc acquires insurance tech company Sohar Health",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORk9CczdaMDlfektwUldvcTBYb3VkamtMTTJrX3NfMWJVZzZDSWhlbnBIcDNBQm10WDJTNVl0QUZ6eUN6aU1yamRoTDVidkUtOVRkZHd6Ukxkd2hOWEpKelVISXFkZHVHWG1VdWhiRlhWa1NvMFo2RjRDS3ZnMzZHN1B4aG9rSm8?oc=5",
+          "source": "Modern Healthcare",
+          "publishedAt": "2026-10-14T10:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "zocdoc"
+          ]
+        }
+      ]
+    },
+    {
       "slug": "oneshield",
       "name": "OneShield",
       "count": 8,
@@ -1911,7 +3888,7 @@
       "name": "Tune Protect",
       "count": 10,
       "firstSeen": "2024-10-22T07:00:00.000Z",
-      "lastSeen": "2026-10-16T08:26:15.000Z",
+      "lastSeen": "2026-10-16T08:34:27.000Z",
       "topics": [
         {
           "name": "Product & Launches",
@@ -1951,7 +3928,7 @@
           "title": "Tune Protect unifies digital protection, lifestyle services via new ‘TPXtra’ platform",
           "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeG1rM09wX3JPR28yQ2lYZVBnTmxJNGtMWmRvZmQ0VlptczBWaGVFT1MwdlNKUnlJYUtYZTMxTnM2cFlmVEExeGdUeGREMnhkTjg5UmpSbXRpMFBpLWVsUG5DSEI5X1plMFpjUzlRSnB1TWtvekVJNlN5QWFraG9iLUdFTkIwbjRzZFFXa2xWbjBIYlBES2ZvQTE2UmwwRHVaYzdmeEg3REZMSjk0TzFr?oc=5",
           "source": "marketech apac",
-          "publishedAt": "2026-10-16T08:26:15.000Z",
+          "publishedAt": "2026-10-16T08:34:27.000Z",
           "tags": [
             "Industry"
           ],
@@ -2961,470 +4938,6 @@
       ]
     },
     {
-      "slug": "axa",
-      "name": "AXA",
-      "count": 29,
-      "firstSeen": "2025-04-09T07:00:00.000Z",
-      "lastSeen": "2026-10-16T00:48:26.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 15
-        },
-        {
-          "name": "Partnerships",
-          "count": 12
-        },
-        {
-          "name": "Product & Launches",
-          "count": 9
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 5
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 2
-        },
-        {
-          "name": "Cyber",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurance Business",
-        "Egypt Today",
-        "Insurance Business UK",
-        "Coverager",
-        "beinsure.com",
-        "Insurance Journal",
-        "Reinsurance News",
-        "FinTech Global",
-        "Insurtech Insights",
-        "QA Financial",
-        "itij.com",
-        "EU-Startups",
-        "Silicon Canals",
-        "InsiderPH",
-        "Life Insurance International",
-        "Asian Banking & Finance"
-      ],
-      "related": [
-        {
-          "slug": "byteplus",
-          "name": "BytePlus",
-          "count": 3
-        },
-        {
-          "slug": "publicis-sapient",
-          "name": "Publicis Sapient",
-          "count": 3
-        },
-        {
-          "slug": "prima-assicurazioni",
-          "name": "Prima Assicurazioni",
-          "count": 2
-        },
-        {
-          "slug": "ant-bank",
-          "name": "Ant Bank",
-          "count": 2
-        },
-        {
-          "slug": "alipayhk",
-          "name": "AlipayHK",
-          "count": 2
-        },
-        {
-          "slug": "tmg",
-          "name": "TMG",
-          "count": 1
-        },
-        {
-          "slug": "gecko-risk",
-          "name": "Gecko Risk",
-          "count": 1
-        },
-        {
-          "slug": "microsoft",
-          "name": "Microsoft",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "AXA XL backs app-based art and collectibles cover in Singapore",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbGYwUm1KdTk4am56SXlPNktZSjNFakxjRkhPeTlnTzVVTWtZSHlEV1VReXBHREtVRDZZVTRSc3g5ZnowejdvUWN1RDJCYkhjWjc3c0RJMkM3WjBHendjaWRoQ1pNMGcwT05xbllxRTFYbW5DVEFZUS1rOExyZTAweGx6eURwRzJoc2pkRXJERUNpRmlpV1NmTDQ0Q25OSHVUZEdUSFJyV0kyWVRDWGdvci1XamNZdU9wdFMwNTExLVp6bDAyX3UyWGZ1ak90T3c?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2026-10-16T00:48:26.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "AI tops AXA’s risk ranking, and clients want to know if their cyber policy covers it",
-          "link": "https://www.insurancebusinessmag.com/us/news/risk-management/ai-tops-axas-risk-ranking-and-clients-want-to-know-if-their-cyber-policy-covers-it-593285.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-10-13T09:30:32.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber"
-          ],
-          "summary": "Only 9% of experts who named AI a top risk say authorities are well prepared, while WTW says insureds are questioning cover for generative AI losses",
-          "co": []
-        },
-        {
-          "title": "TMG, AXA Egypt partner to provide integrated insurance for 'The Spine'",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQR0I1NFhTMTBqc29ILUFlMGduUHlmT0lzbGdJUXlDNmJ6aXlwLUFsS2lzSVA0ZFctczJNUXVsZTRJSmY2a3N0T0NnaEgxN0ViUThZY3Nfb2U5MFF6NzZHc3NaMjRaMkVTdTFJZWduSi1IZEd1LWEtLVpGRDRfRk51SFNuOUdsbXczaVVGcjljanJOT25wN2dKMDlGUExvc05nRWt0SDNIc20?oc=5",
-          "source": "Egypt Today",
-          "publishedAt": "2026-10-12T03:55:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "tmg"
-          ]
-        },
-        {
-          "title": "AXA XL taps EV data platform to sharpen fleet underwriting",
-          "link": "https://www.insurancebusinessmag.com/uk/news/auto-motor/axa-xl-taps-ev-data-platform-to-sharpen-fleet-underwriting-592917.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-10-09T02:11:39.000Z",
-          "tags": [
-            "Partnerships",
-            "Claims & Underwriting",
-            "Auto & Mobility"
-          ],
-          "summary": "The Gecko Risk deal gives underwriters claims and model data as fleets electrify",
-          "co": []
-        },
-        {
-          "title": "AXA XL partners with Gecko Risk on commercial EV data",
-          "link": "https://coverager.com/axa-xl-partners-with-gecko-risk-on-commercial-ev-data/",
-          "source": "Coverager",
-          "publishedAt": "2026-10-08T15:54:32.000Z",
-          "tags": [
-            "Partnerships",
-            "Claims & Underwriting",
-            "Auto & Mobility"
-          ],
-          "summary": "The partnership gives AXA XL’s underwriters and risk consultants access to insights into claims frequency and severity, vehicle make and model trends, and EV exposure patterns.",
-          "co": [
-            "gecko-risk"
-          ]
-        },
-        {
-          "title": "AXA XL launches dedicated E&S insurance company for wholesale brokers",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNb1BQTDVqODFYRU9nUW41bWVXQ1RCc0FDbndzQmlKWnVkY2tNcmhrbFh4QVVEVUhHalNjQ001Z2pYdElCNndmYk5Kc1RpRlhBc2ZDbkFrV2xWOE5BeEJ3QjFYWWd5OV9GVVk3M2tJaHE2YXdYb2lWSEpWYmRIdGpudWRNUEpMSnM3Y3M2bTBad1hpVkpmWlczSlFOcw?oc=5",
-          "source": "beinsure.com",
-          "publishedAt": "2026-10-02T11:57:08.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "AXA XL Launches Insurance Company, AXA XL E&S",
-          "link": "https://www.insurancejournal.com/news/national/2026/10/01/887453.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-10-01T05:08:36.000Z",
-          "tags": [
-            "Product & Launches",
-            "Claims & Underwriting"
-          ],
-          "summary": "AXA XL said it launched AXA XL Excess & Surplus Lines Insurance Company (AXA XL E&S), dedicated to exclusively serve wholesale brokers. This strategic move enhances AXA XL’s underwriting focus and capabilities within…",
-          "co": []
-        },
-        {
-          "title": "AXA XL launches dedicated Excess & Surplus lines insurance company",
-          "link": "https://www.reinsurancene.ws/axa-xl-launches-dedicated-excess-surplus-lines-insurance-company/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-09-30T14:30:58.000Z",
-          "tags": [
-            "Product & Launches",
-            "Property & Cat"
-          ],
-          "summary": "AXA XL, the property and casualty specialty risk division of AXA, has launched AXA XL Excess & Surplus Lines Insurance Company (AXA XL E&S), a dedicated legal entity focused exclusively on wholesale broker…",
-          "co": []
-        },
-        {
-          "title": "AXA XL launches dedicated E&S insurance company",
-          "link": "https://coverager.com/axa-xl-launches-dedicated-es-insurance-company/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-30T14:12:58.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "AXA XL E&S received an A+ financial strength rating from AM Best in March 2026.",
-          "co": []
-        },
-        {
-          "title": "AXA taps BytePlus to scale AI across insurance",
-          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPVHgwbzZkSmVISUlKZEI0UVFEZFBTbWdrR091cEFmYk5uWHcwazNoZk1rOENKSEV3OG01SjFqSzBUX3NHazRicmFyWXpUUTFzRXNTTmxvSnM5TGpSSVlYUnowNG9kN25HVS1sZ1VLZE1wV243MFVvZ09LQkx1Uk5WYkdFWmdBMUdQ?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-09-21T13:17:58.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "byteplus"
-          ]
-        },
-        {
-          "title": "AXA Hong Kong and Macau partners with BytePlus on AI",
-          "link": "https://www.insurtechinsights.com/axa-hong-kong-and-macau-partners-with-byteplus-on-ai/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-09-18T13:46:41.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "AXA Hong Kong and Macau has signed an agreement with enterprise technology provider BytePlus to develop and deploy AI solutions across the insurance value chain.",
-          "co": [
-            "byteplus"
-          ]
-        },
-        {
-          "title": "AXA partners with BytePlus on AI",
-          "link": "https://coverager.com/axa-partners-with-byteplus-on-ai/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-18T09:59:20.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "AXA is expanding its use of AI beyond internal productivity.",
-          "co": [
-            "byteplus"
-          ]
-        },
-        {
-          "title": "Inside AXA's \"Growing Forward\" plan: how the insurer plans to bank up to £600m a year from AI",
-          "link": "https://www.insurancebusinessmag.com/uk/news/breaking-news/inside-axas-growing-forward-plan-how-the-insurer-plans-to-bank-up-to-600m-a-year-from-ai-589932.aspx",
-          "source": "Insurance Business UK",
-          "publishedAt": "2026-09-16T07:27:04.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "Insurer explains how it is going to use the new tech, and why the UK market is different",
-          "co": []
-        },
-        {
-          "title": "AXA targets AI-led growth under new “Growing Forward” strategic plan",
-          "link": "https://www.insurtechinsights.com/axa-targets-ai-led-growth-under-new-growing-forward-strategic-plan/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-09-15T14:16:52.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "AXA has unveiled \"Growing Forward\", its strategic plan for 2027 through 2029, focused on organic growth, artificial intelligence, and prevention.",
-          "co": []
-        },
-        {
-          "title": "AXA targets AI-led growth under new strategic plan",
-          "link": "https://coverager.com/axa-targets-ai-led-growth-under-new-strategic-plan/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-15T13:35:47.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "Under its current “Unlock the Future” plan, AXA has grown across its geographies and business lines.",
-          "co": []
-        },
-        {
-          "title": "AXA ready to move into ‘top gear’ regarding AI adoption: CEO",
-          "link": "https://www.reinsurancene.ws/axa-ready-to-move-into-top-gear-regarding-ai-adoption-ceo/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-09-15T11:00:12.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "Speaking at a presentation accompanying the unveiling of AXA’s 2027–29 strategy, CEO Thomas Buberl suggested the group has invested heavily in AI and its wider readiness to deploy the technology, with the French insurer…",
-          "co": []
-        },
-        {
-          "title": "AXA tells brokers where it will and won't compete for the next three years",
-          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/axa-tells-brokers-where-it-will-and-wont-compete-for-the-next-three-years-589758.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-09-15T07:02:36.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "The group's new strategic plan signals discipline at AXA XL and AI deployment across underwriting and pricing",
-          "co": []
-        },
-        {
-          "title": "AXA partners with Publicis Sapient to deploy standardised “Global AI Hub” at scale",
-          "link": "https://www.insurtechinsights.com/axa-partners-with-publicis-sapient-to-deploy-standardised-global-ai-hub-at-scale/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-09-10T08:58:32.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "AXA has entered a strategic partnership with Publicis Sapient, a technology firm providing enterprise artificial intelligence (AI) platforms and services, to accelerate the next phase of its AI transformation.",
-          "co": [
-            "publicis-sapient"
-          ]
-        },
-        {
-          "title": "AXA collaborates with Publicis Sapient",
-          "link": "https://coverager.com/axa-collaborates-with-publicis-sapient/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-08T11:16:37.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "The idea is to develop AXA's Global AI Hub.",
-          "co": [
-            "publicis-sapient"
-          ]
-        },
-        {
-          "title": "AXA partners with Publicis Sapient to deploy standardised “Global AI Hub” at scale",
-          "link": "https://www.reinsurancene.ws/axa-partners-with-publicis-sapient-to-deploy-standardised-global-ai-hub-at-scale/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-09-08T11:00:52.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "AXA, the France-headquartered multinational insurance and asset management group, has entered a strategic partnership with Publicis Sapient, a technology firm providing enterprise artificial intelligence (AI) platforms…",
-          "co": [
-            "publicis-sapient"
-          ]
-        },
-        {
-          "title": "AXA scales governed AI infrastructure across global operations",
-          "link": "https://www.insurancebusinessmag.com/us/news/technology/axa-scales-governed-ai-infrastructure-across-global-operations-588998.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-09-08T08:27:25.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "The insurer's vendor-agnostic hub is already live in five entities, with AXA XL among those building claims and email applications",
-          "co": []
-        },
-        {
-          "title": "AI transformation: AXA rewrites insurance model",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5laXlvb1lRZjdHQURRSU9HODdlWkF3ejA0WDAweWllT0ZIcWFFdjZuOGkwLW9DZU9YdEFXalVnNzlib1lLQ0VYYS1ZSE5DejBKd0JOUng0VDZmS1FQMDZNVERfMEdJLUdmb2V2ajJCXzhrdkJCUjFhTw?oc=5",
-          "source": "QA Financial",
-          "publishedAt": "2026-08-25T07:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "AXA rolls out Microsoft 365 Copilot to employees worldwide",
-          "link": "https://www.insurancebusinessmag.com/us/news/technology/axa-rolls-out-microsoft-365-copilot-to-employees-worldwide-583084.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-07-21T02:40:35.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "The deployment is part of a widening wave of AI adoption across UK and global insurers",
-          "co": [
-            "microsoft"
-          ]
-        },
-        {
-          "title": "AXA renews partnership with Shift Technology",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE00Yk9VVkw4dlRDVUFwaEppNE9VWkJBa281N09EeVFJWFZNelFkTTlKWTFNektRX0c5dHl1MVNpWk1OT1VWUENPeWpmSTlPU0dzVkY5UzIwRVpDdU5VaW5yOGt3dk9aMnlLTjJBdWQ5NWh2V0ZQYVFZZG5ja0o?oc=5",
-          "source": "itij.com",
-          "publishedAt": "2026-03-09T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "shift-technology"
-          ]
-        },
-        {
-          "title": "Italian InsurTech platform Prima Assicurazioni joins Axa Group, as global insurer takes 51% stake",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPSTROS3dCcXV4dzk4T0NmMWpjclBLSG00YXNlNV8waFVUcTg5eC1aemVYTDNEaFRQSUtUVVVnM0lfU0pSNUdKUTBaTVZoNWFMUDRab2dyNmxrZFNaMS1TbE1BNmZjQ2JOZkphSHpTeWhLVDFjSFEyRFBNS3hPRTNYUXhzd3F4T2N0RUhHWlVSXzBOUFk2emluSmpOYTVRdEZvY2xYZmVWaXR6TGdRa2NTanlrT1lkUGZzNXlDR1hfTFMtSzdrWEpnbTFOaTM?oc=5",
-          "source": "EU-Startups",
-          "publishedAt": "2025-08-04T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "prima-assicurazioni"
-          ]
-        },
-        {
-          "title": "AXA to acquire Italian insurtech Prima: Know more",
-          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE90MkJocUZHVFZyOHE5ajJMSk9OaU9WdjB6Y29ieVVmNFQxRUUzT0ZSY19MaFlKTkpWVGJuNkhIdVpoZjlKUWdUczg3ZTdnNlF2OWpSNzRIbkd3LUlBYklpUnNKTmJTdHB2WGxtX1RiX2VJS0U?oc=5",
-          "source": "Silicon Canals",
-          "publishedAt": "2025-08-04T07:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "prima-assicurazioni"
-          ]
-        },
-        {
-          "title": "AXA Philippines unveils its first digital self-service kiosk in Makati",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQOTRVVEpUbFJSdXotZ25KMTdRZkhDb2lCd2o0N1pQNUo1ejd0ckxNcjUwVnlRWjIxLWwzTnN1SUNPWHpWQ2lYdUhqVVJ2NTJHcTdBNVNaLTVqOERkcUx1VFhDaXdZcmdSMDdQNHVWSFVBc1ZUS0l1UGpTZlRJblp1djNLSmJkTW55SjZZV2JOYXhibGZXckRr?oc=5",
-          "source": "InsiderPH",
-          "publishedAt": "2025-07-17T07:00:00.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "AXA partners with Ant Bank and AlipayHK to offer embedded insurance",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbGFYX041Zmxtd2hvTTE1eUZadTV4SU4tQmNnOTh2VE53QmJrM2R5U1JudHg2dF9fMkpCeDFaQWVyOHZWWVlzdEZuaHNpZ1VKRDRjZHVhV3VvUTNKZ1Z6a0RiaTNLZU9pd1N5SzdtbU45bnRmTGpFazFvRlpCMG92RTdvckc3YWM?oc=5",
-          "source": "Life Insurance International",
-          "publishedAt": "2025-04-10T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Embedded"
-          ],
-          "summary": "",
-          "co": [
-            "ant-bank",
-            "alipayhk"
-          ]
-        },
-        {
-          "title": "AXA launches digital insurance with Ant Bank, AlipayHK tie-up",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQMnR2UHRRZHh2T25PRTFNaFRQUEdUcFFEMjJPNEFKZ3lfaGNDbHJHa0EzdmxzVTIxRl9rU3RIUmc4WTM4Q3ZkY3BYVE91ckZRZmVHR1Q0M0hXaWVuemhmdlZSUkU0VHdzVXlHTEhNdXhmaGd1MEZ4emdPNmFmeUdycGs5dEUtTnNINjRLaDZEOW9hd1ozaEhxa2tBcThTRmFJVjlkNA?oc=5",
-          "source": "Asian Banking & Finance",
-          "publishedAt": "2025-04-09T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": [
-            "ant-bank",
-            "alipayhk"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "kovernow",
       "name": "KoverNow",
       "count": 5,
@@ -4008,60 +5521,6 @@
           "publishedAt": "2026-02-18T08:00:00.000Z",
           "tags": [
             "Industry"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "fruga",
-      "name": "Fruga",
-      "count": 3,
-      "firstSeen": "2026-10-15T09:31:12.000Z",
-      "lastSeen": "2026-10-15T16:40:28.000Z",
-      "topics": [
-        {
-          "name": "Funding",
-          "count": 3
-        }
-      ],
-      "sources": [
-        "FinTech Global",
-        "TheBusinessDesk.com",
-        "Insurance Edge"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Fruga raises £1m to cut the cost of insurance renewals",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOaHpVc0ZRU0NzVlpGOGVwczFvS2ZBajNzeDNrdl9Rc1Vja0FiVDFxMm5OaVVfRnZhY1E0NnU4SnYweFRTaG9PREZadHlESlJOZHV1UmFvT1lFQmdlSHhWdjE3Y1lEQnAteDUzdmNncHVGTE0zdUd5aElZNFdVTk9DazNOdUdyRGZkTGw0a0hWa3ludw?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-10-15T16:40:28.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "InsurTech scale-up Fruga raises £1m to scale open banking technology",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZmVYVnBRcTNzTHNvUU1uYVkyYXNTVVhiUWFCMmdsdmR1LWVWRzJLeUN5bDFiYjc2c1FHcVg5T3dzT1BPWnBraUN3ck54ckF5WGJ6S3dXcnJmSXd2SFZ4MndPSTR1Vkt1U0pESGdTNTNyRzQwek5WdmlCZi1SajhOZlhfVF9kWVlzOVRfTWhoZkdxanp0ODhyeXo5djNxd3FWd2ROOTd6ZmJnMHduM2IwZkxhV0U1Rlh3ZzNfN2pyQQ?oc=5",
-          "source": "TheBusinessDesk.com",
-          "publishedAt": "2026-10-15T12:17:57.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Fruga Raises £1m to Scale Up Insurance Renewals Offer -",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOeTEta2xQRDNpdTlYa1RINVd2SUhsZVlvaExFaHp3SUNEbU9VNXlzT01JMTY2X3k5Z0ZfVFpndXJhMVMwc0t5WlBCemM2NWFwVkdwRlM1RkNUMGNYSTdwM1IwdFNuTEhYaVRfRlVQOWQzc0RSTk9RZnNSTVdRMU1oX0xISXdpcEE3aHdEM2RIZ3d1aTd4REE?oc=5",
-          "source": "Insurance Edge",
-          "publishedAt": "2026-10-15T09:31:12.000Z",
-          "tags": [
-            "Funding"
           ],
           "summary": "",
           "co": []
@@ -5165,86 +6624,6 @@
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPR3puejFIbWlxT2VnRzBjdVJ0TDV3U0ZrSy0xRU54WmxxTHNyejIxU0QxZWR0ZVFvQmFwTlhpVURMYk1iSHhPMGllSDJQOFFlR0hIVTJsMGJxZU5yUm1FcWFQcDdkbUVCeTRxSUVuZWRCWVBKYWI2SFJxMFY3YkxwWVhjUkNyNEtXdWRkTjIyV1dDbEowbHRPSEZnRG5xMzRvWHFVZFJ3UWczN2VPRkx0TjNFeGlzVnMtazFN0gHAAUFVX3lxTE1ZX0VnUkhoWmxKSE9UeE1GRzN3eUZDWHVFYTVfNEgwZjN3azFtVzNKdmtaVVdJeHRxREZSS2ZxWW9RRDFqSlRKMGpkbm5mMEwwRmNwU3RaWUNET1RIN2dLWUZSYS04bWFMZl9DVXljLV9FdEJhODZUVUdlUGRNeVJhZDdmOXE4VmFFSDlvdG1RYXVXVUhFamw3ZnlUN2dGTUM3bS1BX0NSVkVaamdwNXhIRm96U3lyaFNzNEs3VGxYeA?oc=5",
           "source": "CNBC TV18",
           "publishedAt": "2024-08-26T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "stand",
-      "name": "Stand",
-      "count": 4,
-      "firstSeen": "2024-12-16T08:00:00.000Z",
-      "lastSeen": "2026-10-15T13:23:33.000Z",
-      "topics": [
-        {
-          "name": "Funding",
-          "count": 2
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        },
-        {
-          "name": "Property & Cat",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "FinTech Global",
-        "PR Newswire",
-        "WSJ"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Stand raises $70 million",
-          "link": "https://coverager.com/stand-raises-70-million/",
-          "source": "Coverager",
-          "publishedAt": "2026-10-15T13:23:33.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "Stand now insures more than $10 billion of property.",
-          "co": []
-        },
-        {
-          "title": "Stand insurance secures $35m Series B to expand in Florida",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNZjlGUEhwV0s5QW5rYXhyaXVMU3lXcGxZQ2lyQjk5S1lZclJHQy1EVGdldGxyM0J5VWVHZHBJZmxTODdaczhPNFgydHNpNVB3LXM1TzlyTDZJYTYtTHd1dTVQbl9UT2E0U0xSZGZzc0g4dVBWaEh2eGEzNlgwTm5FS0ZsSFFvSXVyVUhEOU01My1BczgtYzBz?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2025-10-17T07:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Team Of Silicon Valley Veterans Launch Stand Insurance, Using Physics-Driven AI To Insure The World's Climate-Impacted Properties",
-          "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPV3d6UVdqZkNObVlpams0Rk82NVBhd1F3OU55TzR2V1hKVFZ3bExOeE5LYkxJSjN0Y045RDZ6a1hxekJVUHNmZHZEMS16Wmw2azB1TDBlZDQzQWJ6TmlDNHBFRFprczF3dFRva2ZsNXg5Z25xVldOV0VpS28xVDd2Y1I4WWRrWHZoZVhuTlJXY2RmWUh0X01obGZnT0hQYjlVbHl5a2p0Q1plWm53dEp0LWwxd245UTN1SDVwUW5Xd3F6ck16V3lrdjhFTkIyQmFqRElhbTB5SVZrRXFkSVJqNlkyN1RJbjlBWGU3SUk4ZUQ4QXJYMHMtY09XOUhXUzluT1pkdUg5aURNM09JSVRTRA?oc=5",
-          "source": "PR Newswire",
-          "publishedAt": "2024-12-16T08:00:00.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Insurance Startup Stand Has a Plan to Cover ‘Uninsurable’ Homes",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdURiUTNpdUdlV0ZSUlVoYzU3dkM5djlFanlVTmtIR05GSkNkODNCaEQwcUdDOG5Nam9FWXN4R0VFSW1ZcmVZa0QxekU2UDRSbXp5S1hjbGZLRnJTX2lCbnlORkFiTXpCbHVZSE1tS1J3SnlSMTJKdVhUdndvSWVrbDhseGw2T2FQLWhIb28xQ2J2WGNHdVVIc1BmYlIybVli?oc=5",
-          "source": "WSJ",
-          "publishedAt": "2024-12-16T08:00:00.000Z",
           "tags": [
             "Industry"
           ],
@@ -6459,246 +7838,6 @@
           ],
           "summary": "Constellation Re provides M&A and reinsurance solutions.",
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "zocdoc",
-      "name": "Zocdoc",
-      "count": 6,
-      "firstSeen": "2026-10-14T10:00:00.000Z",
-      "lastSeen": "2026-10-15T09:15:52.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 6
-        },
-        {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Health & Life",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "AlleyWatch",
-        "Fierce Healthcare",
-        "Dealroom",
-        "PR Newswire",
-        "Modern Healthcare"
-      ],
-      "related": [
-        {
-          "slug": "sohar-health",
-          "name": "Sohar Health",
-          "count": 6
-        }
-      ],
-      "articles": [
-        {
-          "title": "Zocdoc acquires Sohar Health",
-          "link": "https://coverager.com/zocdoc-acquires-sohar-health/",
-          "source": "Coverager",
-          "publishedAt": "2026-10-15T09:15:52.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation",
-            "Health & Life"
-          ],
-          "summary": "Sohar Health automates health insurance discovery and benefits verification.",
-          "co": [
-            "sohar-health"
-          ]
-        },
-        {
-          "title": "Zocdoc Makes Its First Acquisition in Nearly 20 Years, Buying NYC Insurance Verification Startup Sohar Health",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQ1BPczdKbGtYR080SXFocW1FR2RONmo2aXB3dkNsX280TkduYUtaenVqOUtROW1rZ2kxWnVPd1hGYUJzamljTjF4N2FFb2pRdlR5SUdVcGhrR3BSdG5Pa3NzZ0t2aTg5VnhXUkVwbDBmSzRrN1k3NXRxV2RBSDFGb21XUGFmZnBBT055VVBoSldHYl93UkJzMXRmWkZaRFJzVkdKbnFjRlI?oc=5",
-          "source": "AlleyWatch",
-          "publishedAt": "2026-10-15T03:51:26.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "sohar-health"
-          ]
-        },
-        {
-          "title": "Zocdoc acquires health tech company Sohar Health for automated benefits eligibility checks",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQek5fVjFkb1pTZGVUalR6amVXTkY1ejdITUxoR0VOeE43ejN6UGI0WUtUSzhGR2ZvQ05MN1A1YzdOcmg1LVNtaVhIaWhpckc2OFFRMkxWWnYzMHpVUWxrU2x6a2xPS09JdTRWNHpmQmhqVmFHYnUzbllhX09XVUZtSzVvZXlUa0hKM1I5LVZKb2JzcW5CNDl2YmVMR3lMQzJIQnVobUZKNk1yZVdXRUF4am4tN1p4dFJGNjVBMEw3UTc?oc=5",
-          "source": "Fierce Healthcare",
-          "publishedAt": "2026-10-14T20:00:00.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation",
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "sohar-health"
-          ]
-        },
-        {
-          "title": "Zocdoc makes first-ever acquisition, buying insurance startup Sohar Health",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMkFzc2xMZmNXUFp3bWgxNE1kV21jbmZObE9sbG1DRWhldFpMMlc5dmI1eTN5aDVmWVA3bnoybWVhWE5BSElFMlR5YnhPRW1DMnJ5T0phbVQ2R0ZuSno1WEVMTFJubDdoTFlNWWVyVGdQZHY1MEZHLXBucEJ5R2lGeFlOMFRwQVh2Vml5ajd6WFYwRk1jekFIYmNSTVBKeWx2azhENDJCVjhMNjg?oc=5",
-          "source": "Dealroom",
-          "publishedAt": "2026-10-14T13:22:54.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "sohar-health"
-          ]
-        },
-        {
-          "title": "Zocdoc Acquires Sohar Health to Make Insurance Easier to Navigate for Patients and Providers",
-          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOUWdhZ1VSQXlYN1Z6MTFVTC1vYVhOR3pTY3pLdTJUdURJcVhGRkQ0aXJEVWdFOEJOeWI4VmVvS0ZiV0VBSjgxQzl1TXZ6dG8wVzVsb2ZEcmxFMmczN3BxRDI5VTVydXpHSTIwejJ2TEZTQW56WFhqbFFWOU5pQ3FtMmlybGJtSHA1VFNBaUkyNWFYMGxTSlBCeVBxSHFObmlCWEM1R2tJdEg5Z3k3TXZEZ0psNnhITHFtdU5ueEpVNUY2T3dtcHFFS0hYaVJNZjh4bkNDclhURV9nTnd4T1dsVnlB?oc=5",
-          "source": "PR Newswire",
-          "publishedAt": "2026-10-14T12:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "sohar-health"
-          ]
-        },
-        {
-          "title": "Zocdoc acquires insurance tech company Sohar Health",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORk9CczdaMDlfektwUldvcTBYb3VkamtMTTJrX3NfMWJVZzZDSWhlbnBIcDNBQm10WDJTNVl0QUZ6eUN6aU1yamRoTDVidkUtOVRkZHd6Ukxkd2hOWEpKelVISXFkZHVHWG1VdWhiRlhWa1NvMFo2RjRDS3ZnMzZHN1B4aG9rSm8?oc=5",
-          "source": "Modern Healthcare",
-          "publishedAt": "2026-10-14T10:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "sohar-health"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "sohar-health",
-      "name": "Sohar Health",
-      "count": 6,
-      "firstSeen": "2026-10-14T10:00:00.000Z",
-      "lastSeen": "2026-10-15T09:15:52.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 6
-        },
-        {
-          "name": "AI & Automation",
-          "count": 2
-        },
-        {
-          "name": "Health & Life",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "AlleyWatch",
-        "Fierce Healthcare",
-        "Dealroom",
-        "PR Newswire",
-        "Modern Healthcare"
-      ],
-      "related": [
-        {
-          "slug": "zocdoc",
-          "name": "Zocdoc",
-          "count": 6
-        }
-      ],
-      "articles": [
-        {
-          "title": "Zocdoc acquires Sohar Health",
-          "link": "https://coverager.com/zocdoc-acquires-sohar-health/",
-          "source": "Coverager",
-          "publishedAt": "2026-10-15T09:15:52.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation",
-            "Health & Life"
-          ],
-          "summary": "Sohar Health automates health insurance discovery and benefits verification.",
-          "co": [
-            "zocdoc"
-          ]
-        },
-        {
-          "title": "Zocdoc Makes Its First Acquisition in Nearly 20 Years, Buying NYC Insurance Verification Startup Sohar Health",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQ1BPczdKbGtYR080SXFocW1FR2RONmo2aXB3dkNsX280TkduYUtaenVqOUtROW1rZ2kxWnVPd1hGYUJzamljTjF4N2FFb2pRdlR5SUdVcGhrR3BSdG5Pa3NzZ0t2aTg5VnhXUkVwbDBmSzRrN1k3NXRxV2RBSDFGb21XUGFmZnBBT055VVBoSldHYl93UkJzMXRmWkZaRFJzVkdKbnFjRlI?oc=5",
-          "source": "AlleyWatch",
-          "publishedAt": "2026-10-15T03:51:26.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "zocdoc"
-          ]
-        },
-        {
-          "title": "Zocdoc acquires health tech company Sohar Health for automated benefits eligibility checks",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQek5fVjFkb1pTZGVUalR6amVXTkY1ejdITUxoR0VOeE43ejN6UGI0WUtUSzhGR2ZvQ05MN1A1YzdOcmg1LVNtaVhIaWhpckc2OFFRMkxWWnYzMHpVUWxrU2x6a2xPS09JdTRWNHpmQmhqVmFHYnUzbllhX09XVUZtSzVvZXlUa0hKM1I5LVZKb2JzcW5CNDl2YmVMR3lMQzJIQnVobUZKNk1yZVdXRUF4am4tN1p4dFJGNjVBMEw3UTc?oc=5",
-          "source": "Fierce Healthcare",
-          "publishedAt": "2026-10-14T20:00:00.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation",
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "zocdoc"
-          ]
-        },
-        {
-          "title": "Zocdoc makes first-ever acquisition, buying insurance startup Sohar Health",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMkFzc2xMZmNXUFp3bWgxNE1kV21jbmZObE9sbG1DRWhldFpMMlc5dmI1eTN5aDVmWVA3bnoybWVhWE5BSElFMlR5YnhPRW1DMnJ5T0phbVQ2R0ZuSno1WEVMTFJubDdoTFlNWWVyVGdQZHY1MEZHLXBucEJ5R2lGeFlOMFRwQVh2Vml5ajd6WFYwRk1jekFIYmNSTVBKeWx2azhENDJCVjhMNjg?oc=5",
-          "source": "Dealroom",
-          "publishedAt": "2026-10-14T13:22:54.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "zocdoc"
-          ]
-        },
-        {
-          "title": "Zocdoc Acquires Sohar Health to Make Insurance Easier to Navigate for Patients and Providers",
-          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOUWdhZ1VSQXlYN1Z6MTFVTC1vYVhOR3pTY3pLdTJUdURJcVhGRkQ0aXJEVWdFOEJOeWI4VmVvS0ZiV0VBSjgxQzl1TXZ6dG8wVzVsb2ZEcmxFMmczN3BxRDI5VTVydXpHSTIwejJ2TEZTQW56WFhqbFFWOU5pQ3FtMmlybGJtSHA1VFNBaUkyNWFYMGxTSlBCeVBxSHFObmlCWEM1R2tJdEg5Z3k3TXZEZ0psNnhITHFtdU5ueEpVNUY2T3dtcHFFS0hYaVJNZjh4bkNDclhURV9nTnd4T1dsVnlB?oc=5",
-          "source": "PR Newswire",
-          "publishedAt": "2026-10-14T12:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "zocdoc"
-          ]
-        },
-        {
-          "title": "Zocdoc acquires insurance tech company Sohar Health",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORk9CczdaMDlfektwUldvcTBYb3VkamtMTTJrX3NfMWJVZzZDSWhlbnBIcDNBQm10WDJTNVl0QUZ6eUN6aU1yamRoTDVidkUtOVRkZHd6Ukxkd2hOWEpKelVISXFkZHVHWG1VdWhiRlhWa1NvMFo2RjRDS3ZnMzZHN1B4aG9rSm8?oc=5",
-          "source": "Modern Healthcare",
-          "publishedAt": "2026-10-14T10:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "zocdoc"
-          ]
         }
       ]
     },
@@ -10360,68 +11499,6 @@
       ]
     },
     {
-      "slug": "lloyds",
-      "name": "Lloyds",
-      "count": 3,
-      "firstSeen": "2026-10-02T11:07:00.000Z",
-      "lastSeen": "2026-10-14T06:25:05.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Reinsurance News",
-        "Beinsure",
-        "Finextra"
-      ],
-      "related": [
-        {
-          "slug": "asteria",
-          "name": "Asteria",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Asteria to grow digital infrastructure for aviation asset and loss information with new Lloyd’s investment",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQXzEyTU1zbk55c3doSE1xaXkyZVJIaW5uV1lURFF2MkJoOGoxaklibkhzeFRXVUdweWV3MDI2YU9VeV9zS3h5Z2E1VTRLQVpCYVQwZW1NbndhNHJVLXFyQnBfM0RiUnlWczFOQjF2dS1QVG0zbDdERmVGZC1OTjZWenBYb3lfaXN0dWRKeUN4Ymtqa01Nei1EekVkRVFPRmlxRTAwZWpHWVdOc2N2SlY3LU9pRFFTLUFobS1uUzljdjZ6VGtKMEFQV3pOV01RM0k2?oc=5",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-10-14T06:25:05.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "asteria"
-          ]
-        },
-        {
-          "title": "Lloyd’s Lab selects 10 insurtech startups for Cohort 17 Accelerator",
-          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcHJwTm9VdmU4SjBzYUlPTThfRFMwTVc5dGp5Skp6bURqbkExWlB1Rl9wbVQ4Q2VZUHROOGVVT1F0SmJEckp2Z05fSXVuZ0FXaXBqUk11YjBMNHpCczBMZnBsQkZYV1V1bkczY2djSkEzb1VxLXhJN3d3LThLY0d0dzh3T0NPajdJ?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-10-06T19:21:31.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Lloyds survey reveals 71% of UK FIs believe tokenisation will reshape financial services",
-          "link": "https://www.finextra.com/newsarticle/48526/lloyds-survey-reveals-71-of-uk-fis-believe-tokenisation-will-reshape-financial-services?utm_medium=rssfinextra&utm_source=finextrafeed",
-          "source": "Finextra",
-          "publishedAt": "2026-10-02T11:07:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "Lloyds' 10th annual Financial Institutions Sentiment Survey, conducted between April and May 2026, showed that 71% of the 100 senior leaders surveyed across UK banks, insurers, financial sponsors and asset and wealth…",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "asteria",
       "name": "Asteria",
       "count": 1,
@@ -12436,197 +13513,6 @@
           "summary": "The app is developed by PANDA InsurTech GmbH.",
           "co": [
             "chatgpt"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "generali",
-      "name": "Generali",
-      "count": 9,
-      "firstSeen": "2024-11-22T08:00:00.000Z",
-      "lastSeen": "2026-10-13T15:04:51.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 3
-        },
-        {
-          "name": "Property & Cat",
-          "count": 3
-        },
-        {
-          "name": "M&A",
-          "count": 2
-        },
-        {
-          "name": "Leadership",
-          "count": 1
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 1
-        },
-        {
-          "name": "Health & Life",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurtech Insights",
-        "theinsurer.com",
-        "Reinsurance News",
-        "Artemis",
-        "Fintech News Malaysia",
-        "United Nations Development Programme",
-        "Passionate In Marketing",
-        "Business Standard"
-      ],
-      "related": [
-        {
-          "slug": "descartes",
-          "name": "Descartes",
-          "count": 2
-        },
-        {
-          "slug": "central-bank-of-india",
-          "name": "Central Bank of India",
-          "count": 2
-        },
-        {
-          "slug": "world-bank-group",
-          "name": "World Bank Group",
-          "count": 1
-        },
-        {
-          "slug": "ibisa",
-          "name": "Ibisa",
-          "count": 1
-        },
-        {
-          "slug": "icmif-foundation",
-          "name": "ICMIF Foundation",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Generali and the World Bank Group partner to advance insurance and resilience in emerging markets",
-          "link": "https://www.insurtechinsights.com/news/generali-and-the-world-bank-group-partner-to-advance-insurance-and-resilience-in-emerging-markets/6705/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-10-13T15:04:51.000Z",
-          "tags": [
-            "M&A",
-            "Partnerships"
-          ],
-          "summary": "Generali and the World Bank Group (WBG) have signed a Memorandum of Understanding during the Annual Meetings of the WBG and the International Monetary Fund in Bangkok, built on a shared commitment to mobilise private…",
-          "co": [
-            "world-bank-group"
-          ]
-        },
-        {
-          "title": "Ibisa hires Generali's Singh to lead Indian parametric insurance expansion",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQNGczdG1jTHhBVnA2dDgyT0JBSDloYm92eFcxYU1GWlNuSlBtbjZMV1EzRWJ6dE92RWNQSzVBZ19VNVQ1REdXNzdrTVVvZjI2M3ZlRF95NmlUMDdzOWZ1VnFJam9uQVl1cjRYdnN2TVNYRUZxWEt3REJLMjBfamhZd05qQjQ0YVVXVGh2TklsRVEzdmRJZUxsVTNHVTZrZ29FWElDSFpwX29uSGQ3QVI3UXc3TWhIN3ZoVmlKSjJOTHRZZGxYbnN3SDhBYndvRUdzSGc?oc=5",
-          "source": "theinsurer.com",
-          "publishedAt": "2026-10-12T12:45:45.000Z",
-          "tags": [
-            "Property & Cat",
-            "Leadership"
-          ],
-          "summary": "",
-          "co": [
-            "ibisa"
-          ]
-        },
-        {
-          "title": "Descartes and Generali renew strategic parametric partnership",
-          "link": "https://www.reinsurancene.ws/descartes-and-generali-renew-strategic-parametric-partnership/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-09-03T14:00:52.000Z",
-          "tags": [
-            "M&A",
-            "Partnerships",
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "Descartes Underwriting, a global provider of parametric re/insurance solutions for climate and emerging risks, and Generali Global Corporate & Commercial (GC&C), the business unit of Generali Group that provides…",
-          "co": [
-            "descartes"
-          ]
-        },
-        {
-          "title": "Descartes and Generali renew parametric insurance partnership",
-          "link": "https://www.artemis.bm/news/descartes-and-generali-renew-parametric-insurance-partnership/?utm_source=rss&utm_medium=rss&utm_campaign=descartes-and-generali-renew-parametric-insurance-partnership",
-          "source": "Artemis",
-          "publishedAt": "2026-09-03T10:15:59.000Z",
-          "tags": [
-            "Partnerships",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": [
-            "descartes"
-          ]
-        },
-        {
-          "title": "Generali Calls on Insurtech, Healthtech Startups to Join First Accelerator",
-          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5xclo2aUk0WHVfSmdLLVJoMTNUMC1zRGtEdTVtNGRRS05HeUdfMkstVVdLY1Q5dXdGeTZtemxXYUh5WExfUlNDVlRSX2xiX21EZmNMTE91eU01RjZzV1BLWGtkNHU3dDduQ0xuRjlhOFdtTmJxLVE?oc=5",
-          "source": "Fintech News Malaysia",
-          "publishedAt": "2026-08-12T02:17:07.000Z",
-          "tags": [
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "UNDP, BMZ, Generali and ICMIF Foundation deliver world’s largest inclusive insurance innovation programme across 30 countries",
-          "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOZFZ1NjJNUm4xQU56QW82V2tmTGFfN1d4THNMZW9ELXJIWEpJaWg2ZU8zV0hKaXBYODc2em5qUkVSWUk3aDdRd1RvTnNDWGpKUWNqbV9ycWU1WGxqbjN2NEItR0RzTzRRQU9MaThsTlVKS1ZSTGxpNldzYmZORl8zVlhqeE1rQUJBMW5lZkgxTlE4bktBeC1fZjRTaFJDMTFja0RpZ1h6d0RRTEVjcy1RcXN4UWgwSTZiVUNtSHlNVFdJV0FHM0Z5Y2pFbldpUmdLMzJsMS05em5tUXhXVVoxZUpPQ053MzRaa3M4NVJKMTl4UFhr?oc=5",
-          "source": "United Nations Development Programme",
-          "publishedAt": "2025-11-06T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "icmif-foundation"
-          ]
-        },
-        {
-          "title": "Call for Proposals for UNDP-Generali Insurance Innovation Challenge: MSME Resilience in Thailand",
-          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSjBZUFJsY2JQTGtJdWN0cldrTUNhVHZ3c1phZVFoMXpiZV9iaWpOaFZnN0R2VmlhR3UxUEduZjYxVUk1c2k1d1dLMVEtalZGWHA5SzN5ZHRNREg1ZjMwZXAyY3JRc3NhV3MtMGNvWldSLTJBcWpkYzU4M3Fua1NDeFYxS21fdw?oc=5",
-          "source": "United Nations Development Programme",
-          "publishedAt": "2025-08-18T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Generali Group and Central Bank of India announce new brand identity for their life and general insurance joint venture",
-          "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOdmFBMDJneWtZajJVY0dZVllyaEV3QTRsMHUzdzFvanNqN3RsVGZKSmUzMzVKRDRlQ3hVSzlLSnBEWVVLZXlCLXRVRlp2U3NEd3I5eHV1Wks1RDVDN0FOS0RJLTNBVHJubDdMcE0yN0w4dDJZcmlUVHRocG50TFdTWWJZc0dUSDlOcy1ZQktSVHJOalplVlBMdkQ5cmpJNHdoYWJDVDJ0el9ZNHZNaGdZcHU1LTVQY0lmekQ3THY4NUNMUmdUSWxrQWVqZVNWX0FaXzlrQklYMjdENllqb0tlbEZZazlLeGxkTVMwcnpYOA?oc=5",
-          "source": "Passionate In Marketing",
-          "publishedAt": "2025-08-04T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "central-bank-of-india"
-          ]
-        },
-        {
-          "title": "Central Bank of India gets RBI nod for insurance JV with Generali group",
-          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQekY3ei1iSWtHend3OFVBVkh3Qk5TR1BZc3lxcExuRHhaU1hZQWxkMEVMRG1sc2VQcGhvTUJUTUxYVlRrcGFLT2xybE9Hekd0UXhSSzFyZmhRRW9LWEhVTmNldXVqNUtyT1pQdVFLWGl0dzlvMEpZZXkxYnFYbHBTTkpwZ09EVGM0eXFTRG5ZTjRrZHJyZkJCRjl3TDVLdkNkbzZkZHJJOENIajlkeWk2cVR5b2hpNUFDMTZIVmhoalg4QlpiXzNMNGdQZU5SZ1UyczN3VjBKZzIwUG_SAeABQVVfeXFMUGZwNVk5cnFpSml2N09BeTNlN25xcmhXb1NxajcwTVoyazdlYjFoaTNPc0NWWFpJV01qRkxXbnB2VlNtX04wQnJpb2lTUjdndjZpRjRpc1lEdTVZT0dNVmt5ZHNjd2N4c29SZTlJb1NTRktUS3BUeU55dElrTWNhXzI5Si1XVU5sNGY5dGdMcFAtS1lZaXJRQUhjbGZMdC1adHJsV1FLY2VhVTdjY2ozV3FRRFBEUnhUOEMyQlFNSmNkenJxUlpXQUJxWlRsUFVWOTRub2xxOGFxSm9kNHlOVFI?oc=5",
-          "source": "Business Standard",
-          "publishedAt": "2024-11-22T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "central-bank-of-india"
           ]
         }
       ]
@@ -16336,167 +17222,6 @@
           "summary": "Smartcar is a connected-vehicle platform.",
           "co": [
             "everyday-electric"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "geico",
-      "name": "GEICO",
-      "count": 7,
-      "firstSeen": "2024-09-29T07:00:00.000Z",
-      "lastSeen": "2026-10-11T08:07:38.000Z",
-      "topics": [
-        {
-          "name": "Claims & Underwriting",
-          "count": 2
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Insurtech Insights",
-        "theinsurer.com",
-        "Digital Insurance"
-      ],
-      "related": [
-        {
-          "slug": "liberty-mutual",
-          "name": "Liberty Mutual",
-          "count": 1
-        },
-        {
-          "slug": "insurify",
-          "name": "Insurify",
-          "count": 1
-        },
-        {
-          "slug": "sierra",
-          "name": "Sierra",
-          "count": 1
-        },
-        {
-          "slug": "exzeo",
-          "name": "Exzeo",
-          "count": 1
-        },
-        {
-          "slug": "mercury",
-          "name": "Mercury",
-          "count": 1
-        },
-        {
-          "slug": "carvana",
-          "name": "Carvana",
-          "count": 1
-        },
-        {
-          "slug": "state-farm",
-          "name": "State Farm",
-          "count": 1
-        },
-        {
-          "slug": "allstate",
-          "name": "Allstate",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "GEICO, Liberty Mutual and Insurify join Sierra’s personal agent protocol initiative",
-          "link": "https://coverager.com/geico-liberty-mutual-and-insurify-join-sierras-personal-agent-protocol-initiative/",
-          "source": "Coverager",
-          "publishedAt": "2026-10-11T08:07:38.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "GEICO, Liberty Mutual, Insurify, and Cigna are among 35 new design partners contributing feedback to the initiative.",
-          "co": [
-            "liberty-mutual",
-            "insurify",
-            "sierra"
-          ]
-        },
-        {
-          "title": "GEICO reports $994 million underwriting profit in first half of 2026",
-          "link": "https://www.insurtechinsights.com/geico-reports-994-million-underwriting-profit-in-first-half-of-2026/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-10T14:50:16.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "GEICO reported an underwriting profit of $994 million for the first half of 2026, down approximately 45% from the same period a year earlier, as higher claims and underwriting expenses put pressure on results.",
-          "co": []
-        },
-        {
-          "title": "GEICO ends Q2 2026 with $994 million profit",
-          "link": "https://coverager.com/geico-ends-q2-2026-with-994-million-profit/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-10T12:59:48.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "GEICO produced lower underwriting earnings in the first six months of 2026 compared to 2025.",
-          "co": []
-        },
-        {
-          "title": "Insurtech Exzeo beats Q2 profit estimates, lands Geico as eighth carrier",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQd3dQZjhyR19qTFkxOUxBR0pOX09yTXhHUjJIOXU3a3E0ZFpjVElRNTNoWVRGOUg4RFFJYmJwdUM3d0NLNUtSa1V2QWZ0Q3picEEydW1LcS1kcFBiSWVSQWVVbC1yaTZmM3hzNDVkc1FUODVhSjFxeGNVLS1feUFoS2RDbThBWTRyd2I5M1NpcTFBVmo2Uk56MHZHWG1uUFJBN1pzRFllN25sT0F4cF9uNVRBaS05NHlnbVE?oc=5",
-          "source": "theinsurer.com",
-          "publishedAt": "2026-08-07T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "exzeo"
-          ]
-        },
-        {
-          "title": "Geico and Mercury: Cheapest Insurance in California",
-          "link": "https://coverager.com/geico-and-mercury-cheapest-insurance-in-california/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-28T17:53:38.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "According to a recent survey by Clearsurance.com, Geico and Mercury are the cheapest home insurance providers in California.",
-          "co": [
-            "mercury"
-          ]
-        },
-        {
-          "title": "Embedded Car Insurance: GEICO & Carvana",
-          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5TcklTWUt2bFJ0dVBZSW1HQ2JZMTRZLV9xLVMzaUFpRTJCWjQ1QnJYTzdiWkVQVlpGZ3dNRXlQUGVmZkZyY0FrMVpyR1JtMURJa3J5ejMxckVlX3ZwWGdWSTdZcy1JS2hnZFFn?oc=5",
-          "source": "Coverager",
-          "publishedAt": "2025-12-16T08:00:00.000Z",
-          "tags": [
-            "Auto & Mobility"
-          ],
-          "summary": "",
-          "co": [
-            "carvana"
-          ]
-        },
-        {
-          "title": "State Farm, Allstate, Geico top digital performers",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM0NQQmZvSmpjUFFWLVpEX3BJdG9XU2VlOXNnOVROeFZZaWkzVFppbVlCVU9BTTBsZ2hPc0tJS0FIRTR2dWYwX3dsdmN2RFpDQktmamhQWEpFNlR1LUxOamU4UVJ4djdVU3JtS1FscDM4aDR3V1NrS2tWU29QOVo4WmZ3?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2024-09-29T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "state-farm",
-            "allstate"
           ]
         }
       ]
@@ -20331,76 +21056,6 @@
           "summary": "",
           "co": [
             "root"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "muse",
-      "name": "Muse",
-      "count": 3,
-      "firstSeen": "2026-10-01T16:28:56.000Z",
-      "lastSeen": "2026-10-08T20:11:34.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 3
-        },
-        {
-          "name": "Partnerships",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Beinsure",
-        "Digital Insurance",
-        "Coverager"
-      ],
-      "related": [
-        {
-          "slug": "the-zebra",
-          "name": "The Zebra",
-          "count": 2
-        }
-      ],
-      "articles": [
-        {
-          "title": "Insurtech Zebra to integrate Muse AI assistant into insurance shopping",
-          "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9JZ2ZrMHVaYnVSdmtKVXROMkxEN1pocDJvUE95VmlHejVtRXpBQ3Z0cVpxYU52dExXZXFEX2l6RFRHZW1KdC1nclNMWk52b0Nqb2JNblBBTFBncWIxcE54VkVhVmVtelR5LTF0LWFfVUY?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-10-08T20:11:34.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "the-zebra"
-          ]
-        },
-        {
-          "title": "Mid-size insurer: Building AI apps beats letting Muse in",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOWWlSaDNBZlh4QnEtcDhiaDFqdFlEeE52cUxDNUd0T0xWdGNkTzRpcUE0Umx1a212dTZRNnpVNUNsRmx4TEFaczBEWXFfYVlxcUJGZV8wcHNSeU5Ha0tSWm5jTDFHcE1uYTdwTVFEWncwUDJyc2tPTTlzaDJCck5QN0pMODVXWUNwU19Z?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-10-05T10:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "The Zebra welcomes Muse",
-          "link": "https://coverager.com/the-zebra-welcomes-muse/",
-          "source": "Coverager",
-          "publishedAt": "2026-10-01T16:28:56.000Z",
-          "tags": [
-            "Partnerships",
-            "AI & Automation"
-          ],
-          "summary": "The Zebra will offer agent-to-agent integration with AI personal assistant Muse.",
-          "co": [
-            "the-zebra"
           ]
         }
       ]
@@ -31824,8 +32479,8 @@
       "slug": "secondsight",
       "name": "SecondSight",
       "count": 2,
-      "firstSeen": "2026-10-05T20:45:42.000Z",
-      "lastSeen": "2026-10-05T21:14:05.000Z",
+      "firstSeen": "2026-10-05T07:00:00.000Z",
+      "lastSeen": "2026-10-05T20:45:42.000Z",
       "topics": [
         {
           "name": "Funding",
@@ -31833,16 +32488,16 @@
         }
       ],
       "sources": [
-        "citybiz",
-        "Beinsure"
+        "Beinsure",
+        "citybiz"
       ],
       "related": [],
       "articles": [
         {
-          "title": "SecondSight Closes Series A, Names Insurance Veteran Jamie Bouloux President",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNRU9WdExGbFlIS25RMVlfM1VOT2FTUnZWRFFibC1hVU5HLXdyaVF1Vnd6dHVLVUJRdlhrRV9ZS3ltX0lvNEJEM25qRE1MYkVOZ09PX3B2M2Q1UWRuVHd3ajgwMWtCdEZvdGV1al9FSWcxVERiVkcwcTdvRkNCNTNfZ0ZQeXFIeHJaWG52MEVDWmRnOHV3X2dCSDhHYUgxTk1qSnFPS3lOZjNPSjFraEo2amlMeHE?oc=5",
-          "source": "citybiz",
-          "publishedAt": "2026-10-05T21:14:05.000Z",
+          "title": "Insurtech SecondSight raises Series A, names Jamie Bouloux president",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPQktXbVRZWE1ycWJjVk52d1prQUNSM2dXYzkxcktwRlBLSDkyblB4NExRVVd6dWU4SVVOMEJ5VzhxdUNaMEJyNUdYNi11c2tPZkp2UG9YbThVTmJXMWJpUFpJanlMVXBVb2hpTVhkdEx2TUJzNDdteEVZdFJqRTJBN3lGV1dMb29uQ1p4Xw?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-10-05T20:45:42.000Z",
           "tags": [
             "Funding"
           ],
@@ -31850,10 +32505,10 @@
           "co": []
         },
         {
-          "title": "Insurtech SecondSight raises Series A, names Jamie Bouloux president",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPQktXbVRZWE1ycWJjVk52d1prQUNSM2dXYzkxcktwRlBLSDkyblB4NExRVVd6dWU4SVVOMEJ5VzhxdUNaMEJyNUdYNi11c2tPZkp2UG9YbThVTmJXMWJpUFpJanlMVXBVb2hpTVhkdEx2TUJzNDdteEVZdFJqRTJBN3lGV1dMb29uQ1p4Xw?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-10-05T20:45:42.000Z",
+          "title": "SecondSight Closes Series A, Names Insurance Veteran Jamie Bouloux President",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNRU9WdExGbFlIS25RMVlfM1VOT2FTUnZWRFFibC1hVU5HLXdyaVF1Vnd6dHVLVUJRdlhrRV9ZS3ltX0lvNEJEM25qRE1MYkVOZ09PX3B2M2Q1UWRuVHd3ajgwMWtCdEZvdGV1al9FSWcxVERiVkcwcTdvRkNCNTNfZ0ZQeXFIeHJaWG52MEVDWmRnOHV3X2dCSDhHYUgxTk1qSnFPS3lOZjNPSjFraEo2amlMeHE?oc=5",
+          "source": "citybiz",
+          "publishedAt": "2026-10-05T07:00:00.000Z",
           "tags": [
             "Funding"
           ],
@@ -46338,174 +46993,6 @@
           "summary": "",
           "co": [
             "nord-insuretech-group"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "travelers",
-      "name": "Travelers",
-      "count": 9,
-      "firstSeen": "2026-05-11T07:00:00.000Z",
-      "lastSeen": "2026-09-23T20:04:56.000Z",
-      "topics": [
-        {
-          "name": "AI & Automation",
-          "count": 7
-        },
-        {
-          "name": "Cyber",
-          "count": 4
-        },
-        {
-          "name": "Regulation",
-          "count": 3
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 3
-        },
-        {
-          "name": "Product & Launches",
-          "count": 2
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Carrier Management",
-        "Insurance Journal",
-        "Claims Journal",
-        "Coverager",
-        "Digital Insurance",
-        "Insurance Business"
-      ],
-      "related": [
-        {
-          "slug": "ethos",
-          "name": "Ethos",
-          "count": 1
-        },
-        {
-          "slug": "liberty-mutual",
-          "name": "Liberty Mutual",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Cyber Threats the Top Business Concern as AI Heightens Risk: Travelers Risk Index",
-          "link": "https://www.carriermanagement.com/news/2026/09/23/292188.htm",
-          "source": "Carrier Management",
-          "publishedAt": "2026-09-23T20:04:56.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber",
-            "Regulation"
-          ],
-          "summary": "The rapid growth and lack of governance or regulation in the use of artificial intelligence has once again made cyber threats the top concern among businesses. According to the latest Risk Index from insurer Travelers…",
-          "co": []
-        },
-        {
-          "title": "Cyber Threats the Top Business Concern as AI Heightens Risk: Travelers Risk Index",
-          "link": "https://www.insurancejournal.com/news/national/2026/09/23/886527.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-09-23T14:15:18.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber",
-            "Regulation"
-          ],
-          "summary": "The rapid growth and lack of governance or regulation in the use of artificial intelligence has once again made cyber threats the top concern among businesses. According to the latest Risk Index from insurer Travelers…",
-          "co": []
-        },
-        {
-          "title": "Travelers Risk Index: Cyber Threats the Top Business Concern as AI Heightens Risk",
-          "link": "https://www.claimsjournal.com/news/national/2026/09/23/340321.htm",
-          "source": "Claims Journal",
-          "publishedAt": "2026-09-23T12:00:22.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber",
-            "Regulation"
-          ],
-          "summary": "The rapid growth and lack of governance or regulation in the use of artificial intelligence has once again made cyber threats the top concern among businesses. According to the latest Risk Index from insurer Travelers…",
-          "co": []
-        },
-        {
-          "title": "Travelers expands product liability insurance to California life sciences companies",
-          "link": "https://coverager.com/travelers-expands-product-liability-insurance-to-california-life-sciences-companies/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-28T15:01:18.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "The offering is now available in 50 states.",
-          "co": []
-        },
-        {
-          "title": "How Travelers measures ROI for its in-house LLM",
-          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOdmhIZWttd2VCSHRrNFBnUzBscE9ERDNZWnZZN2ptRFR1UTdJQUZLMEJrWUIxMXZlVXBFaDQ5SDl6Y21PRWFpZ3dqYXI2X18tTXdIczVzcTB5M1N2b2t1NVp0NkczWjJ0VlVVbGRzWGJleG9YQlZkdEdaeGZTa2t3OQ?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-07-21T10:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Travelers reports Q2 net income of $2.21 billion as underwriting and investment results improve",
-          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/travelers-reports-q2-net-income-of-2-21-billion-as-underwriting-and-investment-results-improve-582887.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-07-20T04:15:03.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "Strong activity on large construction projects fueled outsized growth in Travelers' surety line even as broader commercial pricing softens",
-          "co": []
-        },
-        {
-          "title": "Travelers: How AI improved claims, underwriting efficiency in Q2",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeHlGRENMU3NtZDBLejJkcldrSmJmekFuelNBcGR4d0pLOFQtVHVhVFAtY3NtZXgxWUdFUVJoVU1ndTFFVHZ3YjNFYTVWN0VxY285NFVxaUJrMDktSl84QnRia0V2S0RRS00yVWtvMlZ3Wll6blpmVUFDLVhwc242VUN0M2hMYlF6YmFNSEdBMA?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-07-17T20:05:00.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "AI is fueling a surge of new ransomware threats: Travelers",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQjFZcktMeXRWN2w3TnRISE1WQlBFUVBYb1BSR2x0dTEzZEpodlhwZkFCdGpOTDhFNTRacV8wYnVTeHZXVUYwaHFob1JBOHdsQTVJWHVIZmU5TWlBVWZocEd5MzVlNk9CdEEwOUJ6QUc3VkhQaktpVC1oZ0dtU2JhcmxhcndzRjFJSy1pbW5n?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-06-15T07:00:00.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Travelers launches AI claims tool; Ethos partners with Liberty Mutual",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ0VOUDRXbVVEMlA1Y3k1OXAxbWRieWtZdkpHYW5CS2szLWxLRWFaNlI1LXV6U2g4c2gzWDY1RnJPZ0VTbWtfWmVhOFhCd05MQlBXLV8xNTRjZGp4VzZuSHUzWVpZZE0wRzAtSGVfYXcydzIyNTNkcXBBUzJaTFRiUjRrVi1EcG90RF93QWpEeFBySHczZ1VEM3FBajY?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-05-11T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": [
-            "ethos",
-            "liberty-mutual"
           ]
         }
       ]
@@ -95830,103 +96317,6 @@
           ],
           "summary": "New data shows how proximity to Ukraine and Iran is feeding through into UK travel insurance pricing",
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "baldwin-insurance-group",
-      "name": "Baldwin Insurance Group",
-      "count": 4,
-      "firstSeen": "2026-01-13T08:00:00.000Z",
-      "lastSeen": "2026-07-19T07:00:00.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 2
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        },
-        {
-          "name": "Property & Cat",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Sahm",
-        "Insurance Business",
-        "theinsurer.com",
-        "Business Wire"
-      ],
-      "related": [
-        {
-          "slug": "obie",
-          "name": "Obie",
-          "count": 2
-        },
-        {
-          "slug": "fairway",
-          "name": "Fairway",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "How Shifting Sentiment Around Growth and Risk Will Impact Baldwin Insurance Group (BWIN) Investors",
-          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQaGY1R3pkeGpqY0M4NUZlSUtrbENVM0VIS19JU0ZVeS1kaXNiaGQ3WXFRQjNjN1p1WkFQd0FpQXQ2SllrNjJwN2lWVTBObjdmbVFBbjVQanJHOHhVUFRqMldyOW1CcFduVDhsUlRUZEJ3V3kwMk5lODNDVzV2YnRXUXdFUUMzUHhPTlZPUDl5TGxPN0lMRnFLckNFbFJtVUVuSWJidWpNUHcwZ2Y2ajdRWVZmZV9ON21WYl8xVHNYb3M4YU42UlJ5VVU0TElXTXFNOGVoTzVGWDI5eXlYLWI5c1Jn?oc=5",
-          "source": "Sahm",
-          "publishedAt": "2026-07-19T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Baldwin Group partners with Fairway to launch home insurance agency",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQTlMwelVsdnlPNGJqVzlJTTRKTTNrZjNRR0MzcS1GWlFDd0N4akduX0RaRDB3ekQ2V1NrNmxWZW53SkczcHFsaHF0bTNMeXJaNWhpSDFaQWt1ZnJ3QWpocXlheTBLRFVBLU14TE5iam1PdU1jQ1AtTmR3OVhQblJ1czFkSTdHX095c19wbEU0cGUzWXBBYU1yOHQxYlZsNWZpWXJYZmIwdUxPMEJtWElqMDMycGRkdHlhbkowaWluZnJfU0tkbzZtT3RzWUo2Zw?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2026-02-26T08:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": [
-            "fairway"
-          ]
-        },
-        {
-          "title": "The Baldwin Group acquires real estate insurtech Obie",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPOHNDd1B3SHo2aFBBSm55SEJTbkhyWTFTaWN5WkJkT0JYV0lkM09xbkFXbHNoalJjQWhIU0ZPcmYxbHVVeDhybWZXQ3hEZkRILWZFZmZWMFdsYmYwOTV0OWZNQ05RaDFhTUNVMGxoMzY1ZU1GZzJmT2dXLXdydkphLTVDdnhILXhyOGJHSERFSG16dnBRelpGNGdDR3FmNlQzREE?oc=5",
-          "source": "theinsurer.com",
-          "publishedAt": "2026-01-13T08:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "obie"
-          ]
-        },
-        {
-          "title": "The Baldwin Group Completes Acquisition of Obie, a Leading Investment Property Insurance Platform",
-          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPX3ZaSktLVGJxSEN2WTVaUkRkYktXU1NCVDE3akoyQXBHZHVfeDF4NXdtMDFjWGxyTDR2WXNvOXRITmNxVHJSa1h4TnZZeWFrd1k2T0xuWlJDX1hHaEstMEk5M3UyamRuR1NfMUxHLUFsOXhJaXF5b3pwbW4wWFZBbFhxRktSUnVnWksxUFlBNE8wM3ZFOC1TLXFMeko5Z3lKSE1aNkNoUmF5UDhsT1dwSWhSMjluS2plRGQxV1g4TlN2SWUxbWR2Z25ycGpBWXNiNEl6VGNYZ0tBNVpwaTlNTzNuV3N4VnJp?oc=5",
-          "source": "Business Wire",
-          "publishedAt": "2026-01-13T08:00:00.000Z",
-          "tags": [
-            "M&A",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": [
-            "obie"
-          ]
         }
       ]
     },
