@@ -1,7 +1,93 @@
 {
-  "updatedAt": "2026-11-07T01:24:20.354Z",
-  "count": 2383,
+  "updatedAt": "2026-11-07T19:09:40.239Z",
+  "count": 2385,
   "companies": [
+    {
+      "slug": "automation-anywhere",
+      "name": "Automation Anywhere",
+      "count": 1,
+      "firstSeen": "2026-11-07T12:31:38.000Z",
+      "lastSeen": "2026-11-07T12:31:38.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "boost-ai",
+          "name": "Boost.ai",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Automation Anywhere to acquire Boost.ai",
+          "link": "https://coverager.com/automation-anywhere-to-acquire-boost-ai/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-07T12:31:38.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "The deal follows Automation Anywhere’s acquisition of Aisera in late 2025, which added AI tools for employee support and enterprise knowledge.",
+          "co": [
+            "boost-ai"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "boost-ai",
+      "name": "Boost.ai",
+      "count": 1,
+      "firstSeen": "2026-11-07T12:31:38.000Z",
+      "lastSeen": "2026-11-07T12:31:38.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "automation-anywhere",
+          "name": "Automation Anywhere",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Automation Anywhere to acquire Boost.ai",
+          "link": "https://coverager.com/automation-anywhere-to-acquire-boost-ai/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-07T12:31:38.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "The deal follows Automation Anywhere’s acquisition of Aisera in late 2025, which added AI tools for employee support and enterprise knowledge.",
+          "co": [
+            "automation-anywhere"
+          ]
+        }
+      ]
+    },
     {
       "slug": "qbe",
       "name": "QBE",
@@ -460,6 +546,258 @@
           ],
           "summary": "",
           "co": []
+        }
+      ]
+    },
+    {
+      "slug": "amdocs",
+      "name": "Amdocs",
+      "count": 7,
+      "firstSeen": "2026-11-03T21:02:00.000Z",
+      "lastSeen": "2026-11-06T21:48:05.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 6
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Insurance Innovation Reporter",
+        "The Paypers",
+        "Beinsure",
+        "citybiz",
+        "Yahoo Finance",
+        "TradingView"
+      ],
+      "related": [
+        {
+          "slug": "eis",
+          "name": "EIS",
+          "count": 7
+        }
+      ],
+      "articles": [
+        {
+          "title": "Amdocs Bets on EIS to Advance Agentic Transformation in Insurance",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcHpteFZSbzZrLTBOT2MxQ1ZPQTFSLTdCZFFiN3Y3eE5GY3JQRTZWMUxqZFVlajBBb1M1cG43YzR3ZVZFSkthYUw3bjhVTkpVeUlvX0ZrR01INnlYYW5vTGJYVjktUGdMTGlJaE1LVXRFYjJoNWFSSG5tTzFadzM4a0VQRDJWX0NwT1BTczU3eEcwbkU?oc=5",
+          "source": "Insurance Innovation Reporter",
+          "publishedAt": "2026-11-06T21:48:05.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "eis"
+          ]
+        },
+        {
+          "title": "Amdocs Enters Insurance With $340 Million EIS Acquisition",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOS2ZQUGtsYjNQQ0lUUGRzb3U3YU1DWGEtaFBqQXBKYjFidjhvRWZ5b0IxNnB4bGtoXzU4aGdyMWhHb2JrNHM1ckM1Y2ZBS2hjOHIzaWxwVmxNaWFxOFdlQ2ZlSFZGTTVwQzN6MlBpVk01ME5HOHVrREJMUk1kdW9aVEwyQ1JLWDA?oc=5",
+          "source": "Insurance Innovation Reporter",
+          "publishedAt": "2026-11-04T18:23:34.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "eis"
+          ]
+        },
+        {
+          "title": "Amdocs acquires insurance tech provider EIS for USD 340 mln",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaEU5Q0NLZHpwTm5sN3dacWRuSjdzc0V6bWJ0QU5senlWbC1FU1lVdGJWelpmS1NqamxpUVVNYkxDUVp4c2ZDQ1JTVHhSYnN5eWlhdEVMUUQ2Q3d2NTNKTWNXX29kVS1oWHV1Tnp4aGNrZVliWWtsODdoeGdkbExreHZFMlNJSDk3TkVsbWF3aWhrYWlfd0ZjOWtIY1NyNEUzb2Q3OEtiYTZ0WjlqelhsbE5JcVB2RkV3MUVXTk1Ndkl1QWgzTldaSw?oc=5",
+          "source": "The Paypers",
+          "publishedAt": "2026-11-04T16:40:21.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "eis"
+          ]
+        },
+        {
+          "title": "Amdocs (NASDAQ: DOX) acquires EIS for $340 mn to enter AI insurance technology market",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4tR3k0TVh6QTNwU1hOV2lzZTZHamd4OW9MZHlSSi1EUHljUjBTdnFzZ2RwUW1MQ19RNWJxMGxKb1dJdnFyQXg3Q2pwRUw3RC1XSW1MZ3lXaDl2b01qZS02R2hLTE9wblk?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-11-04T15:17:46.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "eis"
+          ]
+        },
+        {
+          "title": "Amdocs Acquires Insurance Technology Provider EIS for $340M, Expanding Beyond Telecom",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQLTQ3UzRQOEdFcW8wamNfUVlmZ3V1MkRxbGl6T2lfSUowZF9yNFI0U0pfQUE1eW5nVHVyUHQ4OW50aERVbGE0YkZNUUcwMlhXNzVTNVFuTFJPSUJCSlFBZTNwZF8tWUF4ZzI1SGl6Qk9DZmVhcDhfLWY2QzYzTUtYRU5uZ2FNdXM4Q3cwWHQ3TURQdFhPR0gyRGo1VWZyajNuSTRRdldRaHdZQ0RoR3lMUG1lUVNkUy11djNYUWpWQQ?oc=5",
+          "source": "citybiz",
+          "publishedAt": "2026-11-04T07:34:12.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "eis"
+          ]
+        },
+        {
+          "title": "Amdocs Enters the Insurance Industry Through the Acquisition of EIS, Opening a Strategic Growth Opportunity",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeENINUFuR2MzTkNZRjRpeXdGUFBwYWdtRDNFQWpvbmNxWkxuNHlEaHltRzJfVTRXQnduWEwzWnhyLUk1eFFJbHN4dGxNb09aT01PcEh0RzIyVUtlT01IZ1ZaUWp5ZE1WSkxPVUNEcEVxRVFOU0dvVl9KNVRFeTljY2VlQUhHcFItUWxsYzVGcmg3VXNuRDVWVmVobnJZSXFSYjQ1TXhFNEdqWWZh?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-11-03T21:02:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "eis"
+          ]
+        },
+        {
+          "title": "Amdocs Enters the Insurance Industry Through the Acquisition of EIS, Opening a Strategic Growth Opportunity",
+          "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPRlNTOXJBUHItTFY2Zkp1YTl4Q2k3OFEtMlpCZXdVQW9NTXd2c05KOGYtcXpUOUp4M0xweUVwZzZNMUFOdmRjck1NLTFQM2ZTRHlTQWtoMTNsZ3RIZGpNV0tkV1FzVnpiM1VFZlh1eTAyekx1Q1h5dXZRVEpHc1ZkelVuZDd3ckRoZ3VpQkVxclR0blFlaE9NdE9lV2hiMHdidV9zblhtUlNFWlRZM184NTQ0YWZNbGQ2ODl1THI5WHVWMWhBdXRiVE9TZGpHajgtN0NIVjl6TUVvVFZkVFJ1VWdQdEVoMnlqbS1fZFBpX0FreUdWTUJEUFVn?oc=5",
+          "source": "TradingView",
+          "publishedAt": "2026-11-03T21:02:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "eis"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "eis",
+      "name": "EIS",
+      "count": 7,
+      "firstSeen": "2026-11-03T21:02:00.000Z",
+      "lastSeen": "2026-11-06T21:48:05.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 6
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Insurance Innovation Reporter",
+        "The Paypers",
+        "Beinsure",
+        "citybiz",
+        "Yahoo Finance",
+        "TradingView"
+      ],
+      "related": [
+        {
+          "slug": "amdocs",
+          "name": "Amdocs",
+          "count": 7
+        }
+      ],
+      "articles": [
+        {
+          "title": "Amdocs Bets on EIS to Advance Agentic Transformation in Insurance",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcHpteFZSbzZrLTBOT2MxQ1ZPQTFSLTdCZFFiN3Y3eE5GY3JQRTZWMUxqZFVlajBBb1M1cG43YzR3ZVZFSkthYUw3bjhVTkpVeUlvX0ZrR01INnlYYW5vTGJYVjktUGdMTGlJaE1LVXRFYjJoNWFSSG5tTzFadzM4a0VQRDJWX0NwT1BTczU3eEcwbkU?oc=5",
+          "source": "Insurance Innovation Reporter",
+          "publishedAt": "2026-11-06T21:48:05.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "amdocs"
+          ]
+        },
+        {
+          "title": "Amdocs Enters Insurance With $340 Million EIS Acquisition",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOS2ZQUGtsYjNQQ0lUUGRzb3U3YU1DWGEtaFBqQXBKYjFidjhvRWZ5b0IxNnB4bGtoXzU4aGdyMWhHb2JrNHM1ckM1Y2ZBS2hjOHIzaWxwVmxNaWFxOFdlQ2ZlSFZGTTVwQzN6MlBpVk01ME5HOHVrREJMUk1kdW9aVEwyQ1JLWDA?oc=5",
+          "source": "Insurance Innovation Reporter",
+          "publishedAt": "2026-11-04T18:23:34.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "amdocs"
+          ]
+        },
+        {
+          "title": "Amdocs acquires insurance tech provider EIS for USD 340 mln",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaEU5Q0NLZHpwTm5sN3dacWRuSjdzc0V6bWJ0QU5senlWbC1FU1lVdGJWelpmS1NqamxpUVVNYkxDUVp4c2ZDQ1JTVHhSYnN5eWlhdEVMUUQ2Q3d2NTNKTWNXX29kVS1oWHV1Tnp4aGNrZVliWWtsODdoeGdkbExreHZFMlNJSDk3TkVsbWF3aWhrYWlfd0ZjOWtIY1NyNEUzb2Q3OEtiYTZ0WjlqelhsbE5JcVB2RkV3MUVXTk1Ndkl1QWgzTldaSw?oc=5",
+          "source": "The Paypers",
+          "publishedAt": "2026-11-04T16:40:21.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "amdocs"
+          ]
+        },
+        {
+          "title": "Amdocs (NASDAQ: DOX) acquires EIS for $340 mn to enter AI insurance technology market",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4tR3k0TVh6QTNwU1hOV2lzZTZHamd4OW9MZHlSSi1EUHljUjBTdnFzZ2RwUW1MQ19RNWJxMGxKb1dJdnFyQXg3Q2pwRUw3RC1XSW1MZ3lXaDl2b01qZS02R2hLTE9wblk?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-11-04T15:17:46.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "amdocs"
+          ]
+        },
+        {
+          "title": "Amdocs Acquires Insurance Technology Provider EIS for $340M, Expanding Beyond Telecom",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQLTQ3UzRQOEdFcW8wamNfUVlmZ3V1MkRxbGl6T2lfSUowZF9yNFI0U0pfQUE1eW5nVHVyUHQ4OW50aERVbGE0YkZNUUcwMlhXNzVTNVFuTFJPSUJCSlFBZTNwZF8tWUF4ZzI1SGl6Qk9DZmVhcDhfLWY2QzYzTUtYRU5uZ2FNdXM4Q3cwWHQ3TURQdFhPR0gyRGo1VWZyajNuSTRRdldRaHdZQ0RoR3lMUG1lUVNkUy11djNYUWpWQQ?oc=5",
+          "source": "citybiz",
+          "publishedAt": "2026-11-04T07:34:12.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "amdocs"
+          ]
+        },
+        {
+          "title": "Amdocs Enters the Insurance Industry Through the Acquisition of EIS, Opening a Strategic Growth Opportunity",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeENINUFuR2MzTkNZRjRpeXdGUFBwYWdtRDNFQWpvbmNxWkxuNHlEaHltRzJfVTRXQnduWEwzWnhyLUk1eFFJbHN4dGxNb09aT01PcEh0RzIyVUtlT01IZ1ZaUWp5ZE1WSkxPVUNEcEVxRVFOU0dvVl9KNVRFeTljY2VlQUhHcFItUWxsYzVGcmg3VXNuRDVWVmVobnJZSXFSYjQ1TXhFNEdqWWZh?oc=5",
+          "source": "Yahoo Finance",
+          "publishedAt": "2026-11-03T21:02:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "amdocs"
+          ]
+        },
+        {
+          "title": "Amdocs Enters the Insurance Industry Through the Acquisition of EIS, Opening a Strategic Growth Opportunity",
+          "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPRlNTOXJBUHItTFY2Zkp1YTl4Q2k3OFEtMlpCZXdVQW9NTXd2c05KOGYtcXpUOUp4M0xweUVwZzZNMUFOdmRjck1NLTFQM2ZTRHlTQWtoMTNsZ3RIZGpNV0tkV1FzVnpiM1VFZlh1eTAyekx1Q1h5dXZRVEpHc1ZkelVuZDd3ckRoZ3VpQkVxclR0blFlaE9NdE9lV2hiMHdidV9zblhtUlNFWlRZM184NTQ0YWZNbGQ2ODl1THI5WHVWMWhBdXRiVE9TZGpHajgtN0NIVjl6TUVvVFZkVFJ1VWdQdEVoMnlqbS1fZFBpX0FreUdWTUJEUFVn?oc=5",
+          "source": "TradingView",
+          "publishedAt": "2026-11-03T21:02:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "amdocs"
+          ]
         }
       ]
     },
@@ -15771,232 +16109,6 @@
       ]
     },
     {
-      "slug": "amdocs",
-      "name": "Amdocs",
-      "count": 6,
-      "firstSeen": "2026-11-03T21:02:00.000Z",
-      "lastSeen": "2026-11-04T18:23:34.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 6
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurance Innovation Reporter",
-        "The Paypers",
-        "Beinsure",
-        "citybiz",
-        "Yahoo Finance",
-        "TradingView"
-      ],
-      "related": [
-        {
-          "slug": "eis",
-          "name": "EIS",
-          "count": 6
-        }
-      ],
-      "articles": [
-        {
-          "title": "Amdocs Enters Insurance With $340 Million EIS Acquisition",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOS2ZQUGtsYjNQQ0lUUGRzb3U3YU1DWGEtaFBqQXBKYjFidjhvRWZ5b0IxNnB4bGtoXzU4aGdyMWhHb2JrNHM1ckM1Y2ZBS2hjOHIzaWxwVmxNaWFxOFdlQ2ZlSFZGTTVwQzN6MlBpVk01ME5HOHVrREJMUk1kdW9aVEwyQ1JLWDA?oc=5",
-          "source": "Insurance Innovation Reporter",
-          "publishedAt": "2026-11-04T18:23:34.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "eis"
-          ]
-        },
-        {
-          "title": "Amdocs acquires insurance tech provider EIS for USD 340 mln",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaEU5Q0NLZHpwTm5sN3dacWRuSjdzc0V6bWJ0QU5senlWbC1FU1lVdGJWelpmS1NqamxpUVVNYkxDUVp4c2ZDQ1JTVHhSYnN5eWlhdEVMUUQ2Q3d2NTNKTWNXX29kVS1oWHV1Tnp4aGNrZVliWWtsODdoeGdkbExreHZFMlNJSDk3TkVsbWF3aWhrYWlfd0ZjOWtIY1NyNEUzb2Q3OEtiYTZ0WjlqelhsbE5JcVB2RkV3MUVXTk1Ndkl1QWgzTldaSw?oc=5",
-          "source": "The Paypers",
-          "publishedAt": "2026-11-04T16:40:21.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "eis"
-          ]
-        },
-        {
-          "title": "Amdocs (NASDAQ: DOX) acquires EIS for $340 mn to enter AI insurance technology market",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4tR3k0TVh6QTNwU1hOV2lzZTZHamd4OW9MZHlSSi1EUHljUjBTdnFzZ2RwUW1MQ19RNWJxMGxKb1dJdnFyQXg3Q2pwRUw3RC1XSW1MZ3lXaDl2b01qZS02R2hLTE9wblk?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-11-04T15:17:46.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "eis"
-          ]
-        },
-        {
-          "title": "Amdocs Acquires Insurance Technology Provider EIS for $340M, Expanding Beyond Telecom",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQLTQ3UzRQOEdFcW8wamNfUVlmZ3V1MkRxbGl6T2lfSUowZF9yNFI0U0pfQUE1eW5nVHVyUHQ4OW50aERVbGE0YkZNUUcwMlhXNzVTNVFuTFJPSUJCSlFBZTNwZF8tWUF4ZzI1SGl6Qk9DZmVhcDhfLWY2QzYzTUtYRU5uZ2FNdXM4Q3cwWHQ3TURQdFhPR0gyRGo1VWZyajNuSTRRdldRaHdZQ0RoR3lMUG1lUVNkUy11djNYUWpWQQ?oc=5",
-          "source": "citybiz",
-          "publishedAt": "2026-11-04T07:34:12.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "eis"
-          ]
-        },
-        {
-          "title": "Amdocs Enters the Insurance Industry Through the Acquisition of EIS, Opening a Strategic Growth Opportunity",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeENINUFuR2MzTkNZRjRpeXdGUFBwYWdtRDNFQWpvbmNxWkxuNHlEaHltRzJfVTRXQnduWEwzWnhyLUk1eFFJbHN4dGxNb09aT01PcEh0RzIyVUtlT01IZ1ZaUWp5ZE1WSkxPVUNEcEVxRVFOU0dvVl9KNVRFeTljY2VlQUhHcFItUWxsYzVGcmg3VXNuRDVWVmVobnJZSXFSYjQ1TXhFNEdqWWZh?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-11-03T21:02:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "eis"
-          ]
-        },
-        {
-          "title": "Amdocs Enters the Insurance Industry Through the Acquisition of EIS, Opening a Strategic Growth Opportunity",
-          "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPRlNTOXJBUHItTFY2Zkp1YTl4Q2k3OFEtMlpCZXdVQW9NTXd2c05KOGYtcXpUOUp4M0xweUVwZzZNMUFOdmRjck1NLTFQM2ZTRHlTQWtoMTNsZ3RIZGpNV0tkV1FzVnpiM1VFZlh1eTAyekx1Q1h5dXZRVEpHc1ZkelVuZDd3ckRoZ3VpQkVxclR0blFlaE9NdE9lV2hiMHdidV9zblhtUlNFWlRZM184NTQ0YWZNbGQ2ODl1THI5WHVWMWhBdXRiVE9TZGpHajgtN0NIVjl6TUVvVFZkVFJ1VWdQdEVoMnlqbS1fZFBpX0FreUdWTUJEUFVn?oc=5",
-          "source": "TradingView",
-          "publishedAt": "2026-11-03T21:02:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "eis"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "eis",
-      "name": "EIS",
-      "count": 6,
-      "firstSeen": "2026-11-03T21:02:00.000Z",
-      "lastSeen": "2026-11-04T18:23:34.000Z",
-      "topics": [
-        {
-          "name": "M&A",
-          "count": 6
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurance Innovation Reporter",
-        "The Paypers",
-        "Beinsure",
-        "citybiz",
-        "Yahoo Finance",
-        "TradingView"
-      ],
-      "related": [
-        {
-          "slug": "amdocs",
-          "name": "Amdocs",
-          "count": 6
-        }
-      ],
-      "articles": [
-        {
-          "title": "Amdocs Enters Insurance With $340 Million EIS Acquisition",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOS2ZQUGtsYjNQQ0lUUGRzb3U3YU1DWGEtaFBqQXBKYjFidjhvRWZ5b0IxNnB4bGtoXzU4aGdyMWhHb2JrNHM1ckM1Y2ZBS2hjOHIzaWxwVmxNaWFxOFdlQ2ZlSFZGTTVwQzN6MlBpVk01ME5HOHVrREJMUk1kdW9aVEwyQ1JLWDA?oc=5",
-          "source": "Insurance Innovation Reporter",
-          "publishedAt": "2026-11-04T18:23:34.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "amdocs"
-          ]
-        },
-        {
-          "title": "Amdocs acquires insurance tech provider EIS for USD 340 mln",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaEU5Q0NLZHpwTm5sN3dacWRuSjdzc0V6bWJ0QU5senlWbC1FU1lVdGJWelpmS1NqamxpUVVNYkxDUVp4c2ZDQ1JTVHhSYnN5eWlhdEVMUUQ2Q3d2NTNKTWNXX29kVS1oWHV1Tnp4aGNrZVliWWtsODdoeGdkbExreHZFMlNJSDk3TkVsbWF3aWhrYWlfd0ZjOWtIY1NyNEUzb2Q3OEtiYTZ0WjlqelhsbE5JcVB2RkV3MUVXTk1Ndkl1QWgzTldaSw?oc=5",
-          "source": "The Paypers",
-          "publishedAt": "2026-11-04T16:40:21.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "amdocs"
-          ]
-        },
-        {
-          "title": "Amdocs (NASDAQ: DOX) acquires EIS for $340 mn to enter AI insurance technology market",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4tR3k0TVh6QTNwU1hOV2lzZTZHamd4OW9MZHlSSi1EUHljUjBTdnFzZ2RwUW1MQ19RNWJxMGxKb1dJdnFyQXg3Q2pwRUw3RC1XSW1MZ3lXaDl2b01qZS02R2hLTE9wblk?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-11-04T15:17:46.000Z",
-          "tags": [
-            "M&A",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "amdocs"
-          ]
-        },
-        {
-          "title": "Amdocs Acquires Insurance Technology Provider EIS for $340M, Expanding Beyond Telecom",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQLTQ3UzRQOEdFcW8wamNfUVlmZ3V1MkRxbGl6T2lfSUowZF9yNFI0U0pfQUE1eW5nVHVyUHQ4OW50aERVbGE0YkZNUUcwMlhXNzVTNVFuTFJPSUJCSlFBZTNwZF8tWUF4ZzI1SGl6Qk9DZmVhcDhfLWY2QzYzTUtYRU5uZ2FNdXM4Q3cwWHQ3TURQdFhPR0gyRGo1VWZyajNuSTRRdldRaHdZQ0RoR3lMUG1lUVNkUy11djNYUWpWQQ?oc=5",
-          "source": "citybiz",
-          "publishedAt": "2026-11-04T07:34:12.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "amdocs"
-          ]
-        },
-        {
-          "title": "Amdocs Enters the Insurance Industry Through the Acquisition of EIS, Opening a Strategic Growth Opportunity",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeENINUFuR2MzTkNZRjRpeXdGUFBwYWdtRDNFQWpvbmNxWkxuNHlEaHltRzJfVTRXQnduWEwzWnhyLUk1eFFJbHN4dGxNb09aT01PcEh0RzIyVUtlT01IZ1ZaUWp5ZE1WSkxPVUNEcEVxRVFOU0dvVl9KNVRFeTljY2VlQUhHcFItUWxsYzVGcmg3VXNuRDVWVmVobnJZSXFSYjQ1TXhFNEdqWWZh?oc=5",
-          "source": "Yahoo Finance",
-          "publishedAt": "2026-11-03T21:02:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "amdocs"
-          ]
-        },
-        {
-          "title": "Amdocs Enters the Insurance Industry Through the Acquisition of EIS, Opening a Strategic Growth Opportunity",
-          "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPRlNTOXJBUHItTFY2Zkp1YTl4Q2k3OFEtMlpCZXdVQW9NTXd2c05KOGYtcXpUOUp4M0xweUVwZzZNMUFOdmRjck1NLTFQM2ZTRHlTQWtoMTNsZ3RIZGpNV0tkV1FzVnpiM1VFZlh1eTAyekx1Q1h5dXZRVEpHc1ZkelVuZDd3ckRoZ3VpQkVxclR0blFlaE9NdE9lV2hiMHdidV9zblhtUlNFWlRZM184NTQ0YWZNbGQ2ODl1THI5WHVWMWhBdXRiVE9TZGpHajgtN0NIVjl6TUVvVFZkVFJ1VWdQdEVoMnlqbS1fZFBpX0FreUdWTUJEUFVn?oc=5",
-          "source": "TradingView",
-          "publishedAt": "2026-11-03T21:02:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "amdocs"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "inszone-insurance-services",
       "name": "Inszone Insurance Services",
       "count": 19,
@@ -21982,6 +22094,370 @@
       ]
     },
     {
+      "slug": "liberty-mutual",
+      "name": "Liberty Mutual",
+      "count": 21,
+      "firstSeen": "2026-04-14T07:00:00.000Z",
+      "lastSeen": "2026-11-02T20:15:33.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 6
+        },
+        {
+          "name": "Partnerships",
+          "count": 6
+        },
+        {
+          "name": "Property & Cat",
+          "count": 5
+        },
+        {
+          "name": "Health & Life",
+          "count": 4
+        },
+        {
+          "name": "AI & Automation",
+          "count": 4
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 4
+        }
+      ],
+      "sources": [
+        "Beinsure",
+        "Coverager",
+        "Quiver Quantitative",
+        "Digital Insurance",
+        "Insurance Journal",
+        "Artemis",
+        "Insurance Business",
+        "FF News",
+        "beinsure.com",
+        "Insurtech Insights",
+        "FinTech Global"
+      ],
+      "related": [
+        {
+          "slug": "ethos",
+          "name": "Ethos",
+          "count": 5
+        },
+        {
+          "slug": "austral-seguradora",
+          "name": "Austral Seguradora",
+          "count": 1
+        },
+        {
+          "slug": "geico",
+          "name": "GEICO",
+          "count": 1
+        },
+        {
+          "slug": "insurify",
+          "name": "Insurify",
+          "count": 1
+        },
+        {
+          "slug": "sierra",
+          "name": "Sierra",
+          "count": 1
+        },
+        {
+          "slug": "certainly",
+          "name": "Certainly",
+          "count": 1
+        },
+        {
+          "slug": "hiscox",
+          "name": "Hiscox",
+          "count": 1
+        },
+        {
+          "slug": "carbon-underwriting",
+          "name": "Carbon Underwriting",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "UN launches $40 mn disaster insurance programme backed by Liberty Mutual",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9hU01pTzA2TFlJS0VkbEdVRUhvYVE1bWctNjhzRzZFMl96aTNMUVUwU1ZYbTItZFppSVJQMlVZcjN0NTVKSDJmbmFwbm9Ld3Jpb1IxRjExNV9wcFBmUDVhTG5BcFR1bVRTWWRIRmhUdW52UEV4ZjFwcm12dGpqUQ?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-11-02T20:15:33.000Z",
+          "tags": [
+            "Funding",
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual Re explores cyclone data backup",
+          "link": "https://coverager.com/liberty-mutual-re-explores-cyclone-data-backup/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-30T19:31:08.000Z",
+          "tags": [
+            "Property & Cat"
+          ],
+          "summary": "Parametric insurance promises fast payouts—but needs reliable data. LM Re is exploring a backup for when that data goes missing.",
+          "co": []
+        },
+        {
+          "title": "Ethos and Liberty Mutual Expand Strategic Relationship to Offer Life Insurance Online and Through Call Centers",
+          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcXJWcVlhdG5uRW5XT3p0UkRFT0hWbERfam9Wa0IydmN5ZE1MYkJaZ3VEZWd4NU9xY1BibklDN0o3dDh2VVlYbkZfZWt2ZjdMSWs5aW5ITkd5MUZHbFlQWG1sTXI5cndXbmFfcTloODlqUzI5MEFmSkd0emp5MHNfZ0JVeDM4MnNxbXlfdFJnYlNPTEJ5MXR4Y2VoNXFQSC1ERnZLQmV2aFM3X2tIN2dlWElZd2VwbDNUdUtZR09UZnF5RFhpMThrdDlnRGN3ZEFrM2NpaVFHMjBWbVk?oc=5",
+          "source": "Quiver Quantitative",
+          "publishedAt": "2026-10-28T13:00:00.000Z",
+          "tags": [
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "ethos"
+          ]
+        },
+        {
+          "title": "Inside the rebuild that made Liberty Mutual AI-ready",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdjhXSTllaUV4cXVURFlxUXBPQ1V0VjNNMXZYUy15Vmw0WDBXQ3dFTFg4a1NsZ1VxQWxHUUREeGVPYnFhWmF5S0dFUEhURmdFSUs5QURWSzBBVlBUTU45LXRpMUJmTURlSjVHODVfYmp0eGJwT0J3Qld4TW5BVlp4SFdTaUJOTU0?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-10-20T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Business Moves: Liberty Mutual to Buy Brazil’s Austral Seguradora",
+          "link": "https://www.insurancejournal.com/news/international/2026/10/14/888906.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-10-14T14:41:22.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "Liberty Mutual Insurance said it has an agreement to acquire Austral Seguradora, a top-five Brazilian surety provider headquartered in Rio de Janeiro. Upon completion of the transaction, Liberty Mutual said it will be…",
+          "co": [
+            "austral-seguradora"
+          ]
+        },
+        {
+          "title": "GEICO, Liberty Mutual and Insurify join Sierra’s personal agent protocol initiative",
+          "link": "https://coverager.com/geico-liberty-mutual-and-insurify-join-sierras-personal-agent-protocol-initiative/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-11T08:07:38.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "GEICO, Liberty Mutual, Insurify, and Cigna are among 35 new design partners contributing feedback to the initiative.",
+          "co": [
+            "geico",
+            "insurify",
+            "sierra"
+          ]
+        },
+        {
+          "title": "How Liberty CIO Caldas got high marks for AI transparency",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPMWlwZlQwQ09LaE5ISlVxbHRaZUF2SHhIZF81cFJIOGwyc3lmNmE0VXZrVGVJSTZnYjNlR3lmSEx6RC1KaDM4aEVFbVdMRW1aWE85Ym5BNF9VRW8xUk1JdW81azNfdEhZYUVzMTdBS2JacmZjMVVzcDFKMjdiMmdfYmxBWlBkdHlleUgtVEpR?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-10-08T07:00:00.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual’s Certainly ends its last remaining product",
+          "link": "https://coverager.com/liberty-mutuals-certainly-ends-its-last-remaining-product/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-30T18:06:57.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Certainly initially launched with renters insurance in Illinois and Massachusetts, promising simpler online coverage starting at $5 a month.",
+          "co": [
+            "certainly"
+          ]
+        },
+        {
+          "title": "Liberty Mutual Investments hires Brooks as MD, Head of Insurance Solutions & Capital Markets",
+          "link": "https://www.artemis.bm/news/liberty-mutual-investments-hires-brooks-as-md-head-of-insurance-solutions-capital-markets/?utm_source=rss&utm_medium=rss&utm_campaign=liberty-mutual-investments-hires-brooks-as-md-head-of-insurance-solutions-capital-markets",
+          "source": "Artemis",
+          "publishedAt": "2026-09-24T14:06:31.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Hiscox USA names a new finance chief from Liberty Mutual",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/hiscox-usa-names-a-new-finance-chief-from-liberty-mutual-590578.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-09-22T02:07:20.000Z",
+          "tags": [
+            "Leadership"
+          ],
+          "summary": "The hire comes as Hiscox USA continues expanding its specialty insurance platform",
+          "co": [
+            "hiscox"
+          ]
+        },
+        {
+          "title": "Insurance moves: Carbon Underwriting, Liberty Mutual, Mosaic and 5Star Life",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/insurance-moves-carbon-underwriting-liberty-mutual-mosaic-and-5star-life-589406.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-09-11T03:13:24.000Z",
+          "tags": [
+            "Funding",
+            "Partnerships",
+            "Claims & Underwriting"
+          ],
+          "summary": "Carbon Underwriting has hired its first dedicated US casualty head with fresh growth capital behind the role, and Mosaic has expanded its finpro team with two new integrated products for digital asset and asset…",
+          "co": [
+            "carbon-underwriting",
+            "mosaic",
+            "5star-life"
+          ]
+        },
+        {
+          "title": "Liberty Mutual Reinsurance and Safehub Launch Parametric Earthquake Solution for Fast Payments",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMXdLN1BkblBQYkdHNGY2ekIwSlJqeWhBVEtxWTUtZE9aZEhsOEMzdmhVQnltOERyeXVjZDk2SFVwS1Bsdy1UOGw0TnJKRGFHLVhqbzJZRlY1Q3dwSXFXVnlZakRNQWlYSGtwbjdGYUhYa2xGb2xHcGJiX2I0WWpESE1DemZpUW53ZkVjZXRnbk1qOFZORkRCYU9fZjBhZFA1RV8tSXh6RmVTMEVDTWYxa3V5MA?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-08-14T11:02:34.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual taps insurtech Ethos to launch instant digital life insurance",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9zRHozYXR5UzRYTzlwazIyNjR2QU5qX1Y0cVpTWFpoSXJETVNFSDdVcUY2bE5ZSkt5NW9GOWJkNEwwTFlQZTZFUmp3dzFqRy01Y25HblJVTUJCM203cXZlTTlSR1pDZGxzdHN0Q0pfSQ?oc=5",
+          "source": "beinsure.com",
+          "publishedAt": "2026-08-12T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "ethos"
+          ]
+        },
+        {
+          "title": "Liberty Mutual Q2 profit rises 43% on underwriting improvement and investment gains",
+          "link": "https://www.insurtechinsights.com/liberty-mutual-q2-profit-rises-43-on-underwriting-improvement-and-investment-gains/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-08-07T13:27:40.000Z",
+          "tags": [
+            "Claims & Underwriting",
+            "Property & Cat"
+          ],
+          "summary": "Liberty Mutual reported second-quarter 2026 net income of $2.63 billion, up 43% from the prior-year period, as improved underwriting results, lower catastrophe losses and stronger investment performance supported…",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual Re names new global cyber reinsurance chief",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObWU0NndNcWZJeTFSMjlYY1NrNmtnQjNGS2lFbDIzLTdjM0Y5RU1rdVpiTGJaMFlvR2tkZ1ZTNExZaElNTDJIRzN6T2VZMnZaOXc0RW9nZGZ2MFhvdTJoOHlXSXVzSkNLTWRwOGFRUkpZbDdRakc4enduUmFjQWhzYlVCbmhpRkVWWktSQktUZUxDdk56Z3RYdg?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-07-24T11:29:11.000Z",
+          "tags": [
+            "Cyber",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual Introduces Its Newest Brand Character: Liberty Biberty",
+          "link": "https://www.insurancejournal.com/news/national/2026/07/24/878751.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-07-24T05:16:59.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Liberty Mutual Insurance has introduced its first new brand character in eight years: Liberty Biberty, the embodiment of the warm, fuzzy feeling you get when you have great coverage at a great price. Liberty Mutual…",
+          "co": []
+        },
+        {
+          "title": "Liberty Mutual Re appoints Tom Spurgeon as Global Head of Cyber Reinsurance",
+          "link": "https://www.insurtechinsights.com/liberty-mutual-re-appoints-tom-spurgeon-as-global-head-of-cyber-reinsurance/",
+          "source": "Insurtech Insights",
+          "publishedAt": "2026-07-21T14:53:25.000Z",
+          "tags": [
+            "Cyber",
+            "Property & Cat",
+            "Leadership"
+          ],
+          "summary": "Liberty Mutual Reinsurance Group (LM Re) has appointed Tom Spurgeon as Global Head of Cyber Reinsurance, reinforcing its focus on expanding its global cyber reinsurance business.",
+          "co": []
+        },
+        {
+          "title": "Ethos Collaborates with Liberty Mutual to Deliver a Modern, Digital-First Life Insurance Experience",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNbXA2M09Qa2tkbWtsNUxfUnkwOGVuRXlKN1lTUXhKZVZwY2NrUU5RU2F1aHczenF2UWpva0NHQUdzVjJIZ3RWQVhPdlU5RDUxaS1NTXF6RFJXWTRqQzVONHNrWXhPT3daSWRYbFNkT3ZGdXFfUEJWUlEyTjZJVUxIczMyOHVFNkhRM28tQTZZRmgyRjFZNFhKcmNSQXpZR1ROLXhwUHlwYnZLbW9zZnAzS3pBbTdzV2tKVk96dEdMZ0lxMFJBU3FJR3FqWHhGS3lzeC0zNmJR?oc=5",
+          "source": "FF News",
+          "publishedAt": "2026-07-03T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "ethos"
+          ]
+        },
+        {
+          "title": "Travelers launches AI claims tool; Ethos partners with Liberty Mutual",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ0VOUDRXbVVEMlA1Y3k1OXAxbWRieWtZdkpHYW5CS2szLWxLRWFaNlI1LXV6U2g4c2gzWDY1RnJPZ0VTbWtfWmVhOFhCd05MQlBXLV8xNTRjZGp4VzZuSHUzWVpZZE0wRzAtSGVfYXcydzIyNTNkcXBBUzJaTFRiUjRrVi1EcG90RF93QWpEeFBySHczZ1VEM3FBajY?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-05-11T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": [
+            "travelers",
+            "ethos"
+          ]
+        },
+        {
+          "title": "Liberty Mutual partners Ethos to expand digital life insurance offering",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPVDFubjFwaF90NW4tMjBwNTJfazdyU3ItVXpBTW9NWDAwbHNJcVhsckZoc3FXdldLcEhDTXFiUGJsWHpKN0RYT0M0SmVXcFFtdjZRakhBU2MxQ1A1MzZleW9Kd05ZUk9zWHpqYjJ3ZTN5aFRCemNDRFFROTNWNERyNXNKc2ZVU085MUdFR2stMFl1OEZUZ2czSVlRd1RJMmUxZTRFZGJLS093UQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-04-27T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "ethos"
+          ]
+        },
+        {
+          "title": "Liberty Mutual restructures leadership, Hippo deploys AI claims",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSHBBcTRqZ0N6TEJiX0lhck9kbFNvTHJKYk5zUmplZ0hseVI1WXVfSFhFdEw2ZE5DT2dCMW10eTY4ZnB2TS1RNm12ZGpwbi05eVNvZExFUFFKaDZLUWFnZWZ0VkpKT1Z1UkxBdjI3YXg1NERjbVlmc25RTDZIRy1ienRGRS1zbjBmNkEw?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-04-14T07:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Claims & Underwriting"
+          ],
+          "summary": "",
+          "co": [
+            "hippo"
+          ]
+        }
+      ]
+    },
+    {
       "slug": "perils",
       "name": "PERILS",
       "count": 1,
@@ -24176,357 +24652,6 @@
           "summary": "Stream serves insurers, defense firms and employers across workers’ compensation, bodily injury and personal injury claims.",
           "co": [
             "state-fund"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "liberty-mutual",
-      "name": "Liberty Mutual",
-      "count": 20,
-      "firstSeen": "2026-04-14T07:00:00.000Z",
-      "lastSeen": "2026-10-30T19:31:08.000Z",
-      "topics": [
-        {
-          "name": "Partnerships",
-          "count": 6
-        },
-        {
-          "name": "Property & Cat",
-          "count": 5
-        },
-        {
-          "name": "Product & Launches",
-          "count": 5
-        },
-        {
-          "name": "Health & Life",
-          "count": 4
-        },
-        {
-          "name": "AI & Automation",
-          "count": 4
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 4
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Quiver Quantitative",
-        "Digital Insurance",
-        "Insurance Journal",
-        "Artemis",
-        "Insurance Business",
-        "FF News",
-        "beinsure.com",
-        "Insurtech Insights",
-        "FinTech Global"
-      ],
-      "related": [
-        {
-          "slug": "ethos",
-          "name": "Ethos",
-          "count": 5
-        },
-        {
-          "slug": "austral-seguradora",
-          "name": "Austral Seguradora",
-          "count": 1
-        },
-        {
-          "slug": "geico",
-          "name": "GEICO",
-          "count": 1
-        },
-        {
-          "slug": "insurify",
-          "name": "Insurify",
-          "count": 1
-        },
-        {
-          "slug": "sierra",
-          "name": "Sierra",
-          "count": 1
-        },
-        {
-          "slug": "certainly",
-          "name": "Certainly",
-          "count": 1
-        },
-        {
-          "slug": "hiscox",
-          "name": "Hiscox",
-          "count": 1
-        },
-        {
-          "slug": "carbon-underwriting",
-          "name": "Carbon Underwriting",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Liberty Mutual Re explores cyclone data backup",
-          "link": "https://coverager.com/liberty-mutual-re-explores-cyclone-data-backup/",
-          "source": "Coverager",
-          "publishedAt": "2026-10-30T19:31:08.000Z",
-          "tags": [
-            "Property & Cat"
-          ],
-          "summary": "Parametric insurance promises fast payouts—but needs reliable data. LM Re is exploring a backup for when that data goes missing.",
-          "co": []
-        },
-        {
-          "title": "Ethos and Liberty Mutual Expand Strategic Relationship to Offer Life Insurance Online and Through Call Centers",
-          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcXJWcVlhdG5uRW5XT3p0UkRFT0hWbERfam9Wa0IydmN5ZE1MYkJaZ3VEZWd4NU9xY1BibklDN0o3dDh2VVlYbkZfZWt2ZjdMSWs5aW5ITkd5MUZHbFlQWG1sTXI5cndXbmFfcTloODlqUzI5MEFmSkd0emp5MHNfZ0JVeDM4MnNxbXlfdFJnYlNPTEJ5MXR4Y2VoNXFQSC1ERnZLQmV2aFM3X2tIN2dlWElZd2VwbDNUdUtZR09UZnF5RFhpMThrdDlnRGN3ZEFrM2NpaVFHMjBWbVk?oc=5",
-          "source": "Quiver Quantitative",
-          "publishedAt": "2026-10-28T13:00:00.000Z",
-          "tags": [
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "ethos"
-          ]
-        },
-        {
-          "title": "Inside the rebuild that made Liberty Mutual AI-ready",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdjhXSTllaUV4cXVURFlxUXBPQ1V0VjNNMXZYUy15Vmw0WDBXQ3dFTFg4a1NsZ1VxQWxHUUREeGVPYnFhWmF5S0dFUEhURmdFSUs5QURWSzBBVlBUTU45LXRpMUJmTURlSjVHODVfYmp0eGJwT0J3Qld4TW5BVlp4SFdTaUJOTU0?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-10-20T07:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Business Moves: Liberty Mutual to Buy Brazil’s Austral Seguradora",
-          "link": "https://www.insurancejournal.com/news/international/2026/10/14/888906.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-10-14T14:41:22.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "Liberty Mutual Insurance said it has an agreement to acquire Austral Seguradora, a top-five Brazilian surety provider headquartered in Rio de Janeiro. Upon completion of the transaction, Liberty Mutual said it will be…",
-          "co": [
-            "austral-seguradora"
-          ]
-        },
-        {
-          "title": "GEICO, Liberty Mutual and Insurify join Sierra’s personal agent protocol initiative",
-          "link": "https://coverager.com/geico-liberty-mutual-and-insurify-join-sierras-personal-agent-protocol-initiative/",
-          "source": "Coverager",
-          "publishedAt": "2026-10-11T08:07:38.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "GEICO, Liberty Mutual, Insurify, and Cigna are among 35 new design partners contributing feedback to the initiative.",
-          "co": [
-            "geico",
-            "insurify",
-            "sierra"
-          ]
-        },
-        {
-          "title": "How Liberty CIO Caldas got high marks for AI transparency",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPMWlwZlQwQ09LaE5ISlVxbHRaZUF2SHhIZF81cFJIOGwyc3lmNmE0VXZrVGVJSTZnYjNlR3lmSEx6RC1KaDM4aEVFbVdMRW1aWE85Ym5BNF9VRW8xUk1JdW81azNfdEhZYUVzMTdBS2JacmZjMVVzcDFKMjdiMmdfYmxBWlBkdHlleUgtVEpR?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-10-08T07:00:00.000Z",
-          "tags": [
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Liberty Mutual’s Certainly ends its last remaining product",
-          "link": "https://coverager.com/liberty-mutuals-certainly-ends-its-last-remaining-product/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-30T18:06:57.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Certainly initially launched with renters insurance in Illinois and Massachusetts, promising simpler online coverage starting at $5 a month.",
-          "co": [
-            "certainly"
-          ]
-        },
-        {
-          "title": "Liberty Mutual Investments hires Brooks as MD, Head of Insurance Solutions & Capital Markets",
-          "link": "https://www.artemis.bm/news/liberty-mutual-investments-hires-brooks-as-md-head-of-insurance-solutions-capital-markets/?utm_source=rss&utm_medium=rss&utm_campaign=liberty-mutual-investments-hires-brooks-as-md-head-of-insurance-solutions-capital-markets",
-          "source": "Artemis",
-          "publishedAt": "2026-09-24T14:06:31.000Z",
-          "tags": [
-            "Leadership"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Hiscox USA names a new finance chief from Liberty Mutual",
-          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/hiscox-usa-names-a-new-finance-chief-from-liberty-mutual-590578.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-09-22T02:07:20.000Z",
-          "tags": [
-            "Leadership"
-          ],
-          "summary": "The hire comes as Hiscox USA continues expanding its specialty insurance platform",
-          "co": [
-            "hiscox"
-          ]
-        },
-        {
-          "title": "Insurance moves: Carbon Underwriting, Liberty Mutual, Mosaic and 5Star Life",
-          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/insurance-moves-carbon-underwriting-liberty-mutual-mosaic-and-5star-life-589406.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-09-11T03:13:24.000Z",
-          "tags": [
-            "Funding",
-            "Partnerships",
-            "Claims & Underwriting"
-          ],
-          "summary": "Carbon Underwriting has hired its first dedicated US casualty head with fresh growth capital behind the role, and Mosaic has expanded its finpro team with two new integrated products for digital asset and asset…",
-          "co": [
-            "carbon-underwriting",
-            "mosaic",
-            "5star-life"
-          ]
-        },
-        {
-          "title": "Liberty Mutual Reinsurance and Safehub Launch Parametric Earthquake Solution for Fast Payments",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMXdLN1BkblBQYkdHNGY2ekIwSlJqeWhBVEtxWTUtZE9aZEhsOEMzdmhVQnltOERyeXVjZDk2SFVwS1Bsdy1UOGw0TnJKRGFHLVhqbzJZRlY1Q3dwSXFXVnlZakRNQWlYSGtwbjdGYUhYa2xGb2xHcGJiX2I0WWpESE1DemZpUW53ZkVjZXRnbk1qOFZORkRCYU9fZjBhZFA1RV8tSXh6RmVTMEVDTWYxa3V5MA?oc=5",
-          "source": "FF News",
-          "publishedAt": "2026-08-14T11:02:34.000Z",
-          "tags": [
-            "Product & Launches",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Liberty Mutual taps insurtech Ethos to launch instant digital life insurance",
-          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9zRHozYXR5UzRYTzlwazIyNjR2QU5qX1Y0cVpTWFpoSXJETVNFSDdVcUY2bE5ZSkt5NW9GOWJkNEwwTFlQZTZFUmp3dzFqRy01Y25HblJVTUJCM203cXZlTTlSR1pDZGxzdHN0Q0pfSQ?oc=5",
-          "source": "beinsure.com",
-          "publishedAt": "2026-08-12T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "ethos"
-          ]
-        },
-        {
-          "title": "Liberty Mutual Q2 profit rises 43% on underwriting improvement and investment gains",
-          "link": "https://www.insurtechinsights.com/liberty-mutual-q2-profit-rises-43-on-underwriting-improvement-and-investment-gains/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-08-07T13:27:40.000Z",
-          "tags": [
-            "Claims & Underwriting",
-            "Property & Cat"
-          ],
-          "summary": "Liberty Mutual reported second-quarter 2026 net income of $2.63 billion, up 43% from the prior-year period, as improved underwriting results, lower catastrophe losses and stronger investment performance supported…",
-          "co": []
-        },
-        {
-          "title": "Liberty Mutual Re names new global cyber reinsurance chief",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObWU0NndNcWZJeTFSMjlYY1NrNmtnQjNGS2lFbDIzLTdjM0Y5RU1rdVpiTGJaMFlvR2tkZ1ZTNExZaElNTDJIRzN6T2VZMnZaOXc0RW9nZGZ2MFhvdTJoOHlXSXVzSkNLTWRwOGFRUkpZbDdRakc4enduUmFjQWhzYlVCbmhpRkVWWktSQktUZUxDdk56Z3RYdg?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-07-24T11:29:11.000Z",
-          "tags": [
-            "Cyber",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Liberty Mutual Introduces Its Newest Brand Character: Liberty Biberty",
-          "link": "https://www.insurancejournal.com/news/national/2026/07/24/878751.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-07-24T05:16:59.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Liberty Mutual Insurance has introduced its first new brand character in eight years: Liberty Biberty, the embodiment of the warm, fuzzy feeling you get when you have great coverage at a great price. Liberty Mutual…",
-          "co": []
-        },
-        {
-          "title": "Liberty Mutual Re appoints Tom Spurgeon as Global Head of Cyber Reinsurance",
-          "link": "https://www.insurtechinsights.com/liberty-mutual-re-appoints-tom-spurgeon-as-global-head-of-cyber-reinsurance/",
-          "source": "Insurtech Insights",
-          "publishedAt": "2026-07-21T14:53:25.000Z",
-          "tags": [
-            "Cyber",
-            "Property & Cat",
-            "Leadership"
-          ],
-          "summary": "Liberty Mutual Reinsurance Group (LM Re) has appointed Tom Spurgeon as Global Head of Cyber Reinsurance, reinforcing its focus on expanding its global cyber reinsurance business.",
-          "co": []
-        },
-        {
-          "title": "Ethos Collaborates with Liberty Mutual to Deliver a Modern, Digital-First Life Insurance Experience",
-          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNbXA2M09Qa2tkbWtsNUxfUnkwOGVuRXlKN1lTUXhKZVZwY2NrUU5RU2F1aHczenF2UWpva0NHQUdzVjJIZ3RWQVhPdlU5RDUxaS1NTXF6RFJXWTRqQzVONHNrWXhPT3daSWRYbFNkT3ZGdXFfUEJWUlEyTjZJVUxIczMyOHVFNkhRM28tQTZZRmgyRjFZNFhKcmNSQXpZR1ROLXhwUHlwYnZLbW9zZnAzS3pBbTdzV2tKVk96dEdMZ0lxMFJBU3FJR3FqWHhGS3lzeC0zNmJR?oc=5",
-          "source": "FF News",
-          "publishedAt": "2026-07-03T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "ethos"
-          ]
-        },
-        {
-          "title": "Travelers launches AI claims tool; Ethos partners with Liberty Mutual",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ0VOUDRXbVVEMlA1Y3k1OXAxbWRieWtZdkpHYW5CS2szLWxLRWFaNlI1LXV6U2g4c2gzWDY1RnJPZ0VTbWtfWmVhOFhCd05MQlBXLV8xNTRjZGp4VzZuSHUzWVpZZE0wRzAtSGVfYXcydzIyNTNkcXBBUzJaTFRiUjRrVi1EcG90RF93QWpEeFBySHczZ1VEM3FBajY?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-05-11T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": [
-            "travelers",
-            "ethos"
-          ]
-        },
-        {
-          "title": "Liberty Mutual partners Ethos to expand digital life insurance offering",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPVDFubjFwaF90NW4tMjBwNTJfazdyU3ItVXpBTW9NWDAwbHNJcVhsckZoc3FXdldLcEhDTXFiUGJsWHpKN0RYT0M0SmVXcFFtdjZRakhBU2MxQ1A1MzZleW9Kd05ZUk9zWHpqYjJ3ZTN5aFRCemNDRFFROTNWNERyNXNKc2ZVU085MUdFR2stMFl1OEZUZ2czSVlRd1RJMmUxZTRFZGJLS093UQ?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-04-27T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "ethos"
-          ]
-        },
-        {
-          "title": "Liberty Mutual restructures leadership, Hippo deploys AI claims",
-          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSHBBcTRqZ0N6TEJiX0lhck9kbFNvTHJKYk5zUmplZ0hseVI1WXVfSFhFdEw2ZE5DT2dCMW10eTY4ZnB2TS1RNm12ZGpwbi05eVNvZExFUFFKaDZLUWFnZWZ0VkpKT1Z1UkxBdjI3YXg1NERjbVlmc25RTDZIRy1ienRGRS1zbjBmNkEw?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-04-14T07:00:00.000Z",
-          "tags": [
-            "AI & Automation",
-            "Claims & Underwriting"
-          ],
-          "summary": "",
-          "co": [
-            "hippo"
           ]
         }
       ]
@@ -29228,8 +29353,8 @@
       "sources": [
         "01net",
         "Traders Union",
-        "Business Wire",
         "Reinsurance News",
+        "Business Wire",
         "Artemis",
         "theinsurer.com",
         "Carrier Management"
@@ -29285,17 +29410,6 @@
           "co": []
         },
         {
-          "title": "Most Popular Best's Review Articles Include a Look Into the Future of Insurance Technology",
-          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNLVg0NlAydmZqLW52R3pzNWozd2s3SXlfMksxd083R01iTkJtNXhCekViRlo4dHh3eXUxM0UyTGs2MnVhdl9ZLXJpNkRNalpfbUI3RXhwdEVfOWJFenF1MjRTcVMtbVAyUENweEdzTzZKSC1XZzQxbU0xX1czV1lWMTdkZk1YWjJ3SUl1RW5Xcmc4Z0w4LWJtXzZoNGQ3QzFZUTlNNjhoMnVQbWhUSTlHVWtfNDI1Um8tM1NsWUhCbm9xOXl1ZlRELXBXM3BnU2ZEeXNjd21teFpuOE9laF84?oc=5",
-          "source": "Business Wire",
-          "publishedAt": "2026-10-28T19:39:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
           "title": "AM Best warns PHP vulnerabilities could pose systemic risk for cyber insurers",
           "link": "https://www.reinsurancene.ws/am-best-warns-php-vulnerabilities-could-pose-systemic-risk-for-cyber-insurers/",
           "source": "Reinsurance News",
@@ -29304,6 +29418,17 @@
             "Cyber"
           ],
           "summary": "AM Best, an international credit rating agency specialising in the insurance sector, has warned that security vulnerabilities in the PHP programming language could expose cyber insurers to widespread losses. In a recent…",
+          "co": []
+        },
+        {
+          "title": "Most Popular Best's Review Articles Include a Look Into the Future of Insurance Technology",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNLVg0NlAydmZqLW52R3pzNWozd2s3SXlfMksxd083R01iTkJtNXhCekViRlo4dHh3eXUxM0UyTGs2MnVhdl9ZLXJpNkRNalpfbUI3RXhwdEVfOWJFenF1MjRTcVMtbVAyUENweEdzTzZKSC1XZzQxbU0xX1czV1lWMTdkZk1YWjJ3SUl1RW5Xcmc4Z0w4LWJtXzZoNGQ3QzFZUTlNNjhoMnVQbWhUSTlHVWtfNDI1Um8tM1NsWUhCbm9xOXl1ZlRELXBXM3BnU2ZEeXNjd21teFpuOE9laF84?oc=5",
+          "source": "Business Wire",
+          "publishedAt": "2026-10-28T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
           "co": []
         },
         {
