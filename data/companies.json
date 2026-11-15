@@ -1,7 +1,141 @@
 {
-  "updatedAt": "2026-11-14T19:01:04.557Z",
-  "count": 2452,
+  "updatedAt": "2026-11-15T19:00:50.685Z",
+  "count": 2454,
   "companies": [
+    {
+      "slug": "advent",
+      "name": "Advent",
+      "count": 1,
+      "firstSeen": "2026-11-15T15:01:39.000Z",
+      "lastSeen": "2026-11-15T15:01:39.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "vermeg",
+          "name": "Vermeg",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Advent to acquire insurance software provider Vermeg",
+          "link": "https://coverager.com/advent-to-acquire-insurance-software-provider-vermeg/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-15T15:01:39.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships"
+          ],
+          "summary": "Advent operating partner and Sapiens chairman Mike Ettling will become chairman at closing.",
+          "co": [
+            "vermeg"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "vermeg",
+      "name": "Vermeg",
+      "count": 1,
+      "firstSeen": "2026-11-15T15:01:39.000Z",
+      "lastSeen": "2026-11-15T15:01:39.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "advent",
+          "name": "Advent",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Advent to acquire insurance software provider Vermeg",
+          "link": "https://coverager.com/advent-to-acquire-insurance-software-provider-vermeg/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-15T15:01:39.000Z",
+          "tags": [
+            "M&A",
+            "Partnerships"
+          ],
+          "summary": "Advent operating partner and Sapiens chairman Mike Ettling will become chairman at closing.",
+          "co": [
+            "advent"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "stitchstudio",
+      "name": "StitchStudio",
+      "count": 2,
+      "firstSeen": "2026-11-11T16:02:24.000Z",
+      "lastSeen": "2026-11-14T19:46:10.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Beinsure",
+        "Coverager"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Insurtech StitchStudio raises $8 mn to expand AI automation in insurance",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObzZjU3E0WXFtUXhUVTNFU0s4WjE3VXczNmxYdXBfUi1SR3JZNjNzX2VyZVVkV2NpNnB1MmRJUkRmN0FHbTNaOGR5bDRzY2pRSDhIV1Q3U0VXRHFPNHgzTW5UR3lGMm5IbzFOLTFsY1dQQVZfcnFVNWU2bVpiYmlwQVRJdnNBMlVqT2NfMzRuZHg?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-11-14T19:46:10.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "StitchStudio raises $8 million",
+          "link": "https://coverager.com/stitchstudio-raises-8-million/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-11T16:02:24.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "StitchStudio builds AI agents on an insurance-specific model of products.",
+          "co": []
+        }
+      ]
+    },
     {
       "slug": "rockpool-investments",
       "name": "Rockpool Investments",
@@ -9145,41 +9279,6 @@
           "co": [
             "ancep"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "stitchstudio",
-      "name": "StitchStudio",
-      "count": 1,
-      "firstSeen": "2026-11-11T16:02:24.000Z",
-      "lastSeen": "2026-11-11T16:02:24.000Z",
-      "topics": [
-        {
-          "name": "Funding",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "StitchStudio raises $8 million",
-          "link": "https://coverager.com/stitchstudio-raises-8-million/",
-          "source": "Coverager",
-          "publishedAt": "2026-11-11T16:02:24.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "StitchStudio builds AI agents on an insurance-specific model of products.",
-          "co": []
         }
       ]
     },
