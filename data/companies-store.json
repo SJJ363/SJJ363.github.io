@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T20:58:20.597Z",
+  "updatedAt": "2026-11-19T02:12:28.206Z",
   "seen": {
     "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZV9JU0NKallDc3lJazZCV05wMmRqbEsyZDZQR2c0eDV2RExvaWRQUHNONldZZl8xVV9qLVFQb1ZJNUFZcnAtN24zNnJzcnhrVGpHUk1oOGVNT2ZSSzJFWDFaclRXMnhhUkJJcUhncktPOVctTzZwSFVBaHVHZ2NaOXgyQllfUQ?oc=5": {
       "title": "QuoteCheck wins Insurance Business 5-star tech nod",
@@ -73041,6 +73041,29 @@
       "summary": "",
       "firstSeen": "2026-11-18T20:57:50.171Z",
       "native": true
+    },
+    "https://coverager.com/teslas-licensed-carriers-report-q3-2026-results/": {
+      "title": "Tesla’s licensed carriers report Q3 2026 results",
+      "source": "Coverager",
+      "publishedAt": "2026-11-19T00:03:09.000Z",
+      "tags": [
+        "Auto & Mobility",
+        "Regulation"
+      ],
+      "summary": "Tesla offers car insurance in 15 states.",
+      "firstSeen": "2026-11-19T02:12:21.445Z",
+      "native": true
+    },
+    "https://coverager.com/intact-expands-global-insurance-network/": {
+      "title": "Intact expands global insurance network",
+      "source": "Coverager",
+      "publishedAt": "2026-11-18T22:27:20.000Z",
+      "tags": [
+        "Partnerships"
+      ],
+      "summary": "It added Guardian Group and Ceylinco Insurance as network partners to extend its multinational coverage.",
+      "firstSeen": "2026-11-19T02:12:21.445Z",
+      "native": true
     }
   },
   "extracted": {
@@ -118858,6 +118881,20 @@
       "names": [],
       "by": "claude",
       "pv": 2
+    },
+    "https://coverager.com/teslas-licensed-carriers-report-q3-2026-results/": {
+      "names": [
+        "Tesla"
+      ],
+      "by": "claude",
+      "pv": 2
+    },
+    "https://coverager.com/intact-expands-global-insurance-network/": {
+      "names": [
+        "Intact"
+      ],
+      "by": "claude",
+      "pv": 2
     }
   },
   "funding": {
@@ -130105,12 +130142,12 @@
     },
     "tesla": {
       "known": true,
-      "summary": "Tesla is an electric vehicle and energy company; in insurance news it appears as the maker of cars whose driver-assistance and telematics data insurers use for pricing, and it has offered insurance to its owners.",
+      "summary": "Tesla is an American electric vehicle and energy company that also offers its own car insurance in several US states through licensed carriers. Its insurance pricing draws on driving data from its vehicles.",
       "kind": "Other",
       "place": "Austin, United States",
       "pv": 1,
-      "n": 9,
-      "seen": "2026-09-29T12:00:37.000Z"
+      "n": 10,
+      "seen": "2026-11-19T00:03:09.000Z"
     },
     "one": {
       "known": true,
@@ -145605,12 +145642,12 @@
     },
     "intact": {
       "known": true,
-      "summary": "Intact is a Canadian property and casualty insurer that sells home, auto and commercial insurance through brokers and direct channels.",
+      "summary": "Intact is a Canadian property and casualty insurer that sells home, auto and business insurance, and operates specialty and commercial lines internationally.",
       "kind": "Insurer",
       "place": "Toronto, Canada",
       "pv": 1,
-      "n": 1,
-      "seen": "2026-09-29T12:44:22.000Z"
+      "n": 2,
+      "seen": "2026-11-18T22:27:20.000Z"
     },
     "walkerhughes": {
       "known": true,
