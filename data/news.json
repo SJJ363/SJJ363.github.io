@@ -1,85 +1,92 @@
 {
-  "updatedAt": "2026-11-25T15:06:14.168Z",
-  "count": 113,
+  "updatedAt": "2026-11-25T23:51:31.664Z",
+  "count": 140,
   "sources": [
     "American Banker",
     "BW Healthcare World",
     "Beinsure",
+    "Bergen Record",
     "Big News Network.com",
+    "BigGo Finance",
+    "Boston Consulting Group",
     "Built In Chicago",
+    "Business Reporter",
+    "Business Standard",
     "Business Today Kenya",
-    "Business Wire",
     "BusinessLine",
     "BusinessWorld Online",
-    "CXOToday.com",
     "Carrier Management",
     "Coverager",
+    "Dealroom",
     "Digital Insurance",
     "ET Now",
+    "EU-Startups",
     "Elets BFSI",
+    "FinTech Futures",
     "FinTech Global",
     "FinanceX Magazine",
-    "Fintech News Philippines",
     "Food Business Middle East & Africa",
-    "Future Market Insights",
     "Global Reinsurance",
     "Hogan Lovells Cadwalader",
+    "ITIJ",
     "Inspenonline",
     "Insurance Asia",
     "Insurance Biz",
     "Insurance Business",
     "Insurance Business UK",
-    "Insurance Edge",
     "Insurance Journal",
-    "Insurance News",
     "Intelligent Insurer",
     "Logistics Middle East",
-    "London Stock Exchange",
     "Mexico Business News",
     "NTT Data",
+    "Nanalyze",
+    "PEI Private Equity",
     "Program Business",
     "PropertyCasualty360",
-    "QA Financial",
     "Quantisnow",
+    "Reinsurance News",
     "Risk & Insurance",
-    "The Digital Banker",
+    "The Business Journals",
+    "The Economic Times",
     "The Insurer",
     "Traders Union",
-    "TradingView",
+    "UCL | University College London",
+    "WatchPro USA",
     "Web corporativa - Mapfre",
     "Yahoo Finance",
-    "Zawya",
     "attom",
-    "businessinsurance.com"
+    "bfsi.economictimes.indiatimes.com",
+    "businessinsurance.com",
+    "iTWire"
   ],
   "taxonomy": [
     {
       "name": "Funding",
-      "count": 12
+      "count": 22
     },
     {
       "name": "M&A",
-      "count": 11
+      "count": 14
     },
     {
       "name": "Partnerships",
-      "count": 6
-    },
-    {
-      "name": "Product & Launches",
       "count": 7
     },
     {
+      "name": "Product & Launches",
+      "count": 11
+    },
+    {
       "name": "AI & Automation",
-      "count": 41
+      "count": 54
     },
     {
       "name": "Embedded",
-      "count": 5
+      "count": 3
     },
     {
       "name": "Cyber",
-      "count": 10
+      "count": 9
     },
     {
       "name": "Claims & Underwriting",
@@ -91,11 +98,11 @@
     },
     {
       "name": "Auto & Mobility",
-      "count": 6
+      "count": 5
     },
     {
       "name": "Property & Cat",
-      "count": 1
+      "count": 5
     },
     {
       "name": "Regulation",
@@ -103,11 +110,11 @@
     },
     {
       "name": "Leadership",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Industry",
-      "count": 29
+      "count": 35
     }
   ],
   "briefing": {
@@ -158,6 +165,175 @@
   },
   "articles": [
     {
+      "title": "MGA underwriting gets live carrier data and audit-ready guardrails",
+      "link": "https://www.insurancebusinessmag.com/us/news/technology/mga-underwriting-gets-live-carrier-data-and-auditready-guardrails-598852.aspx",
+      "source": "Insurance Business",
+      "summary": "Avoca Risk’s Anthony Dagostino on real-time data, AI triage and staying inside delegated authority",
+      "tags": [
+        "AI & Automation",
+        "Claims & Underwriting"
+      ],
+      "publishedAt": "2026-11-25T17:02:59.000Z",
+      "timestamp": 1795626179000,
+      "score": 2.882,
+      "clusterId": "t1",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "AM Best upgrades Beazley subsidiaries credit ratings following Zurich acquisition",
+      "link": "https://www.reinsurancene.ws/am-best-upgrades-beazley-subsidiaries-credit-ratings-following-zurich-acquisition/",
+      "source": "Reinsurance News",
+      "summary": "AM Best has upgraded the credit ratings of five core Beazley insurance subsidiaries and removed them from under review with positive implications, following the completion of Beazley’s acquisition by Zurich Insurance…",
+      "tags": [
+        "M&A"
+      ],
+      "publishedAt": "2026-11-25T17:00:47.000Z",
+      "timestamp": 1795626047000,
+      "score": 3.38,
+      "clusterId": "t2",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "AM Best",
+          "slug": "am-best"
+        },
+        {
+          "name": "Beazley",
+          "slug": "beazley"
+        },
+        {
+          "name": "Zurich",
+          "slug": "zurich"
+        }
+      ]
+    },
+    {
+      "title": "Grange Insurance cuts commercial quoting time in half for agents",
+      "link": "https://www.insurancebusinessmag.com/us/news/technology/grange-insurance-cuts-commercial-quoting-time-in-half-for-agents-598850.aspx",
+      "source": "Insurance Business",
+      "summary": "Incoming CEO Ryan Michel says appetite clarity drove Grange's digital transformation gains",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-25T16:59:18.000Z",
+      "timestamp": 1795625958000,
+      "score": 2.878,
+      "clusterId": "t3",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Grange Insurance",
+          "slug": "grange-insurance"
+        }
+      ]
+    },
+    {
+      "title": "Submission intake is insurance transformation's biggest headache",
+      "link": "https://www.insurancebusinessmag.com/us/news/technology/submission-intake-is-insurance-transformations-biggest-headache-598845.aspx",
+      "source": "Insurance Business",
+      "summary": "Insurance leaders on why AI document ingestion is paying off first and where it still stalls",
+      "tags": [
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-25T16:51:00.000Z",
+      "timestamp": 1795625460000,
+      "score": 2.867,
+      "clusterId": "t4",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Why the soft market and AI are raising the stakes for insurance marketing",
+      "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/why-the-soft-market-and-ai-are-raising-the-stakes-for-insurance-marketing-598835.aspx",
+      "source": "Insurance Business",
+      "summary": "IMCA chair Lorraine Jeckells connects brand investment with growth, recruitment and winning new business",
+      "tags": [
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-25T16:24:11.000Z",
+      "timestamp": 1795623851000,
+      "score": 2.832,
+      "clusterId": "t5",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Price Forbes launches dedicated Healthcare & Life Sciences division, appoints Henry as CEO",
+      "link": "https://www.reinsurancene.ws/price-forbes-launches-dedicated-healthcare-life-sciences-division-appoints-henry-as-ceo/",
+      "source": "Reinsurance News",
+      "summary": "Specialist insurance broking firm Price Forbes has announced the launch of Healthcare & Life Sciences as a standalone specialist division, with Dominic Henry as CEO. Formerly part of the Casualty division, this new…",
+      "tags": [
+        "Product & Launches",
+        "Health & Life",
+        "Leadership"
+      ],
+      "publishedAt": "2026-11-25T16:00:01.000Z",
+      "timestamp": 1795622401000,
+      "score": 3.002,
+      "clusterId": "t6",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Price Forbes",
+          "slug": "price-forbes"
+        }
+      ]
+    },
+    {
+      "title": "Around the P&C insurance industry: November 25, 2026",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVFNqQV9udldQVnM1N2s4U1l4ZGc3aVNkSUNwNnhNekZsd3prTk9DamdIcm9ucDV1N3B5eGpud3YwZDNkMXlCTFpMcEpKVldFdTROZzcybHpCTTJFVDE2THlHUF9NMXk0VFprZjFRTG0tWElza1p0b1g3SUhKNlRBQUkzdkQ5RGhyVFlEQk12SzdrY3ZPWmRMMg?oc=5",
+      "source": "PropertyCasualty360",
+      "summary": "",
+      "tags": [
+        "Property & Cat"
+      ],
+      "publishedAt": "2026-11-25T15:33:35.000Z",
+      "timestamp": 1795620815000,
+      "native": true,
+      "score": 1.769,
+      "clusterId": "t7",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Ancileo launches digital platform for real-time travel insurance support",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOekFmdk56NlZ1WXBCZGs1YmQ4R2xKTnFIQmkxMzlUbHg0QmFNUVVReDlDcU1Mck1Zc1lkVHozUWdjdFIyc0YtWF83d0tyYV9CUkt0V3lONllPeDdfWDZFekFjMmRXYzVaeXdJVnM5Y2FDTmZFZk03TXVUeFlkWEFVX0FObGxFZnlZRi12RDZoMHBLSlhOUjNtMGRPOEkzSUgzZFE4?oc=5",
+      "source": "ITIJ",
+      "summary": "",
+      "tags": [
+        "Product & Launches"
+      ],
+      "publishedAt": "2026-11-25T15:06:32.000Z",
+      "timestamp": 1795619192000,
+      "native": true,
+      "score": 1.936,
+      "clusterId": "t8",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Ancileo",
+          "slug": "ancileo"
+        }
+      ]
+    },
+    {
+      "title": "GIFT City insurance premiums cross $1bn in H1FY27: IFSCA chairman",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNFE2Zld0ek9HemtzVHNqblZaQTlzRzdzT0o5aWtXUGpCSVhfVGFkb0F3ZlN6THZDT3p2Q09RY0xJWHF6R3dfZG0tWm1BWHA0djNHSWRRX01Rc3pwZDdqcVYwekxiVnluZkU3dGliSDd3RWE5a0QzbVZBQm02OFBZMXRFRU1MaUhNUksybUlSS3pPRTQtNE42cGc2NXpyY1ZSLXYxWE5rbEZCNGdPemNJVmNsMXdRSFd4dGlranBsLTVPSGQtUmFaMHBEYmPSAdIBQVVfeXFMTXFPRkJkX1RyUGJlZkVEZVJLZHpmMFZzN0YwdGxRTERuMmRYSnZ2YkJYV0pmb09Eb2VrMF9KZWR6V1NiVzNZbFVtOExUdU9yWGxrVHVnNHktWndZc0dmWmRvU3RYMlhLcUtncTNNclJiVnpfVTFIRy1uWmYtcVNDWFZVRlo3Y0FpWUFIeWRPNlNfSGZvYXNVUmRCQUlnOG5fQmxXa21HVFpHVFVUbE44UmhJY3c1eDB5STBOWWNoaFlycHY1RElZWWx4dXVoSDVDQXF3?oc=5",
+      "source": "Business Standard",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-25T15:02:35.000Z",
+      "timestamp": 1795618955000,
+      "native": true,
+      "score": 2.331,
+      "clusterId": "t9",
+      "cluster": 1,
+      "companies": []
+    },
+    {
       "title": "Lassie brings AI pet insurance to MoneySuperMarket",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQVGFfWHhDM3pNd2tZSEVITEdob29uUFhiY0dxZmFPOS1mOUZjcENNeWlKTHM0WERJeUljTUN5WkpkLVc5ZjF6anE1WDJRVXN1N3huaDVWNExJeWlSZzNTV0lGbmNfN21FM2c5b1VHZzdPVTFXazFwUjJHeVkzYzc2SVNKNTFZRV9tamlEOTNB?oc=5",
       "source": "FinTech Global",
@@ -168,8 +344,8 @@
       "publishedAt": "2026-11-25T14:50:06.000Z",
       "timestamp": 1795618206000,
       "native": true,
-      "score": 3.472,
-      "clusterId": "t1",
+      "score": 2.717,
+      "clusterId": "t10",
       "cluster": 1,
       "companies": [
         {
@@ -192,8 +368,8 @@
       ],
       "publishedAt": "2026-11-25T14:40:07.000Z",
       "timestamp": 1795617607000,
-      "score": 4.055,
-      "clusterId": "t2",
+      "score": 3.305,
+      "clusterId": "t11",
       "cluster": 1,
       "companies": [
         {
@@ -214,8 +390,8 @@
       "publishedAt": "2026-11-25T14:36:38.000Z",
       "timestamp": 1795617398000,
       "native": true,
-      "score": 3.949,
-      "clusterId": "t3",
+      "score": 3.201,
+      "clusterId": "t12",
       "cluster": 1,
       "companies": [
         {
@@ -240,8 +416,8 @@
       "publishedAt": "2026-11-25T14:06:14.000Z",
       "timestamp": 1795615574000,
       "native": true,
-      "score": 5.398,
-      "clusterId": "t4",
+      "score": 4.665,
+      "clusterId": "t13",
       "cluster": 4,
       "companies": [
         {
@@ -251,6 +427,78 @@
         {
           "name": "Tailwind",
           "slug": "tailwind"
+        }
+      ]
+    },
+    {
+      "title": "AI set to reshape insurance jobs, skills and workforce strategies, Oxbow Partners and LMG reports",
+      "link": "https://www.reinsurancene.ws/ai-set-to-reshape-insurance-jobs-skills-and-workforce-strategies-oxbow-partners-and-lmg-reports/",
+      "source": "Reinsurance News",
+      "summary": "Oxbow Partners, a specialist management consultancy serving the insurance industry, has joined forces with the London Market Group (LMG), which represents London’s commercial insurance and reinsurance market, to produce…",
+      "tags": [
+        "Partnerships",
+        "AI & Automation",
+        "Property & Cat"
+      ],
+      "publishedAt": "2026-11-25T14:00:41.000Z",
+      "timestamp": 1795615241000,
+      "score": 2.859,
+      "clusterId": "t14",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Oxbow Partners",
+          "slug": "oxbow-partners"
+        },
+        {
+          "name": "LMG",
+          "slug": "lmg"
+        }
+      ]
+    },
+    {
+      "title": "Increasing complexity strengthens reinsurance relevance and creates opportunities: Hannover Re CEO",
+      "link": "https://www.reinsurancene.ws/increasing-complexity-strengthens-reinsurance-relevance-and-creates-opportunities-hannover-re-ceo/",
+      "source": "Reinsurance News",
+      "summary": "Hannover Re CEO Clemens Jungsthöfel believes that increasing complexity is strengthening the case for reinsurance and opening new avenues for reinsurers, as clients look for partners combining technical expertise with…",
+      "tags": [
+        "Partnerships",
+        "Property & Cat"
+      ],
+      "publishedAt": "2026-11-25T13:00:51.000Z",
+      "timestamp": 1795611651000,
+      "score": 2.591,
+      "clusterId": "t15",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Hannover Re",
+          "slug": "hannover-re"
+        }
+      ]
+    },
+    {
+      "title": "Matmut Group to launch reinsurance subsidiary Matmut Re",
+      "link": "https://www.reinsurancene.ws/matmut-group-to-launch-reinsurance-subsidiary-matmut-re/",
+      "source": "Reinsurance News",
+      "summary": "Matmut Group, a French mutual insurance company, has announced the establishment of Matmut Re, a reinsurance company that will officially begin operations on 1 January 2026. Matmut Re is a wholly owned subsidiary of…",
+      "tags": [
+        "Product & Launches",
+        "Property & Cat"
+      ],
+      "publishedAt": "2026-11-25T11:30:35.000Z",
+      "timestamp": 1795606235000,
+      "score": 2.694,
+      "clusterId": "t16",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Matmut Group",
+          "slug": "matmut-group"
+        },
+        {
+          "name": "Matmut Re",
+          "slug": "matmut-re"
         }
       ]
     },
@@ -265,8 +513,8 @@
       ],
       "publishedAt": "2026-11-25T11:27:57.000Z",
       "timestamp": 1795606077000,
-      "score": 3.148,
-      "clusterId": "t5",
+      "score": 2.492,
+      "clusterId": "t17",
       "cluster": 1,
       "companies": []
     },
@@ -282,8 +530,8 @@
       "publishedAt": "2026-11-25T11:20:47.000Z",
       "timestamp": 1795605647000,
       "native": true,
-      "score": 2.138,
-      "clusterId": "t6",
+      "score": 1.484,
+      "clusterId": "t18",
       "cluster": 1,
       "companies": []
     },
@@ -299,8 +547,8 @@
       "publishedAt": "2026-11-25T11:03:11.000Z",
       "timestamp": 1795604591000,
       "native": true,
-      "score": 2.312,
-      "clusterId": "t7",
+      "score": 1.666,
+      "clusterId": "t19",
       "cluster": 1,
       "companies": []
     },
@@ -314,8 +562,8 @@
       ],
       "publishedAt": "2026-11-25T11:02:24.000Z",
       "timestamp": 1795604544000,
-      "score": 3.611,
-      "clusterId": "t8",
+      "score": 2.965,
+      "clusterId": "t20",
       "cluster": 2,
       "companies": []
     },
@@ -329,8 +577,8 @@
       ],
       "publishedAt": "2026-11-25T11:02:24.000Z",
       "timestamp": 1795604544000,
-      "score": 2.611,
-      "clusterId": "t8",
+      "score": 1.965,
+      "clusterId": "t20",
       "cluster": 2,
       "companies": []
     },
@@ -345,8 +593,8 @@
       "publishedAt": "2026-11-25T11:00:00.000Z",
       "timestamp": 1795604400000,
       "native": true,
-      "score": 3.107,
-      "clusterId": "t9",
+      "score": 2.463,
+      "clusterId": "t21",
       "cluster": 1,
       "companies": [
         {
@@ -366,8 +614,8 @@
       "publishedAt": "2026-11-25T11:00:00.000Z",
       "timestamp": 1795604400000,
       "native": true,
-      "score": 3.107,
-      "clusterId": "t10",
+      "score": 2.463,
+      "clusterId": "t22",
       "cluster": 1,
       "companies": [
         {
@@ -375,22 +623,6 @@
           "slug": "progressive"
         }
       ]
-    },
-    {
-      "title": "Around the P&C insurance industry: November 25, 2026",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVFNqQV9udldQVnM1N2s4U1l4ZGc3aVNkSUNwNnhNekZsd3prTk9DamdIcm9ucDV1N3B5eGpud3YwZDNkMXlCTFpMcEpKVldFdTROZzcybHpCTTJFVDE2THlHUF9NMXk0VFprZjFRTG0tWElza1p0b1g3SUhKNlRBQUkzdkQ5RGhyVFlEQk12SzdrY3ZPWmRMMg?oc=5",
-      "source": "PropertyCasualty360",
-      "summary": "",
-      "tags": [
-        "Property & Cat"
-      ],
-      "publishedAt": "2026-11-25T10:00:46.000Z",
-      "timestamp": 1795600846000,
-      "native": true,
-      "score": 2.022,
-      "clusterId": "t11",
-      "cluster": 1,
-      "companies": []
     },
     {
       "title": "Igloo expands insurtech push as El Niño raises protection risks in the Philippines",
@@ -403,8 +635,8 @@
       "publishedAt": "2026-11-25T09:57:30.000Z",
       "timestamp": 1795600650000,
       "native": true,
-      "score": 2.218,
-      "clusterId": "t12",
+      "score": 1.601,
+      "clusterId": "t23",
       "cluster": 1,
       "companies": [
         {
@@ -412,6 +644,22 @@
           "slug": "igloo"
         }
       ]
+    },
+    {
+      "title": "India InsurTech funding stagnates at $120 million in 2025; 69% flows into distribution: Report",
+      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOMWhIUk1ZWXVUSlhRSldKTFhva2RPZ2Q3dy1wY253bC1kNmZNbVdDc3JqWVR5TTloV3d0YWVPNVE2VWg5Q3Z2bmJHeDB5WklhOHdHTkYyT2RNcG9vTzBaUHFKbHlPRnFiSEpBdHNCRU5WNUF1VTF4ZExZYnR3UFR2ZlBTUFVsRWpKczVhS2VFZEw1ejFia1dlNXFPUFZuVDR1Tnk1S1Yzck84T1ZjZWJmWUtSMXVSVkZKb1BBd3J5eTZlZWxIbWx4a0RfbVlCQ0tmc05RSmpIV0xCNzc2M1BsMEFFN2oxZ9IB6wFBVV95cUxOOUEwS0ZiaG8zVG1lcUpTYU1lMUt2d29VX1drRkNTckttbUxsZDdmbU9ZbGZCRl9KODVVWW5qRFNJNjFRODlweXVHdndtSFlfd3NhV092MDhzaWNpWXhWLTFwYWlORkdPUGx4NmxRc2thNFZrOXBRRzI3ZGNIQTVQcWR5Wi1iYjdRUnlPZVdkTnpvNC1sOU5RbGpFTmplbWhkamRLZEZDVlhMbEd1OVhFUm5rRXhudlA3Q1QyQ0pEdEFqWlZPS2xBbXJSb01BLXg3V3AxRnpETmd2ZTRqbEZ6amZGSmN5ZGRpOVhR?oc=5",
+      "source": "bfsi.economictimes.indiatimes.com",
+      "summary": "",
+      "tags": [
+        "Funding"
+      ],
+      "publishedAt": "2026-11-25T09:50:15.000Z",
+      "timestamp": 1795600215000,
+      "native": true,
+      "score": 2.994,
+      "clusterId": "t24",
+      "cluster": 3,
+      "companies": []
     },
     {
       "title": "India's InsurTech funding stabilises at USD 120 million as AI reshapes insurance distribution: BCG-IIA",
@@ -425,9 +673,9 @@
       "publishedAt": "2026-11-25T09:38:00.000Z",
       "timestamp": 1795599480000,
       "native": true,
-      "score": 1.99,
-      "clusterId": "t13",
-      "cluster": 1,
+      "score": 1.882,
+      "clusterId": "t24",
+      "cluster": 3,
       "companies": [
         {
           "name": "BCG",
@@ -446,8 +694,24 @@
       "publishedAt": "2026-11-25T09:35:36.000Z",
       "timestamp": 1795599336000,
       "native": true,
-      "score": 1.987,
-      "clusterId": "t14",
+      "score": 1.38,
+      "clusterId": "t25",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "How I optimised capital allocation for a leading London Insurtech firm",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNk55ZDdCdlowdjl5eEJGWWJIbWRjajdITmhIUGdyV2syZGQ5R1ZGV2lTdzdyN0JmTlRzRVYtNXI5UjE5Y1BreEJ1VHNBbGdjczRPSjhvMjZHNHZOQWpsZ0VoN1BvcFN5NzZ6T3JBYllsWVpYYVlxTlhaenktZFllaVNaR3ZwSzdaaW5FaWdnQlJSSUFib1R6eFpoajVtNENvMFRWaGUwY3IwTHZFVDB1UUp3T2tvc2RxbXBv?oc=5",
+      "source": "UCL | University College London",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-25T08:33:28.000Z",
+      "timestamp": 1795595608000,
+      "native": true,
+      "score": 1.321,
+      "clusterId": "t26",
       "cluster": 1,
       "companies": []
     },
@@ -462,8 +726,46 @@
       "publishedAt": "2026-11-25T07:43:57.000Z",
       "timestamp": 1795592637000,
       "native": true,
-      "score": 1.839,
-      "clusterId": "t15",
+      "score": 1.277,
+      "clusterId": "t27",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "South Korea's Korea Credit Information Services Unveils 7 AI Solutions, From Small-Business Credit Scoring to Financial-Sector Language Model",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8tT2xBYlFsYUhQeWN1ZG5YWXlqb09manl4Nk84dVRqRmFRQVhQM0pIcnF0d2U3T3lRN1Fwd1BWbklEcVBmWWJFbjJNQmxDSFBZVEhnNzBLSjQxWG9kMVIxaDU2dVRtT3VxZ0hUR0lRdC1nXzJTd1E?oc=5",
+      "source": "BigGo Finance",
+      "summary": "",
+      "tags": [
+        "Product & Launches",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-25T07:35:00.000Z",
+      "timestamp": 1795592100000,
+      "native": true,
+      "score": 1.469,
+      "clusterId": "t28",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Korea Credit Information Services",
+          "slug": "korea-credit-information-services"
+        }
+      ]
+    },
+    {
+      "title": "India InsurTech Landscape and Trends 2026: Insurance in the Age of AI",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOVWdGY2N1aWlTYXdsdEM5c1NhMUlpbkg2eUdqQmJKMHZraVAtOXdRelEzelJROUhsQVl0dGsyUkMzcHRFRDJjaUh1dGFhMGxodHlDX0tHeld5ZnRtbUdwam5PSkdlZlRaZXRZOGFHSTlsV3ljdlhUNS1uWXhmRmlON0xOT3RrWDd1cUItdlZSOW9adzlaYnJ1OGtoVEU2cjdwQ3lpMHh3V0lMSGxCUXJmMXVR?oc=5",
+      "source": "Boston Consulting Group",
+      "summary": "",
+      "tags": [
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-25T06:57:51.000Z",
+      "timestamp": 1795589871000,
+      "native": true,
+      "score": 1.237,
+      "clusterId": "t29",
       "cluster": 1,
       "companies": []
     },
@@ -477,45 +779,8 @@
       ],
       "publishedAt": "2026-11-25T06:39:48.000Z",
       "timestamp": 1795588788000,
-      "score": 2.759,
-      "clusterId": "t16",
-      "cluster": 1,
-      "companies": []
-    },
-    {
-      "title": "Oona Insurance Profit More Than Triples as Premiums Climb 67%",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZGl4aWdRdG9DNkJMTU1ub3RCQmZVSGZMeXZRc0tnRVoyZ2NjcldhWDRZYnZuaGVJeHBUbzRYbS0zMTFvdmJqa1R0TTJMVXhrMlpfUWhwazNIaEdzTlBLZmxoWDJTYTVRTXVTZHFyYjVCSkRSMVhVajdlb1NMV241X1M5T0RMdUx3?oc=5",
-      "source": "Fintech News Philippines",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-11-25T06:35:46.000Z",
-      "timestamp": 1795588546000,
-      "native": true,
-      "score": 1.754,
-      "clusterId": "t17",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Oona Insurance",
-          "slug": "oona-insurance"
-        }
-      ]
-    },
-    {
-      "title": "Insurance leaders to tackle AI assurance",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQQUVkRjJlWHBIRVExS05MSkJncG5UM1VpWW1XNjBlNTREVERlcUdHSWJLeDRXMy1VaWt2MDNsdTYxdE5GZEhRNFFBaVZhM21JNXhEajB0UFAxeXhkU1pPSnNXNXllOVJYaUpEVGQwZ0FYcGY3QzlheHFLTkR2Y3RYRXRjbl9KZk9KeERmWjFabGNRSl9YVXc?oc=5",
-      "source": "QA Financial",
-      "summary": "",
-      "tags": [
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-11-25T02:08:39.000Z",
-      "timestamp": 1795572519000,
-      "native": true,
-      "score": 1.457,
-      "clusterId": "t18",
+      "score": 2.221,
+      "clusterId": "t30",
       "cluster": 1,
       "companies": []
     },
@@ -531,8 +796,8 @@
       "publishedAt": "2026-11-24T22:49:48.000Z",
       "timestamp": 1795560588000,
       "native": true,
-      "score": 3.269,
-      "clusterId": "t4",
+      "score": 2.881,
+      "clusterId": "t13",
       "cluster": 4,
       "companies": [
         {
@@ -557,8 +822,8 @@
       "publishedAt": "2026-11-24T22:08:30.000Z",
       "timestamp": 1795558110000,
       "native": true,
-      "score": 2.433,
-      "clusterId": "t19",
+      "score": 2.056,
+      "clusterId": "t31",
       "cluster": 1,
       "companies": [
         {
@@ -578,8 +843,8 @@
       "publishedAt": "2026-11-24T21:40:37.000Z",
       "timestamp": 1795556437000,
       "native": true,
-      "score": 4.209,
-      "clusterId": "t4",
+      "score": 3.84,
+      "clusterId": "t13",
       "cluster": 4,
       "companies": [
         {
@@ -605,8 +870,8 @@
       "publishedAt": "2026-11-24T21:33:30.000Z",
       "timestamp": 1795556010000,
       "native": true,
-      "score": 2.203,
-      "clusterId": "t20",
+      "score": 1.836,
+      "clusterId": "t32",
       "cluster": 1,
       "companies": [
         {
@@ -626,8 +891,8 @@
       "publishedAt": "2026-11-24T20:05:48.000Z",
       "timestamp": 1795550748000,
       "native": true,
-      "score": 1.732,
-      "clusterId": "t21",
+      "score": 1.386,
+      "clusterId": "t33",
       "cluster": 1,
       "companies": [
         {
@@ -647,8 +912,8 @@
       "publishedAt": "2026-11-24T19:56:49.000Z",
       "timestamp": 1795550209000,
       "native": true,
-      "score": 1.125,
-      "clusterId": "t22",
+      "score": 0.781,
+      "clusterId": "t34",
       "cluster": 1,
       "companies": []
     },
@@ -663,8 +928,8 @@
       "publishedAt": "2026-11-24T19:43:43.000Z",
       "timestamp": 1795549423000,
       "native": true,
-      "score": 1.115,
-      "clusterId": "t23",
+      "score": 0.774,
+      "clusterId": "t35",
       "cluster": 1,
       "companies": []
     },
@@ -679,8 +944,8 @@
       "publishedAt": "2026-11-24T18:16:19.000Z",
       "timestamp": 1795544179000,
       "native": true,
-      "score": 2.049,
-      "clusterId": "t24",
+      "score": 1.729,
+      "clusterId": "t36",
       "cluster": 1,
       "companies": []
     },
@@ -696,8 +961,8 @@
       "publishedAt": "2026-11-24T18:04:43.000Z",
       "timestamp": 1795543483000,
       "native": true,
-      "score": 2.041,
-      "clusterId": "t25",
+      "score": 1.723,
+      "clusterId": "t37",
       "cluster": 1,
       "companies": [
         {
@@ -720,10 +985,35 @@
       ],
       "publishedAt": "2026-11-24T17:29:54.000Z",
       "timestamp": 1795541394000,
-      "score": 2.016,
-      "clusterId": "t26",
+      "score": 1.706,
+      "clusterId": "t38",
       "cluster": 1,
       "companies": []
+    },
+    {
+      "title": "Main Capital invests in insurtech firm Agenium",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPTzhFME9wOGVsWjJRaDAwR1gwbVcxdnJwNXZzaWU1X0ZwQjc4Vzd2MmNqYzF3dFpfc05RS1ZfUU83a1pIODM4bjNweDNXc0ZDZ3doNVlHNW1IYklUeEhoUUR4X3RvWGU3TWpLcTFPRnhkeTlmZUp6dVVhUlBndVRLc3g4X2VEc2lMUGp3Ym5OTnR2a292?oc=5",
+      "source": "PEI Private Equity",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-24T17:20:12.000Z",
+      "timestamp": 1795540812000,
+      "native": true,
+      "score": 0.701,
+      "clusterId": "t39",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Main Capital",
+          "slug": "main-capital"
+        },
+        {
+          "name": "Agenium",
+          "slug": "agenium"
+        }
+      ]
     },
     {
       "title": "Binance fallout exposes the insurance question behind a crypto theft",
@@ -735,8 +1025,8 @@
       ],
       "publishedAt": "2026-11-24T16:58:41.000Z",
       "timestamp": 1795539521000,
-      "score": 1.994,
-      "clusterId": "t27",
+      "score": 1.69,
+      "clusterId": "t40",
       "cluster": 1,
       "companies": [
         {
@@ -756,8 +1046,8 @@
       "publishedAt": "2026-11-24T16:24:00.000Z",
       "timestamp": 1795537440000,
       "native": true,
-      "score": 1.971,
-      "clusterId": "t28",
+      "score": 1.674,
+      "clusterId": "t41",
       "cluster": 1,
       "companies": [
         {
@@ -778,8 +1068,8 @@
       "publishedAt": "2026-11-24T15:35:25.000Z",
       "timestamp": 1795534525000,
       "native": true,
-      "score": 1.539,
-      "clusterId": "t29",
+      "score": 1.252,
+      "clusterId": "t42",
       "cluster": 1,
       "companies": [
         {
@@ -794,17 +1084,17 @@
     },
     {
       "title": "Applied Systems Acquires Insurtech Tailwind",
-      "link": "https://www.insurancejournal.com/news/national/2026/11/24/893608.htm",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1iWnI1VXdJRm9ROFoxbm50UUFjUEpGVmFzMklSOGRBNHQ0N2xKQThXbDBMM1FSMzU5RHZyYjVzS09GQk84U0FJOFJWWHdheUJqSzNRWEt4ZXk5NXVvTUpOVnVadC02a0lEUmtfUk41bzRQb2VvcHhr?oc=5",
       "source": "Insurance Journal",
-      "summary": "Applied Systems said it has acquired Tailwind to bolster its automation of carrier documents and intake into Applied’s agency management systems. Tailwind’s artificial intelligence-powered technology automates document…",
+      "summary": "",
       "tags": [
-        "M&A",
-        "AI & Automation"
+        "M&A"
       ],
-      "publishedAt": "2026-11-24T15:05:24.000Z",
-      "timestamp": 1795532724000,
-      "score": 3.919,
-      "clusterId": "t4",
+      "publishedAt": "2026-11-24T15:06:59.000Z",
+      "timestamp": 1795532819000,
+      "native": true,
+      "score": 3.639,
+      "clusterId": "t13",
       "cluster": 4,
       "companies": [
         {
@@ -828,8 +1118,8 @@
       "publishedAt": "2026-11-24T15:00:20.000Z",
       "timestamp": 1795532420000,
       "native": true,
-      "score": 2.516,
-      "clusterId": "t30",
+      "score": 2.236,
+      "clusterId": "t43",
       "cluster": 1,
       "companies": [
         {
@@ -850,8 +1140,8 @@
       "publishedAt": "2026-11-24T14:58:40.000Z",
       "timestamp": 1795532320000,
       "native": true,
-      "score": 2.715,
-      "clusterId": "t31",
+      "score": 2.435,
+      "clusterId": "t44",
       "cluster": 1,
       "companies": [
         {
@@ -871,8 +1161,8 @@
       "publishedAt": "2026-11-24T14:00:06.000Z",
       "timestamp": 1795528806000,
       "native": true,
-      "score": 2.378,
-      "clusterId": "t32",
+      "score": 2.11,
+      "clusterId": "t45",
       "cluster": 1,
       "companies": [
         {
@@ -892,8 +1182,8 @@
       "publishedAt": "2026-11-24T13:19:26.000Z",
       "timestamp": 1795526366000,
       "native": true,
-      "score": 0.854,
-      "clusterId": "t33",
+      "score": 0.593,
+      "clusterId": "t46",
       "cluster": 1,
       "companies": [
         {
@@ -912,8 +1202,8 @@
       ],
       "publishedAt": "2026-11-24T13:01:02.000Z",
       "timestamp": 1795525262000,
-      "score": 1.843,
-      "clusterId": "t34",
+      "score": 1.585,
+      "clusterId": "t47",
       "cluster": 1,
       "companies": [
         {
@@ -934,8 +1224,8 @@
       "publishedAt": "2026-11-24T12:09:37.000Z",
       "timestamp": 1795522177000,
       "native": true,
-      "score": 2.014,
-      "clusterId": "t35",
+      "score": 1.765,
+      "clusterId": "t48",
       "cluster": 1,
       "companies": []
     },
@@ -950,8 +1240,8 @@
       "publishedAt": "2026-11-24T12:02:39.000Z",
       "timestamp": 1795521759000,
       "native": true,
-      "score": 2.01,
-      "clusterId": "t36",
+      "score": 1.762,
+      "clusterId": "t49",
       "cluster": 1,
       "companies": [
         {
@@ -961,27 +1251,6 @@
         {
           "name": "Payshift",
           "slug": "payshift"
-        }
-      ]
-    },
-    {
-      "title": "Need to Verify Courier Insurance? Trustd Can Help You -",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPYmVRN285NGUwd256VzZKTVJtb2VqRU9SOV9HYk5IM2ZsWXE3ekVWN0lYWU9ZT1lMNmJqeXFfd1BlYWtKeEt0N2I0MnkzbUtjVUgxWWQ5elhROWlVTzg1RDQwYm5IdXJXaGpSY2VVTUFhVW8za2xjUXpSUDBNWmZmYVprQzh2ZnNaT3YybF9jWndET0d2b2c?oc=5",
-      "source": "Insurance Edge",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-11-24T11:27:19.000Z",
-      "timestamp": 1795519639000,
-      "native": true,
-      "score": 1.79,
-      "clusterId": "t37",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Trustd",
-          "slug": "trustd"
         }
       ]
     },
@@ -996,8 +1265,8 @@
       "publishedAt": "2026-11-24T11:00:00.000Z",
       "timestamp": 1795518000000,
       "native": true,
-      "score": 2.375,
-      "clusterId": "t38",
+      "score": 2.138,
+      "clusterId": "t50",
       "cluster": 1,
       "companies": [
         {
@@ -1018,8 +1287,8 @@
       "publishedAt": "2026-11-24T11:00:00.000Z",
       "timestamp": 1795518000000,
       "native": true,
-      "score": 1.775,
-      "clusterId": "t39",
+      "score": 1.538,
+      "clusterId": "t51",
       "cluster": 1,
       "companies": []
     },
@@ -1034,8 +1303,8 @@
       "publishedAt": "2026-11-24T10:11:20.000Z",
       "timestamp": 1795515080000,
       "native": true,
-      "score": 1.949,
-      "clusterId": "t40",
+      "score": 1.72,
+      "clusterId": "t52",
       "cluster": 1,
       "companies": [
         {
@@ -1054,60 +1323,13 @@
       ],
       "publishedAt": "2026-11-24T08:30:11.000Z",
       "timestamp": 1795509011000,
-      "score": 0.699,
-      "clusterId": "t41",
+      "score": 0.485,
+      "clusterId": "t53",
       "cluster": 1,
       "companies": [
         {
           "name": "Marsh",
           "slug": "marsh"
-        }
-      ]
-    },
-    {
-      "title": "Freedom Insurance scales digital claims processing across Kazakhstan",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQNmxncmRISllXald4TlZiXzVQU0NXdVgyNGJMdHAtcjl5V0VCUk5pUk42WkY0V05qcGlKVEJSS2FrelVpVkNKdkVWUEFqWDQ4X0Viay1uNFRxMWJHTy1vWUZrWDZmU2RkR2JIejF6Mm9Ec0xHUGphRk93ZUFoUjlZNVlZOHZYN0UtX3dTLTB4Um9Sak1jaFRYZk5WUU5GNjQ?oc=5",
-      "source": "The Digital Banker",
-      "summary": "",
-      "tags": [
-        "Claims & Underwriting"
-      ],
-      "publishedAt": "2026-11-24T08:15:13.000Z",
-      "timestamp": 1795508113000,
-      "native": true,
-      "score": 0.691,
-      "clusterId": "t42",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Freedom Insurance",
-          "slug": "freedom-insurance"
-        }
-      ]
-    },
-    {
-      "title": "YAS and The Insurtech Studio collaborate to bring insurance and mobility innovation to MENA",
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNcXZYMk9yNkpreEdWVlNDYVJWTDJYMDBKMndfWWRQeUZBUm9vWDQxeFJSelJLdXAteHBFY0F0cFBobUY1Z2FnWWFfTTFXMTBTZHhaWHRPSTkwcUhseHRMbXBtUkQxSndxUjI0Ync4c0I4QVpfREROUFgzYnA4UEZuSHNzZVJ5anRTOHR0ZjE0a19JZ2tmaE9YLThaUTByYnp0Nm1nSjl1UGlOUWRudmRZT0E2ZWphM1FsblBjZkJ5X045cmZqZ2tlOUFqcjZXVHp6azNZaDZ5WXZGNFpibElnYU9TbWVfUnRX?oc=5",
-      "source": "Zawya",
-      "summary": "",
-      "tags": [
-        "Partnerships",
-        "Auto & Mobility"
-      ],
-      "publishedAt": "2026-11-24T08:04:00.000Z",
-      "timestamp": 1795507440000,
-      "native": true,
-      "score": -0.514,
-      "clusterId": "t43",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "YAS",
-          "slug": "yas"
-        },
-        {
-          "name": "The Insurtech Studio",
-          "slug": "the-insurtech-studio"
         }
       ]
     },
@@ -1122,8 +1344,8 @@
       ],
       "publishedAt": "2026-11-24T07:12:12.000Z",
       "timestamp": 1795504332000,
-      "score": 0.662,
-      "clusterId": "t44",
+      "score": 0.459,
+      "clusterId": "t54",
       "cluster": 1,
       "companies": [
         {
@@ -1142,8 +1364,8 @@
       ],
       "publishedAt": "2026-11-24T07:08:05.000Z",
       "timestamp": 1795504085000,
-      "score": 0.86,
-      "clusterId": "t45",
+      "score": 0.658,
+      "clusterId": "t55",
       "cluster": 1,
       "companies": [
         {
@@ -1161,31 +1383,6 @@
       ]
     },
     {
-      "title": "Wellness Wag offers pet insurance through Rainwalk",
-      "link": "https://coverager.com/wellness-wag-offers-pet-insurance-through-rainwalk/",
-      "source": "Coverager",
-      "summary": "and renters insurance through Lemonade.",
-      "tags": [
-        "Health & Life"
-      ],
-      "publishedAt": "2026-11-23T20:13:33.000Z",
-      "timestamp": 1795464813000,
-      "native": true,
-      "score": 1.419,
-      "clusterId": "t46",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Wellness Wag",
-          "slug": "wellness-wag"
-        },
-        {
-          "name": "Rainwalk",
-          "slug": "rainwalk"
-        }
-      ]
-    },
-    {
       "title": "Health plans have until December 1 to claim opioid settlement funds",
       "link": "https://www.insurancebusinessmag.com/us/news/benefits/health-plans-have-until-december-1-to-claim-opioid-settlement-funds-598393.aspx",
       "source": "Insurance Business",
@@ -1196,25 +1393,8 @@
       ],
       "publishedAt": "2026-11-23T14:19:33.000Z",
       "timestamp": 1795443573000,
-      "score": 1.328,
-      "clusterId": "t47",
-      "cluster": 1,
-      "companies": []
-    },
-    {
-      "title": "India’s Cyber Insurance Market Projected to Reach $594 Million by FY31 as Static Risk Models Fail Against AI Attacks",
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOUnF2UDdDZFViYkJTVDRRMHJLb25ScG51MHRVVGNQSmQydE9Vb05PTVkzc0o0VHdMQ215ZzhCbEFQMFV6TXRKbXpzRGRZcjFDVUg2eWhiRGlFbWR2N1MxQmlNRGc3NkpqSTllXzBPTmI1Qmo5MFVITUFJY0t6SU5DMjZOZVJUa21qc3FqdW9QUUhheGo3aWh4eVRkVmYwT1Y0Z24xVGZFTnppdDBSOEhTeGVwMDZfNWhuNHdTbHV4cDFZUW8tdWQ5aGI4UXEtUlBFSVFOZjRRYmVGQk82ejJJYTl4Z0M?oc=5",
-      "source": "CXOToday.com",
-      "summary": "",
-      "tags": [
-        "AI & Automation",
-        "Cyber"
-      ],
-      "publishedAt": "2026-11-23T13:34:01.000Z",
-      "timestamp": 1795440841000,
-      "native": true,
-      "score": 0.917,
-      "clusterId": "t48",
+      "score": 1.227,
+      "clusterId": "t56",
       "cluster": 1,
       "companies": []
     },
@@ -1229,8 +1409,8 @@
       "publishedAt": "2026-11-23T11:00:00.000Z",
       "timestamp": 1795431600000,
       "native": true,
-      "score": 1.285,
-      "clusterId": "t49",
+      "score": 1.198,
+      "clusterId": "t57",
       "cluster": 1,
       "companies": [
         {
@@ -1250,8 +1430,8 @@
       "publishedAt": "2026-11-23T10:04:50.000Z",
       "timestamp": 1795428290000,
       "native": true,
-      "score": 1.274,
-      "clusterId": "t50",
+      "score": 1.191,
+      "clusterId": "t58",
       "cluster": 1,
       "companies": [
         {
@@ -1271,8 +1451,8 @@
       "publishedAt": "2026-11-23T09:23:07.000Z",
       "timestamp": 1795425787000,
       "native": true,
-      "score": 1.267,
-      "clusterId": "t51",
+      "score": 1.185,
+      "clusterId": "t59",
       "cluster": 1,
       "companies": [
         {
@@ -1300,31 +1480,10 @@
       ],
       "publishedAt": "2026-11-23T09:22:40.000Z",
       "timestamp": 1795425760000,
-      "score": 1.267,
-      "clusterId": "t52",
+      "score": 1.185,
+      "clusterId": "t60",
       "cluster": 1,
       "companies": []
-    },
-    {
-      "title": "India InsurTech Funding Flat at $120 Million in 2025: BCG",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBzdDFoeUVydzNHZ29BTlBJVUU0aXFCVmNTblg5dW9CLWlZWUVqMldQN0FIZGFYald6akdDVzNWSi14Y2hQMzg1OTY4MmgxTllEcGtDOXNqSlA2aHZQbmNrNlQ5Wi1EYkx3?oc=5",
-      "source": "Elets BFSI",
-      "summary": "",
-      "tags": [
-        "Funding"
-      ],
-      "publishedAt": "2026-11-23T08:00:00.000Z",
-      "timestamp": 1795420800000,
-      "native": true,
-      "score": 0.852,
-      "clusterId": "t53",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "BCG",
-          "slug": "bcg"
-        }
-      ]
     },
     {
       "title": "Bima Sugam set to go live this week; Zero-commission motor insurance sales to lead rollout | EXCLUSIVE",
@@ -1337,48 +1496,48 @@
       "publishedAt": "2026-11-23T03:47:12.000Z",
       "timestamp": 1795405632000,
       "native": true,
-      "score": 0.211,
-      "clusterId": "t54",
+      "score": 0.147,
+      "clusterId": "t61",
       "cluster": 1,
       "companies": []
     },
     {
-      "title": "Aon picks Australia to launch digital claims system",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPZVBQaVR6cURnSVFiRlQyV2tJcjFzMFRCWWlSMWlxTmY3MlZkV1gzd1pFZ1BDY2lDM081UEQ1ZlQtdmh2bWg0blh0QU44Y3QxZjVSNWxHQzNxbW1tSUFONTJUZ05lY2ZicUZFb2U5aVg4ZGpPSDUyN09SZ29qaFNNX3BnX0x0UDFKc1pWbHQ3V0hocHNYLUxlY1Rn?oc=5",
-      "source": "Insurance News",
+      "title": "This week in insurance: Cyber insurance premiums to rise 10%, Insurtech funding plunge 44.6%, Hong Kong non-life face easing pressures",
+      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPX0tVNTZ5VmR5dkFYTS1nVGlPSFZoZnNsRTBnTFcwR3dISlAzSVpVS0pUUXhpSl82Q0x3YkNrRDMtaWVVZGl4cTZ0Yi12cGFFLTNmT0ZFR2JYQ1E4SlJsMEFLZy1aNmpHdl9sWkdzOGp6cS1LNTdFRVpXMkxjT0otZ21jbkhjY0JoZVhUMjJGaElFckZscm9wMHpSZUhhVHg2Y3MxMGVPa2dGanBuN0NveFUzV0RpTTREVkJCNHZjX0tCUFFYeGJ4czhicWRFdmJYbTRPSXF1Z1J6X0IwSlFRR2VqUS05M1dJdjUxQzNNZVZMTjg?oc=5",
+      "source": "Insurance Asia",
       "summary": "",
       "tags": [
-        "Product & Launches",
-        "Claims & Underwriting"
-      ],
-      "publishedAt": "2026-11-23T02:55:32.000Z",
-      "timestamp": 1795402532000,
-      "native": true,
-      "score": 0.404,
-      "clusterId": "t55",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Aon",
-          "slug": "aon"
-        }
-      ]
-    },
-    {
-      "title": "SME owners ‘labour under misconception’ on cyber threat",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNeVFQaHA0M1Z5YWZiNUJzU3c3S2huY1NNdmpBSXV6ZE9DeEZoZ1JIQXFscUVLbFplMzU0SmdZOTVES1ZEX2lLUE5NVzFsT1JhYVdpWjJsT05kLWJzZC1uTjJJNzNQeWwzTkY3UmIxWjZtSE5kMjdwNjd0cFROekxhMEdkNU9zUlZqTEVzWDFER0FNN1hkZDl3R0l1Y2I?oc=5",
-      "source": "Insurance News",
-      "summary": "",
-      "tags": [
+        "Funding",
         "Cyber"
       ],
-      "publishedAt": "2026-11-23T02:55:11.000Z",
-      "timestamp": 1795402511000,
+      "publishedAt": "2026-11-23T01:20:00.000Z",
+      "timestamp": 1795396800000,
       "native": true,
-      "score": 0.204,
-      "clusterId": "t56",
+      "score": 1.132,
+      "clusterId": "t62",
       "cluster": 1,
       "companies": []
+    },
+    {
+      "title": "India InsurTech Funding Flat at $120 Million in 2025: BCG",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBzdDFoeUVydzNHZ29BTlBJVUU0aXFCVmNTblg5dW9CLWlZWUVqMldQN0FIZGFYald6akdDVzNWSi14Y2hQMzg1OTY4MmgxTllEcGtDOXNqSlA2aHZQbmNrNlQ5Wi1EYkx3?oc=5",
+      "source": "Elets BFSI",
+      "summary": "",
+      "tags": [
+        "Funding"
+      ],
+      "publishedAt": "2026-11-22T23:11:34.000Z",
+      "timestamp": 1795389094000,
+      "native": true,
+      "score": 1.221,
+      "clusterId": "t24",
+      "cluster": 3,
+      "companies": [
+        {
+          "name": "BCG",
+          "slug": "bcg"
+        }
+      ]
     },
     {
       "title": "Why insurtech unicorn Corgi wants a traditional bank charter",
@@ -1391,13 +1550,34 @@
       "publishedAt": "2026-11-20T23:37:51.000Z",
       "timestamp": 1795217871000,
       "native": true,
-      "score": 0.024,
-      "clusterId": "t57",
+      "score": 0.017,
+      "clusterId": "t63",
       "cluster": 1,
       "companies": [
         {
           "name": "Corgi",
           "slug": "corgi"
+        }
+      ]
+    },
+    {
+      "title": "Insurtech Eight by Zero (8/0) raises $3 mn in seed funding led by Diagram",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1WLTBUSUZMV0NBNF93LWo0QmdXNndyNm1jRVhPWjZpUlJPdUxuOWtNd04zdHM0dEdLR09NWk9MOEJlNXF1Q0lJdXNuVVhpdlFIRV9zYW94WjQ3LS1rU1F5QmkzTGZaRnZ4Rks2TkZaR1pGNHRZ?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "Funding"
+      ],
+      "publishedAt": "2026-11-20T22:03:33.000Z",
+      "timestamp": 1795212213000,
+      "native": true,
+      "score": 1.216,
+      "clusterId": "t64",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Eight by Zero",
+          "slug": "eight-by-zero"
         }
       ]
     },
@@ -1411,8 +1591,8 @@
       ],
       "publishedAt": "2026-11-20T17:33:47.000Z",
       "timestamp": 1795196027000,
-      "score": 0.019,
-      "clusterId": "t58",
+      "score": 0.013,
+      "clusterId": "t65",
       "cluster": 1,
       "companies": []
     },
@@ -1427,8 +1607,24 @@
       "publishedAt": "2026-11-20T17:04:35.000Z",
       "timestamp": 1795194275000,
       "native": true,
-      "score": 0.018,
-      "clusterId": "t59",
+      "score": 0.013,
+      "clusterId": "t66",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Finance - Global Insurtech Awards 2026: celebrating the world’s leading insurtech innovators",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNWTB6Vy1CdW9EejFmYXR5Y25yS1BLY1M0Wi1hcGtiSU42RDIyd3M3RGJNS1lNMG15dm13WTRXWk5TYzlkaU9SLU4tOHBpa0lyS25qSG9QaGZYVE5TbndfLTNBQ0swelJrS1RaeHdrYUxpOTg3N3lJQjQyeHAwSW9Rc2gyZklwOThobktIeC1ZMW01dkNlV0s1UmZLaW9fLVlkaTNWc0FGZmdhN1hGZ0VWYmhWaE9mZmxJUW9ZOWpHQ3V5QQ?oc=5",
+      "source": "Business Reporter",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-20T14:22:30.000Z",
+      "timestamp": 1795184550000,
+      "native": true,
+      "score": 0.011,
+      "clusterId": "t67",
       "cluster": 1,
       "companies": []
     },
@@ -1443,8 +1639,8 @@
       ],
       "publishedAt": "2026-11-20T14:19:51.000Z",
       "timestamp": 1795184391000,
-      "score": 1.016,
-      "clusterId": "t60",
+      "score": 1.011,
+      "clusterId": "t68",
       "cluster": 1,
       "companies": [
         {
@@ -1471,8 +1667,24 @@
       ],
       "publishedAt": "2026-11-20T11:00:48.000Z",
       "timestamp": 1795172448000,
-      "score": 1.014,
-      "clusterId": "t61",
+      "score": 1.01,
+      "clusterId": "t69",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Insurtech leaders say start with the problem, not the tech",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPNXdicjc2bmhoV2o4bG9vUU9ObUNvLXJqbXlEU3ZZQVZxcWxyY21VaGZyLWNMV0FZSDFnbVlOWTF4VklwWDI0amd6NmpLdkViLXgwT2ROYkJxZllfcVVuZG1QY2dvdVN1Njd6STYzOWFTUm5QYlVOZFpic2FCc3VfcVVxakJJMkUweFVyMHJn?oc=5",
+      "source": "Digital Insurance",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-20T11:00:00.000Z",
+      "timestamp": 1795172400000,
+      "native": true,
+      "score": 1.01,
+      "clusterId": "t70",
       "cluster": 1,
       "companies": []
     },
@@ -1487,8 +1699,8 @@
       ],
       "publishedAt": "2026-11-20T09:11:38.000Z",
       "timestamp": 1795165898000,
-      "score": 0.013,
-      "clusterId": "t62",
+      "score": 0.009,
+      "clusterId": "t71",
       "cluster": 1,
       "companies": []
     },
@@ -1504,8 +1716,8 @@
       ],
       "publishedAt": "2026-11-20T08:49:22.000Z",
       "timestamp": 1795164562000,
-      "score": 1.013,
-      "clusterId": "t63",
+      "score": 1.009,
+      "clusterId": "t72",
       "cluster": 1,
       "companies": [
         {
@@ -1524,8 +1736,8 @@
       ],
       "publishedAt": "2026-11-20T06:37:52.000Z",
       "timestamp": 1795156672000,
-      "score": 1.512,
-      "clusterId": "t64",
+      "score": 1.508,
+      "clusterId": "t73",
       "cluster": 1,
       "companies": [
         {
@@ -1564,8 +1776,8 @@
       ],
       "publishedAt": "2026-11-20T06:02:14.000Z",
       "timestamp": 1795154534000,
-      "score": 1.012,
-      "clusterId": "t65",
+      "score": 1.008,
+      "clusterId": "t74",
       "cluster": 1,
       "companies": [
         {
@@ -1579,9 +1791,30 @@
       ]
     },
     {
+      "title": "DXC Advances Intelligent Insurance Across Australia and New Zealand Through Platform, Workflow and AI Investment",
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNZUlqaEVoUGRkUmg0SGtNMkFvY1o5bG5hUGZQRVZwSXdpVk9uWnBVOVBmZGtZOUxoRlhGN3RoSUlHVkYyZ1FHYnp3a0pVUURIXy1DUTg0SVpldWpFWmQzdENnRzM5aEp5Yk9QU01Xd0NFRm4zYXU0cXJLNWtXd3NxVmlVN3dFQ2kwZW9uRllGRXF1OU91ZHFHMG1ZT0FXdS1NSExSeDJ2Zms0d2ZnTEFKNldNUUp0MnlzVDNEblp4cVRsYjNIdnExUjU1THdwbnBSaklpT2xxOUp3ZDFaOTJKVDRFbEJCRFE?oc=5",
+      "source": "iTWire",
+      "summary": "",
+      "tags": [
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-19T23:03:33.000Z",
+      "timestamp": 1795129413000,
+      "native": true,
+      "score": 0.006,
+      "clusterId": "t75",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "DXC",
+          "slug": "dxc"
+        }
+      ]
+    },
+    {
       "title": "Lemonade vs. Root: Which Insurtech Stock Has an Edge Now?",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQeXdOVG0tR0Q1M2tYaWFqdHZpUmdHZGtvV1RCd3hEemdFbGdDcVdHTXg2ZUx5SjhBQlBlNGZzTnBWSTVNR1JfTHhjY0pxc2pGWkd0V1ptVWJ5N1JScmp2c3piMWxyb2J0V3JKVUc2akc4SHE2M3EzOGlnQ1o0OU40YjBqVkpXdW1Sc3FFbVpBVEpPNlBvSzZoSGZuRG52SmR4Um5ibFUxbFl0LUNzTlM0?oc=5",
-      "source": "TradingView",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPS0J3QWdZREpiLVR3QV9ZVmNuMUNQajVEU05sU0pxRklnV0dPMHpPYUZtSmxubXZhR3BUTUNDZmNjSkJNYnVjMDM3RVhLTmhZLU5GWFAza3BZX2trRG9URmdmdmx2bHh3UEpFS0dFS0p0ZlpmM3pwV1ZZdEhUaC01UllSZW96X2tKTldwZFc5OWJwZi1wNWlhMjhITEdTdw?oc=5",
+      "source": "Yahoo Finance",
       "summary": "",
       "tags": [
         "Industry"
@@ -1589,8 +1822,8 @@
       "publishedAt": "2026-11-19T15:54:00.000Z",
       "timestamp": 1795103640000,
       "native": true,
-      "score": -1.194,
-      "clusterId": "t66",
+      "score": -1.196,
+      "clusterId": "t76",
       "cluster": 1,
       "companies": [
         {
@@ -1616,8 +1849,8 @@
       "publishedAt": "2026-11-19T15:47:54.000Z",
       "timestamp": 1795103274000,
       "native": true,
-      "score": 1.206,
-      "clusterId": "t67",
+      "score": 1.204,
+      "clusterId": "t77",
       "cluster": 1,
       "companies": [
         {
@@ -1636,8 +1869,8 @@
       ],
       "publishedAt": "2026-11-19T15:02:00.000Z",
       "timestamp": 1795100520000,
-      "score": 1.006,
-      "clusterId": "t68",
+      "score": 1.004,
+      "clusterId": "t78",
       "cluster": 1,
       "companies": []
     },
@@ -1653,8 +1886,8 @@
       ],
       "publishedAt": "2026-11-19T11:48:27.000Z",
       "timestamp": 1795088907000,
-      "score": 1.805,
-      "clusterId": "t69",
+      "score": 1.804,
+      "clusterId": "t79",
       "cluster": 1,
       "companies": [
         {
@@ -1673,10 +1906,51 @@
       ],
       "publishedAt": "2026-11-19T11:15:50.000Z",
       "timestamp": 1795086950000,
-      "score": 1.005,
-      "clusterId": "t70",
+      "score": 1.004,
+      "clusterId": "t80",
       "cluster": 1,
       "companies": []
+    },
+    {
+      "title": "How carriers can rebuild the career ladder that AI is eroding",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxObkNXbFJxbXVJRnpQQXdDYXZqOWM1Q1hZUWU4ZFVvLXJRdjVnOTRHeDFRaFVnOEZQcS0zdmdYV08yRGZGLV8yV0xfclBOM1cweDlEVUJOclNkeVB4aEF5M3JfUXFwQlFDNlBramQ5b1EtQUVrUWV0UXhYRnJWWVZvOVJ5Q1JQcmVOS2pnY3RpT3h4RUE?oc=5",
+      "source": "Digital Insurance",
+      "summary": "",
+      "tags": [
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-19T11:00:00.000Z",
+      "timestamp": 1795086000000,
+      "native": true,
+      "score": 1.004,
+      "clusterId": "t81",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Hodinkee and Watches of Switzerland streamline insurance",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE41THFqUWxRUGlJSTlPZHJrcDJKYmo4bnE2elZ1REhvdUJmbVVRdC1vSFVBcl9ZQkhRbmZsel96SUZXdVpValJBUmJkTEptSFJEQ2dyZWcycDl6MW1VakR5VWhWdEdLQ2lZS0RUSkM5Yw?oc=5",
+      "source": "WatchPro USA",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-19T10:48:40.000Z",
+      "timestamp": 1795085320000,
+      "native": true,
+      "score": 0.004,
+      "clusterId": "t82",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Hodinkee",
+          "slug": "hodinkee"
+        },
+        {
+          "name": "Watches of Switzerland",
+          "slug": "watches-of-switzerland"
+        }
+      ]
     },
     {
       "title": "Kenya’s digital cargo insurance rollout triggers Mombasa clearance delays",
@@ -1689,8 +1963,8 @@
       "publishedAt": "2026-11-19T10:29:35.000Z",
       "timestamp": 1795084175000,
       "native": true,
-      "score": 0.005,
-      "clusterId": "t71",
+      "score": 0.004,
+      "clusterId": "t83",
       "cluster": 1,
       "companies": []
     },
@@ -1704,8 +1978,8 @@
       ],
       "publishedAt": "2026-11-19T10:28:57.000Z",
       "timestamp": 1795084137000,
-      "score": 0.005,
-      "clusterId": "t72",
+      "score": 0.004,
+      "clusterId": "t84",
       "cluster": 1,
       "companies": []
     },
@@ -1720,8 +1994,8 @@
       "publishedAt": "2026-11-19T09:18:15.000Z",
       "timestamp": 1795079895000,
       "native": true,
-      "score": 0.005,
-      "clusterId": "t73",
+      "score": 0.003,
+      "clusterId": "t85",
       "cluster": 1,
       "companies": [
         {
@@ -1739,6 +2013,27 @@
       ]
     },
     {
+      "title": "IRDAI flags AI risks as 85% of insurers adopt technology",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNN24zRkM4SzRhZ2c1YUNmTW0zS0dBTU9vRld3RFItZ3pjQjZtOGNCeEdCVS1wZVN3WVJ1NnpGeXJ6d1IxQUVsQzR3WEt5QXd5dmpNNl9sb1I4Y05tb3BDT3hHeGtmWVN5NnoydUJjV0d2czdxckl0YzlRczJXdUxHV25faG0zTnpLN0ZJb29YVG9MdXFVLVNxdS1zR0tfSTllVWcxVGRocW15OTJleFNYRnZ0a19rRHBQQTBzUkdOMDdkMV8xNW1CZ2lqWWloTEZvYVloU0ZmZm7SAd4BQVVfeXFMTzBKVmstdk9VdGctY3BCQXo3ZUU1X0tJRE5la3NJRmx5WW0tdkZ0a2lHcDNuRTV5LThxTllWam80SWEzclExcTNwb1JiWW84UzRoM0xUdVJmSlQ3dGdvc256NmktSnF5QVRlM3p5emsxMlEtWjRPel9hUUNnRXoydUVoM0lKWkhtd0F0UFVWV1dpSWphcTQ4UHBwaFhnZ0ZPVmpMZFJ5VDhUcHVlak9zeTE3QlpzZnl4a3EzRHZNd05UVGw3dXE3VnNFNzl3M0NuOEhCV18xN2xNZ213Zm13?oc=5",
+      "source": "The Economic Times",
+      "summary": "",
+      "tags": [
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-19T07:18:26.000Z",
+      "timestamp": 1795072706000,
+      "native": true,
+      "score": 0.003,
+      "clusterId": "t86",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "IRDAI",
+          "slug": "irdai"
+        }
+      ]
+    },
+    {
       "title": "SMEs want more cyber insurance, but 55% still buy on price",
       "link": "https://www.insurancebusinessmag.com/uk/news/cyber/smes-want-more-cyber-insurance-but-55-still-buy-on-price-598024.aspx",
       "source": "Insurance Business UK",
@@ -1748,8 +2043,8 @@
       ],
       "publishedAt": "2026-11-19T07:03:22.000Z",
       "timestamp": 1795071802000,
-      "score": 0.004,
-      "clusterId": "t74",
+      "score": 0.003,
+      "clusterId": "t87",
       "cluster": 1,
       "companies": []
     },
@@ -1764,8 +2059,8 @@
       ],
       "publishedAt": "2026-11-19T06:49:04.000Z",
       "timestamp": 1795070944000,
-      "score": 1.504,
-      "clusterId": "t75",
+      "score": 1.503,
+      "clusterId": "t88",
       "cluster": 1,
       "companies": [
         {
@@ -1797,8 +2092,8 @@
       "publishedAt": "2026-11-18T21:00:00.000Z",
       "timestamp": 1795035600000,
       "native": true,
-      "score": 1.003,
-      "clusterId": "t76",
+      "score": 1.002,
+      "clusterId": "t89",
       "cluster": 1,
       "companies": []
     },
@@ -1814,24 +2109,8 @@
       "publishedAt": "2026-11-18T18:11:10.000Z",
       "timestamp": 1795025470000,
       "native": true,
-      "score": 0.003,
-      "clusterId": "t77",
-      "cluster": 1,
-      "companies": []
-    },
-    {
-      "title": "The AI gap inside agencies that brokers need to close",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWEtUWkJUNTRQSlp6Zjk0UUJhUEYwTmw0SzR1bFdxa0pfYllkQU5USGtoYjBDVVJocTlic3hIbFVYaU5RTS1LYzlWVDBTZnJseEszYXI3dU1oTk5BX29IeXlqalNSX3h2N3dkX1l5NzdfVFNRTmJlZEUzZzRBbUR6MFR1RzRCMlRIcWpFZXJaajJudXdmS2VEMGdTd1R4d2ZUMWpNZkFZbG9XNGl6M0RsUFRCSEtaQVAyQXZkTE5B?oc=5",
-      "source": "Insurance Business",
-      "summary": "",
-      "tags": [
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-11-18T17:01:28.000Z",
-      "timestamp": 1795021288000,
-      "native": true,
-      "score": 1.002,
-      "clusterId": "t78",
+      "score": 0.002,
+      "clusterId": "t90",
       "cluster": 1,
       "companies": []
     },
@@ -1846,7 +2125,7 @@
       "publishedAt": "2026-11-18T16:58:01.000Z",
       "timestamp": 1795021081000,
       "score": 1.002,
-      "clusterId": "t79",
+      "clusterId": "t91",
       "cluster": 1,
       "companies": []
     },
@@ -1862,7 +2141,7 @@
       "timestamp": 1795019397000,
       "native": true,
       "score": 1.002,
-      "clusterId": "t80",
+      "clusterId": "t92",
       "cluster": 1,
       "companies": [
         {
@@ -1881,24 +2160,8 @@
       ],
       "publishedAt": "2026-11-18T12:00:35.000Z",
       "timestamp": 1795003235000,
-      "score": 1.002,
-      "clusterId": "t81",
-      "cluster": 1,
-      "companies": []
-    },
-    {
-      "title": "AI ROI requires a plan beyond automation, experts tell insurers",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPQ0t3Nm9pTU9BQ3pRNGZmRUNpeXpUVUdoenUxV1Q4ZzctaXNqano3SFE2MkNVXzFNQTNTSDQ3cDBBdWdfcUh1bnU5b2xIdXV6b0VYd29Fa2FsRzcxd3NfUEpMdU9PX0dOQzhwd0tCQXpYVU45TERLeUpEVzk5NEpEMkdsdWlXdDgzQUd5c1V3XzY1Smp5?oc=5",
-      "source": "Digital Insurance",
-      "summary": "",
-      "tags": [
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-11-18T11:00:00.000Z",
-      "timestamp": 1794999600000,
-      "native": true,
-      "score": 1.002,
-      "clusterId": "t82",
+      "score": 1.001,
+      "clusterId": "t93",
       "cluster": 1,
       "companies": []
     },
@@ -1912,8 +2175,8 @@
       ],
       "publishedAt": "2026-11-18T10:38:30.000Z",
       "timestamp": 1794998310000,
-      "score": 0.002,
-      "clusterId": "t83",
+      "score": 0.001,
+      "clusterId": "t94",
       "cluster": 1,
       "companies": []
     },
@@ -1927,8 +2190,8 @@
       ],
       "publishedAt": "2026-11-18T10:23:09.000Z",
       "timestamp": 1794997389000,
-      "score": 1.202,
-      "clusterId": "t84",
+      "score": 1.201,
+      "clusterId": "t95",
       "cluster": 1,
       "companies": [
         {
@@ -1952,8 +2215,8 @@
       ],
       "publishedAt": "2026-11-18T09:51:25.000Z",
       "timestamp": 1794995485000,
-      "score": 0.202,
-      "clusterId": "t85",
+      "score": 0.201,
+      "clusterId": "t96",
       "cluster": 1,
       "companies": [
         {
@@ -1976,8 +2239,8 @@
       ],
       "publishedAt": "2026-11-18T09:50:28.000Z",
       "timestamp": 1794995428000,
-      "score": 1.002,
-      "clusterId": "t86",
+      "score": 1.001,
+      "clusterId": "t97",
       "cluster": 1,
       "companies": []
     },
@@ -1992,8 +2255,8 @@
       ],
       "publishedAt": "2026-11-18T08:43:37.000Z",
       "timestamp": 1794991417000,
-      "score": 1.202,
-      "clusterId": "t87",
+      "score": 1.201,
+      "clusterId": "t98",
       "cluster": 1,
       "companies": [
         {
@@ -2012,8 +2275,8 @@
       ],
       "publishedAt": "2026-11-18T08:29:23.000Z",
       "timestamp": 1794990563000,
-      "score": 1.502,
-      "clusterId": "t88",
+      "score": 1.501,
+      "clusterId": "t99",
       "cluster": 1,
       "companies": []
     },
@@ -2027,8 +2290,8 @@
       ],
       "publishedAt": "2026-11-18T08:02:09.000Z",
       "timestamp": 1794988929000,
-      "score": 1.002,
-      "clusterId": "t89",
+      "score": 1.001,
+      "clusterId": "t100",
       "cluster": 1,
       "companies": [
         {
@@ -2048,8 +2311,8 @@
       ],
       "publishedAt": "2026-11-18T07:27:19.000Z",
       "timestamp": 1794986839000,
-      "score": 0.002,
-      "clusterId": "t90",
+      "score": 0.001,
+      "clusterId": "t101",
       "cluster": 1,
       "companies": [
         {
@@ -2074,7 +2337,7 @@
       "publishedAt": "2026-11-18T04:05:35.000Z",
       "timestamp": 1794974735000,
       "score": 0.001,
-      "clusterId": "t91",
+      "clusterId": "t102",
       "cluster": 1,
       "companies": []
     },
@@ -2090,12 +2353,59 @@
       "timestamp": 1794934882000,
       "native": true,
       "score": 1.001,
-      "clusterId": "t92",
+      "clusterId": "t103",
       "cluster": 1,
       "companies": [
         {
           "name": "Combined Ratio Solutions",
           "slug": "combined-ratio-solutions"
+        }
+      ]
+    },
+    {
+      "title": "UK insurtech Aurora lands IA Capital backing to rebuild on AI",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUlBkTVFkV1NQZFFBRGFROWUwaThBeTkxR1NpcFFHYzNETXA1eUJWN3Z5OV9fQUdhMVVnWDB0QzNWcEl6cnpfQUJIcGJzNWhLaUxXODNwTlZSWTE4Qm9BYXpnbnRsSUhPOXlzbVYzaHVpVzliWVRwRU1WTzdnVFlZVTVWS1hKVWlkZkxyVHN6RGJ6eEItcU5CNV9qZw?oc=5",
+      "source": "Dealroom",
+      "summary": "",
+      "tags": [
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-17T17:01:17.000Z",
+      "timestamp": 1794934877000,
+      "native": true,
+      "score": 0.001,
+      "clusterId": "t104",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Aurora",
+          "slug": "aurora"
+        },
+        {
+          "name": "IA Capital",
+          "slug": "ia-capital"
+        }
+      ]
+    },
+    {
+      "title": "Profitable French insurtech Previsia raises €3.8M seed to scale AI risk prevention",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONGREUEM1NHJhd0s2eWJWZ2VoTmFYVjlHNjlXLXZtMWR1aFRzRl9kcHJuVWJHaHNLOG9jQlM4Wkx3SUU2VWZLaDZRUXBmOW5HS1pabGZKeUZfZlpRTXl5SGpoMDN1NGhwNUVLQ0hHMks4Q29aSjZOUUdsVWgwMzRpRXA1MGRqZDcwQW9vVmFJd0xSTEwzbkl0enc1OURxbndPRzVSaGpnQVl5Y2tOeHp5bGI0cmlVZw?oc=5",
+      "source": "Dealroom",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-17T14:56:30.000Z",
+      "timestamp": 1794927390000,
+      "native": true,
+      "score": 0.701,
+      "clusterId": "t105",
+      "cluster": 2,
+      "companies": [
+        {
+          "name": "Previsia",
+          "slug": "previsia"
         }
       ]
     },
@@ -2111,7 +2421,7 @@
       "timestamp": 1794925763000,
       "native": true,
       "score": 1.001,
-      "clusterId": "t93",
+      "clusterId": "t106",
       "cluster": 1,
       "companies": [
         {
@@ -2121,20 +2431,157 @@
       ]
     },
     {
-      "title": "Why insurance agents matter",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQNEk2UWVfMDNDelJTV0ZKekxwcUU3N253amRsdVp1WVZYUnd3WUFCa29kbWJBN1VTaW5ITzNtZDB4eXFDQk9aRWc5UmJCYl9rbnB3S2RKbndRSVIxai1idnBQaUx3bXFKQUV4c3E5LXZFZEZvcTJYZDlBaFl2RlI0a0diYk9EeFk5NjRjLVV6MHlyajBPOEVF0gGeAUFVX3lxTFBmRURfeGFxTmsyVlNSRVpSMlVjUjBNRkNpcXNQcE1XajZHbzBxVUNLZ3RyNmlHOF9BTmFiVzlhUUt0ZjdjSmxiUzRnUG9UdVY2TlQySEJfUXF2cGQ1d19heGNpdHlGYld5SE5TYVZQQUFGb2hFeDFLaEwwbmtnYWNRQUlHZmhOMGJXWnB1MDZJc2JOMHN6UWdOSUdRSjh3?oc=5",
-      "source": "BusinessLine",
+      "title": "InsurTech November 2026: Slingshot $27M, Agentic Claims Rise",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPZkEyM2pKMUtHb21FUTRlQXl6eEZMNE5DNkVqUW1IekNHT1BNMnc4OEZIalNjMUZMbEkxNzFkQTZ5bWxrMlBmaVUtRDhUSEF4LVZYNmNDWnpsU3V3REcxLVdleDl5LXgxb2dBNFNWWmFrRi1CdzBGOHEyM2lSYThtUXR1bThka3owMXJySXlnWlpjdTNrVTEtVllaU1pneHdjVEtrSGhRZXFOYklJNWhDdTk0UUlYbDRFVUVkMlMtQmtMNWx3YmtuLUNoVW5rMEEt?oc=5",
+      "source": "FinanceX Magazine",
+      "summary": "",
+      "tags": [
+        "AI & Automation",
+        "Claims & Underwriting"
+      ],
+      "publishedAt": "2026-11-17T09:11:01.000Z",
+      "timestamp": 1794906661000,
+      "native": true,
+      "score": 0.6,
+      "clusterId": "t107",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Slingshot",
+          "slug": "slingshot"
+        }
+      ]
+    },
+    {
+      "title": "Profitable French InsurTech Previsia raises €3.8 million in Seed funding for its AI risk-prevention platform",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPSW9WMGtyTEtZQVR4V3pMamF4MGFtZG56SnV5RWFFNDBYUFZSVk0xM2RpTFlCQ3lNTEdsT3hWVmc1UHlxalpTQ1lmUlV5bzVVa29VNG1Kd2VaQkc3MG5mZ3J5a09jTkFxcDRYTVBMVzBxaXBqdlpCTmhCS2dhUlU5R3FtQjVlUno2cUVxbE1DYUVRWGdOSVRMVUh4eUdibk1yeThwZ21RcDdFVHh4cDMzTFlmNlpOVUdwak9BS1hxUU1EOUZXUU9zQjN0b0Rka3hSS052LVdkWUZfZzRZM2c?oc=5",
+      "source": "EU-Startups",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-17T07:47:03.000Z",
+      "timestamp": 1794901623000,
+      "native": true,
+      "score": 0.7,
+      "clusterId": "t105",
+      "cluster": 2,
+      "companies": [
+        {
+          "name": "Previsia",
+          "slug": "previsia"
+        }
+      ]
+    },
+    {
+      "title": "Brazil's Loovi acquires SoftBank-backed insurtech Justos",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOTFJEOXhhcVVtYXc5MDlvU0xfU1VFVnJ3MXFpUHVTVlJ6cVZBSnROSldHWFFQLXhmUVY4SWlRczZ1M21TbVpiZ000Tmo1RHpuTW95YlhUMWZ5RVV5TGowZ29MRmF3QnFkZ3k1ZnV3b1ZaX3ZMMTk1aHlMYzZpZTNwMXZObUdYTGZBc2dTZW1EbUNwUXlo?oc=5",
+      "source": "Dealroom",
+      "summary": "",
+      "tags": [
+        "M&A"
+      ],
+      "publishedAt": "2026-11-16T17:30:03.000Z",
+      "timestamp": 1794850203000,
+      "native": true,
+      "score": 0.5,
+      "clusterId": "t108",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Loovi",
+          "slug": "loovi"
+        },
+        {
+          "name": "Justos",
+          "slug": "justos"
+        },
+        {
+          "name": "SoftBank",
+          "slug": "softbank"
+        }
+      ]
+    },
+    {
+      "title": "Bridge Specialty Group & OIP Insurtech/BoundAI: Lessons From Three Years of Submission Automation",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNVpPV0RmOEpNSU5CSzU4dFl1eDJWaUd4SVNnMEtyRm5PNk1GbjRCSy1RNG02QTVGUWZNSXVUemtRcV8zNkFlU3RWMEVTNmY5Rk1pM0djc2xMeVFYUVM4ZENrYjR6RnF6d1NWRkVzemNmLXpiQmhXcDNnREZORFE3Nm01S01EbjI5eWM3SVBjWnlNbjdoa1I0LXBYWXNoY2Y1NTZsdmVLX1JiM01IMUdTTWpRNEVxelN0cUNDN1hsd095T0otNjhhWUJTcXpXdzhEN0pVY2tQV2k?oc=5",
+      "source": "Insurance Journal",
+      "summary": "",
+      "tags": [
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "timestamp": 1794816000000,
+      "native": true,
+      "score": 1,
+      "clusterId": "t109",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Bridge Specialty",
+          "slug": "bridge-specialty"
+        },
+        {
+          "name": "OIP Insurtech",
+          "slug": "oip-insurtech"
+        },
+        {
+          "name": "BoundAI",
+          "slug": "boundai"
+        }
+      ]
+    },
+    {
+      "title": "Insurtech StitchStudio raises $8 mn to expand AI automation in insurance",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObzZjU3E0WXFtUXhUVTNFU0s4WjE3VXczNmxYdXBfUi1SR3JZNjNzX2VyZVVkV2NpNnB1MmRJUkRmN0FHbTNaOGR5bDRzY2pRSDhIV1Q3U0VXRHFPNHgzTW5UR3lGMm5IbzFOLTFsY1dQQVZfcnFVNWU2bVpiYmlwQVRJdnNBMlVqT2NfMzRuZHg?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-14T19:46:10.000Z",
+      "timestamp": 1794685570000,
+      "native": true,
+      "score": 1.2,
+      "clusterId": "t110",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "StitchStudio",
+          "slug": "stitchstudio"
+        }
+      ]
+    },
+    {
+      "title": "Insurance moves: Arch Capital, Sunstar, and Covered",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPU2ZMcHhxdldEeS1YSWpvQS0yXzZPOXdZUm1wODNuZGRjLVR6ZFQ3WTBfcDRBd29lQW02UW0wYm5aa1FsdWdpNXAxM1NPUm1jbGZEVUpvaUVSSi1qMGhnajdOUVlEam9acDFUaXFmVVJGSG44NzVsRWFOV182aGlvOW96cEJ4N2h1Qnk2bzg2b25veExkSDFGckVWU3JDSmJBWmNqaUtMcEFPNV9lUUF2LWZLMTZvdTdNS0J3?oc=5",
+      "source": "Insurance Business",
       "summary": "",
       "tags": [
         "Industry"
       ],
-      "publishedAt": "2026-11-13T08:00:00.000Z",
-      "timestamp": 1794556800000,
+      "publishedAt": "2026-11-13T09:58:53.000Z",
+      "timestamp": 1794563933000,
       "native": true,
-      "score": 0,
-      "clusterId": "t94",
+      "score": 1,
+      "clusterId": "t111",
       "cluster": 1,
-      "companies": []
+      "companies": [
+        {
+          "name": "Arch",
+          "slug": "arch"
+        },
+        {
+          "name": "Sunstar",
+          "slug": "sunstar"
+        },
+        {
+          "name": "Covered",
+          "slug": "covered"
+        }
+      ]
     },
     {
       "title": "Insurtech Funding Falls 44.6% in Q3 as Mega-Round Deals Cool",
@@ -2148,9 +2595,91 @@
       "timestamp": 1794556800000,
       "native": true,
       "score": 0.5,
-      "clusterId": "t95",
+      "clusterId": "t112",
       "cluster": 2,
       "companies": []
+    },
+    {
+      "title": "Why insurance agents matter",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQNEk2UWVfMDNDelJTV0ZKekxwcUU3N253amRsdVp1WVZYUnd3WUFCa29kbWJBN1VTaW5ITzNtZDB4eXFDQk9aRWc5UmJCYl9rbnB3S2RKbndRSVIxai1idnBQaUx3bXFKQUV4c3E5LXZFZEZvcTJYZDlBaFl2RlI0a0diYk9EeFk5NjRjLVV6MHlyajBPOEVF0gGeAUFVX3lxTFBmRURfeGFxTmsyVlNSRVpSMlVjUjBNRkNpcXNQcE1XajZHbzBxVUNLZ3RyNmlHOF9BTmFiVzlhUUt0ZjdjSmxiUzRnUG9UdVY2TlQySEJfUXF2cGQ1d19heGNpdHlGYld5SE5TYVZQQUFGb2hFeDFLaEwwbmtnYWNRQUlHZmhOMGJXWnB1MDZJc2JOMHN6UWdOSUdRSjh3?oc=5",
+      "source": "BusinessLine",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-13T08:00:00.000Z",
+      "timestamp": 1794556800000,
+      "native": true,
+      "score": 0,
+      "clusterId": "t113",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Vertical Insure and Built Partner to Reduce Coverage Gaps and Delays with Embedded Builder's Risk Insurance",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOSy0wd3FyRDkxZXktS2l5RlVrUUdycGEwb2F3ZV9tTnRTSlhwUVFVYVdlVkRydEtyRnNNa1gwMHpUNXJxM3Q5bkQ0WnUzNnkyTGozT3Rxb3JES3VWd25JaXhZZDM2Qld1Nl96Yk01bHByYXEwYUd3d2g4QTJxT3FVVWhfYTZWbkFYSDhQTTBHNXNxN0QxeGxXeGNWRFBpVFYwaTVhODRCTnQ1N2ZEbTJJYVo4SjhXeFBleVBpdVhUZlpDUm13alR0T0d5MHpUbGxONFd1UEZRM0o3N3lBY25QRTlRd29oUWJoWk51R0kzRjJPWTdF?oc=5",
+      "source": "Bergen Record",
+      "summary": "",
+      "tags": [
+        "Partnerships"
+      ],
+      "publishedAt": "2026-11-12T19:52:22.000Z",
+      "timestamp": 1794513142000,
+      "native": true,
+      "score": 0.2,
+      "clusterId": "t114",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Vertical Insure",
+          "slug": "vertical-insure"
+        },
+        {
+          "name": "Built",
+          "slug": "built"
+        }
+      ]
+    },
+    {
+      "title": "Global Reinsurance Capital Reaches Record $688 Billion as Insurtech Opportunities Expand",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNdXR2RmNFVXVmMlNxVGdsaENFLU9GVGk2a1NsYVRiSzhvZTgzU1VNVmNMQ1ZQSnV4U3c5aVRET2plZGlFTzRyM3J6d1Q4X3JoZU5COENFMWVkT1FnRFpxSFl0LWN1NXdrVEUwNkJGZi1wZ2I5SC11YnloTGlpTDMyelA4Ujc1NzBkTEk0bDhYZDFBOFFwN3dHYjM0TDBPTnJ0QWo4RFhBbUZHZjJRbXdUSnVHTzIzeUlPVVc2QUlR?oc=5",
+      "source": "Program Business",
+      "summary": "",
+      "tags": [
+        "Property & Cat"
+      ],
+      "publishedAt": "2026-11-12T14:02:09.000Z",
+      "timestamp": 1794492129000,
+      "native": true,
+      "score": 1.6,
+      "clusterId": "t115",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Amdocs moves into InsurTech with $340m EIS acquisition",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOa1pDYkNzem9NTV82QTV1ZW9MODE2bGZhVDdFVi1HWU42c0FoeUJSQ3d0SlBKbzBDdmZIamt5clRxQmFzdnhfd1V0RDE3V2FYNk0yZWJiUkl5aV84ZTFtb3p1Q1ZfMDZBYnZXUkVDREo2V2F4VEVZWnNuSUI1OTM4QjhsSWYwTUpKMTZ6LVkyRkdHQQ?oc=5",
+      "source": "FinTech Global",
+      "summary": "",
+      "tags": [
+        "M&A"
+      ],
+      "publishedAt": "2026-11-12T08:00:00.000Z",
+      "timestamp": 1794470400000,
+      "native": true,
+      "score": 2,
+      "clusterId": "t116",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Amdocs",
+          "slug": "amdocs"
+        },
+        {
+          "name": "EIS",
+          "slug": "eis"
+        }
+      ]
     },
     {
       "title": "NTT DATA Strengthens Global Insurance Leadership with Acquisition of Alchemy Technology Services",
@@ -2164,12 +2693,33 @@
       "timestamp": 1794458417000,
       "native": true,
       "score": 0.5,
-      "clusterId": "t96",
+      "clusterId": "t117",
       "cluster": 1,
       "companies": [
         {
           "name": "Alchemy Technology Services",
           "slug": "alchemy-technology-services"
+        }
+      ]
+    },
+    {
+      "title": "Insurtech Lemonade Q3 revenue jumps 73% to $336 mn as IFP premiums reach $1.55 bn",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1uQ1daekl6MmR5YUlQR0xTdjUwX1FyMUtzeXdyekNPbTFQcmJVejJ5QXRZVUxzQXQwTGt2ajZjLWhMY1Z3ZjhNMjIyZFVZVkowWmlBd3FQVkc4YTBvS096M01scl9uTmg0UXdaTnl4OA?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-11T08:00:00.000Z",
+      "timestamp": 1794384000000,
+      "native": true,
+      "score": 1.6,
+      "clusterId": "t118",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Lemonade",
+          "slug": "lemonade"
         }
       ]
     },
@@ -2186,9 +2736,94 @@
       "timestamp": 1794326354000,
       "native": true,
       "score": 0,
-      "clusterId": "t97",
+      "clusterId": "t119",
       "cluster": 1,
       "companies": []
+    },
+    {
+      "title": "Insurtech Ancep raises $8.5 mn to expand AI agents for commercial insurance brokers",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOdnM3eU4ta1ctSERCVXVzT2p4YjU0WFpkWTJWSXNKaHFBLVFSN3VwMXZfREdmdHlnNXdQSTNMc2pFZHlKeGFCeVo3T2haVDBBd0J6aDMxVVBmWTVfNUx4d0hFbHh5eG5uVkhKLXhYb0dVcE94elRfci1WeEJ3TGQ0Xw?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-10T15:51:45.000Z",
+      "timestamp": 1794325905000,
+      "native": true,
+      "score": 1.2,
+      "clusterId": "t120",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Ancep",
+          "slug": "ancep"
+        }
+      ]
+    },
+    {
+      "title": "IA Capital launches fintech and insurtech fund backed by QBE Insurance",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0xTE5sMTZDV3pBY0pPYXpsdzc4VlFfN190YzdmTm5BeW1XeXdWaUJjR0FTRmhTS1dDenBzYy03RE9jMkFYaC1WT2dzNjA3X2Fwd190UTVPdW94OUFrS19tY3hTOEJxMjRFMXNDSUE5Um8xTS1XekJ0UWIxQTVQZw?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "Product & Launches"
+      ],
+      "publishedAt": "2026-11-10T13:51:44.000Z",
+      "timestamp": 1794318704000,
+      "native": true,
+      "score": 1.2,
+      "clusterId": "t121",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "IA Capital",
+          "slug": "ia-capital"
+        },
+        {
+          "name": "QBE",
+          "slug": "qbe"
+        }
+      ]
+    },
+    {
+      "title": "InsurTech's AI Reckoning: Who's Winning the 2026 Race",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNYU5zNllWeG53UFpGMlhjc0w1U1VNQ2d4WEZ0R0dYQms4dmJ4NWExYVB0VnVEempSR1FxM0xBSWxHZHQzWndOLVA4UjRlaFZTOWR3VEVoYXdoOU50SGc2TVBQajJoQVNkRzZYM3pKRlY0ZnF1YkRKaHFleVNtOU51WEJVTmhVcnoxV3kwY3ZkUk9YLUItY0ZkU2MweWgtUlJfTU1lLXZINE8zR3I0amc?oc=5",
+      "source": "FinanceX Magazine",
+      "summary": "",
+      "tags": [
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-10T09:35:11.000Z",
+      "timestamp": 1794303311000,
+      "native": true,
+      "score": 0,
+      "clusterId": "t122",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Insurtech Kalepa bags $75m Series B funding at $470m valuation",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOUk54eGRsaVpoQlNyc1JndEl2RnBEMTFqY1p5WnpoaWFqdXZPREZyTTJUb0YxZHZaZ3lDdjQtbWZqZ2NOeVl1Vkt0MlROOUwzaTIyMHowZW5aRC1XYWx4OE9Ga0hGT2NQSWozejExaFR5Ny1ueEpLQmo1Z2xSUnhtLXQ1WnA2NEpCV21fVG9ZLWZMbkxzTDVkU1Z6TnFmY29wZm1DNDI4LWc2S1pHU2lwNFppSUZmZw?oc=5",
+      "source": "FinTech Futures",
+      "summary": "",
+      "tags": [
+        "Funding"
+      ],
+      "publishedAt": "2026-11-09T08:00:00.000Z",
+      "timestamp": 1794211200000,
+      "native": true,
+      "score": 0.6,
+      "clusterId": "t123",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Kalepa",
+          "slug": "kalepa"
+        }
+      ]
     },
     {
       "title": "Insurtech funding falls 44.6% as mega-round activity slows: Gallagher Re",
@@ -2202,12 +2837,180 @@
       "timestamp": 1794211200000,
       "native": true,
       "score": 0.5,
-      "clusterId": "t95",
+      "clusterId": "t112",
       "cluster": 2,
       "companies": [
         {
           "name": "Gallagher",
           "slug": "gallagher"
+        }
+      ]
+    },
+    {
+      "title": "Duuo exits event and vendor insurance",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE43TkFQRGFSOWVwT29wSzdmYU1ZaWRIOWFNMzJCREFSZEZkTUpWMlJzZVV3Yk5oQjUzUk9BbTdVRDVWWmVZZUI5endRc3huS2M0ZzJRMzRtOWFISnB2OGJVRFFmX1l3M3pLdGg1bA?oc=5",
+      "source": "Coverager",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-09T08:00:00.000Z",
+      "timestamp": 1794211200000,
+      "native": true,
+      "score": 1,
+      "clusterId": "t124",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Duuo",
+          "slug": "duuo"
+        }
+      ]
+    },
+    {
+      "title": "Swiss insurtech SnapCheck lands Yann Sommer backing after TV pitch stalls",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWUVSTjNLVUtUWUVRcDUyZHBHZWpzT09FSGlZeWN1YTNkOENTb2phSmkzNDFGWVhoMUhncjlxOXFlUzRYNk03RTNBeEZzR0REUndHOGREeVI3MEpIU2RRWFQzYUI4Mnc2bC11SVBsQTFfSDkyWXZTaGtUNmtvTzFzTHlTakpYRVRUSDRDNHFSam1sRjJKQXg5UVl1MU5jUnhJc1BDNjRMM1hWOVk?oc=5",
+      "source": "Dealroom",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-07T21:34:25.000Z",
+      "timestamp": 1794087265000,
+      "native": true,
+      "score": 0,
+      "clusterId": "t125",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "SnapCheck",
+          "slug": "snapcheck"
+        },
+        {
+          "name": "Yann Sommer",
+          "slug": "yann-sommer"
+        }
+      ]
+    },
+    {
+      "title": "A Reasonably Valued Insurtech Stock + Agentic AI",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPcW9ZTGl0V2NPQUFXUlNlSUZPa3BQWHpyTkdGZmtEYnhTRW9sOFV5dUdyWlI2eXE3SlB6aFVoYlVLOVhnWVJLbUZURGRnRjFHeFF5OTVrTG5jQVVQM0Z1QzVSV3JNVzhWYjR4Z1hsMWhraUZpVzROTzNybWNWRTFFVFhJQ0hZQmc?oc=5",
+      "source": "Nanalyze",
+      "summary": "",
+      "tags": [
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-06T14:39:31.000Z",
+      "timestamp": 1793975971000,
+      "native": true,
+      "score": 0,
+      "clusterId": "t126",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "IA Capital Group secures backing from QBE for new fintech and insurtech investment fund",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPUlAzaERTSFVEdWdGenJVZXhKM1J5LVpHbl95eU16anJKLWU0X2JocXVuZi1ycmlRY3A5dVhiNGRPUUlqZDc1MGlscjkxamZSaDQxSDlFUVFNLTZETkdhVU4yTUZsUzVpZ1BrWVljMWhQSmFxQVdhR1A3S0gzZzNmYTM4V0xjMVg1YWVNRFB5MFZCNG84eTVVTGpKdEFrYmxidUQ1N2cyZ0o0RW84TjhKcmdlLVF3UmZI?oc=5",
+      "source": "Reinsurance News",
+      "summary": "",
+      "tags": [
+        "Industry"
+      ],
+      "publishedAt": "2026-11-06T08:00:00.000Z",
+      "timestamp": 1793952000000,
+      "native": true,
+      "score": 1,
+      "clusterId": "t127",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "IA Capital",
+          "slug": "ia-capital"
+        },
+        {
+          "name": "QBE",
+          "slug": "qbe"
+        }
+      ]
+    },
+    {
+      "title": "Minneapolis insurance startup raises $27M to automate low-cost embedded policies",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPTkxOckdkMlhiTDkxTVR1Y2s3Y3BlbGYtWVhMWFdGSEgtcWFQaXloN0RpYll0NDRKWnJDTXVyUnkzczYwdFZPOGgxa3BadkplcGZBVnpadE5qZTJndVhqaGhsT29Lb2l0Vk96V1c3VGNmekZKRVR2LTFpQzl0QV9JakdpVnowREtqcm5xSU1NZG4?oc=5",
+      "source": "The Business Journals",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-06T08:00:00.000Z",
+      "timestamp": 1793952000000,
+      "native": true,
+      "score": 0.8,
+      "clusterId": "t128",
+      "cluster": 1,
+      "companies": []
+    },
+    {
+      "title": "Q3 global insurtech funding drops 44.6%: Gallagher Re",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOZlBuWDFiVHlmVjBybzRpVUtqSUNud1dMYUtNVWdRMi1nOWcyNlB6M1FMWTFPYlhJLU5tQkR6NUJRTG5wNHBWUG0tTGVKQWotNWIzYzNLVlR1ZTh0T3pTdk9lUWNOOUdpeGdPQjFkWk1zOEtLOFQ5MWpkY0pHZGZGLXc2cHJ6dVBTaWtNRmgxWQ?oc=5",
+      "source": "businessinsurance.com",
+      "summary": "",
+      "tags": [
+        "Funding"
+      ],
+      "publishedAt": "2026-11-05T08:00:00.000Z",
+      "timestamp": 1793865600000,
+      "native": true,
+      "score": 0.5,
+      "clusterId": "t129",
+      "cluster": 2,
+      "companies": [
+        {
+          "name": "Gallagher",
+          "slug": "gallagher"
+        }
+      ]
+    },
+    {
+      "title": "Global InsurTech funding fell 44.6% to $1.36bn in Q3’26: Gallagher Re",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQNXh2b05wUDJmSmxaenJ3eHNOdGRuSC1WQ1lva28tUmRIODJzRG9Qc1ZiUDYtb19jc1E4QzNFNUtZbXd5U01Zemp0T0YxWTdYc0psYnNxeUljaWd4aC03bnNpMXViZndKeWd5Yl9hUVR0dlNnbWdfWHJRVDNRYUpwc3JiSGI1cWdTZXY2blNmbUpuRnFWbi01V2tEYw?oc=5",
+      "source": "Reinsurance News",
+      "summary": "",
+      "tags": [
+        "Funding"
+      ],
+      "publishedAt": "2026-11-05T08:00:00.000Z",
+      "timestamp": 1793865600000,
+      "native": true,
+      "score": 2.1,
+      "clusterId": "t129",
+      "cluster": 2,
+      "companies": [
+        {
+          "name": "Gallagher",
+          "slug": "gallagher"
+        }
+      ]
+    },
+    {
+      "title": "Insurtech Kalepa raises $75 mn in Series B at $470 mn valuation to expand insurance AI platform",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5ySjNJWEZBQ3dISEwzSjFIQU9kT1pYN00zUG5XOGs1VnV3YXhXWEpkMGhDa2tKRWRoRzlfOGFwcTFLZFBFSGNUcDJMd3dHOE1yMjhlQk1aT1FlV0R6c0NPN0IySjFLTzNBX3RhZlZ3NW11bnJIbjhmb1I2czl4Qmc?oc=5",
+      "source": "Beinsure",
+      "summary": "",
+      "tags": [
+        "Funding",
+        "AI & Automation"
+      ],
+      "publishedAt": "2026-11-05T08:00:00.000Z",
+      "timestamp": 1793865600000,
+      "native": true,
+      "score": 1.8,
+      "clusterId": "t130",
+      "cluster": 1,
+      "companies": [
+        {
+          "name": "Kalepa",
+          "slug": "kalepa"
         }
       ]
     },
@@ -2224,198 +3027,7 @@
       "timestamp": 1793865600000,
       "native": true,
       "score": 0,
-      "clusterId": "t98",
-      "cluster": 1,
-      "companies": []
-    },
-    {
-      "title": "Q3 global insurtech funding drops 44.6%: Gallagher Re",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOZlBuWDFiVHlmVjBybzRpVUtqSUNud1dMYUtNVWdRMi1nOWcyNlB6M1FMWTFPYlhJLU5tQkR6NUJRTG5wNHBWUG0tTGVKQWotNWIzYzNLVlR1ZTh0T3pTdk9lUWNOOUdpeGdPQjFkWk1zOEtLOFQ5MWpkY0pHZGZGLXc2cHJ6dVBTaWtNRmgxWQ?oc=5",
-      "source": "businessinsurance.com",
-      "summary": "",
-      "tags": [
-        "Funding"
-      ],
-      "publishedAt": "2026-11-05T08:00:00.000Z",
-      "timestamp": 1793865600000,
-      "native": true,
-      "score": 0,
-      "clusterId": "t99",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Gallagher",
-          "slug": "gallagher"
-        }
-      ]
-    },
-    {
-      "title": "Can Chubb's Currys Partnership Expand Embedded Insurance Growth?",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQXzlsUllOU2tLZ09id3hfVUhmOEw5YV9HMUVaWmhIdlFhaVJOX3Q2aWFIRmlVald2OUR4b0FKZWI4Q1VBeVctNVVYM2dIUEt3UERRN2RzQU1EdjBxWWliQXM5cjViUkxsb2sxLUt2VXlEUGRNNXdkN04wdUtISEx2QlppamF4dkJyRG45TDhfZkFXMGN4MjZCcFV1ZW9XMFNzTmlfSA?oc=5",
-      "source": "Yahoo Finance",
-      "summary": "",
-      "tags": [
-        "Partnerships",
-        "Embedded"
-      ],
-      "publishedAt": "2026-11-03T08:00:00.000Z",
-      "timestamp": 1793692800000,
-      "native": true,
-      "score": -1,
-      "clusterId": "t100",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Chubb",
-          "slug": "chubb"
-        },
-        {
-          "name": "Currys",
-          "slug": "currys"
-        }
-      ]
-    },
-    {
-      "title": "Insurtech Market Size, Share, Trends 2036",
-      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBXVDN6Ny1EV2FEVXRMQ3l0QW90cEVsY1pLSzNmVXVSU3BpdnRVaG9nWEZiZUJETC03UkdkN3NZQzRsWUpzdnZNWjlLS3A4MFQzWW1GQlkxbWVBTGhKc0RrcFE3c19PazlBVEpsUG5n?oc=5",
-      "source": "Future Market Insights",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-11-02T08:00:00.000Z",
-      "timestamp": 1793606400000,
-      "native": true,
-      "score": 0,
-      "clusterId": "t101",
-      "cluster": 1,
-      "companies": []
-    },
-    {
-      "title": "Trucordia streamlined insurance workflows to give staff time back",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVDZDRXhmUXVabk1ib01FVVNwQUI4ckdXTXZrbmJVSl94NUpqdmM2TTFLVE5vRFJEQXBhQjNGT3JHTDcyWmRKX0pyYVhiWjZHQnFxTjlFNENMay1UR1dwRzRzTjBsdkpsVnhodFlJZzdLZlJlZ09fYjdLZ0RHS24tanhUalU2VFJxX0UxRGdMdnJrZzB5dGhWWVZuS1NfMUdkclhVSlBZTEVCd0MwSUJZYlFYd1luNnZmNndQRjQ4ZVRpUlE?oc=5",
-      "source": "Insurance Journal",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-10-30T07:00:00.000Z",
-      "timestamp": 1793343600000,
-      "native": true,
-      "score": 1,
-      "clusterId": "t102",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Trucordia",
-          "slug": "trucordia"
-        }
-      ]
-    },
-    {
-      "title": "Most Popular Best's Review Articles Include a Look Into the Future of Insurance Technology",
-      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNLVg0NlAydmZqLW52R3pzNWozd2s3SXlfMksxd083R01iTkJtNXhCekViRlo4dHh3eXUxM0UyTGs2MnVhdl9ZLXJpNkRNalpfbUI3RXhwdEVfOWJFenF1MjRTcVMtbVAyUENweEdzTzZKSC1XZzQxbU0xX1czV1lWMTdkZk1YWjJ3SUl1RW5Xcmc4Z0w4LWJtXzZoNGQ3QzFZUTlNNjhoMnVQbWhUSTlHVWtfNDI1Um8tM1NsWUhCbm9xOXl1ZlRELXBXM3BnU2ZEeXNjd21teFpuOE9laF84?oc=5",
-      "source": "Business Wire",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-10-28T07:00:00.000Z",
-      "timestamp": 1793170800000,
-      "native": true,
-      "score": -1.2,
-      "clusterId": "t103",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "AM Best",
-          "slug": "am-best"
-        }
-      ]
-    },
-    {
-      "title": "Embedded insurance in Italy: Navigating insurance distribution rules in the digital customer journey",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNbU1kQ04wQURkT1E2cEU5MWpZN3VCTzZwSTI1QVhyOWU4TkhWZTg2cDJncjF5RUZESGVnX2FyaGpTeXk4ZzM4YlNzcExhMXFVcjlmalNTU1ZBbVVtVHFuRFZFa2c0cnNNdy1RamtXc0pjRHdnMElRamRrRklBRDhhUVdCWFJia1dOZ2VUbkhIVUhNaFlfTzBpOTg0d3NnS0RiQ0swalJYNzNVOFBLMl81OUFzbkN5S3h4aGZ2eTRGdjhBNGdONll6YXJUal8tMU13?oc=5",
-      "source": "Hogan Lovells Cadwalader",
-      "summary": "",
-      "tags": [
-        "Embedded"
-      ],
-      "publishedAt": "2026-10-28T07:00:00.000Z",
-      "timestamp": 1793170800000,
-      "native": true,
-      "score": 0,
-      "clusterId": "t104",
-      "cluster": 1,
-      "companies": []
-    },
-    {
-      "title": "ONDO INSURTECH PLC (ONDO) Equity Price and Quote",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNTkY0NnJOajhZcndpekJOLVlLOUdWaFA3QXFIb0Y2T2d6b3VKMnZpZkxYTUdneHhEYlVHREk3bnNWNEhPdnY2bE1waG8weEtvZkpVMzFVcW0zVFZldzRGVzlOTmQ2UVlQVEFaRVZ0VUsyWUM4OUdDd3BBOVBWTXN5Uw?oc=5",
-      "source": "London Stock Exchange",
-      "summary": "",
-      "tags": [
-        "Industry"
-      ],
-      "publishedAt": "2026-10-23T04:34:02.000Z",
-      "timestamp": 1792730042000,
-      "native": true,
-      "score": 0,
-      "clusterId": "t105",
-      "cluster": 1,
-      "companies": [
-        {
-          "name": "Ondo InsurTech",
-          "slug": "ondo-insurtech"
-        }
-      ]
-    },
-    {
-      "title": "Why AI makes insurance technology harder to own",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQXhGR3hJZ2pBU3psZUNxeWNHcUNKV1BQTUVIakluMmJzSFQydTFGTnRGSlpCT1RsamFQMmhCc2NjeDFqQnloYUVybllVa0kyaF9QRml1QWJ2WXl2OGlQbWlZTGFvVlJSUlpMRmhfeGdNRXFiM0Z4ZXBLcVkyRmZWVEtBdGN5Wm9IbHc?oc=5",
-      "source": "FinTech Global",
-      "summary": "",
-      "tags": [
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-10-19T07:00:00.000Z",
-      "timestamp": 1792393200000,
-      "native": true,
-      "score": 1,
-      "clusterId": "t106",
-      "cluster": 1,
-      "companies": []
-    },
-    {
-      "title": "2026 Global InsurTech Funding Update and AI Data Center Insurance Risks",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9WY1FuRkY3elp6dkNvNGw1N3Jvc0NJY0g0YUxuSnhrdGs5Q0szNFJwbDJnOHIzMlpFQ3p5akN0aFZtazZlOGZvSmdaTHlEWmxKU01UajI4LUNOYzl2alJhSFY0R0ZjS2Y2N1R4VFV5N3FTQjZXY1E?oc=5",
-      "source": "Beinsure",
-      "summary": "",
-      "tags": [
-        "Funding",
-        "AI & Automation"
-      ],
-      "publishedAt": "2026-10-18T07:00:00.000Z",
-      "timestamp": 1792306800000,
-      "native": true,
-      "score": 1,
-      "clusterId": "t107",
-      "cluster": 1,
-      "companies": []
-    },
-    {
-      "title": "Global InsurTech funding hits $2.44 bn in Q2 2026",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1fanhaQ3M0aHZoTmFVbnBzREVQMGNndEE4aXQ3S2doQlpLaHM0SFJhOUpBQlUxUUUxU290QWdvak5wRW9WbTZHQWFWN2c1TjB3bnBMTy15MDVZQjViaEVYeHE3LXNnUlFhd1g5SkxaOGVvQQ?oc=5",
-      "source": "Beinsure",
-      "summary": "",
-      "tags": [
-        "Funding"
-      ],
-      "publishedAt": "2026-10-18T07:00:00.000Z",
-      "timestamp": 1792306800000,
-      "native": true,
-      "score": 1.6,
-      "clusterId": "t108",
+      "clusterId": "t131",
       "cluster": 1,
       "companies": []
     }
