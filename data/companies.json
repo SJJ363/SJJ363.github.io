@@ -1,36 +1,72 @@
 {
-  "updatedAt": "2026-11-25T04:39:52.284Z",
-  "count": 2554,
+  "updatedAt": "2026-11-25T15:06:28.380Z",
+  "count": 2556,
   "companies": [
     {
-      "slug": "johnson-lambert",
-      "name": "Johnson Lambert",
-      "count": 1,
-      "firstSeen": "2026-11-24T22:08:30.000Z",
-      "lastSeen": "2026-11-24T22:08:30.000Z",
+      "slug": "moneysupermarket",
+      "name": "MoneySuperMarket",
+      "count": 3,
+      "firstSeen": "2026-07-22T08:18:31.000Z",
+      "lastSeen": "2026-11-25T14:50:06.000Z",
       "topics": [
         {
           "name": "Product & Launches",
-          "count": 1
+          "count": 2
         },
         {
           "name": "AI & Automation",
           "count": 1
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
         }
       ],
       "sources": [
-        "Beinsure"
+        "FinTech Global",
+        "Coverager",
+        "Insurance Times"
       ],
-      "related": [],
+      "related": [
+        {
+          "slug": "lassie",
+          "name": "Lassie",
+          "count": 1
+        }
+      ],
       "articles": [
         {
-          "title": "Insurance advisory firm Johnson Lambert launches AI governance services",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQm1YdVp0SlhGZno0aW1UblNITnR3NFM1M0ktR0Vxb2tYek1TNTR3R1NnWTRwaTZQRC1mNThKT1BzcEJTTF9JeG5KeGRCa21TZkhNSUNSUlh3OC03MGYtQ0pkcFhXY2xqbzdwQWJxTVY3Y2FITWNqZnhKMG15U3pjNDl0MU1jTzFKZXhTbjRWS1pwZDNNX3RsSnZjcmozRlk?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-11-24T22:08:30.000Z",
+          "title": "Lassie brings AI pet insurance to MoneySuperMarket",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQVGFfWHhDM3pNd2tZSEVITEdob29uUFhiY0dxZmFPOS1mOUZjcENNeWlKTHM0WERJeUljTUN5WkpkLVc5ZjF6anE1WDJRVXN1N3huaDVWNExJeWlSZzNTV0lGbmNfN21FM2c5b1VHZzdPVTFXazFwUjJHeVkzYzc2SVNKNTFZRV9tamlEOTNB?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-11-25T14:50:06.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "lassie"
+          ]
+        },
+        {
+          "title": "MoneySuperMarket launches car insurance broker",
+          "link": "https://coverager.com/moneysupermarket-launches-car-insurance-broker/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-25T10:20:44.000Z",
           "tags": [
             "Product & Launches",
-            "AI & Automation"
+            "Auto & Mobility"
+          ],
+          "summary": "The initial insurer panel includes Allianz, Covéa and Ageas.",
+          "co": []
+        },
+        {
+          "title": "MoneySuperMarket to launch new digital motor broker",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOaUd5OEw5LUJDV01BNXBpdTZZOGdPRVd1MEhocEF3MHlIVG1MY1g3LVBqaDJPWEhlaTZKSE50THUtSkVCcHo4cmNQSk1qSVF0Mm5veEk1QmowTjZXTnBjRG9nQmFEdGdrNk1xd0o4ZHhGLVJhU21fNVBxcVZHM3N6WVZ4QjduTXpkUzk1MXhsS1d6T0lOcmFPMmNZRldlZER6T0V4OUsxanY?oc=5",
+          "source": "Insurance Times",
+          "publishedAt": "2026-07-22T08:18:31.000Z",
+          "tags": [
+            "Product & Launches"
           ],
           "summary": "",
           "co": []
@@ -38,27 +74,463 @@
       ]
     },
     {
+      "slug": "lassie",
+      "name": "Lassie",
+      "count": 7,
+      "firstSeen": "2026-02-11T08:00:00.000Z",
+      "lastSeen": "2026-11-25T14:50:06.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 5
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        },
+        {
+          "name": "Product & Launches",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "FinTech Global",
+        "Coverager",
+        "Silicon Republic",
+        "Insurance Nerds",
+        "EU-Startups",
+        "Tech Funding News",
+        "Sifted"
+      ],
+      "related": [
+        {
+          "slug": "moneysupermarket",
+          "name": "MoneySuperMarket",
+          "count": 1
+        },
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "count": 1
+        },
+        {
+          "slug": "balderton",
+          "name": "Balderton",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Lassie brings AI pet insurance to MoneySuperMarket",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQVGFfWHhDM3pNd2tZSEVITEdob29uUFhiY0dxZmFPOS1mOUZjcENNeWlKTHM0WERJeUljTUN5WkpkLVc5ZjF6anE1WDJRVXN1N3huaDVWNExJeWlSZzNTV0lGbmNfN21FM2c5b1VHZzdPVTFXazFwUjJHeVkzYzc2SVNKNTFZRV9tamlEOTNB?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-11-25T14:50:06.000Z",
+          "tags": [
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "moneysupermarket"
+          ]
+        },
+        {
+          "title": "Lassie launches ChatGPT plugin for pet insurance",
+          "link": "https://coverager.com/lassie-launches-chatgpt-plugin-for-pet-insurance/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-13T12:53:39.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "Users can connect the Lassie app through ChatGPT’s app directory.",
+          "co": [
+            "chatgpt"
+          ]
+        },
+        {
+          "title": "Europe’s love for pets fuels Swedish insurtech Lassie as it raises $75m Series C",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWVR2UXVENk5vQmhWeXlxdUxEUHJvc29UQWtpSlZJallFTEl4M1dWRC1mUUJEV2c0LW4xejhPNnFRSnc4Sk9BTWZVNW90X2lYWFBTZ0NfbDNzYngyUy1pYmZTekM4b0xhLTRXYkVoS0I3dmF1Y05uU09WM0hISDY2Nm41MTBzTUNiRkJINHhaUXUtUVZuSEp3ckpJb0JUWDhGdG9TRFhSRjNBb19rem45VjU2VUVSWU54U0t4dQ?oc=5",
+          "source": "Silicon Republic",
+          "publishedAt": "2026-02-16T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Swedish pet insurtech Lassie raises $75M Series C after hitting $100M ARR",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOczZRb0FXTFYzeG80dFB1M1A1REJXVHVQZUIyQ1VzNzRycVNDMlEyejRiaVhqM2w0dThDb2RoLXpnMkVQMXc1UWxUMlRqZ0Y2T1BSUGh6Z0FSU0hOUWExX01QbTVnb2luMTBoV252blBrNkpwMWlxbVV3WU5wVWZJUVFlQ3M3Z1F0MTIySThRV19SLXlaWFgtMHBrazJYUdIBrgFBVV95cUxPdmZKZUVfLVFsTFJYOHFsXzlISnl5ODlDMFZidk9kVG5KMmtRSXIxQzdZa0MyZkFzMDl1Nl81ZENDVGxyVVN2X2hiZWdRZ1pjT0hXQk54a0UwV294VWhhTER4OWNXUEZ4eElmV0lHb3hET1Nsdmo4SmNBMU5RQjJKbFg0ZVN4dktGSnFZbkZVZEtmWkJUVU1sTV9RcVA1RV9SXzY5MHBLTXR2bWhVM3c?oc=5",
+          "source": "Insurance Nerds",
+          "publishedAt": "2026-02-12T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Stockholm-based prevention-first pet InsurTech Lassie fetches €63.2 million in Series C funding",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOEZta1l3ZVFuTlV2UWFSRnhpeUZhUGsweHdNMkY0bXNUSC0yX1Q5bTgwaFBuU3EzV0VITncxNC1ET1lzcDdWMXV4SDdab2tsdF94OGdLZG5fRjNXMGRZcGlBTVVHUWJ4NUk3MV9YSTVIVEJPSkpiaGFpdVJaakE3bEdrbEs4Y0llc1BNMzRiTDBPMmZNV0tKT2ZrbEJrVm1iZlNaTHI4YjZ5bUhycXZIOVdhS0RlMXFPRlpqZmp0bTFmTmI5VVpJb0xR?oc=5",
+          "source": "EU-Startups",
+          "publishedAt": "2026-02-12T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Lassie raised $75M to turn pet insurance into a daily health and rewards app — TFN",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNWJfZ1dRN25UNzVTNk83NWRIZFZHdWx0SFBQWDNqcm5lWkhGRGRtYnpDbG1xTng4a014dW5nN0R4dUY1aG51UXdMMTJ3SjJTTkt2Qm1qTlMzbEdWbmNJUnlOMnd4ZXRjdXl4VWExLW5LTUZBZlAwZUZYM2k0RWQ1aWVHNFpMdw?oc=5",
+          "source": "Tech Funding News",
+          "publishedAt": "2026-02-12T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Balderton backs pet startup Lassie’s $75m Series C",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPd3FqNEVtUUxZRDZmX3RtUWpxb2JBUVdHR1cySTUwY2ItX21saUNZWkJUWEMxUGNMTU42YWVEeUlxZy0xS3pDRjdNM2lEcXFyVUtkZkpqMzdIQXhzRFNUZ3MtT2kzcHdGc3NLbHpBWmR1MTFNU3pVQ3VJZVByZTRLag?oc=5",
+          "source": "Sifted",
+          "publishedAt": "2026-02-11T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "balderton"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "state-farm",
+      "name": "State Farm",
+      "count": 12,
+      "firstSeen": "2024-09-29T07:00:00.000Z",
+      "lastSeen": "2026-11-25T14:40:07.000Z",
+      "topics": [
+        {
+          "name": "Claims & Underwriting",
+          "count": 5
+        },
+        {
+          "name": "AI & Automation",
+          "count": 3
+        },
+        {
+          "name": "Funding",
+          "count": 1
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "Regulation",
+          "count": 1
+        },
+        {
+          "name": "Partnerships",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Carrier Management",
+        "Insurance Journal",
+        "Beinsure",
+        "Coverager",
+        "Insurance Business",
+        "Digital Insurance",
+        "Insurance Insider"
+      ],
+      "related": [
+        {
+          "slug": "lazarus-ai",
+          "name": "Lazarus AI",
+          "count": 2
+        },
+        {
+          "slug": "qbe",
+          "name": "QBE",
+          "count": 2
+        },
+        {
+          "slug": "volvo",
+          "name": "Volvo",
+          "count": 1
+        },
+        {
+          "slug": "allstate",
+          "name": "Allstate",
+          "count": 1
+        },
+        {
+          "slug": "geico",
+          "name": "GEICO",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Oklahoma Insurance Investigation Leads to $45M State Farm Settlement",
+          "link": "https://www.carriermanagement.com/news/2026/11/25/294386.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-11-25T14:40:07.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "State Farm Fire and Casualty Co. will pay a $45 million settlement after a state insurance department investigation found it failed to properly pay roof damage claims by Oklahoma customers. The state’s incoming…",
+          "co": []
+        },
+        {
+          "title": "State Farm to Pay $45M After Oklahoma Insurance Investigation",
+          "link": "https://www.insurancejournal.com/news/southcentral/2026/11/18/893043.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-11-18T16:45:06.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "State Farm Fire and Casualty Co. will pay a $45 million settlement after a state insurance department investigation found it failed to properly pay roof damage claims by Oklahoma customers. The state’s incoming…",
+          "co": []
+        },
+        {
+          "title": "Lazarus AI raises $43 mn with backing from QBE and State Farm Ventures",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbUR1X2ZlU2V1a244YmVHZk9qbDZqSkplblVrNU5QU0dSczdZMGJhWHhpOXpWd1pPQjB3UVp3VWNvTG5kMktfMllYZmlMQWtqZHZfOXNjUVRLbHZ3bkNpcHdZMFFaTGRfQUNzMlM5WTFPNEtxdFhJUE8tTzNTNHdCeHhjVTRadjJqdDdQWERCWGN4azFkS1dpaTZYaw?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-11-05T13:43:43.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "lazarus-ai",
+            "qbe"
+          ]
+        },
+        {
+          "title": "QBE and State Farm Ventures back Lazarus AI",
+          "link": "https://coverager.com/qbe-and-state-farm-ventures-back-lazarus-ai/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-04T09:35:02.000Z",
+          "tags": [
+            "AI & Automation",
+            "Cyber"
+          ],
+          "summary": "Lazarus AI is developing AI tools for document processing, cybersecurity and legacy system modernization.",
+          "co": [
+            "qbe",
+            "lazarus-ai"
+          ]
+        },
+        {
+          "title": "State Farm set to raise rates by almost 8%",
+          "link": "https://www.insurancebusinessmag.com/us/news/industry-news/state-farm-set-to-raise-rates-by-almost-8-592541.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-10-06T21:39:50.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "Nearly 1.5 million policies affected – insurer’s actuaries wanted even more",
+          "co": []
+        },
+        {
+          "title": "State Farm to Increase Claims Workforce by 3,000",
+          "link": "https://www.carriermanagement.com/news/2026/09/29/292348.htm",
+          "source": "Carrier Management",
+          "publishedAt": "2026-09-29T11:58:46.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "State Farm said it plans to increase the size of its claims workforce throughout 2027 by about 10%, or about 3,000 employees. In a Sept. 25 announcement, the mutual insurer said it is investing in training, developing…",
+          "co": []
+        },
+        {
+          "title": "State Farm to Increase Claims Workforce by 3,000",
+          "link": "https://www.insurancejournal.com/news/national/2026/09/25/886884.htm",
+          "source": "Insurance Journal",
+          "publishedAt": "2026-09-25T15:28:43.000Z",
+          "tags": [
+            "Claims & Underwriting"
+          ],
+          "summary": "State Farm said it plans to increase the size of its claims workforce throughout 2027 by about 10%, or about 3,000 employees. In a Sept. 25 announcement, the mutual insurer said it is investing in training, developing…",
+          "co": []
+        },
+        {
+          "title": "State Farm files trademark for Merna",
+          "link": "https://coverager.com/state-farm-files-trademark-for-merna/",
+          "source": "Coverager",
+          "publishedAt": "2026-07-27T11:23:20.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "Beyond insurance, the filing covers banking services, mutual fund investments and financial analysis and consulting.",
+          "co": []
+        },
+        {
+          "title": "State Farm settles for lower home insurance rate increase",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQT1lNZG1NcDEtQTlyV3FESHhYcWt1WHRRSE04Qy1HdkE0MS01U2p3RnI4YW9adHNZMGpyal8xQUNJelZDZnBWN0YxaGdHZWNFM3BPTWY5Z09uTWhfUnE1eGppNl9fVTUwQlFfcnpCYnNoQTFzM1doWm52YzBJS09xTlh0LTZFc1RnQThPQmJR?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-03-09T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Will State Farm’s AI discrimination suit break the regulatory dam?",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPdFREdXRaZmRYTG04YVhGYlVGV3hTcnJqRDkyc2h3SnJyclQ1Qm1jS1lKU0FJQm11cHQ2YjhIb0E5WnJpNFh5WUt4MXpEVnlrQWVESmlRSEVVZjRjZkVIZTJnR09INmV1cjI1T2o1NGVZc0tVNVVJOTBSN0V0Wl9FOEhqYkdwTzFmcm16Y2tPZUNZNnptRXRVN3d0UExLOXN6OXhfWDVDTGlqTnRaWXc2c2Y0cmdRbm_SAccBQVVfeXFMUEh0VzlXekVLQXVhSXI4Z2VLOXNXSWtKaWh6ZktEQWRmSC03dVZCMmQyd2F3X0pidHU3UHRYcWVGZkxEVTZLbHdZMU9DUlRFRm00T1AybkRXUFJpSlBfdE1VWFQ2M2Vrd3NtSWxRM3kwVERnS04xZlZGODVWMzhQQndzX3Y5cG5ZTmFwa28weGpSWUowV1M2OHphNU0wSTZmYXF2b0VIRDhCS0ZUaDlUaWhGR1EyZDExVU45RXNZeUxBbk5mbzBWOA?oc=5",
+          "source": "Insurance Insider",
+          "publishedAt": "2025-11-06T08:00:00.000Z",
+          "tags": [
+            "AI & Automation",
+            "Regulation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Volvo, State Farm Partner on Point-of-Sale Auto Insurance",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE44bVRNYnNiYXdKWnR3bWNtWWhhY2dINlZoYnprcDNCLUtxTHlFNnl0WS1xdzBFbHdmRXUwVXZ1bkwzREl3Z1M5bWpLZ3R4a1ROaG9oamRpMjVPZnpPakY5aVgxMFZNSFkzcEtYYnI2RGFXenFsY3lz?oc=5",
+          "source": "Insurance Journal",
+          "publishedAt": "2025-10-15T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": [
+            "volvo"
+          ]
+        },
+        {
+          "title": "State Farm, Allstate, Geico top digital performers",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM0NQQmZvSmpjUFFWLVpEX3BJdG9XU2VlOXNnOVROeFZZaWkzVFppbVlCVU9BTTBsZ2hPc0tJS0FIRTR2dWYwX3dsdmN2RFpDQktmamhQWEpFNlR1LUxOamU4UVJ4djdVU3JtS1FscDM4aDR3V1NrS2tWU29QOVo4WmZ3?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2024-09-29T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "allstate",
+            "geico"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "specialist-risk-group",
+      "name": "Specialist Risk Group",
+      "count": 1,
+      "firstSeen": "2026-11-25T14:36:38.000Z",
+      "lastSeen": "2026-11-25T14:36:38.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "southall-harries",
+          "name": "Southall Harries",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Specialist Risk Group to acquire Southall Harries",
+          "link": "https://coverager.com/specialist-risk-group-to-acquire-southall-harries/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-25T14:36:38.000Z",
+          "tags": [
+            "M&A",
+            "Auto & Mobility"
+          ],
+          "summary": "The brokerage specializes in fleet and commercial insurance.",
+          "co": [
+            "southall-harries"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "southall-harries",
+      "name": "Southall Harries",
+      "count": 1,
+      "firstSeen": "2026-11-25T14:36:38.000Z",
+      "lastSeen": "2026-11-25T14:36:38.000Z",
+      "topics": [
+        {
+          "name": "M&A",
+          "count": 1
+        },
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Coverager"
+      ],
+      "related": [
+        {
+          "slug": "specialist-risk-group",
+          "name": "Specialist Risk Group",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Specialist Risk Group to acquire Southall Harries",
+          "link": "https://coverager.com/specialist-risk-group-to-acquire-southall-harries/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-25T14:36:38.000Z",
+          "tags": [
+            "M&A",
+            "Auto & Mobility"
+          ],
+          "summary": "The brokerage specializes in fleet and commercial insurance.",
+          "co": [
+            "specialist-risk-group"
+          ]
+        }
+      ]
+    },
+    {
       "slug": "applied-systems",
       "name": "Applied Systems",
-      "count": 22,
+      "count": 24,
       "firstSeen": "2025-06-10T07:00:00.000Z",
-      "lastSeen": "2026-11-24T21:40:37.000Z",
+      "lastSeen": "2026-11-25T14:06:14.000Z",
       "topics": [
+        {
+          "name": "AI & Automation",
+          "count": 8
+        },
         {
           "name": "Product & Launches",
           "count": 8
         },
         {
-          "name": "AI & Automation",
-          "count": 6
+          "name": "M&A",
+          "count": 5
         },
         {
           "name": "Partnerships",
           "count": 4
-        },
-        {
-          "name": "M&A",
-          "count": 3
         },
         {
           "name": "Auto & Mobility",
@@ -70,6 +542,8 @@
         }
       ],
       "sources": [
+        "Program Business",
+        "Built In Chicago",
         "The Insurer",
         "Insurance Journal",
         "The Manila Times",
@@ -80,10 +554,14 @@
         "FF News",
         "Insurtech Insights",
         "GlobeNewswire",
-        "Insurance Business",
-        "Built In Chicago"
+        "Insurance Business"
       ],
       "related": [
+        {
+          "slug": "tailwind",
+          "name": "Tailwind",
+          "count": 4
+        },
         {
           "slug": "one-call",
           "name": "One Call",
@@ -93,11 +571,6 @@
           "slug": "verisk",
           "name": "Verisk",
           "count": 4
-        },
-        {
-          "slug": "tailwind",
-          "name": "Tailwind",
-          "count": 2
         },
         {
           "slug": "zen-insurance",
@@ -126,6 +599,34 @@
         }
       ],
       "articles": [
+        {
+          "title": "Applied Systems Acquires Insurtech Tailwind to Expand AI Automation",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPaTZzNUFjOFpkZ0VmUDlYbUpieUN6ZEZBMXJhclhiQkZMZDM2WTM5eEQwTTc5QlhoaFJCb1U5dG1hOHY1Vk9weEx5RDJMRXJZd0VaUElwZmRhMmRqTHJmdDVwcG5vZDc5UklPUW8xYmRkM3FvQVBnTUtSSDQxdjNvUXBQSk40V09LUEhaRjF2NHlLSzFia2cyYkczMGlzVmlhNS1V?oc=5",
+          "source": "Program Business",
+          "publishedAt": "2026-11-25T14:06:14.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "tailwind"
+          ]
+        },
+        {
+          "title": "Applied Systems Acquires Tailwind to Automate Insurance Workflows",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRlpDNm1yTjBRTmxLYjVKeWFDOVRsT3pqOUZFaGN6ZEk5UTIwZHhEZXJqdlpqQUJpbzdERURhOW9mdFE5N1Q2Ync2UHhhb0xHdm9SVlRJcmprTHRyanJvcTczWUhMbExhNS1xWC1tNjNQSnpUcjB3U0hKa2s4YllyRDBMTU1EVTQwVnc?oc=5",
+          "source": "Built In Chicago",
+          "publishedAt": "2026-11-24T22:49:48.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "tailwind"
+          ]
+        },
         {
           "title": "Applied Systems acquires data retrieval insurtech Tailwind",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxORFpLaWlwNHNZLUNGQ2t1WkRvMmZJc3RXSjctbU9kTkJRMGlDcFFibkV6bzBGWjA2Q2FJa3VKQnRVTEhVWWJ2RVBBeG5zSmNaWm5tRjhWejBZbFNGQ3ZNYU9OR2Q3ZGlQRnl4OFdXSGpJZWQ3RUJvcFFfUlBzd1JJcDVTQUxRQm9MVEhKcVhpY1RfcFkzUTRnQUthOHpSTXVicWkzTzFIT3o?oc=5",
@@ -418,20 +919,22 @@
     {
       "slug": "tailwind",
       "name": "Tailwind",
-      "count": 2,
+      "count": 4,
       "firstSeen": "2026-11-24T15:05:24.000Z",
-      "lastSeen": "2026-11-24T21:40:37.000Z",
+      "lastSeen": "2026-11-25T14:06:14.000Z",
       "topics": [
         {
           "name": "M&A",
-          "count": 2
+          "count": 4
         },
         {
           "name": "AI & Automation",
-          "count": 1
+          "count": 3
         }
       ],
       "sources": [
+        "Program Business",
+        "Built In Chicago",
         "The Insurer",
         "Insurance Journal"
       ],
@@ -439,10 +942,38 @@
         {
           "slug": "applied-systems",
           "name": "Applied Systems",
-          "count": 2
+          "count": 4
         }
       ],
       "articles": [
+        {
+          "title": "Applied Systems Acquires Insurtech Tailwind to Expand AI Automation",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPaTZzNUFjOFpkZ0VmUDlYbUpieUN6ZEZBMXJhclhiQkZMZDM2WTM5eEQwTTc5QlhoaFJCb1U5dG1hOHY1Vk9weEx5RDJMRXJZd0VaUElwZmRhMmRqTHJmdDVwcG5vZDc5UklPUW8xYmRkM3FvQVBnTUtSSDQxdjNvUXBQSk40V09LUEhaRjF2NHlLSzFia2cyYkczMGlzVmlhNS1V?oc=5",
+          "source": "Program Business",
+          "publishedAt": "2026-11-25T14:06:14.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "applied-systems"
+          ]
+        },
+        {
+          "title": "Applied Systems Acquires Tailwind to Automate Insurance Workflows",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRlpDNm1yTjBRTmxLYjVKeWFDOVRsT3pqOUZFaGN6ZEk5UTIwZHhEZXJqdlpqQUJpbzdERURhOW9mdFE5N1Q2Ync2UHhhb0xHdm9SVlRJcmprTHRyanJvcTczWUhMbExhNS1xWC1tNjNQSnpUcjB3U0hKa2s4YllyRDBMTU1EVTQwVnc?oc=5",
+          "source": "Built In Chicago",
+          "publishedAt": "2026-11-24T22:49:48.000Z",
+          "tags": [
+            "M&A",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": [
+            "applied-systems"
+          ]
+        },
         {
           "title": "Applied Systems acquires data retrieval insurtech Tailwind",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxORFpLaWlwNHNZLUNGQ2t1WkRvMmZJc3RXSjctbU9kTkJRMGlDcFFibkV6bzBGWjA2Q2FJa3VKQnRVTEhVWWJ2RVBBeG5zSmNaWm5tRjhWejBZbFNGQ3ZNYU9OR2Q3ZGlQRnl4OFdXSGpJZWQ3RUJvcFFfUlBzd1JJcDVTQUxRQm9MVEhKcVhpY1RfcFkzUTRnQUthOHpSTXVicWkzTzFIT3o?oc=5",
@@ -469,6 +1000,713 @@
           "co": [
             "applied-systems"
           ]
+        }
+      ]
+    },
+    {
+      "slug": "progressive",
+      "name": "Progressive",
+      "count": 8,
+      "firstSeen": "2026-04-13T07:00:00.000Z",
+      "lastSeen": "2026-11-25T11:00:00.000Z",
+      "topics": [
+        {
+          "name": "Auto & Mobility",
+          "count": 4
+        },
+        {
+          "name": "Claims & Underwriting",
+          "count": 2
+        }
+      ],
+      "sources": [
+        "Digital Insurance",
+        "Coverager",
+        "Insurance Business",
+        "PYMNTS.com"
+      ],
+      "related": [
+        {
+          "slug": "hippo",
+          "name": "Hippo",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Progressive lets fleets use eligible telematics devices",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQjhxSElnbVJiZWp1alRVcnl6cXdQbFljczhSZUtwOHFXdGRUQmdIUGI3b0NZQ3FGblIxd0dKc0NHd0tPUzBqaFhoX2lTSjVLSDFDaWU0Z0xKbjhoQmtPTDFrcWJaaEtXMTdMNzZOazFrQ1NQcXN4clVYdThoZGI2eTFvNHU1MWhRUmhz?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-11-25T11:00:00.000Z",
+          "tags": [
+            "Auto & Mobility"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Progressive reports 91.2% CR for October",
+          "link": "https://coverager.com/progressive-reports-91-2-cr-for-october/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-18T13:25:22.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "The insurer ended the month with net income of $828 million.",
+          "co": []
+        },
+        {
+          "title": "Progressive combines commercial telematics programs",
+          "link": "https://coverager.com/progressive-combines-commercial-telematics-programs/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-10T16:09:04.000Z",
+          "tags": [
+            "Auto & Mobility"
+          ],
+          "summary": "Customers using Progressive-provided devices can access a dashboard with fleet activity, trip history, driving insights and safety ratings.",
+          "co": []
+        },
+        {
+          "title": "Progressive’s Q3 profit slips 3% despite better underwriting margin",
+          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/progressives-q3-profit-slips-3-despite-better-underwriting-margin-593580.aspx",
+          "source": "Insurance Business",
+          "publishedAt": "2026-10-15T04:33:38.000Z",
+          "tags": [
+            "Claims & Underwriting",
+            "Auto & Mobility"
+          ],
+          "summary": "The auto insurer's combined ratio improved to 88.7, but investment losses weighed on earnings, and premium growth slowed to 4%",
+          "co": []
+        },
+        {
+          "title": "Progressive reports 90% CR for September",
+          "link": "https://coverager.com/progressive-reports-90-cr-for-september/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-14T12:34:01.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "The insurer ended the month with net income of $630 million.",
+          "co": []
+        },
+        {
+          "title": "Progressive files trademark for enhanced total-loss coverage",
+          "link": "https://coverager.com/progressive-files-trademark-for-enhanced-total-loss-coverage/",
+          "source": "Coverager",
+          "publishedAt": "2026-09-10T11:52:28.000Z",
+          "tags": [
+            "Claims & Underwriting",
+            "Auto & Mobility"
+          ],
+          "summary": "The filing covers the administration and underwriting of vehicle insurance programs.",
+          "co": []
+        },
+        {
+          "title": "Progressive reports 86.8% CR for July",
+          "link": "https://coverager.com/progressive-reports-86-8-cr-for-july/",
+          "source": "Coverager",
+          "publishedAt": "2026-08-19T12:50:24.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "The insurer ended the month with net income of ~$961 million.",
+          "co": []
+        },
+        {
+          "title": "Hippo’s CEO Says InsurTech Grew Up and the Progressive Deal Proves It",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUC1FWWREM3l5T1hVUmFkMzFzNnhPQTFqMWRTRmdIa20wZVlOTHhxVF9lcUZEUXJ2Ul9XbWtfQ2lkU2NmTDF2dnhoV2hTb0dsRHBWT1ZUNU4wNkJGYnlTTHZQNEFmMERzQ3NMcjZpOUZWWThZRWZFZXRWbWpYMEx6TXpyYWF1U3BLQl96TDJMZmpZdS00d2Z4bVd5ZkNBeXVSbFh1VUMtYXdaWXc?oc=5",
+          "source": "PYMNTS.com",
+          "publishedAt": "2026-04-13T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "hippo"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sureev",
+      "name": "SureEV",
+      "count": 2,
+      "firstSeen": "2026-10-20T09:55:15.000Z",
+      "lastSeen": "2026-11-25T11:00:00.000Z",
+      "topics": [
+        {
+          "name": "Auto & Mobility",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Digital Insurance",
+        "Coverager"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Why SureEV’s CEO tells insurtechs to target specific needs",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdjV1YjFJYUEtbDJaN2t2ek13eHFjeHVLRXRmZE1YeEZ2b2RiQzNsMm14MmhaV2MwelZlZ3JnY1ZrTmFKRWxrR3BPSWROWV9namxzYlNBYnlGZWhlUnNyNVpaUDIxb0FOeFQxRHhyT2ZHbG9VZV9ZRkJmckZIcXNRemtwSlJlUFhWR0FkbVo3VQ?oc=5",
+          "source": "Digital Insurance",
+          "publishedAt": "2026-11-25T11:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "SureEV is building an EV insurance comparison platform",
+          "link": "https://coverager.com/sureev-is-building-an-ev-insurance-comparison-platform/",
+          "source": "Coverager",
+          "publishedAt": "2026-10-20T09:55:15.000Z",
+          "tags": [
+            "Auto & Mobility"
+          ],
+          "summary": "SureEV LLC filed a trademark application for its name on October 16.",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "igloo",
+      "name": "Igloo",
+      "count": 26,
+      "firstSeen": "2024-08-19T07:00:00.000Z",
+      "lastSeen": "2026-11-25T09:57:30.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 10
+        },
+        {
+          "name": "Partnerships",
+          "count": 4
+        },
+        {
+          "name": "M&A",
+          "count": 4
+        },
+        {
+          "name": "Property & Cat",
+          "count": 3
+        },
+        {
+          "name": "Cyber",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Traders Union",
+        "Coverager",
+        "Fintech News Philippines",
+        "Fintech Singapore",
+        "TNGlobal",
+        "Asia Business Outlook",
+        "Beinsure",
+        "Reinsurance News",
+        "DealStreetAsia",
+        "Insurance Nerds",
+        "Vietnam Investment Review - VIR",
+        "Insurance Business",
+        "Life Insurance International",
+        "FinTech Global",
+        "Insurance Asia"
+      ],
+      "related": [
+        {
+          "slug": "dana",
+          "name": "DANA",
+          "count": 3
+        },
+        {
+          "slug": "eazy-digital",
+          "name": "Eazy Digital",
+          "count": 3
+        },
+        {
+          "slug": "chubb",
+          "name": "Chubb",
+          "count": 2
+        },
+        {
+          "slug": "tokio-marine",
+          "name": "Tokio Marine",
+          "count": 2
+        },
+        {
+          "slug": "m-lhuillier",
+          "name": "M Lhuillier",
+          "count": 1
+        },
+        {
+          "slug": "tokio-marine-hcc",
+          "name": "Tokio Marine HCC",
+          "count": 1
+        },
+        {
+          "slug": "telkomsel",
+          "name": "Telkomsel",
+          "count": 1
+        }
+      ],
+      "articles": [
+        {
+          "title": "Igloo expands insurtech push as El Niño raises protection risks in the Philippines",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQamlYWWFySXJ4M3JuektyNTdjbXc3eEFxd2pPUHhKNmRHX1ByNE9VU0tqMTV4ODhsblBHQUp5MFYxaktxVmREU0h4REo3aXRXWGp2VFRkdTdMSDhiaTdKdnB3V0dOdGlGSVpZd1VjSWM0ZDlFZDI4NS1XemFUSUctdm0yaGtlTEQ2VzNUcDB1RnBLWTA?oc=5",
+          "source": "Traders Union",
+          "publishedAt": "2026-11-25T09:57:30.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Igloo and DANA launch parametric rain insurance",
+          "link": "https://coverager.com/igloo-and-dana-launch-parametric-rain-insurance/",
+          "source": "Coverager",
+          "publishedAt": "2026-11-17T00:00:56.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "DANA is an Indonesian e-wallet platform.",
+          "co": [
+            "dana"
+          ]
+        },
+        {
+          "title": "Igloo and M Lhuillier Launch Calamity Insurance for Filipino Families",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNNlRUNmFBSm9HbXZzSDRnREwtLTc3d3VYR1lBWVl4RDNsSDFiUEhrSzFTM0hlWV9GMnhJajkybXkzTHFwa3FnNlE5RHV3V3Q4QmNkd0lYRUlONk5fSzNkTlAzcVNwYkkwNWt1Zmh1d1Nia0JkRlFPVTVHVXRCcGNsMVRYaEhrOFlLY2FaVUlFTUF4WS1XR254Mg?oc=5",
+          "source": "Fintech News Philippines",
+          "publishedAt": "2026-11-10T05:52:02.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": [
+            "m-lhuillier"
+          ]
+        },
+        {
+          "title": "Insurtech Igloo Eyes Fivefold SaaS Growth as It Targets MENA Expansion",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTmsxQmRpZUItUXpITVRIbGNaXzI3a1pQV3pHeUNGOHZ0a0k3R090dW1ST0FlaE0ycl9UQjBfQ1pST2k5Ql9yOGFwaUxrWVpEX2tuMGRfZVZkOUZLWmsxb0dHSko3NV9va2c3S0tTa1VIN21rS0pwS3VPdDJVODZqWTdn?oc=5",
+          "source": "Fintech Singapore",
+          "publishedAt": "2026-10-26T03:36:06.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Singapore's insurtech Igloo targets 5-fold growth for Tech Solutions, eyes Middle East",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUEhlSlNwbmlkTjI4YnVzZ3BWZkhDRkQyZXc0S2h4TzZ5YklpUTRNWldISUFHYWJNUWxCRGVrTlllRm5nY1JFMjlyTjA0VVNQZTJtc1pVSkx2ZFhjZ084eWRuTlBFZi1odnhqUWJ1Q3BtVXBJZXFfbmMwanBGTlM5RFl2T1YxS3Z1RGEwLTd6U2ZVMG0tRU42WHRVU1Q3bTBuREdZSnlZaDlQeG4zZks1WjFGYjdkX2I0UTdFWA?oc=5",
+          "source": "TNGlobal",
+          "publishedAt": "2026-10-26T03:25:20.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Singapore's Igloo Targets Fivefold SaaS Growth With MENA Expansion",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOMUkxakhaWUJZVEVQV3U1eWh4NWtSYnR1SlFhcUNQTGFWNDRsMzktWmxRQ24zVHRDZzdEYTZOWWxtNTJQakhiUVhyRURQVEV1SDZxNGpmWDlUcXFleWRmWlZ2ZW1Ed3ZwQnR5NkttNnpscUlZblJFc0hCdzZXaUVpT1VWYXBuaWhvMlRybUZYazg4QmVzSTV5QlBfd1BuUUFKWkpQblNPZ3lRc0s2N3EzTWVSc1VfNWl2YW1iV19Iaw?oc=5",
+          "source": "Asia Business Outlook",
+          "publishedAt": "2026-10-25T23:21:13.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech Igloo expands into Turkey with personal cyber insurance partnership",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5RYUVDbi1WVktmY1pNNlA0eVdUS2JVTGE1SC1Bd1hfNHF4cUhuRjVrTVNFOTNwQ0ZtQXVkWE9EMzZraG1ZVk5peFdiQmtDMFAyT2I1NEVUazY3S01sQVBteFlwUFp5WXZWeTF5a0RtWQ?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-10-13T12:47:06.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "Cyber"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Igloo and DANA launch parametric rain protection insurance for Indonesians",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPYnYyOXVLNm9QaFo3Z29KOE1XZkVKM1pBUUhTU0hmRUMyTVI3LVA0eUxOZHlOdC1HQ1N5OWFxNWtEeERRNkthR3BrbmxDRWhoak5hajliOVFjYjZVUG5ZcEtTT3h5Qm9zMkQzcy1OS0kwak5VMjgyNHF1R0s4ckF1Q2lDaFRMd3F1NUI0UGdUTXV3VW8wQkFXYWJUYkwtU0U2cmhtSmhsZw?oc=5",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-10-08T12:35:48.000Z",
+          "tags": [
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "",
+          "co": [
+            "dana"
+          ]
+        },
+        {
+          "title": "Igloo and DANA launch parametric rain protection insurance for Indonesians",
+          "link": "https://www.reinsurancene.ws/igloo-and-dana-launch-parametric-rain-protection-insurance-for-indonesians/",
+          "source": "Reinsurance News",
+          "publishedAt": "2026-10-08T12:30:54.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "Property & Cat"
+          ],
+          "summary": "Igloo, Southeast Asia’s full-stack insurtech company building the operating system for insurance, has partnered with DANA, an Indonesian e-wallet platform, to launch DANA Rain Protection, a parametric weather insurance…",
+          "co": [
+            "dana"
+          ]
+        },
+        {
+          "title": "Igloo Revenue Jumps 46% to $63M as Singapore Insurtech Expands",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNOE1oX0JIVnY3MHFLQ2FMVVBEb1pXTWdacmRZcHF3QVpCS1ZUcldaYlhIUWdoZjhKNlpSSlM3ZDFHZVQ4UUZuVTBCaHhrT2dsMjE0cVRDQnhPcDh0VHdOTDZZMTJBN3hJcHdWeGExTDd5cjRZSG5OeW9YM3B4amQ1VTlDWGVCQ2t5emliLWh6ZFJWVFpmM0JwSTNmYlFmbmh2aHFzSXRYaVRjZ1kyVGcwS1pLZmNGZE10?oc=5",
+          "source": "Asia Business Outlook",
+          "publishedAt": "2026-09-28T00:18:04.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Singapore's Igloo acquires insurtech firm Eazy Digital",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbWNGNGRWR1ZDTldHcktjMkpBNURqU2JWQVB1dG9VVmY1c2hlcGY1dEtlSDU0Q2lzbHV5ZHFVVElsOTBZdDNjaHBpZ3RzVmxIZUFKWldGcGlUV3VpUlBZaUtkd2JwX0Q3MGFXSVE2MlZkX08wTjFqVWpDajJlTjJ6R1NXYTJROE1tUFBSMGdsWEVONTRUM1NVaGkxeGwtTFAxV1p5U1Zid1VRemJPMURoSGpNVWgyUDc2cXRmakRJc2JsRGJm?oc=5",
+          "source": "TNGlobal",
+          "publishedAt": "2026-06-30T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "eazy-digital"
+          ]
+        },
+        {
+          "title": "Igloo buys Eazy Digital to expand Thailand insurtech business",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBsMGp1a0s3V3lUUm5WWF9NTHR3cVJvN0NSdFV2Y2hjUWhfYUhkTTBxa0pEWkVLUlpFSllEdnllQ3hXekt2Y2d4SUVTT0dmR2hidHZWcG42WHFTbE1IcW1WMkgxX0dTZnRSM2k3X3duU0VJUUhvMmE0dQ?oc=5",
+          "source": "DealStreetAsia",
+          "publishedAt": "2026-06-30T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "eazy-digital"
+          ]
+        },
+        {
+          "title": "Igloo Acquires Eazy Digital to Expand Insurtech Stack in Thailand",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSnp6cnM5XzFNVW1FQzFPWFNNdjlKYm5kX290djlwS3JYbGZQczA5QzZLN1pfZ0lmc1FiUW45TFY0Zzg4Q0xtRVJCSk9OSm8yM2hRWTdZN09STk96WTJIWWxHRTcwUllRcDJPMjNUUG0tNXF2b25fR2NOb3Y2eTlpOVpkTQ?oc=5",
+          "source": "Fintech Singapore",
+          "publishedAt": "2026-06-30T07:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "eazy-digital"
+          ]
+        },
+        {
+          "title": "Singapore's insurtech Igloo launches AI travel insurance assistant in Indonesia, boosting purchase decision 44%",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOQThrRXlSR1daR2tyQlk0TjBUQ0llc19KeVNrWjY2MU9yOVNydXBpOFE0NXJlclFSSGFtYnBNOHNpdmhXZ1FhWjRIbDQ1UWZUNE5lZk9FQVhuLXdKa3U0a0I3SUh3ai10Vm9lamRWZlZqTHR0M0dKb0tqNFNGamNsV2NSLVRQblhsZkUyMEFPZktZRjhhWjhHNkhyMTY2VDhmSGNUV2wwNGZrZEhzNDJ0RjYwSUFQTUlzNzRiWUd0b1VIZ0ItdlR4TDNyeXBJZHfSAd8BQVVfeXFMTUZLb3Q1UFdHNVJoSlNtRUdPMVVBelp1MXc2QTExckZCSFd2TE9yUTZHZllLdHc0SlJ6emRkZ2lhQm1wMXlKQlc0TXdlalVSenVEWW9uNXJfWVdOTHZPUWgxTFIyeFllajRGNXBlUTUyWVhmcVpUT3RnRjJQZ1BLQngxNE1idlFBd0hjaGF5X3NFZThUMV9ubVVWdkE4T3U0MXRackNaRE9KVUxNaEpYZWZ3OS1TdzFzMTgwYmZLZGk0alhPb0RIdzFpd1daVUdsTWpSV3R5SmxGSUxWQzJYZw?oc=5",
+          "source": "Insurance Nerds",
+          "publishedAt": "2026-06-09T10:48:15.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Igloo expands into life insurance with Chubb Life partnership in Vietnam - Vietnam Investment Review",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQVExtdzlIaFF2ZmlKR2RXMkYtb1BJNkJ5dVF6dVFRc0pnNldZa2YxaUo3NVNGbXpfZ1lOamp0b1FselJxLWpmNURKdlZSZTg2MGR0TmY3QmItbXhIWGhkdkRsaldNTTFpVUJ4QTdTZzZNUHREaGpwUW11elVDb21OVlZXLTFYZTdLM09rMFNxb0VaMUl0ZGlLbTQ5Sld4eF95TElXckRB?oc=5",
+          "source": "Vietnam Investment Review - VIR",
+          "publishedAt": "2026-06-06T07:00:00.000Z",
+          "tags": [
+            "Partnerships",
+            "Product & Launches",
+            "Health & Life"
+          ],
+          "summary": "",
+          "co": [
+            "chubb"
+          ]
+        },
+        {
+          "title": "Igloo partners with Chubb Life to distribute insurance solutions across Vietnam and Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNRExCSG5BSTNzVi1jWkFYWVhYU2RNT0tQYnRvbjE2M25pYV8zTjdQQTJNN1ljYXJkVXkxZlhGZUVsNkhwc2o5ZjFtODRud1ZXZEF1Z1ZleW9OM0QtNW0zUy03ZnFub3dRRDFMU2VyWDItTGphMEtyZ3NibmF5UWg3Qmc5ejJfRWpZR01fTEFkUVByaWNFTjhCcklqXzFfWHpDamdEQVRseXNUMXllcUNUY00tWmViT1o0bnJlQTBVYnFic3ZEbklJcg?oc=5",
+          "source": "TNGlobal",
+          "publishedAt": "2026-06-05T07:00:00.000Z",
+          "tags": [
+            "Partnerships"
+          ],
+          "summary": "",
+          "co": [
+            "chubb"
+          ]
+        },
+        {
+          "title": "Igloo Philippines Expands Insurance Infrastructure Under Ramjit Lahiri",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOLWNsTmJlbm5nUTZDTWZLTTV5ZUxpVE5DTnQ1NkdScWYtaml1d3dVdU81dXdKSjZqMmxnX2tXVElJdmpnM0lmYjNDNmV4R1dYZHNZbnlQNnV0dTRXTmZRN2JOek1HaEZmZ0pXaHJBaE5KUTBoUWZxQlZmd0dyNGVQSHZtdldxaUpPdVRzSzRQWFNrUU9kZDN6VGNSNS0?oc=5",
+          "source": "Fintech News Philippines",
+          "publishedAt": "2026-04-17T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech Igloo expands Philippines strategy as insurance market hits $8.4B",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZllkcENoMTFPc2FocDlWcEo5ckhEcUoyRUF1a3VVRjhSSERscjlNMlZMNnFONWpRQ2xHRFVCWkNYVHlUVzI3SHNEbTFaX3dPVzRCWEJoeElUZVQ2Ni1KYmhwQUlvTklZZGpiVkozemZWdHZ1elhfX1lMWTJ3VklwOEtRZUFOX2xtdnFHdUFFTVRtTTFEQWhJR0pkZjg4TG5OS0thYnM2MUt3NUFPemtV?oc=5",
+          "source": "TNGlobal",
+          "publishedAt": "2026-04-15T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Tokio Marine buys minority stake in Singapore insurtech Igloo",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQUlRyY2otMjRISENvVzBWVWNUYmZGVUUySWg4NkZWRlBDZlhYSXdmZGMxM0w5SXJWanlyb2s4WnRHVDVWRldjaHVWNTgxRm15R3BWcjBJTWJERkhmOWJXY1hsQzNvQ1VtM0FwajRoOWpscFAwSjIyRlNFdUtoSTFCdkxSX1VIa0JTZ2R6TmhhYnl4ek5kdTBGSTJZRnFrS0pDVXU5YUVKQ29tWXZ4a1A0Z1dwVmVvSVljM3lXeXBFNDBScGVxV09mYUVEYw?oc=5",
+          "source": "Insurance Business",
+          "publishedAt": "2026-01-28T08:00:00.000Z",
+          "tags": [
+            "M&A"
+          ],
+          "summary": "",
+          "co": [
+            "tokio-marine"
+          ]
+        },
+        {
+          "title": "Tokio Marine takes minority stake in insurtech company Igloo",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5PczlET3duMnNhNzBpbW5EYVVwOFdydGlaQWpsTXFOZmNGaTF4aHlFQklqS19lTk42UDNwRmR0cUg3eWYzNU9NQ2VKODZzWGpfWXdmbEJKY29FdzlMSy13YVhZTlFXS1A3X1dZTXNXT3YtZ2VnTmRLLWYzUHY2Zw?oc=5",
+          "source": "Life Insurance International",
+          "publishedAt": "2026-01-27T08:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "tokio-marine"
+          ]
+        },
+        {
+          "title": "Tokio Marine invests $5m in InsurTech Igloo",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQNmNYNmZCNENLRjlNdlhldzlhUGRFTzdNT2gzRjl6ZHNXWlNRTi1PbngzUTBpdVlCUXloUzdCdXUxamY5cEFSSU5EN0RwSkhCYm5QTXgwN0d6RUdObWFGY09TRkZ3d0U5ME5VcE5sRTFEbE5ySUFnZlQzSkstQktNU0VFbw?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2026-01-26T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": [
+            "tokio-marine-hcc"
+          ]
+        },
+        {
+          "title": "Igloo links with Telkomsel to provide gadget and screen insurance",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONEE3dmY0bGJEUE9CWHBpNGVVODZCbW5nQUZ2aXc1MlRoRXhZWV9xbmRYYzRrQVBRQnFaQU1JOWJKSEJIWkVpLUZyYTZNeHl0eWh5VERVd3Itc0UzaXdIcGx6aklKRm9wYlk1RzYzQ1RxR2dwWll3U3V6X2Z1MHE3S0xQOW5JaHpzZ0NCWWFsRC1pVDhMTFJtRTZsSlRjSTQ?oc=5",
+          "source": "Insurance Asia",
+          "publishedAt": "2025-09-23T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": [
+            "telkomsel"
+          ]
+        },
+        {
+          "title": "Igloo unveils Igloo Tech Solutions to transform insurance across Southeast Asia",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWU9Qa0F0bXU5MUlNUFkxRFJ1MEQxWG9OdmFnMks5Y3RpSmFiOUlVNkNVOTJhSm94RHlodVNhZTdpMWZuYzFRVHpOemZkMHZ0eWt5TmxJWUdha1kyNmx6UWhMU1htVzg5NVoxbGdrNEw4VGdGLTBka3JKdzVuOU1vUDBXdTk3TFBNQ0VaejYxRkRBR1ZGeVFnMG1na2NnYmN5VTVMZU5yRkdOM3NqRTRzQ2tQazQ?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2025-06-03T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Insurtech Igloo officially launches in Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUHVCQTF4dVJKQThfeGkxaG9RUDctQTNHdVA1NmdTWF85bnRWOGFyaTVMby1zRGw0dkZQenkwcGxWWFN5RzFlVnFZTFhzRG5uZlN6TW5GbXlRLVNmUWpUTFBGeGJMYVlxbDZsMHh0Z3FFWnVObFJWblNWVzVXRWJCb1ZMdHF6enFjRlJweWtWSkFCOFE?oc=5",
+          "source": "Insurance Asia",
+          "publishedAt": "2024-10-24T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Igloo launches D2C insurance platform to expand accessibility in Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdExieURrSzdkS0gteDFpb1cwVTdzNjhUQ1hIQU4xaWdWVjVuNDhXVHNsWURBaW1kWFNJNWkwQkpBS2JEZE5tX3cyNW5icWZHTzhSMnBySVZXNjZqc0Q3Z3JGZ2Vyanh1VXlrOF9OeTItQmhEWVBmTGk5ZEFZT1hfZG9YemJieU5na1ZiLWFpOFhQUEVqSTF3WS1wZURDa1E4VFRuQjlPVWlHckVjQ0E?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2024-10-24T07:00:00.000Z",
+          "tags": [
+            "Product & Launches"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "InsurTech Igloo expands footprint in the Philippines",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPYWN5YXVFSTR2QXk0dDFaS1QxYjRaNldCVUJiamo5bUU0dFVWWGRscVlMd3VlOGowUXIzZ3dpOHR0Wk1VVVBBMVBtenZuMC05cWRDSnNSZUdYNUV1dGdQZDdYYXBtTDRiTmFtbHU1amp0Q0J5eE5zRlZRdThOWm1ta29sd0ZxVXRtWmVLdkFLTHU?oc=5",
+          "source": "FinTech Global",
+          "publishedAt": "2024-08-19T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "bcg",
+      "name": "BCG",
+      "count": 3,
+      "firstSeen": "2025-10-31T07:00:00.000Z",
+      "lastSeen": "2026-11-25T09:38:00.000Z",
+      "topics": [
+        {
+          "name": "Funding",
+          "count": 2
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Big News Network.com",
+        "Elets BFSI",
+        "Fortune India"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "India's InsurTech funding stabilises at USD 120 million as AI reshapes insurance distribution: BCG-IIA",
+          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPN0wyRm5VOXUyV1NmVG0zckFHODBTcC1KRFJQNWZ3eUJ4YkUzc2tiNEwzbE1UQ0tqQmhqek5SVmRPYS1GM1pkdWhFNmp0eHByem5Bc2dOWnkyeklJR3Z1ZUNjWEVaN1h3bjlzOWF3RnBjNGVOUXlqaVZzaFluVG13UnB6MV9fTWlnNklFbDlXSWcxUVVxTVRXaE9LS0tEYlNNM05HU1FZVUtkTFItUHAzcDhsT3dFTFdkS3E2VGlUQ0x4blUzM0JmZkpPRmloQXlQZ1R4bnFyV2plNXdjb1E?oc=5",
+          "source": "Big News Network.com",
+          "publishedAt": "2026-11-25T09:38:00.000Z",
+          "tags": [
+            "Funding",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "India InsurTech Funding Flat at $120 Million in 2025: BCG",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBzdDFoeUVydzNHZ29BTlBJVUU0aXFCVmNTblg5dW9CLWlZWUVqMldQN0FIZGFYald6akdDVzNWSi14Y2hQMzg1OTY4MmgxTllEcGtDOXNqSlA2aHZQbmNrNlQ5Wi1EYkx3?oc=5",
+          "source": "Elets BFSI",
+          "publishedAt": "2026-11-23T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "\"The next wave of India’s Insurtech growth will come from scaling proven models,\" says Vivek Mandhata of BCG",
+          "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNOWhWZDZ6S3lXR0I4MVRlWURiNFJTZkpuZGppanc1Z08wb3UyZXB2SVp6OWFoOWtycmR4a0FuOVhibGVSekR3Rm85RGMzV2ViS2MxZW83RFZEa185YlZUVlBmcXZ6Szl2eC1qS1RvZGVaYXdTLS01UElSMVNHZ3hwT2RJc2poLXUwRlFhdTVQRVZnQjk0aG1Pdmx1Um5LWUlXZzZ4YzNlQ1hiOU1wQi1YbnBmT0h2UkZzZ0hCdU5PV2hPRVVENE8waEZhRW9EUy1yejNsVGRKRlBDR0VLeGhhYlZRVDdqb2tOQ0g3R25n0gH7AUFVX3lxTE1RRjhmdUJxLXB3UDhqc0owOEVRdklSdmtSUmtfdHg1Mkd6Z2h2SHAtTldVVjdFN3RUNXdkQ1RILTdzUGRndFpQRWxJZGlMMmYyX0NfQ3lNVWkzb3ROWUR4RzlCOTdteDlqVGY2RDcyN3NLdktaWVd1a2ktRkYzLUVDOFMtbXE4X0FNVGVIQlJlV1hEb09tMnBuTzlzMGNKbGVKelVNYU80eWVyYy1QQmRWbzZ4a0EyTDlKOTAtSzdJOVd4eTNhbF8tTjFGNHNOdWpBdV9tYkFjcUpOZ3JSY1RUV2s2OUxXTUluU3VOQ0l3M1Y3RjNXLVl6QkNR?oc=5",
+          "source": "Fortune India",
+          "publishedAt": "2025-10-31T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "oona-insurance",
+      "name": "Oona Insurance",
+      "count": 2,
+      "firstSeen": "2025-06-04T07:00:00.000Z",
+      "lastSeen": "2026-11-25T06:35:46.000Z",
+      "topics": [],
+      "sources": [
+        "Fintech News Philippines",
+        "Insurance Asia"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Oona Insurance Profit More Than Triples as Premiums Climb 67%",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZGl4aWdRdG9DNkJMTU1ub3RCQmZVSGZMeXZRc0tnRVoyZ2NjcldhWDRZYnZuaGVJeHBUbzRYbS0zMTFvdmJqa1R0TTJMVXhrMlpfUWhwazNIaEdzTlBLZmxoWDJTYTVRTXVTZHFyYjVCSkRSMVhVajdlb1NMV241X1M5T0RMdUx3?oc=5",
+          "source": "Fintech News Philippines",
+          "publishedAt": "2026-11-25T06:35:46.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        },
+        {
+          "title": "Oona Insurance bets on platforms to widen access",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQWUhTbnZiRk5Ja0daX0RPbnNJaWlPYnZHWWd1cG5kUVZxNVNSbndGNTVTdXNXZDdZOUF5cVphNWJLdHhkdjZaR0gzRVVfdkJCbWgwQUdZMzhNOGF5bVpnaUZjdDRaWlp0SWxTdWlubVNnQ2ZFYklqTGhabEhfTTZ0Sw?oc=5",
+          "source": "Insurance Asia",
+          "publishedAt": "2025-06-04T07:00:00.000Z",
+          "tags": [
+            "Industry"
+          ],
+          "summary": "",
+          "co": []
+        }
+      ]
+    },
+    {
+      "slug": "johnson-lambert",
+      "name": "Johnson Lambert",
+      "count": 1,
+      "firstSeen": "2026-11-24T22:08:30.000Z",
+      "lastSeen": "2026-11-24T22:08:30.000Z",
+      "topics": [
+        {
+          "name": "Product & Launches",
+          "count": 1
+        },
+        {
+          "name": "AI & Automation",
+          "count": 1
+        }
+      ],
+      "sources": [
+        "Beinsure"
+      ],
+      "related": [],
+      "articles": [
+        {
+          "title": "Insurance advisory firm Johnson Lambert launches AI governance services",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQm1YdVp0SlhGZno0aW1UblNITnR3NFM1M0ktR0Vxb2tYek1TNTR3R1NnWTRwaTZQRC1mNThKT1BzcEJTTF9JeG5KeGRCa21TZkhNSUNSUlh3OC03MGYtQ0pkcFhXY2xqbzdwQWJxTVY3Y2FITWNqZnhKMG15U3pjNDl0MU1jTzFKZXhTbjRWS1pwZDNNX3RsSnZjcmozRlk?oc=5",
+          "source": "Beinsure",
+          "publishedAt": "2026-11-24T22:08:30.000Z",
+          "tags": [
+            "Product & Launches",
+            "AI & Automation"
+          ],
+          "summary": "",
+          "co": []
         }
       ]
     },
@@ -4296,7 +5534,7 @@
         "Global Reinsurance",
         "Program Business",
         "theinsurer.com",
-        "Business Insurance",
+        "businessinsurance.com",
         "Insurtech Insights",
         "PR Newswire",
         "Captive Insurance Times",
@@ -4516,17 +5754,6 @@
           "co": []
         },
         {
-          "title": "Q3 global insurtech funding drops 44.6%: Gallagher Re",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOZlBuWDFiVHlmVjBybzRpVUtqSUNud1dMYUtNVWdRMi1nOWcyNlB6M1FMWTFPYlhJLU5tQkR6NUJRTG5wNHBWUG0tTGVKQWotNWIzYzNLVlR1ZTh0T3pTdk9lUWNOOUdpeGdPQjFkWk1zOEtLOFQ5MWpkY0pHZGZGLXc2cHJ6dVBTaWtNRmgxWQ?oc=5",
-          "source": "Business Insurance",
-          "publishedAt": "2026-11-05T14:33:34.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
           "title": "Global InsurTech funding fell 44.6% to $1.36bn in Q3’26: Gallagher Re",
           "link": "https://www.reinsurancene.ws/global-insurtech-funding-fell-44-6-to-1-36bn-in-q326-gallagher-re/",
           "source": "Reinsurance News",
@@ -4536,6 +5763,17 @@
             "Property & Cat"
           ],
           "summary": "Reinsurance broker Gallagher Re’s latest Global InsurTech Report found that global InsurTech funding fell 44.6% to $1.36 billion in Q3 2026 compared with the previous quarter, driven by a reduction in mega-round…",
+          "co": []
+        },
+        {
+          "title": "Q3 global insurtech funding drops 44.6%: Gallagher Re",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOZlBuWDFiVHlmVjBybzRpVUtqSUNud1dMYUtNVWdRMi1nOWcyNlB6M1FMWTFPYlhJLU5tQkR6NUJRTG5wNHBWUG0tTGVKQWotNWIzYzNLVlR1ZTh0T3pTdk9lUWNOOUdpeGdPQjFkWk1zOEtLOFQ5MWpkY0pHZGZGLXc2cHJ6dVBTaWtNRmgxWQ?oc=5",
+          "source": "businessinsurance.com",
+          "publishedAt": "2026-11-05T08:00:00.000Z",
+          "tags": [
+            "Funding"
+          ],
+          "summary": "",
           "co": []
         },
         {
@@ -19554,213 +20792,6 @@
       ]
     },
     {
-      "slug": "state-farm",
-      "name": "State Farm",
-      "count": 11,
-      "firstSeen": "2024-09-29T07:00:00.000Z",
-      "lastSeen": "2026-11-18T16:45:06.000Z",
-      "topics": [
-        {
-          "name": "Claims & Underwriting",
-          "count": 4
-        },
-        {
-          "name": "AI & Automation",
-          "count": 3
-        },
-        {
-          "name": "Funding",
-          "count": 1
-        },
-        {
-          "name": "Cyber",
-          "count": 1
-        },
-        {
-          "name": "Regulation",
-          "count": 1
-        },
-        {
-          "name": "Partnerships",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Insurance Journal",
-        "Beinsure",
-        "Coverager",
-        "Insurance Business",
-        "Carrier Management",
-        "Digital Insurance",
-        "Insurance Insider"
-      ],
-      "related": [
-        {
-          "slug": "lazarus-ai",
-          "name": "Lazarus AI",
-          "count": 2
-        },
-        {
-          "slug": "qbe",
-          "name": "QBE",
-          "count": 2
-        },
-        {
-          "slug": "volvo",
-          "name": "Volvo",
-          "count": 1
-        },
-        {
-          "slug": "allstate",
-          "name": "Allstate",
-          "count": 1
-        },
-        {
-          "slug": "geico",
-          "name": "GEICO",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "State Farm to Pay $45M After Oklahoma Insurance Investigation",
-          "link": "https://www.insurancejournal.com/news/southcentral/2026/11/18/893043.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-11-18T16:45:06.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "State Farm Fire and Casualty Co. will pay a $45 million settlement after a state insurance department investigation found it failed to properly pay roof damage claims by Oklahoma customers. The state’s incoming…",
-          "co": []
-        },
-        {
-          "title": "Lazarus AI raises $43 mn with backing from QBE and State Farm Ventures",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbUR1X2ZlU2V1a244YmVHZk9qbDZqSkplblVrNU5QU0dSczdZMGJhWHhpOXpWd1pPQjB3UVp3VWNvTG5kMktfMllYZmlMQWtqZHZfOXNjUVRLbHZ3bkNpcHdZMFFaTGRfQUNzMlM5WTFPNEtxdFhJUE8tTzNTNHdCeHhjVTRadjJqdDdQWERCWGN4azFkS1dpaTZYaw?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-11-05T13:43:43.000Z",
-          "tags": [
-            "Funding",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": [
-            "lazarus-ai",
-            "qbe"
-          ]
-        },
-        {
-          "title": "QBE and State Farm Ventures back Lazarus AI",
-          "link": "https://coverager.com/qbe-and-state-farm-ventures-back-lazarus-ai/",
-          "source": "Coverager",
-          "publishedAt": "2026-11-04T09:35:02.000Z",
-          "tags": [
-            "AI & Automation",
-            "Cyber"
-          ],
-          "summary": "Lazarus AI is developing AI tools for document processing, cybersecurity and legacy system modernization.",
-          "co": [
-            "qbe",
-            "lazarus-ai"
-          ]
-        },
-        {
-          "title": "State Farm set to raise rates by almost 8%",
-          "link": "https://www.insurancebusinessmag.com/us/news/industry-news/state-farm-set-to-raise-rates-by-almost-8-592541.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-10-06T21:39:50.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "Nearly 1.5 million policies affected – insurer’s actuaries wanted even more",
-          "co": []
-        },
-        {
-          "title": "State Farm to Increase Claims Workforce by 3,000",
-          "link": "https://www.carriermanagement.com/news/2026/09/29/292348.htm",
-          "source": "Carrier Management",
-          "publishedAt": "2026-09-29T11:58:46.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "State Farm said it plans to increase the size of its claims workforce throughout 2027 by about 10%, or about 3,000 employees. In a Sept. 25 announcement, the mutual insurer said it is investing in training, developing…",
-          "co": []
-        },
-        {
-          "title": "State Farm to Increase Claims Workforce by 3,000",
-          "link": "https://www.insurancejournal.com/news/national/2026/09/25/886884.htm",
-          "source": "Insurance Journal",
-          "publishedAt": "2026-09-25T15:28:43.000Z",
-          "tags": [
-            "Claims & Underwriting"
-          ],
-          "summary": "State Farm said it plans to increase the size of its claims workforce throughout 2027 by about 10%, or about 3,000 employees. In a Sept. 25 announcement, the mutual insurer said it is investing in training, developing…",
-          "co": []
-        },
-        {
-          "title": "State Farm files trademark for Merna",
-          "link": "https://coverager.com/state-farm-files-trademark-for-merna/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-27T11:23:20.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "Beyond insurance, the filing covers banking services, mutual fund investments and financial analysis and consulting.",
-          "co": []
-        },
-        {
-          "title": "State Farm settles for lower home insurance rate increase",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQT1lNZG1NcDEtQTlyV3FESHhYcWt1WHRRSE04Qy1HdkE0MS01U2p3RnI4YW9adHNZMGpyal8xQUNJelZDZnBWN0YxaGdHZWNFM3BPTWY5Z09uTWhfUnE1eGppNl9fVTUwQlFfcnpCYnNoQTFzM1doWm52YzBJS09xTlh0LTZFc1RnQThPQmJR?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2026-03-09T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Will State Farm’s AI discrimination suit break the regulatory dam?",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPdFREdXRaZmRYTG04YVhGYlVGV3hTcnJqRDkyc2h3SnJyclQ1Qm1jS1lKU0FJQm11cHQ2YjhIb0E5WnJpNFh5WUt4MXpEVnlrQWVESmlRSEVVZjRjZkVIZTJnR09INmV1cjI1T2o1NGVZc0tVNVVJOTBSN0V0Wl9FOEhqYkdwTzFmcm16Y2tPZUNZNnptRXRVN3d0UExLOXN6OXhfWDVDTGlqTnRaWXc2c2Y0cmdRbm_SAccBQVVfeXFMUEh0VzlXekVLQXVhSXI4Z2VLOXNXSWtKaWh6ZktEQWRmSC03dVZCMmQyd2F3X0pidHU3UHRYcWVGZkxEVTZLbHdZMU9DUlRFRm00T1AybkRXUFJpSlBfdE1VWFQ2M2Vrd3NtSWxRM3kwVERnS04xZlZGODVWMzhQQndzX3Y5cG5ZTmFwa28weGpSWUowV1M2OHphNU0wSTZmYXF2b0VIRDhCS0ZUaDlUaWhGR1EyZDExVU45RXNZeUxBbk5mbzBWOA?oc=5",
-          "source": "Insurance Insider",
-          "publishedAt": "2025-11-06T08:00:00.000Z",
-          "tags": [
-            "AI & Automation",
-            "Regulation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Volvo, State Farm Partner on Point-of-Sale Auto Insurance",
-          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE44bVRNYnNiYXdKWnR3bWNtWWhhY2dINlZoYnprcDNCLUtxTHlFNnl0WS1xdzBFbHdmRXUwVXZ1bkwzREl3Z1M5bWpLZ3R4a1ROaG9oamRpMjVPZnpPakY5aVgxMFZNSFkzcEtYYnI2RGFXenFsY3lz?oc=5",
-          "source": "Insurance Journal",
-          "publishedAt": "2025-10-15T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Auto & Mobility"
-          ],
-          "summary": "",
-          "co": [
-            "volvo"
-          ]
-        },
-        {
-          "title": "State Farm, Allstate, Geico top digital performers",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM0NQQmZvSmpjUFFWLVpEX3BJdG9XU2VlOXNnOVROeFZZaWkzVFppbVlCVU9BTTBsZ2hPc0tJS0FIRTR2dWYwX3dsdmN2RFpDQktmamhQWEpFNlR1LUxOamU4UVJ4djdVU3JtS1FscDM4aDR3V1NrS2tWU29QOVo4WmZ3?oc=5",
-          "source": "Digital Insurance",
-          "publishedAt": "2024-09-29T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "allstate",
-            "geico"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "boost",
       "name": "Boost",
       "count": 3,
@@ -20207,118 +21238,6 @@
           ],
           "summary": "",
           "co": []
-        }
-      ]
-    },
-    {
-      "slug": "progressive",
-      "name": "Progressive",
-      "count": 7,
-      "firstSeen": "2026-04-13T07:00:00.000Z",
-      "lastSeen": "2026-11-18T13:25:22.000Z",
-      "topics": [
-        {
-          "name": "Auto & Mobility",
-          "count": 3
-        },
-        {
-          "name": "Claims & Underwriting",
-          "count": 2
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Insurance Business",
-        "PYMNTS.com"
-      ],
-      "related": [
-        {
-          "slug": "hippo",
-          "name": "Hippo",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Progressive reports 91.2% CR for October",
-          "link": "https://coverager.com/progressive-reports-91-2-cr-for-october/",
-          "source": "Coverager",
-          "publishedAt": "2026-11-18T13:25:22.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "The insurer ended the month with net income of $828 million.",
-          "co": []
-        },
-        {
-          "title": "Progressive combines commercial telematics programs",
-          "link": "https://coverager.com/progressive-combines-commercial-telematics-programs/",
-          "source": "Coverager",
-          "publishedAt": "2026-11-10T16:09:04.000Z",
-          "tags": [
-            "Auto & Mobility"
-          ],
-          "summary": "Customers using Progressive-provided devices can access a dashboard with fleet activity, trip history, driving insights and safety ratings.",
-          "co": []
-        },
-        {
-          "title": "Progressive’s Q3 profit slips 3% despite better underwriting margin",
-          "link": "https://www.insurancebusinessmag.com/us/news/breaking-news/progressives-q3-profit-slips-3-despite-better-underwriting-margin-593580.aspx",
-          "source": "Insurance Business",
-          "publishedAt": "2026-10-15T04:33:38.000Z",
-          "tags": [
-            "Claims & Underwriting",
-            "Auto & Mobility"
-          ],
-          "summary": "The auto insurer's combined ratio improved to 88.7, but investment losses weighed on earnings, and premium growth slowed to 4%",
-          "co": []
-        },
-        {
-          "title": "Progressive reports 90% CR for September",
-          "link": "https://coverager.com/progressive-reports-90-cr-for-september/",
-          "source": "Coverager",
-          "publishedAt": "2026-10-14T12:34:01.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "The insurer ended the month with net income of $630 million.",
-          "co": []
-        },
-        {
-          "title": "Progressive files trademark for enhanced total-loss coverage",
-          "link": "https://coverager.com/progressive-files-trademark-for-enhanced-total-loss-coverage/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-10T11:52:28.000Z",
-          "tags": [
-            "Claims & Underwriting",
-            "Auto & Mobility"
-          ],
-          "summary": "The filing covers the administration and underwriting of vehicle insurance programs.",
-          "co": []
-        },
-        {
-          "title": "Progressive reports 86.8% CR for July",
-          "link": "https://coverager.com/progressive-reports-86-8-cr-for-july/",
-          "source": "Coverager",
-          "publishedAt": "2026-08-19T12:50:24.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "The insurer ended the month with net income of ~$961 million.",
-          "co": []
-        },
-        {
-          "title": "Hippo’s CEO Says InsurTech Grew Up and the Progressive Deal Proves It",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUC1FWWREM3l5T1hVUmFkMzFzNnhPQTFqMWRTRmdIa20wZVlOTHhxVF9lcUZEUXJ2Ul9XbWtfQ2lkU2NmTDF2dnhoV2hTb0dsRHBWT1ZUNU4wNkJGYnlTTHZQNEFmMERzQ3NMcjZpOUZWWThZRWZFZXRWbWpYMEx6TXpyYWF1U3BLQl96TDJMZmpZdS00d2Z4bVd5ZkNBeXVSbFh1VUMtYXdaWXc?oc=5",
-          "source": "PYMNTS.com",
-          "publishedAt": "2026-04-13T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "hippo"
-          ]
         }
       ]
     },
@@ -25139,404 +26058,6 @@
           "co": [
             "servicenow"
           ]
-        }
-      ]
-    },
-    {
-      "slug": "igloo",
-      "name": "Igloo",
-      "count": 25,
-      "firstSeen": "2024-08-19T07:00:00.000Z",
-      "lastSeen": "2026-11-17T00:00:56.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 10
-        },
-        {
-          "name": "Partnerships",
-          "count": 4
-        },
-        {
-          "name": "M&A",
-          "count": 4
-        },
-        {
-          "name": "Property & Cat",
-          "count": 3
-        },
-        {
-          "name": "Cyber",
-          "count": 1
-        },
-        {
-          "name": "AI & Automation",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Fintech News Philippines",
-        "Fintech Singapore",
-        "TNGlobal",
-        "Asia Business Outlook",
-        "Beinsure",
-        "Reinsurance News",
-        "DealStreetAsia",
-        "Insurance Nerds",
-        "Vietnam Investment Review - VIR",
-        "Insurance Business",
-        "Life Insurance International",
-        "FinTech Global",
-        "Insurance Asia"
-      ],
-      "related": [
-        {
-          "slug": "dana",
-          "name": "DANA",
-          "count": 3
-        },
-        {
-          "slug": "eazy-digital",
-          "name": "Eazy Digital",
-          "count": 3
-        },
-        {
-          "slug": "chubb",
-          "name": "Chubb",
-          "count": 2
-        },
-        {
-          "slug": "tokio-marine",
-          "name": "Tokio Marine",
-          "count": 2
-        },
-        {
-          "slug": "m-lhuillier",
-          "name": "M Lhuillier",
-          "count": 1
-        },
-        {
-          "slug": "tokio-marine-hcc",
-          "name": "Tokio Marine HCC",
-          "count": 1
-        },
-        {
-          "slug": "telkomsel",
-          "name": "Telkomsel",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Igloo and DANA launch parametric rain insurance",
-          "link": "https://coverager.com/igloo-and-dana-launch-parametric-rain-insurance/",
-          "source": "Coverager",
-          "publishedAt": "2026-11-17T00:00:56.000Z",
-          "tags": [
-            "Product & Launches",
-            "Property & Cat"
-          ],
-          "summary": "DANA is an Indonesian e-wallet platform.",
-          "co": [
-            "dana"
-          ]
-        },
-        {
-          "title": "Igloo and M Lhuillier Launch Calamity Insurance for Filipino Families",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNNlRUNmFBSm9HbXZzSDRnREwtLTc3d3VYR1lBWVl4RDNsSDFiUEhrSzFTM0hlWV9GMnhJajkybXkzTHFwa3FnNlE5RHV3V3Q4QmNkd0lYRUlONk5fSzNkTlAzcVNwYkkwNWt1Zmh1d1Nia0JkRlFPVTVHVXRCcGNsMVRYaEhrOFlLY2FaVUlFTUF4WS1XR254Mg?oc=5",
-          "source": "Fintech News Philippines",
-          "publishedAt": "2026-11-10T05:52:02.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": [
-            "m-lhuillier"
-          ]
-        },
-        {
-          "title": "Insurtech Igloo Eyes Fivefold SaaS Growth as It Targets MENA Expansion",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTmsxQmRpZUItUXpITVRIbGNaXzI3a1pQV3pHeUNGOHZ0a0k3R090dW1ST0FlaE0ycl9UQjBfQ1pST2k5Ql9yOGFwaUxrWVpEX2tuMGRfZVZkOUZLWmsxb0dHSko3NV9va2c3S0tTa1VIN21rS0pwS3VPdDJVODZqWTdn?oc=5",
-          "source": "Fintech Singapore",
-          "publishedAt": "2026-10-26T03:36:06.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Singapore's insurtech Igloo targets 5-fold growth for Tech Solutions, eyes Middle East",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUEhlSlNwbmlkTjI4YnVzZ3BWZkhDRkQyZXc0S2h4TzZ5YklpUTRNWldISUFHYWJNUWxCRGVrTlllRm5nY1JFMjlyTjA0VVNQZTJtc1pVSkx2ZFhjZ084eWRuTlBFZi1odnhqUWJ1Q3BtVXBJZXFfbmMwanBGTlM5RFl2T1YxS3Z1RGEwLTd6U2ZVMG0tRU42WHRVU1Q3bTBuREdZSnlZaDlQeG4zZks1WjFGYjdkX2I0UTdFWA?oc=5",
-          "source": "TNGlobal",
-          "publishedAt": "2026-10-26T03:25:20.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Singapore's Igloo Targets Fivefold SaaS Growth With MENA Expansion",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOMUkxakhaWUJZVEVQV3U1eWh4NWtSYnR1SlFhcUNQTGFWNDRsMzktWmxRQ24zVHRDZzdEYTZOWWxtNTJQakhiUVhyRURQVEV1SDZxNGpmWDlUcXFleWRmWlZ2ZW1Ed3ZwQnR5NkttNnpscUlZblJFc0hCdzZXaUVpT1VWYXBuaWhvMlRybUZYazg4QmVzSTV5QlBfd1BuUUFKWkpQblNPZ3lRc0s2N3EzTWVSc1VfNWl2YW1iV19Iaw?oc=5",
-          "source": "Asia Business Outlook",
-          "publishedAt": "2026-10-25T23:21:13.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Insurtech Igloo expands into Turkey with personal cyber insurance partnership",
-          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5RYUVDbi1WVktmY1pNNlA0eVdUS2JVTGE1SC1Bd1hfNHF4cUhuRjVrTVNFOTNwQ0ZtQXVkWE9EMzZraG1ZVk5peFdiQmtDMFAyT2I1NEVUazY3S01sQVBteFlwUFp5WXZWeTF5a0RtWQ?oc=5",
-          "source": "Beinsure",
-          "publishedAt": "2026-10-13T12:47:06.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "Cyber"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Igloo and DANA launch parametric rain protection insurance for Indonesians",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPYnYyOXVLNm9QaFo3Z29KOE1XZkVKM1pBUUhTU0hmRUMyTVI3LVA0eUxOZHlOdC1HQ1N5OWFxNWtEeERRNkthR3BrbmxDRWhoak5hajliOVFjYjZVUG5ZcEtTT3h5Qm9zMkQzcy1OS0kwak5VMjgyNHF1R0s4ckF1Q2lDaFRMd3F1NUI0UGdUTXV3VW8wQkFXYWJUYkwtU0U2cmhtSmhsZw?oc=5",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-10-08T12:35:48.000Z",
-          "tags": [
-            "Product & Launches",
-            "Property & Cat"
-          ],
-          "summary": "",
-          "co": [
-            "dana"
-          ]
-        },
-        {
-          "title": "Igloo and DANA launch parametric rain protection insurance for Indonesians",
-          "link": "https://www.reinsurancene.ws/igloo-and-dana-launch-parametric-rain-protection-insurance-for-indonesians/",
-          "source": "Reinsurance News",
-          "publishedAt": "2026-10-08T12:30:54.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "Property & Cat"
-          ],
-          "summary": "Igloo, Southeast Asia’s full-stack insurtech company building the operating system for insurance, has partnered with DANA, an Indonesian e-wallet platform, to launch DANA Rain Protection, a parametric weather insurance…",
-          "co": [
-            "dana"
-          ]
-        },
-        {
-          "title": "Igloo Revenue Jumps 46% to $63M as Singapore Insurtech Expands",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNOE1oX0JIVnY3MHFLQ2FMVVBEb1pXTWdacmRZcHF3QVpCS1ZUcldaYlhIUWdoZjhKNlpSSlM3ZDFHZVQ4UUZuVTBCaHhrT2dsMjE0cVRDQnhPcDh0VHdOTDZZMTJBN3hJcHdWeGExTDd5cjRZSG5OeW9YM3B4amQ1VTlDWGVCQ2t5emliLWh6ZFJWVFpmM0JwSTNmYlFmbmh2aHFzSXRYaVRjZ1kyVGcwS1pLZmNGZE10?oc=5",
-          "source": "Asia Business Outlook",
-          "publishedAt": "2026-09-28T00:18:04.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Singapore's Igloo acquires insurtech firm Eazy Digital",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbWNGNGRWR1ZDTldHcktjMkpBNURqU2JWQVB1dG9VVmY1c2hlcGY1dEtlSDU0Q2lzbHV5ZHFVVElsOTBZdDNjaHBpZ3RzVmxIZUFKWldGcGlUV3VpUlBZaUtkd2JwX0Q3MGFXSVE2MlZkX08wTjFqVWpDajJlTjJ6R1NXYTJROE1tUFBSMGdsWEVONTRUM1NVaGkxeGwtTFAxV1p5U1Zid1VRemJPMURoSGpNVWgyUDc2cXRmakRJc2JsRGJm?oc=5",
-          "source": "TNGlobal",
-          "publishedAt": "2026-06-30T07:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "eazy-digital"
-          ]
-        },
-        {
-          "title": "Igloo buys Eazy Digital to expand Thailand insurtech business",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBsMGp1a0s3V3lUUm5WWF9NTHR3cVJvN0NSdFV2Y2hjUWhfYUhkTTBxa0pEWkVLUlpFSllEdnllQ3hXekt2Y2d4SUVTT0dmR2hidHZWcG42WHFTbE1IcW1WMkgxX0dTZnRSM2k3X3duU0VJUUhvMmE0dQ?oc=5",
-          "source": "DealStreetAsia",
-          "publishedAt": "2026-06-30T07:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "eazy-digital"
-          ]
-        },
-        {
-          "title": "Igloo Acquires Eazy Digital to Expand Insurtech Stack in Thailand",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSnp6cnM5XzFNVW1FQzFPWFNNdjlKYm5kX290djlwS3JYbGZQczA5QzZLN1pfZ0lmc1FiUW45TFY0Zzg4Q0xtRVJCSk9OSm8yM2hRWTdZN09STk96WTJIWWxHRTcwUllRcDJPMjNUUG0tNXF2b25fR2NOb3Y2eTlpOVpkTQ?oc=5",
-          "source": "Fintech Singapore",
-          "publishedAt": "2026-06-30T07:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "eazy-digital"
-          ]
-        },
-        {
-          "title": "Singapore's insurtech Igloo launches AI travel insurance assistant in Indonesia, boosting purchase decision 44%",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOQThrRXlSR1daR2tyQlk0TjBUQ0llc19KeVNrWjY2MU9yOVNydXBpOFE0NXJlclFSSGFtYnBNOHNpdmhXZ1FhWjRIbDQ1UWZUNE5lZk9FQVhuLXdKa3U0a0I3SUh3ai10Vm9lamRWZlZqTHR0M0dKb0tqNFNGamNsV2NSLVRQblhsZkUyMEFPZktZRjhhWjhHNkhyMTY2VDhmSGNUV2wwNGZrZEhzNDJ0RjYwSUFQTUlzNzRiWUd0b1VIZ0ItdlR4TDNyeXBJZHfSAd8BQVVfeXFMTUZLb3Q1UFdHNVJoSlNtRUdPMVVBelp1MXc2QTExckZCSFd2TE9yUTZHZllLdHc0SlJ6emRkZ2lhQm1wMXlKQlc0TXdlalVSenVEWW9uNXJfWVdOTHZPUWgxTFIyeFllajRGNXBlUTUyWVhmcVpUT3RnRjJQZ1BLQngxNE1idlFBd0hjaGF5X3NFZThUMV9ubVVWdkE4T3U0MXRackNaRE9KVUxNaEpYZWZ3OS1TdzFzMTgwYmZLZGk0alhPb0RIdzFpd1daVUdsTWpSV3R5SmxGSUxWQzJYZw?oc=5",
-          "source": "Insurance Nerds",
-          "publishedAt": "2026-06-09T10:48:15.000Z",
-          "tags": [
-            "Product & Launches",
-            "AI & Automation"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Igloo expands into life insurance with Chubb Life partnership in Vietnam - Vietnam Investment Review",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQVExtdzlIaFF2ZmlKR2RXMkYtb1BJNkJ5dVF6dVFRc0pnNldZa2YxaUo3NVNGbXpfZ1lOamp0b1FselJxLWpmNURKdlZSZTg2MGR0TmY3QmItbXhIWGhkdkRsaldNTTFpVUJ4QTdTZzZNUHREaGpwUW11elVDb21OVlZXLTFYZTdLM09rMFNxb0VaMUl0ZGlLbTQ5Sld4eF95TElXckRB?oc=5",
-          "source": "Vietnam Investment Review - VIR",
-          "publishedAt": "2026-06-06T07:00:00.000Z",
-          "tags": [
-            "Partnerships",
-            "Product & Launches",
-            "Health & Life"
-          ],
-          "summary": "",
-          "co": [
-            "chubb"
-          ]
-        },
-        {
-          "title": "Igloo partners with Chubb Life to distribute insurance solutions across Vietnam and Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNRExCSG5BSTNzVi1jWkFYWVhYU2RNT0tQYnRvbjE2M25pYV8zTjdQQTJNN1ljYXJkVXkxZlhGZUVsNkhwc2o5ZjFtODRud1ZXZEF1Z1ZleW9OM0QtNW0zUy03ZnFub3dRRDFMU2VyWDItTGphMEtyZ3NibmF5UWg3Qmc5ejJfRWpZR01fTEFkUVByaWNFTjhCcklqXzFfWHpDamdEQVRseXNUMXllcUNUY00tWmViT1o0bnJlQTBVYnFic3ZEbklJcg?oc=5",
-          "source": "TNGlobal",
-          "publishedAt": "2026-06-05T07:00:00.000Z",
-          "tags": [
-            "Partnerships"
-          ],
-          "summary": "",
-          "co": [
-            "chubb"
-          ]
-        },
-        {
-          "title": "Igloo Philippines Expands Insurance Infrastructure Under Ramjit Lahiri",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOLWNsTmJlbm5nUTZDTWZLTTV5ZUxpVE5DTnQ1NkdScWYtaml1d3dVdU81dXdKSjZqMmxnX2tXVElJdmpnM0lmYjNDNmV4R1dYZHNZbnlQNnV0dTRXTmZRN2JOek1HaEZmZ0pXaHJBaE5KUTBoUWZxQlZmd0dyNGVQSHZtdldxaUpPdVRzSzRQWFNrUU9kZDN6VGNSNS0?oc=5",
-          "source": "Fintech News Philippines",
-          "publishedAt": "2026-04-17T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Insurtech Igloo expands Philippines strategy as insurance market hits $8.4B",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZllkcENoMTFPc2FocDlWcEo5ckhEcUoyRUF1a3VVRjhSSERscjlNMlZMNnFONWpRQ2xHRFVCWkNYVHlUVzI3SHNEbTFaX3dPVzRCWEJoeElUZVQ2Ni1KYmhwQUlvTklZZGpiVkozemZWdHZ1elhfX1lMWTJ3VklwOEtRZUFOX2xtdnFHdUFFTVRtTTFEQWhJR0pkZjg4TG5OS0thYnM2MUt3NUFPemtV?oc=5",
-          "source": "TNGlobal",
-          "publishedAt": "2026-04-15T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Tokio Marine buys minority stake in Singapore insurtech Igloo",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQUlRyY2otMjRISENvVzBWVWNUYmZGVUUySWg4NkZWRlBDZlhYSXdmZGMxM0w5SXJWanlyb2s4WnRHVDVWRldjaHVWNTgxRm15R3BWcjBJTWJERkhmOWJXY1hsQzNvQ1VtM0FwajRoOWpscFAwSjIyRlNFdUtoSTFCdkxSX1VIa0JTZ2R6TmhhYnl4ek5kdTBGSTJZRnFrS0pDVXU5YUVKQ29tWXZ4a1A0Z1dwVmVvSVljM3lXeXBFNDBScGVxV09mYUVEYw?oc=5",
-          "source": "Insurance Business",
-          "publishedAt": "2026-01-28T08:00:00.000Z",
-          "tags": [
-            "M&A"
-          ],
-          "summary": "",
-          "co": [
-            "tokio-marine"
-          ]
-        },
-        {
-          "title": "Tokio Marine takes minority stake in insurtech company Igloo",
-          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5PczlET3duMnNhNzBpbW5EYVVwOFdydGlaQWpsTXFOZmNGaTF4aHlFQklqS19lTk42UDNwRmR0cUg3eWYzNU9NQ2VKODZzWGpfWXdmbEJKY29FdzlMSy13YVhZTlFXS1A3X1dZTXNXT3YtZ2VnTmRLLWYzUHY2Zw?oc=5",
-          "source": "Life Insurance International",
-          "publishedAt": "2026-01-27T08:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "tokio-marine"
-          ]
-        },
-        {
-          "title": "Tokio Marine invests $5m in InsurTech Igloo",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQNmNYNmZCNENLRjlNdlhldzlhUGRFTzdNT2gzRjl6ZHNXWlNRTi1PbngzUTBpdVlCUXloUzdCdXUxamY5cEFSSU5EN0RwSkhCYm5QTXgwN0d6RUdObWFGY09TRkZ3d0U5ME5VcE5sRTFEbE5ySUFnZlQzSkstQktNU0VFbw?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2026-01-26T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": [
-            "tokio-marine-hcc"
-          ]
-        },
-        {
-          "title": "Igloo links with Telkomsel to provide gadget and screen insurance",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONEE3dmY0bGJEUE9CWHBpNGVVODZCbW5nQUZ2aXc1MlRoRXhZWV9xbmRYYzRrQVBRQnFaQU1JOWJKSEJIWkVpLUZyYTZNeHl0eWh5VERVd3Itc0UzaXdIcGx6aklKRm9wYlk1RzYzQ1RxR2dwWll3U3V6X2Z1MHE3S0xQOW5JaHpzZ0NCWWFsRC1pVDhMTFJtRTZsSlRjSTQ?oc=5",
-          "source": "Insurance Asia",
-          "publishedAt": "2025-09-23T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": [
-            "telkomsel"
-          ]
-        },
-        {
-          "title": "Igloo unveils Igloo Tech Solutions to transform insurance across Southeast Asia",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWU9Qa0F0bXU5MUlNUFkxRFJ1MEQxWG9OdmFnMks5Y3RpSmFiOUlVNkNVOTJhSm94RHlodVNhZTdpMWZuYzFRVHpOemZkMHZ0eWt5TmxJWUdha1kyNmx6UWhMU1htVzg5NVoxbGdrNEw4VGdGLTBka3JKdzVuOU1vUDBXdTk3TFBNQ0VaejYxRkRBR1ZGeVFnMG1na2NnYmN5VTVMZU5yRkdOM3NqRTRzQ2tQazQ?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2025-06-03T07:00:00.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Insurtech Igloo officially launches in Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUHVCQTF4dVJKQThfeGkxaG9RUDctQTNHdVA1NmdTWF85bnRWOGFyaTVMby1zRGw0dkZQenkwcGxWWFN5RzFlVnFZTFhzRG5uZlN6TW5GbXlRLVNmUWpUTFBGeGJMYVlxbDZsMHh0Z3FFWnVObFJWblNWVzVXRWJCb1ZMdHF6enFjRlJweWtWSkFCOFE?oc=5",
-          "source": "Insurance Asia",
-          "publishedAt": "2024-10-24T07:00:00.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Igloo launches D2C insurance platform to expand accessibility in Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdExieURrSzdkS0gteDFpb1cwVTdzNjhUQ1hIQU4xaWdWVjVuNDhXVHNsWURBaW1kWFNJNWkwQkpBS2JEZE5tX3cyNW5icWZHTzhSMnBySVZXNjZqc0Q3Z3JGZ2Vyanh1VXlrOF9OeTItQmhEWVBmTGk5ZEFZT1hfZG9YemJieU5na1ZiLWFpOFhQUEVqSTF3WS1wZURDa1E4VFRuQjlPVWlHckVjQ0E?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2024-10-24T07:00:00.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "InsurTech Igloo expands footprint in the Philippines",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPYWN5YXVFSTR2QXk0dDFaS1QxYjRaNldCVUJiamo5bUU0dFVWWGRscVlMd3VlOGowUXIzZ3dpOHR0Wk1VVVBBMVBtenZuMC05cWRDSnNSZUdYNUV1dGdQZDdYYXBtTDRiTmFtbHU1amp0Q0J5eE5zRlZRdThOWm1ta29sd0ZxVXRtWmVLdkFLTHU?oc=5",
-          "source": "FinTech Global",
-          "publishedAt": "2024-08-19T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
         }
       ]
     },
@@ -68944,36 +69465,6 @@
       ]
     },
     {
-      "slug": "sureev",
-      "name": "SureEV",
-      "count": 1,
-      "firstSeen": "2026-10-20T09:55:15.000Z",
-      "lastSeen": "2026-10-20T09:55:15.000Z",
-      "topics": [
-        {
-          "name": "Auto & Mobility",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "SureEV is building an EV insurance comparison platform",
-          "link": "https://coverager.com/sureev-is-building-an-ev-insurance-comparison-platform/",
-          "source": "Coverager",
-          "publishedAt": "2026-10-20T09:55:15.000Z",
-          "tags": [
-            "Auto & Mobility"
-          ],
-          "summary": "SureEV LLC filed a trademark application for its name on October 16.",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "indusind-general-insurance",
       "name": "IndusInd General Insurance",
       "count": 2,
@@ -99184,115 +99675,6 @@
       ]
     },
     {
-      "slug": "lassie",
-      "name": "Lassie",
-      "count": 6,
-      "firstSeen": "2026-02-11T08:00:00.000Z",
-      "lastSeen": "2026-09-13T12:53:39.000Z",
-      "topics": [
-        {
-          "name": "Funding",
-          "count": 5
-        },
-        {
-          "name": "Product & Launches",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Silicon Republic",
-        "Insurance Nerds",
-        "EU-Startups",
-        "Tech Funding News",
-        "Sifted"
-      ],
-      "related": [
-        {
-          "slug": "chatgpt",
-          "name": "ChatGPT",
-          "count": 1
-        },
-        {
-          "slug": "balderton",
-          "name": "Balderton",
-          "count": 1
-        }
-      ],
-      "articles": [
-        {
-          "title": "Lassie launches ChatGPT plugin for pet insurance",
-          "link": "https://coverager.com/lassie-launches-chatgpt-plugin-for-pet-insurance/",
-          "source": "Coverager",
-          "publishedAt": "2026-09-13T12:53:39.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "Users can connect the Lassie app through ChatGPT’s app directory.",
-          "co": [
-            "chatgpt"
-          ]
-        },
-        {
-          "title": "Europe’s love for pets fuels Swedish insurtech Lassie as it raises $75m Series C",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWVR2UXVENk5vQmhWeXlxdUxEUHJvc29UQWtpSlZJallFTEl4M1dWRC1mUUJEV2c0LW4xejhPNnFRSnc4Sk9BTWZVNW90X2lYWFBTZ0NfbDNzYngyUy1pYmZTekM4b0xhLTRXYkVoS0I3dmF1Y05uU09WM0hISDY2Nm41MTBzTUNiRkJINHhaUXUtUVZuSEp3ckpJb0JUWDhGdG9TRFhSRjNBb19rem45VjU2VUVSWU54U0t4dQ?oc=5",
-          "source": "Silicon Republic",
-          "publishedAt": "2026-02-16T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Swedish pet insurtech Lassie raises $75M Series C after hitting $100M ARR",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOczZRb0FXTFYzeG80dFB1M1A1REJXVHVQZUIyQ1VzNzRycVNDMlEyejRiaVhqM2w0dThDb2RoLXpnMkVQMXc1UWxUMlRqZ0Y2T1BSUGh6Z0FSU0hOUWExX01QbTVnb2luMTBoV252blBrNkpwMWlxbVV3WU5wVWZJUVFlQ3M3Z1F0MTIySThRV19SLXlaWFgtMHBrazJYUdIBrgFBVV95cUxPdmZKZUVfLVFsTFJYOHFsXzlISnl5ODlDMFZidk9kVG5KMmtRSXIxQzdZa0MyZkFzMDl1Nl81ZENDVGxyVVN2X2hiZWdRZ1pjT0hXQk54a0UwV294VWhhTER4OWNXUEZ4eElmV0lHb3hET1Nsdmo4SmNBMU5RQjJKbFg0ZVN4dktGSnFZbkZVZEtmWkJUVU1sTV9RcVA1RV9SXzY5MHBLTXR2bWhVM3c?oc=5",
-          "source": "Insurance Nerds",
-          "publishedAt": "2026-02-12T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Stockholm-based prevention-first pet InsurTech Lassie fetches €63.2 million in Series C funding",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOEZta1l3ZVFuTlV2UWFSRnhpeUZhUGsweHdNMkY0bXNUSC0yX1Q5bTgwaFBuU3EzV0VITncxNC1ET1lzcDdWMXV4SDdab2tsdF94OGdLZG5fRjNXMGRZcGlBTVVHUWJ4NUk3MV9YSTVIVEJPSkpiaGFpdVJaakE3bEdrbEs4Y0llc1BNMzRiTDBPMmZNV0tKT2ZrbEJrVm1iZlNaTHI4YjZ5bUhycXZIOVdhS0RlMXFPRlpqZmp0bTFmTmI5VVpJb0xR?oc=5",
-          "source": "EU-Startups",
-          "publishedAt": "2026-02-12T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Lassie raised $75M to turn pet insurance into a daily health and rewards app — TFN",
-          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNWJfZ1dRN25UNzVTNk83NWRIZFZHdWx0SFBQWDNqcm5lWkhGRGRtYnpDbG1xTng4a014dW5nN0R4dUY1aG51UXdMMTJ3SjJTTkt2Qm1qTlMzbEdWbmNJUnlOMnd4ZXRjdXl4VWExLW5LTUZBZlAwZUZYM2k0RWQ1aWVHNFpMdw?oc=5",
-          "source": "Tech Funding News",
-          "publishedAt": "2026-02-12T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": []
-        },
-        {
-          "title": "Balderton backs pet startup Lassie’s $75m Series C",
-          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPd3FqNEVtUUxZRDZmX3RtUWpxb2JBUVdHR1cySTUwY2ItX21saUNZWkJUWEMxUGNMTU42YWVEeUlxZy0xS3pDRjdNM2lEcXFyVUtkZkpqMzdIQXhzRFNUZ3MtT2kzcHdGc3NLbHpBWmR1MTFNU3pVQ3VJZVByZTRLag?oc=5",
-          "source": "Sifted",
-          "publishedAt": "2026-02-11T08:00:00.000Z",
-          "tags": [
-            "Funding"
-          ],
-          "summary": "",
-          "co": [
-            "balderton"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "leifras",
       "name": "Leifras",
       "count": 1,
@@ -128376,53 +128758,6 @@
       ]
     },
     {
-      "slug": "moneysupermarket",
-      "name": "MoneySuperMarket",
-      "count": 2,
-      "firstSeen": "2026-07-22T08:18:31.000Z",
-      "lastSeen": "2026-07-25T10:20:44.000Z",
-      "topics": [
-        {
-          "name": "Product & Launches",
-          "count": 2
-        },
-        {
-          "name": "Auto & Mobility",
-          "count": 1
-        }
-      ],
-      "sources": [
-        "Coverager",
-        "Insurance Times"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "MoneySuperMarket launches car insurance broker",
-          "link": "https://coverager.com/moneysupermarket-launches-car-insurance-broker/",
-          "source": "Coverager",
-          "publishedAt": "2026-07-25T10:20:44.000Z",
-          "tags": [
-            "Product & Launches",
-            "Auto & Mobility"
-          ],
-          "summary": "The initial insurer panel includes Allianz, Covéa and Ageas.",
-          "co": []
-        },
-        {
-          "title": "MoneySuperMarket to launch new digital motor broker",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOaUd5OEw5LUJDV01BNXBpdTZZOGdPRVd1MEhocEF3MHlIVG1MY1g3LVBqaDJPWEhlaTZKSE50THUtSkVCcHo4cmNQSk1qSVF0Mm5veEk1QmowTjZXTnBjRG9nQmFEdGdrNk1xd0o4ZHhGLVJhU21fNVBxcVZHM3N6WVZ4QjduTXpkUzk1MXhsS1d6T0lOcmFPMmNZRldlZER6T0V4OUsxanY?oc=5",
-          "source": "Insurance Times",
-          "publishedAt": "2026-07-22T08:18:31.000Z",
-          "tags": [
-            "Product & Launches"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "francisco-partners",
       "name": "Francisco Partners",
       "count": 1,
@@ -151362,31 +151697,6 @@
       ]
     },
     {
-      "slug": "bcg",
-      "name": "BCG",
-      "count": 1,
-      "firstSeen": "2025-10-31T07:00:00.000Z",
-      "lastSeen": "2025-10-31T07:00:00.000Z",
-      "topics": [],
-      "sources": [
-        "Fortune India"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "\"The next wave of India’s Insurtech growth will come from scaling proven models,\" says Vivek Mandhata of BCG",
-          "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNOWhWZDZ6S3lXR0I4MVRlWURiNFJTZkpuZGppanc1Z08wb3UyZXB2SVp6OWFoOWtycmR4a0FuOVhibGVSekR3Rm85RGMzV2ViS2MxZW83RFZEa185YlZUVlBmcXZ6Szl2eC1qS1RvZGVaYXdTLS01UElSMVNHZ3hwT2RJc2poLXUwRlFhdTVQRVZnQjk0aG1Pdmx1Um5LWUlXZzZ4YzNlQ1hiOU1wQi1YbnBmT0h2UkZzZ0hCdU5PV2hPRVVENE8waEZhRW9EUy1yejNsVGRKRlBDR0VLeGhhYlZRVDdqb2tOQ0g3R25n0gH7AUFVX3lxTE1RRjhmdUJxLXB3UDhqc0owOEVRdklSdmtSUmtfdHg1Mkd6Z2h2SHAtTldVVjdFN3RUNXdkQ1RILTdzUGRndFpQRWxJZGlMMmYyX0NfQ3lNVWkzb3ROWUR4RzlCOTdteDlqVGY2RDcyN3NLdktaWVd1a2ktRkYzLUVDOFMtbXE4X0FNVGVIQlJlV1hEb09tMnBuTzlzMGNKbGVKelVNYU80eWVyYy1QQmRWbzZ4a0EyTDlKOTAtSzdJOVd4eTNhbF8tTjFGNHNOdWpBdV9tYkFjcUpOZ3JSY1RUV2s2OUxXTUluU3VOQ0l3M1Y3RjNXLVl6QkNR?oc=5",
-          "source": "Fortune India",
-          "publishedAt": "2025-10-31T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
       "slug": "foraysoft",
       "name": "ForaySoft",
       "count": 2,
@@ -158653,31 +158963,6 @@
           "title": "Meet the insurtech: Quantiphi",
           "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0xZ3lVTWJ0R1BJS3JtcXFGWExIZFM5dG9Uc2dNRFZTeFExX3d5MWdmYWhlb3lQcE9EZnpDdFJnQkpYLVVBREo5RWlKQV9FNEpVSGtZalJTQUh0blJCMTZyWTRaU3g4VTA?oc=5",
           "source": "Digital Insurance",
-          "publishedAt": "2025-06-04T07:00:00.000Z",
-          "tags": [
-            "Industry"
-          ],
-          "summary": "",
-          "co": []
-        }
-      ]
-    },
-    {
-      "slug": "oona-insurance",
-      "name": "Oona Insurance",
-      "count": 1,
-      "firstSeen": "2025-06-04T07:00:00.000Z",
-      "lastSeen": "2025-06-04T07:00:00.000Z",
-      "topics": [],
-      "sources": [
-        "Insurance Asia"
-      ],
-      "related": [],
-      "articles": [
-        {
-          "title": "Oona Insurance bets on platforms to widen access",
-          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQWUhTbnZiRk5Ja0daX0RPbnNJaWlPYnZHWWd1cG5kUVZxNVNSbndGNTVTdXNXZDdZOUF5cVphNWJLdHhkdjZaR0gzRVVfdkJCbWgwQUdZMzhNOGF5bVpnaUZjdDRaWlp0SWxTdWlubVNnQ2ZFYklqTGhabEhfTTZ0Sw?oc=5",
-          "source": "Insurance Asia",
           "publishedAt": "2025-06-04T07:00:00.000Z",
           "tags": [
             "Industry"
